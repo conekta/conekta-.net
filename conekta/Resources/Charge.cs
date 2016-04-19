@@ -36,7 +36,7 @@ namespace conekta
 			return this.toClass (charge);
 		}
 
-		public Charge[] where(string data)
+		public Charge[] where(string data = @"{}")
 		{
 			string result = this.where ("/charges", data);
 

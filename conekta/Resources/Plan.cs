@@ -29,7 +29,21 @@ namespace conekta
 
 		public Plan find(string id)
 		{
-			return this.toClass(this.find ("/plans", this.id));
+			return this.toClass(this.find ("/plans/", id));
+		}
+
+		public Plan update (string data)
+		{
+			Plan plan = toClass (this.update ("/plans/" + this.id, data));
+			this.id = plan.id;
+			this.name = plan.name;
+			this.amount = plan.amount;
+			return this;
+		}
+
+		public Plan delete ()
+		{
+			return toClass (this.delete ("/plans/" + this.id));
 		}
 	}
 }

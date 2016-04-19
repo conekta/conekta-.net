@@ -2,12 +2,158 @@
 using System;
 using System.Collections.Generic;
 
+using Newtonsoft.Json.Linq;
+
 using conekta;
 
 namespace ConektaTest
 {
 	[TestFixture ()]
-	public class Test
+	public class LogTest
+	{
+
+		[Test ()]
+		public void Where ()
+		{
+			JObject[] logs = new conekta.Log ().where ();
+			Assert.AreEqual (logs [0].GetValue("url").GetType().ToString(), "System.String");
+		}
+
+	}
+
+	[TestFixture ()]
+	public class PlanTest
+	{
+		[Test ()]
+		public void Create ()
+		{
+			conekta.Plan plan = new conekta.Plan ().create (@"{
+		       ""id"":""gold-plan999"",
+		       ""name"":""Gold Plan 999"",
+		       ""amount"":10000
+		    }");
+
+			Assert.AreEqual (plan.id.GetType ().ToString (), "System.String");
+		}
+
+		[Test ()]
+		public void Edit ()
+		{
+			conekta.Plan plan = new conekta.Plan ().find ("gold-plan999");
+			plan.update (@"{
+		       ""name"":""Gold Plan 500"",
+		       ""amount"":55555
+		    }");
+
+			Assert.AreEqual (plan.name, "Gold Plan 500");
+			Assert.AreEqual (plan.amount, 55555);
+		}
+
+		[Test ()]
+		public void Find ()
+		{
+			conekta.Plan plan = new conekta.Plan ().find ("gold-plan999");
+
+			Assert.AreEqual (plan.id, "gold-plan999");
+		}
+
+		[Test ()]
+		public void Remove ()
+		{
+			conekta.Plan plan = new conekta.Plan ().find ("gold-plan999");
+			plan.delete ();
+		}
+	}
+
+	[TestFixture ()]
+	public class CustomerTest
+	{
+		public Customer customer;
+
+		[Test ()]
+		public void Create ()
+		{
+			conekta.Api.locale = "es";
+			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+			conekta.Api.version = "1.0.0";
+
+			this.customer = new conekta.Customer ().create(@"{
+			  ""name"":""James Howlett"",
+			  ""email"":""james.howlett@forces.gov"",
+			  ""phone"":""55-5555-5555"",
+			  ""cards"":[""tok_test_visa_4242""],
+			  ""plan"":""gold-plan""
+			}");
+
+			Assert.AreEqual (this.customer.id.GetType().ToString(), "System.String");
+		}
+
+		[Test ()]
+		public void Find ()
+		{
+			this.customer = new conekta.Customer ().find(this.customer.id);
+
+			Assert.AreEqual (this.customer.id.GetType().ToString(), "System.String");
+		}
+
+		[Test ()]
+		public void Update ()
+		{
+			this.customer = this.customer.update(@"{
+		      ""name"":""Logan"",
+		      ""email"":""logan@x-men.org""
+		    }");
+
+			Assert.AreEqual (this.customer.name, "Logan");
+		}
+
+		[Test ()]
+		public void ManageCard ()
+		{
+			this.customer.createCard (@"{
+		       ""token"":""tok_test_mastercard_4444""
+		    }");
+
+			Assert.AreEqual (this.customer.cards[1].last4, "4444");
+
+			this.customer.cards [1].update (@"{""token"": ""tok_test_mastercard_5100""}");
+
+			Assert.AreEqual (this.customer.cards [1].last4, "5100");
+
+			this.customer.cards [1].delete ();
+		}
+
+		[Test ()]
+		public void ManageSubscription ()
+		{
+			this.customer.createSubscription (@"{
+		       ""plan"":""gold-plan""
+		    }");
+
+			Assert.AreEqual (this.customer.plan, "gold-plan");
+
+			this.customer.subscription.update (@"{
+		       ""plan"":""opal-plan""
+		    }");
+
+			Assert.AreEqual (this.customer.subscription.plan_id, "opal-plan");
+
+			this.customer.subscription.pause ();
+
+			Assert.AreEqual (this.customer.subscription.status, "paused");
+
+			this.customer.subscription.resume ();
+
+			Assert.AreEqual (this.customer.subscription.status, "active");
+
+			this.customer.subscription.cancel ();
+
+			Assert.AreEqual (this.customer.subscription.status, "canceled");
+		}
+	}
+
+	[TestFixture ()]
+	public class ChargeTest
 	{
 
 		private int RandomNumber(int min, int max, int seed=0)
@@ -17,7 +163,7 @@ namespace ConektaTest
 		}
 		
 		[Test ()]
-		public void ChargeWithCard ()
+		public void Card ()
 		{
 			conekta.Api.locale = "es";
 			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
@@ -89,7 +235,7 @@ namespace ConektaTest
 		}
 
 		[Test ()]
-		public void ChargeWithCardAndMonthlyInstallments ()
+		public void MonthlyInstallments ()
 		{
 			conekta.Api.locale = "es";
 			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
@@ -142,7 +288,7 @@ namespace ConektaTest
 		}
 
 		[Test ()]
-		public void ChargeWithOxxo ()
+		public void Oxxo ()
 		{
 			conekta.Api.locale = "es";
 			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
@@ -197,7 +343,7 @@ namespace ConektaTest
 		}
 
 		[Test ()]
-		public void ChargeWithSpei ()
+		public void Spei ()
 		{
 			conekta.Api.locale = "es";
 			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
@@ -251,7 +397,7 @@ namespace ConektaTest
 		}
 
 		[Test ()]
-		public void ChargeWithBanorte ()
+		public void Banorte ()
 		{
 			conekta.Api.locale = "es";
 			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
@@ -303,49 +449,6 @@ namespace ConektaTest
 			}");
 
 			Assert.AreEqual (charge.id.GetType().ToString(), "System.String");
-		}
-
-		[Test ()]
-		public void Customer ()
-		{
-			conekta.Api.locale = "es";
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
-			conekta.Api.version = "1.0.0";
-
-			conekta.Customer customer = new conekta.Customer ().create(@"{
-			  ""name"":""James Howlett"",
-			  ""email"":""james.howlett@forces.gov"",
-			  ""phone"":""55-5555-5555"",
-			  ""cards"":[""tok_test_visa_4242""],
-			  ""plan"":""gold-plan""
-			}");
-
-			Assert.AreEqual (customer.id.GetType().ToString(), "System.String");
-
-			customer = new conekta.Customer ().find(customer.id);
-
-			Assert.AreEqual (customer.id.GetType().ToString(), "System.String");
-
-			customer = customer.update(@"{
-		      ""name"":""Logan"",
-		      ""email"":""logan@x-men.org""
-		    }");
-
-			Assert.AreEqual (customer.name, "Logan");
-
-			customer.createCard (@"{
-		       ""token"":""tok_test_mastercard_4444""
-		    }");
-
-			Assert.AreEqual (customer.cards[1].last4, "4444");
-
-			customer.createSubscription (@"{
-		       ""plan"":""gold-plan""
-		    }");
-
-			Assert.AreEqual (customer.plan, "gold-plan");
-
-			customer.delete ();
 		}
 	}
 }

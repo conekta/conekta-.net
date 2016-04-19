@@ -53,6 +53,8 @@
     <Compile Include="Resources\Card.cs" />
     <Compile Include="Resources\Plan.cs" />
     <Compile Include="Resources\Subscription.cs" />
+    <Compile Include="Resources\Webhook.cs" />
+    <Compile Include="Resources\Log.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
