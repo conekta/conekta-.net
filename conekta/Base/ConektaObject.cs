@@ -23,10 +23,5 @@ namespace conekta
 			json = json.Replace (",\"frequency\":0,\"trial_period_days\":0,\"expiry_count\":0", "");
 			return json;
 		}
-
-		public JObject toObject(String json)
-		{
-			return JsonConvert.DeserializeObject<JObject> (json);
-		}
 	}
 }

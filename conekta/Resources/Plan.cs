@@ -1,4 +1,6 @@
 ﻿using System;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace conekta
 {
@@ -13,16 +15,21 @@ namespace conekta
 		public int trial_period_days { get; set; }
 		public int expiry_count { get; set; }
 
-		public void create()
+		public Plan toClass (string json)
 		{
-			String data = this.toJSON();
-
-			this.create ("/plans", data);
+			return JsonConvert.DeserializeObject<Plan> (json, new JsonSerializerSettings {
+				NullValueHandling = NullValueHandling.Ignore
+			});
 		}
 
-		public void find()
+		public Plan create(string data)
 		{
-			this.find ("/plans", this.id);
+			return this.toClass(this.create ("/plans", data));
+		}
+
+		public Plan find(string id)
+		{
+			return this.toClass(this.find ("/plans", this.id));
 		}
 	}
 }

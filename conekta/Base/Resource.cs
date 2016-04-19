@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace conekta
@@ -10,31 +12,43 @@ namespace conekta
 
 		public Resource () {}
 
-		public JObject create(String resource_uri, String data)
+		public string request(string method, string resource_uri, string data)
 		{
-			var json = requestor.request("POST", resource_uri, data);
-			return this.toObject (json);
+			return requestor.request(method, resource_uri, data);
 		}
 
-		public dynamic update()
+		public string find(String resource_uri, String id)
 		{
-			return new ConektaObject();
+			return requestor.request("GET", resource_uri + "/" + id);
 		}
 
-		public dynamic delete()
+		public string where(String resource_uri, String data)
 		{
-			return new ConektaObject();
+			Dictionary<string, string> obj = JsonConvert.DeserializeObject<Dictionary<string, string>>(data);
+
+			string list_params = "?";
+
+			foreach (KeyValuePair<string, string> item in obj)
+			{
+				list_params += item.Key + "=" + item.Value + "&";
+			}
+
+			return requestor.request("GET", resource_uri + list_params.Substring(0, list_params.Length - 1));
 		}
 
-		public JObject find(String resource_uri, String id)
+		public string create(String resource_uri, String data)
 		{
-			var json = requestor.request("GET", resource_uri + "/" + id);
-			return this.toObject (json);
+			return requestor.request("POST", resource_uri, data);
 		}
 
-		public void where(String resource_uri, String data)
+		public string update(String resource_uri, String data)
 		{
-			requestor.request("GET", resource_uri, data);
+			return requestor.request ("PUT", resource_uri, data);
+		}
+
+		public string delete(String resource_uri)
+		{
+			return requestor.request ("DELETE", resource_uri);
 		}
 
 	}

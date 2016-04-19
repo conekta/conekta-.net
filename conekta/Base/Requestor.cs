@@ -19,15 +19,15 @@ namespace conekta
 			HttpWebRequest http = (HttpWebRequest)WebRequest.Create(conekta.Api.baseUri + resource_uri);
 			http.Accept = "application/vnd.conekta-v" + conekta.Api.version + "+json";
 			http.UserAgent = "Conekta/v1 DotNetBindings/Conekta::" + conekta.Api.version;
+			http.Method = method;
 
 			var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(conekta.Api.apiKey);
 			http.Headers.Add("Authorization", "Basic " + System.Convert.ToBase64String(plainTextBytes) + ":");
 			http.Headers.Add ("Accept-Language", conekta.Api.locale);
 
-			if (method == "POST") {
+			if (method == "POST" || method == "PUT") {
 				var dataBytes = Encoding.ASCII.GetBytes(data);
 
-				http.Method = "POST";
 				http.ContentLength = dataBytes.Length;
 				http.ContentType = "application/json";
 

@@ -17,50 +17,48 @@ namespace conekta
 		public Bank bank { get; set; }
 		public Details details { get; set; }
 
-		public void set_attrs(JObject charge)
+		public Charge toClass(string json)
 		{
-			System.Console.WriteLine (charge);
-			this.id = charge.GetValue ("id").ToString();
-			this.description = charge.GetValue ("description").ToString ();
-			this.amount = (int)charge.GetValue ("amount");
-			this.currency = charge.GetValue ("currency").ToString();
-			this.reference_id = charge.GetValue ("reference_id").ToString();
+			return JsonConvert.DeserializeObject<Charge> (json, new JsonSerializerSettings {
+				NullValueHandling = NullValueHandling.Ignore
+			});
+		}
 
-			try {
-				this.card = charge.GetValue("card").ToString();
-			} catch (Exception e) {
-				var x = e.Data;
+		public Charge create(string data)
+		{
+			string charge = this.create ("/charges", data);
+			return this.toClass (charge);
+		}
+
+		public Charge find(string id)
+		{
+			string charge = this.find ("/charges", id);
+			return this.toClass (charge);
+		}
+
+		public Charge[] where(string data)
+		{
+			string result = this.where ("/charges", data);
+
+			Charge[] charges = JsonConvert.DeserializeObject<Charge[]> (result, new JsonSerializerSettings {
+				NullValueHandling = NullValueHandling.Ignore
+			});
+
+			return charges;
+		}
+
+		public Charge capture()
+		{
+			return this.toClass (this.request ("POST", "/charges/" + this.id + "/capture", @"{}"));
+		}
+
+		public Charge refund(int amount = 0)
+		{
+			if (amount > 0) {
+				return this.toClass(this.request ("POST", "/charges/" + this.id + "/refund", @"{""amount"": " + amount.ToString() + "}"));
+			} else {
+				return this.toClass(this.request ("POST", "/charges/" + this.id + "/refund", @"{}"));
 			}
-
-			try {
-				conekta.Bank bank = new conekta.Bank();
-				bank.type = 
-				//String bank = charge.GetValue("bank").ToString();
-				//this.card = charge.GetValue("card").ToString();
-			} catch (Exception e) {
-				var x = e.Data;
-			}
-
-		}
-
-
-		public void create()
-		{
-			String data = this.toJSON();
-
-			JObject charge = this.create ("/charges", data);
-			this.set_attrs (charge);
-		}
-
-		public void find()
-		{
-			JObject charge = this.find ("/charges", this.id);
-			this.set_attrs (charge);
-		}
-
-		public void update()
-		{
-			
 		}
 	}
 }
