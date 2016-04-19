@@ -38,23 +38,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Test.cs" />
-    <Compile Include="Resources\BillingAddress.cs" />
-    <Compile Include="Resources\Charge.cs" />
-    <Compile Include="Resources\Customer.cs" />
-    <Compile Include="Resources\Details.cs" />
-    <Compile Include="Resources\LineItem.cs" />
     <Compile Include="Base\ConektaObject.cs" />
     <Compile Include="Base\Requestor.cs" />
     <Compile Include="Base\Resource.cs" />
     <Compile Include="Conekta.cs" />
-    <Compile Include="Resources\Cash.cs" />
-    <Compile Include="Resources\Bank.cs" />
-    <Compile Include="Resources\ShippingAddress.cs" />
-    <Compile Include="Resources\Card.cs" />
-    <Compile Include="Resources\Plan.cs" />
-    <Compile Include="Resources\Subscription.cs" />
-    <Compile Include="Resources\Webhook.cs" />
-    <Compile Include="Resources\Log.cs" />
+    <Compile Include="Models\BillingAddress.cs" />
+    <Compile Include="Models\Charge.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Details.cs" />
+    <Compile Include="Models\LineItem.cs" />
+    <Compile Include="Models\Cash.cs" />
+    <Compile Include="Models\Bank.cs" />
+    <Compile Include="Models\ShippingAddress.cs" />
+    <Compile Include="Models\Card.cs" />
+    <Compile Include="Models\Plan.cs" />
+    <Compile Include="Models\Subscription.cs" />
+    <Compile Include="Models\Webhook.cs" />
+    <Compile Include="Models\Log.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
