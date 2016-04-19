@@ -165,7 +165,13 @@ namespace ConektaTest
 
 			Assert.AreEqual (this.customer.cards [1].last4, "5100");
 
+			int previous = this.customer.cards.Count;
+
 			this.customer.cards [1].delete ();
+
+			int current = this.customer.cards.Count;
+
+			Assert.AreEqual (previous - 1, current);
 		}
 
 		[Test ()]

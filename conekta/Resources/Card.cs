@@ -15,6 +15,7 @@ namespace conekta
 		public string exp_year { get; set; }
 		public int created_at { get; set; }
 		public string customer_id { get; set; }
+		public Customer customer { get; set; }
 
 		public Card toCard(string json)
 		{
@@ -40,7 +41,12 @@ namespace conekta
 
 		public Card delete ()
 		{
-			return toCard (this.delete ("/customers/" + this.customer_id + "/cards/" + this.id));
+			Card card = toCard (this.delete ("/customers/" + this.customer_id + "/cards/" + this.id));
+
+			int index = customer.cards.IndexOf (this);
+			customer.cards.RemoveAt (index);
+
+			return card;
 		}
 	}
 }

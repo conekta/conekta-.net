@@ -34,6 +34,7 @@ namespace conekta
 			Card card = JsonConvert.DeserializeObject<Card> (json, new JsonSerializerSettings {
 				NullValueHandling = NullValueHandling.Ignore
 			});
+			card.customer = this;
 			this.cards.Add (card);
 			return card;
 		}
