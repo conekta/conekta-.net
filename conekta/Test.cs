@@ -9,6 +9,50 @@ using conekta;
 namespace ConektaTest
 {
 	[TestFixture ()]
+	public class WebhookTest
+	{
+
+		public Webhook wh;
+
+		[Test ()]
+		public void Create ()
+		{
+			wh = new conekta.Webhook ().create (@"{
+			  ""url"": ""http://localhost:3000/my_listener"",
+			  ""events"": [""charge.created"", ""charge.paid"", ""charge.under_fraud_review"",
+			    ""charge.fraudulent"", ""charge.refunded"", ""charge.created"", ""customer.created"",
+			    ""customer.updated"", ""customer.deleted"", ""webhook.created"", ""webhook.updated"",
+			    ""webhook.deleted"", ""charge.chargeback.created"", ""charge.chargeback.updated"",
+			    ""charge.chargeback.under_review"", ""charge.chargeback.lost"", ""charge.chargeback.won"",
+			    ""payout.created"", ""payout.retrying"", ""payout.paid_out"", ""payout.failed"",
+			    ""plan.created"", ""plan.updated"", ""plan.deleted"", ""subscription.created"",
+			    ""subscription.paused"", ""subscription.resumed"", ""subscription.canceled"",
+			    ""subscription.expired"", ""subscription.updated"", ""subscription.paid"",
+			    ""subscription.payment_failed"", ""payee.created"", ""payee.updated"",
+			    ""payee.deleted"", ""payee.payout_method.created"",
+			    ""payee.payout_method.updated"", ""payee.payout_method.deleted""
+			  ]
+			}");
+			Assert.AreEqual (wh.id.GetType().ToString(), "System.String");
+		}
+
+		[Test ()]
+		public void Find ()
+		{
+			wh = new conekta.Webhook ().find (wh.id);
+			Assert.AreEqual (wh.id.GetType().ToString(), "System.String");
+		}
+
+		[Test ()]
+		public void Update ()
+		{
+			wh.update (@"{""url"": ""http://localhost:2000/my_listener""}");
+			Assert.AreEqual (wh.url, "http://localhost:2000/my_listener");
+		}
+
+	}
+
+	[TestFixture ()]
 	public class LogTest
 	{
 
@@ -16,7 +60,8 @@ namespace ConektaTest
 		public void Where ()
 		{
 			JObject[] logs = new conekta.Log ().where ();
-			Assert.AreEqual (logs [0].GetValue("url").GetType().ToString(), "System.String");
+
+			Assert.AreEqual (logs [0].GetValue("url").GetType().ToString(), "Newtonsoft.Json.Linq.JValue");
 		}
 
 	}
