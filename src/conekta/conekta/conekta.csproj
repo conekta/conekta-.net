@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2F249D83-DA55-4A4D-B044-AC779C18C07D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>conekta</RootNamespace>
+    <AssemblyName>conekta</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Test.cs" />
+    <Compile Include="Base\ConektaObject.cs" />
+    <Compile Include="Base\Requestor.cs" />
+    <Compile Include="Base\Resource.cs" />
+    <Compile Include="Conekta.cs" />
+    <Compile Include="Models\BillingAddress.cs" />
+    <Compile Include="Models\Charge.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Details.cs" />
+    <Compile Include="Models\LineItem.cs" />
+    <Compile Include="Models\Cash.cs" />
+    <Compile Include="Models\Bank.cs" />
+    <Compile Include="Models\ShippingAddress.cs" />
+    <Compile Include="Models\Card.cs" />
+    <Compile Include="Models\Plan.cs" />
+    <Compile Include="Models\Subscription.cs" />
+    <Compile Include="Models\Webhook.cs" />
+    <Compile Include="Models\Log.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
