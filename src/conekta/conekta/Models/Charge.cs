@@ -13,6 +13,7 @@ namespace conekta
 		public string currency { get; set; }
 		public string reference_id { get; set; }
 		public string card { get; set; }
+		public string status { get; set; }
 		public Cash cash { get; set; }
 		public Bank bank { get; set; }
 		public Details details { get; set; }
