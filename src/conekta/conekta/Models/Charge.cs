@@ -15,6 +15,7 @@ namespace conekta
 		public string card { get; set; }
 		public string status { get; set; }
 		public Cash cash { get; set; }
+		public PaymentMethod payment_method { get; set; }
 		public Bank bank { get; set; }
 		public Details details { get; set; }
 
