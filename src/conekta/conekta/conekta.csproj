@@ -55,6 +55,7 @@
     <Compile Include="Models\Subscription.cs" />
     <Compile Include="Models\Webhook.cs" />
     <Compile Include="Models\Log.cs" />
+    <Compile Include="Models\PaymentMethod.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
