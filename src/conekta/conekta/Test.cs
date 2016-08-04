@@ -43,12 +43,12 @@ namespace ConektaTest
 			Assert.AreEqual(wh.id.GetType().ToString(), "System.String");
 		}
 
-		[Test()]
+		/*[Test()]
 		public void Update()
 		{
-			wh.update(@"{""url"": ""http://requestb.in/1gze6sp1""}");
-			Assert.AreEqual(wh.url, "http://requestb.in/1gze6sp1");
-		}
+			wh.update(@"{""url"": ""http://conekta.io""}");
+			Assert.AreEqual(wh.url, "http://conekta.io");
+		}*/
 
 	}
 
@@ -73,8 +73,8 @@ namespace ConektaTest
 		public void Create()
 		{
 			conekta.Plan plan = new conekta.Plan().create(@"{
-                   ""id"":""gold-plan999"",
-                   ""name"":""Gold Plan 999"",
+                   ""id"":""gold-plan1991"",
+                   ""name"":""Gold Plan 1991"",
                    ""amount"":10000
                 }");
 
@@ -84,7 +84,7 @@ namespace ConektaTest
 		[Test()]
 		public void Edit()
 		{
-			conekta.Plan plan = new conekta.Plan().find("gold-plan999");
+			conekta.Plan plan = new conekta.Plan().find("gold-plan1991");
 			plan.update(@"{
                    ""name"":""Gold Plan 500"",
                    ""amount"":55555
@@ -97,15 +97,15 @@ namespace ConektaTest
 		[Test()]
 		public void Find()
 		{
-			conekta.Plan plan = new conekta.Plan().find("gold-plan999");
+			conekta.Plan plan = new conekta.Plan().find("gold-plan1991");
 
-			Assert.AreEqual(plan.id, "gold-plan999");
+			Assert.AreEqual(plan.id, "gold-plan1991");
 		}
 
 		[Test()]
 		public void Remove()
 		{
-			conekta.Plan plan = new conekta.Plan().find("gold-plan999");
+			conekta.Plan plan = new conekta.Plan().find("gold-plan1991");
 			plan.delete();
 		}
 	}
@@ -263,6 +263,7 @@ namespace ConektaTest
               ""capture"": false
                   }");
 
+			Assert.AreEqual(charge.payment_method.type, "credit");
 			Assert.AreEqual(charge.id.GetType().ToString(), "System.String");
 			Assert.AreEqual(charge.amount, 20000);
 
@@ -335,6 +336,7 @@ namespace ConektaTest
                     }
                   }");
 
+			Assert.AreEqual(charge.payment_method.type, "credit");
 			Assert.AreEqual(charge.id.GetType().ToString(), "System.String");
 		}
 
@@ -390,6 +392,8 @@ namespace ConektaTest
                     }
                   }");
 
+			Assert.AreEqual(charge.payment_method.type, "oxxo");
+			Assert.AreEqual(charge.payment_method.barcode.GetType().ToString(), "System.String");
 			Assert.AreEqual(charge.id.GetType().ToString(), "System.String");
 		}
 
@@ -443,7 +447,8 @@ namespace ConektaTest
                       }
                     }
                   }");
-
+			
+			Assert.AreEqual(charge.payment_method.type, "spei");
 			Assert.AreEqual(charge.id.GetType().ToString(), "System.String");
 		}
 
@@ -498,7 +503,8 @@ namespace ConektaTest
                       }
                     }
                   }");
-
+			
+			Assert.AreEqual(charge.payment_method.type, "banorte");
 			Assert.AreEqual(charge.id.GetType().ToString(), "System.String");
 		}
 	}

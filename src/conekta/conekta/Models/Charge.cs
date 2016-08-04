@@ -1,6 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Text.RegularExpressions;
 
 namespace conekta
 {
@@ -41,6 +42,9 @@ namespace conekta
 		public Charge[] where(string data = @"{}")
 		{
 			string result = this.where ("/charges", data);
+
+			Regex pattern = new Regex("\"object\":", RegexOptions.Multiline | RegexOptions.IgnoreCase);
+			result = pattern.Replace(result, "\"_object\":");
 
 			Charge[] charges = JsonConvert.DeserializeObject<Charge[]> (result, new JsonSerializerSettings {
 				NullValueHandling = NullValueHandling.Ignore
