@@ -60,6 +60,8 @@ To get started, add the following to your .NET script:
       }
     }");
     
+    // Handling Errors
+    
     try {
         conekta.Charge charge = new conekta.Charge ().create(@"{
           ""description"":""Stogies"",
