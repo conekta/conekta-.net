@@ -3,6 +3,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace conekta
 {
@@ -50,7 +51,18 @@ namespace conekta
 					{
 						string responseText = reader.ReadToEnd();
 
-						throw new Exception ("Conekta API Implementation Error (" + (int)httpResponse.StatusCode + " - " + httpResponse.StatusCode + ") :: " + responseText);
+						JObject obj = JsonConvert.DeserializeObject<JObject>(responseText, new JsonSerializerSettings
+						{
+							NullValueHandling = NullValueHandling.Ignore
+						});
+
+
+						ConektaException ex = new ConektaException(obj.GetValue("message_to_purchaser").ToString());
+						ex.message_to_purchaser = obj.GetValue("message_to_purchaser").ToString();
+						ex.message = obj.GetValue("message").ToString();
+						ex._type = obj.GetValue("type").ToString();
+
+						throw ex;
 					}
 				}
 				return "";

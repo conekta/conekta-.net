@@ -9,6 +9,11 @@ namespace conekta
 	public class Resource : ConektaObject, ICloneable
 	{
 		Requestor requestor = new Requestor();
+		public String type { get; set; }
+		public String message { get; set; }
+		public String message_to_purchaser { get; set; }
+		public String code { get; set; }
+		public String param { get; set; }
 
 		public Resource () {}
 

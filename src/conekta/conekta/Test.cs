@@ -43,12 +43,19 @@ namespace ConektaTest
 			Assert.AreEqual(wh.id.GetType().ToString(), "System.String");
 		}
 
-		/*[Test()]
+		[Test()]
 		public void Update()
 		{
-			wh.update(@"{""url"": ""http://conekta.io""}");
-			Assert.AreEqual(wh.url, "http://conekta.io");
-		}*/
+			try
+			{
+				wh.update(@"{""url"": ""http://conekta.io""}");
+				Assert.AreEqual(wh.url, "http://conekta.io");
+			}
+			catch (ConektaException ex)
+			{
+				Assert.AreEqual(ex._type, "parameter_validation_error");
+			}
+		}
 
 	}
 

@@ -59,6 +59,26 @@ To get started, add the following to your .NET script:
         }
       }
     }");
+    
+    // Handling Errors
+    
+    try {
+        conekta.Charge charge = new conekta.Charge ().create(@"{
+          ""description"":""Stogies"",
+          ""amount"": 20000,
+          ""currency"":""MXN"",
+          ""reference_id"":""9839-wolf_pack"",
+          ""card"": ""tok_test_visa_4242"",
+        }");
+    } catch (ConektaException e) {
+        System.Console.WriteLine(e);
+        /* ConektaException has attributes:
+         * Message
+         * message_to_purchaser
+         * _type
+         * message
+         */
+    }
 
 ## Documentation
 
