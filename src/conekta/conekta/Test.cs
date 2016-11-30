@@ -361,7 +361,7 @@ namespace ConektaTest
                     ""reference_id"":""9839-wolf_pack"",
                     ""cash"": {
                       ""type"": ""oxxo"",
-                      ""expires_at"": 1476057600
+                      ""expires_at"": 1512084300
                     },
                     ""details"": {
                       ""name"": ""Arnulfo Quimare"",
@@ -473,7 +473,7 @@ namespace ConektaTest
                     ""reference_id"":""9839-wolf_pack"",
                     ""bank"": {
                       ""type"": ""banorte"",
-                      ""expires_at"": 1476057600
+                      ""expires_at"": 1512084300
                     },
                     ""details"": {
                       ""name"": ""Arnulfo Quimare"",
