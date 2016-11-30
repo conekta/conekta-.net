@@ -11,5 +11,6 @@ namespace conekta
 		public Customer customer { get; set; }
 		public List<LineItem> line_items { get; set; }
 		public BillingAddress billing_address { get; set; }
+		public ShippingAddress shipment { get; set; }
 	}
 }
