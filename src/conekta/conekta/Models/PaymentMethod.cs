@@ -39,7 +39,7 @@ namespace conekta
 		public String issuer { get; set; }
 		public String account_type { get; set; }
 		public String country { get; set; }
-		public Int32 fraud_score { get; set; }
+		public float fraud_score { get; set; }
 
 		/*Banorte payment*/
 		public String service_name { get; set; }
