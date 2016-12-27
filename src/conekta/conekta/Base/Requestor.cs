@@ -39,7 +39,7 @@ namespace conekta
 
 				WebResponse response = http.GetResponse ();
 				var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
-				return responseString;	
+				return responseString;
 			} catch (WebException webExcp) {
 				WebExceptionStatus status =  webExcp.Status;
 
@@ -56,6 +56,7 @@ namespace conekta
 							NullValueHandling = NullValueHandling.Ignore
 						});
 
+						System.Console.Write(obj);
 
 						ConektaException ex = new ConektaException(obj.GetValue("message_to_purchaser").ToString());
 						ex.message_to_purchaser = obj.GetValue("message_to_purchaser").ToString();
