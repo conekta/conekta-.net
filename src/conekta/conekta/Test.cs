@@ -70,6 +70,30 @@ namespace ConektaTest
 		}
 
 		[Test()]
+		public void CardError()
+		{
+			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+			conekta.Api.version = "1.1.0";
+
+			try
+			{
+				new conekta.Order().create(@"{
+		            ""currency"":""MXN"",
+					""customer_info"": {
+						""name"": ""Jul Ceballos"",
+						""phone"": ""+5215555555555"",
+						""email"": ""jul@conekta.io""
+					}
+	        	}");
+			}
+			catch (ConektaException e)
+			{
+				Assert.AreEqual(e._object, "error");
+				Assert.AreEqual(e._type, "parameter_validation_error");
+			}
+		}
+
+		[Test()]
 		public void Oxxo()
 		{
 			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";

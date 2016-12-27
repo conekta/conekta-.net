@@ -58,9 +58,9 @@ namespace conekta
 
 						System.Console.Write(obj);
 
-						ConektaException ex = new ConektaException(obj.GetValue("message_to_purchaser").ToString());
-						ex.message_to_purchaser = obj.GetValue("message_to_purchaser").ToString();
-						ex.message = obj.GetValue("message").ToString();
+						ConektaException ex = new ConektaException(obj.GetValue("type").ToString());
+						ex.details = (JArray)obj["details"];
+						ex._object = obj.GetValue("object").ToString();
 						ex._type = obj.GetValue("type").ToString();
 
 						throw ex;
