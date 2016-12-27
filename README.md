@@ -18,63 +18,46 @@ To get started, add the following to your .NET script:
 
 ## Usage
 
-    conekta.Charge charge = new conekta.Charge ().create(@"{
-      ""description"":""Stogies"",
-      ""amount"": 20000,
-      ""currency"":""MXN"",
-      ""reference_id"":""9839-wolf_pack"",
-      ""card"": ""tok_test_visa_4242"",
-      ""details"": {
-        ""name"": ""Arnulfo Quimare"",
-        ""phone"": ""403-342-0642"",
-        ""email"": ""logan@x-men.org"",
-        ""customer"": {
-          ""logged_in"": true,
-          ""successful_purchases"": 14,
-          ""created_at"": 1379784950,
-          ""updated_at"": 1379784950,
-          ""offline_payments"": 4,
-          ""score"": 9
+    conekta.Order order = new conekta.Order ().create(@"{
+        ""currency"":""MXN"",
+        ""customer_info"": {
+            ""name"": ""Jul Ceballos"",
+            ""phone"": ""+5215555555555"",
+            ""email"": ""jul@conekta.io""
         },
         ""line_items"": [{
           ""name"": ""Box of Cohiba S1s"",
           ""description"": ""Imported From Mex."",
-          ""unit_price"": 20000,
+          ""unit_price"": 35000,
           ""quantity"": 1,
-          ""sku"": ""cohb_s1"",
-          ""category"": ""food""
+          ""tags"": [""food"", ""mexican food""],
+          ""type"": ""physical""
         }],
-        ""billing_address"": {
-          ""street1"":""77 Mystery Lane"",
-          ""street2"": ""Suite 124"",
-          ""street3"": null,
-          ""city"": ""Darlington"",
-          ""state"":""NJ"",
-          ""zip"": ""10192"",
-          ""country"": ""Mexico"",
-          ""tax_id"": ""xmn671212drx"",
-          ""company_name"":""X-Men Inc."",
-          ""phone"": ""77-777-7777"",
-          ""email"": ""purshasing@x-men.org""
-        }
-      }
+        ""charges"": [{
+            ""source"": {
+                ""type"": ""card"",
+                ""token_id"": ""tok_test_visa_4242""
+            }
+        }]
     }");
     
     // Handling Errors
     
     try {
-        conekta.Charge charge = new conekta.Charge ().create(@"{
-          ""description"":""Stogies"",
-          ""amount"": 20000,
-          ""currency"":""MXN"",
-          ""reference_id"":""9839-wolf_pack"",
-          ""card"": ""tok_test_visa_4242"",
+        new conekta.Order().create(@"{
+            ""currency"":""MXN"",
+            ""customer_info"": {
+                ""name"": ""Jul Ceballos"",
+                ""phone"": ""+5215555555555"",
+                ""email"": ""jul@conekta.io""
+            }
         }");
     } catch (ConektaException e) {
         System.Console.WriteLine(e);
         /* ConektaException has attributes:
          * Message
-         * message_to_purchaser
+         * details
+         * _object
          * _type
          * message
          */
