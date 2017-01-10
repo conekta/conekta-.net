@@ -1,4 +1,7 @@
-﻿using System;
+﻿using System.Text.RegularExpressions;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace conekta
 {
@@ -13,5 +16,22 @@ namespace conekta
 		public string[] tags { get; set; }
 		public string brand { get; set; }
 		public string type { get; set; }
+		public string parent_id { get; set; }
+		public string id { get; set; }
+
+		public LineItem update(string data)
+		{
+			LineItem line_item = this.toClass(this.toObject(this.update("/orders/" + this.parent_id + "/line_items/" + this.id, data)).ToString());
+			return line_item;
+		}
+
+		public LineItem toClass(string json)
+		{
+			LineItem item = JsonConvert.DeserializeObject<LineItem>(json, new JsonSerializerSettings
+			{
+				NullValueHandling = NullValueHandling.Ignore
+			});
+			return item;
+		}
 	}
 }

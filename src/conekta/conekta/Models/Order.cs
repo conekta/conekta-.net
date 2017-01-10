@@ -62,7 +62,7 @@ namespace conekta
 
 		public Order update(string data)
 		{
-			Order order = this.toClass(this.update("/orders/" + this.id, data));
+			Order order = this.toClass(this.toObject(this.update("/orders/" + this.id, data)).ToString());
 			this.id = order.id;
 			return this;
 		}
@@ -70,15 +70,42 @@ namespace conekta
 		public Order capture()
 		{
 			string charge = this.request("PUT", "/orders/" + this.id + "/capture", @"{}");
-			System.Console.WriteLine(charge);
 			return this.toClass(this.toObject(charge).ToString());
 		}
 
-		public Order refund(string data)
+		public Order createReturn(string data)
 		{
 			string charge = this.request("POST", "/orders/" + this.id + "/returns", data);
 			JObject obj = new Charge().toObject(charge);
 			return this.find(obj.GetValue("parent_id").ToString());
+		}
+
+		public LineItem createLineItem(string data)
+		{
+			string line_item = this.request("POST", "/orders/" + this.id + "/line_items", data);
+			LineItem skeleton = new LineItem();
+			return skeleton.toClass(skeleton.toObject(line_item).ToString());
+		}
+
+		public TaxLine createTaxLine(string data)
+		{
+			string tax_line = this.request("POST", "/orders/" + this.id + "/tax_lines", data);
+			TaxLine skeleton = new TaxLine();
+			return skeleton.toClass(skeleton.toObject(tax_line).ToString());
+		}
+
+		public ShippingLine createShippingLine(string data)
+		{
+			string shipping_line = this.request("POST", "/orders/" + this.id + "/shipping_lines", data);
+			ShippingLine skeleton = new ShippingLine();
+			return skeleton.toClass(skeleton.toObject(shipping_line).ToString());
+		}
+
+		public DiscountLine createDiscountLine(string data)
+		{
+			string discount_line = this.request("POST", "/orders/" + this.id + "/discount_lines", data);
+			DiscountLine skeleton = new DiscountLine();
+			return skeleton.toClass(skeleton.toObject(discount_line).ToString());
 		}
 
 		public Order toClass(string json)

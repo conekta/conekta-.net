@@ -56,7 +56,7 @@ namespace conekta
 							NullValueHandling = NullValueHandling.Ignore
 						});
 
-						System.Console.Write(obj);
+						System.Console.WriteLine(obj);
 
 						ConektaException ex = new ConektaException(obj.GetValue("type").ToString());
 						ex.details = (JArray)obj["details"];

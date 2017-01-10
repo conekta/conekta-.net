@@ -74,10 +74,16 @@ namespace conekta
 				{
 					var property_name = property.Name;
 					var property_type = property.PropertyType.ToString();
-					var multi = property.PropertyType.IsArray;
+					var multi = false;
+
+					if (property.PropertyType.IsArray && property_name != "tags")
+					{
+						multi = true;
+					}
 
 					Regex pattern = new Regex("\\[\\]", RegexOptions.Multiline | RegexOptions.IgnoreCase);
 					property_type = pattern.Replace(property_type, "");
+
 
 					if (property_name == key)
 					{

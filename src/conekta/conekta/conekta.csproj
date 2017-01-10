@@ -62,6 +62,7 @@
     <Compile Include="Models\Return.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\AddressBoundary.cs" />
+    <Compile Include="Models\Source.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
