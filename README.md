@@ -1,7 +1,7 @@
 
 ![alt tag](https://raw.github.com/conekta/conekta-.net/master/readme_files/cover.png)
 
-# Conekta .NET v.1
+# Conekta .NET 1.0
 
 This is a .net library that allows interaction with https://api.conekta.io API.
 
@@ -17,7 +17,9 @@ The last version works with API 1.1, if you are using API 1.0, obtain the target
 
 To get started, add the following to your .NET script:
 
-    using conekta;
+```csharp
+using conekta;
+```
 
 
 ## Usage
@@ -30,14 +32,14 @@ To get started, add the following to your .NET script:
         ""phone"": ""+5215555555555"",
         ""email"": ""jul@conekta.io""
       },
-            ""line_items"": [{
-              ""name"": ""Box of Cohiba S1s"",
-              ""description"": ""Imported From Mex."",
-              ""unit_price"": 35000,
-              ""quantity"": 1,
-              ""tags"": [""food"", ""mexican food""],
-              ""type"": ""physical""
-            }],
+      ""line_items"": [{
+        ""name"": ""Box of Cohiba S1s"",
+        ""description"": ""Imported From Mex."",
+        ""unit_price"": 35000,
+        ""quantity"": 1,
+        ""tags"": [""food"", ""mexican food""],
+        ""type"": ""physical""
+      }],
       ""charges"": [{
         ""source"": {
           ""type"": ""card"",
@@ -47,7 +49,6 @@ To get started, add the following to your .NET script:
     }");
     
     // Handling Errors
-    
     try
     {
       new conekta.Order().create(@"{
@@ -97,7 +98,6 @@ Conekta.FiscalEntity.update : Conekta.FiscalEntity
 ## Documentation
 
 Please see https://www.conekta.io/docs/api-v1_1 for up-to-date documentation.
-
 
 License
 -------
