@@ -62,12 +62,12 @@ namespace conekta
 					{
 						string responseText = reader.ReadToEnd();
 
+						System.Console.WriteLine(responseText);
+
 						JObject obj = JsonConvert.DeserializeObject<JObject>(responseText, new JsonSerializerSettings
 						{
 							NullValueHandling = NullValueHandling.Ignore
 						});
-
-						System.Console.WriteLine(obj);
 
 						ConektaException ex = new ConektaException(obj.GetValue("type").ToString());
 						ex.details = (JArray)obj["details"];
