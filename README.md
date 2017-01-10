@@ -76,24 +76,24 @@ Conekta.Order.find(string) : Conekta.Order
 Conekta.Order.where(string) : Conekta.Order[]
 Conekta.Order.createCharge(string) : Conekta.Charge
 Conekta.Order.createLineItem(string) : Conekta.Lineitem
-Conekta.Lineitem.update : Conekta.Lineitem
+Conekta.Lineitem.update(string) : Conekta.Lineitem
 Conekta.Order.createTaxLine(string) : Conekta.TaxLine
-Conekta.TaxLine.update : Conekta.TaxLine
-Conekta.Order.createShippingLine(hash) : Conekta.ShippingLine
-Conekta.ShippingLine.update : Conekta.ShippingLine
-Conekta.Order.createDiscountLine(hash) : Conekta.DiscountLine
-Conekta.DiscountLine.update : Conekta.DiscountLine
-Conekta.Customer.create(hash) : Conekta.Customer
-Conekta.Customer.update(hash) : Conekta.Customer
-Conekta.Customer.find(hash) : Conekta.Customer
-Conekta.Customer.where(hash) : Conekta.Customer[]
-Conekta.Customer.destroy(hash) : Conekta.Customer
-Conekta.Customer.createSource(hash) : Conekta.Source
-Conekta.Source.update : Conekta.Source
-Conekta.Customer.createShippingContact(hash) : Conekta.ShippingContact
-Conekta.ShippingContact.update : Conekta.ShippingContact
-Conekta.Customer.createFiscalEntity(hash) : Conekta.FiscalEntity
-Conekta.FiscalEntity.update : Conekta.FiscalEntity
+Conekta.TaxLine.update(string) : Conekta.TaxLine
+Conekta.Order.createShippingLine(string) : Conekta.ShippingLine
+Conekta.ShippingLine.update(string) : Conekta.ShippingLine
+Conekta.Order.createDiscountLine(string) : Conekta.DiscountLine
+Conekta.DiscountLine.update(string) : Conekta.DiscountLine
+Conekta.Customer.create(string) : Conekta.Customer
+Conekta.Customer.update(string) : Conekta.Customer
+Conekta.Customer.find(string) : Conekta.Customer
+Conekta.Customer.where(string) : Conekta.Customer[]
+Conekta.Customer.destroy(string) : Conekta.Customer
+Conekta.Customer.createSource(string) : Conekta.Source
+Conekta.Source.update(string) : Conekta.Source
+Conekta.Customer.createShippingContact(string) : Conekta.ShippingContact
+Conekta.ShippingContact.update(string) : Conekta.ShippingContact
+Conekta.Customer.createFiscalEntity(string) : Conekta.FiscalEntity
+Conekta.FiscalEntity.update(string) : Conekta.FiscalEntity
 ```
 
 ## Documentation
