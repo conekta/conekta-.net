@@ -8,6 +8,7 @@
     <RootNamespace>conekta</RootNamespace>
     <AssemblyName>conekta</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ReleaseVersion>1.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,21 +45,24 @@
     <Compile Include="Base\Requestor.cs" />
     <Compile Include="Base\Resource.cs" />
     <Compile Include="Conekta.cs" />
-    <Compile Include="Models\BillingAddress.cs" />
     <Compile Include="Models\Charge.cs" />
-    <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\Details.cs" />
     <Compile Include="Models\LineItem.cs" />
-    <Compile Include="Models\Cash.cs" />
-    <Compile Include="Models\Bank.cs" />
-    <Compile Include="Models\ShippingAddress.cs" />
-    <Compile Include="Models\Card.cs" />
     <Compile Include="Models\Plan.cs" />
     <Compile Include="Models\Subscription.cs" />
     <Compile Include="Models\Webhook.cs" />
     <Compile Include="Models\Log.cs" />
-    <Compile Include="Models\PaymentMethod.cs" />
     <Compile Include="Base\ConektaException.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\ShippingLine.cs" />
+    <Compile Include="Models\TaxLine.cs" />
+    <Compile Include="Models\DiscountLine.cs" />
+    <Compile Include="Models\ShippingContact.cs" />
+    <Compile Include="Models\FiscalEntity.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Return.cs" />
+    <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\AddressBoundary.cs" />
+    <Compile Include="Models\Source.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

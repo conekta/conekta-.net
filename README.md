@@ -1,7 +1,7 @@
 
 ![alt tag](https://raw.github.com/conekta/conekta-.net/master/readme_files/cover.png)
 
-# Conekta .NET v.1
+# Conekta .NET 1.0
 
 This is a .net library that allows interaction with https://api.conekta.io API.
 
@@ -11,79 +11,93 @@ Obtain the latest version of the Conekta .NET bindings with:
 
     git clone https://github.com/conekta/conekta-.net
 
+The last version works with API 1.1, if you are using API 1.0, obtain the target release with:
+
+    https://github.com/conekta/conekta-.net/archive/3.0-stable.zip
+
 To get started, add the following to your .NET script:
 
-    using conekta;
+```csharp
+using conekta;
+```
 
 
 ## Usage
 
-    conekta.Charge charge = new conekta.Charge ().create(@"{
-      ""description"":""Stogies"",
-      ""amount"": 20000,
+```csharp
+    Order order = new conekta.Order().create(@"{
       ""currency"":""MXN"",
-      ""reference_id"":""9839-wolf_pack"",
-      ""card"": ""tok_test_visa_4242"",
-      ""details"": {
-        ""name"": ""Arnulfo Quimare"",
-        ""phone"": ""403-342-0642"",
-        ""email"": ""logan@x-men.org"",
-        ""customer"": {
-          ""logged_in"": true,
-          ""successful_purchases"": 14,
-          ""created_at"": 1379784950,
-          ""updated_at"": 1379784950,
-          ""offline_payments"": 4,
-          ""score"": 9
-        },
-        ""line_items"": [{
-          ""name"": ""Box of Cohiba S1s"",
-          ""description"": ""Imported From Mex."",
-          ""unit_price"": 20000,
-          ""quantity"": 1,
-          ""sku"": ""cohb_s1"",
-          ""category"": ""food""
-        }],
-        ""billing_address"": {
-          ""street1"":""77 Mystery Lane"",
-          ""street2"": ""Suite 124"",
-          ""street3"": null,
-          ""city"": ""Darlington"",
-          ""state"":""NJ"",
-          ""zip"": ""10192"",
-          ""country"": ""Mexico"",
-          ""tax_id"": ""xmn671212drx"",
-          ""company_name"":""X-Men Inc."",
-          ""phone"": ""77-777-7777"",
-          ""email"": ""purshasing@x-men.org""
+      ""customer_info"": {
+        ""name"": ""Jul Ceballos"",
+        ""phone"": ""+5215555555555"",
+        ""email"": ""jul@conekta.io""
+      },
+      ""line_items"": [{
+        ""name"": ""Box of Cohiba S1s"",
+        ""description"": ""Imported From Mex."",
+        ""unit_price"": 35000,
+        ""quantity"": 1,
+        ""tags"": [""food"", ""mexican food""],
+        ""type"": ""physical""
+      }],
+      ""charges"": [{
+        ""source"": {
+          ""type"": ""card"",
+          ""token_id"": ""tok_test_visa_4242""
         }
-      }
+      }]
     }");
     
     // Handling Errors
-    
-    try {
-        conekta.Charge charge = new conekta.Charge ().create(@"{
-          ""description"":""Stogies"",
-          ""amount"": 20000,
-          ""currency"":""MXN"",
-          ""reference_id"":""9839-wolf_pack"",
-          ""card"": ""tok_test_visa_4242"",
-        }");
-    } catch (ConektaException e) {
-        System.Console.WriteLine(e);
-        /* ConektaException has attributes:
-         * Message
-         * message_to_purchaser
-         * _type
-         * message
-         */
+    try
+    {
+      new conekta.Order().create(@"{
+        ""currency"":""MXN"",
+        ""customer_info"": {
+          ""name"": ""Jul Ceballos"",
+          ""phone"": ""+5215555555555"",
+          ""email"": ""jul@conekta.io""
+        }
+      }");
     }
+    catch (ConektaException e)
+    {
+      Assert.AreEqual(e._object, "error");
+      Assert.AreEqual(e._type, "parameter_validation_error");
+    }
+```
+
+## Endpoints
+
+```
+Conekta.Order.create(string) : Conekta.Order
+Conekta.Order.update(string) : Conekta.Order
+Conekta.Order.find(string) : Conekta.Order
+Conekta.Order.where(string) : Conekta.Order[]
+Conekta.Order.createLineItem(string) : Conekta.Lineitem
+Conekta.Lineitem.update : Conekta.Lineitem
+Conekta.Order.createTaxLine(string) : Conekta.TaxLine
+Conekta.TaxLine.update : Conekta.TaxLine
+Conekta.Order.createShippingLine(hash) : Conekta.ShippingLine
+Conekta.ShippingLine.update : Conekta.ShippingLine
+Conekta.Order.createDiscountLine(hash) : Conekta.DiscountLine
+Conekta.DiscountLine.update : Conekta.DiscountLine
+Conekta.Customer.create(hash) : Conekta.Customer
+Conekta.Customer.update(hash) : Conekta.Customer
+Conekta.Customer.find(hash) : Conekta.Customer
+Conekta.Customer.where(hash) : Conekta.Customer[]
+Conekta.Customer.destroy(hash) : Conekta.Customer
+Conekta.Customer.createSource(hash) : Conekta.Source
+Conekta.Source.update : Conekta.Source
+Conekta.Customer.createShippingContact(hash) : Conekta.ShippingContact
+Conekta.ShippingContact.update : Conekta.ShippingContact
+Conekta.Customer.createFiscalEntity(hash) : Conekta.FiscalEntity
+Conekta.FiscalEntity.update : Conekta.FiscalEntity
+```
 
 ## Documentation
 
-Please see https://www.conekta.io/docs/api for up-to-date documentation.
-
+Please see https://www.conekta.io/docs/api-v1_1 for up-to-date documentation.
 
 License
 -------

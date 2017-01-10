@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Reflection;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -54,6 +57,55 @@ namespace conekta
 		public string delete(String resource_uri)
 		{
 			return requestor.request ("DELETE", resource_uri);
+		}
+
+		public JObject toObject(string json)
+		{
+			JObject result = JObject.Parse(json);
+
+			JObject obj = new JObject();
+
+			foreach (KeyValuePair<string, JToken> item in result)
+			{
+				var key = item.Key;
+				var properties = this.Clone().GetType().GetProperties();
+
+				foreach (PropertyInfo property in properties)
+				{
+					var property_name = property.Name;
+					var property_type = property.PropertyType.ToString();
+					var multi = false;
+
+					if (property.PropertyType.IsArray && property_name != "tags")
+					{
+						multi = true;
+					}
+
+					Regex pattern = new Regex("\\[\\]", RegexOptions.Multiline | RegexOptions.IgnoreCase);
+					property_type = pattern.Replace(property_type, "");
+
+
+					if (property_name == key)
+					{
+						if (multi)
+						{
+							obj.Add(key, item.Value["data"]);
+						}
+						else if (item.Value.Type.ToString() != "Null")
+						{
+							obj.Add(key, item.Value);
+						}
+					}
+
+					if (property_name == "object")
+					{
+						obj.Add("_object", item.Value);
+						obj.Remove("object");
+					}
+				}
+			}
+
+			return obj;
 		}
 
 	}

@@ -1,12 +1,15 @@
 ﻿using System;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace conekta
 {
 	public class ConektaException : Exception
 	{
-		public String message_to_purchaser;
-		public String message;
+		public JArray details;
+		public string message;
 		public String _type;
+		public String _object;
 
 		public ConektaException()
 		{

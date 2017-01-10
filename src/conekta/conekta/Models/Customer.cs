@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Text.RegularExpressions;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -11,74 +11,90 @@ namespace conekta
 		public string name { get; set; }
 		public string email { get; set; }
 		public string phone { get; set; }
-		public List<Card> cards { get; set; }
-		public Subscription subscription { get; set; }
-		public string plan { get; set; }
-
-		public bool logged_in { get; set; }
-		public int successful_purchases { get; set; }
-		public int created_at { get; set; }
-		public int updated_at { get; set; }
-		public int offline_payments { get; set; }
-		public int score { get; set; }
-
-		public Customer toClass(string json)
-		{
-			return JsonConvert.DeserializeObject<Customer> (json, new JsonSerializerSettings {
-				NullValueHandling = NullValueHandling.Ignore
-			});
-		}
-
-		public Card toCard(string json)
-		{
-			Card card = JsonConvert.DeserializeObject<Card> (json, new JsonSerializerSettings {
-				NullValueHandling = NullValueHandling.Ignore
-			});
-			card.customer = this;
-			this.cards.Add (card);
-			return card;
-		}
-
-		public Subscription toSubscription(string json)
-		{
-			Subscription subscription = JsonConvert.DeserializeObject<Subscription> (json, new JsonSerializerSettings {
-				NullValueHandling = NullValueHandling.Ignore
-			});
-			this.subscription = subscription;
-			this.plan = subscription.plan_id;
-			return subscription;
-		}
+		public bool corporate { get; set; }
+		public Source[] sources { get; set; }
+		public FiscalEntity[] fiscal_entities { get; set; }
+		public ShippingContact[] shipping_contacts { get; set; }
+		public int account_age { get; set; }
+		public int paid_transactions { get; set; }
+		public int first_paid_at { get; set; }
 
 		public Customer create(string data)
 		{
-			return this.toClass (this.create ("/customers", data));
+			string customer = this.create("/customers", data);
+			return this.toClass(this.toObject(customer).ToString());
 		}
 
 		public Customer find(string id)
 		{
-			return this.toClass (this.find ("/customers", id));
+			string customer = this.find("/customers", id);
+			return this.toClass(this.toObject(customer).ToString());
+		}
+
+		public Customer[] where(JObject data)
+		{
+			string result = this.where("/customers", data.ToString());
+
+			Regex pattern = new Regex("\"object\":", RegexOptions.Multiline | RegexOptions.IgnoreCase);
+			result = pattern.Replace(result, "\"_object\":");
+
+			JObject ords = JObject.Parse(result);
+
+			JArray list = (JArray)ords["data"];
+
+			Customer[] customers = new Customer[list.Count];
+
+			int counter = 0;
+
+			foreach (var item in ords.GetValue("data"))
+			{
+				customers[counter] = this.toClass(this.toObject(item.ToString()).ToString());
+				counter++;
+			}
+
+			return customers;
 		}
 
 		public Customer update(string data)
 		{
-			return this.toClass (this.update ("/customers/" + this.id, data));
+			Customer customer = this.toClass(this.toObject(this.update("/customers/" + this.id, data)).ToString());
+			return customer;
 		}
 
-		public Customer delete()
+		public Customer destroy()
 		{
-			return this.toClass (this.delete ("/customers/" + this.id));
+			this.delete("/customers/" + this.id);
+			return this;
 		}
 
-		public Card createCard(string data)
+		public Source createSource(string data)
 		{
-			return this.toCard (this.create ("/customers/" + this.id + "/cards", data));
+			string source = this.create("/customers/" + this.id + "/sources", data);
+			Source skeleton = new Source();
+			return skeleton.toClass(skeleton.toObject(source).ToString());
 		}
 
-		public Subscription createSubscription(string data)
+		public ShippingContact createShippingContact(string data)
 		{
-			return this.toSubscription (this.create ("/customers/" + this.id + "/subscription", data));
+			string shipping_contact = this.create("/customers/" + this.id + "/shipping_contacts", data);
+			ShippingContact skeleton = new ShippingContact();
+			return skeleton.toClass(skeleton.toObject(shipping_contact).ToString());
 		}
 
+		public FiscalEntity createFiscalEntity(string data)
+		{
+			string fiscal_entity = this.create("/customers/" + this.id + "/fiscal_entities", data);
+			FiscalEntity skeleton = new FiscalEntity();
+			return skeleton.toClass(skeleton.toObject(fiscal_entity).ToString());
+		}
+
+		public Customer toClass(string json)
+		{
+			Customer customer = JsonConvert.DeserializeObject<Customer>(json, new JsonSerializerSettings
+			{
+				NullValueHandling = NullValueHandling.Ignore
+			});
+			return customer;
+		}
 	}
 }
-
