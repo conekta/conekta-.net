@@ -74,6 +74,7 @@ Conekta.Order.create(string) : Conekta.Order
 Conekta.Order.update(string) : Conekta.Order
 Conekta.Order.find(string) : Conekta.Order
 Conekta.Order.where(string) : Conekta.Order[]
+Conekta.Order.createCharge(string) : Conekta.Charge
 Conekta.Order.createLineItem(string) : Conekta.Lineitem
 Conekta.Lineitem.update : Conekta.Lineitem
 Conekta.Order.createTaxLine(string) : Conekta.TaxLine

@@ -70,6 +70,59 @@ namespace ConektaTest
 		}
 
 		[Test()]
+		public void createCharge()
+		{
+			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+			conekta.Api.version = "1.1.0";
+
+			Order order = new conekta.Order().create(@"{
+	            ""currency"":""MXN"",
+				""customer_info"": {
+					""name"": ""Jul Ceballos"",
+					""phone"": ""+5215555555555"",
+					""email"": ""jul@conekta.io""
+				},
+	            ""line_items"": [{
+	              ""name"": ""Box of Cohiba S1s"",
+	              ""description"": ""Imported From Mex."",
+	              ""unit_price"": 35000,
+	              ""quantity"": 1,
+	              ""tags"": [""food"", ""mexican food""],
+	              ""type"": ""physical""
+	            }]
+	        }");
+
+			order.createCharge(@"{
+				""source"": {
+					""type"": ""card"",
+					""token_id"": ""tok_test_visa_4242""
+				},
+				""amount"": 35000
+			}");
+
+			order = new Order().find(order.id);
+
+			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
+			Assert.AreEqual(order.status, "fulfilled");
+			Assert.AreEqual(order.amount, 35000);
+
+			order = new Order().find(order.id);
+
+			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
+			Assert.AreEqual(order.status, "fulfilled");
+			Assert.AreEqual(order.amount, 35000);
+
+			order = order.createReturn(@"{""amount"": 35000}");
+
+			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
+			Assert.AreEqual(order.status, "returned");
+			Assert.AreEqual(order.amount, 35000);
+
+			Order[] orders = new Order().where(new JObject());
+			Assert.AreEqual(orders[0].id.GetType().ToString(), "System.String");
+		}
+
+		[Test()]
 		public void createCardError()
 		{
 			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";

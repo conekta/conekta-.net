@@ -80,6 +80,13 @@ namespace conekta
 			return this.find(obj.GetValue("parent_id").ToString());
 		}
 
+		public Charge createCharge(string data)
+		{
+			string charge = this.request("POST", "/orders/" + this.id + "/charges", data);
+			Charge skeleton = new Charge();
+			return skeleton.toClass(skeleton.toObject(charge).ToString());
+		}
+
 		public LineItem createLineItem(string data)
 		{
 			string line_item = this.request("POST", "/orders/" + this.id + "/line_items", data);
