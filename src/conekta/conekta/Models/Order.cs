@@ -11,17 +11,17 @@ namespace conekta
 		public int amount { get; set; }
 		public string currency { get; set; }
 		public string status { get; set; }
-		public LineItem[] line_items { get; set; }
-		public ShippingLine[] shipping_lines { get; set; }
-		public TaxLine[] tax_lines { get; set; }
-		public DiscountLine[] discount_lines { get; set; }
+		public ConektaList line_items { get; set; }
+		public ConektaList shipping_lines { get; set; }
+		public ConektaList tax_lines { get; set; }
+		public ConektaList discount_lines { get; set; }
 		public string customer_id { get; set; }
 		public Customer customer_info { get; set; }
 		public string shipping_contact_id { get; set; }
 		public ShippingContact shipping_contact { get; set; }
 		public FiscalEntity fiscal_entity { get; set; }
-		public Charge[] charges { get; set; }
-		public Return[] returns { get; set; }
+		public ConektaList charges { get; set; }
+		public ConektaList returns { get; set; }
 		public string _object { get; set; }
 
 		public Order create(string data)

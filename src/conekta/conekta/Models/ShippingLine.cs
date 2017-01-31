@@ -8,7 +8,6 @@ namespace conekta
 	public class ShippingLine : Resource
 	{
 		public string id { get; set; }
-		public string description { get; set; }
 		public int amount { get; set; }
 		public string tracking_number { get; set; }
 		public string carrier { get; set; }

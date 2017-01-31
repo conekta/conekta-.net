@@ -5,7 +5,7 @@ using Newtonsoft.Json.Linq;
 
 namespace conekta
 {
-	public class Source : Resource
+	public class PaymentSource : Resource
 	{
 		public string id { get; set; }
 		public string type { get; set; }
@@ -23,25 +23,25 @@ namespace conekta
 
 		public string parent_id { get; set; }
 
-		public Source update(string data)
+		public PaymentSource update(string data)
 		{
-			Source source = this.toClass(this.toObject(this.update("/customers/" + this.parent_id + "/sources/" + this.id, data)).ToString());
-			return source;
+			PaymentSource payment_source = this.toClass(this.toObject(this.update("/customers/" + this.parent_id + "/payment_sources/" + this.id, data)).ToString());
+			return payment_source;
 		}
 
-		public Source destroy()
+		public PaymentSource destroy()
 		{
-			this.delete("/customers/" + this.parent_id + "/sources/" + this.id);
+			this.delete("/customers/" + this.parent_id + "/payment_sources/" + this.id);
 			return this;
 		}
 
-		public Source toClass(string json)
+		public PaymentSource toClass(string json)
 		{
-			Source source = JsonConvert.DeserializeObject<Source>(json, new JsonSerializerSettings
+			PaymentSource payment_source = JsonConvert.DeserializeObject<PaymentSource>(json, new JsonSerializerSettings
 			{
 				NullValueHandling = NullValueHandling.Ignore
 			});
-			return source;
+			return payment_source;
 		}
 	}
 }

@@ -50,6 +50,7 @@ namespace conekta
 
 				WebResponse response = http.GetResponse ();
 				var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+
 				return responseString;
 			} catch (WebException webExcp) {
 				WebExceptionStatus status =  webExcp.Status;

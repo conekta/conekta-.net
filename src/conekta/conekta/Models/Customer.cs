@@ -12,7 +12,7 @@ namespace conekta
 		public string email { get; set; }
 		public string phone { get; set; }
 		public bool corporate { get; set; }
-		public Source[] sources { get; set; }
+		public PaymentSource[] payment_sources { get; set; }
 		public FiscalEntity[] fiscal_entities { get; set; }
 		public ShippingContact[] shipping_contacts { get; set; }
 		public int account_age { get; set; }
@@ -67,11 +67,11 @@ namespace conekta
 			return this;
 		}
 
-		public Source createSource(string data)
+		public PaymentSource createPaymentSource(string data)
 		{
-			string source = this.create("/customers/" + this.id + "/sources", data);
-			Source skeleton = new Source();
-			return skeleton.toClass(skeleton.toObject(source).ToString());
+			string payment_source = this.create("/customers/" + this.id + "/payment_sources", data);
+			PaymentSource skeleton = new PaymentSource();
+			return skeleton.toClass(skeleton.toObject(payment_source).ToString());
 		}
 
 		public ShippingContact createShippingContact(string data)
