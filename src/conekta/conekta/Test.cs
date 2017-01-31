@@ -9,6 +9,37 @@ using conekta;
 
 namespace ConektaTest
 {
+	[TestFixture()]
+	public class ListTest
+	{
+
+		[Test()]
+		public void getObject()
+		{
+			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+			conekta.Api.version = "2.0.0";
+
+			conekta.Order order = new conekta.Order().create(@"{
+	            ""currency"":""MXN"",
+				""customer_info"": {
+					""name"": ""Jul Ceballos"",
+					""phone"": ""+5215555555555"",
+					""email"": ""jul@conekta.io""
+				},
+	            ""line_items"": [{
+				   ""name"": ""Box of Cohiba S1s"",
+				   ""unit_price"": 35000,
+				   ""quantity"": 1
+				}]
+	        }");
+
+			order = new Order().find(order.id);
+
+			LineItem line_item = (LineItem)order.line_items.at(0);
+
+			Assert.AreEqual(line_item.unit_price, 35000);
+		}
+	}
 
 	[TestFixture()]
 	public class OrderTest

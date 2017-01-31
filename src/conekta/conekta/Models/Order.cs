@@ -24,6 +24,16 @@ namespace conekta
 		public ConektaList returns { get; set; }
 		public string _object { get; set; }
 
+		public Order()
+		{
+			this.line_items = new ConektaList(typeof(conekta.LineItem));
+			this.shipping_lines = new ConektaList(typeof(conekta.ShippingLine));
+			this.tax_lines = new ConektaList(typeof(conekta.TaxLine));
+			this.discount_lines = new ConektaList(typeof(conekta.DiscountLine));
+			this.charges = new ConektaList(typeof(conekta.Charge));
+			this.returns = new ConektaList(typeof(conekta.Return));
+		}
+
 		public Order create(string data)
 		{
 			string charge = this.create("/orders", data);
