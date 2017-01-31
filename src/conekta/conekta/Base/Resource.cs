@@ -20,7 +20,7 @@ namespace conekta
 
 		public Resource () {}
 
-		public string request(string method, string resource_uri, string data)
+		public string request(string method, string resource_uri, string data = "{}")
 		{
 			return requestor.request(method, resource_uri, data);
 		}

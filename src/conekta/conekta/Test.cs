@@ -37,6 +37,8 @@ namespace ConektaTest
 
 			LineItem line_item = (LineItem)order.line_items.at(0);
 
+			order.line_items.next_page();
+
 			Assert.AreEqual(line_item.unit_price, 35000);
 		}
 	}
@@ -383,9 +385,15 @@ namespace ConektaTest
 
 			order = new Order().find(order.id);
 
-			order.line_items.at(0);
+			LineItem line_item = (LineItem)order.line_items.at(0);
 
-			// Assert.AreEqual(line_item.description, "Imported From Mex.");
+			line_item = line_item.update(@"{
+				""name"": ""Box S1s"",
+				""unit_price"": 45000
+			}");
+
+			Assert.AreEqual(line_item.name, "Box S1s");
+			Assert.AreEqual(line_item.unit_price, 45000);
 		}
 
 		[Test()]
@@ -552,18 +560,12 @@ namespace ConektaTest
 
 			order = new Order().find(order.id);
 
-			//shipping_line = order.shipping_lines.at(0).update(@"{
-			//   ""description"": ""Free Shipping"",
-			//   ""amount"": 0,
-			//   ""tracking_number"": ""TRACK456"",
-			//   ""carrier"": ""USPS"",
-			//   ""method"": ""Train"",
-			//   ""contextual_data"": {
-			//      ""random_key"": ""random_value""
-			//   }
-			//}");
+			shipping_line = (ShippingLine)order.shipping_lines.at(0);
+			shipping_line = shipping_line.update(@"{
+			   ""carrier"": ""UPS""
+			}");
 
-			Assert.AreEqual(shipping_line.carrier, "Fedex");
+			Assert.AreEqual(shipping_line.carrier, "UPS");
 		}
 
 		[Test()]
@@ -634,11 +636,12 @@ namespace ConektaTest
 
 			order = new Order().find(order.id);
 
-			//discount_line = order.discount_lines[0].update(@"{
-			//    ""amount"": 700
-			//}");
+			discount_line = (DiscountLine)order.discount_lines.at(0);
+			discount_line.update(@"{
+			    ""amount"": 700
+			}");
 
-			Assert.AreEqual(discount_line.amount, 600);
+			Assert.AreEqual(discount_line.amount, 700);
 		}
 	}
 
@@ -663,7 +666,7 @@ namespace ConektaTest
 			    }],
 			    ""fiscal_entities"": [{
 			        ""tax_id"": ""AMGH851205MN1"",
-			        ""company_name"": ""Nike SA de CV"",
+			        ""name"": ""Nike SA de CV"",
 			        ""email"": ""contacto@nike.mx"",
 			        ""phone"": ""+5215544443333"",
 			        ""address"": {
@@ -683,7 +686,6 @@ namespace ConektaTest
 			        ""address"": {
 			            ""street1"": ""250 Alexis St"",
 			            ""street2"": ""fake street"",
-			            ""street3"": ""fake street"",
 			            ""city"": ""Red Deer"",
 			            ""state"": ""Alberta"",
 			            ""country"": ""CA"",
@@ -916,7 +918,6 @@ namespace ConektaTest
 			}");
 
 			ShippingContact shipping_contact = customer.createShippingContact(@"{
-			    ""email"": ""thomas.logan@xmen.org"",
 			    ""phone"": ""+5215555555555"",
 			    ""receiver"": ""Marvin Fuller"",
 			    ""between_streets"": ""Ackerman Crescent"",
@@ -1045,9 +1046,7 @@ namespace ConektaTest
 
 			FiscalEntity fiscal_entity = customer.createFiscalEntity(@"{
 			    ""tax_id"": ""AMGH851205MN1"",
-			    ""company_name"": ""Nike SA de CV"",
-			    ""email"": ""contacto@nike.mx"",
-			    ""phone"": ""+5215555555555"",
+			    ""name"": ""Nike SA de CV"",
 			    ""address"": {
 			        ""street1"": ""250 Alexis St"",
 			        ""street2"": ""fake street"",

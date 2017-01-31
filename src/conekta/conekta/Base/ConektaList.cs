@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Reflection;
 
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
 namespace conekta
 {
 
@@ -20,8 +23,13 @@ namespace conekta
 		public void next_page()
 		{
 			String next_url = this.next_page_url;
-			String response = this.request("GET", "", "{}");
-			System.Console.WriteLine(response);
+			//System.Console.WriteLine(next_url);
+			JObject response = this.toObject(this.request("GET", next_url));
+			//System.Console.WriteLine(response.GetValue("data"));
+			//var z = new int[this.data.Length + response.GetValue("data")];
+			//this.data.CopyTo(z, 0);
+			//response.data.CopyTo(z, this.data.Length);
+			//this.data = (object[])z;
 		}
 
 		public object at(int index)

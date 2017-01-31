@@ -20,6 +20,12 @@ namespace conekta
 			return shipping_line;
 		}
 
+		public ShippingLine destroy()
+		{
+			ShippingLine shipping_line = this.toClass(this.toObject(this.delete("/orders/" + this.parent_id + "/shipping_lines/" + this.id)).ToString());
+			return shipping_line;
+		}
+
 		public ShippingLine toClass(string json)
 		{
 			ShippingLine shipping_line = JsonConvert.DeserializeObject<ShippingLine>(json, new JsonSerializerSettings

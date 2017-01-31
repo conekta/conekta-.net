@@ -29,6 +29,7 @@ namespace conekta
 			}
 
 			try {
+				System.Console.WriteLine(resource_uri);
 				HttpWebRequest http = (HttpWebRequest)WebRequest.Create(conekta.Api.baseUri + resource_uri);
 				http.Accept = "application/vnd.conekta-v" + conekta.Api.version + "+json";
 				http.UserAgent = "Conekta/v1 DotNetBindings/Conekta::" + conekta.Api.version;
@@ -50,6 +51,8 @@ namespace conekta
 
 				WebResponse response = http.GetResponse ();
 				var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+
+				//System.Console.WriteLine(responseString);
 
 				return responseString;
 			} catch (WebException webExcp) {

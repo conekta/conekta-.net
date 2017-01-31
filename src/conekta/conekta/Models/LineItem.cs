@@ -25,6 +25,12 @@ namespace conekta
 			return line_item;
 		}
 
+		public LineItem destroy()
+		{
+			LineItem line_item = this.toClass(this.toObject(this.delete("/orders/" + this.parent_id + "/line_items/" + this.id)).ToString());
+			return line_item;
+		}
+
 		public LineItem toClass(string json)
 		{
 			LineItem item = JsonConvert.DeserializeObject<LineItem>(json, new JsonSerializerSettings
