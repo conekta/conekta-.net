@@ -30,6 +30,7 @@ namespace conekta
 
 			try {
 				System.Console.WriteLine(resource_uri);
+				System.Console.WriteLine(method);
 				HttpWebRequest http = (HttpWebRequest)WebRequest.Create(conekta.Api.baseUri + resource_uri);
 				http.Accept = "application/vnd.conekta-v" + conekta.Api.version + "+json";
 				http.UserAgent = "Conekta/v1 DotNetBindings/Conekta::" + conekta.Api.version;
@@ -40,7 +41,7 @@ namespace conekta
 				http.Headers.Add ("Accept-Language", conekta.Api.locale);
 
 				if (method == "POST" || method == "PUT") {
-					var dataBytes = Encoding.ASCII.GetBytes(data);
+					var dataBytes = Encoding.UTF8.GetBytes(data);
 
 					http.ContentLength = dataBytes.Length;
 					http.ContentType = "application/json";
@@ -61,7 +62,7 @@ namespace conekta
 				if (status == WebExceptionStatus.ProtocolError) {
 					HttpWebResponse httpResponse = (HttpWebResponse)webExcp.Response;
 
-					var encoding = ASCIIEncoding.ASCII;
+					var encoding = ASCIIEncoding.UTF8;
 					using (var reader = new System.IO.StreamReader(httpResponse.GetResponseStream(), encoding))
 					{
 						string responseText = reader.ReadToEnd();

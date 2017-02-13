@@ -15,6 +15,7 @@ namespace conekta
 		public PaymentSource[] payment_sources { get; set; }
 		public FiscalEntity[] fiscal_entities { get; set; }
 		public ShippingContact[] shipping_contacts { get; set; }
+		public Subscription subscription { get; set; }
 		public int account_age { get; set; }
 		public int paid_transactions { get; set; }
 		public int first_paid_at { get; set; }

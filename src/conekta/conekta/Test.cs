@@ -104,19 +104,19 @@ namespace ConektaTest
 	        }");
 
 			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-			Assert.AreEqual(order.status, "fulfilled");
+			Assert.AreEqual(order.payment_status, "paid");
 			Assert.AreEqual(order.amount, 35000);
 
 			order = new Order().find(order.id);
 
 			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-			Assert.AreEqual(order.status, "fulfilled");
+			Assert.AreEqual(order.payment_status, "paid");
 			Assert.AreEqual(order.amount, 35000);
 
 			order = order.createReturn(@"{""amount"": 35000}");
 
 			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-			Assert.AreEqual(order.status, "returned");
+			Assert.AreEqual(order.payment_status, "refunded");
 			Assert.AreEqual(order.amount, 35000);
 
 			Order[] orders = new Order().where(new JObject());
@@ -154,19 +154,19 @@ namespace ConektaTest
 			order = new Order().find(order.id);
 
 			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-			Assert.AreEqual(order.status, "fulfilled");
+			Assert.AreEqual(order.payment_status, "paid");
 			Assert.AreEqual(order.amount, 35000);
 
 			order = new Order().find(order.id);
 
 			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-			Assert.AreEqual(order.status, "fulfilled");
+			Assert.AreEqual(order.payment_status, "paid");
 			Assert.AreEqual(order.amount, 35000);
 
 			order = order.createReturn(@"{""amount"": 35000}");
 
 			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-			Assert.AreEqual(order.status, "returned");
+			Assert.AreEqual(order.payment_status, "refunded");
 			Assert.AreEqual(order.amount, 35000);
 
 			Order[] orders = new Order().where(new JObject());
@@ -207,23 +207,20 @@ namespace ConektaTest
 			order = order.capture();
 
 			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-			Assert.AreEqual(order.status, "fulfilled");
+			Assert.AreEqual(order.payment_status, "paid");
 			Assert.AreEqual(order.amount, 35000);
 
 			order = new Order().find(order.id);
 
 			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-			Assert.AreEqual(order.status, "fulfilled");
+			Assert.AreEqual(order.payment_status, "paid");
 			Assert.AreEqual(order.amount, 35000);
 
 			order = order.createReturn(@"{""amount"": 35000}");
 
 			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-			Assert.AreEqual(order.status, "returned");
+			Assert.AreEqual(order.payment_status, "refunded");
 			Assert.AreEqual(order.amount, 35000);
-
-			Order[] orders = new Order().where(new JObject());
-			Assert.AreEqual(orders[0].id.GetType().ToString(), "System.String");
 		}
 
 		[Test()]
@@ -272,22 +269,15 @@ namespace ConektaTest
 					""payment_source"": {
 						""type"": ""oxxo_cash"",
 						""expires_at"": 1513036800
-					}
+					},
+					""amount"": 35000
 				}]
 	        }");
 
 			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-			Assert.AreEqual(order.status, "created");
+			System.Console.WriteLine(order.payment_status);
+			Assert.AreEqual(order.payment_status, "payment_pending");
 			Assert.AreEqual(order.amount, 35000);
-
-			order = new Order().find(order.id);
-
-			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-			Assert.AreEqual(order.status, "created");
-			Assert.AreEqual(order.amount, 35000);
-
-			Order[] orders = new Order().where(new JObject());
-			Assert.AreEqual(orders[0].id.GetType().ToString(), "System.String");
 		}
 
 		[Test()]
@@ -311,7 +301,6 @@ namespace ConektaTest
 	        }");
 
 			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-			Assert.AreEqual(order.status, "created");
 			Assert.AreEqual(order.amount, 35000);
 
 			order = new Order().find(order.id);
@@ -319,11 +308,7 @@ namespace ConektaTest
 			order = order.update(@"{""currency"": ""USD""}");
 
 			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-			Assert.AreEqual(order.status, "created");
 			Assert.AreEqual(order.amount, 35000);
-
-			Order[] orders = new Order().where(new JObject());
-			Assert.AreEqual(orders[0].id.GetType().ToString(), "System.String");
 		}
 
 		[Test()]
@@ -347,7 +332,6 @@ namespace ConektaTest
 	        }");
 
 			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-			Assert.AreEqual(order.status, "created");
 
 			order = new Order().find(order.id);
 
@@ -381,7 +365,6 @@ namespace ConektaTest
 	        }");
 
 			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-			Assert.AreEqual(order.status, "created");
 
 			order = new Order().find(order.id);
 
@@ -417,7 +400,6 @@ namespace ConektaTest
 	        }");
 
 			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-			Assert.AreEqual(order.status, "created");
 
 			order = new Order().find(order.id);
 
@@ -457,7 +439,6 @@ namespace ConektaTest
 	        }");
 
 			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-			Assert.AreEqual(order.status, "created");
 
 			order = new Order().find(order.id);
 
@@ -506,7 +487,6 @@ namespace ConektaTest
 	        }");
 
 			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-			Assert.AreEqual(order.status, "created");
 
 			order = new Order().find(order.id);
 
@@ -544,7 +524,6 @@ namespace ConektaTest
 	        }");
 
 			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-			Assert.AreEqual(order.status, "created");
 
 			order = new Order().find(order.id);
 
@@ -589,7 +568,6 @@ namespace ConektaTest
 	        }");
 
 			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-			Assert.AreEqual(order.status, "created");
 
 			order = new Order().find(order.id);
 
@@ -613,7 +591,7 @@ namespace ConektaTest
 	            ""currency"":""MXN"",
 				""customer_info"": {
 					""name"": ""Jul Ceballos"",
-					""phone"": ""+5215555555555"",
+					""phone"": ""5575553324"",
 					""email"": ""jul@conekta.io""
 				},
 	            ""line_items"": [{
@@ -624,7 +602,6 @@ namespace ConektaTest
 	        }");
 
 			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-			Assert.AreEqual(order.status, "created");
 
 			order = new Order().find(order.id);
 
@@ -637,10 +614,14 @@ namespace ConektaTest
 			order = new Order().find(order.id);
 
 			discount_line = (DiscountLine)order.discount_lines.at(0);
-			discount_line.update(@"{
-			    ""amount"": 700
+			discount_line = discount_line.update(@"{
+			    ""amount"": 700,
+				""code"": ""567"",
+			    ""type"": ""coupon""
 			}");
 
+			Assert.AreEqual(discount_line.type, "coupon");
+			Assert.AreEqual(discount_line.code, "567");
 			Assert.AreEqual(discount_line.amount, 700);
 		}
 	}
@@ -714,7 +695,7 @@ namespace ConektaTest
 
 			Customer customer = new conekta.Customer().create(@"{
 			    ""name"": ""Emiliano Cabrera"",
-			    ""phone"": ""+5215544443333"",
+			    ""phone"": ""5575553322"",
 			    ""email"": ""user@example.com"",
 			    ""corporate"": true
 			}");
@@ -732,9 +713,8 @@ namespace ConektaTest
 				""name"": ""Juan Perez""
 			}");
 
-			System.Console.WriteLine(customer.name);
-
 			Assert.AreEqual(customer.name, "Juan Perez");
+			Assert.AreEqual(customer.corporate, false);
 		}
 
 		[Test()]
@@ -776,33 +756,17 @@ namespace ConektaTest
 			    ""name"": ""Emiliano Cabrera"",
 			    ""phone"": ""+5215544443333"",
 			    ""email"": ""user@example.com"",
-			    ""plan_id"": ""gold-plan"",
 			    ""corporate"": true,
-			    ""payment_sources"": [{
-			        ""token_id"": ""tok_test_visa_4242"",
-			        ""type"": ""card""
-			    }]
+			    ""payment_sources"": []
 			}");
 
 			PaymentSource payment_source = customer.createPaymentSource(@"{
-			    ""type"": ""card"",
-			    ""name"": ""Emiliano Cabrera"",
-			    ""number"": ""4242424242424242"",
-			    ""exp_month"": ""12"",
-			    ""exp_year"": ""20"",
-			    ""cvc"": ""123"",
-			    ""address"": {
-			        ""street1"": ""Tamesis"",
-			        ""street2"": ""114"",
-			        ""city"": ""Monterrey"",
-			        ""state"": ""Nuevo Leon"",
-			        ""country"": ""MX"",
-			        ""postal_code"": ""64700""
-			    }
+			    ""token_id"": ""tok_test_visa_4242"",
+			    ""type"": ""card""
 			}");
 
 			Assert.AreEqual(payment_source.type, "card");
-			Assert.AreEqual(payment_source.name, "Emiliano Cabrera");
+			Assert.AreEqual(payment_source.name, "Jorge Lopez");
 		}
 
 		[Test()]
@@ -819,20 +783,8 @@ namespace ConektaTest
 			}");
 
 			PaymentSource payment_source = customer.createPaymentSource(@"{
-			    ""type"": ""card"",
-			    ""name"": ""Emiliano Cabrera"",
-			    ""number"": ""4242424242424242"",
-			    ""exp_month"": ""12"",
-			    ""exp_year"": ""20"",
-			    ""cvc"": ""123"",
-			    ""address"": {
-			        ""street1"": ""Tamesis"",
-			        ""street2"": ""114"",
-			        ""city"": ""Monterrey"",
-			        ""state"": ""Nuevo Leon"",
-			        ""country"": ""MX"",
-			        ""postal_code"": ""64700""
-			    }
+			    ""token_id"": ""tok_test_visa_4242"",
+			    ""type"": ""card""
 			}");
 
 			payment_source = payment_source.update(@"{
@@ -855,20 +807,8 @@ namespace ConektaTest
 			}");
 
 			PaymentSource payment_source = customer.createPaymentSource(@"{
-			    ""type"": ""card"",
-			    ""name"": ""Emiliano Cabrera"",
-			    ""number"": ""4242424242424242"",
-			    ""exp_month"": ""12"",
-			    ""exp_year"": ""20"",
-			    ""cvc"": ""123"",
-			    ""address"": {
-			        ""street1"": ""Tamesis"",
-			        ""street2"": ""114"",
-			        ""city"": ""Monterrey"",
-			        ""state"": ""Nuevo Leon"",
-			        ""country"": ""MX"",
-			        ""postal_code"": ""64700""
-			    }
+			    ""token_id"": ""tok_test_visa_4242"",
+			    ""type"": ""card""
 			}");
 
 			payment_source = payment_source.update(@"{
@@ -943,13 +883,13 @@ namespace ConektaTest
 
 			Customer customer = new conekta.Customer().create(@"{
 			    ""name"": ""Emiliano Cabrera"",
-			    ""phone"": ""5555555555"",
+			    ""phone"": ""5575553322"",
 			    ""email"": ""user@example.com"",
 			    ""corporate"": true
 			}");
 
 			ShippingContact shipping_contact = customer.createShippingContact(@"{
-			    ""phone"": ""5555555555"",
+			    ""phone"": ""5575553322"",
 			    ""receiver"": ""Marvin Fuller"",
 			    ""between_streets"": ""Ackerman Crescent"",
 			    ""address"": {
@@ -964,10 +904,10 @@ namespace ConektaTest
 			}");
 
 			shipping_contact = shipping_contact.update(@"{
-				""phone"": ""6666666666"",
+				""phone"": ""5575553324""
 			}");
 
-			Assert.AreEqual(shipping_contact.phone, "6666666666");
+			Assert.AreEqual(shipping_contact.phone, "5575553324");
 		}
 
 		[Test()]

@@ -10,7 +10,7 @@ namespace conekta
 		public string id { get; set; }
 		public int amount { get; set; }
 		public string currency { get; set; }
-		public string status { get; set; }
+		public string payment_status { get; set; }
 		public ConektaList line_items { get; set; }
 		public ConektaList shipping_lines { get; set; }
 		public ConektaList tax_lines { get; set; }
@@ -85,7 +85,7 @@ namespace conekta
 
 		public Order createReturn(string data)
 		{
-			string charge = this.request("POST", "/orders/" + this.id + "/returns", data);
+			string charge = this.request("POST", "/orders/" + this.id + "/refunds", data);
 			JObject obj = new Charge().toObject(charge);
 			return this.find(obj.GetValue("parent_id").ToString());
 		}
