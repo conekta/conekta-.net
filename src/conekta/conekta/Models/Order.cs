@@ -86,8 +86,7 @@ namespace conekta
 		public Order createReturn(string data)
 		{
 			string charge = this.request("POST", "/orders/" + this.id + "/refunds", data);
-			JObject obj = new Charge().toObject(charge);
-			return this.find(obj.GetValue("parent_id").ToString());
+			return this.toClass(this.toObject(charge).ToString());
 		}
 
 		public Charge createCharge(string data)

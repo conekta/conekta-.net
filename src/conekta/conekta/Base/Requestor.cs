@@ -29,8 +29,6 @@ namespace conekta
 			}
 
 			try {
-				System.Console.WriteLine(resource_uri);
-				System.Console.WriteLine(method);
 				HttpWebRequest http = (HttpWebRequest)WebRequest.Create(conekta.Api.baseUri + resource_uri);
 				http.Accept = "application/vnd.conekta-v" + conekta.Api.version + "+json";
 				http.UserAgent = "Conekta/v1 DotNetBindings/Conekta::" + conekta.Api.version;
@@ -50,41 +48,39 @@ namespace conekta
 					dataStream.Write (dataBytes, 0, dataBytes.Length);
 				}
 
-				WebResponse response = http.GetResponse ();
+				WebResponse response = http.GetResponse();
+
 				var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
 
-				//System.Console.WriteLine(responseString);
+				System.Console.WriteLine(responseString);
 
 				return responseString;
 			} catch (WebException webExcp) {
-				WebExceptionStatus status =  webExcp.Status;
+				WebExceptionStatus status = webExcp.Status;
 
-				if (status == WebExceptionStatus.ProtocolError) {
-					HttpWebResponse httpResponse = (HttpWebResponse)webExcp.Response;
+				HttpWebResponse httpResponse = (HttpWebResponse)webExcp.Response;
 
-					var encoding = ASCIIEncoding.UTF8;
-					using (var reader = new System.IO.StreamReader(httpResponse.GetResponseStream(), encoding))
+				var encoding = ASCIIEncoding.UTF8;
+				using (var reader = new System.IO.StreamReader(httpResponse.GetResponseStream(), encoding))
+				{
+					string responseText = reader.ReadToEnd();
+
+					System.Console.WriteLine(responseText);
+
+					JObject obj = JsonConvert.DeserializeObject<JObject>(responseText, new JsonSerializerSettings
 					{
-						string responseText = reader.ReadToEnd();
+						NullValueHandling = NullValueHandling.Ignore
+					});
 
-						System.Console.WriteLine(responseText);
+					ConektaException ex = new ConektaException(obj.GetValue("type").ToString());
+					ex.details = (JArray)obj["details"];
+					ex._object = obj.GetValue("object").ToString();
+					ex._type = obj.GetValue("type").ToString();
 
-						JObject obj = JsonConvert.DeserializeObject<JObject>(responseText, new JsonSerializerSettings
-						{
-							NullValueHandling = NullValueHandling.Ignore
-						});
-
-						ConektaException ex = new ConektaException(obj.GetValue("type").ToString());
-						ex.details = (JArray)obj["details"];
-						ex._object = obj.GetValue("object").ToString();
-						ex._type = obj.GetValue("type").ToString();
-
-						throw ex;
-					}
+					throw ex;
 				}
-				return "";
 			} catch	(Exception e) {
-				System.Console.WriteLine (e.ToString ());
+				System.Console.WriteLine(e.ToString());
 				return "";
 			}
 		}

@@ -22,14 +22,22 @@ namespace conekta
 
 		public void next_page()
 		{
-			String next_url = this.next_page_url;
-			//System.Console.WriteLine(next_url);
-			JObject response = this.toObject(this.request("GET", next_url));
-			//System.Console.WriteLine(response.GetValue("data"));
-			//var z = new int[this.data.Length + response.GetValue("data")];
-			//this.data.CopyTo(z, 0);
-			//response.data.CopyTo(z, this.data.Length);
-			//this.data = (object[])z;
+			if (this.has_more)
+			{
+				String next_url = this.next_page_url.Replace(conekta.Api.baseUri, "");
+				JObject response = JObject.Parse(this.request("GET", next_url));
+				JArray compData = (JArray)response.GetValue("data");
+				object[] arrData = (object[])compData.ToObject(typeof(object[]));
+
+				var z = new object[this.data.Length + arrData.Length];
+				this.data.CopyTo(z, 0);
+				arrData.CopyTo(z, this.data.Length);
+
+				this.data = (object[])z;
+				this.has_more = (bool)response.GetValue("has_more");
+				this.next_page_url = (String)response.GetValue("next_page_url");
+				this.previous_page_url = (String)response.GetValue("next_page_url");
+			}
 		}
 
 		public object at(int index)
