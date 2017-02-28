@@ -52,7 +52,7 @@ namespace conekta
 
 				var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
 
-				System.Console.WriteLine(responseString);
+				//System.Console.WriteLine(responseString);
 
 				return responseString;
 			} catch (WebException webExcp) {

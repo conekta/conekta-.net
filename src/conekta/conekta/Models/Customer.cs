@@ -89,6 +89,13 @@ namespace conekta
 			return skeleton.toClass(skeleton.toObject(fiscal_entity).ToString());
 		}
 
+		public Subscription createSubscription(string data)
+		{
+			string subscription = this.create("/customers/" + this.id + "/subscription", data);
+			Subscription skeleton = new Subscription();
+			return skeleton.toClass(skeleton.toObject(subscription).ToString());
+		}
+
 		public Customer toClass(string json)
 		{
 			Customer customer = JsonConvert.DeserializeObject<Customer>(json, new JsonSerializerSettings

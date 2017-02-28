@@ -816,6 +816,96 @@ namespace ConektaTest
 		}
 
 		[Test()]
+		public void createSubscription()
+		{
+			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+			conekta.Api.version = "2.0.0";
+
+			Customer customer = new conekta.Customer().create(@"{
+			    ""name"": ""Emiliano Cabrera"",
+			    ""phone"": ""+5215544443333"",
+			    ""email"": ""user@example.com"",
+			    ""corporate"": true,
+			    ""payment_sources"": [{
+					""token_id"": ""tok_test_visa_4242"",
+			    	""type"": ""card""
+				}]
+			}");
+
+			Subscription subscription = customer.createSubscription(@"{
+			    ""plan"": ""jul-plan""
+			}");
+
+			Assert.AreEqual(subscription.plan_id, "jul-plan");
+		}
+
+		[Test()]
+		public void updateSubscription()
+		{
+			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+			conekta.Api.version = "2.0.0";
+
+			Customer customer = new conekta.Customer().create(@"{
+			    ""name"": ""Emiliano Cabrera"",
+			    ""phone"": ""+5215544443333"",
+			    ""email"": ""user@example.com"",
+			    ""corporate"": true,
+			    ""payment_sources"": [{
+					""token_id"": ""tok_test_visa_4242"",
+			    	""type"": ""card""
+				}]
+			}");
+
+			Subscription subscription = customer.createSubscription(@"{
+			    ""plan"": ""jul-plan""
+			}");
+
+			Assert.AreEqual(subscription.plan_id, "jul-plan");
+			
+			subscription = subscription.update(@"{
+				""plan"": ""opal-plan""
+			}");
+
+			Assert.AreEqual(subscription.plan_id, "opal-plan");
+		}
+
+		[Test()]
+		public void statesSubscription()
+		{
+			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+			conekta.Api.version = "2.0.0";
+
+			Customer customer = new conekta.Customer().create(@"{
+			    ""name"": ""Emiliano Cabrera"",
+			    ""phone"": ""+5215544443333"",
+			    ""email"": ""user@example.com"",
+			    ""corporate"": true,
+			    ""payment_sources"": [{
+					""token_id"": ""tok_test_visa_4242"",
+			    	""type"": ""card""
+				}]
+			}");
+
+			Subscription subscription = customer.createSubscription(@"{
+			    ""plan"": ""jul-plan""
+			}");
+
+			Assert.AreEqual(subscription.status, "in_trial");
+
+			subscription = subscription.pause();
+
+			Assert.AreEqual(subscription.status, "paused");
+
+			subscription = subscription.resume();
+
+			Assert.AreEqual(subscription.status, "in_trial");
+
+			subscription = subscription.cancel();
+
+			Assert.AreEqual(subscription.status, "canceled");
+		}
+
+		[Test()]
 		public void createPaymentSource()
 		{
 			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
