@@ -31,7 +31,7 @@ namespace conekta
 			try {
 				HttpWebRequest http = (HttpWebRequest)WebRequest.Create(conekta.Api.baseUri + resource_uri);
 				http.Accept = "application/vnd.conekta-v" + conekta.Api.version + "+json";
-				http.UserAgent = "Conekta/v1 DotNetBindings/Conekta::" + conekta.Api.version;
+				http.UserAgent = "Conekta/v1 DotNetBindings10/Conekta::" + conekta.Api.version;
 				http.Method = method;
 
 				var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(conekta.Api.apiKey);
