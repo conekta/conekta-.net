@@ -13,6 +13,7 @@ namespace conekta
 		public string currency { get; set; }
 		public int amount { get; set; }
 		public string parent_id { get; set; }
+		public PaymentMethod payment_method { get; set; }
 
 		public Charge toClass(string json)
 		{

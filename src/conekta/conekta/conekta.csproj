@@ -63,6 +63,7 @@
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\PaymentSource.cs" />
     <Compile Include="Base\ConektaList.cs" />
+    <Compile Include="Models\PaymentMethod.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

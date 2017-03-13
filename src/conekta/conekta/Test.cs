@@ -203,6 +203,9 @@ namespace ConektaTest
 			Assert.AreEqual(order.payment_status, "paid");
 			Assert.AreEqual(order.amount, 35000);
 
+			Charge charge = (Charge)order.charges.at(0);
+			Assert.AreEqual(charge.payment_method.brand, "visa");
+
 			order = new Order().find(order.id);
 
 			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
