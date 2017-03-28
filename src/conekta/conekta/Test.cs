@@ -196,7 +196,10 @@ namespace ConektaTest
 						""type"": ""card"",
 						""token_id"": ""tok_test_visa_4242""
 					}
-				}]
+				}],
+				""metadata"": {
+					""yes"": ""nou""
+				}
 	        }");
 
 			Assert.AreEqual(order.id.GetType().ToString(), "System.String");
@@ -747,9 +750,10 @@ namespace ConektaTest
 			        }
 
 			    }],
-			    ""account_age"": 300,
-			    ""paid_transactions"": 5
-
+				""antifraud_info"": {
+				    ""account_age"": 300,
+				    ""paid_transactions"": 5
+				}
 			}");
 
 			Assert.AreEqual(customer.corporate, true);

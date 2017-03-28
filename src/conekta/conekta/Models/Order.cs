@@ -2,6 +2,7 @@
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
 
 namespace conekta
 {
@@ -23,6 +24,7 @@ namespace conekta
 		public ConektaList charges { get; set; }
 		public ConektaList returns { get; set; }
 		public string _object { get; set; }
+		public JObject metadata { get; set; }
 
 		public Order()
 		{
