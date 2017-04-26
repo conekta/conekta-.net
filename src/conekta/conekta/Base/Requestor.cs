@@ -65,7 +65,7 @@ namespace conekta
 				{
 					string responseText = reader.ReadToEnd();
 
-					System.Console.WriteLine(responseText);
+					//System.Console.WriteLine(responseText);
 
 					JObject obj = JsonConvert.DeserializeObject<JObject>(responseText, new JsonSerializerSettings
 					{
