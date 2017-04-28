@@ -11,7 +11,7 @@ Obtain the latest version of the Conekta .NET bindings with:
 
     git clone https://github.com/conekta/conekta-.net
 
-The last version works with API 1.1, if you are using API 1.0, obtain the target release with:
+The last version works with API 2.0, if you are using API 1.0, obtain the target release with:
 
 https://github.com/conekta/conekta-.net/archive/0.1-stable.zip
 
