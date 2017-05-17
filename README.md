@@ -1,5 +1,4 @@
-
-![alt tag](https://raw.github.com/conekta/conekta-.net/master/readme_files/cover.png)
+![README Cover Image](readme_cover.png)
 
 # Conekta .NET 1.0
 
@@ -99,12 +98,12 @@ Conekta.FiscalEntity.update(string) : Conekta.FiscalEntity
 
 Please see https://developers.conekta.com/api for up-to-date documentation.
 
-License
--------
-Developed by [Conekta](https://www.conekta.com). Available with [MIT License](LICENSE).
+## License
 
-We are hiring
--------------
+Developed in Mexico by [Conekta](https://www.conekta.com). Available with [MIT License](LICENSE).
 
-If you are a comfortable working with a range of backend languages (Java, Python, Ruby, PHP, ASP.NET, etc) and frameworks, you have solid foundation in data structures, algorithms and software design with strong analytical and debugging skills. 
-Send your CV, github to quieroser@conekta.com
+***
+
+## We are always hiring!
+
+If you are a comfortable working with a range of backend languages (Java, Python, Ruby, PHP, etc) and frameworks, you have solid foundation in data structures, algorithms and software design with strong analytical and debugging skills. Send us your CV and GitHub to quieroser@conekta.com
