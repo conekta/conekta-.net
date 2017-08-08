@@ -29,14 +29,24 @@ namespace conekta
 			}
 
 			try {
+				var uname = Environment.OSVersion;
 				HttpWebRequest http = (HttpWebRequest)WebRequest.Create(conekta.Api.baseUri + resource_uri);
 				http.Accept = "application/vnd.conekta-v" + conekta.Api.version + "+json";
 				http.UserAgent = "Conekta/v1 DotNetBindings10/Conekta::" + conekta.Api.version;
 				http.Method = method;
 
 				var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(conekta.Api.apiKey);
+				var userAgent = (@"{
+				  ""bindings_version"":""" + conekta.Api.version + @""",
+				  ""lang"":"".net"",
+				  ""lang_version"":""" + typeof(string).Assembly.ImageRuntimeVersion + @""",
+				  ""publisher"":""conekta"",
+				  ""uname"":""" + uname + @"""
+				}");
+
 				http.Headers.Add("Authorization", "Basic " + System.Convert.ToBase64String(plainTextBytes) + ":");
 				http.Headers.Add ("Accept-Language", conekta.Api.locale);
+				http.Headers.Add ("X-Conekta-Client-User-Agent", userAgent );
 
 				if (method == "POST" || method == "PUT") {
 					var dataBytes = Encoding.UTF8.GetBytes(data);
