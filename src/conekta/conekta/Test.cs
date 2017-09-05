@@ -12,11 +12,14 @@ namespace ConektaTest
 	[TestFixture()]
 	public class ListTest
 	{
+		public static void getApiKey(){
+			conekta.Api.apiKey = "key_ZLy4aP2szht1HqzkCezDEA";
+		}
 
 		[Test()]
 		public void getObject()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+			getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			conekta.Order order = new conekta.Order().create(@"{
@@ -142,7 +145,10 @@ namespace ConektaTest
 	[TestFixture()]
 	public class OrderTest
 	{
-
+		public static void getApiKey()
+		{
+			conekta.Api.apiKey = "key_ZLy4aP2szht1HqzkCezDEA";
+		}
 		private int RandomNumber(int min, int max, int seed = 0)
 		{
 			Random random = new Random((int)DateTime.Now.Ticks + seed);
@@ -152,7 +158,7 @@ namespace ConektaTest
 		[Test()]
 		public void apiVersionUnsupported()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "1.0.0";
 
 			try
@@ -176,7 +182,7 @@ namespace ConektaTest
 		[Test()]
 		public void createCard()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Order order = new conekta.Order().create(@"{
@@ -228,7 +234,7 @@ namespace ConektaTest
 		[Test()]
 		public void createCharge()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Order order = new conekta.Order().create(@"{
@@ -278,7 +284,7 @@ namespace ConektaTest
 		[Test()]
 		public void captureCharge()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Order order = new conekta.Order().create(@"{
@@ -316,7 +322,7 @@ namespace ConektaTest
 		[Test()]
 		public void createCardError()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			try
@@ -340,7 +346,7 @@ namespace ConektaTest
 		[Test()]
 		public void CreateOxxo()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Order order = new conekta.Order().create(@"{
@@ -373,7 +379,7 @@ namespace ConektaTest
 		[Test()]
 		public void update()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Order order = new conekta.Order().create(@"{
@@ -404,7 +410,7 @@ namespace ConektaTest
 		[Test()]
 		public void createLineItem()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Order order = new conekta.Order().create(@"{
@@ -437,7 +443,7 @@ namespace ConektaTest
 		[Test()]
 		public void updateLineItem()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Order order = new conekta.Order().create(@"{
@@ -472,7 +478,7 @@ namespace ConektaTest
 		[Test()]
 		public void createTaxLine()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Order order = new conekta.Order().create(@"{
@@ -508,7 +514,7 @@ namespace ConektaTest
 		[Test()]
 		public void updateTaxLine()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Order order = new conekta.Order().create(@"{
@@ -559,7 +565,7 @@ namespace ConektaTest
 		[Test()]
 		public void createShippingLine()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Order order = new conekta.Order().create(@"{
@@ -596,7 +602,7 @@ namespace ConektaTest
 		[Test()]
 		public void updateShippingLine()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Order order = new conekta.Order().create(@"{
@@ -640,7 +646,7 @@ namespace ConektaTest
 		[Test()]
 		public void createDiscountLine()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Order order = new conekta.Order().create(@"{
@@ -674,7 +680,7 @@ namespace ConektaTest
 		[Test()]
 		public void updateDiscountLine()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Order order = new conekta.Order().create(@"{
@@ -719,10 +725,15 @@ namespace ConektaTest
 	[TestFixture()]
 	public class CustomerTest
 	{
+
+		public static void getApiKey()
+		{
+			conekta.Api.apiKey = "key_ZLy4aP2szht1HqzkCezDEA";
+		}
 		[Test()]
 		public void createCustomer()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Customer customer = new conekta.Customer().create(@"{
@@ -766,7 +777,7 @@ namespace ConektaTest
 		[Test()]
 		public void updateCustomer()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Customer customer = new conekta.Customer().create(@"{
@@ -796,7 +807,7 @@ namespace ConektaTest
 		[Test()]
 		public void deleteCustomer()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Customer customer = new conekta.Customer().create(@"{
@@ -825,7 +836,7 @@ namespace ConektaTest
 		[Test()]
 		public void createSubscription()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Customer customer = new conekta.Customer().create(@"{
@@ -840,16 +851,16 @@ namespace ConektaTest
 			}");
 
 			Subscription subscription = customer.createSubscription(@"{
-			    ""plan"": ""jul-plan""
+			    ""plan"": ""gold-plan""
 			}");
 
-			Assert.AreEqual(subscription.plan_id, "jul-plan");
+			Assert.AreEqual(subscription.plan_id, "gold-plan");
 		}
 
 		[Test()]
 		public void updateSubscription()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Customer customer = new conekta.Customer().create(@"{
@@ -864,10 +875,10 @@ namespace ConektaTest
 			}");
 
 			Subscription subscription = customer.createSubscription(@"{
-			    ""plan"": ""jul-plan""
+			    ""plan"": ""gold-plan""
 			}");
 
-			Assert.AreEqual(subscription.plan_id, "jul-plan");
+			Assert.AreEqual(subscription.plan_id, "gold-plan");
 			
 			subscription = subscription.update(@"{
 				""plan"": ""opal-plan""
@@ -879,7 +890,7 @@ namespace ConektaTest
 		[Test()]
 		public void statesSubscription()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Customer customer = new conekta.Customer().create(@"{
@@ -894,7 +905,7 @@ namespace ConektaTest
 			}");
 
 			Subscription subscription = customer.createSubscription(@"{
-			    ""plan"": ""jul-plan""
+			    ""plan"": ""gold-plan""
 			}");
 
 			Assert.AreEqual(subscription.status, "in_trial");
@@ -915,7 +926,7 @@ namespace ConektaTest
 		[Test()]
 		public void createPaymentSource()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Customer customer = new conekta.Customer().create(@"{
@@ -938,7 +949,7 @@ namespace ConektaTest
 		[Test()]
 		public void updatePaymentSource()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Customer customer = new conekta.Customer().create(@"{
@@ -963,7 +974,7 @@ namespace ConektaTest
 		[Test()]
 		public void deletePaymentSource()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Customer customer = new conekta.Customer().create(@"{
@@ -991,7 +1002,7 @@ namespace ConektaTest
 		[Test()]
 		public void createShippingContact()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Customer customer = new conekta.Customer().create(@"{
@@ -1044,7 +1055,7 @@ namespace ConektaTest
 		[Test()]
 		public void updateShippingContact()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Customer customer = new conekta.Customer().create(@"{
@@ -1079,7 +1090,7 @@ namespace ConektaTest
 		[Test()]
 		public void deleteShippingContact()
 		{
-			conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            getApiKey();
 			conekta.Api.version = "2.0.0";
 
 			Customer customer = new conekta.Customer().create(@"{
