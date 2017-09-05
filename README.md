@@ -1,6 +1,6 @@
 ![README Cover Image](readme_cover.png)
 
-# Conekta .NET 1.0
+# Conekta .NET 1.0.1
 
 This is a .net library that allows interaction with https://api.conekta.io API.
 
@@ -12,7 +12,7 @@ Obtain the latest version of the Conekta .NET bindings with:
 
 The last version works with API 2.0, if you are using API 1.0, obtain the target release with:
 
-https://github.com/conekta/conekta-.net/archive/0.1-stable.zip
+https://github.com/conekta/conekta-.net/releases/tag/1.0.1
 
 To get started, add the following to your .NET script:
 
