@@ -2,7 +2,8 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace conekta
+
+namespace conektaBase
 {
 
 	public class ConektaObject : ICloneable

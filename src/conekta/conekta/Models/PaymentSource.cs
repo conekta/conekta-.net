@@ -1,14 +1,13 @@
 ﻿using System.Text.RegularExpressions;
-
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using conektaBase;
 
-namespace conekta
+namespace conektaModels
 {
 	public class PaymentSource : Resource
 	{
 		public string id { get; set; }
-		public string type { get; set; }
 
 		/* In case card token */
 		public string token_id { get; set; }

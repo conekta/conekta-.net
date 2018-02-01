@@ -1,10 +1,10 @@
 ﻿using System.Text.RegularExpressions;
-
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
+using conektaBase;
 
-namespace conekta
+namespace conektaModels
 {
 	public class Order : Resource
 	{
@@ -28,12 +28,12 @@ namespace conekta
 
 		public Order()
 		{
-			this.line_items = new ConektaList(typeof(conekta.LineItem));
-			this.shipping_lines = new ConektaList(typeof(conekta.ShippingLine));
-			this.tax_lines = new ConektaList(typeof(conekta.TaxLine));
-			this.discount_lines = new ConektaList(typeof(conekta.DiscountLine));
-			this.charges = new ConektaList(typeof(conekta.Charge));
-			this.returns = new ConektaList(typeof(conekta.Return));
+            this.line_items = new ConektaList(typeof(conektaModels.LineItem));
+            this.shipping_lines = new ConektaList(typeof(conektaModels.ShippingLine));
+            this.tax_lines = new ConektaList(typeof(conektaModels.TaxLine));
+            this.discount_lines = new ConektaList(typeof(conektaModels.DiscountLine));
+            this.charges = new ConektaList(typeof(conektaModels.Charge));
+            this.returns = new ConektaList(typeof(conektaModels.Return));
 		}
 
 		public Order create(string data)

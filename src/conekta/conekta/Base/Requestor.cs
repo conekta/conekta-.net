@@ -5,7 +5,7 @@ using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace conekta
+namespace conektaBase
 {
 
 	public class Requestor
@@ -21,16 +21,16 @@ namespace conekta
 			if (int.Parse(api_version) < 110)
 			{
 				ConektaException ex = new ConektaException("This package just support api version 1.1 or higher");
-				ex.details = new JArray(0);
-				ex._object = "error";
-				ex._type = "api_version_unsupported";
+				ex.Details = new JArray(0);
+				ex.CustomObject = "error";
+				ex.Type = "api_version_unsupported";
 
 				throw ex;
 			}
 
 			try {
 				var uname = Environment.OSVersion;
-				HttpWebRequest http = (HttpWebRequest)WebRequest.Create(conekta.Api.baseUri + resource_uri);
+				HttpWebRequest http = (HttpWebRequest)WebRequest.Create(conekta.Api.BaseUri + resource_uri);
 				http.Accept = "application/vnd.conekta-v" + conekta.Api.version + "+json";
 				http.UserAgent = "Conekta/v1 DotNetBindings10/Conekta::" + conekta.Api.version;
 				http.Method = method;
@@ -83,9 +83,9 @@ namespace conekta
 					});
 
 					ConektaException ex = new ConektaException(obj.GetValue("type").ToString());
-					ex.details = (JArray)obj["details"];
-					ex._object = obj.GetValue("object").ToString();
-					ex._type = obj.GetValue("type").ToString();
+					ex.Details = (JArray)obj["details"];
+					ex.CustomObject = obj.GetValue("object").ToString();
+					ex.Type = obj.GetValue("type").ToString();
 
 					throw ex;
 				}

@@ -1,15 +1,42 @@
 ﻿using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Reflection;
 
-namespace conekta
+
+namespace conektaBase
 {
+    
 	public class ConektaException : Exception
 	{
-		public JArray details;
-		public string message;
-		public String _type;
-		public String _object;
+        private JArray details;
+
+        public JArray Details
+        {
+            get { return details; }
+            set { details = value; }
+        }
+        private string message;
+
+        public string CustomMessage
+        {
+            get { return message; }
+            set { message = value; }
+        }
+        private String _type;
+
+        public String Type
+        {
+            get { return _type; }
+            set { _type = value; }
+        }
+        private String _object;
+
+        public String CustomObject
+        {
+            get { return _object; }
+            set { _object = value; }
+        }
 
 		public ConektaException()
 		{

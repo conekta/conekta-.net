@@ -1,8 +1,9 @@
 ﻿using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using conektaBase;
 
-namespace conekta
+namespace conektaModels
 {
 	public class Plan : Resource
 	{

@@ -1,5 +1,7 @@
 ﻿using System;
-namespace conekta
+using conektaBase;
+
+namespace conektaModels
 {
 	public class PaymentMethod : Resource
 	{
