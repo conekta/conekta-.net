@@ -2,11 +2,10 @@
 using System.Reflection;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace conekta
+namespace conektaBase
 {
 
 	public class Resource : ConektaObject, ICloneable

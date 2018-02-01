@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Reflection;
-
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Reflection;
 
-namespace conekta
+namespace conektaBase
 {
 
 	public class ConektaList : Resource, ICloneable
@@ -24,7 +23,7 @@ namespace conekta
 		{
 			if (this.has_more)
 			{
-				String next_url = this.next_page_url.Replace(conekta.Api.baseUri, "");
+				String next_url = this.next_page_url.Replace(conekta.Api.BaseUri.AbsolutePath, "");
 				JObject response = JObject.Parse(this.request("GET", next_url));
 				JArray compData = (JArray)response.GetValue("data");
 				object[] arrData = (object[])compData.ToObject(typeof(object[]));

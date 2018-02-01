@@ -1,9 +1,9 @@
 ﻿using System.Text.RegularExpressions;
-
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using conektaBase;
 
-namespace conekta
+namespace conektaModels
 {
 	public class LineItem : Resource
 	{
@@ -15,7 +15,6 @@ namespace conekta
 		public bool shippable { get; set; }
 		public string[] tags { get; set; }
 		public string brand { get; set; }
-		public string type { get; set; }
 		public string parent_id { get; set; }
 		public string id { get; set; }
 

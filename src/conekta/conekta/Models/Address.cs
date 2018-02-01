@@ -1,9 +1,9 @@
 ﻿using System.Text.RegularExpressions;
-
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using conektaBase;
 
-namespace conekta
+namespace conektaModels
 {
 	public class Address : Resource
 	{

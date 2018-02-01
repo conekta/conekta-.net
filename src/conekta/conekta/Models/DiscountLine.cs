@@ -1,15 +1,13 @@
 ﻿using System.Text.RegularExpressions;
-
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using conektaBase;
 
-namespace conekta
+namespace conektaModels
 {
 	public class DiscountLine : Resource
 	{
 		public string id { get; set; }
-		public string code { get; set; }
-		public string type { get; set; }
 		public int amount { get; set; }
 		public string parent_id { get; set; }
 
