@@ -39,7 +39,7 @@ namespace conekta
         /// </summary>
         /// <returns>The Card updated</returns>
         /// <param name="data">Json String of the card data to be updated</param>
-        public Card update(string data)
+        public Card Update(string data)
         {
             Card payment_source = this.toClass(this.toObject(this.update("/customers/" + this.parent_id + "/payment_sources/" + this.id, data)).ToString());
             return payment_source;
