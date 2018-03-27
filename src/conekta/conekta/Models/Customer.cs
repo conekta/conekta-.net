@@ -1,4 +1,6 @@
 ﻿using System.Text.RegularExpressions;
+using System.Reflection;
+using System.Collections.Generic;
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -23,7 +25,8 @@ namespace conekta
 		public Customer create(string data)
 		{
 			string customer = this.create("/customers", data);
-			return this.toClass(this.toObject(customer).ToString());
+            JObject customerObject = this.toObject(customer);
+            return this.toClass(customerObject.ToString());
 		}
 
 		public Customer find(string id)
@@ -68,11 +71,17 @@ namespace conekta
 			return this;
 		}
 
-		public PaymentSource createPaymentSource(string data)
+        /// <summary>
+        /// Creates a card.
+        /// </summary>
+        /// <returns>The Card.</returns>
+        /// <param name="data">Card data.</param>
+        public PaymentSource createCard(string data)
 		{
-			string payment_source = this.create("/customers/" + this.id + "/payment_sources", data);
-			PaymentSource skeleton = new PaymentSource();
-			return skeleton.toClass(skeleton.toObject(payment_source).ToString());
+			string card = this.create("/customers/" + this.id + "/payment_sources", data);
+            Card skeleton = new Card();
+            JObject cardObjet = skeleton.toObject(card);
+            return (PaymentSource) skeleton.toClass(cardObjet.ToString());
 		}
 
 		public ShippingContact createShippingContact(string data)
@@ -98,10 +107,28 @@ namespace conekta
 
 		public Customer toClass(string json)
 		{
+            JObject data = JObject.Parse(json);
+            JArray paymentSourcesData = (JArray)data.GetValue("payment_sources");
+            data.Remove("payment_sources");
+     
 			Customer customer = JsonConvert.DeserializeObject<Customer>(json, new JsonSerializerSettings
 			{
 				NullValueHandling = NullValueHandling.Ignore
 			});
+
+            if(paymentSourcesData != null && paymentSourcesData.Count < 0) {
+                for (int x = 0; x < paymentSourcesData.Count; x++){
+                    JObject item = (JObject)paymentSourcesData[x];
+
+                    Card paymentSource = JsonConvert.DeserializeObject<Card>(item.ToString(), new JsonSerializerSettings
+                    {
+                        NullValueHandling = NullValueHandling.Ignore
+                    });
+
+                    customer.payment_sources[x] = paymentSource;
+                }
+            }
+
 			return customer;
 		}
 	}

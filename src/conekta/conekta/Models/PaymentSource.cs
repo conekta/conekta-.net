@@ -1,28 +1,12 @@
-﻿using System.Text.RegularExpressions;
-
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
 
 namespace conekta
 {
 	public class PaymentSource : Resource
 	{
 		public string id { get; set; }
-		public string type { get; set; }
-
-		/* In case card token */
-		public string token_id { get; set; }
-
-		/* In case card object*/
-		public string name { get; set; }
-		public string number { get; set; }
-		public string exp_month { get; set; }
-		public string exp_year { get; set; }
-		public string cvc { get; set; }
-		public string last4 { get; set; }
-		public string bin { get; set; }
-		public string brand { get; set; }
-		public Address address { get; set; }
+        public string type { get; set; }
+        public bool deleted { get; set; }
 
 		public string parent_id { get; set; }
 
