@@ -76,13 +76,26 @@ namespace conekta
         /// </summary>
         /// <returns>The Card.</returns>
         /// <param name="data">Card data.</param>
-        public PaymentSource createCard(string data)
+        public PaymentSource CreateCard(string data)
 		{
 			string card = this.create("/customers/" + this.id + "/payment_sources", data);
             Card skeleton = new Card();
             JObject cardObjet = skeleton.toObject(card);
             return (PaymentSource) skeleton.toClass(cardObjet.ToString());
 		}
+
+        /// <summary>
+        /// Creates the offline recurrent reference.
+        /// </summary>
+        /// <returns>The OfflineRecurrentReference.</returns>
+        /// <param name="data">Reference data.</param>
+        public PaymentSource CreateOfflineRecurrentReference(string data)
+        {
+            string reference = this.create("/customers/" + this.id + "/payment_sources", data);
+            OfflineRecurrentReference skeleton = new OfflineRecurrentReference();
+            JObject cardObject = skeleton.toObject(reference);
+            return (PaymentSource)skeleton.ToClass(cardObject.ToString());           
+        }
 
 		public ShippingContact createShippingContact(string data)
 		{
@@ -116,16 +129,27 @@ namespace conekta
 				NullValueHandling = NullValueHandling.Ignore
 			});
 
-            if(paymentSourcesData != null && paymentSourcesData.Count < 0) {
+            if(paymentSourcesData != null && paymentSourcesData.Count > 0) {
                 for (int x = 0; x < paymentSourcesData.Count; x++){
                     JObject item = (JObject)paymentSourcesData[x];
 
-                    Card paymentSource = JsonConvert.DeserializeObject<Card>(item.ToString(), new JsonSerializerSettings
+                    if(item.GetValue("type").ToString() == "oxxo_recurrent")
                     {
-                        NullValueHandling = NullValueHandling.Ignore
-                    });
+                        OfflineRecurrentReference paymentSource = JsonConvert.DeserializeObject<OfflineRecurrentReference>(item.ToString(), new JsonSerializerSettings
+                        {
+                            NullValueHandling = NullValueHandling.Ignore
+                        });
 
-                    customer.payment_sources[x] = paymentSource;
+                        customer.payment_sources[x] = paymentSource;           
+                    } else
+                    {
+                        Card paymentSource = JsonConvert.DeserializeObject<Card>(item.ToString(), new JsonSerializerSettings
+                        {
+                            NullValueHandling = NullValueHandling.Ignore
+                        });
+
+                        customer.payment_sources[x] = paymentSource;          
+                    }
                 }
             }
 

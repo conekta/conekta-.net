@@ -838,7 +838,7 @@
             }
 
             [Test()]
-            public void createCustomerWithOxxoReference()
+            public void createCustomerWithOfflineRecurrentReference()
             {
                 getApiKey();
                 conekta.Api.version = "2.0.0";
@@ -849,16 +849,19 @@
                   ""email"": ""user@example.com"",
                   ""corporate"": true,
                   ""payment_sources"": [{
-                  ""expires_at"": 1553273553,
-                  ""type"": ""oxxo_recurrent""
+                    ""expires_at"": 1553273553,
+                    ""type"": ""oxxo_recurrent""
                   }]
                   }");
 
-                Assert.AreEqual(customer.corporate, true);
+                PaymentSource paymentSource = customer.payment_sources[0];
+                OfflineRecurrentReference reference = paymentSource as OfflineRecurrentReference;
 
-                customer = new Customer().find(customer.id);
-
-                Assert.AreEqual(customer.corporate, true);
+                Assert.IsNotNull(reference.reference);
+                Assert.IsNotNull(reference.barcode);
+                Assert.IsNotNull(reference.barcode_url);
+                Assert.IsNotNull(reference.provider);
+                Assert.AreEqual(reference.expires_at, "1553273553");
             }
 
             [Test()]
@@ -874,8 +877,8 @@
                   ""plan_id"": ""gold-plan"",
                   ""corporate"": true,
                   ""payment_sources"": [{
-                  ""token_id"": ""tok_test_visa_4242"",
-                  ""type"": ""card""
+                      ""token_id"": ""tok_test_visa_4242"",
+                      ""type"": ""card""
                   }]
                   }");
 
@@ -990,13 +993,39 @@
                   ""payment_sources"": []
                   }");
 
-                Card card = (Card)customer.createCard(@"{
+                Card card = (Card)customer.CreateCard(@"{
                 ""token_id"": ""tok_test_visa_4242"",
                 ""type"": ""card""
                 }");
 
                 Assert.AreEqual(card.type, "card");
                 Assert.AreEqual(card.name, "Jorge Lopez");
+            }
+
+            [Test()]
+            public void createOfflineRecurrentReference()
+            {
+                getApiKey();
+                conekta.Api.version = "2.0.0";
+
+                Customer customer = new conekta.Customer().create(@"{
+                      ""name"": ""Emiliano Cabrera"",
+                      ""phone"": ""+5215544443333"",
+                      ""email"": ""user@example.com"",
+                      ""corporate"": true,
+                      ""payment_sources"": []
+                      }");
+
+                OfflineRecurrentReference reference = (OfflineRecurrentReference) customer.CreateOfflineRecurrentReference(@"{
+                    ""expires_at"": 1553273553,
+                    ""type"": ""oxxo_recurrent""
+                    }");
+            
+                Assert.IsNotNull(reference.reference);
+                Assert.IsNotNull(reference.barcode);
+                Assert.IsNotNull(reference.barcode_url);
+                Assert.IsNotNull(reference.provider);
+                Assert.AreEqual(reference.expires_at, "1553273553");
             }
 
             [Test()]
@@ -1012,12 +1041,12 @@
                   ""corporate"": true
                   }");
 
-                Card payment_source = (Card)customer.createCard(@"{
+                Card payment_source = (Card)customer.CreateCard(@"{
                 ""token_id"": ""tok_test_visa_4242"",
                 ""type"": ""card""
                 }");
 
-                Card updatedPaymentSource = payment_source.update(@"{
+                Card updatedPaymentSource = payment_source.Update(@"{
                 ""name"": ""Emiliano Suarez""
                 }");
 
@@ -1036,7 +1065,7 @@
                   ""email"": ""user@example.com""
                   }");
 
-                PaymentSource payment_source = customer.createCard(@"{
+                PaymentSource payment_source = customer.CreateCard(@"{
                 ""token_id"": ""tok_test_visa_4242"",
                 ""type"": ""card""
                 }");
