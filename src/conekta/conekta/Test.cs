@@ -776,6 +776,7 @@
                 customer = new Customer().find(customer.id);
 
                 Assert.AreEqual(customer.corporate, true);
+                Assert.IsNotNull(customer.created_at);
             }
 
             [Test()]
