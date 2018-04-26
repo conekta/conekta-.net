@@ -29,6 +29,7 @@ namespace conekta
 			}
 
 			try {
+				ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 				var uname = Environment.OSVersion;
 				HttpWebRequest http = (HttpWebRequest)WebRequest.Create(conekta.Api.baseUri + resource_uri);
 				http.Accept = "application/vnd.conekta-v" + conekta.Api.version + "+json";
