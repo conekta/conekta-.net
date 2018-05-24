@@ -7,23 +7,23 @@
 
     using conekta;
 
-    namespace ConektaTest
+namespace ConektaTest
+{
+    [TestFixture()]
+    public class ListTest
     {
-        [TestFixture()]
-        public class ListTest
+        public static void getApiKey()
         {
-            public static void getApiKey()
-            {
-                conekta.Api.apiKey = "key_ZLy4aP2szht1HqzkCezDEA";
-            }
+            conekta.Api.apiKey = "key_ZLy4aP2szht1HqzkCezDEA";
+        }
 
-            [Test()]
-            public void getObject()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+        [Test()]
+        public void getObject()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-                conekta.Order order = new conekta.Order().create(@"{
+            conekta.Order order = new conekta.Order().create(@"{
                   ""currency"": ""MXN"",
                   ""customer_info"": {
                   ""name"": ""Jul Ceballos"",
@@ -133,38 +133,38 @@
                   }]
             }");
 
-                LineItem line_item = (LineItem)order.line_items.at(0);
+            LineItem line_item = (LineItem)order.line_items.at(0);
 
-                int size = order.line_items.data.Length;
+            int size = order.line_items.data.Length;
 
-                order.line_items.next_page();
+            order.line_items.next_page();
 
-                Assert.AreEqual(order.line_items.data.Length > size, true);
-            }
+            Assert.AreEqual(order.line_items.data.Length > size, true);
+        }
+    }
+
+    [TestFixture()]
+    public class OrderTest
+    {
+        public static void getApiKey()
+        {
+            conekta.Api.apiKey = "key_ZLy4aP2szht1HqzkCezDEA";
+        }
+        private int RandomNumber(int min, int max, int seed = 0)
+        {
+            Random random = new Random((int)DateTime.Now.Ticks + seed);
+            return random.Next(min, max);
         }
 
-        [TestFixture()]
-        public class OrderTest
+        [Test()]
+        public void apiVersionUnsupported()
         {
-            public static void getApiKey()
-            {
-                conekta.Api.apiKey = "key_ZLy4aP2szht1HqzkCezDEA";
-            }
-            private int RandomNumber(int min, int max, int seed = 0)
-            {
-                Random random = new Random((int)DateTime.Now.Ticks + seed);
-                return random.Next(min, max);
-            }
+            getApiKey();
+            conekta.Api.version = "0.3.0";
 
-            [Test()]
-            public void apiVersionUnsupported()
+            try
             {
-                getApiKey();
-                conekta.Api.version = "1.0.0";
-
-                try
-                {
-                    new conekta.Order().create(@"{
+                new conekta.Order().create(@"{
                     ""currency"":""MXN"",
                     ""customer_info"": {
                     ""name"": ""Jul Ceballos"",
@@ -172,21 +172,21 @@
                     ""email"": ""jul@conekta.io""
                     }
                     }");
-                }
-                catch (ConektaException e)
-                {
-                    Assert.AreEqual(e._object, "error");
-                    Assert.AreEqual(e._type, "api_version_unsupported");
-                }
             }
-
-            [Test()]
-            public void createCard()
+            catch (ConektaException e)
             {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+                Assert.AreEqual(e._object, "error");
+                Assert.AreEqual(e._type, "api_version_unsupported");
+            }
+        }
 
-                Order order = new conekta.Order().create(@"{
+        [Test()]
+        public void createCard()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
+
+            Order order = new conekta.Order().create(@"{
                   ""currency"":""MXN"",
                   ""customer_info"": {
                   ""name"": ""Jul Ceballos"",
@@ -209,87 +209,88 @@
                   }
             }");
 
-                Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-                Assert.AreEqual(order.payment_status, "paid");
-                Assert.AreEqual(order.amount, 35000);
+            Assert.AreEqual(order.id.GetType().ToString(), "System.String");
+            Assert.AreEqual(order.payment_status, "paid");
+            Assert.AreEqual(order.amount, 35000);
 
-                Charge charge = (Charge)order.charges.at(0);
-                Assert.AreEqual(charge.payment_method.brand, "visa");
+            Charge charge = (Charge)order.charges.at(0);
+            Assert.AreEqual(charge.payment_method.brand, "visa");
 
-                order = new Order().find(order.id);
+            order = new Order().find(order.id);
 
-                Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-                Assert.AreEqual(order.payment_status, "paid");
-                Assert.AreEqual(order.amount, 35000);
+            Assert.AreEqual(order.id.GetType().ToString(), "System.String");
+            Assert.AreEqual(order.payment_status, "paid");
+            Assert.AreEqual(order.amount, 35000);
 
-                order = order.createReturn(@"{""amount"": 35000}");
+            order = order.createReturn(@"{""amount"": 35000}");
 
-                Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-                Assert.AreEqual(order.payment_status, "refunded");
-                Assert.AreEqual(order.amount, 35000);
+            Assert.AreEqual(order.id.GetType().ToString(), "System.String");
+            Assert.AreEqual(order.payment_status, "refunded");
+            Assert.AreEqual(order.amount, 35000);
 
-                Order[] orders = new Order().where(new JObject());
-                Assert.AreEqual(orders[0].id.GetType().ToString(), "System.String");
+            Order[] orders = new Order().where(new JObject());
+            Assert.AreEqual(orders[0].id.GetType().ToString(), "System.String");
 
-            }
+        }
 
-            [Test()]
-            public void createCharge()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+        [Test()]
+        public void createCharge()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-                Order order = new conekta.Order().create(@"{
-                  ""currency"":""MXN"",
-                  ""customer_info"": {
-                  ""name"": ""Jul Ceballos"",
-                  ""phone"": ""+5215555555555"",
-                  ""email"": ""jul@conekta.io""
-                  },
-                  ""line_items"": [{
-                  ""name"": ""Box of Cohiba S1s"",
-                  ""unit_price"": 35000,
-                  ""quantity"": 1
-                  }]
-                  }");
+            Order order = new conekta.Order().create(@"{
+                      ""currency"":""MXN"",
+                      ""customer_info"": {
+                      ""name"": ""Jul Ceballos"",
+                      ""phone"": ""+5215555555555"",
+                      ""email"": ""jul@conekta.io""
+                      },
+                      ""line_items"": [{
+                      ""name"": ""Box of Cohiba S1s"",
+                      ""unit_price"": 35000,
+                      ""quantity"": 1
+                      }]
+                      }");
 
-                order.createCharge(@"{
-                ""payment_method"": {
-                ""type"": ""card"",
-                ""token_id"": ""tok_test_visa_4242""
-                },
-                ""amount"": 35000
-                }");
+            order.createCharge(@"{
+                    ""payment_method"": {
+                    ""type"": ""card"",
+                    ""token_id"": ""tok_test_visa_4242""
+                    },
+                    ""amount"": 35000
+                    }");
 
-                order = new Order().find(order.id);
+            order = new Order().find(order.id);
 
-                Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-                Assert.AreEqual(order.payment_status, "paid");
-                Assert.AreEqual(order.amount, 35000);
+            Assert.AreEqual(order.id.GetType().ToString(), "System.String");
+            Assert.AreEqual(order.payment_status, "paid");
+            Assert.AreEqual(order.amount, 35000);
 
-                order = new Order().find(order.id);
+            order = new Order().find(order.id);
 
-                Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-                Assert.AreEqual(order.payment_status, "paid");
-                Assert.AreEqual(order.amount, 35000);
+            Assert.AreEqual(order.id.GetType().ToString(), "System.String");
+            Assert.AreEqual(order.payment_status, "paid");
+            Assert.AreEqual(order.amount, 35000);
 
-                order = order.createReturn(@"{""amount"": 35000}");
+            order = order.createReturn(@"{""amount"": 35000}");
 
-                Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-                Assert.AreEqual(order.payment_status, "refunded");
-                Assert.AreEqual(order.amount, 35000);
+            Assert.AreEqual(order.id.GetType().ToString(), "System.String");
+            Assert.AreEqual(order.payment_status, "refunded");
+            Assert.AreEqual(order.amount, 35000);
 
-                Order[] orders = new Order().where(new JObject());
-                Assert.AreEqual(orders[0].id.GetType().ToString(), "System.String");
-            }
+            Order[] orders = new Order().where(new JObject());
+            Assert.AreEqual(orders[0].id.GetType().ToString(), "System.String");
+        }
 
-            [Test()]
-            public void captureCharge()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
 
-                Order order = new conekta.Order().create(@"{
+        [Test()]
+        public void captureCharge()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
+
+            Order order = new conekta.Order().create(@"{
                   ""currency"":""MXN"",
                   ""customer_info"": {
                   ""name"": ""Jul Ceballos"",
@@ -304,7 +305,7 @@
                   ""pre_authorize"": true
                   }");
 
-                order.createCharge(@"{
+            order.createCharge(@"{
                 ""payment_method"": {
                 ""type"": ""card"",
                 ""token_id"": ""tok_test_visa_4242""
@@ -312,24 +313,24 @@
                 ""amount"": 35000
                 }");
 
-                order = new Order().find(order.id);
+            order = new Order().find(order.id);
 
-                order = order.capture();
+            order = order.capture();
 
-                Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-                Assert.AreEqual(order.payment_status, "paid");
-                Assert.AreEqual(order.amount, 35000);
-            }
+            Assert.AreEqual(order.id.GetType().ToString(), "System.String");
+            Assert.AreEqual(order.payment_status, "paid");
+            Assert.AreEqual(order.amount, 35000);
+        }
 
-            [Test()]
-            public void createCardError()
+        [Test()]
+        public void createCardError()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
+
+            try
             {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
-
-                try
-                {
-                    new conekta.Order().create(@"{
+                new conekta.Order().create(@"{
                     ""currency"":""MXN"",
                     ""customer_info"": {
                     ""name"": ""Jul Ceballos"",
@@ -337,22 +338,22 @@
                     ""email"": ""jul@conekta.io""
                     }
                     }");
-                }
-                catch (ConektaException e)
-                {
-                    Assert.AreEqual(e._object, "error");
-                    Assert.AreEqual(e._type, "parameter_validation_error");
-                }
             }
-
-            [Test()]
-            public void CreateOxxo()
+            catch (ConektaException e)
             {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+                Assert.AreEqual(e._object, "error");
+                Assert.AreEqual(e._type, "parameter_validation_error");
+            }
+        }
+
+        [Test()]
+        public void CreateOxxo()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
 
-                Order order = new conekta.Order().create(@"{
+            Order order = new conekta.Order().create(@"{
                   ""currency"":""MXN"",
                   ""customer_info"": {
                   ""name"": ""Jul Ceballos"",
@@ -372,19 +373,19 @@
                   ""amount"": 35000
                   }]
                   }");
-                Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-                System.Console.WriteLine(order.payment_status);
-                Assert.AreEqual(order.payment_status, "pending_payment");
-                Assert.AreEqual(order.amount, 35000);
-            }
+            Assert.AreEqual(order.id.GetType().ToString(), "System.String");
+            System.Console.WriteLine(order.payment_status);
+            Assert.AreEqual(order.payment_status, "pending_payment");
+            Assert.AreEqual(order.amount, 35000);
+        }
 
-            [Test()]
-            public void update()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+        [Test()]
+        public void update()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-                Order order = new conekta.Order().create(@"{
+            Order order = new conekta.Order().create(@"{
                   ""currency"":""MXN"",
                   ""customer_info"": {
                   ""name"": ""Jul Ceballos"",
@@ -398,24 +399,24 @@
                   }]
                   }");
 
-                Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-                Assert.AreEqual(order.amount, 35000);
+            Assert.AreEqual(order.id.GetType().ToString(), "System.String");
+            Assert.AreEqual(order.amount, 35000);
 
-                order = new Order().find(order.id);
+            order = new Order().find(order.id);
 
-                order = order.update(@"{""currency"": ""USD""}");
+            order = order.update(@"{""currency"": ""USD""}");
 
-                Assert.AreEqual(order.id.GetType().ToString(), "System.String");
-                Assert.AreEqual(order.amount, 35000);
-            }
+            Assert.AreEqual(order.id.GetType().ToString(), "System.String");
+            Assert.AreEqual(order.amount, 35000);
+        }
 
-            [Test()]
-            public void createLineItem()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+        [Test()]
+        public void createLineItem()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-                Order order = new conekta.Order().create(@"{
+            Order order = new conekta.Order().create(@"{
                   ""currency"":""MXN"",
                   ""customer_info"": {
                   ""name"": ""Jul Ceballos"",
@@ -429,26 +430,26 @@
                   }]
                   }");
 
-                Assert.AreEqual(order.id.GetType().ToString(), "System.String");
+            Assert.AreEqual(order.id.GetType().ToString(), "System.String");
 
-                order = new Order().find(order.id);
+            order = new Order().find(order.id);
 
-                LineItem line_item = order.createLineItem(@"{
+            LineItem line_item = order.createLineItem(@"{
                 ""name"": ""Box of Cohiba S1s"",
                 ""unit_price"": 35000,
                 ""quantity"": 1
                 }");
 
-                Assert.AreEqual(line_item.name, "Box of Cohiba S1s");
-            }
+            Assert.AreEqual(line_item.name, "Box of Cohiba S1s");
+        }
 
-            [Test()]
-            public void updateLineItem()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+        [Test()]
+        public void updateLineItem()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-                Order order = new conekta.Order().create(@"{
+            Order order = new conekta.Order().create(@"{
                   ""currency"":""MXN"",
                   ""customer_info"": {
                   ""name"": ""Jul Ceballos"",
@@ -462,28 +463,28 @@
                   }]
                   }");
 
-                Assert.AreEqual(order.id.GetType().ToString(), "System.String");
+            Assert.AreEqual(order.id.GetType().ToString(), "System.String");
 
-                order = new Order().find(order.id);
+            order = new Order().find(order.id);
 
-                LineItem line_item = (LineItem)order.line_items.at(0);
+            LineItem line_item = (LineItem)order.line_items.at(0);
 
-                //line_item = line_item.update(@"{
-                //  ""name"": ""Box S1s"",
-                //  ""unit_price"": 45000
-                //}");
+            //line_item = line_item.update(@"{
+            //  ""name"": ""Box S1s"",
+            //  ""unit_price"": 45000
+            //}");
 
-                //Assert.AreEqual(line_item.name, "Box S1s");
+            //Assert.AreEqual(line_item.name, "Box S1s");
 
-            }
+        }
 
-            [Test()]
-            public void createTaxLine()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+        [Test()]
+        public void createTaxLine()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-                Order order = new conekta.Order().create(@"{
+            Order order = new conekta.Order().create(@"{
                   ""currency"":""MXN"",
                   ""customer_info"": {
                   ""name"": ""Jul Ceballos"",
@@ -497,11 +498,11 @@
                   }]
                   }");
 
-                Assert.AreEqual(order.id.GetType().ToString(), "System.String");
+            Assert.AreEqual(order.id.GetType().ToString(), "System.String");
 
-                order = new Order().find(order.id);
+            order = new Order().find(order.id);
 
-                TaxLine tax_line = order.createTaxLine(@"{
+            TaxLine tax_line = order.createTaxLine(@"{
                 ""description"": ""IVA"",
                 ""amount"": 600,
                 ""metadata"": {
@@ -509,17 +510,17 @@
                 }
                 }");
 
-                Assert.AreEqual(tax_line.description, "IVA");
-                Assert.AreEqual(tax_line.amount, 600);
-            }
+            Assert.AreEqual(tax_line.description, "IVA");
+            Assert.AreEqual(tax_line.amount, 600);
+        }
 
-            [Test()]
-            public void updateTaxLine()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+        [Test()]
+        public void updateTaxLine()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-                Order order = new conekta.Order().create(@"{
+            Order order = new conekta.Order().create(@"{
                   ""currency"":""MXN"",
                   ""customer_info"": {
                   ""name"": ""Jul Ceballos"",
@@ -536,11 +537,11 @@
                   }]
                   }");
 
-                Assert.AreEqual(order.id.GetType().ToString(), "System.String");
+            Assert.AreEqual(order.id.GetType().ToString(), "System.String");
 
-                order = new Order().find(order.id);
+            order = new Order().find(order.id);
 
-                TaxLine tax_line = order.createTaxLine(@"{
+            TaxLine tax_line = order.createTaxLine(@"{
                 ""description"": ""IVA"",
                 ""amount"": 600,
                 ""contextual_data"": {
@@ -548,29 +549,29 @@
                 }
                 }");
 
-                order = new Order().find(order.id);
+            order = new Order().find(order.id);
 
-                //tax_line = order.tax_lines.at(0).update(@"{
-                //   ""description"": ""IVA"",
-                //   ""amount"": 1000,
-                //   ""contextual_data"": {
-                //      ""random_key"": ""random_value""
-                //   }
-                //}");
+            //tax_line = order.tax_lines.at(0).update(@"{
+            //   ""description"": ""IVA"",
+            //   ""amount"": 1000,
+            //   ""contextual_data"": {
+            //      ""random_key"": ""random_value""
+            //   }
+            //}");
 
-                //System.Console.WriteLine(tax_line.amount);
+            //System.Console.WriteLine(tax_line.amount);
 
-                //Assert.AreEqual(tax_line.description, "IVA");
-                //Assert.AreEqual(tax_line.amount, 1000);
-            }
+            //Assert.AreEqual(tax_line.description, "IVA");
+            //Assert.AreEqual(tax_line.amount, 1000);
+        }
 
-            [Test()]
-            public void createShippingLine()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+        [Test()]
+        public void createShippingLine()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-                Order order = new conekta.Order().create(@"{
+            Order order = new conekta.Order().create(@"{
                   ""currency"":""MXN"",
                   ""customer_info"": {
                   ""name"": ""Jul Ceballos"",
@@ -584,11 +585,11 @@
                   }]
                   }");
 
-                Assert.AreEqual(order.id.GetType().ToString(), "System.String");
+            Assert.AreEqual(order.id.GetType().ToString(), "System.String");
 
-                order = new Order().find(order.id);
+            order = new Order().find(order.id);
 
-                ShippingLine shipping_line = order.createShippingLine(@"{
+            ShippingLine shipping_line = order.createShippingLine(@"{
                 ""amount"": 0,
                 ""tracking_number"": ""TRACK123"",
                 ""carrier"": ""USPS"",
@@ -598,16 +599,16 @@
                 }
                 }");
 
-                Assert.AreEqual(shipping_line.tracking_number, "TRACK123");
-            }
+            Assert.AreEqual(shipping_line.tracking_number, "TRACK123");
+        }
 
-            [Test()]
-            public void updateShippingLine()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+        [Test()]
+        public void updateShippingLine()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-                Order order = new conekta.Order().create(@"{
+            Order order = new conekta.Order().create(@"{
                   ""currency"":""MXN"",
                   ""customer_info"": {
                   ""name"": ""Jul Ceballos"",
@@ -621,11 +622,11 @@
                   }]
                   }");
 
-                Assert.AreEqual(order.id.GetType().ToString(), "System.String");
+            Assert.AreEqual(order.id.GetType().ToString(), "System.String");
 
-                order = new Order().find(order.id);
+            order = new Order().find(order.id);
 
-                ShippingLine shipping_line = order.createShippingLine(@"{
+            ShippingLine shipping_line = order.createShippingLine(@"{
                 ""amount"": 0,
                 ""tracking_number"": ""TRACK123"",
                 ""carrier"": ""Fedex"",
@@ -635,23 +636,23 @@
                 }
                 }");
 
-                order = new Order().find(order.id);
+            order = new Order().find(order.id);
 
-                shipping_line = (ShippingLine)order.shipping_lines.at(0);
-                shipping_line = shipping_line.update(@"{
+            shipping_line = (ShippingLine)order.shipping_lines.at(0);
+            shipping_line = shipping_line.update(@"{
                 ""carrier"": ""UPS""
                 }");
 
-                Assert.AreEqual(shipping_line.carrier, "UPS");
-            }
+            Assert.AreEqual(shipping_line.carrier, "UPS");
+        }
 
-            [Test()]
-            public void createDiscountLine()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+        [Test()]
+        public void createDiscountLine()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-                Order order = new conekta.Order().create(@"{
+            Order order = new conekta.Order().create(@"{
                   ""currency"":""MXN"",
                   ""customer_info"": {
                   ""name"": ""Jul Ceballos"",
@@ -665,27 +666,27 @@
                   }]
                   }");
 
-                Assert.AreEqual(order.id.GetType().ToString(), "System.String");
+            Assert.AreEqual(order.id.GetType().ToString(), "System.String");
 
-                order = new Order().find(order.id);
+            order = new Order().find(order.id);
 
-                DiscountLine discount_line = order.createDiscountLine(@"{
+            DiscountLine discount_line = order.createDiscountLine(@"{
                 ""code"": ""123"",
                 ""type"": ""loyalty"",
                 ""amount"": 600
                 }");
 
-                Assert.AreEqual(discount_line.code, "123");
-                Assert.AreEqual(discount_line.type, "loyalty");
-            }
+            Assert.AreEqual(discount_line.code, "123");
+            Assert.AreEqual(discount_line.type, "loyalty");
+        }
 
-            [Test()]
-            public void updateDiscountLine()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+        [Test()]
+        public void updateDiscountLine()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-                Order order = new conekta.Order().create(@"{
+            Order order = new conekta.Order().create(@"{
                   ""currency"":""MXN"",
                   ""customer_info"": {
                   ""name"": ""Jul Ceballos"",
@@ -699,47 +700,47 @@
                   }]
                   }");
 
-                Assert.AreEqual(order.id.GetType().ToString(), "System.String");
+            Assert.AreEqual(order.id.GetType().ToString(), "System.String");
 
-                order = new Order().find(order.id);
+            order = new Order().find(order.id);
 
-                DiscountLine discount_line = order.createDiscountLine(@"{
+            DiscountLine discount_line = order.createDiscountLine(@"{
                 ""code"": ""234"",
                 ""type"": ""loyalty"",
                 ""amount"": 600
                 }");
 
-                order = new Order().find(order.id);
+            order = new Order().find(order.id);
 
-                discount_line = (DiscountLine)order.discount_lines.at(0);
-                discount_line = discount_line.update(@"{
+            discount_line = (DiscountLine)order.discount_lines.at(0);
+            discount_line = discount_line.update(@"{
                 ""amount"": 700,
                 ""code"": ""567"",
                 ""type"": ""coupon""
                 }");
 
-                Assert.AreEqual(discount_line.type, "coupon");
-                Assert.AreEqual(discount_line.code, "567");
-                Assert.AreEqual(discount_line.amount, 700);
-            }
+            Assert.AreEqual(discount_line.type, "coupon");
+            Assert.AreEqual(discount_line.code, "567");
+            Assert.AreEqual(discount_line.amount, 700);
+        }
+    }
+
+    [TestFixture()]
+    public class CustomerTest
+    {
+
+        public static void getApiKey()
+        {
+            conekta.Api.apiKey = "key_ZLy4aP2szht1HqzkCezDEA";
         }
 
-        [TestFixture()]
-        public class CustomerTest
+        [Test()]
+        public void createCustomer()
         {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-            public static void getApiKey()
-            {
-                conekta.Api.apiKey = "key_ZLy4aP2szht1HqzkCezDEA";
-            }
-
-            [Test()]
-            public void createCustomer()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
-
-                Customer customer = new conekta.Customer().create(@"{
+            Customer customer = new conekta.Customer().create(@"{
                   ""name"": ""Emiliano Cabrera"",
                   ""phone"": ""+5215544443333"",
                   ""email"": ""user@example.com"",
@@ -771,51 +772,51 @@
                   }
             }");
 
-                Assert.AreEqual(customer.corporate, true);
+            Assert.AreEqual(customer.corporate, true);
 
-                customer = new Customer().find(customer.id);
+            customer = new Customer().find(customer.id);
 
-                Assert.AreEqual(customer.corporate, true);
-                Assert.IsNotNull(customer.created_at);
-            }
+            Assert.AreEqual(customer.corporate, true);
+            Assert.IsNotNull(customer.created_at);
+        }
 
-            [Test()]
-            public void updateCustomer()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+        [Test()]
+        public void updateCustomer()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-                Customer customer = new conekta.Customer().create(@"{
+            Customer customer = new conekta.Customer().create(@"{
                   ""name"": ""Emiliano Cabrera"",
                   ""phone"": ""5575553322"",
                   ""email"": ""user@example.com"",
                   ""corporate"": true
                   }");
 
-                Assert.AreEqual(customer.corporate, true);
-                Assert.AreEqual(customer.name, "Emiliano Cabrera");
+            Assert.AreEqual(customer.corporate, true);
+            Assert.AreEqual(customer.name, "Emiliano Cabrera");
 
-                customer = new Customer().find(customer.id);
+            customer = new Customer().find(customer.id);
 
-                Assert.AreEqual(customer.corporate, true);
-                Assert.AreEqual(customer.name, "Emiliano Cabrera");
+            Assert.AreEqual(customer.corporate, true);
+            Assert.AreEqual(customer.name, "Emiliano Cabrera");
 
-                customer = customer.update(@"{
+            customer = customer.update(@"{
                 ""corporate"": false,
                 ""name"": ""Juan Perez""
                 }");
 
-                Assert.AreEqual(customer.name, "Juan Perez");
-                Assert.AreEqual(customer.corporate, false);
-            }
+            Assert.AreEqual(customer.name, "Juan Perez");
+            Assert.AreEqual(customer.corporate, false);
+        }
 
-            [Test()]
-            public void deleteCustomer()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+        [Test()]
+        public void deleteCustomer()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-                Customer customer = new conekta.Customer().create(@"{
+            Customer customer = new conekta.Customer().create(@"{
                   ""name"": ""Emiliano Cabrera"",
                   ""phone"": ""+5215544443333"",
                   ""email"": ""user@example.com"",
@@ -827,24 +828,24 @@
                   }]
                   }");
 
-                Assert.AreEqual(customer.corporate, true);
+            Assert.AreEqual(customer.corporate, true);
 
-                customer = new Customer().find(customer.id);
+            customer = new Customer().find(customer.id);
 
-                Assert.AreEqual(customer.corporate, true);
+            Assert.AreEqual(customer.corporate, true);
 
-                customer = customer.destroy();
+            customer = customer.destroy();
 
-                Assert.AreEqual(customer.corporate, true);
-            }
+            Assert.AreEqual(customer.corporate, true);
+        }
 
-            [Test()]
-            public void createCustomerWithOfflineRecurrentReference()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+        [Test()]
+        public void createCustomerWithOfflineRecurrentReference()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-                Customer customer = new conekta.Customer().create(@"{
+            Customer customer = new conekta.Customer().create(@"{
                   ""name"": ""Emiliano Cabrera"",
                   ""phone"": ""+5215544443333"",
                   ""email"": ""user@example.com"",
@@ -855,23 +856,23 @@
                   }]
                   }");
 
-                PaymentSource paymentSource = customer.payment_sources[0];
-                OfflineRecurrentReference reference = paymentSource as OfflineRecurrentReference;
+            PaymentSource paymentSource = customer.payment_sources[0];
+            OfflineRecurrentReference reference = paymentSource as OfflineRecurrentReference;
 
-                Assert.IsNotNull(reference.reference);
-                Assert.IsNotNull(reference.barcode);
-                Assert.IsNotNull(reference.barcode_url);
-                Assert.IsNotNull(reference.provider);
-                Assert.AreEqual(reference.expires_at, "1553273553");
-            }
+            Assert.IsNotNull(reference.reference);
+            Assert.IsNotNull(reference.barcode);
+            Assert.IsNotNull(reference.barcode_url);
+            Assert.IsNotNull(reference.provider);
+            Assert.AreEqual(reference.expires_at, "1553273553");
+        }
 
-            [Test()]
-            public void createCustomerWithCard()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+        [Test()]
+        public void createCustomerWithCard()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-                Customer customer = new conekta.Customer().create(@"{
+            Customer customer = new conekta.Customer().create(@"{
                   ""name"": ""Emiliano Cabrera"",
                   ""phone"": ""+5215544443333"",
                   ""email"": ""user@example.com"",
@@ -883,20 +884,20 @@
                   }]
                   }");
 
-                PaymentSource paymentSource = customer.payment_sources[0];
+            PaymentSource paymentSource = customer.payment_sources[0];
 
-                Card card = paymentSource as Card;
-                Assert.AreEqual(customer.corporate, true);
+            Card card = paymentSource as Card;
+            Assert.AreEqual(customer.corporate, true);
 
-            }
+        }
 
-            [Test()]
-            public void createSubscription()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+        [Test()]
+        public void createSubscription()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-                Customer customer = new conekta.Customer().create(@"{
+            Customer customer = new conekta.Customer().create(@"{
                   ""name"": ""Emiliano Cabrera"",
                   ""phone"": ""+5215544443333"",
                   ""email"": ""user@example.com"",
@@ -907,20 +908,20 @@
                   }]
                   }");
 
-                Subscription subscription = customer.createSubscription(@"{
+            Subscription subscription = customer.createSubscription(@"{
                 ""plan"": ""gold-plan""
                 }");
 
-                Assert.AreEqual(subscription.plan_id, "gold-plan");
-            }
+            Assert.AreEqual(subscription.plan_id, "gold-plan");
+        }
 
-            [Test()]
-            public void updateSubscription()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+        [Test()]
+        public void updateSubscription()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-                Customer customer = new conekta.Customer().create(@"{
+            Customer customer = new conekta.Customer().create(@"{
                   ""name"": ""Emiliano Cabrera"",
                   ""phone"": ""+5215544443333"",
                   ""email"": ""user@example.com"",
@@ -931,26 +932,26 @@
                   }]
                   }");
 
-                Subscription subscription = customer.createSubscription(@"{
+            Subscription subscription = customer.createSubscription(@"{
                 ""plan"": ""gold-plan""
                 }");
 
-                Assert.AreEqual(subscription.plan_id, "gold-plan");
+            Assert.AreEqual(subscription.plan_id, "gold-plan");
 
-                subscription = subscription.update(@"{
+            subscription = subscription.update(@"{
                 ""plan"": ""opal-plan""
                 }");
 
-                Assert.AreEqual(subscription.plan_id, "opal-plan");
-            }
+            Assert.AreEqual(subscription.plan_id, "opal-plan");
+        }
 
-            [Test()]
-            public void statesSubscription()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+        [Test()]
+        public void statesSubscription()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-                Customer customer = new conekta.Customer().create(@"{
+            Customer customer = new conekta.Customer().create(@"{
                   ""name"": ""Emiliano Cabrera"",
                   ""phone"": ""+5215544443333"",
                   ""email"": ""user@example.com"",
@@ -961,32 +962,32 @@
                   }]
                   }");
 
-                Subscription subscription = customer.createSubscription(@"{
+            Subscription subscription = customer.createSubscription(@"{
                 ""plan"": ""gold-plan""
                 }");
 
-                Assert.AreEqual(subscription.status, "in_trial");
+            Assert.AreEqual(subscription.status, "in_trial");
 
-                subscription = subscription.pause();
+            subscription = subscription.pause();
 
-                Assert.AreEqual(subscription.status, "paused");
+            Assert.AreEqual(subscription.status, "paused");
 
-                subscription = subscription.resume();
+            subscription = subscription.resume();
 
-                Assert.AreEqual(subscription.status, "in_trial");
+            Assert.AreEqual(subscription.status, "in_trial");
 
-                subscription = subscription.cancel();
+            subscription = subscription.cancel();
 
-                Assert.AreEqual(subscription.status, "canceled");
-            }
+            Assert.AreEqual(subscription.status, "canceled");
+        }
 
-            [Test()]
-            public void createCard()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+        [Test()]
+        public void createCard()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-                Customer customer = new conekta.Customer().create(@"{
+            Customer customer = new conekta.Customer().create(@"{
                   ""name"": ""Emiliano Cabrera"",
                   ""phone"": ""+5215544443333"",
                   ""email"": ""user@example.com"",
@@ -994,22 +995,22 @@
                   ""payment_sources"": []
                   }");
 
-                Card card = (Card)customer.CreateCard(@"{
+            Card card = (Card)customer.CreateCard(@"{
                 ""token_id"": ""tok_test_visa_4242"",
                 ""type"": ""card""
                 }");
 
-                Assert.AreEqual(card.type, "card");
-                Assert.AreEqual(card.name, "Jorge Lopez");
-            }
+            Assert.AreEqual(card.type, "card");
+            Assert.AreEqual(card.name, "Jorge Lopez");
+        }
 
-            [Test()]
-            public void createOfflineRecurrentReference()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+        [Test()]
+        public void createOfflineRecurrentReference()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-                Customer customer = new conekta.Customer().create(@"{
+            Customer customer = new conekta.Customer().create(@"{
                       ""name"": ""Emiliano Cabrera"",
                       ""phone"": ""+5215544443333"",
                       ""email"": ""user@example.com"",
@@ -1017,76 +1018,76 @@
                       ""payment_sources"": []
                       }");
 
-                OfflineRecurrentReference reference = (OfflineRecurrentReference) customer.CreateOfflineRecurrentReference(@"{
+            OfflineRecurrentReference reference = (OfflineRecurrentReference)customer.CreateOfflineRecurrentReference(@"{
                     ""expires_at"": 1553273553,
                     ""type"": ""oxxo_recurrent""
                     }");
-            
-                Assert.IsNotNull(reference.reference);
-                Assert.IsNotNull(reference.barcode);
-                Assert.IsNotNull(reference.barcode_url);
-                Assert.IsNotNull(reference.provider);
-                Assert.AreEqual(reference.expires_at, "1553273553");
-            }
 
-            [Test()]
-            public void updatePaymentSource()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+            Assert.IsNotNull(reference.reference);
+            Assert.IsNotNull(reference.barcode);
+            Assert.IsNotNull(reference.barcode_url);
+            Assert.IsNotNull(reference.provider);
+            Assert.AreEqual(reference.expires_at, "1553273553");
+        }
 
-                Customer customer = new conekta.Customer().create(@"{
+        [Test()]
+        public void updatePaymentSource()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
+
+            Customer customer = new conekta.Customer().create(@"{
                   ""name"": ""Emiliano Cabrera"",
                   ""phone"": ""+5215544443333"",
                   ""email"": ""user@example.com"",
                   ""corporate"": true
                   }");
 
-                Card payment_source = (Card)customer.CreateCard(@"{
+            Card payment_source = (Card)customer.CreateCard(@"{
                 ""token_id"": ""tok_test_visa_4242"",
                 ""type"": ""card""
                 }");
 
-                Card updatedPaymentSource = payment_source.Update(@"{
+            Card updatedPaymentSource = payment_source.Update(@"{
                 ""name"": ""Emiliano Suarez""
                 }");
 
-                Assert.AreEqual(updatedPaymentSource.name, "Emiliano Suarez");
-            }
+            Assert.AreEqual(updatedPaymentSource.name, "Emiliano Suarez");
+        }
 
-            [Test()]
-            public void deletePaymentSource()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+        [Test()]
+        public void deletePaymentSource()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-                Customer customer = new conekta.Customer().create(@"{
+            Customer customer = new conekta.Customer().create(@"{
                   ""name"": ""Emiliano Cabrera"",
                   ""phone"": ""+5215544443333"",
                   ""email"": ""user@example.com""
                   }");
 
-                PaymentSource payment_source = customer.CreateCard(@"{
+            PaymentSource payment_source = customer.CreateCard(@"{
                 ""token_id"": ""tok_test_visa_4242"",
                 ""type"": ""card""
                 }");
 
-                payment_source.destroy();
+            payment_source.destroy();
 
-                Customer customerReloaded = new Customer().find(customer.id);
+            Customer customerReloaded = new Customer().find(customer.id);
 
 
 
-                Assert.AreEqual(customerReloaded.payment_sources, null);
-            }
+            Assert.AreEqual(customerReloaded.payment_sources, null);
+        }
 
-            [Test()]
-            public void createShippingContact()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+        [Test()]
+        public void createShippingContact()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-                Customer customer = new conekta.Customer().create(@"{
+            Customer customer = new conekta.Customer().create(@"{
                   ""name"": ""Emiliano Cabrera"",
                   ""phone"": ""+5215544443333"",
                   ""email"": ""user@example.com"",
@@ -1115,7 +1116,7 @@
                   ""paid_transactions"": 5
             }");
 
-                ShippingContact shipping_contact = customer.createShippingContact(@"{
+            ShippingContact shipping_contact = customer.createShippingContact(@"{
                 ""phone"": ""+5215555555555"",
                 ""receiver"": ""Marvin Fuller"",
                 ""between_streets"": ""Ackerman Crescent"",
@@ -1130,23 +1131,23 @@
                 }
                 }");
 
-                Assert.AreEqual(shipping_contact.phone, "+5215555555555");
-            }
+            Assert.AreEqual(shipping_contact.phone, "+5215555555555");
+        }
 
-            [Test()]
-            public void updateShippingContact()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+        [Test()]
+        public void updateShippingContact()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-                Customer customer = new conekta.Customer().create(@"{
+            Customer customer = new conekta.Customer().create(@"{
                   ""name"": ""Emiliano Cabrera"",
                   ""phone"": ""5575553322"",
                   ""email"": ""user@example.com"",
                   ""corporate"": true
                   }");
 
-                ShippingContact shipping_contact = customer.createShippingContact(@"{
+            ShippingContact shipping_contact = customer.createShippingContact(@"{
                 ""phone"": ""5575553322"",
                 ""receiver"": ""Marvin Fuller"",
                 ""between_streets"": ""Ackerman Crescent"",
@@ -1161,27 +1162,27 @@
                 }
                 }");
 
-                shipping_contact = shipping_contact.update(@"{
+            shipping_contact = shipping_contact.update(@"{
                 ""phone"": ""5575553324""
                 }");
 
-                Assert.AreEqual(shipping_contact.phone, "5575553324");
-            }
+            Assert.AreEqual(shipping_contact.phone, "5575553324");
+        }
 
-            [Test()]
-            public void deleteShippingContact()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
+        [Test()]
+        public void deleteShippingContact()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
 
-                Customer customer = new conekta.Customer().create(@"{
+            Customer customer = new conekta.Customer().create(@"{
                   ""name"": ""Emiliano Cabrera"",
                   ""phone"": ""+5215544443333"",
                   ""email"": ""user@example.com"",
                   ""corporate"": true
                   }");
 
-                ShippingContact shipping_contact = customer.createShippingContact(@"{
+            ShippingContact shipping_contact = customer.createShippingContact(@"{
                 ""phone"": ""+5215555555555"",
                 ""receiver"": ""Marvin Fuller"",
                 ""between_streets"": ""Ackerman Crescent"",
@@ -1196,46 +1197,130 @@
                 }
                 }");
 
-                Assert.AreEqual(shipping_contact.phone, "+5215555555555");
+            Assert.AreEqual(shipping_contact.phone, "+5215555555555");
 
-                shipping_contact = shipping_contact.update(@"{
+            shipping_contact = shipping_contact.update(@"{
                 ""phone"": ""+5215555555555""
                 }");
 
-                Assert.AreEqual(shipping_contact.phone, "+5215555555555");
+            Assert.AreEqual(shipping_contact.phone, "+5215555555555");
 
-                shipping_contact = shipping_contact.destroy();
+            shipping_contact = shipping_contact.destroy();
 
-                Assert.AreEqual(shipping_contact.phone, "+5215555555555");
-            }
-        }
-        [TestFixture()]
-        public class EventTest
-        {
-            private TestContext testContextInstance;
-
-            public TestContext TestContext
-            {
-                get { return testContextInstance; }
-                set { testContextInstance = value; }
-            }
-
-            public static void getApiKey()
-            {
-                conekta.Api.apiKey = "key_ZLy4aP2szht1HqzkCezDEA";
-            }
-            [Test()]
-            public void EventList()
-            {
-                getApiKey();
-                conekta.Api.version = "2.0.0";
-                Event[] events = new Event().where(new JObject());
-
-
-                Assert.AreEqual(events[0].webhook_status.GetType().ToString(), "System.String");
-                Assert.AreEqual(events[0].created_at.GetType().ToString(), "System.String");
-                Assert.AreEqual(events[0].livemode.GetType().ToString(), "System.String");
-                Assert.AreEqual(events[0].id.GetType().ToString(), "System.String");
-            }
+            Assert.AreEqual(shipping_contact.phone, "+5215555555555");
         }
     }
+
+    [TestFixture()]
+    public class EventTest
+    {
+        private TestContext testContextInstance;
+
+        public TestContext TestContext
+        {
+            get { return testContextInstance; }
+            set { testContextInstance = value; }
+        }
+
+        public static void getApiKey()
+        {
+            conekta.Api.apiKey = "key_ZLy4aP2szht1HqzkCezDEA";
+        }
+        [Test()]
+        public void EventList()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
+            Event[] events = new Event().where(new JObject());
+
+
+            Assert.AreEqual(events[0].webhook_status.GetType().ToString(), "System.String");
+            Assert.AreEqual(events[0].created_at.GetType().ToString(), "System.String");
+            Assert.AreEqual(events[0].livemode.GetType().ToString(), "System.String");
+            Assert.AreEqual(events[0].id.GetType().ToString(), "System.String");
+        }
+    }
+
+    [TestFixture()]
+    public class ChargeTest
+    {
+
+        private int RandomNumber(int min, int max, int seed = 0)
+        {
+            Random random = new Random((int)DateTime.Now.Ticks + seed);
+            return random.Next(min, max);
+        }
+
+        [Test()]
+        public void Card()
+        {
+            conekta.Api.locale = "es";
+            conekta.Api.apiKey = "key_eYvWV7gSDkNYXsmr";
+            conekta.Api.version = "1.0.0";
+
+            conekta.Charge charge = new conekta.Charge().create(@"{
+                    ""description"":""Stogies"",
+                    ""amount"": 20000,
+                    ""currency"":""MXN"",
+                    ""reference_id"":""9839-wolf_pack"",
+                    ""card"": ""tok_test_visa_4242"",
+                    ""details"": {
+                      ""name"": ""Arnulfo Quimare"",
+                      ""phone"": ""403-342-0642"",
+                      ""email"": ""logan@x-men.org"",
+                      ""customer"": {
+                        ""logged_in"": true,
+                        ""successful_purchases"": 14,
+                        ""created_at"": 1379784950,
+                        ""updated_at"": 1379784950,
+                        ""offline_payments"": 4,
+                        ""score"": 9
+                      },
+                      ""line_items"": [{
+                        ""name"": ""Box of Cohiba S1s"",
+                        ""description"": ""Imported From Mex."",
+                        ""unit_price"": 20000,
+                        ""quantity"": 1,
+                        ""sku"": ""cohb_s1"",
+                        ""category"": ""food""
+                      }],
+                      ""billing_address"": {
+                        ""street1"":""77 Mystery Lane"",
+                        ""street2"": ""Suite 124"",
+                        ""street3"": null,
+                        ""city"": ""Darlington"",
+                        ""state"":""NJ"",
+                        ""zip"": ""10192"",
+                        ""country"": ""Mexico"",
+                        ""tax_id"": ""xmn671212drx"",
+                        ""company_name"":""X-Men Inc."",
+                        ""phone"": ""77-777-7777"",
+                        ""email"": ""purshasing@x-men.org""
+                      }
+                    },
+              ""capture"": false
+                  }");
+
+            Assert.AreEqual(charge.payment_method.type, "credit");
+            Assert.AreEqual(charge.id.GetType().ToString(), "System.String");
+            Assert.AreEqual(charge.amount, 20000);
+
+            charge = new Charge().find(charge.id);
+
+            Assert.AreEqual(charge.id.GetType().ToString(), "System.String");
+            Assert.AreEqual(charge.amount, 20000);
+
+            charge = charge.capture();
+
+            Assert.AreEqual(charge.id.GetType().ToString(), "System.String");
+            Assert.AreEqual(charge.amount, 20000);
+
+            charge = charge.refund();
+
+            Assert.AreEqual(charge.id.GetType().ToString(), "System.String");
+            Assert.AreEqual(charge.amount, 20000);
+        }
+
+
+    }
+}
