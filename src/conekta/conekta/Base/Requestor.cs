@@ -17,10 +17,10 @@ namespace conekta
 
 		public String request (String method, String resource_uri, String data = "{}")
 		{
-			String api_version = conekta.Api.version.Replace(".", "");
-			if (int.Parse(api_version) < 110)
+			String apiVersion = conekta.Api.version.Replace(".", "");
+			if (int.Parse(apiVersion) < 100)
 			{
-				ConektaException ex = new ConektaException("This package just support api version 1.1 or higher");
+				ConektaException ex = new ConektaException("This package just support api version 1.0 or higher");
 				ex.details = new JArray(0);
 				ex._object = "error";
 				ex._type = "api_version_unsupported";
