@@ -1,6 +1,6 @@
 ![README Cover Image](readme_cover.png)
 
-# Conekta .NET 1.0.1
+# Conekta .NET 1.0.2
 
 This is a .net library that allows interaction with https://api.conekta.io API.
 
