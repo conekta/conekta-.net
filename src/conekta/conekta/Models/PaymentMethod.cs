@@ -6,6 +6,10 @@ namespace conekta
 		public String _object { get; set; }
 		public String _type { get; set; }
 		public String name { get; set; }
+		public String bank { get; set; }
+		public String receiving_account_number { get; set; }
+		public String receiving_account_bank { get; set; }
+		public String clabe { get; set; }
 		public String exp_month { get; set; }
 		public String exp_year { get; set; }
 		public String auth_code { get; set; }
