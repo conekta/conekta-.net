@@ -1,13 +1,17 @@
 ![README Cover Image](readme_cover.png)
-
 <div align="center">
 
-# Conekta .NET 1.0.2
+# Conekta .NET
 
-[![Made with .NET](https://img.shields.io/badge/made%20with-.net-red.svg?style=for-the-badge&colorA=ED4040&colorB=C12C2D)](https://www.microsoft.com/net) [![By Conekta](https://img.shields.io/badge/by-conekta-red.svg?style=for-the-badge&colorA=ee6130&colorB=00a4ac)](https://conekta.com)
+[![Made with .Net](https://img.shields.io/badge/made%20with-.NET-red.svg?style=for-the-badge&colorA=0078d7&colorB=505050&logo=.net&logoColor=white)](https://dotnet.microsoft.com/)
+[![By Conekta](https://img.shields.io/badge/by-conekta-red.svg?style=for-the-badge&colorA=ee6130&colorB=00a4ac)](https://conekta.com)
 </div>
 
-This is a .net library that allows interaction with https://api.conekta.io API.
+This is a [.NET](https://dotnet.microsoft.com/) library that allows interaction with [Conekta's API](https://api.conekta.io).
+
+## Requeriments
+
+Add them!
 
 ## Installation
 
@@ -24,7 +28,6 @@ To get started, add the following to your .NET script:
 ```csharp
 using conekta;
 ```
-
 
 ## Usage
 
@@ -99,15 +102,11 @@ Conekta.Customer.createFiscalEntity(string) : Conekta.FiscalEntity
 Conekta.FiscalEntity.update(string) : Conekta.FiscalEntity
 ```
 
+***
+
 ## Documentation
 
-Please see https://developers.conekta.com/api for up-to-date documentation.
-
-## License
-
-Developed in Mexico by [Conekta](https://www.conekta.com). Available with [MIT License](LICENSE).
-
-***
+Please see [developers.conekta.com/api](https://developers.conekta.com/api) for up-to-date documentation.
 
 ## How to contribute to the project
 
@@ -115,7 +114,7 @@ Developed in Mexico by [Conekta](https://www.conekta.com). Available with [MIT L
  
 2. Clone the repository
 ```
-    git clone git@github.com:yourUserName/conekta-.net.git
+    git clone git@github.com:yourUserName/conekta-ruby.git
 ```
 3. Create a branch
 ```
@@ -146,3 +145,11 @@ Developed in Mexico by [Conekta](https://www.conekta.com). Available with [MIT L
 ## We are always hiring!
 
 If you are a comfortable working with a range of backend languages (Java, Python, Ruby, PHP, etc) and frameworks, you have solid foundation in data structures, algorithms and software design with strong analytical and debugging skills, check our open positions: https://www.conekta.com/careers
+
+### License
+
+<div align="center">
+
+Developed in :mexico: Mexico by [Conekta](https://www.conekta.com). Available with [MIT License](LICENSE).
+
+</div>
