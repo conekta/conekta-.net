@@ -867,6 +867,36 @@ namespace ConektaTest
         }
 
         [Test()]
+        [Ignore("Not ready yet")]
+        public void createCustomerWithCustomReference()
+        {
+            getApiKey();
+            conekta.Api.version = "2.0.0";
+
+            Customer customer = new conekta.Customer().create(@"{
+                  ""name"": ""Emiliano Cabrera"",
+                  ""phone"": ""+5215544443333"",
+                  ""email"": ""user@example.com"",
+                  ""corporate"": true,
+                  ""payment_sources"": [{
+                    ""expires_at"": 1553273553,
+                    ""type"": ""oxxo_recurrent"",
+                    ""reference"": ""5512345678""
+                  }]
+                  }");
+
+            PaymentSource paymentSource = customer.payment_sources[0];
+            OfflineRecurrentReference reference = paymentSource as OfflineRecurrentReference;
+
+            Assert.IsNotNull(reference.reference);
+            Assert.IsNotNull(reference.provider);
+            Assert.AreEqual(reference.expires_at, "1553273553");
+            Assert.AreEqual(reference.reference.Length, 10);
+            Assert.AreEqual(reference.reference, "5512345678");
+
+        }
+
+        [Test()]
         public void createCustomerWithCard()
         {
             getApiKey();
