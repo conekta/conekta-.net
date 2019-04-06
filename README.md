@@ -1,13 +1,15 @@
-![README Cover Image](readme_cover.png)
-
 <div align="center">
+
+![banner](readme_files/banner.png)
 
 # Conekta .NET 1.0.2
 
-[![Made with .NET](https://img.shields.io/badge/made%20with-.net-red.svg?style=for-the-badge&colorA=ED4040&colorB=C12C2D)](https://www.microsoft.com/net) [![By Conekta](https://img.shields.io/badge/by-conekta-red.svg?style=for-the-badge&colorA=ee6130&colorB=00a4ac)](https://conekta.com)
+![net badge](readme_files/net-badge.png)
+![conekta badge](readme_files/conekta-badge.png)
+
 </div>
 
-This is a .net library that allows interaction with https://api.conekta.io API.
+This is a .NET library that allows interaction with https://api.conekta.io API.
 
 ## Installation
 
@@ -112,7 +114,7 @@ Developed in Mexico by [Conekta](https://www.conekta.com). Available with [MIT L
 ## How to contribute to the project
 
 1. Fork the repository
- 
+
 2. Clone the repository
 ```
     git clone git@github.com:yourUserName/conekta-.net.git
@@ -123,7 +125,7 @@ Developed in Mexico by [Conekta](https://www.conekta.com). Available with [MIT L
     git pull origin develop
     # You should choose the name of your branch
     git checkout -b <feature/my_branch>
-```    
+```
 4. Make necessary changes and commit those changes
 ```
     git add .
