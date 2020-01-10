@@ -6,7 +6,7 @@ namespace Conekta.Utils
   /// <summary>
   /// Http request factory.
   /// </summary>
-  public interface IHttpRequestFactory
+  internal interface IHttpRequestFactory
   {
     #region :: Methods ::
 

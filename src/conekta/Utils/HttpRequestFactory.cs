@@ -11,7 +11,7 @@ namespace Conekta.Utils
   /// <summary>
   /// Http request factory.
   /// </summary>
-  public class HttpRequestFactory : IHttpRequestFactory
+  internal class HttpRequestFactory : IHttpRequestFactory
   {
     #region :: Private Fields ::
 
@@ -33,7 +33,7 @@ namespace Conekta.Utils
     /// Initializes a new instance of the <see cref="T:Conekta.Utils.HttpRequestFactory"/> class.
     /// </summary>
     /// <param name="httpClientFactory">Http client factory.</param>
-    protected HttpRequestFactory(IHttpClientFactory httpClientFactory) =>
+    internal HttpRequestFactory(IHttpClientFactory httpClientFactory) =>
       _httpClientFactory = httpClientFactory;
 
     #endregion
@@ -71,8 +71,8 @@ namespace Conekta.Utils
           new MediaTypeWithQualityHeaderValue($"application/vnd.conekta-v{ConektaInfo.APIVersion.Id}+json"));
         request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(_acceptHeader));
 
-        request.Headers.UserAgent.Add(
-          new ProductInfoHeaderValue($"Conekta/v1 DotNetBindings10/Conekta::{ConektaInfo.APIVersion.Id}"));
+        //request.Headers.UserAgent.Add(
+        //new ProductInfoHeaderValue($"Conekta/v1 DotNetBindings10/Conekta::{ConektaInfo.APIVersion.Id}"));
 
         var apiKeyBytes = Encoding.UTF8.GetBytes(ConektaInfo.APIKey);
 
@@ -92,7 +92,15 @@ namespace Conekta.Utils
 
         if (data != null)
         {
-          request.Content = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
+          var serializedData = JsonConvert.SerializeObject(data, Formatting.Indented,
+            new JsonSerializerSettings
+            {
+              NullValueHandling = NullValueHandling.Ignore
+            });
+
+          Console.WriteLine($"serializedData -> {serializedData}");
+
+          request.Content = new StringContent(serializedData, Encoding.UTF8, "application/json");
         }
 
         using (var client = _httpClientFactory.CreateClient())
