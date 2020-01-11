@@ -14,14 +14,14 @@ namespace Conekta.Models
     /// </summary>
     /// <value><c>true</c> if live mode; otherwise, <c>false</c>.</value>
     [JsonProperty(PropertyName = "livemode")]
-    public bool LiveMode { get; set; }
+    public bool LiveMode { get; private set; }
 
     /// <summary>
     /// Gets or sets the amount.
     /// </summary>
     /// <value>The amount.</value>
     [JsonProperty(PropertyName = "amount")]
-    public uint Amount { get; set; }
+    public uint Amount { get; private set; }
 
     /// <summary>
     /// Gets or sets the currency.
@@ -35,7 +35,7 @@ namespace Conekta.Models
     /// </summary>
     /// <value>The amount refunded.</value>
     [JsonProperty(PropertyName = "amount_refunded")]
-    public uint AmountRefunded { get; set; }
+    public uint AmountRefunded { get; private set; }
 
     /// <summary>
     /// Gets or sets the customer info.
@@ -49,14 +49,14 @@ namespace Conekta.Models
     /// </summary>
     /// <value>The created at.</value>
     [JsonProperty(PropertyName = "created_at")]
-    public long CreatedAt { get; set; }
+    public long CreatedAt { get; private set; }
 
     /// <summary>
     /// Gets or sets the created at.
     /// </summary>
     /// <value>The created at.</value>
     [JsonProperty(PropertyName = "updated_at")]
-    public long UpdatedAt { get; set; }
+    public long UpdatedAt { get; private set; }
 
     /// <summary>
     /// Gets or sets the line items list.

@@ -15,7 +15,7 @@ namespace Conekta.Models
     /// </summary>
     /// <value>The identifier.</value>
     [JsonProperty(PropertyName = "id")]
-    public string Id { get; set; }
+    public string Id { get; private set; }
 
     /// <summary>
     /// Gets or sets the type of the object.

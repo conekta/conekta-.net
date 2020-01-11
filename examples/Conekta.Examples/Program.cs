@@ -42,9 +42,8 @@ namespace Conekta.Examples
           { "amount", orderFound.Amount.ToString() }
         });
 
-        var orderToUpdate = new OrderOperationData
+        var orderToUpdate = new OrderOperationData(order.Id)
         {
-          Id = order.Id,
           Currency = order.Currency,
           CustomerInfo = order.CustomerInfo,
           LineItems = order.LineItemsList.Data

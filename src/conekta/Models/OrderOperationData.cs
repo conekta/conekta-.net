@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
@@ -16,7 +17,7 @@ namespace Conekta.Models
     /// </summary>
     /// <value>The identifier.</value>
     [JsonProperty(PropertyName = "id")]
-    public string Id { get; set; }
+    public string Id { get; private set; }
 
     /// <summary>
     /// Gets or sets the currency.
@@ -42,6 +43,24 @@ namespace Conekta.Models
     [Required]
     [JsonProperty(PropertyName = "line_items")]
     public List<LineItem> LineItems { get; set; }
+
+    #endregion
+
+    #region :: Constructor ::
+
+    /// <summary>
+    /// Order Operation Data constructor.
+    /// </summary>
+    public OrderOperationData() { }
+
+    /// <summary>
+    /// Order Operation Data constructor.
+    /// </summary>
+    /// <param name="id">Identifier.</param>
+    public OrderOperationData(string id)
+    {
+      Id = id ?? throw new ArgumentNullException(nameof(id));
+    }
 
     #endregion
   }
