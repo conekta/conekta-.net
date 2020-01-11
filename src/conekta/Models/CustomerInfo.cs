@@ -14,7 +14,7 @@ namespace Conekta.Models
     /// Gets or sets the identifier.
     /// </summary>
     /// <value>The identifier.</value>
-    [StringLength(3)]
+    [StringLength(30)]
     [JsonProperty(PropertyName = "customer_id")]
     public string Id { get; set; }
 
@@ -49,6 +49,13 @@ namespace Conekta.Models
     /// <value><c>true</c> if corporate; otherwise, <c>false</c>.</value>
     [JsonProperty(PropertyName = "corporate")]
     public bool Corporate { get; set; }
+
+    /// <summary>
+    /// Gets or sets the type of the object.
+    /// </summary>
+    /// <value>The type of the object.</value>
+    [JsonProperty(PropertyName = "object")]
+    public string ObjectType { get; set; }
 
     #endregion
   }

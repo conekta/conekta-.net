@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
@@ -8,17 +7,9 @@ namespace Conekta.Models
   /// <summary>
   /// Line item.
   /// </summary>
-  public class LineItem
+  public class LineItem : ModelBase
   {
     #region :: Properties ::
-
-    /// <summary>
-    /// Gets or sets the identifier.
-    /// </summary>
-    /// <value>The identifier.</value>
-    [StringLength(3)]
-    [JsonProperty(PropertyName = "id")]
-    public string Id { get; set; }
 
     /// <summary>
     /// Gets or sets the name.
@@ -43,7 +34,7 @@ namespace Conekta.Models
     /// <value>The unit price in cents.</value>
     [Required]
     [JsonProperty(PropertyName = "unit_price")]
-    public uint UnitPrice { get; set; }
+    public int UnitPrice { get; set; }
 
     /// <summary>
     /// Gets or sets the quantity.
@@ -82,14 +73,6 @@ namespace Conekta.Models
     [StringLength(150)]
     [JsonProperty(PropertyName = "brand")]
     public string Brand { get; set; }
-
-    /// <summary>
-    /// Gets or sets the metadata.
-    /// </summary>
-    /// <value>The metadata.</value>
-    [StringLength(150)]
-    [JsonProperty(PropertyName = "metadata")]
-    public string Metadata { get; set; }
 
     #endregion
   }

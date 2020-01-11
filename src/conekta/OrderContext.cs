@@ -4,13 +4,15 @@ using System.Threading.Tasks;
 using Conekta.Models;
 using Conekta.Utils;
 using Conekta.Exceptions;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Conekta
 {
   /// <summary>
   /// Order context.
   /// </summary>
-  public class OrderContext
+  public class OrderContext : IOrderContext
   {
     #region :: Private Fields ::
 
@@ -41,18 +43,89 @@ namespace Conekta
     /// Creates the async.
     /// </summary>
     /// <returns>The async.</returns>
-    /// <param name="orderCreationData">Order creation data.</param>
-    public async Task<Order> CreateAsync(OrderCreationData orderCreationData)
+    /// <param name="orderOperationData">Order operation data.</param>
+    public async Task<Order> CreateAsync(OrderOperationData orderOperationData)
     {
-      orderCreationData.Validate();
+      orderOperationData.Validate();
 
-      var response = await _httpRequestFactory.SendAsync(HttpMethod.Post, RESOURCEURI, orderCreationData);
+      var response = await _httpRequestFactory.SendAsync(HttpMethod.Post, RESOURCEURI, orderOperationData);
 
       Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
 
       if (response.IsSuccessStatusCode)
       {
         return response.ContentAsType<Order>();
+      }
+
+      throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
+    }
+
+    /// <summary>
+    /// Updates the async.
+    /// </summary>
+    /// <returns>The async.</returns>
+    /// <param name="orderOperationData">Order operation data.</param>
+    public async Task<Order> UpdateAsync(OrderOperationData orderOperationData)
+    {
+      orderOperationData.Validate();
+
+      var response = await _httpRequestFactory.SendAsync(HttpMethod.Put, $"{RESOURCEURI}/{orderOperationData.Id}", orderOperationData);
+
+      Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+
+      if (response.IsSuccessStatusCode)
+      {
+        return response.ContentAsType<Order>();
+      }
+
+      throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
+    }
+
+    /// <summary>
+    /// Finds the async.
+    /// </summary>
+    /// <returns>The async.</returns>
+    /// <param name="orderId">Order identifier.</param>
+    public async Task<Order> FindAsync(string orderId)
+    {
+      if (orderId is null)
+      {
+        throw new ArgumentNullException(nameof(orderId));
+      }
+
+      var response = await _httpRequestFactory.SendAsync(HttpMethod.Get, $"{RESOURCEURI}/{orderId}");
+
+      Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+
+      if (response.IsSuccessStatusCode)
+      {
+        return response.ContentAsType<Order>();
+      }
+
+      throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
+    }
+
+    /// <summary>
+    /// Wheres the async.
+    /// </summary>
+    /// <returns>The async.</returns>
+    /// <param name="query">Query.</param>
+    public async Task<OrderList> WhereAsync(Dictionary<string, string> query)
+    {
+      if (query is null)
+      {
+        throw new ArgumentNullException(nameof(query));
+      }
+
+      var url = $"?{string.Join("&", query.Select(x => String.Format("{0}={1}", x.Key, x.Value)))}";
+
+      var response = await _httpRequestFactory.SendAsync(HttpMethod.Get, $"{RESOURCEURI}{url}");
+
+      Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+
+      if (response.IsSuccessStatusCode)
+      {
+        return response.ContentAsType<OrderList>();
       }
 
       throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);

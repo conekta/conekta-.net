@@ -71,9 +71,6 @@ namespace Conekta.Utils
           new MediaTypeWithQualityHeaderValue($"application/vnd.conekta-v{ConektaInfo.APIVersion.Id}+json"));
         request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(_acceptHeader));
 
-        //request.Headers.UserAgent.Add(
-        //new ProductInfoHeaderValue($"Conekta/v1 DotNetBindings10/Conekta::{ConektaInfo.APIVersion.Id}"));
-
         var apiKeyBytes = Encoding.UTF8.GetBytes(ConektaInfo.APIKey);
 
         request.Headers.Add("Authorization", $"Basic {Convert.ToBase64String(apiKeyBytes)}:");
@@ -89,6 +86,7 @@ namespace Conekta.Utils
         });
 
         request.Headers.Add("X-Conekta-Client-User-Agent", userAgent.ToString());
+        request.Headers.Add("UserAgent", $"Conekta/v1 DotNetBindings10/Conekta::{ConektaInfo.APIVersion.Id}");
 
         if (data != null)
         {
@@ -98,6 +96,7 @@ namespace Conekta.Utils
               NullValueHandling = NullValueHandling.Ignore
             });
 
+          Console.WriteLine($"request info -> {request.Method} - {request.RequestUri}");
           Console.WriteLine($"serializedData -> {serializedData}");
 
           request.Content = new StringContent(serializedData, Encoding.UTF8, "application/json");

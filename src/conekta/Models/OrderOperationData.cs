@@ -5,11 +5,18 @@ using Newtonsoft.Json;
 namespace Conekta.Models
 {
   /// <summary>
-  /// Order creation data.
+  /// Order operation data.
   /// </summary>
-  public class OrderCreationData
+  public class OrderOperationData
   {
     #region :: Properties ::
+
+    /// <summary>
+    /// Gets or sets the identifier.
+    /// </summary>
+    /// <value>The identifier.</value>
+    [JsonProperty(PropertyName = "id")]
+    public string Id { get; set; }
 
     /// <summary>
     /// Gets or sets the currency.
