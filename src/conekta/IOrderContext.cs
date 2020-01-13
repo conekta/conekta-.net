@@ -39,6 +39,36 @@ namespace Conekta
     /// <param name="query">Query.</param>
     Task<OrderList> WhereAsync(Dictionary<string, string> query);
 
+    /// <summary>
+    /// Capture the specified orderId.
+    /// </summary>
+    /// <returns>The capture.</returns>
+    /// <param name="orderId">Order identifier.</param>
+    Task<Order> Capture(string orderId);
+
+    /// <summary>
+    /// Creates the refund.
+    /// </summary>
+    /// <returns>The refund.</returns>
+    /// <param name="orderId">Order identifier.</param>
+    Task<Order> CreateRefund(string orderId);
+
+    /// <summary>
+    /// Creates the charge.
+    /// </summary>
+    /// <returns>The charge.</returns>
+    /// <param name="charge">Charge.</param>
+    Task<Charge> CreateCharge(Charge charge);
+
+    /// <summary>
+    /// Creates the line item.
+    /// </summary>
+    /// <returns>The line item.</returns>
+    /// <param name="lineItem">Line item.</param>
+    Task<LineItem> CreateLineItem(LineItem lineItem);
+
+    Task<TaxLine> CreateTaxLine(TaxLine taxLine);
+
     #endregion
   }
 }
