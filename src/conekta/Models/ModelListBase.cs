@@ -10,6 +10,19 @@ namespace Conekta.Models
     #region :: Properties ::
 
     /// <summary>
+    /// Next page URL.
+    /// </summary>
+    [JsonProperty(PropertyName = "next_page_url")]
+    public string NextPageUrl { get; set; }
+
+
+    /// <summary>
+    /// Previous page URL.
+    /// </summary>
+    [JsonProperty(PropertyName = "previous_page_url")]
+    public string PreviousPageUrl { get; set; }
+
+    /// <summary>
     /// Gets or sets the type of the object.
     /// </summary>
     /// <value>The type of the object.</value>
@@ -23,12 +36,6 @@ namespace Conekta.Models
     [JsonProperty(PropertyName = "has_more")]
     public bool HasMore { get; set; }
 
-    /// <summary>
-    /// Gets or sets a value indicating whether this <see cref="T:Conekta.Models.ModelListBase"/> is total.
-    /// </summary>
-    /// <value><c>true</c> if total; otherwise, <c>false</c>.</value>
-    [JsonProperty(PropertyName = "total")]
-    public uint Total { get; set; }
 
     #endregion
   }

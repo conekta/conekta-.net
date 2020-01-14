@@ -34,31 +34,33 @@ namespace Conekta.Examples
 
         var order = await CreateOrder();
 
-        var orderFound = await FindOrder(order.Id);
+        //var orderFound = await FindOrder(order.Id);
 
-        var ordersFound = await WhereOrder(new Dictionary<string, string>
-        {
-          { "id", orderFound.Id },
-          { "amount", orderFound.Amount.ToString() }
-        });
+        //var ordersFound = await WhereOrder(new Dictionary<string, string>
+        //{
+        //  { "id", orderFound.Id },
+        //  { "amount", orderFound.Amount.ToString() }
+        //});
 
-        var orderToUpdate = new OrderOperationData(order.Id)
-        {
-          Currency = order.Currency,
-          CustomerInfo = order.CustomerInfo,
-          LineItems = order.LineItemsList.Data
-        };
+        //var orderToUpdate = new OrderOperationData(order.Id)
+        //{
+        //  Currency = order.Currency,
+        //  CustomerInfo = order.CustomerInfo,
+        //  LineItems = order.LineItemsList.Data
+        //};
 
-        orderToUpdate.LineItems.Add(new LineItem
-        {
-          Name = "Other Item to buy",
-          UnitPrice = 10000,
-          Quantity = 1
-        });
+        //orderToUpdate.LineItems.Add(new LineItem
+        //{
+        //  Name = "Other Item to buy",
+        //  UnitPrice = 10000,
+        //  Quantity = 1
+        //});
 
-        orderToUpdate.CustomerInfo.Email = "gustavo@conekta.com";
+        //orderToUpdate.CustomerInfo.Email = "gustavo@conekta.com";
 
-        var orderUpdated = await UpdateOrder(orderToUpdate);
+        //var orderUpdated = await UpdateOrder(orderToUpdate);
+
+        //var orderCaptured = await CaptureOrder(order.Id);
 
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("[√√] All Done.");
@@ -196,6 +198,27 @@ namespace Conekta.Examples
         Formatting.Indented) }");
 
       return orderUpdated;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="orderId"></param>
+    /// <returns></returns>
+    private static async Task<Order> CaptureOrder(string orderId)
+    {
+      Console.ForegroundColor = ConsoleColor.DarkCyan;
+      Console.WriteLine($"  [-] Capture Order {orderId}...");
+
+      var orderContext = new OrderContext();
+
+      var orderCaptured = await orderContext.CaptureAsync(orderId);
+
+      Console.WriteLine("    [√] Order Captured:");
+      Console.WriteLine(@$"    [->] { JsonConvert.SerializeObject(orderCaptured,
+        Formatting.Indented) }");
+
+      return orderCaptured;
     }
 
     #region :: Order ::

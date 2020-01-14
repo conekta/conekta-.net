@@ -31,6 +31,12 @@ namespace Conekta.Models
     public string Currency { get; set; }
 
     /// <summary>
+    /// Gets the payment status.
+    /// </summary>
+    [JsonProperty(PropertyName = "payment_status")]
+    public string PaymentStatus { get; private set; }
+
+    /// <summary>
     /// Gets or sets the amount refunded.
     /// </summary>
     /// <value>The amount refunded.</value>
@@ -45,6 +51,19 @@ namespace Conekta.Models
     public CustomerInfo CustomerInfo { get; set; }
 
     /// <summary>
+    /// Gets or sets the line items list.
+    /// </summary>
+    /// <value>The line items list.</value>
+    [JsonProperty(PropertyName = "line_items")]
+    public LineItemsList LineItemsList { get; set; }
+
+    /// <summary>
+    /// Gets or sets the charge list.
+    /// </summary>
+    [JsonProperty(PropertyName = "charges")]
+    public ChargeList ChargeList { get; set; }
+
+    /// <summary>
     /// Gets or sets the created at.
     /// </summary>
     /// <value>The created at.</value>
@@ -57,13 +76,6 @@ namespace Conekta.Models
     /// <value>The created at.</value>
     [JsonProperty(PropertyName = "updated_at")]
     public long UpdatedAt { get; private set; }
-
-    /// <summary>
-    /// Gets or sets the line items list.
-    /// </summary>
-    /// <value>The line items list.</value>
-    [JsonProperty(PropertyName = "line_items")]
-    public LineItemsList LineItemsList { get; set; }
 
     #endregion
   }

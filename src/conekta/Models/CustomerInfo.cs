@@ -57,6 +57,12 @@ namespace Conekta.Models
     [JsonProperty(PropertyName = "object")]
     public string ObjectType { get; set; }
 
+    /// <summary>
+    /// Antifraud info.
+    /// </summary>
+    [JsonProperty(PropertyName = "antifraud_info")]
+    public dynamic AntifraudInfo { get; set; }
+
     #endregion
   }
 }

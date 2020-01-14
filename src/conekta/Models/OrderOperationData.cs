@@ -8,7 +8,7 @@ namespace Conekta.Models
   /// <summary>
   /// Order operation data.
   /// </summary>
-  public class OrderOperationData
+  public class OrderOperationData : ICloneable
   {
     #region :: Properties ::
 
@@ -32,7 +32,6 @@ namespace Conekta.Models
     /// Gets or sets the customer info.
     /// </summary>
     /// <value>The customer info.</value>
-    [Required]
     [JsonProperty(PropertyName = "customer_info")]
     public CustomerInfo CustomerInfo { get; set; }
 
@@ -43,6 +42,26 @@ namespace Conekta.Models
     [Required]
     [JsonProperty(PropertyName = "line_items")]
     public List<LineItem> LineItems { get; set; }
+
+    /// <summary>
+    /// Gets or set charges.
+    /// </summary>
+    [JsonProperty(PropertyName = "charges")]
+    public List<ChargeOperationData> Charges { get; set; }
+
+    /// <summary>
+    /// Pre authorize flag.
+    /// </summary>
+    [JsonProperty(PropertyName = "pre_authorize")]
+    public bool PreAuthorize { get; set; }
+
+    /// <summary>
+    /// Gets or sets the metadata.
+    /// </summary>
+    /// <value>The metadata.</value>
+    [StringLength(250)]
+    [JsonProperty(PropertyName = "metadata")]
+    public dynamic Metadata { get; set; }
 
     #endregion
 
@@ -57,10 +76,17 @@ namespace Conekta.Models
     /// Order Operation Data constructor.
     /// </summary>
     /// <param name="id">Identifier.</param>
-    public OrderOperationData(string id)
-    {
-      Id = id ?? throw new ArgumentNullException(nameof(id));
-    }
+    public OrderOperationData(string id) => Id = id ?? throw new ArgumentNullException(nameof(id));
+
+    #endregion
+
+    #region :: Methods ::
+
+    /// <summary>
+    /// Clone object.
+    /// </summary>
+    /// <returns>Cloned object.</returns>
+    public object Clone() => MemberwiseClone();
 
     #endregion
   }

@@ -131,6 +131,83 @@ namespace Conekta
       throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
     }
 
+    /// <summary>
+    /// Capture the specified orderId.
+    /// </summary>
+    /// <returns>The capture.</returns>
+    /// <param name="orderId">Order identifier.</param>
+    public async Task<Order> CaptureAsync(string orderId)
+    {
+      if (orderId is null)
+      {
+        throw new ArgumentNullException(nameof(orderId));
+      }
+
+      var response = await _httpRequestFactory.SendAsync(HttpMethod.Put, $"{RESOURCEURI}/{orderId}/capture", "{}");
+
+      Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+
+      if (response.IsSuccessStatusCode)
+      {
+        return response.ContentAsType<Order>();
+      }
+
+      throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
+    }
+
+
+    /// <summary>
+    /// Creates the refund.
+    /// </summary>
+    /// <returns>The refund.</returns>
+    /// <param name="orderId">Order identifier.</param>
+    /// <param name="refundInfo">Refund information</param>
+    public async Task<Order> CreateRefundAsync(string orderId, RefundInfo refundInfo)
+    {
+      if (orderId is null)
+      {
+        throw new ArgumentNullException(nameof(orderId));
+      }
+
+      refundInfo.Validate();
+
+      var response = await _httpRequestFactory.SendAsync(HttpMethod.Post, $"{RESOURCEURI}/{orderId}/refunds", refundInfo);
+
+      Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+
+      if (response.IsSuccessStatusCode)
+      {
+        return response.ContentAsType<Order>();
+      }
+
+      throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
+    }
+
+    public Task<ChargeOperationData> CreateChargeAsync(ChargeOperationData charge)
+    {
+      throw new NotImplementedException();
+    }
+
+    public Task<LineItem> CreateLineItemAsync(LineItem lineItem)
+    {
+      throw new NotImplementedException();
+    }
+
+    public Task<TaxLine> CreateTaxLineAsync(TaxLine taxLine)
+    {
+      throw new NotImplementedException();
+    }
+
+    public Task<ShippingLine> CreateShippingLineAsync(ShippingLine shippingLine)
+    {
+      throw new NotImplementedException();
+    }
+
+    public Task<TaxLine> CreateDiscountLineAsync(DiscountLine discountLine)
+    {
+      throw new NotImplementedException();
+    }
+
     #endregion
   }
 }

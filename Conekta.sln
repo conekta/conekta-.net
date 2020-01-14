@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{18
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conekta.Examples", "examples\Conekta.Examples\Conekta.Examples.csproj", "{C8C2A153-6597-4BEF-BB53-79651FD63E15}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conekta.Integration.Tests", "tests\Conekta.Integration.Tests\Conekta.Integration.Tests.csproj", "{F68210B1-256B-4655-B7B8-65C0AF119C24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,9 +52,22 @@ Global
 		{C8C2A153-6597-4BEF-BB53-79651FD63E15}.Release|x64.Build.0 = Release|Any CPU
 		{C8C2A153-6597-4BEF-BB53-79651FD63E15}.Release|x86.ActiveCfg = Release|Any CPU
 		{C8C2A153-6597-4BEF-BB53-79651FD63E15}.Release|x86.Build.0 = Release|Any CPU
+		{F68210B1-256B-4655-B7B8-65C0AF119C24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F68210B1-256B-4655-B7B8-65C0AF119C24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F68210B1-256B-4655-B7B8-65C0AF119C24}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F68210B1-256B-4655-B7B8-65C0AF119C24}.Debug|x64.Build.0 = Debug|Any CPU
+		{F68210B1-256B-4655-B7B8-65C0AF119C24}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F68210B1-256B-4655-B7B8-65C0AF119C24}.Debug|x86.Build.0 = Debug|Any CPU
+		{F68210B1-256B-4655-B7B8-65C0AF119C24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F68210B1-256B-4655-B7B8-65C0AF119C24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F68210B1-256B-4655-B7B8-65C0AF119C24}.Release|x64.ActiveCfg = Release|Any CPU
+		{F68210B1-256B-4655-B7B8-65C0AF119C24}.Release|x64.Build.0 = Release|Any CPU
+		{F68210B1-256B-4655-B7B8-65C0AF119C24}.Release|x86.ActiveCfg = Release|Any CPU
+		{F68210B1-256B-4655-B7B8-65C0AF119C24}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DA71C5A0-5F91-4F81-BFA5-7DB1ED8B5B9F} = {CB353F4D-EE77-47DD-A544-31B39473B1C8}
 		{C8C2A153-6597-4BEF-BB53-79651FD63E15} = {188FDF03-DF8B-4267-81F0-9B8DF3EEFDCE}
+		{F68210B1-256B-4655-B7B8-65C0AF119C24} = {C6CAF15D-EA44-4F59-8BF5-1954AE35611B}
 	EndGlobalSection
 EndGlobal

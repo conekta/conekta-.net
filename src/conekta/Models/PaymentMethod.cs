@@ -19,7 +19,13 @@ namespace Conekta.Models
     /// </summary>
     /// <value>The type of the object.</value>
     [JsonProperty(PropertyName = "type")]
-    public string ObjectType { get; set; }
+    public string Type { get; set; }
+
+    /// <summary>
+    /// Gets or Set token id.
+    /// </summary>
+    [JsonProperty(PropertyName = "token_id")]
+    public string TokenId { get; set; }
 
     /// <summary>
     /// Gets or sets the name.

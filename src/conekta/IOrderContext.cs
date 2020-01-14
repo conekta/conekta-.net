@@ -44,30 +44,50 @@ namespace Conekta
     /// </summary>
     /// <returns>The capture.</returns>
     /// <param name="orderId">Order identifier.</param>
-    Task<Order> Capture(string orderId);
+    Task<Order> CaptureAsync(string orderId);
 
     /// <summary>
     /// Creates the refund.
     /// </summary>
     /// <returns>The refund.</returns>
     /// <param name="orderId">Order identifier.</param>
-    Task<Order> CreateRefund(string orderId);
+    /// <param name="refundInfo">Refund information</param>
+    Task<Order> CreateRefundAsync(string orderId, RefundInfo refundInfo);
 
     /// <summary>
     /// Creates the charge.
     /// </summary>
     /// <returns>The charge.</returns>
     /// <param name="charge">Charge.</param>
-    Task<Charge> CreateCharge(Charge charge);
+    Task<ChargeOperationData> CreateChargeAsync(ChargeOperationData charge);
 
     /// <summary>
     /// Creates the line item.
     /// </summary>
     /// <returns>The line item.</returns>
     /// <param name="lineItem">Line item.</param>
-    Task<LineItem> CreateLineItem(LineItem lineItem);
+    Task<LineItem> CreateLineItemAsync(LineItem lineItem);
 
-    Task<TaxLine> CreateTaxLine(TaxLine taxLine);
+    /// <summary>
+    /// Creates the tax line.
+    /// </summary>
+    /// <param name="taxLine">The tax line</param>
+    /// <returns>Taxline created.</returns>
+    Task<TaxLine> CreateTaxLineAsync(TaxLine taxLine);
+
+    /// <summary>
+    /// Creates shipping line.
+    /// </summary>
+    /// <param name="shippingLine">The shipping line.</param>
+    /// <returns>Shipping line created.</returns>
+    Task<ShippingLine> CreateShippingLineAsync(ShippingLine shippingLine);
+
+    /// <summary>
+    /// Creates the discount line.
+    /// </summary>
+    /// <param name="discountLine">The discount line</param>
+    /// <returns>Discount line created.</returns>
+    Task<TaxLine> CreateDiscountLineAsync(DiscountLine discountLine);
 
     #endregion
   }
