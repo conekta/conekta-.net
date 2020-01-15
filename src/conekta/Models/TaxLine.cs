@@ -1,5 +1,4 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Conekta.Models
 {
@@ -37,6 +36,12 @@ namespace Conekta.Models
     /// <value>The parent identifier.</value>
     [JsonProperty(PropertyName = "parent_id")]
     public string ParentId { get; private set; }
+
+    /// <summary>
+    /// Gets or sets the metadata.
+    /// </summary>
+    [JsonProperty(PropertyName = "metadata")]
+    public dynamic Metadata { get; set; }
 
     #endregion
   }

@@ -74,6 +74,19 @@ namespace Conekta.Models
     [JsonProperty(PropertyName = "brand")]
     public string Brand { get; set; }
 
+    /// <summary>
+    /// Gets the parent identifier.
+    /// </summary>
+    /// <value>The parent identifier.</value>
+    [JsonProperty(PropertyName = "parent_id")]
+    public string ParentId { get; private set; }
+
+    /// <summary>
+    /// Antifraud info.
+    /// </summary>
+    [JsonProperty(PropertyName = "antifraud_info")]
+    public dynamic AntifraudInfo { get; set; }
+
     #endregion
   }
 }

@@ -44,6 +44,18 @@ namespace Conekta.Models
     [JsonProperty(PropertyName = "parent_id")]
     public string ParentId { get; private set; }
 
+    /// <summary>
+    /// Gets or sets the tracking number.
+    /// </summary>
+    [JsonProperty(PropertyName = "tracking_number")]
+    public string TrackingNumber { get; set; }
+
+    /// <summary>
+    /// Gets or sets the metadata.
+    /// </summary>
+    [JsonProperty(PropertyName = "metadata")]
+    public dynamic Metadata { get; set; }
+
     #endregion
   }
 }

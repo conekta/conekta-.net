@@ -126,11 +126,17 @@ namespace Conekta.Models
     public string ServiceName { get; set; }
 
     /// <summary>
+    /// Gets or sets the service number.
+    /// </summary>
+    [JsonProperty(PropertyName = "service_number")]
+    public string ServiceNumber { get; set; }
+
+    /// <summary>
     /// Gets or sets the expires at.
     /// </summary>
     /// <value>The expires at.</value>
     [JsonProperty(PropertyName = "expires_at")]
-    public string ExpiresAt { get; set; }
+    public long ExpiresAt { get; set; }
 
     /// <summary>
     /// Gets or sets the name of the store.

@@ -28,7 +28,6 @@ namespace Conekta.Models
     /// Gets or sets the metadata.
     /// </summary>
     /// <value>The metadata.</value>
-    [StringLength(250)]
     [JsonProperty(PropertyName = "metadata")]
     public dynamic Metadata { get; set; }
 

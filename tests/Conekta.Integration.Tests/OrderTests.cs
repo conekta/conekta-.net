@@ -264,6 +264,169 @@ namespace Conekta.Integration.Tests
       orderRefunded.PaymentStatus.Should().Be("refunded");
     }
 
+    /// <summary>
+    /// Create charge Ok.
+    /// </summary>
+    /// <returns></returns>
+    [Fact]
+    public async Task CreateChargeAsync_OK_Test()
+    {
+      var order = (OrderOperationData)_validOrder.Clone();
+
+      order.CustomerInfo = _customerInfo;
+
+      var orderCreated = await _orderContext.CreateAsync(order);
+
+      var charge = new ChargeOperationData
+      {
+        PaymentMethod = new PaymentMethod
+        {
+          Type = "banorte",
+          ExpiresAt = new DateTimeOffset(DateTime.Now.AddDays(1)).ToUnixTimeSeconds()
+        },
+        Amount = 2300
+      };
+
+      var chargeCreated = await _orderContext.CreateChargeAsync(orderCreated.Id, charge);
+
+      Console.WriteLine(@$"CreateChargeAsync_OK_Test    [->] { JsonConvert.SerializeObject(chargeCreated,
+        Formatting.Indented, new JsonSerializerSettings
+        {
+          NullValueHandling = NullValueHandling.Ignore
+        }) }");
+
+      chargeCreated.Amount.Should().Be(charge.Amount);
+      chargeCreated.PaymentMethod.Type.Should().Be(charge.PaymentMethod.Type);
+      chargeCreated.PaymentMethod.ExpiresAt.Should().Be(charge.PaymentMethod.ExpiresAt);
+    }
+
+    /// <summary>
+    /// Create LineItem Ok.
+    /// </summary>
+    /// <returns></returns>
+    [Fact]
+    public async Task CreateLineItemAsync_OK_Test()
+    {
+      var orderCreated = await _orderContext.CreateAsync(_validOrder);
+
+      var lineItem = new LineItem
+      {
+        Name = "Box of Cohiba S1s",
+        Description = "Imported From Mex.",
+        UnitPrice = 20000,
+        Quantity = 1,
+        Tags = new List<string>
+        {
+          "food",
+          "mexican food"
+        }
+      };
+
+      var lineItemCreated = await _orderContext.CreateLineItemAsync(orderCreated.Id, lineItem);
+
+      Console.WriteLine(@$"CreateLineItemAsync_OK_Test    [->] { JsonConvert.SerializeObject(lineItemCreated,
+        Formatting.Indented, new JsonSerializerSettings
+        {
+          NullValueHandling = NullValueHandling.Ignore
+        }) }");
+
+      lineItemCreated.Name.Should().Be(lineItem.Name);
+      lineItemCreated.Description.Should().Be(lineItem.Description);
+      lineItemCreated.UnitPrice.Should().Be(lineItem.UnitPrice);
+      lineItemCreated.Quantity.Should().Be(lineItem.Quantity);
+    }
+
+    /// <summary>
+    /// Create taxline OK
+    /// </summary>
+    /// <returns></returns>
+    [Fact]
+    public async Task CreateTaxLineAsync_OK_Test()
+    {
+      var orderCreated = await _orderContext.CreateAsync(_validOrder);
+
+      var taxLineIVA = new TaxLine
+      {
+        Description = "IVA",
+        Amount = 60
+      };
+
+      var taxLineCreated = await _orderContext.CreateTaxLineAsync(orderCreated.Id, taxLineIVA);
+
+      Console.WriteLine(@$"CreateTaxLineAsync_OK_Test    [->] { JsonConvert.SerializeObject(taxLineCreated,
+        Formatting.Indented, new JsonSerializerSettings
+        {
+          NullValueHandling = NullValueHandling.Ignore
+        }) }");
+
+      taxLineCreated.Description.Should().Be(taxLineIVA.Description);
+      taxLineCreated.Amount.Should().Be(taxLineIVA.Amount);
+    }
+
+    /// <summary>
+    /// Create ShippingLine OK.
+    /// </summary>
+    /// <returns></returns>
+    [Fact]
+    public async Task CreateShippingLineAsync_OK_Test()
+    {
+      var orderCreated = await _orderContext.CreateAsync(_validOrder);
+
+      var shippingLine = new ShippingLine
+      {
+        Amount = 0,
+        TrackingNumber = "TRACK123",
+        Carrier = "USPS",
+        Method = "Train",
+        Metadata = new
+        {
+          some_random = "something"
+        }
+      };
+
+      var shippingLineCreated = await _orderContext.CreateShippingLineAsync(orderCreated.Id, shippingLine);
+
+      Console.WriteLine(@$"CreateShippingLineAsync_OK_Test    [->] { JsonConvert.SerializeObject(shippingLineCreated,
+        Formatting.Indented, new JsonSerializerSettings
+        {
+          NullValueHandling = NullValueHandling.Ignore
+        }) }");
+
+      var someRandom = (string)shippingLineCreated.Metadata.some_random;
+
+      shippingLineCreated.Amount.Should().Be(shippingLine.Amount);
+      shippingLineCreated.TrackingNumber.Should().Be(shippingLine.TrackingNumber);
+      shippingLineCreated.Carrier.Should().Be(shippingLine.Carrier);
+      shippingLineCreated.Method.Should().Be(shippingLine.Method);
+
+      someRandom.Should().Be((string)shippingLine.Metadata.some_random);
+    }
+
+    /// <summary>
+    /// Creates discount line.
+    /// </summary>
+    /// <returns></returns>
+    [Fact]
+    public async Task CreateDiscountLineAsync_OK_Test()
+    {
+      var orderCreated = await _orderContext.CreateAsync(_validOrder);
+
+      var discountLine = new DiscountLine
+      {
+        Code = "Cupón de descuento",
+        Amount = 5,
+        Type = "loyalty"
+      };
+
+      var discountLineCreated = await _orderContext.CreateDiscountLineAsync(orderCreated.Id, discountLine);
+
+      Console.WriteLine(@$"CreateDiscountLineAsync_OK_Test    [->] { JsonConvert.SerializeObject(discountLineCreated,
+        Formatting.Indented, new JsonSerializerSettings
+        {
+          NullValueHandling = NullValueHandling.Ignore
+        }) }");
+    }
+
     #endregion
   }
 }

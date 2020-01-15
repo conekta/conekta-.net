@@ -169,6 +169,11 @@ namespace Conekta
         throw new ArgumentNullException(nameof(orderId));
       }
 
+      if (refundInfo is null)
+      {
+        throw new ArgumentNullException(nameof(refundInfo));
+      }
+
       refundInfo.Validate();
 
       var response = await _httpRequestFactory.SendAsync(HttpMethod.Post, $"{RESOURCEURI}/{orderId}/refunds", refundInfo);
@@ -183,29 +188,159 @@ namespace Conekta
       throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
     }
 
-    public Task<ChargeOperationData> CreateChargeAsync(ChargeOperationData charge)
+    /// <summary>
+    /// Creates the charge in order.
+    /// </summary>
+    /// <param name="orderId">Order identifier.</param>
+    /// <param name="chargeOperationData">ChargeOperationData to add./param>
+    /// <returns></returns>
+    public async Task<Charge> CreateChargeAsync(string orderId, ChargeOperationData chargeOperationData)
     {
-      throw new NotImplementedException();
+      if (chargeOperationData is null)
+      {
+        throw new ArgumentNullException(nameof(chargeOperationData));
+      }
+
+      chargeOperationData.Validate();
+
+      var response = await _httpRequestFactory.SendAsync(HttpMethod.Post, $"{RESOURCEURI}/{orderId}/charges", chargeOperationData);
+
+      Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+
+      if (response.IsSuccessStatusCode)
+      {
+        return response.ContentAsType<Charge>();
+      }
+
+      throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
     }
 
-    public Task<LineItem> CreateLineItemAsync(LineItem lineItem)
+    /// <summary>
+    /// Creates lineitem for order.
+    /// </summary>
+    /// <param name="orderId">Order id.</param>
+    /// <param name="lineItem">ItemLine to add.</param>
+    /// <returns></returns>
+    public async Task<LineItem> CreateLineItemAsync(string orderId, LineItem lineItem)
     {
-      throw new NotImplementedException();
+      if (orderId is null)
+      {
+        throw new ArgumentNullException(nameof(orderId));
+      }
+
+      if (lineItem is null)
+      {
+        throw new ArgumentNullException(nameof(lineItem));
+      }
+
+      lineItem.Validate();
+
+      var response = await _httpRequestFactory.SendAsync(HttpMethod.Post, $"{RESOURCEURI}/{orderId}/line_items", lineItem);
+
+      Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+
+      if (response.IsSuccessStatusCode)
+      {
+        return response.ContentAsType<LineItem>();
+      }
+
+      throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
     }
 
-    public Task<TaxLine> CreateTaxLineAsync(TaxLine taxLine)
+    /// <summary>
+    /// Creates taxline for order.
+    /// </summary>
+    /// <param name="orderId">Order id.</param>
+    /// <param name="taxLine">TaxLineToAdd</param>
+    /// <returns></returns>
+    public async Task<TaxLine> CreateTaxLineAsync(string orderId, TaxLine taxLine)
     {
-      throw new NotImplementedException();
+      if (orderId is null)
+      {
+        throw new ArgumentNullException(nameof(orderId));
+      }
+
+      if (taxLine is null)
+      {
+        throw new ArgumentNullException(nameof(taxLine));
+      }
+
+      taxLine.Validate();
+
+      var response = await _httpRequestFactory.SendAsync(HttpMethod.Post, $"{RESOURCEURI}/{orderId}/tax_lines", taxLine);
+
+      Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+
+      if (response.IsSuccessStatusCode)
+      {
+        return response.ContentAsType<TaxLine>();
+      }
+
+      throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
     }
 
-    public Task<ShippingLine> CreateShippingLineAsync(ShippingLine shippingLine)
+    /// <summary>
+    /// Creates shipping line.
+    /// </summary>
+    /// <param name="orderId">Order identifier.</param>
+    /// <param name="shippingLine">The shipping line.</param>
+    /// <returns>Shipping line created.</returns>
+    public async Task<ShippingLine> CreateShippingLineAsync(string orderId, ShippingLine shippingLine)
     {
-      throw new NotImplementedException();
+      if (orderId is null)
+      {
+        throw new ArgumentNullException(nameof(orderId));
+      }
+
+      if (shippingLine is null)
+      {
+        throw new ArgumentNullException(nameof(shippingLine));
+      }
+
+      shippingLine.Validate();
+
+      var response = await _httpRequestFactory.SendAsync(HttpMethod.Post, $"{RESOURCEURI}/{orderId}/shipping_lines", shippingLine);
+
+      Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+
+      if (response.IsSuccessStatusCode)
+      {
+        return response.ContentAsType<ShippingLine>();
+      }
+
+      throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
     }
 
-    public Task<TaxLine> CreateDiscountLineAsync(DiscountLine discountLine)
+    /// <summary>
+    /// Creates the discount line.
+    /// </summary>
+    /// <param name="orderId">Order identifier.</param>
+    /// <param name="discountLine">The discount line</param>
+    /// <returns>Discount line created.</returns>
+    public async Task<DiscountLine> CreateDiscountLineAsync(string orderId, DiscountLine discountLine)
     {
-      throw new NotImplementedException();
+      if (orderId is null)
+      {
+        throw new ArgumentNullException(nameof(orderId));
+      }
+
+      if (discountLine is null)
+      {
+        throw new ArgumentNullException(nameof(discountLine));
+      }
+
+      discountLine.Validate();
+
+      var response = await _httpRequestFactory.SendAsync(HttpMethod.Post, $"{RESOURCEURI}/{orderId}/discount_lines", discountLine);
+
+      Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+
+      if (response.IsSuccessStatusCode)
+      {
+        return response.ContentAsType<DiscountLine>();
+      }
+
+      throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
     }
 
     #endregion

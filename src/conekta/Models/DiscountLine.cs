@@ -44,6 +44,13 @@ namespace Conekta.Models
     [JsonProperty(PropertyName = "parent_id")]
     public string ParentId { get; private set; }
 
+    /// <summary>
+    /// Gets or sets the type of the object.
+    /// </summary>
+    /// <value>The type of the object.</value>
+    [JsonProperty(PropertyName = "object")]
+    public string ObjectType { get; set; }
+
     #endregion
   }
 }
