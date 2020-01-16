@@ -65,7 +65,7 @@ namespace Conekta.Models
 
     #endregion
 
-    #region :: Constructor ::
+    #region :: Constructors ::
 
     /// <summary>
     /// Order Operation Data constructor.

@@ -12,7 +12,7 @@ using Xunit;
 namespace Conekta.Integration.Tests
 {
   /// <summary>
-  /// 
+  /// Order tests.
   /// </summary>
   public class OrderTests
   {
