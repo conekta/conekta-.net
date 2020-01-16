@@ -38,7 +38,7 @@ namespace Conekta
     /// </summary>
     /// <returns>The async.</returns>
     /// <param name="query">Query.</param>
-    Task<Customer> WhereAsync(Dictionary<string, string> query);
+    Task<CustomerList> WhereAsync(Dictionary<string, string> query);
 
     /// <summary>
     /// Destroy the async.
@@ -70,14 +70,6 @@ namespace Conekta
     /// <param name="customerId">Customer identifier.</param>
     /// <param name="shippingContact">Shipping contact to create.</param>
     Task<ShippingContact> CreateShippingContact(string customerId, ShippingContact shippingContact);
-
-    /// <summary>
-    /// Creates fiscal entity.
-    /// </summary>
-    /// <returns>Fiscal entity  created.</returns>
-    /// <param name="customerId">Customer identifier.</param>
-    /// <param name="fiscalEntity">Fiscal entity to create.</param>
-    Task<FiscalEntity> CreateFiscalEntity(string customerId, FiscalEntity fiscalEntity);
 
     /// <summary>
     /// Creates subscription.

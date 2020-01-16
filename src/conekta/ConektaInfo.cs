@@ -1,13 +1,14 @@
 ﻿using System.Net.Http;
 using Conekta.Enumerations;
 using Conekta.Exceptions;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Conekta
 {
   /// <summary>
   /// Conekta info.
   /// </summary>
-  public static class ConektaInfo
+  public class ConektaInfo
   {
     #region :: Private fields ::
 
@@ -62,6 +63,26 @@ namespace Conekta
     /// </summary>
     /// <value>The http client factory.</value>
     internal static IHttpClientFactory HttpClientFactory { get; private set; }
+
+    #endregion
+
+    #region :: Constructors ::
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="T:Conekta.ConektaInfo"/> class.
+    /// </summary>
+    static ConektaInfo()
+    {
+      IServiceCollection services = new ServiceCollection();
+
+      services.AddHttpClient();
+
+      IHttpClientFactory factory = services
+        .BuildServiceProvider()
+        .GetRequiredService<IHttpClientFactory>();
+
+      HttpClientFactory = factory;
+    }
 
     #endregion
 

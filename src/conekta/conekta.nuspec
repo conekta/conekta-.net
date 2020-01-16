@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Conekta_dot_net</id>
+    <version>2.0.0-Alpha1</version>
+    <title>Conekta netcore version</title>
+    <authors>Conekta</authors>
+    <owners>Conekta</owners>
+    <projectUrl>https://github.com/conekta/conekta-.net</projectUrl>
+    <repository type="git" url="https://github.com/conekta/conekta-.net"/>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This is a .net library that allows interaction with https://api.conekta.io API.</description>
+    <copyright>2020</copyright>
+    <tags>Conekta netcore payments</tags>
+    <dependencies>
+      <group targetFramework="netcoreapp2.1">
+        <dependency id="Microsoft.Extensions.Http" version="2.1.1" />
+        <dependency id="Microsoft.Extensions.DependencyInjection" version="2.1.1" />
+        <dependency id="Newtonsoft.Json" version="12.0.3" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\**\*.dll" target="lib" />
+    <file src="bin\Release\**\*.pdb" target="lib" />
+  </files>
+</package>

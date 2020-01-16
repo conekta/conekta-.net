@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
 using Conekta.Models;
 using FluentAssertions;
-using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using Xunit;
 
@@ -48,16 +46,6 @@ namespace Conekta.Integration.Tests
     /// </summary>
     public CustomerTests()
     {
-      IServiceCollection services = new ServiceCollection();
-
-      services.AddHttpClient();
-
-      IHttpClientFactory factory = services
-        .BuildServiceProvider()
-        .GetRequiredService<IHttpClientFactory>();
-
-      ConektaInfo.SetHttpClientFactory(factory);
-
       _customerContext = new CustomerContext();
 
       ConektaInfo.APIKey = "key_ZLy4aP2szht1HqzkCezDEA";
@@ -103,7 +91,10 @@ namespace Conekta.Integration.Tests
       var customerUpdated = await _customerContext.UpdateAsync(customerToUpdate);
 
       Console.WriteLine(@$"UpdateAsync_Customer_OK_Test    [->] { JsonConvert.SerializeObject(customerUpdated,
-        Formatting.Indented) }");
+        Formatting.Indented, new JsonSerializerSettings
+        {
+          NullValueHandling = NullValueHandling.Ignore
+        }) }");
 
       customerUpdated.Name.Should().Be(customerUpdated.Name);
       customerUpdated.Email.Should().Be(customerUpdated.Email);
@@ -118,18 +109,42 @@ namespace Conekta.Integration.Tests
     {
       var customerCreated = await _customerContext.CreateAsync(_validData);
 
-      var customerFound = await _orderContext.FindAsync(orderCreated.Id);
+      var customerFound = await _customerContext.FindAsync(customerCreated.Id);
 
-      orderFound.LiveMode.Should().BeFalse();
-      orderFound.Amount.Should().Be(35000);
-      orderFound.Currency.Should().Be(_validOrder.Currency);
+      Console.WriteLine(@$"FindAsync_Customer_OK_Test    [->] { JsonConvert.SerializeObject(customerFound,
+        Formatting.Indented, new JsonSerializerSettings
+        {
+          NullValueHandling = NullValueHandling.Ignore
+        }) }");
 
-      var test = (bool)orderFound.Metadata.test;
+      customerFound.LiveMode.Should().BeFalse();
+      customerFound.Name.Should().Be(_validData.Name);
+      customerFound.Email.Should().Be(_validData.Email);
+    }
 
-      Console.WriteLine(@$"FindAsync_OK_Test    [->] { JsonConvert.SerializeObject(orderFound,
-        Formatting.Indented) }");
+    /// <summary>
+    /// Where Ok.
+    /// </summary>
+    /// <returns></returns>
+    [Fact]
+    public async Task WhereAsync_Customer_OK_Test()
+    {
+      var query = new Dictionary<string, string>
+        {
+          { "limit", "10" }
+        };
 
-      test.Should().BeTrue();
+      var ordersFound = await _customerContext.WhereAsync(query);
+
+      Console.WriteLine(@$"WhereAsync_Customer_OK_Test    [->] { JsonConvert.SerializeObject(ordersFound,
+        Formatting.Indented, new JsonSerializerSettings
+        {
+          NullValueHandling = NullValueHandling.Ignore
+        }) }");
+
+      ordersFound.Data.Count.Should().Be(10);
+      ordersFound.HasMore.Should().BeTrue();
+      ordersFound.NextPageUrl.Should().NotBeNullOrEmpty();
     }
 
     #endregion

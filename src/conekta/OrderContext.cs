@@ -50,7 +50,7 @@ namespace Conekta
 
       var response = await _httpRequestFactory.SendAsync(HttpMethod.Post, RESOURCEURI, orderOperationData);
 
-      Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+      //Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
 
       if (response.IsSuccessStatusCode)
       {
@@ -71,7 +71,7 @@ namespace Conekta
 
       var response = await _httpRequestFactory.SendAsync(HttpMethod.Put, $"{RESOURCEURI}/{orderOperationData.Id}", orderOperationData);
 
-      Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+      //Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
 
       if (response.IsSuccessStatusCode)
       {
@@ -95,7 +95,7 @@ namespace Conekta
 
       var response = await _httpRequestFactory.SendAsync(HttpMethod.Get, $"{RESOURCEURI}/{orderId}");
 
-      Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+      //Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
 
       if (response.IsSuccessStatusCode)
       {
@@ -121,7 +121,7 @@ namespace Conekta
 
       var response = await _httpRequestFactory.SendAsync(HttpMethod.Get, $"{RESOURCEURI}{url}");
 
-      Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+      //Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
 
       if (response.IsSuccessStatusCode)
       {
@@ -145,7 +145,7 @@ namespace Conekta
 
       var response = await _httpRequestFactory.SendAsync(HttpMethod.Put, $"{RESOURCEURI}/{orderId}/capture", "{}");
 
-      Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+      //Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
 
       if (response.IsSuccessStatusCode)
       {
@@ -178,7 +178,7 @@ namespace Conekta
 
       var response = await _httpRequestFactory.SendAsync(HttpMethod.Post, $"{RESOURCEURI}/{orderId}/refunds", refundInfo);
 
-      Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+      //Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
 
       if (response.IsSuccessStatusCode)
       {
@@ -205,7 +205,7 @@ namespace Conekta
 
       var response = await _httpRequestFactory.SendAsync(HttpMethod.Post, $"{RESOURCEURI}/{orderId}/charges", chargeOperationData);
 
-      Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+      //Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
 
       if (response.IsSuccessStatusCode)
       {
@@ -237,7 +237,7 @@ namespace Conekta
 
       var response = await _httpRequestFactory.SendAsync(HttpMethod.Post, $"{RESOURCEURI}/{orderId}/line_items", lineItem);
 
-      Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+      //Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
 
       if (response.IsSuccessStatusCode)
       {
@@ -269,7 +269,7 @@ namespace Conekta
 
       var response = await _httpRequestFactory.SendAsync(HttpMethod.Post, $"{RESOURCEURI}/{orderId}/tax_lines", taxLine);
 
-      Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+      //Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
 
       if (response.IsSuccessStatusCode)
       {
@@ -301,7 +301,7 @@ namespace Conekta
 
       var response = await _httpRequestFactory.SendAsync(HttpMethod.Post, $"{RESOURCEURI}/{orderId}/shipping_lines", shippingLine);
 
-      Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+      //Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
 
       if (response.IsSuccessStatusCode)
       {
@@ -333,7 +333,7 @@ namespace Conekta
 
       var response = await _httpRequestFactory.SendAsync(HttpMethod.Post, $"{RESOURCEURI}/{orderId}/discount_lines", discountLine);
 
-      Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+      //Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
 
       if (response.IsSuccessStatusCode)
       {

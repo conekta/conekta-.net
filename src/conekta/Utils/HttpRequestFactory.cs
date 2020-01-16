@@ -96,8 +96,8 @@ namespace Conekta.Utils
               NullValueHandling = NullValueHandling.Ignore
             });
 
-          Console.WriteLine($"request info -> {request.Method} - {request.RequestUri}");
-          Console.WriteLine($"serializedData -> {serializedData}");
+          //Console.WriteLine($"request info -> {request.Method} - {request.RequestUri}");
+          //Console.WriteLine($"serializedData -> {serializedData}");
 
           request.Content = new StringContent(serializedData, Encoding.UTF8, "application/json");
         }

@@ -28,7 +28,7 @@ namespace Conekta.Examples
 
         Console.WriteLine("::: Conekta Examples :::");
 
-        SetupHttpRequestFactory();
+        //SetupHttpRequestFactory();
 
         ConektaInfo.APIKey = "key_ZLy4aP2szht1HqzkCezDEA";
 

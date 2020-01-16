@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Conekta.Exceptions;
@@ -49,7 +50,7 @@ namespace Conekta
 
       var response = await _httpRequestFactory.SendAsync(HttpMethod.Post, RESOURCEURI, customer);
 
-      Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+      //Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
 
       if (response.IsSuccessStatusCode)
       {
@@ -70,7 +71,7 @@ namespace Conekta
 
       var response = await _httpRequestFactory.SendAsync(HttpMethod.Put, $"{RESOURCEURI}/{customerOperationData.Id}", customerOperationData);
 
-      Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+      //Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
 
       if (response.IsSuccessStatusCode)
       {
@@ -94,7 +95,7 @@ namespace Conekta
 
       var response = await _httpRequestFactory.SendAsync(HttpMethod.Get, $"{RESOURCEURI}/{customerId}");
 
-      Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+      //Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
 
       if (response.IsSuccessStatusCode)
       {
@@ -109,9 +110,25 @@ namespace Conekta
     /// </summary>
     /// <returns>The async.</returns>
     /// <param name="query">Query.</param>
-    public Task<Customer> WhereAsync(Dictionary<string, string> query)
+    public async Task<CustomerList> WhereAsync(Dictionary<string, string> query)
     {
-      throw new NotImplementedException();
+      if (query is null)
+      {
+        throw new ArgumentNullException(nameof(query));
+      }
+
+      var url = $"?{string.Join("&", query.Select(x => String.Format("{0}={1}", x.Key, x.Value)))}";
+
+      var response = await _httpRequestFactory.SendAsync(HttpMethod.Get, $"{RESOURCEURI}{url}");
+
+      //Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+
+      if (response.IsSuccessStatusCode)
+      {
+        return response.ContentAsType<CustomerList>();
+      }
+
+      throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
     }
 
     /// <summary>
@@ -153,17 +170,6 @@ namespace Conekta
     /// <param name="customerId">Customer identifier.</param>
     /// <param name="shippingContact">Shipping contact to create.</param>
     public Task<ShippingContact> CreateShippingContact(string customerId, ShippingContact shippingContact)
-    {
-      throw new NotImplementedException();
-    }
-
-    /// <summary>
-    /// Creates fiscal entity.
-    /// </summary>
-    /// <returns>Fiscal entity  created.</returns>
-    /// <param name="customerId">Customer identifier.</param>
-    /// <param name="fiscalEntity">Fiscal entity to create.</param>
-    public Task<FiscalEntity> CreateFiscalEntity(string customerId, FiscalEntity fiscalEntity)
     {
       throw new NotImplementedException();
     }
