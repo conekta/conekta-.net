@@ -48,7 +48,7 @@ namespace Conekta.Models
     /// <summary>
     /// Gets or set the zip.
     /// </summary>
-    [JsonProperty(PropertyName = "zip")]
+    [JsonProperty(PropertyName = "postal_code")]
     public string Zip { get; set; }
 
     /// <summary>

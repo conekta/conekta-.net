@@ -169,9 +169,29 @@ namespace Conekta
     /// <returns>Shipping contact created.</returns>
     /// <param name="customerId">Customer identifier.</param>
     /// <param name="shippingContact">Shipping contact to create.</param>
-    public Task<ShippingContact> CreateShippingContact(string customerId, ShippingContact shippingContact)
+    public async Task<ShippingContact> CreateShippingContact(string customerId, ShippingContact shippingContact)
     {
-      throw new NotImplementedException();
+      if (customerId is null)
+      {
+        throw new ArgumentNullException(nameof(customerId));
+      }
+
+      if (shippingContact is null)
+      {
+        throw new ArgumentNullException(nameof(shippingContact));
+      }
+
+      var response = await _httpRequestFactory.SendAsync(HttpMethod.Post, $"{RESOURCEURI}/{customerId}/shipping_contacts", shippingContact);
+
+      //Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+      var result = response.ContentAsString();
+      Console.WriteLine("Resulst " + result);
+      if (response.IsSuccessStatusCode)
+      {
+        return response.ContentAsType<ShippingContact>();
+      }
+
+      throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
     }
 
     /// <summary>

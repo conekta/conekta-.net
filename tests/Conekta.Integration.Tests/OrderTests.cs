@@ -47,7 +47,28 @@ namespace Conekta.Integration.Tests
               "mexican food"
             }
           }
+        },
+      ShippingLines = new List<ShippingLine>
+      {
+        new ShippingLine
+        {
+          Carrier = "Fedex"
         }
+      },
+      ShippingContact = new ShippingContact
+      {
+        Receiver = "John Constantine",
+        Phone = "+5213353319758",
+        BetweenStreets = "Morelos y Campeche",
+        Address = new Address
+        {
+          Street1 = "Nuevo Leon 4",
+          City = "Ciudad de Mexico",
+          State = "Ciudad de Mexico",
+          Zip = "78215",
+          Country = "MX"
+        }
+      }
     };
 
     /// <summary>
@@ -85,6 +106,17 @@ namespace Conekta.Integration.Tests
         TokenId = "tok_test_visa_4242"
       },
       Amount = 35000
+    };
+
+    private readonly ChargeOperationData _validChargeOxxo = new ChargeOperationData
+    {
+      PaymentMethod = new PaymentMethod
+      {
+        Type = "oxxo_cash",
+        ExpiresAt = 1582163201
+      },
+      Amount = 35000,
+      Currency = "MXN"
     };
 
     #endregion
@@ -298,6 +330,35 @@ namespace Conekta.Integration.Tests
       chargeCreated.Amount.Should().Be(charge.Amount);
       chargeCreated.PaymentMethod.Type.Should().Be(charge.PaymentMethod.Type);
       chargeCreated.PaymentMethod.ExpiresAt.Should().Be(charge.PaymentMethod.ExpiresAt);
+    }
+
+    /// <summary>
+    /// Create charge oxxo Ok.
+    /// </summary>
+    /// <returns></returns>
+    [Fact]
+    public async Task CreateAsync_OrderCharge_Ok_Test()
+    {
+      var orderToCapture = (OrderOperationData)_validOrder.Clone();
+      orderToCapture.CustomerInfo = _customerInfo;
+      orderToCapture.Charges = new List<ChargeOperationData>
+      {
+        _validChargeOxxo
+      };
+
+      var orderCreated = await _orderContext.CreateAsync(orderToCapture);
+
+      orderCreated.LiveMode.Should().BeFalse();
+      orderCreated.Amount.Should().Be(35000);
+      orderCreated.Currency.Should().Be(_validOrder.Currency);
+      orderCreated.ChargeList.Data[0].PaymentMethod.Reference.Should().NotBeNullOrEmpty();
+      orderCreated.ChargeList.Data[0].PaymentMethod.Reference.Should().HaveLength(14);
+      var test = (bool)orderCreated.Metadata.test;
+
+      Console.WriteLine(@$"CreateAsync_OK_Test    [->] { JsonConvert.SerializeObject(orderCreated,
+        Formatting.Indented) }");
+
+      test.Should().BeTrue();
     }
 
     /// <summary>

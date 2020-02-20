@@ -147,6 +147,40 @@ namespace Conekta.Integration.Tests
       ordersFound.NextPageUrl.Should().NotBeNullOrEmpty();
     }
 
+    /// <summary>
+    /// Create Shipping Contact ok.
+    /// </summary>
+    /// <returns></returns>
+    [Fact]
+    public async Task CreateShippingContantAsync_OK_Test()
+    {
+      var customerCreated = await _customerContext.CreateAsync(_validData);
+      var shippingContact = new ShippingContact
+      {
+        Receiver = "John Constantine",
+        Phone = "+5213353319758",
+        BetweenStreets = "Morelos y Campeche",
+        Address = new Address
+        {
+          Street1 = "Nuevo Leon 4",
+          City = "Ciudad de Mexico",
+          State = "Ciudad de Mexico",
+          Zip = "78215",
+          Country = "MX"
+        }
+      };
+      var shippingContactCreated = await _customerContext.CreateShippingContact(customerCreated.Id, shippingContact);
+
+      shippingContactCreated.Receiver.Should().Be(shippingContact.Receiver);
+      shippingContactCreated.Phone.Should().Be(shippingContact.Phone);
+      shippingContactCreated.BetweenStreets.Should().Be(shippingContact.BetweenStreets);
+      shippingContactCreated.Address.Street1.Should().Be(shippingContact.Address.Street1);
+      shippingContact.Address.City.Should().Be(shippingContact.Address.City);
+      shippingContact.Address.State.Should().Be(shippingContact.Address.State);
+      shippingContact.Address.Zip.Should().Be(shippingContact.Address.Zip);
+      shippingContact.Address.Country.Should().Be(shippingContact.Address.Country);
+    }
+
     #endregion
   }
 }
