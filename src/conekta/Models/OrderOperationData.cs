@@ -44,6 +44,13 @@ namespace Conekta.Models
     public List<LineItem> LineItems { get; set; }
 
     /// <summary>
+    /// Gets or sets the shipping lines.
+    /// </summary>
+    /// <value>The shipping lines.</value>
+    [JsonProperty(PropertyName = "shipping_lines")]
+    public List<ShippingLine> ShippingLines { get; set; }
+
+    /// <summary>
     /// Gets or set charges.
     /// </summary>
     [JsonProperty(PropertyName = "charges")]
@@ -62,6 +69,13 @@ namespace Conekta.Models
     [StringLength(250)]
     [JsonProperty(PropertyName = "metadata")]
     public dynamic Metadata { get; set; }
+
+    /// <summary>
+    /// Gets or sets the shipping contact.
+    /// </summary>
+    /// <value>The shipping contact.</value>
+    [JsonProperty(PropertyName = "shipping_contact")]
+    public ShippingContact ShippingContact { get; set; }
 
     #endregion
 
