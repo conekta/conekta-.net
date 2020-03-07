@@ -200,7 +200,7 @@ namespace Conekta.Integration.Tests
       var customerCreated = await _customerContext.CreateAsync(_validData);
 
       var createdCard = await _customerContext.CreatePaymentSourceAsync(customerCreated.Id,
-        new Card
+        new PaymentSourceCard
         {
           Type = "card",
           TokenId = "tok_test_visa_1881"

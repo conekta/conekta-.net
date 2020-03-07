@@ -5,7 +5,7 @@ namespace Conekta.Models
   /// <summary>
   /// 
   /// </summary>
-  public class Card : PaymentSourceOperationData
+  public class PaymentSourceCard : PaymentSourceOperationData
   {
     #region :: Properties ::
 

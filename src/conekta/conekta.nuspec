@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>Conekta_dot_net</id>
-    <version>2.0.0-Alpha3</version>
+    <version>2.0.0-Alpha4</version>
     <title>Conekta netcore version</title>
     <authors>Conekta</authors>
     <owners>Conekta</owners>
