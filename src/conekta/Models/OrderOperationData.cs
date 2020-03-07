@@ -57,7 +57,7 @@ namespace Conekta.Models
     public List<ChargeOperationData> Charges { get; set; }
 
     /// <summary>
-    /// Pre authorize flag.
+    /// Pre authorize 
     /// </summary>
     [JsonProperty(PropertyName = "pre_authorize")]
     public bool PreAuthorize { get; set; }

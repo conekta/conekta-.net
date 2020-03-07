@@ -49,6 +49,13 @@ namespace Conekta.Utils
     public Task<HttpResponseMessage> SendAsync(HttpMethod httpMethod, string resourceUri) =>
       SendAsync(httpMethod, resourceUri, null);
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="httpMethod"></param>
+    /// <param name="resourceUri"></param>
+    /// <param name="data"></param>
+    /// <returns></returns>
     public async Task<HttpResponseMessage> SendAsync(HttpMethod httpMethod, string resourceUri, object data)
     {
       if (httpMethod is null)
@@ -95,10 +102,10 @@ namespace Conekta.Utils
             {
               NullValueHandling = NullValueHandling.Ignore
             });
-
-          //Console.WriteLine($"request info -> {request.Method} - {request.RequestUri}");
-          //Console.WriteLine($"serializedData -> {serializedData}");
-
+#if DEBUG
+          Console.WriteLine($"request info -> {request.Method} - {request.RequestUri}");
+          Console.WriteLine($"serializedData -> {serializedData}");
+#endif
           request.Content = new StringContent(serializedData, Encoding.UTF8, "application/json");
         }
 

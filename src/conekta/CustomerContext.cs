@@ -24,7 +24,7 @@ namespace Conekta
     /// <summary>
     /// The http request factory.
     /// </summary>
-    private IHttpRequestFactory _httpRequestFactory;
+    private readonly IHttpRequestFactory _httpRequestFactory;
 
     #endregion
 
@@ -146,21 +146,29 @@ namespace Conekta
     /// </summary>
     /// <returns>Payment source created.</returns>
     /// <param name="customerId">Customer identifier.</param>
-    /// <param name="paymentSource">Payment source to create.</param>
-    public Task<PaymentSource> CreateCardAsync(string customerId, PaymentSource paymentSource)
+    /// <param name="paymentSourceOperationData">Payment source to create.</param>
+    public async Task<PaymentSource> CreatePaymentSourceAsync(string customerId, IPaymentSourceOperationData paymentSourceOperationData)
     {
-      throw new NotImplementedException();
-    }
+      if (string.IsNullOrEmpty(customerId))
+      {
+        throw new ArgumentException(nameof(customerId));
+      }
 
-    /// <summary>
-    /// Creates card.
-    /// </summary>
-    /// <returns>Payment source created.</returns>
-    /// <param name="customerId">Customer identifier.</param>
-    /// <param name="paymentSource">Payment source to create.</param>
-    public Task<PaymentSource> CreateOfflineRecurrentReferenceAsync(string customerId, PaymentSource paymentSource)
-    {
-      throw new NotImplementedException();
+      if (paymentSourceOperationData is null)
+      {
+        throw new ArgumentNullException(nameof(paymentSourceOperationData));
+      }
+
+      var response = await _httpRequestFactory.SendAsync(HttpMethod.Post, $"{RESOURCEURI}/{customerId}/payment_sources", paymentSourceOperationData);
+
+      // Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+
+      if (response.IsSuccessStatusCode)
+      {
+        return response.ContentAsType<PaymentSource>();
+      }
+
+      throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
     }
 
     /// <summary>
@@ -184,8 +192,7 @@ namespace Conekta
       var response = await _httpRequestFactory.SendAsync(HttpMethod.Post, $"{RESOURCEURI}/{customerId}/shipping_contacts", shippingContact);
 
       //Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
-      var result = response.ContentAsString();
-      Console.WriteLine("Resulst " + result);
+
       if (response.IsSuccessStatusCode)
       {
         return response.ContentAsType<ShippingContact>();

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Conekta.Models;
 
@@ -53,15 +52,7 @@ namespace Conekta
     /// <returns>Payment source created.</returns>
     /// <param name="customerId">Customer identifier.</param>
     /// <param name="paymentSource">Payment source to create.</param>
-    Task<PaymentSource> CreateCardAsync(string customerId, PaymentSource paymentSource);
-
-    /// <summary>
-    /// Creates card.
-    /// </summary>
-    /// <returns>Payment source created.</returns>
-    /// <param name="customerId">Customer identifier.</param>
-    /// <param name="paymentSource">Payment source to create.</param>
-    Task<PaymentSource> CreateOfflineRecurrentReferenceAsync(string customerId, PaymentSource paymentSource);
+    Task<PaymentSource> CreatePaymentSourceAsync(string customerId, IPaymentSourceOperationData paymentSourceOperationData);
 
     /// <summary>
     /// Creates shipping contact.

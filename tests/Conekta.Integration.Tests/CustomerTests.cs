@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Conekta.Models;
 using FluentAssertions;
@@ -11,6 +13,7 @@ namespace Conekta.Integration.Tests
   /// <summary>
   /// Customer tests.
   /// </summary>
+  [Collection("Sequential")]
   public class CustomerTests
   {
     #region :: Private Fields ::
@@ -19,6 +22,11 @@ namespace Conekta.Integration.Tests
     /// Customer Context.
     /// </summary>
     private readonly CustomerContext _customerContext;
+
+    /// <summary>
+    /// 
+    /// </summary>
+    private readonly PaymentSourceContext _paymentSourceContext;
 
     /// <summary>
     /// Customer valid data.
@@ -47,6 +55,7 @@ namespace Conekta.Integration.Tests
     public CustomerTests()
     {
       _customerContext = new CustomerContext();
+      _paymentSourceContext = new PaymentSourceContext();
 
       ConektaInfo.APIKey = "key_ZLy4aP2szht1HqzkCezDEA";
     }
@@ -179,6 +188,105 @@ namespace Conekta.Integration.Tests
       shippingContact.Address.State.Should().Be(shippingContact.Address.State);
       shippingContact.Address.Zip.Should().Be(shippingContact.Address.Zip);
       shippingContact.Address.Country.Should().Be(shippingContact.Address.Country);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    [Fact]
+    public async Task CreateCardPaymentSourceAsync_OK_Test()
+    {
+      var customerCreated = await _customerContext.CreateAsync(_validData);
+
+      var createdCard = await _customerContext.CreatePaymentSourceAsync(customerCreated.Id,
+        new Card
+        {
+          Type = "card",
+          TokenId = "tok_test_visa_1881"
+        });
+
+      //Console.WriteLine($"::: {JsonConvert.SerializeObject(customerFound, Formatting.Indented)}");
+
+      createdCard.Should().NotBeNull();
+      createdCard.Last4.Should().Be("1881");
+      createdCard.Bin.Should().Be("401288");
+    }
+
+    ///// <summary>
+    ///// 
+    ///// </summary>
+    ///// <returns></returns>
+    //[Fact]
+    //public async Task UpdatePaymentSource_OK_Test()
+    //{
+    //  var newCustomer = new CustomerOperationData
+    //  {
+    //    Name = "test name update",
+    //    Email = "testupdatepaymentsource@test.com",
+    //    PaymentSources = new List<PaymentSource>
+    //    {
+    //      new PaymentSource
+    //      {
+    //        TokenId = "tok_test_visa_4242",
+    //        Type = "card"
+    //      }
+    //    }
+    //  };
+
+    //  var customerCreated = await _customerContext.CreateAsync(newCustomer);
+
+    //  var currentPaymentSource = customerCreated.PaymentSources.Data.First();
+
+    //  var toUpdate = new Card
+    //  {
+    //    Id = currentPaymentSource.Id,
+    //    //TokenId = currentPaymentSource.TokenId,
+    //    TokenId = "tok_test_mastercard_4444",
+    //    ParentId = currentPaymentSource.ParentId
+    //  };
+
+    //  var paymentSourceUpdated = await _paymentSourceContext.UpdateAsync(toUpdate);
+
+    //  var customerFound = await _customerContext.FindAsync(customerCreated.Id);
+
+    //  paymentSourceUpdated.Should().NotBeNull();
+    //  //paymentSourceUpdated.Last4.Should().Be("4444");
+
+    //  Console.WriteLine($"::: {JsonConvert.SerializeObject(customerFound, Formatting.Indented)}");
+
+    //  //customerFound.PaymentSources.Data.First().Last4.Should().Be("4444");
+    //}
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    [Fact]
+    public async Task DeletePaymentSource_OK_Test()
+    {
+      var newCustomer = new CustomerOperationData
+      {
+        Name = "test name update",
+        Email = "testupdatepaymentsource@test.com",
+        PaymentSources = new List<PaymentSource>
+        {
+          new PaymentSource
+          {
+            TokenId = "tok_test_visa_4242",
+            Type = "card"
+          }
+        }
+      };
+
+      var customerCreated = await _customerContext.CreateAsync(newCustomer);
+
+      var currentPaymentSource = customerCreated.PaymentSources.Data.First();
+
+      var paymentMethodRemoved = await _paymentSourceContext.RemoveAsync(currentPaymentSource.ParentId, currentPaymentSource.Id);
+
+      paymentMethodRemoved.Should().NotBeNull();
+      paymentMethodRemoved.Deleted.Should().BeTrue();
     }
 
     #endregion

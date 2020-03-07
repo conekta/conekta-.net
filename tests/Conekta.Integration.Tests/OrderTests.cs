@@ -113,7 +113,7 @@ namespace Conekta.Integration.Tests
       PaymentMethod = new PaymentMethod
       {
         Type = "oxxo_cash",
-        ExpiresAt = 1582163201
+        ExpiresAt = new DateTimeOffset(DateTime.Now.AddDays(1)).ToUnixTimeSeconds()
       },
       Amount = 35000,
       Currency = "MXN"
