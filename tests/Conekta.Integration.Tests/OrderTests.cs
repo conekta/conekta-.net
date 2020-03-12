@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Conekta.Exceptions;
 using Conekta.Models;
 using FluentAssertions;
 using Microsoft.Extensions.DependencyInjection;
@@ -98,6 +99,9 @@ namespace Conekta.Integration.Tests
       }
     };
 
+    /// <summary>
+    /// 
+    /// </summary>
     private readonly ChargeOperationData _validCharge = new ChargeOperationData
     {
       PaymentMethod = new PaymentMethod
@@ -108,6 +112,9 @@ namespace Conekta.Integration.Tests
       Amount = 35000
     };
 
+    /// <summary>
+    /// 
+    /// </summary>
     private readonly ChargeOperationData _validChargeOxxo = new ChargeOperationData
     {
       PaymentMethod = new PaymentMethod
@@ -166,6 +173,141 @@ namespace Conekta.Integration.Tests
         Formatting.Indented) }");
 
       test.Should().BeTrue();
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    [Fact]
+    public async Task CreateAsync_Declined_Test()
+    {
+      var orderToCapture = (OrderOperationData)_validOrder.Clone();
+
+      orderToCapture.PreAuthorize = true;
+      orderToCapture.CustomerInfo = _customerInfo;
+      orderToCapture.Charges = new List<ChargeOperationData>
+      {
+        new ChargeOperationData
+          {
+            PaymentMethod = new PaymentMethod
+            {
+              Type = "card",
+              TokenId = "tok_test_card_declined"
+            },
+            Amount = 35000
+          }
+      };
+
+      var orderCreated = await _orderContext.CreateAsync(orderToCapture);
+
+      var orderCaptured = await _orderContext.CaptureAsync(orderCreated.Id);
+
+      Console.WriteLine(@$"CreateAsync_Declined_Test    [->] { JsonConvert.SerializeObject(orderCaptured,
+        Formatting.Indented) }");
+
+      var charge = orderCaptured.ChargeList.Data.FirstOrDefault();
+
+      charge.Status.Should().Be("declined");
+      charge.FailureCode.Should().Be("card_declined");
+      charge.FailureMessage.Should().Be("La tarjeta ingresada ha sido declinada. Por favor intenta con otro método de pago.");
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    [Fact]
+    public async Task CreateAsync_Insufficient_Funds_Test()
+    {
+      var orderToCapture = (OrderOperationData)_validOrder.Clone();
+
+      orderToCapture.PreAuthorize = true;
+      orderToCapture.CustomerInfo = _customerInfo;
+      orderToCapture.Charges = new List<ChargeOperationData>
+      {
+        new ChargeOperationData
+          {
+            PaymentMethod = new PaymentMethod
+            {
+              Type = "card",
+              TokenId = "tok_test_insufficient_funds"
+            },
+            Amount = 35000
+          }
+      };
+
+      var orderCreated = await _orderContext.CreateAsync(orderToCapture);
+
+      var orderCaptured = await _orderContext.CaptureAsync(orderCreated.Id);
+
+      Console.WriteLine(@$"CreateAsync_Insufficient_Funds_Test    [->] { JsonConvert.SerializeObject(orderCaptured,
+        Formatting.Indented) }");
+
+      var charge = orderCaptured.ChargeList.Data.FirstOrDefault();
+
+      charge.Status.Should().Be("declined");
+      charge.FailureCode.Should().Be("insufficient_funds");
+      charge.FailureMessage.Should().Be("Esta tarjeta no tiene suficientes fondos para completar la compra.");
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    [Fact]
+    public void CreateAsync_MSI_Error_Test()
+    {
+      var orderToCapture = (OrderOperationData)_validOrder.Clone();
+
+      orderToCapture.PreAuthorize = true;
+      orderToCapture.CustomerInfo = _customerInfo;
+      orderToCapture.Charges = new List<ChargeOperationData>
+      {
+        new ChargeOperationData
+          {
+            PaymentMethod = new PaymentMethod
+            {
+              Type = "card",
+              TokenId = "tok_test_msi_error"
+            },
+            Amount = 35000
+          }
+      };
+
+      Func<Task> f = async () => await _orderContext.CreateAsync(orderToCapture);
+
+      f.Should().Throw<ConektaException>()
+        .Where(e => e.Message.Contains("The charge was tokenized more than 10 minutes ago (MSI)"));
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [Fact]
+    public void CreateAsync_Invalid_Token_Test()
+    {
+      var orderToCapture = (OrderOperationData)_validOrder.Clone();
+
+      orderToCapture.PreAuthorize = true;
+      orderToCapture.CustomerInfo = _customerInfo;
+      orderToCapture.Charges = new List<ChargeOperationData>
+      {
+        new ChargeOperationData
+          {
+            PaymentMethod = new PaymentMethod
+            {
+              Type = "card",
+              TokenId = "invalid_token"
+            },
+            Amount = 35000
+          }
+      };
+
+      Func<Task> f = async () => await _orderContext.CreateAsync(orderToCapture);
+
+      f.Should().Throw<ConektaException>()
+        .Where(e => e.Message.Contains("The token does not exist."));
     }
 
     /// <summary>
@@ -333,6 +475,136 @@ namespace Conekta.Integration.Tests
     }
 
     /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    [Fact]
+    public async Task CreateChargeAsync_Declined_Test()
+    {
+      var order = (OrderOperationData)_validOrder.Clone();
+
+      order.CustomerInfo = _customerInfo;
+
+      var orderCreated = await _orderContext.CreateAsync(order);
+
+      var charge = new ChargeOperationData
+      {
+        PaymentMethod = new PaymentMethod
+        {
+          Type = "card",
+          TokenId = "tok_test_card_declined"
+        },
+        Amount = 2300
+      };
+
+      var chargeCreated = await _orderContext.CreateChargeAsync(orderCreated.Id, charge);
+
+      Console.WriteLine(@$"CreateChargeAsync_Declined_Test    [->] { JsonConvert.SerializeObject(chargeCreated,
+        Formatting.Indented, new JsonSerializerSettings
+        {
+          NullValueHandling = NullValueHandling.Ignore
+        }) }");
+
+      chargeCreated.Status.Should().Be("declined");
+      chargeCreated.FailureCode.Should().Be("card_declined");
+      chargeCreated.FailureMessage.Should().Be("La tarjeta ingresada ha sido declinada. Por favor intenta con otro método de pago.");
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    [Fact]
+    public async Task CreateChargeAsync_Insufficient_Funds_Test()
+    {
+      var order = (OrderOperationData)_validOrder.Clone();
+
+      order.CustomerInfo = _customerInfo;
+
+      var orderCreated = await _orderContext.CreateAsync(order);
+
+      var charge = new ChargeOperationData
+      {
+        PaymentMethod = new PaymentMethod
+        {
+          Type = "card",
+          TokenId = "tok_test_insufficient_funds"
+        },
+        Amount = 2300
+      };
+
+      var chargeCreated = await _orderContext.CreateChargeAsync(orderCreated.Id, charge);
+
+      Console.WriteLine(@$"CreateChargeAsync_Declined_Test    [->] { JsonConvert.SerializeObject(chargeCreated,
+        Formatting.Indented, new JsonSerializerSettings
+        {
+          NullValueHandling = NullValueHandling.Ignore
+        }) }");
+
+      chargeCreated.Status.Should().Be("declined");
+      chargeCreated.FailureCode.Should().Be("insufficient_funds");
+      chargeCreated.FailureMessage.Should().Be("Esta tarjeta no tiene suficientes fondos para completar la compra.");
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    [Fact]
+    public async Task CreateChargeAsync_MSI_Error_Test()
+    {
+      var order = (OrderOperationData)_validOrder.Clone();
+
+      order.CustomerInfo = _customerInfo;
+
+      var orderCreated = await _orderContext.CreateAsync(order);
+
+      var charge = new ChargeOperationData
+      {
+        PaymentMethod = new PaymentMethod
+        {
+          Type = "card",
+          TokenId = "tok_test_msi_error"
+        },
+        Amount = 2300
+      };
+
+      Func<Task> f = async () => await _orderContext.CreateChargeAsync(orderCreated.Id, charge);
+
+      f.Should().Throw<ConektaException>()
+        .Where(e => e.Message.Contains("The charge was tokenized more than 10 minutes ago (MSI)"));
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    [Fact]
+    public async Task CreateChargeAsync_Invalid_Token_Test()
+    {
+      var order = (OrderOperationData)_validOrder.Clone();
+
+      order.CustomerInfo = _customerInfo;
+
+      var orderCreated = await _orderContext.CreateAsync(order);
+
+      var charge = new ChargeOperationData
+      {
+        PaymentMethod = new PaymentMethod
+        {
+          Type = "card",
+          TokenId = "invalid_token"
+        },
+        Amount = 2300
+      };
+
+      Func<Task> f = async () => await _orderContext.CreateChargeAsync(orderCreated.Id, charge);
+
+      f.Should().Throw<ConektaException>()
+        .Where(e => e.Message.Contains("The token does not exist."));
+    }
+
+    /// <summary>
     /// Create charge oxxo Ok.
     /// </summary>
     /// <returns></returns>
@@ -355,7 +627,7 @@ namespace Conekta.Integration.Tests
       orderCreated.ChargeList.Data[0].PaymentMethod.Reference.Should().HaveLength(14);
       var test = (bool)orderCreated.Metadata.test;
 
-      Console.WriteLine(@$"CreateAsync_OK_Test    [->] { JsonConvert.SerializeObject(orderCreated,
+      Console.WriteLine(@$"CreateAsync_OrderCharge_Ok_Test    [->] { JsonConvert.SerializeObject(orderCreated,
         Formatting.Indented) }");
 
       test.Should().BeTrue();

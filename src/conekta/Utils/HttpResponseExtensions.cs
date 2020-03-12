@@ -1,5 +1,6 @@
 ﻿using System.Net.Http;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Conekta.Utils
 {
@@ -46,6 +47,14 @@ namespace Conekta.Utils
     /// <param name="response">Response.</param>
     public static string ContentAsString(this HttpResponseMessage response) =>
       response.Content.ReadAsStringAsync().Result;
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="response"></param>
+    /// <returns></returns>
+    public static dynamic ContentAsDynamic(this HttpResponseMessage response) =>
+      JsonConvert.DeserializeObject(ContentAsString(response));
 
     #endregion
   }

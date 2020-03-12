@@ -85,6 +85,18 @@ namespace Conekta.Models
     [JsonProperty(PropertyName = "order_id")]
     public string OrderId { get; private set; }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    [JsonProperty(PropertyName = "failure_code")]
+    public string FailureCode { get; private set; }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [JsonProperty(PropertyName = "failure_message")]
+    public string FailureMessage { get; private set; }
+
     #endregion
   }
 }

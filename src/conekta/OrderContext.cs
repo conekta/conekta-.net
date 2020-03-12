@@ -51,14 +51,25 @@ namespace Conekta
 
       var response = await _httpRequestFactory.SendAsync(HttpMethod.Post, RESOURCEURI, orderOperationData);
 
-      //Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+      //Console.WriteLine($"======= {(int)response.StatusCode} - {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
 
       if (response.IsSuccessStatusCode)
       {
         return response.ContentAsType<Order>();
       }
 
-      throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
+      var failureResponse = response.ContentAsDynamic();
+
+      var errorType = (string)failureResponse.type;
+
+      if (errorType.Equals("processing_error"))
+      {
+        var dataResponse = JsonConvert.SerializeObject(failureResponse.data, Formatting.Indented);
+
+        return JsonConvert.DeserializeObject<Order>(dataResponse);
+      }
+
+      throw new ConektaException(await response.Content.ReadAsStringAsync());
     }
 
     /// <summary>
@@ -79,7 +90,18 @@ namespace Conekta
         return response.ContentAsType<Order>();
       }
 
-      throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
+      var failureResponse = response.ContentAsDynamic();
+
+      var errorType = (string)failureResponse.type;
+
+      if (errorType.Equals("processing_error"))
+      {
+        var dataResponse = JsonConvert.SerializeObject(failureResponse.data, Formatting.Indented);
+
+        return JsonConvert.DeserializeObject<Order>(dataResponse);
+      }
+
+      throw new ConektaException(await response.Content.ReadAsStringAsync());
     }
 
     /// <summary>
@@ -103,7 +125,7 @@ namespace Conekta
         return response.ContentAsType<Order>();
       }
 
-      throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
+      throw new ConektaException(await response.Content.ReadAsStringAsync());
     }
 
     /// <summary>
@@ -129,7 +151,7 @@ namespace Conekta
         return response.ContentAsType<OrderList>();
       }
 
-      throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
+      throw new ConektaException(await response.Content.ReadAsStringAsync());
     }
 
     /// <summary>
@@ -153,7 +175,7 @@ namespace Conekta
         return response.ContentAsType<Order>();
       }
 
-      throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
+      throw new ConektaException(await response.Content.ReadAsStringAsync());
     }
 
 
@@ -186,7 +208,7 @@ namespace Conekta
         return response.ContentAsType<Order>();
       }
 
-      throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
+      throw new ConektaException(await response.Content.ReadAsStringAsync());
     }
 
     /// <summary>
@@ -206,14 +228,25 @@ namespace Conekta
 
       var response = await _httpRequestFactory.SendAsync(HttpMethod.Post, $"{RESOURCEURI}/{orderId}/charges", chargeOperationData);
 
-      //Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+      // Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
 
       if (response.IsSuccessStatusCode)
       {
         return response.ContentAsType<Charge>();
       }
 
-      throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
+      var failureResponse = response.ContentAsDynamic();
+
+      var errorType = (string)failureResponse.type;
+
+      if (errorType.Equals("processing_error"))
+      {
+        var dataResponse = JsonConvert.SerializeObject(failureResponse.data, Formatting.Indented);
+
+        return JsonConvert.DeserializeObject<Charge>(dataResponse);
+      }
+
+      throw new ConektaException(await response.Content.ReadAsStringAsync());
     }
 
     /// <summary>
@@ -245,7 +278,7 @@ namespace Conekta
         return response.ContentAsType<LineItem>();
       }
 
-      throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
+      throw new ConektaException(await response.Content.ReadAsStringAsync());
     }
 
     /// <summary>
@@ -277,7 +310,7 @@ namespace Conekta
         return response.ContentAsType<TaxLine>();
       }
 
-      throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
+      throw new ConektaException(await response.Content.ReadAsStringAsync());
     }
 
     /// <summary>
@@ -309,7 +342,7 @@ namespace Conekta
         return response.ContentAsType<ShippingLine>();
       }
 
-      throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
+      throw new ConektaException(await response.Content.ReadAsStringAsync());
     }
 
     /// <summary>
@@ -341,7 +374,7 @@ namespace Conekta
         return response.ContentAsType<DiscountLine>();
       }
 
-      throw new ConektaHttpException(await response.Content.ReadAsStringAsync(), response.StatusCode);
+      throw new ConektaException(await response.Content.ReadAsStringAsync());
     }
 
     #endregion
