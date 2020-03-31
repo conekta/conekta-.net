@@ -178,6 +178,31 @@ namespace Conekta
       throw new ConektaException(await response.Content.ReadAsStringAsync());
     }
 
+    /// <summary>
+    /// Cancel the specified orderId.
+    /// (For Oxxo payments only)
+    /// </summary>
+    /// <returns>The canceled order.</returns>
+    /// <param name="orderId">Order identifier.</param>
+    public async Task<Order> CancelAsync(string orderId)
+    {
+      if (orderId is null)
+      {
+        throw new ArgumentNullException(nameof(orderId));
+      }
+
+      var response = await _httpRequestFactory.SendAsync(HttpMethod.Post, $"{RESOURCEURI}/{orderId}/cancel", "{}");
+
+      //Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+
+      if (response.IsSuccessStatusCode)
+      {
+        return response.ContentAsType<Order>();
+      }
+
+      throw new ConektaException(await response.Content.ReadAsStringAsync());
+    }
+
 
     /// <summary>
     /// Creates the refund.

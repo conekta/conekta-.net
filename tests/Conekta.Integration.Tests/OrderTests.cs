@@ -73,7 +73,7 @@ namespace Conekta.Integration.Tests
     };
 
     /// <summary>
-    /// Custormer Info.
+    /// Customer Info.
     /// </summary>
     private readonly CustomerInfo _customerInfo = new CustomerInfo
     {
@@ -405,6 +405,34 @@ namespace Conekta.Integration.Tests
       var charge = orderCaptured.ChargeList.Data.FirstOrDefault();
 
       charge.Status.Should().Be("paid");
+    }
+
+    /// <summary>
+    /// Cancel OK
+    /// </summary>
+    /// <returns></returns>
+    [Fact]
+    public async Task CancelAsync_OK_Test()
+    {
+      var orderToCancel = (OrderOperationData)_validOrder.Clone();
+
+      orderToCancel.PreAuthorize = true;
+      orderToCancel.CustomerInfo = _customerInfo;
+      orderToCancel.Charges = new List<ChargeOperationData>
+      {
+        _validChargeOxxo
+      };
+
+      var orderCreated = await _orderContext.CreateAsync(orderToCancel);
+
+      var orderCanceled = await _orderContext.CancelAsync(orderCreated.Id);
+
+      Console.WriteLine(@$"CancelAsync_OK_Test    [->] { JsonConvert.SerializeObject(orderCanceled,
+        Formatting.Indented) }");
+
+      var charge = orderCanceled.ChargeList.Data.FirstOrDefault();
+      
+      charge.Status.Should().Be("canceled");
     }
 
     /// <summary>

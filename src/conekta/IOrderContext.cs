@@ -45,6 +45,14 @@ namespace Conekta
     /// <returns>The capture.</returns>
     /// <param name="orderId">Order identifier.</param>
     Task<Order> CaptureAsync(string orderId);
+    
+    /// <summary>
+    /// Cancel the specified orderId.
+    /// (For Oxxo payments only)
+    /// </summary>
+    /// <returns>The canceled order.</returns>
+    /// <param name="orderId">Order identifier.</param>
+    Task<Order> CancelAsync(string orderId);
 
     /// <summary>
     /// Creates the refund.
