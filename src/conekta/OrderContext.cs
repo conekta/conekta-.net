@@ -127,6 +127,28 @@ namespace Conekta
 
       throw new ConektaException(await response.Content.ReadAsStringAsync());
     }
+    
+    /// <summary>
+    /// Search the async by specific params.
+    /// </summary>
+    /// <returns>The async.</returns>
+    /// <param name="data">Data for the search.</param>
+    public async Task<OrderList> SearchAsync(string data)
+    {
+
+      var url = $"?expand=last_payment_info&search={data}";
+
+      var response = await _httpRequestFactory.SendAsync(HttpMethod.Get, $"{RESOURCEURI}{url}");
+
+      //Console.WriteLine($"======= {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+
+      if (response.IsSuccessStatusCode)
+      {
+        return response.ContentAsType<OrderList>();
+      }
+
+      throw new ConektaException(await response.Content.ReadAsStringAsync());
+    }
 
     /// <summary>
     /// Wheres the async.

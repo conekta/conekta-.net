@@ -32,6 +32,13 @@ namespace Conekta
     /// <param name="orderId">Order identifier.</param>
     Task<Order> FindAsync(string orderId);
 
+	/// <summary>
+    /// Search the async by specific params.
+    /// </summary>
+    /// <returns>The async.</returns>
+    /// <param name="data">Data for the search.</param>
+    Task<OrderList> SearchAsync(string reference); 
+
     /// <summary>
     /// Wheres the async.
     /// </summary>
