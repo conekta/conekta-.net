@@ -356,6 +356,96 @@ namespace Conekta.Integration.Tests
 
       test.Should().BeTrue();
     }
+    
+    /// <summary>
+    /// Search by customer email OK.
+    /// </summary>
+    /// <returns></returns>
+    [Fact]
+    public async Task SearchAsync_CustomerEmail_OK_Test()
+    {
+  
+      var orderToCancel = (OrderOperationData)_validOrder.Clone();
+
+      orderToCancel.PreAuthorize = true;
+      orderToCancel.CustomerInfo = _customerInfo;
+      orderToCancel.Charges = new List<ChargeOperationData>
+      {
+        _validChargeOxxo
+      };
+
+      var orderCreated = await _orderContext.CreateAsync(orderToCancel);
+
+      var ordersFound = await _orderContext.SearchAsync(_customerInfo.Email);
+
+      //Console.WriteLine(@$"WhereAsync_OK_Test    [->] { JsonConvert.SerializeObject(ordersFound,
+      //  Formatting.Indented) }");
+
+  
+      ordersFound.Data.Count.Should().NotBe(0);
+      ordersFound.Data.FirstOrDefault().ChargeList.Data.Count.Should().NotBe(0);
+    }
+    
+    /// <summary>
+    /// Search by customer email OK.
+    /// </summary>
+    /// <returns></returns>
+    [Fact]
+    public async Task SearchAsync_CustomerName_OK_Test()
+    {
+  
+      var orderToCancel = (OrderOperationData)_validOrder.Clone();
+
+      orderToCancel.PreAuthorize = true;
+      orderToCancel.CustomerInfo = _customerInfo;
+      orderToCancel.Charges = new List<ChargeOperationData>
+      {
+        _validChargeOxxo
+      };
+
+      var ordersFound = await _orderContext.SearchAsync(_customerInfo.Name);
+
+      //Console.WriteLine(@$"WhereAsync_OK_Test    [->] { JsonConvert.SerializeObject(ordersFound,
+      //  Formatting.Indented) }");
+
+  
+      ordersFound.Data.Count.Should().NotBe(0);
+      ordersFound.Data.FirstOrDefault().ChargeList.Data.Count.Should().NotBe(0);
+    }
+    
+    /// <summary>
+    /// Search by reference OK.
+    /// </summary>
+    /// <returns></returns>
+    [Fact]
+    public async Task SearchAsync_PaymentReference_OK_Test()
+    {
+  
+      var orderToCancel = (OrderOperationData)_validOrder.Clone();
+
+      orderToCancel.PreAuthorize = true;
+      orderToCancel.CustomerInfo = _customerInfo;
+      orderToCancel.Charges = new List<ChargeOperationData>
+      {
+        _validChargeOxxo
+      };
+
+      var orderCreated = await _orderContext.CreateAsync(orderToCancel);
+
+      var createdReference = orderCreated.ChargeList.Data.FirstOrDefault().PaymentMethod.Reference;
+      
+      var ordersFound = await _orderContext.SearchAsync(createdReference);
+
+      //Console.WriteLine(@$"WhereAsync_OK_Test    [->] { JsonConvert.SerializeObject(ordersFound,
+      //  Formatting.Indented) }");
+
+  
+      ordersFound.Data.Count.Should().NotBe(0);
+      ordersFound.Data.FirstOrDefault().ChargeList.Data.Count.Should().NotBe(0);
+      var chargeFound = ordersFound.Data.FirstOrDefault().ChargeList.Data.FirstOrDefault();
+      chargeFound.PaymentMethod.Reference.Should().Be(createdReference);
+
+    }
 
     /// <summary>
     /// Where Ok.
