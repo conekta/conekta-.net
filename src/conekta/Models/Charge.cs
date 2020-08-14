@@ -84,6 +84,13 @@ namespace Conekta.Models
     /// </summary>
     [JsonProperty(PropertyName = "order_id")]
     public string OrderId { get; private set; }
+    
+    /// <summary>
+    /// Gets or sets the referenceId.
+    /// </summary>
+    /// <value>The referenceId.</value>
+    [JsonProperty(PropertyName = "reference_id")]
+    public string ReferenceId { get; set;}
 
     /// <summary>
     /// 

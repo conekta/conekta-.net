@@ -554,6 +554,8 @@ namespace Conekta.Integration.Tests
         Formatting.Indented) }");
 
       orderRefunded.PaymentStatus.Should().Be("refunded");
+      orderRefunded.ChargeList.Data[0].Refunds.Data[0].ObjectType.Should().Be("refund");
+      orderRefunded.ChargeList.Data[0].Refunds.Data[0].Amount.Should().Be(-35000);
     }
 
     /// <summary>
