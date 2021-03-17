@@ -9,9 +9,9 @@
     <RootNamespace>conekta</RootNamespace>
     <AssemblyName>conekta</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>1.1</ReleaseVersion>
+    <ReleaseVersion>1.2</ReleaseVersion>
     <PackageId>Conekta_dot_net</PackageId>
-    <PackageVersion>1.1</PackageVersion>
+    <PackageVersion>1.2</PackageVersion>
     <Authors>Conekta</Authors>
     <Description>Bibloteca Oficial para integrar conekta.</Description>
   </PropertyGroup>
@@ -72,6 +72,7 @@
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\Card.cs" />
     <Compile Include="Models\OfflineRecurrentReference.cs" />
+    <Compile Include="Models\Checkout.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

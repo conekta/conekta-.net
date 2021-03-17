@@ -40,4 +40,6 @@ Thumbs.db
 *.dotCover
 
 # Visual Studio user pref
-src/conekta/.vs/conekta/xs/UserPrefs.xml
+src/conekta/.vs/**
+
+
