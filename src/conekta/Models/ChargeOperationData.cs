@@ -29,7 +29,14 @@ namespace Conekta.Models
     /// <value>The payment method.</value>
     [JsonProperty(PropertyName = "payment_method")]
     public PaymentMethod PaymentMethod { get; set; }
-
+    
+    /// <summary>
+    /// Gets or sets the refunds.
+    /// </summary>
+    /// <value>The refunds.</value>
+    [JsonProperty(PropertyName = "refunds")]
+    public RefundsList Refunds { get; set; }
+    
     #endregion
   }
 }
