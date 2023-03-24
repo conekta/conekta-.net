@@ -41,15 +41,15 @@ namespace Conekta.net.Model
         /// Initializes a new instance of the <see cref="LineItems" /> class.
         /// </summary>
         /// <param name="antifraudInfo">antifraudInfo.</param>
+        /// <param name="brand">brand.</param>
         /// <param name="description">description.</param>
-        /// <param name="sku">sku.</param>
-        /// <param name="name">name (required).</param>
+        /// <param name="name">The name of the item. It will be displayed in the order. (required).</param>
         /// <param name="unitPrice">unitPrice (required).</param>
         /// <param name="quantity">quantity (required).</param>
+        /// <param name="sku">The stock keeping unit for the item. It is used to identify the item in the order..</param>
         /// <param name="tags">tags.</param>
-        /// <param name="brand">brand.</param>
-        /// <param name="metadata">metadata.</param>
-        public LineItems(Dictionary<string, Object> antifraudInfo = default(Dictionary<string, Object>), string description = default(string), string sku = default(string), string name = default(string), int unitPrice = default(int), int quantity = default(int), List<string> tags = default(List<string>), string brand = default(string), Dictionary<string, string> metadata = default(Dictionary<string, string>))
+        /// <param name="metadata">It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters..</param>
+        public LineItems(Dictionary<string, Object> antifraudInfo = default(Dictionary<string, Object>), string brand = default(string), string description = default(string), string name = default(string), int unitPrice = default(int), int quantity = default(int), string sku = default(string), List<string> tags = default(List<string>), Dictionary<string, string> metadata = default(Dictionary<string, string>))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -60,10 +60,10 @@ namespace Conekta.net.Model
             this.UnitPrice = unitPrice;
             this.Quantity = quantity;
             this.AntifraudInfo = antifraudInfo;
+            this.Brand = brand;
             this.Description = description;
             this.Sku = sku;
             this.Tags = tags;
-            this.Brand = brand;
             this.Metadata = metadata;
         }
 
@@ -74,20 +74,21 @@ namespace Conekta.net.Model
         public Dictionary<string, Object> AntifraudInfo { get; set; }
 
         /// <summary>
+        /// Gets or Sets Brand
+        /// </summary>
+        [DataMember(Name = "brand", EmitDefaultValue = false)]
+        public string Brand { get; set; }
+
+        /// <summary>
         /// Gets or Sets Description
         /// </summary>
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or Sets Sku
+        /// The name of the item. It will be displayed in the order.
         /// </summary>
-        [DataMember(Name = "sku", EmitDefaultValue = false)]
-        public string Sku { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Name
-        /// </summary>
+        /// <value>The name of the item. It will be displayed in the order.</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -104,20 +105,22 @@ namespace Conekta.net.Model
         public int Quantity { get; set; }
 
         /// <summary>
+        /// The stock keeping unit for the item. It is used to identify the item in the order.
+        /// </summary>
+        /// <value>The stock keeping unit for the item. It is used to identify the item in the order.</value>
+        [DataMember(Name = "sku", EmitDefaultValue = false)]
+        public string Sku { get; set; }
+
+        /// <summary>
         /// Gets or Sets Tags
         /// </summary>
         [DataMember(Name = "tags", EmitDefaultValue = false)]
         public List<string> Tags { get; set; }
 
         /// <summary>
-        /// Gets or Sets Brand
+        /// It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.
         /// </summary>
-        [DataMember(Name = "brand", EmitDefaultValue = false)]
-        public string Brand { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Metadata
-        /// </summary>
+        /// <value>It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.</value>
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, string> Metadata { get; set; }
 
@@ -130,13 +133,13 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class LineItems {\n");
             sb.Append("  AntifraudInfo: ").Append(AntifraudInfo).Append("\n");
+            sb.Append("  Brand: ").Append(Brand).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  Sku: ").Append(Sku).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  UnitPrice: ").Append(UnitPrice).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
+            sb.Append("  Sku: ").Append(Sku).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
-            sb.Append("  Brand: ").Append(Brand).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -180,14 +183,14 @@ namespace Conekta.net.Model
                     this.AntifraudInfo.SequenceEqual(input.AntifraudInfo)
                 ) && 
                 (
+                    this.Brand == input.Brand ||
+                    (this.Brand != null &&
+                    this.Brand.Equals(input.Brand))
+                ) && 
+                (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Sku == input.Sku ||
-                    (this.Sku != null &&
-                    this.Sku.Equals(input.Sku))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -203,15 +206,15 @@ namespace Conekta.net.Model
                     this.Quantity.Equals(input.Quantity)
                 ) && 
                 (
+                    this.Sku == input.Sku ||
+                    (this.Sku != null &&
+                    this.Sku.Equals(input.Sku))
+                ) && 
+                (
                     this.Tags == input.Tags ||
                     this.Tags != null &&
                     input.Tags != null &&
                     this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.Brand == input.Brand ||
-                    (this.Brand != null &&
-                    this.Brand.Equals(input.Brand))
                 ) && 
                 (
                     this.Metadata == input.Metadata ||
@@ -234,13 +237,13 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.AntifraudInfo.GetHashCode();
                 }
+                if (this.Brand != null)
+                {
+                    hashCode = (hashCode * 59) + this.Brand.GetHashCode();
+                }
                 if (this.Description != null)
                 {
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.Sku != null)
-                {
-                    hashCode = (hashCode * 59) + this.Sku.GetHashCode();
                 }
                 if (this.Name != null)
                 {
@@ -248,13 +251,13 @@ namespace Conekta.net.Model
                 }
                 hashCode = (hashCode * 59) + this.UnitPrice.GetHashCode();
                 hashCode = (hashCode * 59) + this.Quantity.GetHashCode();
+                if (this.Sku != null)
+                {
+                    hashCode = (hashCode * 59) + this.Sku.GetHashCode();
+                }
                 if (this.Tags != null)
                 {
                     hashCode = (hashCode * 59) + this.Tags.GetHashCode();
-                }
-                if (this.Brand != null)
-                {
-                    hashCode = (hashCode * 59) + this.Brand.GetHashCode();
                 }
                 if (this.Metadata != null)
                 {

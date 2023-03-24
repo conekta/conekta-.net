@@ -4,15 +4,15 @@ All URIs are relative to *https://api.conekta.io*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CreateCustomer**](CustomersApi.md#createcustomer) | **POST** /customers | creates a new customer |
+| [**CreateCustomer**](CustomersApi.md#createcustomer) | **POST** /customers | Create customer |
 | [**CreateCustomerFiscalEntities**](CustomersApi.md#createcustomerfiscalentities) | **POST** /customers/{id}/fiscal_entities | creates a fiscal entities |
 | [**CreateCustomerPaymentSources**](CustomersApi.md#createcustomerpaymentsources) | **POST** /customers/{id}/payment_sources | creates a payment source |
 | [**CreateCustomerShippingContacts**](CustomersApi.md#createcustomershippingcontacts) | **POST** /customers/{id}/shipping_contacts | creates a shipping contacts |
-| [**DeleteCustomerById**](CustomersApi.md#deletecustomerbyid) | **DELETE** /customers/{id} | deletes a customer |
+| [**DeleteCustomerById**](CustomersApi.md#deletecustomerbyid) | **DELETE** /customers/{id} | Delete a customer |
 | [**DeleteCustomerPaymentSources**](CustomersApi.md#deletecustomerpaymentsources) | **DELETE** /customers/{id}/payment_sources/{payment_sources_id} | Deletes a payment source |
-| [**GetCustomerById**](CustomersApi.md#getcustomerbyid) | **GET** /customers/{id} | returns a customer |
-| [**GetCustomers**](CustomersApi.md#getcustomers) | **GET** /customers | returns customers |
-| [**UpdateCustomer**](CustomersApi.md#updatecustomer) | **PUT** /customers/{id} | updates a customer |
+| [**GetCustomerById**](CustomersApi.md#getcustomerbyid) | **GET** /customers/{id} | Get a customer |
+| [**GetCustomers**](CustomersApi.md#getcustomers) | **GET** /customers | Get a list of customers |
+| [**UpdateCustomer**](CustomersApi.md#updatecustomer) | **PUT** /customers/{id} | Update a customer |
 | [**UpdateCustomerFiscalEntities**](CustomersApi.md#updatecustomerfiscalentities) | **PUT** /customers/{id}/fiscal_entities/{fiscal_entities_id} | updates a  fiscal entities |
 | [**UpdateCustomerPaymentSources**](CustomersApi.md#updatecustomerpaymentsources) | **PUT** /customers/{id}/payment_sources/{payment_sources_id} | updates a payment source |
 | [**UpdateCustomerShippingContacts**](CustomersApi.md#updatecustomershippingcontacts) | **PUT** /customers/{id}/shipping_contacts/{shipping_contacts_id} | updates a shipping contacts |
@@ -21,9 +21,9 @@ All URIs are relative to *https://api.conekta.io*
 # **CreateCustomer**
 > CustomerResponse CreateCustomer (Customer customer, string acceptLanguage = null)
 
-creates a new customer
+Create customer
 
-The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer.
+The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [Click here](https://developers.conekta.com/page/web-checkout-tokenizer) 
 
 ### Example
 ```csharp
@@ -50,7 +50,7 @@ namespace Example
 
             try
             {
-                // creates a new customer
+                // Create customer
                 CustomerResponse result = apiInstance.CreateCustomer(customer, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -71,7 +71,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // creates a new customer
+    // Create customer
     ApiResponse<CustomerResponse> response = apiInstance.CreateCustomerWithHttpInfo(customer, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -427,7 +427,7 @@ catch (ApiException e)
 # **DeleteCustomerById**
 > CustomerResponse DeleteCustomerById (string id, string acceptLanguage = null)
 
-deletes a customer
+Delete a customer
 
 Deleted a customer resource that corresponds to a customer ID.
 
@@ -456,7 +456,7 @@ namespace Example
 
             try
             {
-                // deletes a customer
+                // Delete a customer
                 CustomerResponse result = apiInstance.DeleteCustomerById(id, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -477,7 +477,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // deletes a customer
+    // Delete a customer
     ApiResponse<CustomerResponse> response = apiInstance.DeleteCustomerByIdWithHttpInfo(id, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -629,7 +629,7 @@ catch (ApiException e)
 # **GetCustomerById**
 > CustomerResponse GetCustomerById (string id, string acceptLanguage = null)
 
-returns a customer
+Get a customer
 
 Gets a customer resource that corresponds to a customer ID.
 
@@ -658,7 +658,7 @@ namespace Example
 
             try
             {
-                // returns a customer
+                // Get a customer
                 CustomerResponse result = apiInstance.GetCustomerById(id, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -679,7 +679,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // returns a customer
+    // Get a customer
     ApiResponse<CustomerResponse> response = apiInstance.GetCustomerByIdWithHttpInfo(id, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -726,9 +726,9 @@ catch (ApiException e)
 
 <a name="getcustomers"></a>
 # **GetCustomers**
-> CustomersResponse GetCustomers (string acceptLanguage = null, int? limit = null, string next = null, string previous = null)
+> CustomersResponse GetCustomers (string acceptLanguage = null, int? limit = null, string search = null, string next = null, string previous = null)
 
-returns customers
+Get a list of customers
 
 The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.
 
@@ -754,13 +754,14 @@ namespace Example
             var apiInstance = new CustomersApi(config);
             var acceptLanguage = es;  // string | use for knowing which language to use (optional)  (default to es)
             var limit = 20;  // int? | The numbers of items to return, the maximum value is 250 (optional)  (default to 20)
+            var search = "search_example";  // string | General order search, e.g. by mail, reference etc. (optional) 
             var next = "next_example";  // string | next page (optional) 
             var previous = "previous_example";  // string | previous page (optional) 
 
             try
             {
-                // returns customers
-                CustomersResponse result = apiInstance.GetCustomers(acceptLanguage, limit, next, previous);
+                // Get a list of customers
+                CustomersResponse result = apiInstance.GetCustomers(acceptLanguage, limit, search, next, previous);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -780,8 +781,8 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // returns customers
-    ApiResponse<CustomersResponse> response = apiInstance.GetCustomersWithHttpInfo(acceptLanguage, limit, next, previous);
+    // Get a list of customers
+    ApiResponse<CustomersResponse> response = apiInstance.GetCustomersWithHttpInfo(acceptLanguage, limit, search, next, previous);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -800,6 +801,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **acceptLanguage** | **string** | use for knowing which language to use | [optional] [default to es] |
 | **limit** | **int?** | The numbers of items to return, the maximum value is 250 | [optional] [default to 20] |
+| **search** | **string** | General order search, e.g. by mail, reference etc. | [optional]  |
 | **next** | **string** | next page | [optional]  |
 | **previous** | **string** | previous page | [optional]  |
 
@@ -822,8 +824,6 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | successful operation |  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  |
 | **401** | authentication error |  -  |
-| **402** | payment required error |  -  |
-| **422** | parameter validation error |  -  |
 | **500** | internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -832,7 +832,7 @@ catch (ApiException e)
 # **UpdateCustomer**
 > CustomerResponse UpdateCustomer (string id, UpdateCustomer updateCustomer, string acceptLanguage = null)
 
-updates a customer
+Update a customer
 
 You can update customer-related data
 
@@ -862,7 +862,7 @@ namespace Example
 
             try
             {
-                // updates a customer
+                // Update a customer
                 CustomerResponse result = apiInstance.UpdateCustomer(id, updateCustomer, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -883,7 +883,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // updates a customer
+    // Update a customer
     ApiResponse<CustomerResponse> response = apiInstance.UpdateCustomerWithHttpInfo(id, updateCustomer, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

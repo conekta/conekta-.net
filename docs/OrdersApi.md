@@ -4,7 +4,7 @@ All URIs are relative to *https://api.conekta.io*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CreateOrder**](OrdersApi.md#createorder) | **POST** /orders | creates a new order |
+| [**CreateOrder**](OrdersApi.md#createorder) | **POST** /orders | Create order |
 | [**GetOrderById**](OrdersApi.md#getorderbyid) | **GET** /orders/{id} | Info for a specific order |
 | [**GetOrders**](OrdersApi.md#getorders) | **GET** /orders | returns a set of /orders |
 | [**OrderRefund**](OrdersApi.md#orderrefund) | **POST** /orders/{id}/refunds | A refunded order describes the items, amount, and reason an order is being refunded. |
@@ -24,7 +24,7 @@ All URIs are relative to *https://api.conekta.io*
 # **CreateOrder**
 > OrderResponse CreateOrder (OrderRequest orderRequest, string acceptLanguage = null)
 
-creates a new order
+Create order
 
 Create a new order.
 
@@ -53,7 +53,7 @@ namespace Example
 
             try
             {
-                // creates a new order
+                // Create order
                 OrderResponse result = apiInstance.CreateOrder(orderRequest, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -74,7 +74,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // creates a new order
+    // Create order
     ApiResponse<OrderResponse> response = apiInstance.CreateOrderWithHttpInfo(orderRequest, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

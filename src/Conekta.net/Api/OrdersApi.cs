@@ -28,7 +28,7 @@ namespace Conekta.net.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// creates a new order
+        /// Create order
         /// </summary>
         /// <remarks>
         /// Create a new order.
@@ -41,7 +41,7 @@ namespace Conekta.net.Api
         OrderResponse CreateOrder(OrderRequest orderRequest, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// creates a new order
+        /// Create order
         /// </summary>
         /// <remarks>
         /// Create a new order.
@@ -409,7 +409,7 @@ namespace Conekta.net.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// creates a new order
+        /// Create order
         /// </summary>
         /// <remarks>
         /// Create a new order.
@@ -423,7 +423,7 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<OrderResponse> CreateOrderAsync(OrderRequest orderRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// creates a new order
+        /// Create order
         /// </summary>
         /// <remarks>
         /// Create a new order.
@@ -970,7 +970,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a new order Create a new order.
+        /// Create order Create a new order.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderRequest">requested field for order</param>
@@ -984,7 +984,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a new order Create a new order.
+        /// Create order Create a new order.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderRequest">requested field for order</param>
@@ -1053,7 +1053,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a new order Create a new order.
+        /// Create order Create a new order.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderRequest">requested field for order</param>
@@ -1068,7 +1068,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a new order Create a new order.
+        /// Create order Create a new order.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderRequest">requested field for order</param>

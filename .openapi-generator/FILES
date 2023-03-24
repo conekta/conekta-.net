@@ -22,7 +22,6 @@ docs/Checkout.md
 docs/CheckoutOrderTemplate.md
 docs/CheckoutRequest.md
 docs/CheckoutResponse.md
-docs/CheckoutsApi.md
 docs/CheckoutsResponse.md
 docs/CheckoutsResponseAllOf.md
 docs/ConsumerPaymentSourcesRequest.md
@@ -115,6 +114,7 @@ docs/OrdersApi.md
 docs/OrdersResponse.md
 docs/Page.md
 docs/Pagination.md
+docs/PaymentLinkApi.md
 docs/PaymentMethod.md
 docs/PaymentMethodBankTransfer.md
 docs/PaymentMethodCard.md
@@ -162,13 +162,14 @@ docs/WebhookResponse.md
 docs/WebhookUpdateRequest.md
 docs/WebhooksApi.md
 docs/WhitelistsApi.md
+src/Conekta.net.Test/Api/PaymentLinkApiTests.cs
 src/Conekta.net.Test/Conekta.net.Test.csproj
 src/Conekta.net/Api/BlacklistApi.cs
-src/Conekta.net/Api/CheckoutsApi.cs
 src/Conekta.net/Api/CustomersApi.cs
 src/Conekta.net/Api/EventsApi.cs
 src/Conekta.net/Api/LogsApi.cs
 src/Conekta.net/Api/OrdersApi.cs
+src/Conekta.net/Api/PaymentLinkApi.cs
 src/Conekta.net/Api/PlansApi.cs
 src/Conekta.net/Api/SubscriptionsApi.cs
 src/Conekta.net/Api/WebhooksApi.cs

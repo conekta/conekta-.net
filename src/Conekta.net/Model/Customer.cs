@@ -41,7 +41,7 @@ namespace Conekta.net.Model
         /// Initializes a new instance of the <see cref="Customer" /> class.
         /// </summary>
         /// <param name="antifraudInfo">antifraudInfo.</param>
-        /// <param name="name">client&#39;s name (required).</param>
+        /// <param name="name">Client&#39;s name (required).</param>
         /// <param name="email">An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc). (required).</param>
         /// <param name="phone">Is the customer&#39;s phone number (required).</param>
         /// <param name="planId">Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription.</param>
@@ -92,9 +92,9 @@ namespace Conekta.net.Model
         public CustomerAntifraudInfo AntifraudInfo { get; set; }
 
         /// <summary>
-        /// client&#39;s name
+        /// Client&#39;s name
         /// </summary>
-        /// <value>client&#39;s name</value>
+        /// <value>Client&#39;s name</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 

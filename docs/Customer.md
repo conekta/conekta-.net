@@ -6,7 +6,7 @@ a customer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AntifraudInfo** | [**CustomerAntifraudInfo**](CustomerAntifraudInfo.md) |  | [optional] 
-**Name** | **string** | client&#39;s name | 
+**Name** | **string** | Client&#39;s name | 
 **Email** | **string** | An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc). | 
 **Phone** | **string** | Is the customer&#39;s phone number | 
 **PlanId** | **string** | Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription | [optional] 

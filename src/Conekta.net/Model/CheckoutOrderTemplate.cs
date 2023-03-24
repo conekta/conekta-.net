@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// CheckoutOrderTemplate
+    /// It maintains the attributes with which the order will be created when receiving a new payment.
     /// </summary>
     [DataContract(Name = "checkout_order_template")]
     public partial class CheckoutOrderTemplate : IEquatable<CheckoutOrderTemplate>, IValidatableObject
@@ -41,7 +41,7 @@ namespace Conekta.net.Model
         /// Initializes a new instance of the <see cref="CheckoutOrderTemplate" /> class.
         /// </summary>
         /// <param name="currency">currency (required).</param>
-        /// <param name="lineItems">lineItems (required).</param>
+        /// <param name="lineItems">They are the products to buy. Each contains the \&quot;unit price\&quot; and \&quot;quantity\&quot; parameters that are used to calculate the total amount of the order. (required).</param>
         /// <param name="metadata">metadata.</param>
         public CheckoutOrderTemplate(string currency = default(string), List<LineItems> lineItems = default(List<LineItems>), Dictionary<string, Object> metadata = default(Dictionary<string, Object>))
         {
@@ -67,8 +67,9 @@ namespace Conekta.net.Model
         public string Currency { get; set; }
 
         /// <summary>
-        /// Gets or Sets LineItems
+        /// They are the products to buy. Each contains the \&quot;unit price\&quot; and \&quot;quantity\&quot; parameters that are used to calculate the total amount of the order.
         /// </summary>
+        /// <value>They are the products to buy. Each contains the \&quot;unit price\&quot; and \&quot;quantity\&quot; parameters that are used to calculate the total amount of the order.</value>
         [DataMember(Name = "line_items", IsRequired = true, EmitDefaultValue = true)]
         public List<LineItems> LineItems { get; set; }
 

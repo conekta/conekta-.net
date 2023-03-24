@@ -40,16 +40,18 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Checkout" /> class.
         /// </summary>
-        /// <param name="allowedPaymentMethods">allowedPaymentMethods (required).</param>
-        /// <param name="expiresAt">expiresAt (required).</param>
+        /// <param name="allowedPaymentMethods">Those are the payment methods that will be available for the link (required).</param>
+        /// <param name="expiresAt">It is the time when the link will expire. It is expressed in seconds since the Unix epoch. The valid range is from 2 to 365 days (the valid range will be taken from the next day of the creation date at 00:01 hrs)  (required).</param>
+        /// <param name="monthlyInstallmentsEnabled">This flag allows you to specify if months without interest will be active..</param>
+        /// <param name="monthlyInstallmentsOptions">This field allows you to specify the number of months without interest..</param>
         /// <param name="name">checkout&#39;s name (required).</param>
-        /// <param name="needsShippingContact">needsShippingContact.</param>
+        /// <param name="needsShippingContact">This flag allows you to fill in the shipping information at checkout..</param>
         /// <param name="onDemandEnabled">onDemandEnabled.</param>
         /// <param name="orderTemplate">orderTemplate (required).</param>
         /// <param name="paymentsLimitCount">paymentsLimitCount.</param>
-        /// <param name="recurrent">recurrent (required).</param>
+        /// <param name="recurrent">false: single use. true: multiple payments (required).</param>
         /// <param name="type">type (required).</param>
-        public Checkout(List<string> allowedPaymentMethods = default(List<string>), long expiresAt = default(long), string name = default(string), bool needsShippingContact = default(bool), bool? onDemandEnabled = default(bool?), CheckoutOrderTemplate orderTemplate = default(CheckoutOrderTemplate), int paymentsLimitCount = default(int), bool recurrent = default(bool), string type = default(string))
+        public Checkout(List<string> allowedPaymentMethods = default(List<string>), long expiresAt = default(long), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string name = default(string), bool needsShippingContact = default(bool), bool? onDemandEnabled = default(bool?), CheckoutOrderTemplate orderTemplate = default(CheckoutOrderTemplate), int paymentsLimitCount = default(int), bool recurrent = default(bool), string type = default(string))
         {
             // to ensure "allowedPaymentMethods" is required (not null)
             if (allowedPaymentMethods == null)
@@ -77,22 +79,40 @@ namespace Conekta.net.Model
                 throw new ArgumentNullException("type is a required property for Checkout and cannot be null");
             }
             this.Type = type;
+            this.MonthlyInstallmentsEnabled = monthlyInstallmentsEnabled;
+            this.MonthlyInstallmentsOptions = monthlyInstallmentsOptions;
             this.NeedsShippingContact = needsShippingContact;
             this.OnDemandEnabled = onDemandEnabled;
             this.PaymentsLimitCount = paymentsLimitCount;
         }
 
         /// <summary>
-        /// Gets or Sets AllowedPaymentMethods
+        /// Those are the payment methods that will be available for the link
         /// </summary>
+        /// <value>Those are the payment methods that will be available for the link</value>
         [DataMember(Name = "allowed_payment_methods", IsRequired = true, EmitDefaultValue = true)]
         public List<string> AllowedPaymentMethods { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExpiresAt
+        /// It is the time when the link will expire. It is expressed in seconds since the Unix epoch. The valid range is from 2 to 365 days (the valid range will be taken from the next day of the creation date at 00:01 hrs) 
         /// </summary>
+        /// <value>It is the time when the link will expire. It is expressed in seconds since the Unix epoch. The valid range is from 2 to 365 days (the valid range will be taken from the next day of the creation date at 00:01 hrs) </value>
         [DataMember(Name = "expires_at", IsRequired = true, EmitDefaultValue = true)]
         public long ExpiresAt { get; set; }
+
+        /// <summary>
+        /// This flag allows you to specify if months without interest will be active.
+        /// </summary>
+        /// <value>This flag allows you to specify if months without interest will be active.</value>
+        [DataMember(Name = "monthly_installments_enabled", EmitDefaultValue = true)]
+        public bool MonthlyInstallmentsEnabled { get; set; }
+
+        /// <summary>
+        /// This field allows you to specify the number of months without interest.
+        /// </summary>
+        /// <value>This field allows you to specify the number of months without interest.</value>
+        [DataMember(Name = "monthly_installments_options", EmitDefaultValue = false)]
+        public List<int> MonthlyInstallmentsOptions { get; set; }
 
         /// <summary>
         /// checkout&#39;s name
@@ -102,8 +122,9 @@ namespace Conekta.net.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets NeedsShippingContact
+        /// This flag allows you to fill in the shipping information at checkout.
         /// </summary>
+        /// <value>This flag allows you to fill in the shipping information at checkout.</value>
         [DataMember(Name = "needs_shipping_contact", EmitDefaultValue = true)]
         public bool NeedsShippingContact { get; set; }
 
@@ -126,8 +147,9 @@ namespace Conekta.net.Model
         public int PaymentsLimitCount { get; set; }
 
         /// <summary>
-        /// Gets or Sets Recurrent
+        /// false: single use. true: multiple payments
         /// </summary>
+        /// <value>false: single use. true: multiple payments</value>
         [DataMember(Name = "recurrent", IsRequired = true, EmitDefaultValue = true)]
         public bool Recurrent { get; set; }
 
@@ -147,6 +169,8 @@ namespace Conekta.net.Model
             sb.Append("class Checkout {\n");
             sb.Append("  AllowedPaymentMethods: ").Append(AllowedPaymentMethods).Append("\n");
             sb.Append("  ExpiresAt: ").Append(ExpiresAt).Append("\n");
+            sb.Append("  MonthlyInstallmentsEnabled: ").Append(MonthlyInstallmentsEnabled).Append("\n");
+            sb.Append("  MonthlyInstallmentsOptions: ").Append(MonthlyInstallmentsOptions).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  NeedsShippingContact: ").Append(NeedsShippingContact).Append("\n");
             sb.Append("  OnDemandEnabled: ").Append(OnDemandEnabled).Append("\n");
@@ -200,6 +224,16 @@ namespace Conekta.net.Model
                     this.ExpiresAt.Equals(input.ExpiresAt)
                 ) && 
                 (
+                    this.MonthlyInstallmentsEnabled == input.MonthlyInstallmentsEnabled ||
+                    this.MonthlyInstallmentsEnabled.Equals(input.MonthlyInstallmentsEnabled)
+                ) && 
+                (
+                    this.MonthlyInstallmentsOptions == input.MonthlyInstallmentsOptions ||
+                    this.MonthlyInstallmentsOptions != null &&
+                    input.MonthlyInstallmentsOptions != null &&
+                    this.MonthlyInstallmentsOptions.SequenceEqual(input.MonthlyInstallmentsOptions)
+                ) && 
+                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
@@ -247,6 +281,11 @@ namespace Conekta.net.Model
                     hashCode = (hashCode * 59) + this.AllowedPaymentMethods.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.ExpiresAt.GetHashCode();
+                hashCode = (hashCode * 59) + this.MonthlyInstallmentsEnabled.GetHashCode();
+                if (this.MonthlyInstallmentsOptions != null)
+                {
+                    hashCode = (hashCode * 59) + this.MonthlyInstallmentsOptions.GetHashCode();
+                }
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();

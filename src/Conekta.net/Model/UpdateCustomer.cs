@@ -35,7 +35,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateCustomer" /> class.
         /// </summary>
-        /// <param name="name">client&#39;s name.</param>
+        /// <param name="name">Client&#39;s name.</param>
         /// <param name="email">An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc)..</param>
         /// <param name="phone">Is the customer&#39;s phone number.</param>
         /// <param name="planId">Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription.</param>
@@ -64,9 +64,9 @@ namespace Conekta.net.Model
         }
 
         /// <summary>
-        /// client&#39;s name
+        /// Client&#39;s name
         /// </summary>
-        /// <value>client&#39;s name</value>
+        /// <value>Client&#39;s name</value>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 

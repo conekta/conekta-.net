@@ -28,10 +28,10 @@ namespace Conekta.net.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// creates a new customer
+        /// Create customer
         /// </summary>
         /// <remarks>
-        /// The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer.
+        /// The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [Click here](https://developers.conekta.com/page/web-checkout-tokenizer) 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customer">requested field for customer</param>
@@ -41,10 +41,10 @@ namespace Conekta.net.Api
         CustomerResponse CreateCustomer(Customer customer, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// creates a new customer
+        /// Create customer
         /// </summary>
         /// <remarks>
-        /// The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer.
+        /// The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [Click here](https://developers.conekta.com/page/web-checkout-tokenizer) 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customer">requested field for customer</param>
@@ -134,7 +134,7 @@ namespace Conekta.net.Api
         /// <returns>ApiResponse of CustomerShippingContactsResponse</returns>
         ApiResponse<CustomerShippingContactsResponse> CreateCustomerShippingContactsWithHttpInfo(string id, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
-        /// deletes a customer
+        /// Delete a customer
         /// </summary>
         /// <remarks>
         /// Deleted a customer resource that corresponds to a customer ID.
@@ -147,7 +147,7 @@ namespace Conekta.net.Api
         CustomerResponse DeleteCustomerById(string id, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// deletes a customer
+        /// Delete a customer
         /// </summary>
         /// <remarks>
         /// Deleted a customer resource that corresponds to a customer ID.
@@ -186,7 +186,7 @@ namespace Conekta.net.Api
         /// <returns>ApiResponse of UpdateCustomerPaymentSourcesResponse</returns>
         ApiResponse<UpdateCustomerPaymentSourcesResponse> DeleteCustomerPaymentSourcesWithHttpInfo(string id, string paymentSourcesId, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
-        /// returns a customer
+        /// Get a customer
         /// </summary>
         /// <remarks>
         /// Gets a customer resource that corresponds to a customer ID.
@@ -199,7 +199,7 @@ namespace Conekta.net.Api
         CustomerResponse GetCustomerById(string id, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// returns a customer
+        /// Get a customer
         /// </summary>
         /// <remarks>
         /// Gets a customer resource that corresponds to a customer ID.
@@ -211,7 +211,7 @@ namespace Conekta.net.Api
         /// <returns>ApiResponse of CustomerResponse</returns>
         ApiResponse<CustomerResponse> GetCustomerByIdWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
-        /// returns customers
+        /// Get a list of customers
         /// </summary>
         /// <remarks>
         /// The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.
@@ -219,14 +219,15 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
+        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomersResponse</returns>
-        CustomersResponse GetCustomers(string acceptLanguage = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), int operationIndex = 0);
+        CustomersResponse GetCustomers(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// returns customers
+        /// Get a list of customers
         /// </summary>
         /// <remarks>
         /// The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.
@@ -234,13 +235,14 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
+        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomersResponse</returns>
-        ApiResponse<CustomersResponse> GetCustomersWithHttpInfo(string acceptLanguage = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), int operationIndex = 0);
+        ApiResponse<CustomersResponse> GetCustomersWithHttpInfo(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
         /// <summary>
-        /// updates a customer
+        /// Update a customer
         /// </summary>
         /// <remarks>
         /// You can update customer-related data
@@ -254,7 +256,7 @@ namespace Conekta.net.Api
         CustomerResponse UpdateCustomer(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// updates a customer
+        /// Update a customer
         /// </summary>
         /// <remarks>
         /// You can update customer-related data
@@ -363,10 +365,10 @@ namespace Conekta.net.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// creates a new customer
+        /// Create customer
         /// </summary>
         /// <remarks>
-        /// The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer.
+        /// The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [Click here](https://developers.conekta.com/page/web-checkout-tokenizer) 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customer">requested field for customer</param>
@@ -377,10 +379,10 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<CustomerResponse> CreateCustomerAsync(Customer customer, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// creates a new customer
+        /// Create customer
         /// </summary>
         /// <remarks>
-        /// The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer.
+        /// The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [Click here](https://developers.conekta.com/page/web-checkout-tokenizer) 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customer">requested field for customer</param>
@@ -477,7 +479,7 @@ namespace Conekta.net.Api
         /// <returns>Task of ApiResponse (CustomerShippingContactsResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<CustomerShippingContactsResponse>> CreateCustomerShippingContactsWithHttpInfoAsync(string id, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// deletes a customer
+        /// Delete a customer
         /// </summary>
         /// <remarks>
         /// Deleted a customer resource that corresponds to a customer ID.
@@ -491,7 +493,7 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<CustomerResponse> DeleteCustomerByIdAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// deletes a customer
+        /// Delete a customer
         /// </summary>
         /// <remarks>
         /// Deleted a customer resource that corresponds to a customer ID.
@@ -533,7 +535,7 @@ namespace Conekta.net.Api
         /// <returns>Task of ApiResponse (UpdateCustomerPaymentSourcesResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<UpdateCustomerPaymentSourcesResponse>> DeleteCustomerPaymentSourcesWithHttpInfoAsync(string id, string paymentSourcesId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// returns a customer
+        /// Get a customer
         /// </summary>
         /// <remarks>
         /// Gets a customer resource that corresponds to a customer ID.
@@ -547,7 +549,7 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<CustomerResponse> GetCustomerByIdAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// returns a customer
+        /// Get a customer
         /// </summary>
         /// <remarks>
         /// Gets a customer resource that corresponds to a customer ID.
@@ -560,7 +562,7 @@ namespace Conekta.net.Api
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<CustomerResponse>> GetCustomerByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// returns customers
+        /// Get a list of customers
         /// </summary>
         /// <remarks>
         /// The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.
@@ -568,15 +570,16 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
+        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomersResponse</returns>
-        System.Threading.Tasks.Task<CustomersResponse> GetCustomersAsync(string acceptLanguage = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CustomersResponse> GetCustomersAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// returns customers
+        /// Get a list of customers
         /// </summary>
         /// <remarks>
         /// The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.
@@ -584,14 +587,15 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
+        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomersResponse>> GetCustomersWithHttpInfoAsync(string acceptLanguage = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CustomersResponse>> GetCustomersWithHttpInfoAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// updates a customer
+        /// Update a customer
         /// </summary>
         /// <remarks>
         /// You can update customer-related data
@@ -606,7 +610,7 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<CustomerResponse> UpdateCustomerAsync(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// updates a customer
+        /// Update a customer
         /// </summary>
         /// <remarks>
         /// You can update customer-related data
@@ -833,7 +837,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a new customer The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer.
+        /// Create customer The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [Click here](https://developers.conekta.com/page/web-checkout-tokenizer) 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customer">requested field for customer</param>
@@ -847,7 +851,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a new customer The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer.
+        /// Create customer The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [Click here](https://developers.conekta.com/page/web-checkout-tokenizer) 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customer">requested field for customer</param>
@@ -916,7 +920,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a new customer The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer.
+        /// Create customer The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [Click here](https://developers.conekta.com/page/web-checkout-tokenizer) 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customer">requested field for customer</param>
@@ -931,7 +935,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a new customer The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer.
+        /// Create customer The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [Click here](https://developers.conekta.com/page/web-checkout-tokenizer) 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customer">requested field for customer</param>
@@ -1567,7 +1571,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// deletes a customer Deleted a customer resource that corresponds to a customer ID.
+        /// Delete a customer Deleted a customer resource that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">identifier</param>
@@ -1581,7 +1585,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// deletes a customer Deleted a customer resource that corresponds to a customer ID.
+        /// Delete a customer Deleted a customer resource that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">identifier</param>
@@ -1649,7 +1653,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// deletes a customer Deleted a customer resource that corresponds to a customer ID.
+        /// Delete a customer Deleted a customer resource that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">identifier</param>
@@ -1664,7 +1668,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// deletes a customer Deleted a customer resource that corresponds to a customer ID.
+        /// Delete a customer Deleted a customer resource that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">identifier</param>
@@ -1921,7 +1925,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a customer Gets a customer resource that corresponds to a customer ID.
+        /// Get a customer Gets a customer resource that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">identifier</param>
@@ -1935,7 +1939,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a customer Gets a customer resource that corresponds to a customer ID.
+        /// Get a customer Gets a customer resource that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">identifier</param>
@@ -2003,7 +2007,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a customer Gets a customer resource that corresponds to a customer ID.
+        /// Get a customer Gets a customer resource that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">identifier</param>
@@ -2018,7 +2022,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a customer Gets a customer resource that corresponds to a customer ID.
+        /// Get a customer Gets a customer resource that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">identifier</param>
@@ -2089,32 +2093,34 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns customers The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.
+        /// Get a list of customers The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
+        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomersResponse</returns>
-        public CustomersResponse GetCustomers(string acceptLanguage = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), int operationIndex = 0)
+        public CustomersResponse GetCustomers(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<CustomersResponse> localVarResponse = GetCustomersWithHttpInfo(acceptLanguage, limit, next, previous);
+            Conekta.net.Client.ApiResponse<CustomersResponse> localVarResponse = GetCustomersWithHttpInfo(acceptLanguage, limit, search, next, previous);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// returns customers The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.
+        /// Get a list of customers The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
+        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomersResponse</returns>
-        public Conekta.net.Client.ApiResponse<CustomersResponse> GetCustomersWithHttpInfo(string acceptLanguage = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<CustomersResponse> GetCustomersWithHttpInfo(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0)
         {
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
 
@@ -2141,6 +2147,10 @@ namespace Conekta.net.Api
             if (limit != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (search != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "search", search));
             }
             if (next != null)
             {
@@ -2180,34 +2190,36 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns customers The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.
+        /// Get a list of customers The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
+        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomersResponse</returns>
-        public async System.Threading.Tasks.Task<CustomersResponse> GetCustomersAsync(string acceptLanguage = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CustomersResponse> GetCustomersAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<CustomersResponse> localVarResponse = await GetCustomersWithHttpInfoAsync(acceptLanguage, limit, next, previous, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<CustomersResponse> localVarResponse = await GetCustomersWithHttpInfoAsync(acceptLanguage, limit, search, next, previous, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// returns customers The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.
+        /// Get a list of customers The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
+        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomersResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomersResponse>> GetCustomersWithHttpInfoAsync(string acceptLanguage = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomersResponse>> GetCustomersWithHttpInfoAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -2235,6 +2247,10 @@ namespace Conekta.net.Api
             if (limit != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (search != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "search", search));
             }
             if (next != null)
             {
@@ -2275,7 +2291,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// updates a customer You can update customer-related data
+        /// Update a customer You can update customer-related data
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">identifier</param>
@@ -2290,7 +2306,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// updates a customer You can update customer-related data
+        /// Update a customer You can update customer-related data
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">identifier</param>
@@ -2367,7 +2383,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// updates a customer You can update customer-related data
+        /// Update a customer You can update customer-related data
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">identifier</param>
@@ -2383,7 +2399,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// updates a customer You can update customer-related data
+        /// Update a customer You can update customer-related data
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">identifier</param>
