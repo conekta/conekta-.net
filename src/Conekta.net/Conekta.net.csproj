@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo><!-- setting GenerateAssemblyInfo to false causes this bug https://github.com/dotnet/project-system/issues/3934 -->
+    <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
+    <AssemblyName>Conekta.net</AssemblyName>
+    <PackageId>Conekta.net</PackageId>
+    <OutputType>Library</OutputType>
+    <Authors>engineering@conekta.com</Authors>
+    <Company>Conekta</Company>
+    <AssemblyTitle>Conekta Library</AssemblyTitle>
+    <Description>This is a .net library that allows interaction with https://api.conekta.io API.</Description>
+    <Copyright>Conekta</Copyright>
+    <RootNamespace>Conekta.net</RootNamespace>
+    <Version>6.0.0-alpha-1</Version>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Conekta.net.xml</DocumentationFile>
+    <RepositoryUrl>https://github.com/conekta/conekta-.net.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>Support new version based on Openapi</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JsonSubTypes" Version="2.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="RestSharp" Version="108.0.2" />
+    <PackageReference Include="Polly" Version="7.2.3" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <PropertyGroup>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageTags>conekta;payment;credit;cards;money;gateway;</PackageTags>
+    <PackageIcon>conekta.png</PackageIcon>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/conekta/conekta-.net</PackageProjectUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="../../LICENSE" Pack="true" PackagePath="" />
+    <None Include="../../conekta.png" Pack="true" Visible="false" PackagePath="" />
+    <None Include="../../README.md" Pack="true" PackagePath="/"/>
+  </ItemGroup></Project>

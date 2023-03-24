@@ -1,0 +1,52 @@
+{
+  "templates": [
+    {
+      "name": "Class",
+      "extension": "cs",
+      "file": "./class.cs-tmpl",
+      "parameters": "./template-parameters.js"
+    },
+    {
+      "name": "Interface",
+      "extension": "cs",
+      "file": "./interface.cs-tmpl",
+      "parameters": "./template-parameters.js"
+    },
+    {
+      "name": "Enum",
+      "extension": "cs",
+      "file": "./enum.cs-tmpl",
+      "parameters": "./template-parameters.js"
+    },
+    {
+      "name": "Class",
+      "extension": "ts",
+      "file": "./class.ts-tmpl",
+      "parameters": "./template-parameters.js"
+    },
+    {
+      "name": "Interface",
+      "extension": "ts",
+      "file": "./interface.ts-tmpl",
+      "parameters": "./template-parameters.js"
+    },
+    {
+      "name": "Default",
+      "extension": "ts",
+      "file": "./default.ts-tmpl",
+      "parameters": "./template-parameters.js"
+    },
+    {
+      "name": "Class",
+      "extension": "vb",
+      "file": "./class.vb-tmpl",
+      "parameters": "./template-parameters.js"
+    },
+    {
+      "name": "ApiController",
+      "extension": "cs",
+      "file": "./apicontroller.cs-tmpl",
+      "parameters": "./template-parameters.js"
+    }
+  ]
+}

@@ -1,148 +1,90 @@
-![README Cover Image](readme_cover.png)
+![NET api](https://github.com/conekta/conekta-.net/blob/master/readme_cover.png?raw=true)
+# Conekta .NET API Library
+[![nuget](https://img.shields.io/nuget/v/Conekta.net.svg)](https://www.nuget.org/packages/Conekta.net/) [![nuget](https://img.shields.io/nuget/dt/Conekta.net.svg)](https://www.nuget.org/packages/Conekta.net/)[![dotnet CI](https://github.com/conekta/conekta-.net/actions/workflows/dotnet.yml/badge.svg)](https://github.com/conekta/conekta-.net/actions/workflows/dotnet.yml) 
 
-<div align="center">
+This is the officially supported .NET library for using Conekta's APIs.
+## Supported API versions
+The library supports all APIs under the following services:
 
-# Conekta .NET 1.0.2
+| API                                                                                         | Description | Service Name | Supported version |
+|---------------------------------------------------------------------------------------------| ----------- |-------|-------------------|
+| [Payments API](https://developers.conekta.com/reference)                  | Our classic integration for online payments. Current supported version | Payments API | **v2.1.0**        |
 
-[![Made with .NET](https://img.shields.io/badge/made%20with-.net-red.svg?style=for-the-badge&colorA=ED4040&colorB=C12C2D)](https://www.microsoft.com/net) [![By Conekta](https://img.shields.io/badge/by-conekta-red.svg?style=for-the-badge&colorA=ee6130&colorB=00a4ac)](https://conekta.com)
-</div>
+For more information, refer to our [documentation](https://developers.conekta.com/docs).
 
-This is a .net library that allows interaction with https://api.conekta.io API.
+## Prerequisites
+- [Conekta account](https://panel.conekta.com/)
+- [API key](https://developers.conekta.com/docs/como-obtener-tus-api-keys).  your API credential .
+- Conekta dotnet API Library supports .net standard 2.0 and above
 
 ## Installation
-
-Obtain the latest version of the Conekta .NET bindings with:
-
-    git clone https://github.com/conekta/conekta-.net
-
-The last version works with API 2.0, if you are using API 1.0, obtain the target release with:
-
-https://github.com/conekta/conekta-.net/releases/tag/1.0.1
-
-To get started, add the following to your .NET script:
-
-```csharp
-using conekta;
+Simply download and restore nuget packages https://www.nuget.org/packages/Conekta.net/
+or install it from package manager
 ```
+PM> Install-Package Conekta.net -Version x.x.x
+```
+## Using the library
+
+In order to submit http request to Conekta API you need to initialize the client. The following example makes a order request:
+```c#
+
+// Create a OrderRequest
+using System;
+using System.Collections.Generic;
+using Conekta.net.Client;
+using Conekta.net.Api;
+using Conekta.net.Model;
+
+// create the http client
 
 
-## Usage
-
-```csharp
-Order order = new conekta.Order().create(@"{
-  ""currency"":""MXN"",
-  ""customer_info"": {
-    ""name"": ""Jul Ceballos"",
-    ""phone"": ""+5215555555555"",
-    ""email"": ""jul@conekta.io""
-  },
-  ""line_items"": [{
-    ""name"": ""Box of Cohiba S1s"",
-    ""description"": ""Imported From Mex."",
-    ""unit_price"": 35000,
-    ""quantity"": 1,
-    ""tags"": [""food"", ""mexican food""],
-    ""type"": ""physical""
-  }],
-  ""charges"": [{
-    ""source"": {
-      ""type"": ""card"",
-      ""token_id"": ""tok_test_visa_4242""
-    }
-  }]
-}");
-
-// Handling Errors
-try
+Configuration configuration = new()
 {
-  new conekta.Order().create(@"{
-    ""currency"":""MXN"",
-    ""customer_info"": {
-      ""name"": ""Jul Ceballos"",
-      ""phone"": ""+5215555555555"",
-      ""email"": ""jul@conekta.io""
-    }
-  }");
-}
-catch (ConektaException e)
-{
-  Assert.AreEqual(e._object, "error");
-  Assert.AreEqual(e._type, "parameter_validation_error");
-}
+    AccessToken = "Your merchant XAPI key"
+};
+var ordersApi = new OrdersApi(configuration);
+
+// Create a OrderRequest
+string acceptLanguage = "en";
+var lineItems = new List<LineItems>{new (
+        name: "toshiba",
+        quantity: 1,
+        unitPrice: 1555
+    )};
+var charges = new List<ChargeRequest>{new (
+    amount: 1555,
+    paymentMethod: new ChargeRequestPaymentMethod("cash")
+)};
+var customerInfo = new OrderRequestCustomerInfo(new CustomerInfoJustCustomerId("cus_2tKcHxhTz7xU5SymF"));
+OrderRequest orderRequest = new OrderRequest(
+    currency: "MXN",
+    customerInfo: customerInfo,
+    lineItems: lineItems,
+    charges: charges
+);
+            
+//Make the call to the service. This example code makes a call to /orders
+OrderResponse response = ordersApi.CreateOrder(orderRequest, acceptLanguage);
 ```
 
-## Endpoints
-
+## Running the tests
+Navigate to conekta-.net folder and run the following commands.
 ```
-Conekta.Order.create(string) : Conekta.Order
-Conekta.Order.update(string) : Conekta.Order
-Conekta.Order.find(string) : Conekta.Order
-Conekta.Order.where(string) : Conekta.Order[]
-Conekta.Order.createCharge(string) : Conekta.Charge
-Conekta.Order.createLineItem(string) : Conekta.Lineitem
-Conekta.Lineitem.update(string) : Conekta.Lineitem
-Conekta.Order.createTaxLine(string) : Conekta.TaxLine
-Conekta.TaxLine.update(string) : Conekta.TaxLine
-Conekta.Order.createShippingLine(string) : Conekta.ShippingLine
-Conekta.ShippingLine.update(string) : Conekta.ShippingLine
-Conekta.Order.createDiscountLine(string) : Conekta.DiscountLine
-Conekta.DiscountLine.update(string) : Conekta.DiscountLine
-Conekta.Customer.create(string) : Conekta.Customer
-Conekta.Customer.update(string) : Conekta.Customer
-Conekta.Customer.find(string) : Conekta.Customer
-Conekta.Customer.where(string) : Conekta.Customer[]
-Conekta.Customer.createSource(string) : Conekta.Source
-Conekta.Source.update(string) : Conekta.Source
-Conekta.Customer.createShippingContact(string) : Conekta.ShippingContact
-Conekta.ShippingContact.update(string) : Conekta.ShippingContact
-Conekta.Customer.createFiscalEntity(string) : Conekta.FiscalEntity
-Conekta.FiscalEntity.update(string) : Conekta.FiscalEntity
+dotnet build
+dotnet test
 ```
 
-## Documentation
+## Contributing
+We encourage you to contribute to this repository, so everyone can benefit from new features, bug fixes, and any other improvements.
+Have a look at our [contributing guidelines](https://github.com/conekta/conekta-.net/blob/main/CONTRIBUTING.md) to find out how to raise a pull request.
 
-Please see https://developers.conekta.com/api for up-to-date documentation.
+## Support
+If you have a feature request, or spotted a bug or a technical problem, [create an issue here](https://github.com/conekta/conekta-.net/issues/choose).
 
-## License
+For other questions, [contact our Support Team](https://developers.conekta.com/discuss).
 
-Developed in Mexico by [Conekta](https://www.conekta.com). Available with [MIT License](LICENSE).
+## Licence
+This repository is available under the [MIT license](https://github.com/conekta/conekta-.net/blob/master/LICENSE).
 
-***
-
-## How to contribute to the project
-
-1. Fork the repository
- 
-2. Clone the repository
-```
-    git clone git@github.com:yourUserName/conekta-.net.git
-```
-3. Create a branch
-```
-    git checkout develop
-    git pull origin develop
-    # You should choose the name of your branch
-    git checkout -b <feature/my_branch>
-```    
-4. Make necessary changes and commit those changes
-```
-    git add .
-    git commit -m "my changes"
-```
-5. Push changes to GitHub
-```
-    git push origin <feature/my_branch>
-```
-6. Submit your changes for review, create a pull request
-
-   To create a pull request, you need to have made your code changes on a separate branch. This branch should be named like this: **feature/my_feature** or **fix/my_fix**.
-
-   Make sure that, if you add new features to our library, be sure that corresponding **unit tests** are added.
-
-   If you go to your repository on GitHub, you’ll see a Compare & pull request button. Click on that button.
-
-***
-
-## We are always hiring!
-
-If you are a comfortable working with a range of backend languages (Java, Python, Ruby, PHP, etc) and frameworks, you have solid foundation in data structures, algorithms and software design with strong analytical and debugging skills, check our open positions: https://www.conekta.com/careers
+## See also
+* [Conekta docs](https://developers.conekta.com/docs)

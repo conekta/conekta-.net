@@ -1,0 +1,13 @@
+# Conekta.net.Model.OrderTaxLinesRequest
+create a new tax lines for an existing order
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Amount** | **long** |  | 
+**Description** | **string** |  | 
+**Metadata** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
