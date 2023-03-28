@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// a subscriptions
+    /// It is a parameter that allows to identify in the response, the detailed content of the plans to which the client has subscribed
     /// </summary>
     [DataContract(Name = "subscription_request")]
     public partial class SubscriptionRequest : IEquatable<SubscriptionRequest>, IValidatableObject

@@ -43,9 +43,9 @@ namespace Conekta.net.Model
         /// <param name="name">name (required).</param>
         /// <param name="email">email (required).</param>
         /// <param name="phone">phone (required).</param>
-        /// <param name="corporate">corporate (default to false).</param>
+        /// <param name="corporate">corporate.</param>
         /// <param name="_object">_object.</param>
-        public CustomerInfo(string name = default(string), string email = default(string), string phone = default(string), bool corporate = false, string _object = default(string))
+        public CustomerInfo(string name = default(string), string email = default(string), string phone = default(string), bool corporate = default(bool), string _object = default(string))
         {
             // to ensure "name" is required (not null)
             if (name == null)

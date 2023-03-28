@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **Metadata** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **MonthlyInstallmentsEnabled** | **bool** |  | [optional] 
 **MonthlyInstallmentsOptions** | **List&lt;int&gt;** |  | [optional] 
-**Name** | **string** | checkout&#39;s name | 
+**Name** | **string** | Reason for charge | 
 **NeedsShippingContact** | **bool** |  | [optional] 
 **Object** | **string** |  | 
 **PaidPaymentsCount** | **int** |  | [optional] 

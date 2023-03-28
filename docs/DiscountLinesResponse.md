@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **long** |  | 
+**Amount** | **long** | The amount to be deducted from the total sum of all payments, in cents. | 
 **Code** | **string** | Discount code. | 
-**Type** | **string** |  | 
+**Type** | **string** | It can be &#39;loyalty&#39;, &#39;campaign&#39;, &#39;coupon&#39; o &#39;sign&#39; | 
 **Id** | **string** |  | [optional] 
 **Object** | **string** |  | [optional] 
 **ParentId** | **string** |  | [optional] 

@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Phone** | **string** |  | [optional] 
-**Receiver** | **string** |  | [optional] 
-**BetweenStreets** | **string** |  | [optional] 
-**Address** | [**CustomerShippingContactsAddress**](CustomerShippingContactsAddress.md) |  | [optional] 
+**Phone** | **string** | Phone contact | [optional] 
+**Receiver** | **string** | Name of the person who will receive the order | [optional] 
+**BetweenStreets** | **string** | The street names between which the order will be delivered. | [optional] 
+**Address** | [**CustomerShippingContactsAddress**](CustomerShippingContactsAddress.md) |  | 
 **ParentId** | **string** |  | [optional] 
 **Default** | **bool?** |  | [optional] 
 **Deleted** | **bool?** |  | [optional] 

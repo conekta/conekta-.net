@@ -40,18 +40,19 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderRequest" /> class.
         /// </summary>
-        /// <param name="charges">charges.</param>
+        /// <param name="charges">List of [charges](https://developers.conekta.com/v2.1.0/reference/orderscreatecharge) that are applied to the order.</param>
         /// <param name="checkout">checkout.</param>
         /// <param name="currency">Currency with which the payment will be made. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217) (required).</param>
         /// <param name="customerInfo">customerInfo (required).</param>
-        /// <param name="discountLines">discountLines.</param>
-        /// <param name="lineItems">lineItems (required).</param>
+        /// <param name="discountLines">List of [discounts](https://developers.conekta.com/v2.1.0/reference/orderscreatediscountline) that are applied to the order. You must have at least one discount..</param>
+        /// <param name="lineItems">List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreatelineitems) that are sold in the order. You must have at least one product. (required).</param>
         /// <param name="metadata">metadata.</param>
+        /// <param name="needsShippingContact">Allows you to fill out the shipping information at checkout.</param>
         /// <param name="preAuthorize">Indicates whether the order charges must be preauthorized (default to false).</param>
         /// <param name="shippingContact">shippingContact.</param>
-        /// <param name="shippingLines">shippingLines.</param>
-        /// <param name="taxLines">taxLines.</param>
-        public OrderRequest(List<ChargeRequest> charges = default(List<ChargeRequest>), CheckoutRequest checkout = default(CheckoutRequest), string currency = default(string), OrderRequestCustomerInfo customerInfo = default(OrderRequestCustomerInfo), List<OrderDiscountLinesRequest> discountLines = default(List<OrderDiscountLinesRequest>), List<LineItems> lineItems = default(List<LineItems>), Dictionary<string, string> metadata = default(Dictionary<string, string>), bool preAuthorize = false, CustomerShippingContacts shippingContact = default(CustomerShippingContacts), List<ShippingLinesRequest> shippingLines = default(List<ShippingLinesRequest>), List<OrderTaxLinesRequest> taxLines = default(List<OrderTaxLinesRequest>))
+        /// <param name="shippingLines">List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshippinglines). If the online store offers digital products..</param>
+        /// <param name="taxLines">List of [taxes](https://developers.conekta.com/v2.1.0/reference/orderscreatetaxlines) that are applied to the order..</param>
+        public OrderRequest(List<ChargeRequest> charges = default(List<ChargeRequest>), CheckoutRequest checkout = default(CheckoutRequest), string currency = default(string), OrderRequestCustomerInfo customerInfo = default(OrderRequestCustomerInfo), List<OrderDiscountLinesRequest> discountLines = default(List<OrderDiscountLinesRequest>), List<LineItems> lineItems = default(List<LineItems>), Dictionary<string, string> metadata = default(Dictionary<string, string>), bool needsShippingContact = default(bool), bool preAuthorize = false, CustomerShippingContacts shippingContact = default(CustomerShippingContacts), List<ShippingLinesRequest> shippingLines = default(List<ShippingLinesRequest>), List<OrderTaxLinesRequest> taxLines = default(List<OrderTaxLinesRequest>))
         {
             // to ensure "currency" is required (not null)
             if (currency == null)
@@ -75,6 +76,7 @@ namespace Conekta.net.Model
             this.Checkout = checkout;
             this.DiscountLines = discountLines;
             this.Metadata = metadata;
+            this.NeedsShippingContact = needsShippingContact;
             this.PreAuthorize = preAuthorize;
             this.ShippingContact = shippingContact;
             this.ShippingLines = shippingLines;
@@ -82,8 +84,9 @@ namespace Conekta.net.Model
         }
 
         /// <summary>
-        /// Gets or Sets Charges
+        /// List of [charges](https://developers.conekta.com/v2.1.0/reference/orderscreatecharge) that are applied to the order
         /// </summary>
+        /// <value>List of [charges](https://developers.conekta.com/v2.1.0/reference/orderscreatecharge) that are applied to the order</value>
         [DataMember(Name = "charges", EmitDefaultValue = false)]
         public List<ChargeRequest> Charges { get; set; }
 
@@ -107,14 +110,16 @@ namespace Conekta.net.Model
         public OrderRequestCustomerInfo CustomerInfo { get; set; }
 
         /// <summary>
-        /// Gets or Sets DiscountLines
+        /// List of [discounts](https://developers.conekta.com/v2.1.0/reference/orderscreatediscountline) that are applied to the order. You must have at least one discount.
         /// </summary>
+        /// <value>List of [discounts](https://developers.conekta.com/v2.1.0/reference/orderscreatediscountline) that are applied to the order. You must have at least one discount.</value>
         [DataMember(Name = "discount_lines", EmitDefaultValue = false)]
         public List<OrderDiscountLinesRequest> DiscountLines { get; set; }
 
         /// <summary>
-        /// Gets or Sets LineItems
+        /// List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreatelineitems) that are sold in the order. You must have at least one product.
         /// </summary>
+        /// <value>List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreatelineitems) that are sold in the order. You must have at least one product.</value>
         [DataMember(Name = "line_items", IsRequired = true, EmitDefaultValue = true)]
         public List<LineItems> LineItems { get; set; }
 
@@ -123,6 +128,13 @@ namespace Conekta.net.Model
         /// </summary>
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, string> Metadata { get; set; }
+
+        /// <summary>
+        /// Allows you to fill out the shipping information at checkout
+        /// </summary>
+        /// <value>Allows you to fill out the shipping information at checkout</value>
+        [DataMember(Name = "needs_shipping_contact", EmitDefaultValue = true)]
+        public bool NeedsShippingContact { get; set; }
 
         /// <summary>
         /// Indicates whether the order charges must be preauthorized
@@ -138,14 +150,16 @@ namespace Conekta.net.Model
         public CustomerShippingContacts ShippingContact { get; set; }
 
         /// <summary>
-        /// Gets or Sets ShippingLines
+        /// List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshippinglines). If the online store offers digital products.
         /// </summary>
+        /// <value>List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshippinglines). If the online store offers digital products.</value>
         [DataMember(Name = "shipping_lines", EmitDefaultValue = false)]
         public List<ShippingLinesRequest> ShippingLines { get; set; }
 
         /// <summary>
-        /// Gets or Sets TaxLines
+        /// List of [taxes](https://developers.conekta.com/v2.1.0/reference/orderscreatetaxlines) that are applied to the order.
         /// </summary>
+        /// <value>List of [taxes](https://developers.conekta.com/v2.1.0/reference/orderscreatetaxlines) that are applied to the order.</value>
         [DataMember(Name = "tax_lines", EmitDefaultValue = false)]
         public List<OrderTaxLinesRequest> TaxLines { get; set; }
 
@@ -164,6 +178,7 @@ namespace Conekta.net.Model
             sb.Append("  DiscountLines: ").Append(DiscountLines).Append("\n");
             sb.Append("  LineItems: ").Append(LineItems).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
+            sb.Append("  NeedsShippingContact: ").Append(NeedsShippingContact).Append("\n");
             sb.Append("  PreAuthorize: ").Append(PreAuthorize).Append("\n");
             sb.Append("  ShippingContact: ").Append(ShippingContact).Append("\n");
             sb.Append("  ShippingLines: ").Append(ShippingLines).Append("\n");
@@ -243,6 +258,10 @@ namespace Conekta.net.Model
                     this.Metadata.SequenceEqual(input.Metadata)
                 ) && 
                 (
+                    this.NeedsShippingContact == input.NeedsShippingContact ||
+                    this.NeedsShippingContact.Equals(input.NeedsShippingContact)
+                ) && 
+                (
                     this.PreAuthorize == input.PreAuthorize ||
                     this.PreAuthorize.Equals(input.PreAuthorize)
                 ) && 
@@ -302,6 +321,7 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.NeedsShippingContact.GetHashCode();
                 hashCode = (hashCode * 59) + this.PreAuthorize.GetHashCode();
                 if (this.ShippingContact != null)
                 {

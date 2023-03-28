@@ -31,11 +31,11 @@ namespace Conekta.net.Api
         /// Create customer
         /// </summary>
         /// <remarks>
-        /// The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [Click here](https://developers.conekta.com/page/web-checkout-tokenizer) 
+        /// The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [https://developers.conekta.com/page/web-checkout-tokenizer](https://developers.conekta.com/page/web-checkout-tokenizer) 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customer">requested field for customer</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomerResponse</returns>
         CustomerResponse CreateCustomer(Customer customer, string acceptLanguage = default(string), int operationIndex = 0);
@@ -44,169 +44,88 @@ namespace Conekta.net.Api
         /// Create customer
         /// </summary>
         /// <remarks>
-        /// The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [Click here](https://developers.conekta.com/page/web-checkout-tokenizer) 
+        /// The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [https://developers.conekta.com/page/web-checkout-tokenizer](https://developers.conekta.com/page/web-checkout-tokenizer) 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customer">requested field for customer</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomerResponse</returns>
         ApiResponse<CustomerResponse> CreateCustomerWithHttpInfo(Customer customer, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
-        /// creates a fiscal entities
+        /// Create Fiscal Entity
         /// </summary>
         /// <remarks>
-        /// creates a customer resource that corresponds to a customer ID.
+        /// Create Fiscal entity resource that corresponds to a customer ID.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="customerFiscalEntitiesRequest">requested field for customer fiscal entities</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CreateCustomerFiscalEntitiesResponse</returns>
         CreateCustomerFiscalEntitiesResponse CreateCustomerFiscalEntities(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// creates a fiscal entities
+        /// Create Fiscal Entity
         /// </summary>
         /// <remarks>
-        /// creates a customer resource that corresponds to a customer ID.
+        /// Create Fiscal entity resource that corresponds to a customer ID.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="customerFiscalEntitiesRequest">requested field for customer fiscal entities</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CreateCustomerFiscalEntitiesResponse</returns>
         ApiResponse<CreateCustomerFiscalEntitiesResponse> CreateCustomerFiscalEntitiesWithHttpInfo(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
-        /// creates a payment source
-        /// </summary>
-        /// <remarks>
-        /// Gets a payment source that corresponds to a customer ID.
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="createCustomerPaymentSourcesRequest">requested field for customer payment sources</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>CreateCustomerPaymentSourcesResponse</returns>
-        CreateCustomerPaymentSourcesResponse CreateCustomerPaymentSources(string id, CreateCustomerPaymentSourcesRequest createCustomerPaymentSourcesRequest, string acceptLanguage = default(string), int operationIndex = 0);
-
-        /// <summary>
-        /// creates a payment source
-        /// </summary>
-        /// <remarks>
-        /// Gets a payment source that corresponds to a customer ID.
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="createCustomerPaymentSourcesRequest">requested field for customer payment sources</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of CreateCustomerPaymentSourcesResponse</returns>
-        ApiResponse<CreateCustomerPaymentSourcesResponse> CreateCustomerPaymentSourcesWithHttpInfo(string id, CreateCustomerPaymentSourcesRequest createCustomerPaymentSourcesRequest, string acceptLanguage = default(string), int operationIndex = 0);
-        /// <summary>
-        /// creates a shipping contacts
-        /// </summary>
-        /// <remarks>
-        /// Gets a customer resource that corresponds to a customer ID.
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="customerShippingContacts">requested field for customer shippings contacts</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>CustomerShippingContactsResponse</returns>
-        CustomerShippingContactsResponse CreateCustomerShippingContacts(string id, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), int operationIndex = 0);
-
-        /// <summary>
-        /// creates a shipping contacts
-        /// </summary>
-        /// <remarks>
-        /// Gets a customer resource that corresponds to a customer ID.
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="customerShippingContacts">requested field for customer shippings contacts</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of CustomerShippingContactsResponse</returns>
-        ApiResponse<CustomerShippingContactsResponse> CreateCustomerShippingContactsWithHttpInfo(string id, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), int operationIndex = 0);
-        /// <summary>
-        /// Delete a customer
+        /// Delete Customer
         /// </summary>
         /// <remarks>
         /// Deleted a customer resource that corresponds to a customer ID.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomerResponse</returns>
         CustomerResponse DeleteCustomerById(string id, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// Delete a customer
+        /// Delete Customer
         /// </summary>
         /// <remarks>
         /// Deleted a customer resource that corresponds to a customer ID.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomerResponse</returns>
         ApiResponse<CustomerResponse> DeleteCustomerByIdWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
-        /// Deletes a payment source
-        /// </summary>
-        /// <remarks>
-        /// deletes a payment  source that corresponds to a customer ID.
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="paymentSourcesId">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>UpdateCustomerPaymentSourcesResponse</returns>
-        UpdateCustomerPaymentSourcesResponse DeleteCustomerPaymentSources(string id, string paymentSourcesId, string acceptLanguage = default(string), int operationIndex = 0);
-
-        /// <summary>
-        /// Deletes a payment source
-        /// </summary>
-        /// <remarks>
-        /// deletes a payment  source that corresponds to a customer ID.
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="paymentSourcesId">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of UpdateCustomerPaymentSourcesResponse</returns>
-        ApiResponse<UpdateCustomerPaymentSourcesResponse> DeleteCustomerPaymentSourcesWithHttpInfo(string id, string paymentSourcesId, string acceptLanguage = default(string), int operationIndex = 0);
-        /// <summary>
-        /// Get a customer
+        /// Get Customer
         /// </summary>
         /// <remarks>
         /// Gets a customer resource that corresponds to a customer ID.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomerResponse</returns>
         CustomerResponse GetCustomerById(string id, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// Get a customer
+        /// Get Customer
         /// </summary>
         /// <remarks>
         /// Gets a customer resource that corresponds to a customer ID.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomerResponse</returns>
         ApiResponse<CustomerResponse> GetCustomerByIdWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
@@ -217,7 +136,7 @@ namespace Conekta.net.Api
         /// The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -233,7 +152,7 @@ namespace Conekta.net.Api
         /// The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -242,119 +161,61 @@ namespace Conekta.net.Api
         /// <returns>ApiResponse of CustomersResponse</returns>
         ApiResponse<CustomersResponse> GetCustomersWithHttpInfo(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
         /// <summary>
-        /// Update a customer
+        /// Update customer
         /// </summary>
         /// <remarks>
         /// You can update customer-related data
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="updateCustomer">requested field for customer</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomerResponse</returns>
         CustomerResponse UpdateCustomer(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// Update a customer
+        /// Update customer
         /// </summary>
         /// <remarks>
         /// You can update customer-related data
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="updateCustomer">requested field for customer</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomerResponse</returns>
         ApiResponse<CustomerResponse> UpdateCustomerWithHttpInfo(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
-        /// updates a  fiscal entities
+        /// Update  Fiscal Entity
         /// </summary>
         /// <remarks>
-        /// updates a customer resource that corresponds to a customer ID.
+        /// Update Fiscal Entity resource that corresponds to a customer ID.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="fiscalEntitiesId">identifier</param>
         /// <param name="customerUpdateFiscalEntitiesRequest">requested field for customer update fiscal entities</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UpdateCustomerFiscalEntitiesResponse</returns>
         UpdateCustomerFiscalEntitiesResponse UpdateCustomerFiscalEntities(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// updates a  fiscal entities
+        /// Update  Fiscal Entity
         /// </summary>
         /// <remarks>
-        /// updates a customer resource that corresponds to a customer ID.
+        /// Update Fiscal Entity resource that corresponds to a customer ID.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="fiscalEntitiesId">identifier</param>
         /// <param name="customerUpdateFiscalEntitiesRequest">requested field for customer update fiscal entities</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UpdateCustomerFiscalEntitiesResponse</returns>
         ApiResponse<UpdateCustomerFiscalEntitiesResponse> UpdateCustomerFiscalEntitiesWithHttpInfo(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0);
-        /// <summary>
-        /// updates a payment source
-        /// </summary>
-        /// <remarks>
-        /// Gets a payment source that corresponds to a customer ID.
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="paymentSourcesId">identifier</param>
-        /// <param name="updatePaymentSources">requested field for customer payment sources</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>UpdateCustomerPaymentSourcesResponse</returns>
-        UpdateCustomerPaymentSourcesResponse UpdateCustomerPaymentSources(string id, string paymentSourcesId, UpdatePaymentSources updatePaymentSources, string acceptLanguage = default(string), int operationIndex = 0);
-
-        /// <summary>
-        /// updates a payment source
-        /// </summary>
-        /// <remarks>
-        /// Gets a payment source that corresponds to a customer ID.
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="paymentSourcesId">identifier</param>
-        /// <param name="updatePaymentSources">requested field for customer payment sources</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of UpdateCustomerPaymentSourcesResponse</returns>
-        ApiResponse<UpdateCustomerPaymentSourcesResponse> UpdateCustomerPaymentSourcesWithHttpInfo(string id, string paymentSourcesId, UpdatePaymentSources updatePaymentSources, string acceptLanguage = default(string), int operationIndex = 0);
-        /// <summary>
-        /// updates a shipping contacts
-        /// </summary>
-        /// <remarks>
-        /// Gets a customer resource that corresponds to a customer ID.
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="shippingContactsId">identifier</param>
-        /// <param name="customerShippingContacts">requested field for customer shippings contacts</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>CustomerShippingContactsResponse</returns>
-        CustomerShippingContactsResponse UpdateCustomerShippingContacts(string id, string shippingContactsId, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), int operationIndex = 0);
-
-        /// <summary>
-        /// updates a shipping contacts
-        /// </summary>
-        /// <remarks>
-        /// Gets a customer resource that corresponds to a customer ID.
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="shippingContactsId">identifier</param>
-        /// <param name="customerShippingContacts">requested field for customer shippings contacts</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of CustomerShippingContactsResponse</returns>
-        ApiResponse<CustomerShippingContactsResponse> UpdateCustomerShippingContactsWithHttpInfo(string id, string shippingContactsId, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -368,11 +229,11 @@ namespace Conekta.net.Api
         /// Create customer
         /// </summary>
         /// <remarks>
-        /// The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [Click here](https://developers.conekta.com/page/web-checkout-tokenizer) 
+        /// The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [https://developers.conekta.com/page/web-checkout-tokenizer](https://developers.conekta.com/page/web-checkout-tokenizer) 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customer">requested field for customer</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerResponse</returns>
@@ -382,181 +243,94 @@ namespace Conekta.net.Api
         /// Create customer
         /// </summary>
         /// <remarks>
-        /// The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [Click here](https://developers.conekta.com/page/web-checkout-tokenizer) 
+        /// The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [https://developers.conekta.com/page/web-checkout-tokenizer](https://developers.conekta.com/page/web-checkout-tokenizer) 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customer">requested field for customer</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<CustomerResponse>> CreateCustomerWithHttpInfoAsync(Customer customer, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// creates a fiscal entities
+        /// Create Fiscal Entity
         /// </summary>
         /// <remarks>
-        /// creates a customer resource that corresponds to a customer ID.
+        /// Create Fiscal entity resource that corresponds to a customer ID.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="customerFiscalEntitiesRequest">requested field for customer fiscal entities</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreateCustomerFiscalEntitiesResponse</returns>
         System.Threading.Tasks.Task<CreateCustomerFiscalEntitiesResponse> CreateCustomerFiscalEntitiesAsync(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// creates a fiscal entities
+        /// Create Fiscal Entity
         /// </summary>
         /// <remarks>
-        /// creates a customer resource that corresponds to a customer ID.
+        /// Create Fiscal entity resource that corresponds to a customer ID.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="customerFiscalEntitiesRequest">requested field for customer fiscal entities</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreateCustomerFiscalEntitiesResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<CreateCustomerFiscalEntitiesResponse>> CreateCustomerFiscalEntitiesWithHttpInfoAsync(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// creates a payment source
-        /// </summary>
-        /// <remarks>
-        /// Gets a payment source that corresponds to a customer ID.
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="createCustomerPaymentSourcesRequest">requested field for customer payment sources</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of CreateCustomerPaymentSourcesResponse</returns>
-        System.Threading.Tasks.Task<CreateCustomerPaymentSourcesResponse> CreateCustomerPaymentSourcesAsync(string id, CreateCustomerPaymentSourcesRequest createCustomerPaymentSourcesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// creates a payment source
-        /// </summary>
-        /// <remarks>
-        /// Gets a payment source that corresponds to a customer ID.
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="createCustomerPaymentSourcesRequest">requested field for customer payment sources</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (CreateCustomerPaymentSourcesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateCustomerPaymentSourcesResponse>> CreateCustomerPaymentSourcesWithHttpInfoAsync(string id, CreateCustomerPaymentSourcesRequest createCustomerPaymentSourcesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// creates a shipping contacts
-        /// </summary>
-        /// <remarks>
-        /// Gets a customer resource that corresponds to a customer ID.
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="customerShippingContacts">requested field for customer shippings contacts</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of CustomerShippingContactsResponse</returns>
-        System.Threading.Tasks.Task<CustomerShippingContactsResponse> CreateCustomerShippingContactsAsync(string id, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// creates a shipping contacts
-        /// </summary>
-        /// <remarks>
-        /// Gets a customer resource that corresponds to a customer ID.
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="customerShippingContacts">requested field for customer shippings contacts</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (CustomerShippingContactsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomerShippingContactsResponse>> CreateCustomerShippingContactsWithHttpInfoAsync(string id, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// Delete a customer
+        /// Delete Customer
         /// </summary>
         /// <remarks>
         /// Deleted a customer resource that corresponds to a customer ID.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerResponse</returns>
         System.Threading.Tasks.Task<CustomerResponse> DeleteCustomerByIdAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Delete a customer
+        /// Delete Customer
         /// </summary>
         /// <remarks>
         /// Deleted a customer resource that corresponds to a customer ID.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<CustomerResponse>> DeleteCustomerByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Deletes a payment source
-        /// </summary>
-        /// <remarks>
-        /// deletes a payment  source that corresponds to a customer ID.
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="paymentSourcesId">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of UpdateCustomerPaymentSourcesResponse</returns>
-        System.Threading.Tasks.Task<UpdateCustomerPaymentSourcesResponse> DeleteCustomerPaymentSourcesAsync(string id, string paymentSourcesId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Deletes a payment source
-        /// </summary>
-        /// <remarks>
-        /// deletes a payment  source that corresponds to a customer ID.
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="paymentSourcesId">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (UpdateCustomerPaymentSourcesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateCustomerPaymentSourcesResponse>> DeleteCustomerPaymentSourcesWithHttpInfoAsync(string id, string paymentSourcesId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// Get a customer
+        /// Get Customer
         /// </summary>
         /// <remarks>
         /// Gets a customer resource that corresponds to a customer ID.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerResponse</returns>
         System.Threading.Tasks.Task<CustomerResponse> GetCustomerByIdAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Get a customer
+        /// Get Customer
         /// </summary>
         /// <remarks>
         /// Gets a customer resource that corresponds to a customer ID.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
@@ -568,7 +342,7 @@ namespace Conekta.net.Api
         /// The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -585,7 +359,7 @@ namespace Conekta.net.Api
         /// The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -595,127 +369,65 @@ namespace Conekta.net.Api
         /// <returns>Task of ApiResponse (CustomersResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<CustomersResponse>> GetCustomersWithHttpInfoAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Update a customer
+        /// Update customer
         /// </summary>
         /// <remarks>
         /// You can update customer-related data
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="updateCustomer">requested field for customer</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerResponse</returns>
         System.Threading.Tasks.Task<CustomerResponse> UpdateCustomerAsync(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Update a customer
+        /// Update customer
         /// </summary>
         /// <remarks>
         /// You can update customer-related data
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="updateCustomer">requested field for customer</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<CustomerResponse>> UpdateCustomerWithHttpInfoAsync(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// updates a  fiscal entities
+        /// Update  Fiscal Entity
         /// </summary>
         /// <remarks>
-        /// updates a customer resource that corresponds to a customer ID.
+        /// Update Fiscal Entity resource that corresponds to a customer ID.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="fiscalEntitiesId">identifier</param>
         /// <param name="customerUpdateFiscalEntitiesRequest">requested field for customer update fiscal entities</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateCustomerFiscalEntitiesResponse</returns>
         System.Threading.Tasks.Task<UpdateCustomerFiscalEntitiesResponse> UpdateCustomerFiscalEntitiesAsync(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// updates a  fiscal entities
+        /// Update  Fiscal Entity
         /// </summary>
         /// <remarks>
-        /// updates a customer resource that corresponds to a customer ID.
+        /// Update Fiscal Entity resource that corresponds to a customer ID.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="fiscalEntitiesId">identifier</param>
         /// <param name="customerUpdateFiscalEntitiesRequest">requested field for customer update fiscal entities</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateCustomerFiscalEntitiesResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<UpdateCustomerFiscalEntitiesResponse>> UpdateCustomerFiscalEntitiesWithHttpInfoAsync(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// updates a payment source
-        /// </summary>
-        /// <remarks>
-        /// Gets a payment source that corresponds to a customer ID.
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="paymentSourcesId">identifier</param>
-        /// <param name="updatePaymentSources">requested field for customer payment sources</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of UpdateCustomerPaymentSourcesResponse</returns>
-        System.Threading.Tasks.Task<UpdateCustomerPaymentSourcesResponse> UpdateCustomerPaymentSourcesAsync(string id, string paymentSourcesId, UpdatePaymentSources updatePaymentSources, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// updates a payment source
-        /// </summary>
-        /// <remarks>
-        /// Gets a payment source that corresponds to a customer ID.
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="paymentSourcesId">identifier</param>
-        /// <param name="updatePaymentSources">requested field for customer payment sources</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (UpdateCustomerPaymentSourcesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateCustomerPaymentSourcesResponse>> UpdateCustomerPaymentSourcesWithHttpInfoAsync(string id, string paymentSourcesId, UpdatePaymentSources updatePaymentSources, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// updates a shipping contacts
-        /// </summary>
-        /// <remarks>
-        /// Gets a customer resource that corresponds to a customer ID.
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="shippingContactsId">identifier</param>
-        /// <param name="customerShippingContacts">requested field for customer shippings contacts</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of CustomerShippingContactsResponse</returns>
-        System.Threading.Tasks.Task<CustomerShippingContactsResponse> UpdateCustomerShippingContactsAsync(string id, string shippingContactsId, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// updates a shipping contacts
-        /// </summary>
-        /// <remarks>
-        /// Gets a customer resource that corresponds to a customer ID.
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="shippingContactsId">identifier</param>
-        /// <param name="customerShippingContacts">requested field for customer shippings contacts</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (CustomerShippingContactsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomerShippingContactsResponse>> UpdateCustomerShippingContactsWithHttpInfoAsync(string id, string shippingContactsId, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -837,11 +549,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create customer The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [Click here](https://developers.conekta.com/page/web-checkout-tokenizer) 
+        /// Create customer The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [https://developers.conekta.com/page/web-checkout-tokenizer](https://developers.conekta.com/page/web-checkout-tokenizer) 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customer">requested field for customer</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomerResponse</returns>
         public CustomerResponse CreateCustomer(Customer customer, string acceptLanguage = default(string), int operationIndex = 0)
@@ -851,11 +563,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create customer The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [Click here](https://developers.conekta.com/page/web-checkout-tokenizer) 
+        /// Create customer The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [https://developers.conekta.com/page/web-checkout-tokenizer](https://developers.conekta.com/page/web-checkout-tokenizer) 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customer">requested field for customer</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomerResponse</returns>
         public Conekta.net.Client.ApiResponse<CustomerResponse> CreateCustomerWithHttpInfo(Customer customer, string acceptLanguage = default(string), int operationIndex = 0)
@@ -920,11 +632,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create customer The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [Click here](https://developers.conekta.com/page/web-checkout-tokenizer) 
+        /// Create customer The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [https://developers.conekta.com/page/web-checkout-tokenizer](https://developers.conekta.com/page/web-checkout-tokenizer) 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customer">requested field for customer</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerResponse</returns>
@@ -935,11 +647,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create customer The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [Click here](https://developers.conekta.com/page/web-checkout-tokenizer) 
+        /// Create customer The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [https://developers.conekta.com/page/web-checkout-tokenizer](https://developers.conekta.com/page/web-checkout-tokenizer) 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customer">requested field for customer</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
@@ -1007,12 +719,12 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a fiscal entities creates a customer resource that corresponds to a customer ID.
+        /// Create Fiscal Entity Create Fiscal entity resource that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="customerFiscalEntitiesRequest">requested field for customer fiscal entities</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CreateCustomerFiscalEntitiesResponse</returns>
         public CreateCustomerFiscalEntitiesResponse CreateCustomerFiscalEntities(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0)
@@ -1022,12 +734,12 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a fiscal entities creates a customer resource that corresponds to a customer ID.
+        /// Create Fiscal Entity Create Fiscal entity resource that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="customerFiscalEntitiesRequest">requested field for customer fiscal entities</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CreateCustomerFiscalEntitiesResponse</returns>
         public Conekta.net.Client.ApiResponse<CreateCustomerFiscalEntitiesResponse> CreateCustomerFiscalEntitiesWithHttpInfo(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0)
@@ -1099,12 +811,12 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a fiscal entities creates a customer resource that corresponds to a customer ID.
+        /// Create Fiscal Entity Create Fiscal entity resource that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="customerFiscalEntitiesRequest">requested field for customer fiscal entities</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreateCustomerFiscalEntitiesResponse</returns>
@@ -1115,12 +827,12 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a fiscal entities creates a customer resource that corresponds to a customer ID.
+        /// Create Fiscal Entity Create Fiscal entity resource that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="customerFiscalEntitiesRequest">requested field for customer fiscal entities</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreateCustomerFiscalEntitiesResponse)</returns>
@@ -1195,387 +907,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a payment source Gets a payment source that corresponds to a customer ID.
+        /// Delete Customer Deleted a customer resource that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="createCustomerPaymentSourcesRequest">requested field for customer payment sources</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>CreateCustomerPaymentSourcesResponse</returns>
-        public CreateCustomerPaymentSourcesResponse CreateCustomerPaymentSources(string id, CreateCustomerPaymentSourcesRequest createCustomerPaymentSourcesRequest, string acceptLanguage = default(string), int operationIndex = 0)
-        {
-            Conekta.net.Client.ApiResponse<CreateCustomerPaymentSourcesResponse> localVarResponse = CreateCustomerPaymentSourcesWithHttpInfo(id, createCustomerPaymentSourcesRequest, acceptLanguage);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// creates a payment source Gets a payment source that corresponds to a customer ID.
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="createCustomerPaymentSourcesRequest">requested field for customer payment sources</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of CreateCustomerPaymentSourcesResponse</returns>
-        public Conekta.net.Client.ApiResponse<CreateCustomerPaymentSourcesResponse> CreateCustomerPaymentSourcesWithHttpInfo(string id, CreateCustomerPaymentSourcesRequest createCustomerPaymentSourcesRequest, string acceptLanguage = default(string), int operationIndex = 0)
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling CustomersApi->CreateCustomerPaymentSources");
-            }
-
-            // verify the required parameter 'createCustomerPaymentSourcesRequest' is set
-            if (createCustomerPaymentSourcesRequest == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'createCustomerPaymentSourcesRequest' when calling CustomersApi->CreateCustomerPaymentSources");
-            }
-
-            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/vnd.conekta-v2.1.0+json"
-            };
-
-            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
-            if (acceptLanguage != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
-            }
-            localVarRequestOptions.Data = createCustomerPaymentSourcesRequest;
-
-            localVarRequestOptions.Operation = "CustomersApi.CreateCustomerPaymentSources";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<CreateCustomerPaymentSourcesResponse>("/customers/{id}/payment_sources", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("CreateCustomerPaymentSources", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// creates a payment source Gets a payment source that corresponds to a customer ID.
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="createCustomerPaymentSourcesRequest">requested field for customer payment sources</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of CreateCustomerPaymentSourcesResponse</returns>
-        public async System.Threading.Tasks.Task<CreateCustomerPaymentSourcesResponse> CreateCustomerPaymentSourcesAsync(string id, CreateCustomerPaymentSourcesRequest createCustomerPaymentSourcesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Conekta.net.Client.ApiResponse<CreateCustomerPaymentSourcesResponse> localVarResponse = await CreateCustomerPaymentSourcesWithHttpInfoAsync(id, createCustomerPaymentSourcesRequest, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// creates a payment source Gets a payment source that corresponds to a customer ID.
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="createCustomerPaymentSourcesRequest">requested field for customer payment sources</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (CreateCustomerPaymentSourcesResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CreateCustomerPaymentSourcesResponse>> CreateCustomerPaymentSourcesWithHttpInfoAsync(string id, CreateCustomerPaymentSourcesRequest createCustomerPaymentSourcesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling CustomersApi->CreateCustomerPaymentSources");
-            }
-
-            // verify the required parameter 'createCustomerPaymentSourcesRequest' is set
-            if (createCustomerPaymentSourcesRequest == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'createCustomerPaymentSourcesRequest' when calling CustomersApi->CreateCustomerPaymentSources");
-            }
-
-
-            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/vnd.conekta-v2.1.0+json"
-            };
-
-            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
-            if (acceptLanguage != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
-            }
-            localVarRequestOptions.Data = createCustomerPaymentSourcesRequest;
-
-            localVarRequestOptions.Operation = "CustomersApi.CreateCustomerPaymentSources";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<CreateCustomerPaymentSourcesResponse>("/customers/{id}/payment_sources", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("CreateCustomerPaymentSources", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// creates a shipping contacts Gets a customer resource that corresponds to a customer ID.
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="customerShippingContacts">requested field for customer shippings contacts</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>CustomerShippingContactsResponse</returns>
-        public CustomerShippingContactsResponse CreateCustomerShippingContacts(string id, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), int operationIndex = 0)
-        {
-            Conekta.net.Client.ApiResponse<CustomerShippingContactsResponse> localVarResponse = CreateCustomerShippingContactsWithHttpInfo(id, customerShippingContacts, acceptLanguage);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// creates a shipping contacts Gets a customer resource that corresponds to a customer ID.
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="customerShippingContacts">requested field for customer shippings contacts</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of CustomerShippingContactsResponse</returns>
-        public Conekta.net.Client.ApiResponse<CustomerShippingContactsResponse> CreateCustomerShippingContactsWithHttpInfo(string id, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), int operationIndex = 0)
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling CustomersApi->CreateCustomerShippingContacts");
-            }
-
-            // verify the required parameter 'customerShippingContacts' is set
-            if (customerShippingContacts == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'customerShippingContacts' when calling CustomersApi->CreateCustomerShippingContacts");
-            }
-
-            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/vnd.conekta-v2.1.0+json"
-            };
-
-            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
-            if (acceptLanguage != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
-            }
-            localVarRequestOptions.Data = customerShippingContacts;
-
-            localVarRequestOptions.Operation = "CustomersApi.CreateCustomerShippingContacts";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<CustomerShippingContactsResponse>("/customers/{id}/shipping_contacts", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("CreateCustomerShippingContacts", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// creates a shipping contacts Gets a customer resource that corresponds to a customer ID.
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="customerShippingContacts">requested field for customer shippings contacts</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of CustomerShippingContactsResponse</returns>
-        public async System.Threading.Tasks.Task<CustomerShippingContactsResponse> CreateCustomerShippingContactsAsync(string id, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Conekta.net.Client.ApiResponse<CustomerShippingContactsResponse> localVarResponse = await CreateCustomerShippingContactsWithHttpInfoAsync(id, customerShippingContacts, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// creates a shipping contacts Gets a customer resource that corresponds to a customer ID.
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="customerShippingContacts">requested field for customer shippings contacts</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (CustomerShippingContactsResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomerShippingContactsResponse>> CreateCustomerShippingContactsWithHttpInfoAsync(string id, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling CustomersApi->CreateCustomerShippingContacts");
-            }
-
-            // verify the required parameter 'customerShippingContacts' is set
-            if (customerShippingContacts == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'customerShippingContacts' when calling CustomersApi->CreateCustomerShippingContacts");
-            }
-
-
-            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/vnd.conekta-v2.1.0+json"
-            };
-
-            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
-            if (acceptLanguage != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
-            }
-            localVarRequestOptions.Data = customerShippingContacts;
-
-            localVarRequestOptions.Operation = "CustomersApi.CreateCustomerShippingContacts";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<CustomerShippingContactsResponse>("/customers/{id}/shipping_contacts", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("CreateCustomerShippingContacts", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Delete a customer Deleted a customer resource that corresponds to a customer ID.
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomerResponse</returns>
         public CustomerResponse DeleteCustomerById(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -1585,11 +921,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Delete a customer Deleted a customer resource that corresponds to a customer ID.
+        /// Delete Customer Deleted a customer resource that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomerResponse</returns>
         public Conekta.net.Client.ApiResponse<CustomerResponse> DeleteCustomerByIdWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -1653,11 +989,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Delete a customer Deleted a customer resource that corresponds to a customer ID.
+        /// Delete Customer Deleted a customer resource that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerResponse</returns>
@@ -1668,11 +1004,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Delete a customer Deleted a customer resource that corresponds to a customer ID.
+        /// Delete Customer Deleted a customer resource that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
@@ -1739,197 +1075,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Deletes a payment source deletes a payment  source that corresponds to a customer ID.
+        /// Get Customer Gets a customer resource that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="paymentSourcesId">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>UpdateCustomerPaymentSourcesResponse</returns>
-        public UpdateCustomerPaymentSourcesResponse DeleteCustomerPaymentSources(string id, string paymentSourcesId, string acceptLanguage = default(string), int operationIndex = 0)
-        {
-            Conekta.net.Client.ApiResponse<UpdateCustomerPaymentSourcesResponse> localVarResponse = DeleteCustomerPaymentSourcesWithHttpInfo(id, paymentSourcesId, acceptLanguage);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Deletes a payment source deletes a payment  source that corresponds to a customer ID.
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="paymentSourcesId">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of UpdateCustomerPaymentSourcesResponse</returns>
-        public Conekta.net.Client.ApiResponse<UpdateCustomerPaymentSourcesResponse> DeleteCustomerPaymentSourcesWithHttpInfo(string id, string paymentSourcesId, string acceptLanguage = default(string), int operationIndex = 0)
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling CustomersApi->DeleteCustomerPaymentSources");
-            }
-
-            // verify the required parameter 'paymentSourcesId' is set
-            if (paymentSourcesId == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'paymentSourcesId' when calling CustomersApi->DeleteCustomerPaymentSources");
-            }
-
-            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/vnd.conekta-v2.1.0+json"
-            };
-
-            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.PathParameters.Add("payment_sources_id", Conekta.net.Client.ClientUtils.ParameterToString(paymentSourcesId)); // path parameter
-            if (acceptLanguage != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
-            }
-
-            localVarRequestOptions.Operation = "CustomersApi.DeleteCustomerPaymentSources";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Delete<UpdateCustomerPaymentSourcesResponse>("/customers/{id}/payment_sources/{payment_sources_id}", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("DeleteCustomerPaymentSources", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Deletes a payment source deletes a payment  source that corresponds to a customer ID.
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="paymentSourcesId">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of UpdateCustomerPaymentSourcesResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateCustomerPaymentSourcesResponse> DeleteCustomerPaymentSourcesAsync(string id, string paymentSourcesId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Conekta.net.Client.ApiResponse<UpdateCustomerPaymentSourcesResponse> localVarResponse = await DeleteCustomerPaymentSourcesWithHttpInfoAsync(id, paymentSourcesId, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Deletes a payment source deletes a payment  source that corresponds to a customer ID.
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="paymentSourcesId">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (UpdateCustomerPaymentSourcesResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateCustomerPaymentSourcesResponse>> DeleteCustomerPaymentSourcesWithHttpInfoAsync(string id, string paymentSourcesId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling CustomersApi->DeleteCustomerPaymentSources");
-            }
-
-            // verify the required parameter 'paymentSourcesId' is set
-            if (paymentSourcesId == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'paymentSourcesId' when calling CustomersApi->DeleteCustomerPaymentSources");
-            }
-
-
-            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/vnd.conekta-v2.1.0+json"
-            };
-
-            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.PathParameters.Add("payment_sources_id", Conekta.net.Client.ClientUtils.ParameterToString(paymentSourcesId)); // path parameter
-            if (acceptLanguage != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
-            }
-
-            localVarRequestOptions.Operation = "CustomersApi.DeleteCustomerPaymentSources";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<UpdateCustomerPaymentSourcesResponse>("/customers/{id}/payment_sources/{payment_sources_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("DeleteCustomerPaymentSources", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get a customer Gets a customer resource that corresponds to a customer ID.
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomerResponse</returns>
         public CustomerResponse GetCustomerById(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -1939,11 +1089,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Get a customer Gets a customer resource that corresponds to a customer ID.
+        /// Get Customer Gets a customer resource that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomerResponse</returns>
         public Conekta.net.Client.ApiResponse<CustomerResponse> GetCustomerByIdWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -2007,11 +1157,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Get a customer Gets a customer resource that corresponds to a customer ID.
+        /// Get Customer Gets a customer resource that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerResponse</returns>
@@ -2022,11 +1172,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Get a customer Gets a customer resource that corresponds to a customer ID.
+        /// Get Customer Gets a customer resource that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
@@ -2096,7 +1246,7 @@ namespace Conekta.net.Api
         /// Get a list of customers The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -2113,7 +1263,7 @@ namespace Conekta.net.Api
         /// Get a list of customers The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -2193,7 +1343,7 @@ namespace Conekta.net.Api
         /// Get a list of customers The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -2211,7 +1361,7 @@ namespace Conekta.net.Api
         /// Get a list of customers The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -2291,12 +1441,12 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Update a customer You can update customer-related data
+        /// Update customer You can update customer-related data
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="updateCustomer">requested field for customer</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomerResponse</returns>
         public CustomerResponse UpdateCustomer(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), int operationIndex = 0)
@@ -2306,12 +1456,12 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Update a customer You can update customer-related data
+        /// Update customer You can update customer-related data
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="updateCustomer">requested field for customer</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomerResponse</returns>
         public Conekta.net.Client.ApiResponse<CustomerResponse> UpdateCustomerWithHttpInfo(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), int operationIndex = 0)
@@ -2383,12 +1533,12 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Update a customer You can update customer-related data
+        /// Update customer You can update customer-related data
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="updateCustomer">requested field for customer</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerResponse</returns>
@@ -2399,12 +1549,12 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Update a customer You can update customer-related data
+        /// Update customer You can update customer-related data
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="updateCustomer">requested field for customer</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
@@ -2479,13 +1629,13 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// updates a  fiscal entities updates a customer resource that corresponds to a customer ID.
+        /// Update  Fiscal Entity Update Fiscal Entity resource that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="fiscalEntitiesId">identifier</param>
         /// <param name="customerUpdateFiscalEntitiesRequest">requested field for customer update fiscal entities</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UpdateCustomerFiscalEntitiesResponse</returns>
         public UpdateCustomerFiscalEntitiesResponse UpdateCustomerFiscalEntities(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0)
@@ -2495,13 +1645,13 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// updates a  fiscal entities updates a customer resource that corresponds to a customer ID.
+        /// Update  Fiscal Entity Update Fiscal Entity resource that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="fiscalEntitiesId">identifier</param>
         /// <param name="customerUpdateFiscalEntitiesRequest">requested field for customer update fiscal entities</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UpdateCustomerFiscalEntitiesResponse</returns>
         public Conekta.net.Client.ApiResponse<UpdateCustomerFiscalEntitiesResponse> UpdateCustomerFiscalEntitiesWithHttpInfo(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0)
@@ -2580,13 +1730,13 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// updates a  fiscal entities updates a customer resource that corresponds to a customer ID.
+        /// Update  Fiscal Entity Update Fiscal Entity resource that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="fiscalEntitiesId">identifier</param>
         /// <param name="customerUpdateFiscalEntitiesRequest">requested field for customer update fiscal entities</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateCustomerFiscalEntitiesResponse</returns>
@@ -2597,13 +1747,13 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// updates a  fiscal entities updates a customer resource that corresponds to a customer ID.
+        /// Update  Fiscal Entity Update Fiscal Entity resource that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="fiscalEntitiesId">identifier</param>
         /// <param name="customerUpdateFiscalEntitiesRequest">requested field for customer update fiscal entities</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateCustomerFiscalEntitiesResponse)</returns>
@@ -2675,418 +1825,6 @@ namespace Conekta.net.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateCustomerFiscalEntities", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// updates a payment source Gets a payment source that corresponds to a customer ID.
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="paymentSourcesId">identifier</param>
-        /// <param name="updatePaymentSources">requested field for customer payment sources</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>UpdateCustomerPaymentSourcesResponse</returns>
-        public UpdateCustomerPaymentSourcesResponse UpdateCustomerPaymentSources(string id, string paymentSourcesId, UpdatePaymentSources updatePaymentSources, string acceptLanguage = default(string), int operationIndex = 0)
-        {
-            Conekta.net.Client.ApiResponse<UpdateCustomerPaymentSourcesResponse> localVarResponse = UpdateCustomerPaymentSourcesWithHttpInfo(id, paymentSourcesId, updatePaymentSources, acceptLanguage);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// updates a payment source Gets a payment source that corresponds to a customer ID.
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="paymentSourcesId">identifier</param>
-        /// <param name="updatePaymentSources">requested field for customer payment sources</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of UpdateCustomerPaymentSourcesResponse</returns>
-        public Conekta.net.Client.ApiResponse<UpdateCustomerPaymentSourcesResponse> UpdateCustomerPaymentSourcesWithHttpInfo(string id, string paymentSourcesId, UpdatePaymentSources updatePaymentSources, string acceptLanguage = default(string), int operationIndex = 0)
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling CustomersApi->UpdateCustomerPaymentSources");
-            }
-
-            // verify the required parameter 'paymentSourcesId' is set
-            if (paymentSourcesId == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'paymentSourcesId' when calling CustomersApi->UpdateCustomerPaymentSources");
-            }
-
-            // verify the required parameter 'updatePaymentSources' is set
-            if (updatePaymentSources == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'updatePaymentSources' when calling CustomersApi->UpdateCustomerPaymentSources");
-            }
-
-            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/vnd.conekta-v2.1.0+json"
-            };
-
-            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.PathParameters.Add("payment_sources_id", Conekta.net.Client.ClientUtils.ParameterToString(paymentSourcesId)); // path parameter
-            if (acceptLanguage != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
-            }
-            localVarRequestOptions.Data = updatePaymentSources;
-
-            localVarRequestOptions.Operation = "CustomersApi.UpdateCustomerPaymentSources";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Put<UpdateCustomerPaymentSourcesResponse>("/customers/{id}/payment_sources/{payment_sources_id}", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("UpdateCustomerPaymentSources", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// updates a payment source Gets a payment source that corresponds to a customer ID.
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="paymentSourcesId">identifier</param>
-        /// <param name="updatePaymentSources">requested field for customer payment sources</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of UpdateCustomerPaymentSourcesResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateCustomerPaymentSourcesResponse> UpdateCustomerPaymentSourcesAsync(string id, string paymentSourcesId, UpdatePaymentSources updatePaymentSources, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Conekta.net.Client.ApiResponse<UpdateCustomerPaymentSourcesResponse> localVarResponse = await UpdateCustomerPaymentSourcesWithHttpInfoAsync(id, paymentSourcesId, updatePaymentSources, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// updates a payment source Gets a payment source that corresponds to a customer ID.
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="paymentSourcesId">identifier</param>
-        /// <param name="updatePaymentSources">requested field for customer payment sources</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (UpdateCustomerPaymentSourcesResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateCustomerPaymentSourcesResponse>> UpdateCustomerPaymentSourcesWithHttpInfoAsync(string id, string paymentSourcesId, UpdatePaymentSources updatePaymentSources, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling CustomersApi->UpdateCustomerPaymentSources");
-            }
-
-            // verify the required parameter 'paymentSourcesId' is set
-            if (paymentSourcesId == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'paymentSourcesId' when calling CustomersApi->UpdateCustomerPaymentSources");
-            }
-
-            // verify the required parameter 'updatePaymentSources' is set
-            if (updatePaymentSources == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'updatePaymentSources' when calling CustomersApi->UpdateCustomerPaymentSources");
-            }
-
-
-            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/vnd.conekta-v2.1.0+json"
-            };
-
-            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.PathParameters.Add("payment_sources_id", Conekta.net.Client.ClientUtils.ParameterToString(paymentSourcesId)); // path parameter
-            if (acceptLanguage != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
-            }
-            localVarRequestOptions.Data = updatePaymentSources;
-
-            localVarRequestOptions.Operation = "CustomersApi.UpdateCustomerPaymentSources";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<UpdateCustomerPaymentSourcesResponse>("/customers/{id}/payment_sources/{payment_sources_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("UpdateCustomerPaymentSources", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// updates a shipping contacts Gets a customer resource that corresponds to a customer ID.
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="shippingContactsId">identifier</param>
-        /// <param name="customerShippingContacts">requested field for customer shippings contacts</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>CustomerShippingContactsResponse</returns>
-        public CustomerShippingContactsResponse UpdateCustomerShippingContacts(string id, string shippingContactsId, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), int operationIndex = 0)
-        {
-            Conekta.net.Client.ApiResponse<CustomerShippingContactsResponse> localVarResponse = UpdateCustomerShippingContactsWithHttpInfo(id, shippingContactsId, customerShippingContacts, acceptLanguage);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// updates a shipping contacts Gets a customer resource that corresponds to a customer ID.
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="shippingContactsId">identifier</param>
-        /// <param name="customerShippingContacts">requested field for customer shippings contacts</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of CustomerShippingContactsResponse</returns>
-        public Conekta.net.Client.ApiResponse<CustomerShippingContactsResponse> UpdateCustomerShippingContactsWithHttpInfo(string id, string shippingContactsId, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), int operationIndex = 0)
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling CustomersApi->UpdateCustomerShippingContacts");
-            }
-
-            // verify the required parameter 'shippingContactsId' is set
-            if (shippingContactsId == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'shippingContactsId' when calling CustomersApi->UpdateCustomerShippingContacts");
-            }
-
-            // verify the required parameter 'customerShippingContacts' is set
-            if (customerShippingContacts == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'customerShippingContacts' when calling CustomersApi->UpdateCustomerShippingContacts");
-            }
-
-            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/vnd.conekta-v2.1.0+json"
-            };
-
-            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.PathParameters.Add("shipping_contacts_id", Conekta.net.Client.ClientUtils.ParameterToString(shippingContactsId)); // path parameter
-            if (acceptLanguage != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
-            }
-            localVarRequestOptions.Data = customerShippingContacts;
-
-            localVarRequestOptions.Operation = "CustomersApi.UpdateCustomerShippingContacts";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Put<CustomerShippingContactsResponse>("/customers/{id}/shipping_contacts/{shipping_contacts_id}", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("UpdateCustomerShippingContacts", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// updates a shipping contacts Gets a customer resource that corresponds to a customer ID.
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="shippingContactsId">identifier</param>
-        /// <param name="customerShippingContacts">requested field for customer shippings contacts</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of CustomerShippingContactsResponse</returns>
-        public async System.Threading.Tasks.Task<CustomerShippingContactsResponse> UpdateCustomerShippingContactsAsync(string id, string shippingContactsId, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Conekta.net.Client.ApiResponse<CustomerShippingContactsResponse> localVarResponse = await UpdateCustomerShippingContactsWithHttpInfoAsync(id, shippingContactsId, customerShippingContacts, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// updates a shipping contacts Gets a customer resource that corresponds to a customer ID.
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="shippingContactsId">identifier</param>
-        /// <param name="customerShippingContacts">requested field for customer shippings contacts</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (CustomerShippingContactsResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomerShippingContactsResponse>> UpdateCustomerShippingContactsWithHttpInfoAsync(string id, string shippingContactsId, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling CustomersApi->UpdateCustomerShippingContacts");
-            }
-
-            // verify the required parameter 'shippingContactsId' is set
-            if (shippingContactsId == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'shippingContactsId' when calling CustomersApi->UpdateCustomerShippingContacts");
-            }
-
-            // verify the required parameter 'customerShippingContacts' is set
-            if (customerShippingContacts == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'customerShippingContacts' when calling CustomersApi->UpdateCustomerShippingContacts");
-            }
-
-
-            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/vnd.conekta-v2.1.0+json"
-            };
-
-            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.PathParameters.Add("shipping_contacts_id", Conekta.net.Client.ClientUtils.ParameterToString(shippingContactsId)); // path parameter
-            if (acceptLanguage != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
-            }
-            localVarRequestOptions.Data = customerShippingContacts;
-
-            localVarRequestOptions.Operation = "CustomersApi.UpdateCustomerShippingContacts";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<CustomerShippingContactsResponse>("/customers/{id}/shipping_contacts/{shipping_contacts_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("UpdateCustomerShippingContacts", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

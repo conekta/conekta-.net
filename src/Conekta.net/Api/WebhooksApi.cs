@@ -35,7 +35,7 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookRequest">requested field for webhook</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WebhookResponse</returns>
         WebhookResponse CreateWebhook(WebhookRequest webhookRequest, string acceptLanguage = default(string), int operationIndex = 0);
@@ -48,7 +48,7 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookRequest">requested field for webhook</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WebhookResponse</returns>
         ApiResponse<WebhookResponse> CreateWebhookWithHttpInfo(WebhookRequest webhookRequest, string acceptLanguage = default(string), int operationIndex = 0);
@@ -56,8 +56,8 @@ namespace Conekta.net.Api
         /// returns a deleted webhook
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WebhookResponse</returns>
         WebhookResponse DeleteWebhook(string id, string acceptLanguage = default(string), int operationIndex = 0);
@@ -69,8 +69,8 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WebhookResponse</returns>
         ApiResponse<WebhookResponse> DeleteWebhookWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
@@ -78,8 +78,8 @@ namespace Conekta.net.Api
         /// returns a webhook
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WebhookResponse</returns>
         WebhookResponse GetWebhook(string id, string acceptLanguage = default(string), int operationIndex = 0);
@@ -91,8 +91,8 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WebhookResponse</returns>
         ApiResponse<WebhookResponse> GetWebhookWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
@@ -100,7 +100,7 @@ namespace Conekta.net.Api
         /// returns a set of /webhooks
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -116,7 +116,7 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -131,9 +131,9 @@ namespace Conekta.net.Api
         /// updates an existing webhook
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="webhookUpdateRequest">requested fields in order to update a webhook</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WebhookResponse</returns>
         WebhookResponse UpdateWebhook(string id, WebhookUpdateRequest webhookUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0);
@@ -145,9 +145,9 @@ namespace Conekta.net.Api
         /// updates an existing webhook
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="webhookUpdateRequest">requested fields in order to update a webhook</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WebhookResponse</returns>
         ApiResponse<WebhookResponse> UpdateWebhookWithHttpInfo(string id, WebhookUpdateRequest webhookUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0);
@@ -168,7 +168,7 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookRequest">requested field for webhook</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebhookResponse</returns>
@@ -182,7 +182,7 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookRequest">requested field for webhook</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebhookResponse)</returns>
@@ -194,8 +194,8 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebhookResponse</returns>
@@ -208,8 +208,8 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebhookResponse)</returns>
@@ -221,8 +221,8 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebhookResponse</returns>
@@ -235,8 +235,8 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebhookResponse)</returns>
@@ -248,7 +248,7 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -265,7 +265,7 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -281,9 +281,9 @@ namespace Conekta.net.Api
         /// updates an existing webhook
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="webhookUpdateRequest">requested fields in order to update a webhook</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebhookResponse</returns>
@@ -296,9 +296,9 @@ namespace Conekta.net.Api
         /// updates an existing webhook
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="webhookUpdateRequest">requested fields in order to update a webhook</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebhookResponse)</returns>
@@ -428,7 +428,7 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookRequest">requested field for webhook</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WebhookResponse</returns>
         public WebhookResponse CreateWebhook(WebhookRequest webhookRequest, string acceptLanguage = default(string), int operationIndex = 0)
@@ -442,7 +442,7 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookRequest">requested field for webhook</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WebhookResponse</returns>
         public Conekta.net.Client.ApiResponse<WebhookResponse> CreateWebhookWithHttpInfo(WebhookRequest webhookRequest, string acceptLanguage = default(string), int operationIndex = 0)
@@ -511,7 +511,7 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookRequest">requested field for webhook</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebhookResponse</returns>
@@ -526,7 +526,7 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookRequest">requested field for webhook</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebhookResponse)</returns>
@@ -597,8 +597,8 @@ namespace Conekta.net.Api
         /// returns a deleted webhook 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WebhookResponse</returns>
         public WebhookResponse DeleteWebhook(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -611,8 +611,8 @@ namespace Conekta.net.Api
         /// returns a deleted webhook 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WebhookResponse</returns>
         public Conekta.net.Client.ApiResponse<WebhookResponse> DeleteWebhookWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -679,8 +679,8 @@ namespace Conekta.net.Api
         /// returns a deleted webhook 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebhookResponse</returns>
@@ -694,8 +694,8 @@ namespace Conekta.net.Api
         /// returns a deleted webhook 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebhookResponse)</returns>
@@ -765,8 +765,8 @@ namespace Conekta.net.Api
         /// returns a webhook 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WebhookResponse</returns>
         public WebhookResponse GetWebhook(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -779,8 +779,8 @@ namespace Conekta.net.Api
         /// returns a webhook 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WebhookResponse</returns>
         public Conekta.net.Client.ApiResponse<WebhookResponse> GetWebhookWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -847,8 +847,8 @@ namespace Conekta.net.Api
         /// returns a webhook 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebhookResponse</returns>
@@ -862,8 +862,8 @@ namespace Conekta.net.Api
         /// returns a webhook 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebhookResponse)</returns>
@@ -933,7 +933,7 @@ namespace Conekta.net.Api
         /// returns a set of /webhooks 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -950,7 +950,7 @@ namespace Conekta.net.Api
         /// returns a set of /webhooks 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -1030,7 +1030,7 @@ namespace Conekta.net.Api
         /// returns a set of /webhooks 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -1048,7 +1048,7 @@ namespace Conekta.net.Api
         /// returns a set of /webhooks 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -1131,9 +1131,9 @@ namespace Conekta.net.Api
         /// updates an existing webhook updates an existing webhook
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="webhookUpdateRequest">requested fields in order to update a webhook</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WebhookResponse</returns>
         public WebhookResponse UpdateWebhook(string id, WebhookUpdateRequest webhookUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0)
@@ -1146,9 +1146,9 @@ namespace Conekta.net.Api
         /// updates an existing webhook updates an existing webhook
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="webhookUpdateRequest">requested fields in order to update a webhook</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WebhookResponse</returns>
         public Conekta.net.Client.ApiResponse<WebhookResponse> UpdateWebhookWithHttpInfo(string id, WebhookUpdateRequest webhookUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0)
@@ -1223,9 +1223,9 @@ namespace Conekta.net.Api
         /// updates an existing webhook updates an existing webhook
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="webhookUpdateRequest">requested fields in order to update a webhook</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebhookResponse</returns>
@@ -1239,9 +1239,9 @@ namespace Conekta.net.Api
         /// updates an existing webhook updates an existing webhook
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="webhookUpdateRequest">requested fields in order to update a webhook</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebhookResponse)</returns>

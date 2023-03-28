@@ -31,8 +31,8 @@ namespace Conekta.net.Api
         /// cancels a subscription
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SubscriptionResponse</returns>
         SubscriptionResponse CancelSubscription(string id, string acceptLanguage = default(string), int operationIndex = 0);
@@ -44,8 +44,8 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SubscriptionResponse</returns>
         ApiResponse<SubscriptionResponse> CancelSubscriptionWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
@@ -53,9 +53,9 @@ namespace Conekta.net.Api
         /// creates a subscription
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="subscriptionRequest">requested field for subscriptions</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SubscriptionResponse</returns>
         SubscriptionResponse CreateSubscription(string id, SubscriptionRequest subscriptionRequest, string acceptLanguage = default(string), int operationIndex = 0);
@@ -67,9 +67,9 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="subscriptionRequest">requested field for subscriptions</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SubscriptionResponse</returns>
         ApiResponse<SubscriptionResponse> CreateSubscriptionWithHttpInfo(string id, SubscriptionRequest subscriptionRequest, string acceptLanguage = default(string), int operationIndex = 0);
@@ -77,8 +77,8 @@ namespace Conekta.net.Api
         /// You can get the events of the subscription(s) of a client, with the customer id
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SubscriptionEventsResponse</returns>
         SubscriptionEventsResponse GetAllEventsFromSubscription(string id, string acceptLanguage = default(string), int operationIndex = 0);
@@ -90,8 +90,8 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SubscriptionEventsResponse</returns>
         ApiResponse<SubscriptionEventsResponse> GetAllEventsFromSubscriptionWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
@@ -99,8 +99,8 @@ namespace Conekta.net.Api
         /// returns a subscription
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SubscriptionResponse</returns>
         SubscriptionResponse GetSubscription(string id, string acceptLanguage = default(string), int operationIndex = 0);
@@ -112,8 +112,8 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SubscriptionResponse</returns>
         ApiResponse<SubscriptionResponse> GetSubscriptionWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
@@ -121,8 +121,8 @@ namespace Conekta.net.Api
         /// pauses a subscription
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SubscriptionResponse</returns>
         SubscriptionResponse PauseSubscription(string id, string acceptLanguage = default(string), int operationIndex = 0);
@@ -134,8 +134,8 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SubscriptionResponse</returns>
         ApiResponse<SubscriptionResponse> PauseSubscriptionWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
@@ -143,8 +143,8 @@ namespace Conekta.net.Api
         /// resumes a subscription
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SubscriptionResponse</returns>
         SubscriptionResponse ResumeSubscription(string id, string acceptLanguage = default(string), int operationIndex = 0);
@@ -156,8 +156,8 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SubscriptionResponse</returns>
         ApiResponse<SubscriptionResponse> ResumeSubscriptionWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
@@ -165,9 +165,9 @@ namespace Conekta.net.Api
         /// updates a subscription
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SubscriptionResponse</returns>
         SubscriptionResponse UpdateSubscription(string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0);
@@ -179,9 +179,9 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SubscriptionResponse</returns>
         ApiResponse<SubscriptionResponse> UpdateSubscriptionWithHttpInfo(string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0);
@@ -201,8 +201,8 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
@@ -215,8 +215,8 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
@@ -228,9 +228,9 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="subscriptionRequest">requested field for subscriptions</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
@@ -243,9 +243,9 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="subscriptionRequest">requested field for subscriptions</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
@@ -257,8 +257,8 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionEventsResponse</returns>
@@ -271,8 +271,8 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionEventsResponse)</returns>
@@ -284,8 +284,8 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
@@ -298,8 +298,8 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
@@ -311,8 +311,8 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
@@ -325,8 +325,8 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
@@ -338,8 +338,8 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
@@ -352,8 +352,8 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
@@ -365,9 +365,9 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
@@ -380,9 +380,9 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
@@ -511,8 +511,8 @@ namespace Conekta.net.Api
         /// cancels a subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SubscriptionResponse</returns>
         public SubscriptionResponse CancelSubscription(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -525,8 +525,8 @@ namespace Conekta.net.Api
         /// cancels a subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SubscriptionResponse</returns>
         public Conekta.net.Client.ApiResponse<SubscriptionResponse> CancelSubscriptionWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -593,8 +593,8 @@ namespace Conekta.net.Api
         /// cancels a subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
@@ -608,8 +608,8 @@ namespace Conekta.net.Api
         /// cancels a subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
@@ -679,9 +679,9 @@ namespace Conekta.net.Api
         /// creates a subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="subscriptionRequest">requested field for subscriptions</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SubscriptionResponse</returns>
         public SubscriptionResponse CreateSubscription(string id, SubscriptionRequest subscriptionRequest, string acceptLanguage = default(string), int operationIndex = 0)
@@ -694,9 +694,9 @@ namespace Conekta.net.Api
         /// creates a subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="subscriptionRequest">requested field for subscriptions</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SubscriptionResponse</returns>
         public Conekta.net.Client.ApiResponse<SubscriptionResponse> CreateSubscriptionWithHttpInfo(string id, SubscriptionRequest subscriptionRequest, string acceptLanguage = default(string), int operationIndex = 0)
@@ -771,9 +771,9 @@ namespace Conekta.net.Api
         /// creates a subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="subscriptionRequest">requested field for subscriptions</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
@@ -787,9 +787,9 @@ namespace Conekta.net.Api
         /// creates a subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="subscriptionRequest">requested field for subscriptions</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
@@ -867,8 +867,8 @@ namespace Conekta.net.Api
         /// You can get the events of the subscription(s) of a client, with the customer id 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SubscriptionEventsResponse</returns>
         public SubscriptionEventsResponse GetAllEventsFromSubscription(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -881,8 +881,8 @@ namespace Conekta.net.Api
         /// You can get the events of the subscription(s) of a client, with the customer id 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SubscriptionEventsResponse</returns>
         public Conekta.net.Client.ApiResponse<SubscriptionEventsResponse> GetAllEventsFromSubscriptionWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -949,8 +949,8 @@ namespace Conekta.net.Api
         /// You can get the events of the subscription(s) of a client, with the customer id 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionEventsResponse</returns>
@@ -964,8 +964,8 @@ namespace Conekta.net.Api
         /// You can get the events of the subscription(s) of a client, with the customer id 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionEventsResponse)</returns>
@@ -1035,8 +1035,8 @@ namespace Conekta.net.Api
         /// returns a subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SubscriptionResponse</returns>
         public SubscriptionResponse GetSubscription(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -1049,8 +1049,8 @@ namespace Conekta.net.Api
         /// returns a subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SubscriptionResponse</returns>
         public Conekta.net.Client.ApiResponse<SubscriptionResponse> GetSubscriptionWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -1117,8 +1117,8 @@ namespace Conekta.net.Api
         /// returns a subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
@@ -1132,8 +1132,8 @@ namespace Conekta.net.Api
         /// returns a subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
@@ -1203,8 +1203,8 @@ namespace Conekta.net.Api
         /// pauses a subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SubscriptionResponse</returns>
         public SubscriptionResponse PauseSubscription(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -1217,8 +1217,8 @@ namespace Conekta.net.Api
         /// pauses a subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SubscriptionResponse</returns>
         public Conekta.net.Client.ApiResponse<SubscriptionResponse> PauseSubscriptionWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -1285,8 +1285,8 @@ namespace Conekta.net.Api
         /// pauses a subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
@@ -1300,8 +1300,8 @@ namespace Conekta.net.Api
         /// pauses a subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
@@ -1371,8 +1371,8 @@ namespace Conekta.net.Api
         /// resumes a subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SubscriptionResponse</returns>
         public SubscriptionResponse ResumeSubscription(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -1385,8 +1385,8 @@ namespace Conekta.net.Api
         /// resumes a subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SubscriptionResponse</returns>
         public Conekta.net.Client.ApiResponse<SubscriptionResponse> ResumeSubscriptionWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -1453,8 +1453,8 @@ namespace Conekta.net.Api
         /// resumes a subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
@@ -1468,8 +1468,8 @@ namespace Conekta.net.Api
         /// resumes a subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
@@ -1539,9 +1539,9 @@ namespace Conekta.net.Api
         /// updates a subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SubscriptionResponse</returns>
         public SubscriptionResponse UpdateSubscription(string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0)
@@ -1554,9 +1554,9 @@ namespace Conekta.net.Api
         /// updates a subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SubscriptionResponse</returns>
         public Conekta.net.Client.ApiResponse<SubscriptionResponse> UpdateSubscriptionWithHttpInfo(string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0)
@@ -1631,9 +1631,9 @@ namespace Conekta.net.Api
         /// updates a subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
@@ -1647,9 +1647,9 @@ namespace Conekta.net.Api
         /// updates a subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>

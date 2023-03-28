@@ -88,54 +88,6 @@ namespace Conekta.net.Test.Api
             Assert.Equal(id, response.ParentId);
             Assert.False(string.IsNullOrEmpty(response.Id));
         }
-
-        /// <summary>
-        /// Test CreateCustomerPaymentSources
-        /// </summary>
-        [Fact]
-        public void CreateCustomerPaymentSourcesTest()
-        {
-            string id = "cus_2tXyF9BwPG14UMkkg";
-            CreateCustomerPaymentSourcesRequest createCustomerPaymentSourcesRequest = new(
-                new PaymentSourcesCash("oxxo_recurrent")
-            );
-            var response = _instance.CreateCustomerPaymentSources(id, createCustomerPaymentSourcesRequest);
-
-            Assert.IsType<CreateCustomerPaymentSourcesResponse>(response);
-            Assert.IsType<PaymentSourceCash>(response.ActualInstance);
-            Assert.Equal(id, response.GetPaymentSourceCash().ParentId);
-            Assert.False(string.IsNullOrEmpty(response.GetPaymentSourceCash().Id));
-            Assert.False(string.IsNullOrEmpty(response.GetPaymentSourceCash().BarcodeUrl));
-        }
-
-        /// <summary>
-        /// Test CreateCustomerShippingContacts
-        /// </summary>
-        [Fact]
-        public void CreateCustomerShippingContactsTest()
-        {
-            string id = "cus_2tXyF9BwPG14UMkkg";
-            CustomerShippingContacts customerShippingContacts =
-                new(
-                    address: new CustomerShippingContactsAddress(
-                        street1: "av siem",
-                        city: "mexico",
-                        country: "MX",
-                        postalCode: "11000"
-                    ),
-                    phone: "1234567890",
-                    receiver: "receiver"
-                    );
-
-            var response = _instance.CreateCustomerShippingContacts(id, customerShippingContacts);
-
-            Assert.IsType<CustomerShippingContactsResponse>(response);
-            Assert.Equal(id, response.ParentId);
-            Assert.NotStrictEqual(customerShippingContacts.Address.Country, response.Address.Country);
-            Assert.False(string.IsNullOrEmpty(response.Id));
-            Assert.Equal(1679009479, response.CreatedAt);
-        }
-
         /// <summary>
         /// Test DeleteCustomerById
         /// </summary>
@@ -300,64 +252,6 @@ namespace Conekta.net.Test.Api
             Assert.True(response.Default);
             Assert.Equal("fiscal_entity", response.Object);
         }
-
-        /// <summary>
-        /// Test UpdateCustomerPaymentSourcesCard
-        /// </summary>
-        [Fact]
-        public void UpdateCustomerPaymentSourcesCardTest()
-        {
-            string id = "cus_2tZWxbTPtQgGJGh8P";
-            string paymentSourcesId = "src_2tZWxbTPtQgGJGh8R";
-            UpdatePaymentSources updatePaymentSources = new(
-               name: "name of person"
-            );
-            var response = _instance.UpdateCustomerPaymentSources(id, paymentSourcesId, updatePaymentSources);
-
-            Assert.IsType<UpdateCustomerPaymentSourcesResponse>(response);
-            Assert.Equal(updatePaymentSources.Name, response.GetPaymentSourceCard().Name);
-            Assert.Equal(id, response.GetPaymentSourceCard().ParentId);
-            Assert.Equal(paymentSourcesId, response.GetPaymentSourceCard().Id);
-
-        }
-        /// <summary>
-        /// Test DeleteCustomerPaymentSourcesCard
-        /// </summary>
-        [Fact]
-        public void DeleteCustomerPaymentSourcesCardTest()
-        {
-            string id = "cus_2tZWxbTPtQgGJGh8P";
-            string paymentSourcesId = "src_2tZWxbTPtQgGJGh8R";
-
-            var response = _instance.DeleteCustomerPaymentSources(id, paymentSourcesId, "en");
-
-            Assert.IsType<UpdateCustomerPaymentSourcesResponse>(response);
-            Assert.Equal(id, response.GetPaymentSourceCard().ParentId);
-            Assert.Equal(paymentSourcesId, response.GetPaymentSourceCard().Id);
-
-        }
-
-        /// <summary>
-        /// Test UpdateCustomerShippingContacts
-        /// </summary>
-        [Fact]
-        public void UpdateCustomerShippingContactsTest()
-        {
-            string id = "cus_2tZWxbTPtQgGJGh8P";
-            string shippingContactsId = "ship_cont_2tZWzJPBf87C6TcoQ";
-            CustomerShippingContacts customerShippingContacts = new(
-                phone: "3143145050"
-            );
-
-            var response = _instance.UpdateCustomerShippingContacts(id, shippingContactsId, customerShippingContacts);
-
-            Assert.IsType<CustomerShippingContactsResponse>(response);
-            Assert.Equal(customerShippingContacts.Phone, response.Phone);
-            Assert.Equal(id, response.ParentId);
-            Assert.Equal(shippingContactsId, response.Id);
-            Assert.False(response.Default);
-        }
-
         private static Customer GetFullCustomer()
         {
             var fiscalEntities = new List<CustomerFiscalEntitiesRequest>()

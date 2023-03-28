@@ -40,10 +40,10 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomersShippingContactsDataResponse" /> class.
         /// </summary>
-        /// <param name="phone">phone.</param>
-        /// <param name="receiver">receiver.</param>
-        /// <param name="betweenStreets">betweenStreets.</param>
-        /// <param name="address">address.</param>
+        /// <param name="phone">Phone contact.</param>
+        /// <param name="receiver">Name of the person who will receive the order.</param>
+        /// <param name="betweenStreets">The street names between which the order will be delivered..</param>
+        /// <param name="address">address (required).</param>
         /// <param name="parentId">parentId.</param>
         /// <param name="_default">_default.</param>
         /// <param name="deleted">deleted.</param>
@@ -52,6 +52,12 @@ namespace Conekta.net.Model
         /// <param name="createdAt">createdAt (required).</param>
         public CustomersShippingContactsDataResponse(string phone = default(string), string receiver = default(string), string betweenStreets = default(string), CustomerShippingContactsAddress address = default(CustomerShippingContactsAddress), string parentId = default(string), bool? _default = default(bool?), bool? deleted = default(bool?), string id = default(string), string _object = default(string), long createdAt = default(long))
         {
+            // to ensure "address" is required (not null)
+            if (address == null)
+            {
+                throw new ArgumentNullException("address is a required property for CustomersShippingContactsDataResponse and cannot be null");
+            }
+            this.Address = address;
             // to ensure "id" is required (not null)
             if (id == null)
             {
@@ -68,34 +74,36 @@ namespace Conekta.net.Model
             this.Phone = phone;
             this.Receiver = receiver;
             this.BetweenStreets = betweenStreets;
-            this.Address = address;
             this.ParentId = parentId;
             this.Default = _default;
             this.Deleted = deleted;
         }
 
         /// <summary>
-        /// Gets or Sets Phone
+        /// Phone contact
         /// </summary>
+        /// <value>Phone contact</value>
         [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
         /// <summary>
-        /// Gets or Sets Receiver
+        /// Name of the person who will receive the order
         /// </summary>
+        /// <value>Name of the person who will receive the order</value>
         [DataMember(Name = "receiver", EmitDefaultValue = false)]
         public string Receiver { get; set; }
 
         /// <summary>
-        /// Gets or Sets BetweenStreets
+        /// The street names between which the order will be delivered.
         /// </summary>
+        /// <value>The street names between which the order will be delivered.</value>
         [DataMember(Name = "between_streets", EmitDefaultValue = false)]
         public string BetweenStreets { get; set; }
 
         /// <summary>
         /// Gets or Sets Address
         /// </summary>
-        [DataMember(Name = "address", EmitDefaultValue = false)]
+        [DataMember(Name = "address", IsRequired = true, EmitDefaultValue = true)]
         public CustomerShippingContactsAddress Address { get; set; }
 
         /// <summary>

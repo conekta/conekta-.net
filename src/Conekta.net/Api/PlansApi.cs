@@ -28,24 +28,27 @@ namespace Conekta.net.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// creates a plan
+        /// Create Plan
         /// </summary>
+        /// <remarks>
+        /// Create a new plan for an existing order
+        /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="planRequest">requested field for plan</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlanResponse</returns>
         PlanResponse CreatePlan(PlanRequest planRequest, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// creates a plan
+        /// Create Plan
         /// </summary>
         /// <remarks>
-        /// 
+        /// Create a new plan for an existing order
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="planRequest">requested field for plan</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlanResponse</returns>
         ApiResponse<PlanResponse> CreatePlanWithHttpInfo(PlanRequest planRequest, string acceptLanguage = default(string), int operationIndex = 0);
@@ -53,8 +56,8 @@ namespace Conekta.net.Api
         /// deletes a plan
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlanResponse</returns>
         PlanResponse DeletePlan(string id, string acceptLanguage = default(string), int operationIndex = 0);
@@ -66,38 +69,38 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlanResponse</returns>
         ApiResponse<PlanResponse> DeletePlanWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
-        /// returns a plan
+        /// Get Plan
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlanResponse</returns>
         PlanResponse GetPlan(string id, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// returns a plan
+        /// Get Plan
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlanResponse</returns>
         ApiResponse<PlanResponse> GetPlanWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
-        /// returns a set of /plans
+        /// Get A List of Plans
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -107,13 +110,13 @@ namespace Conekta.net.Api
         GetPlansResponse GetPlans(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// returns a set of /plans
+        /// Get A List of Plans
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -125,9 +128,9 @@ namespace Conekta.net.Api
         /// updates a plan
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="planUpdateRequest">requested field for plan</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlanResponse</returns>
         PlanResponse UpdatePlan(string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0);
@@ -139,9 +142,9 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="planUpdateRequest">requested field for plan</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlanResponse</returns>
         ApiResponse<PlanResponse> UpdatePlanWithHttpInfo(string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0);
@@ -155,28 +158,28 @@ namespace Conekta.net.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// creates a plan
+        /// Create Plan
         /// </summary>
         /// <remarks>
-        /// 
+        /// Create a new plan for an existing order
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="planRequest">requested field for plan</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanResponse</returns>
         System.Threading.Tasks.Task<PlanResponse> CreatePlanAsync(PlanRequest planRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// creates a plan
+        /// Create Plan
         /// </summary>
         /// <remarks>
-        /// 
+        /// Create a new plan for an existing order
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="planRequest">requested field for plan</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanResponse)</returns>
@@ -188,8 +191,8 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanResponse</returns>
@@ -202,47 +205,47 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<PlanResponse>> DeletePlanWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// returns a plan
+        /// Get Plan
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanResponse</returns>
         System.Threading.Tasks.Task<PlanResponse> GetPlanAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// returns a plan
+        /// Get Plan
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<PlanResponse>> GetPlanWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// returns a set of /plans
+        /// Get A List of Plans
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -253,13 +256,13 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<GetPlansResponse> GetPlansAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// returns a set of /plans
+        /// Get A List of Plans
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -275,9 +278,9 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="planUpdateRequest">requested field for plan</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanResponse</returns>
@@ -290,9 +293,9 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="planUpdateRequest">requested field for plan</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanResponse)</returns>
@@ -418,11 +421,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a plan 
+        /// Create Plan Create a new plan for an existing order
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="planRequest">requested field for plan</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlanResponse</returns>
         public PlanResponse CreatePlan(PlanRequest planRequest, string acceptLanguage = default(string), int operationIndex = 0)
@@ -432,11 +435,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a plan 
+        /// Create Plan Create a new plan for an existing order
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="planRequest">requested field for plan</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlanResponse</returns>
         public Conekta.net.Client.ApiResponse<PlanResponse> CreatePlanWithHttpInfo(PlanRequest planRequest, string acceptLanguage = default(string), int operationIndex = 0)
@@ -501,11 +504,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a plan 
+        /// Create Plan Create a new plan for an existing order
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="planRequest">requested field for plan</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanResponse</returns>
@@ -516,11 +519,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a plan 
+        /// Create Plan Create a new plan for an existing order
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="planRequest">requested field for plan</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanResponse)</returns>
@@ -591,8 +594,8 @@ namespace Conekta.net.Api
         /// deletes a plan 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlanResponse</returns>
         public PlanResponse DeletePlan(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -605,8 +608,8 @@ namespace Conekta.net.Api
         /// deletes a plan 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlanResponse</returns>
         public Conekta.net.Client.ApiResponse<PlanResponse> DeletePlanWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -673,8 +676,8 @@ namespace Conekta.net.Api
         /// deletes a plan 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanResponse</returns>
@@ -688,8 +691,8 @@ namespace Conekta.net.Api
         /// deletes a plan 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanResponse)</returns>
@@ -756,11 +759,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a plan 
+        /// Get Plan 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlanResponse</returns>
         public PlanResponse GetPlan(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -770,11 +773,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a plan 
+        /// Get Plan 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlanResponse</returns>
         public Conekta.net.Client.ApiResponse<PlanResponse> GetPlanWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -838,11 +841,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a plan 
+        /// Get Plan 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanResponse</returns>
@@ -853,11 +856,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a plan 
+        /// Get Plan 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanResponse)</returns>
@@ -924,10 +927,10 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a set of /plans 
+        /// Get A List of Plans 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -941,10 +944,10 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a set of /plans 
+        /// Get A List of Plans 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -1021,10 +1024,10 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a set of /plans 
+        /// Get A List of Plans 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -1039,10 +1042,10 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a set of /plans 
+        /// Get A List of Plans 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -1125,9 +1128,9 @@ namespace Conekta.net.Api
         /// updates a plan 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="planUpdateRequest">requested field for plan</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlanResponse</returns>
         public PlanResponse UpdatePlan(string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0)
@@ -1140,9 +1143,9 @@ namespace Conekta.net.Api
         /// updates a plan 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="planUpdateRequest">requested field for plan</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlanResponse</returns>
         public Conekta.net.Client.ApiResponse<PlanResponse> UpdatePlanWithHttpInfo(string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0)
@@ -1217,9 +1220,9 @@ namespace Conekta.net.Api
         /// updates a plan 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="planUpdateRequest">requested field for plan</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanResponse</returns>
@@ -1233,9 +1236,9 @@ namespace Conekta.net.Api
         /// updates a plan 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="planUpdateRequest">requested field for plan</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanResponse)</returns>

@@ -41,15 +41,15 @@ namespace Conekta.net.Model
         /// Initializes a new instance of the <see cref="LineItems" /> class.
         /// </summary>
         /// <param name="antifraudInfo">antifraudInfo.</param>
-        /// <param name="brand">brand.</param>
-        /// <param name="description">description.</param>
-        /// <param name="name">The name of the item. It will be displayed in the order. (required).</param>
-        /// <param name="unitPrice">unitPrice (required).</param>
-        /// <param name="quantity">quantity (required).</param>
-        /// <param name="sku">The stock keeping unit for the item. It is used to identify the item in the order..</param>
-        /// <param name="tags">tags.</param>
+        /// <param name="brand">The brand of the item..</param>
+        /// <param name="description">Short description of the item.</param>
         /// <param name="metadata">It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters..</param>
-        public LineItems(Dictionary<string, Object> antifraudInfo = default(Dictionary<string, Object>), string brand = default(string), string description = default(string), string name = default(string), int unitPrice = default(int), int quantity = default(int), string sku = default(string), List<string> tags = default(List<string>), Dictionary<string, string> metadata = default(Dictionary<string, string>))
+        /// <param name="name">The name of the item. It will be displayed in the order. (required).</param>
+        /// <param name="quantity">The quantity of the item in the order. (required).</param>
+        /// <param name="sku">The stock keeping unit for the item. It is used to identify the item in the order..</param>
+        /// <param name="tags">List of tags for the item. It is used to identify the item in the order..</param>
+        /// <param name="unitPrice">The price of the item in cents. (required).</param>
+        public LineItems(Dictionary<string, Object> antifraudInfo = default(Dictionary<string, Object>), string brand = default(string), string description = default(string), Dictionary<string, string> metadata = default(Dictionary<string, string>), string name = default(string), int quantity = default(int), string sku = default(string), List<string> tags = default(List<string>), int unitPrice = default(int))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -57,14 +57,14 @@ namespace Conekta.net.Model
                 throw new ArgumentNullException("name is a required property for LineItems and cannot be null");
             }
             this.Name = name;
-            this.UnitPrice = unitPrice;
             this.Quantity = quantity;
+            this.UnitPrice = unitPrice;
             this.AntifraudInfo = antifraudInfo;
             this.Brand = brand;
             this.Description = description;
+            this.Metadata = metadata;
             this.Sku = sku;
             this.Tags = tags;
-            this.Metadata = metadata;
         }
 
         /// <summary>
@@ -74,16 +74,25 @@ namespace Conekta.net.Model
         public Dictionary<string, Object> AntifraudInfo { get; set; }
 
         /// <summary>
-        /// Gets or Sets Brand
+        /// The brand of the item.
         /// </summary>
+        /// <value>The brand of the item.</value>
         [DataMember(Name = "brand", EmitDefaultValue = false)]
         public string Brand { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Short description of the item
         /// </summary>
+        /// <value>Short description of the item</value>
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
+
+        /// <summary>
+        /// It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.
+        /// </summary>
+        /// <value>It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.</value>
+        [DataMember(Name = "metadata", EmitDefaultValue = false)]
+        public Dictionary<string, string> Metadata { get; set; }
 
         /// <summary>
         /// The name of the item. It will be displayed in the order.
@@ -93,14 +102,9 @@ namespace Conekta.net.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets UnitPrice
+        /// The quantity of the item in the order.
         /// </summary>
-        [DataMember(Name = "unit_price", IsRequired = true, EmitDefaultValue = true)]
-        public int UnitPrice { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Quantity
-        /// </summary>
+        /// <value>The quantity of the item in the order.</value>
         [DataMember(Name = "quantity", IsRequired = true, EmitDefaultValue = true)]
         public int Quantity { get; set; }
 
@@ -112,17 +116,18 @@ namespace Conekta.net.Model
         public string Sku { get; set; }
 
         /// <summary>
-        /// Gets or Sets Tags
+        /// List of tags for the item. It is used to identify the item in the order.
         /// </summary>
+        /// <value>List of tags for the item. It is used to identify the item in the order.</value>
         [DataMember(Name = "tags", EmitDefaultValue = false)]
         public List<string> Tags { get; set; }
 
         /// <summary>
-        /// It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.
+        /// The price of the item in cents.
         /// </summary>
-        /// <value>It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.</value>
-        [DataMember(Name = "metadata", EmitDefaultValue = false)]
-        public Dictionary<string, string> Metadata { get; set; }
+        /// <value>The price of the item in cents.</value>
+        [DataMember(Name = "unit_price", IsRequired = true, EmitDefaultValue = true)]
+        public int UnitPrice { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -135,12 +140,12 @@ namespace Conekta.net.Model
             sb.Append("  AntifraudInfo: ").Append(AntifraudInfo).Append("\n");
             sb.Append("  Brand: ").Append(Brand).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  UnitPrice: ").Append(UnitPrice).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
             sb.Append("  Sku: ").Append(Sku).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
-            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
+            sb.Append("  UnitPrice: ").Append(UnitPrice).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -193,13 +198,15 @@ namespace Conekta.net.Model
                     this.Description.Equals(input.Description))
                 ) && 
                 (
+                    this.Metadata == input.Metadata ||
+                    this.Metadata != null &&
+                    input.Metadata != null &&
+                    this.Metadata.SequenceEqual(input.Metadata)
+                ) && 
+                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.UnitPrice == input.UnitPrice ||
-                    this.UnitPrice.Equals(input.UnitPrice)
                 ) && 
                 (
                     this.Quantity == input.Quantity ||
@@ -217,10 +224,8 @@ namespace Conekta.net.Model
                     this.Tags.SequenceEqual(input.Tags)
                 ) && 
                 (
-                    this.Metadata == input.Metadata ||
-                    this.Metadata != null &&
-                    input.Metadata != null &&
-                    this.Metadata.SequenceEqual(input.Metadata)
+                    this.UnitPrice == input.UnitPrice ||
+                    this.UnitPrice.Equals(input.UnitPrice)
                 );
         }
 
@@ -245,11 +250,14 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();
                 }
+                if (this.Metadata != null)
+                {
+                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
+                }
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.UnitPrice.GetHashCode();
                 hashCode = (hashCode * 59) + this.Quantity.GetHashCode();
                 if (this.Sku != null)
                 {
@@ -259,10 +267,7 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Tags.GetHashCode();
                 }
-                if (this.Metadata != null)
-                {
-                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.UnitPrice.GetHashCode();
                 return hashCode;
             }
         }
@@ -280,16 +285,16 @@ namespace Conekta.net.Model
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Description, length must be less than 250.", new [] { "Description" });
             }
 
-            // UnitPrice (int) minimum
-            if (this.UnitPrice < (int)0)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for UnitPrice, must be a value greater than or equal to 0.", new [] { "UnitPrice" });
-            }
-
             // Quantity (int) minimum
             if (this.Quantity < (int)1)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new [] { "Quantity" });
+            }
+
+            // UnitPrice (int) minimum
+            if (this.UnitPrice < (int)0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for UnitPrice, must be a value greater than or equal to 0.", new [] { "UnitPrice" });
             }
 
             yield break;

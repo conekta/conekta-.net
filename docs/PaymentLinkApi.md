@@ -4,18 +4,18 @@ All URIs are relative to *https://api.conekta.io*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CancelCheckout**](PaymentLinkApi.md#cancelcheckout) | **PUT** /checkouts/{id}/cancel | cancels a checkout |
+| [**CancelCheckout**](PaymentLinkApi.md#cancelcheckout) | **PUT** /checkouts/{id}/cancel | Cancel Payment Link |
 | [**CreateCheckout**](PaymentLinkApi.md#createcheckout) | **POST** /checkouts | Create Unique Payment Link |
-| [**EmailCheckout**](PaymentLinkApi.md#emailcheckout) | **POST** /checkouts/{id}/email | sends an email |
-| [**GetCheckout**](PaymentLinkApi.md#getcheckout) | **GET** /checkouts/{id} | returns a checkout |
-| [**GetCheckouts**](PaymentLinkApi.md#getcheckouts) | **GET** /checkouts | returns a set of checkouts |
-| [**SmsCheckout**](PaymentLinkApi.md#smscheckout) | **POST** /checkouts/{id}/sms | sends an sms |
+| [**EmailCheckout**](PaymentLinkApi.md#emailcheckout) | **POST** /checkouts/{id}/email | Send an email |
+| [**GetCheckout**](PaymentLinkApi.md#getcheckout) | **GET** /checkouts/{id} | Get a payment link by ID |
+| [**GetCheckouts**](PaymentLinkApi.md#getcheckouts) | **GET** /checkouts | Get a list of links |
+| [**SmsCheckout**](PaymentLinkApi.md#smscheckout) | **POST** /checkouts/{id}/sms | Send an sms |
 
 <a name="cancelcheckout"></a>
 # **CancelCheckout**
 > CheckoutResponse CancelCheckout (string id, string acceptLanguage = null)
 
-cancels a checkout
+Cancel Payment Link
 
 ### Example
 ```csharp
@@ -37,12 +37,12 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new PaymentLinkApi(config);
-            var id = 6307a60c41de27127515a575;  // string | identifier
-            var acceptLanguage = es;  // string | use for knowing which language to use (optional)  (default to es)
+            var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
-                // cancels a checkout
+                // Cancel Payment Link
                 CheckoutResponse result = apiInstance.CancelCheckout(id, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -63,7 +63,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // cancels a checkout
+    // Cancel Payment Link
     ApiResponse<CheckoutResponse> response = apiInstance.CancelCheckoutWithHttpInfo(id, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -81,8 +81,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | identifier |  |
-| **acceptLanguage** | **string** | use for knowing which language to use | [optional] [default to es] |
+| **id** | **string** | Identifier of the resource |  |
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 
@@ -137,7 +137,7 @@ namespace Example
 
             var apiInstance = new PaymentLinkApi(config);
             var checkout = new Checkout(); // Checkout | requested field for checkout
-            var acceptLanguage = es;  // string | use for knowing which language to use (optional)  (default to es)
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
@@ -181,7 +181,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **checkout** | [**Checkout**](Checkout.md) | requested field for checkout |  |
-| **acceptLanguage** | **string** | use for knowing which language to use | [optional] [default to es] |
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 
@@ -212,7 +212,7 @@ catch (ApiException e)
 # **EmailCheckout**
 > CheckoutResponse EmailCheckout (string id, EmailCheckoutRequest emailCheckoutRequest, string acceptLanguage = null)
 
-sends an email
+Send an email
 
 ### Example
 ```csharp
@@ -234,13 +234,13 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new PaymentLinkApi(config);
-            var id = 6307a60c41de27127515a575;  // string | identifier
+            var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var emailCheckoutRequest = new EmailCheckoutRequest(); // EmailCheckoutRequest | requested field for sms checkout
-            var acceptLanguage = es;  // string | use for knowing which language to use (optional)  (default to es)
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
-                // sends an email
+                // Send an email
                 CheckoutResponse result = apiInstance.EmailCheckout(id, emailCheckoutRequest, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -261,7 +261,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // sends an email
+    // Send an email
     ApiResponse<CheckoutResponse> response = apiInstance.EmailCheckoutWithHttpInfo(id, emailCheckoutRequest, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -279,9 +279,9 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | identifier |  |
+| **id** | **string** | Identifier of the resource |  |
 | **emailCheckoutRequest** | [**EmailCheckoutRequest**](EmailCheckoutRequest.md) | requested field for sms checkout |  |
-| **acceptLanguage** | **string** | use for knowing which language to use | [optional] [default to es] |
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 
@@ -313,7 +313,7 @@ catch (ApiException e)
 # **GetCheckout**
 > CheckoutResponse GetCheckout (string id, string acceptLanguage = null)
 
-returns a checkout
+Get a payment link by ID
 
 ### Example
 ```csharp
@@ -335,12 +335,12 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new PaymentLinkApi(config);
-            var id = 6307a60c41de27127515a575;  // string | identifier
-            var acceptLanguage = es;  // string | use for knowing which language to use (optional)  (default to es)
+            var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
-                // returns a checkout
+                // Get a payment link by ID
                 CheckoutResponse result = apiInstance.GetCheckout(id, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -361,7 +361,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // returns a checkout
+    // Get a payment link by ID
     ApiResponse<CheckoutResponse> response = apiInstance.GetCheckoutWithHttpInfo(id, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -379,8 +379,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | identifier |  |
-| **acceptLanguage** | **string** | use for knowing which language to use | [optional] [default to es] |
+| **id** | **string** | Identifier of the resource |  |
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 
@@ -412,7 +412,9 @@ catch (ApiException e)
 # **GetCheckouts**
 > CheckoutsResponse GetCheckouts (string acceptLanguage = null, int? limit = null, string search = null, string next = null, string previous = null)
 
-returns a set of checkouts
+Get a list of links
+
+Returns a list of links generated by the merchant
 
 ### Example
 ```csharp
@@ -434,7 +436,7 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new PaymentLinkApi(config);
-            var acceptLanguage = es;  // string | use for knowing which language to use (optional)  (default to es)
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
             var limit = 20;  // int? | The numbers of items to return, the maximum value is 250 (optional)  (default to 20)
             var search = "search_example";  // string | General order search, e.g. by mail, reference etc. (optional) 
             var next = "next_example";  // string | next page (optional) 
@@ -442,7 +444,7 @@ namespace Example
 
             try
             {
-                // returns a set of checkouts
+                // Get a list of links
                 CheckoutsResponse result = apiInstance.GetCheckouts(acceptLanguage, limit, search, next, previous);
                 Debug.WriteLine(result);
             }
@@ -463,7 +465,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // returns a set of checkouts
+    // Get a list of links
     ApiResponse<CheckoutsResponse> response = apiInstance.GetCheckoutsWithHttpInfo(acceptLanguage, limit, search, next, previous);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -481,7 +483,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **acceptLanguage** | **string** | use for knowing which language to use | [optional] [default to es] |
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 | **limit** | **int?** | The numbers of items to return, the maximum value is 250 | [optional] [default to 20] |
 | **search** | **string** | General order search, e.g. by mail, reference etc. | [optional]  |
 | **next** | **string** | next page | [optional]  |
@@ -516,7 +518,7 @@ catch (ApiException e)
 # **SmsCheckout**
 > CheckoutResponse SmsCheckout (string id, SmsCheckoutRequest smsCheckoutRequest, string acceptLanguage = null)
 
-sends an sms
+Send an sms
 
 ### Example
 ```csharp
@@ -538,13 +540,13 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new PaymentLinkApi(config);
-            var id = 6307a60c41de27127515a575;  // string | identifier
+            var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var smsCheckoutRequest = new SmsCheckoutRequest(); // SmsCheckoutRequest | requested field for sms checkout
-            var acceptLanguage = es;  // string | use for knowing which language to use (optional)  (default to es)
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
-                // sends an sms
+                // Send an sms
                 CheckoutResponse result = apiInstance.SmsCheckout(id, smsCheckoutRequest, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -565,7 +567,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // sends an sms
+    // Send an sms
     ApiResponse<CheckoutResponse> response = apiInstance.SmsCheckoutWithHttpInfo(id, smsCheckoutRequest, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -583,9 +585,9 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | identifier |  |
+| **id** | **string** | Identifier of the resource |  |
 | **smsCheckoutRequest** | [**SmsCheckoutRequest**](SmsCheckoutRequest.md) | requested field for sms checkout |  |
-| **acceptLanguage** | **string** | use for knowing which language to use | [optional] [default to es] |
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 

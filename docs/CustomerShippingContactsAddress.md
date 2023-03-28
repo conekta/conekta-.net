@@ -1,4 +1,5 @@
 # Conekta.net.Model.CustomerShippingContactsAddress
+Address of the person who will receive the order
 
 ## Properties
 

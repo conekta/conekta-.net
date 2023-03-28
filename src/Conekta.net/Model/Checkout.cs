@@ -44,7 +44,7 @@ namespace Conekta.net.Model
         /// <param name="expiresAt">It is the time when the link will expire. It is expressed in seconds since the Unix epoch. The valid range is from 2 to 365 days (the valid range will be taken from the next day of the creation date at 00:01 hrs)  (required).</param>
         /// <param name="monthlyInstallmentsEnabled">This flag allows you to specify if months without interest will be active..</param>
         /// <param name="monthlyInstallmentsOptions">This field allows you to specify the number of months without interest..</param>
-        /// <param name="name">checkout&#39;s name (required).</param>
+        /// <param name="name">Reason for charge (required).</param>
         /// <param name="needsShippingContact">This flag allows you to fill in the shipping information at checkout..</param>
         /// <param name="onDemandEnabled">onDemandEnabled.</param>
         /// <param name="orderTemplate">orderTemplate (required).</param>
@@ -115,9 +115,9 @@ namespace Conekta.net.Model
         public List<int> MonthlyInstallmentsOptions { get; set; }
 
         /// <summary>
-        /// checkout&#39;s name
+        /// Reason for charge
         /// </summary>
-        /// <value>checkout&#39;s name</value>
+        /// <value>Reason for charge</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 

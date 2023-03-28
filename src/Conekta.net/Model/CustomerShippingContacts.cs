@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// Contains the detail of the shipping addresses that the client has active or has used in Conekta
+    /// [Shipping](https://developers.conekta.com/v2.1.0/reference/createcustomershippingcontacts) details, required in case of sending a shipping_line. If we do not receive a shipping_contact on the order, the default shipping_contact of the customer will be used.
     /// </summary>
     [DataContract(Name = "customer_shipping_contacts")]
     public partial class CustomerShippingContacts : IEquatable<CustomerShippingContacts>, IValidatableObject
@@ -35,46 +35,59 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomerShippingContacts" /> class.
         /// </summary>
-        /// <param name="phone">phone.</param>
-        /// <param name="receiver">receiver.</param>
-        /// <param name="betweenStreets">betweenStreets.</param>
-        /// <param name="address">address.</param>
+        [JsonConstructorAttribute]
+        protected CustomerShippingContacts() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomerShippingContacts" /> class.
+        /// </summary>
+        /// <param name="phone">Phone contact.</param>
+        /// <param name="receiver">Name of the person who will receive the order.</param>
+        /// <param name="betweenStreets">The street names between which the order will be delivered..</param>
+        /// <param name="address">address (required).</param>
         /// <param name="parentId">parentId.</param>
         /// <param name="_default">_default.</param>
         /// <param name="deleted">deleted.</param>
         public CustomerShippingContacts(string phone = default(string), string receiver = default(string), string betweenStreets = default(string), CustomerShippingContactsAddress address = default(CustomerShippingContactsAddress), string parentId = default(string), bool? _default = default(bool?), bool? deleted = default(bool?))
         {
+            // to ensure "address" is required (not null)
+            if (address == null)
+            {
+                throw new ArgumentNullException("address is a required property for CustomerShippingContacts and cannot be null");
+            }
+            this.Address = address;
             this.Phone = phone;
             this.Receiver = receiver;
             this.BetweenStreets = betweenStreets;
-            this.Address = address;
             this.ParentId = parentId;
             this.Default = _default;
             this.Deleted = deleted;
         }
 
         /// <summary>
-        /// Gets or Sets Phone
+        /// Phone contact
         /// </summary>
+        /// <value>Phone contact</value>
         [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
         /// <summary>
-        /// Gets or Sets Receiver
+        /// Name of the person who will receive the order
         /// </summary>
+        /// <value>Name of the person who will receive the order</value>
         [DataMember(Name = "receiver", EmitDefaultValue = false)]
         public string Receiver { get; set; }
 
         /// <summary>
-        /// Gets or Sets BetweenStreets
+        /// The street names between which the order will be delivered.
         /// </summary>
+        /// <value>The street names between which the order will be delivered.</value>
         [DataMember(Name = "between_streets", EmitDefaultValue = false)]
         public string BetweenStreets { get; set; }
 
         /// <summary>
         /// Gets or Sets Address
         /// </summary>
-        [DataMember(Name = "address", EmitDefaultValue = false)]
+        [DataMember(Name = "address", IsRequired = true, EmitDefaultValue = true)]
         public CustomerShippingContactsAddress Address { get; set; }
 
         /// <summary>

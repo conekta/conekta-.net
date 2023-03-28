@@ -38,8 +38,8 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new SubscriptionsApi(config);
-            var id = 6307a60c41de27127515a575;  // string | identifier
-            var acceptLanguage = es;  // string | use for knowing which language to use (optional)  (default to es)
+            var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
@@ -82,8 +82,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | identifier |  |
-| **acceptLanguage** | **string** | use for knowing which language to use | [optional] [default to es] |
+| **id** | **string** | Identifier of the resource |  |
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 
@@ -137,9 +137,9 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new SubscriptionsApi(config);
-            var id = 6307a60c41de27127515a575;  // string | identifier
+            var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var subscriptionRequest = new SubscriptionRequest(); // SubscriptionRequest | requested field for subscriptions
-            var acceptLanguage = es;  // string | use for knowing which language to use (optional)  (default to es)
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
@@ -182,9 +182,9 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | identifier |  |
+| **id** | **string** | Identifier of the resource |  |
 | **subscriptionRequest** | [**SubscriptionRequest**](SubscriptionRequest.md) | requested field for subscriptions |  |
-| **acceptLanguage** | **string** | use for knowing which language to use | [optional] [default to es] |
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 
@@ -237,8 +237,8 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new SubscriptionsApi(config);
-            var id = 6307a60c41de27127515a575;  // string | identifier
-            var acceptLanguage = es;  // string | use for knowing which language to use (optional)  (default to es)
+            var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
@@ -281,8 +281,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | identifier |  |
-| **acceptLanguage** | **string** | use for knowing which language to use | [optional] [default to es] |
+| **id** | **string** | Identifier of the resource |  |
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 
@@ -336,8 +336,8 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new SubscriptionsApi(config);
-            var id = 6307a60c41de27127515a575;  // string | identifier
-            var acceptLanguage = es;  // string | use for knowing which language to use (optional)  (default to es)
+            var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
@@ -380,8 +380,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | identifier |  |
-| **acceptLanguage** | **string** | use for knowing which language to use | [optional] [default to es] |
+| **id** | **string** | Identifier of the resource |  |
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 
@@ -434,8 +434,8 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new SubscriptionsApi(config);
-            var id = 6307a60c41de27127515a575;  // string | identifier
-            var acceptLanguage = es;  // string | use for knowing which language to use (optional)  (default to es)
+            var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
@@ -478,8 +478,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | identifier |  |
-| **acceptLanguage** | **string** | use for knowing which language to use | [optional] [default to es] |
+| **id** | **string** | Identifier of the resource |  |
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 
@@ -533,8 +533,8 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new SubscriptionsApi(config);
-            var id = 6307a60c41de27127515a575;  // string | identifier
-            var acceptLanguage = es;  // string | use for knowing which language to use (optional)  (default to es)
+            var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
@@ -577,8 +577,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | identifier |  |
-| **acceptLanguage** | **string** | use for knowing which language to use | [optional] [default to es] |
+| **id** | **string** | Identifier of the resource |  |
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 
@@ -632,9 +632,9 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new SubscriptionsApi(config);
-            var id = 6307a60c41de27127515a575;  // string | identifier
+            var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var subscriptionUpdateRequest = new SubscriptionUpdateRequest(); // SubscriptionUpdateRequest | requested field for update a subscription
-            var acceptLanguage = es;  // string | use for knowing which language to use (optional)  (default to es)
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
@@ -677,9 +677,9 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | identifier |  |
+| **id** | **string** | Identifier of the resource |  |
 | **subscriptionUpdateRequest** | [**SubscriptionUpdateRequest**](SubscriptionUpdateRequest.md) | requested field for update a subscription |  |
-| **acceptLanguage** | **string** | use for knowing which language to use | [optional] [default to es] |
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 

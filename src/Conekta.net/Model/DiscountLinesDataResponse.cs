@@ -40,9 +40,9 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DiscountLinesDataResponse" /> class.
         /// </summary>
-        /// <param name="amount">amount (required).</param>
+        /// <param name="amount">The amount to be deducted from the total sum of all payments, in cents. (required).</param>
         /// <param name="code">Discount code. (required).</param>
-        /// <param name="type">type (required).</param>
+        /// <param name="type">It can be &#39;loyalty&#39;, &#39;campaign&#39;, &#39;coupon&#39; o &#39;sign&#39; (required).</param>
         /// <param name="id">id.</param>
         /// <param name="_object">_object.</param>
         /// <param name="parentId">parentId.</param>
@@ -67,8 +67,9 @@ namespace Conekta.net.Model
         }
 
         /// <summary>
-        /// Gets or Sets Amount
+        /// The amount to be deducted from the total sum of all payments, in cents.
         /// </summary>
+        /// <value>The amount to be deducted from the total sum of all payments, in cents.</value>
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
         public long Amount { get; set; }
 
@@ -80,8 +81,9 @@ namespace Conekta.net.Model
         public string Code { get; set; }
 
         /// <summary>
-        /// Gets or Sets Type
+        /// It can be &#39;loyalty&#39;, &#39;campaign&#39;, &#39;coupon&#39; o &#39;sign&#39;
         /// </summary>
+        /// <value>It can be &#39;loyalty&#39;, &#39;campaign&#39;, &#39;coupon&#39; o &#39;sign&#39;</value>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 

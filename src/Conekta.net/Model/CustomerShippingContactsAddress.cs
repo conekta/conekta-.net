@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// CustomerShippingContactsAddress
+    /// Address of the person who will receive the order
     /// </summary>
     [DataContract(Name = "customer_shipping_contacts_address")]
     public partial class CustomerShippingContactsAddress : IEquatable<CustomerShippingContactsAddress>, IValidatableObject

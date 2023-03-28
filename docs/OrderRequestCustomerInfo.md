@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Email** | **string** |  | 
 **Phone** | **string** |  | 
-**Corporate** | **bool** |  | [optional] [default to false]
+**Corporate** | **bool** |  | [optional] 
 **Object** | **string** |  | [optional] 
 **CustomerId** | **string** |  | 
 

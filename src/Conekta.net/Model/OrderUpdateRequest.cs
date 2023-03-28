@@ -39,12 +39,12 @@ namespace Conekta.net.Model
         /// <param name="checkout">checkout.</param>
         /// <param name="currency">Currency with which the payment will be made. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217).</param>
         /// <param name="customerInfo">customerInfo.</param>
-        /// <param name="discountLines">discountLines.</param>
-        /// <param name="lineItems">lineItems.</param>
+        /// <param name="discountLines">List of [discounts](https://developers.conekta.com/v2.1.0/reference/orderscreatediscountline) that are applied to the order. You must have at least one discount..</param>
+        /// <param name="lineItems">List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreatelineitems) that are sold in the order. You must have at least one product..</param>
         /// <param name="metadata">metadata.</param>
         /// <param name="preAuthorize">Indicates whether the order charges must be preauthorized (default to false).</param>
         /// <param name="shippingContact">shippingContact.</param>
-        /// <param name="shippingLines">shippingLines.</param>
+        /// <param name="shippingLines">List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshippinglines). If the online store offers digital products..</param>
         /// <param name="taxLines">taxLines.</param>
         public OrderUpdateRequest(List<ChargeRequest> charges = default(List<ChargeRequest>), CheckoutRequest checkout = default(CheckoutRequest), string currency = default(string), OrderRequestCustomerInfo customerInfo = default(OrderRequestCustomerInfo), List<OrderDiscountLinesRequest> discountLines = default(List<OrderDiscountLinesRequest>), List<LineItems> lineItems = default(List<LineItems>), Dictionary<string, string> metadata = default(Dictionary<string, string>), bool preAuthorize = false, CustomerShippingContacts shippingContact = default(CustomerShippingContacts), List<ShippingLinesRequest> shippingLines = default(List<ShippingLinesRequest>), List<OrderTaxLinesRequest> taxLines = default(List<OrderTaxLinesRequest>))
         {
@@ -87,14 +87,16 @@ namespace Conekta.net.Model
         public OrderRequestCustomerInfo CustomerInfo { get; set; }
 
         /// <summary>
-        /// Gets or Sets DiscountLines
+        /// List of [discounts](https://developers.conekta.com/v2.1.0/reference/orderscreatediscountline) that are applied to the order. You must have at least one discount.
         /// </summary>
+        /// <value>List of [discounts](https://developers.conekta.com/v2.1.0/reference/orderscreatediscountline) that are applied to the order. You must have at least one discount.</value>
         [DataMember(Name = "discount_lines", EmitDefaultValue = false)]
         public List<OrderDiscountLinesRequest> DiscountLines { get; set; }
 
         /// <summary>
-        /// Gets or Sets LineItems
+        /// List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreatelineitems) that are sold in the order. You must have at least one product.
         /// </summary>
+        /// <value>List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreatelineitems) that are sold in the order. You must have at least one product.</value>
         [DataMember(Name = "line_items", EmitDefaultValue = false)]
         public List<LineItems> LineItems { get; set; }
 
@@ -118,8 +120,9 @@ namespace Conekta.net.Model
         public CustomerShippingContacts ShippingContact { get; set; }
 
         /// <summary>
-        /// Gets or Sets ShippingLines
+        /// List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshippinglines). If the online store offers digital products.
         /// </summary>
+        /// <value>List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshippinglines). If the online store offers digital products.</value>
         [DataMember(Name = "shipping_lines", EmitDefaultValue = false)]
         public List<ShippingLinesRequest> ShippingLines { get; set; }
 

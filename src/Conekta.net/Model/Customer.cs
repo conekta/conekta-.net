@@ -41,32 +41,32 @@ namespace Conekta.net.Model
         /// Initializes a new instance of the <see cref="Customer" /> class.
         /// </summary>
         /// <param name="antifraudInfo">antifraudInfo.</param>
-        /// <param name="name">Client&#39;s name (required).</param>
-        /// <param name="email">An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc). (required).</param>
-        /// <param name="phone">Is the customer&#39;s phone number (required).</param>
-        /// <param name="planId">Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription.</param>
-        /// <param name="defaultShippingContactId">It is a parameter that allows to identify in the response, the Conekta ID of the shipping address (shipping_contact).</param>
         /// <param name="corporate">It is a value that allows identifying if the email is corporate or not. (default to false).</param>
         /// <param name="customReference">It is an undefined value..</param>
+        /// <param name="email">An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc). (required).</param>
         /// <param name="defaultPaymentSourceId">It is a parameter that allows to identify in the response, the Conekta ID of a payment method (payment_id).</param>
+        /// <param name="defaultShippingContactId">It is a parameter that allows to identify in the response, the Conekta ID of the shipping address (shipping_contact).</param>
         /// <param name="fiscalEntities">fiscalEntities.</param>
-        /// <param name="paymentSources">paymentSources.</param>
-        /// <param name="shippingContacts">shippingContacts.</param>
+        /// <param name="name">Client&#39;s name (required).</param>
+        /// <param name="paymentSources">Contains details of the payment methods that the customer has active or has used in Conekta.</param>
+        /// <param name="phone">Is the customer&#39;s phone number (required).</param>
+        /// <param name="planId">Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription.</param>
+        /// <param name="shippingContacts">Contains the detail of the shipping addresses that the client has active or has used in Conekta.</param>
         /// <param name="subscription">subscription.</param>
-        public Customer(CustomerAntifraudInfo antifraudInfo = default(CustomerAntifraudInfo), string name = default(string), string email = default(string), string phone = default(string), string planId = default(string), string defaultShippingContactId = default(string), bool corporate = false, string customReference = default(string), string defaultPaymentSourceId = default(string), List<CustomerFiscalEntitiesRequest> fiscalEntities = default(List<CustomerFiscalEntitiesRequest>), List<ConsumerPaymentSourcesRequest> paymentSources = default(List<ConsumerPaymentSourcesRequest>), List<CustomerShippingContacts> shippingContacts = default(List<CustomerShippingContacts>), SubscriptionRequest subscription = default(SubscriptionRequest))
+        public Customer(CustomerAntifraudInfo antifraudInfo = default(CustomerAntifraudInfo), bool corporate = false, string customReference = default(string), string email = default(string), string defaultPaymentSourceId = default(string), string defaultShippingContactId = default(string), List<CustomerFiscalEntitiesRequest> fiscalEntities = default(List<CustomerFiscalEntitiesRequest>), string name = default(string), List<ConsumerPaymentSourcesRequest> paymentSources = default(List<ConsumerPaymentSourcesRequest>), string phone = default(string), string planId = default(string), List<CustomerShippingContacts> shippingContacts = default(List<CustomerShippingContacts>), SubscriptionRequest subscription = default(SubscriptionRequest))
         {
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for Customer and cannot be null");
-            }
-            this.Name = name;
             // to ensure "email" is required (not null)
             if (email == null)
             {
                 throw new ArgumentNullException("email is a required property for Customer and cannot be null");
             }
             this.Email = email;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for Customer and cannot be null");
+            }
+            this.Name = name;
             // to ensure "phone" is required (not null)
             if (phone == null)
             {
@@ -74,13 +74,13 @@ namespace Conekta.net.Model
             }
             this.Phone = phone;
             this.AntifraudInfo = antifraudInfo;
-            this.PlanId = planId;
-            this.DefaultShippingContactId = defaultShippingContactId;
             this.Corporate = corporate;
             this.CustomReference = customReference;
             this.DefaultPaymentSourceId = defaultPaymentSourceId;
+            this.DefaultShippingContactId = defaultShippingContactId;
             this.FiscalEntities = fiscalEntities;
             this.PaymentSources = paymentSources;
+            this.PlanId = planId;
             this.ShippingContacts = shippingContacts;
             this.Subscription = subscription;
         }
@@ -90,41 +90,6 @@ namespace Conekta.net.Model
         /// </summary>
         [DataMember(Name = "antifraud_info", EmitDefaultValue = true)]
         public CustomerAntifraudInfo AntifraudInfo { get; set; }
-
-        /// <summary>
-        /// Client&#39;s name
-        /// </summary>
-        /// <value>Client&#39;s name</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc).
-        /// </summary>
-        /// <value>An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc).</value>
-        [DataMember(Name = "email", IsRequired = true, EmitDefaultValue = true)]
-        public string Email { get; set; }
-
-        /// <summary>
-        /// Is the customer&#39;s phone number
-        /// </summary>
-        /// <value>Is the customer&#39;s phone number</value>
-        [DataMember(Name = "phone", IsRequired = true, EmitDefaultValue = true)]
-        public string Phone { get; set; }
-
-        /// <summary>
-        /// Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription
-        /// </summary>
-        /// <value>Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription</value>
-        [DataMember(Name = "plan_id", EmitDefaultValue = false)]
-        public string PlanId { get; set; }
-
-        /// <summary>
-        /// It is a parameter that allows to identify in the response, the Conekta ID of the shipping address (shipping_contact)
-        /// </summary>
-        /// <value>It is a parameter that allows to identify in the response, the Conekta ID of the shipping address (shipping_contact)</value>
-        [DataMember(Name = "default_shipping_contact_id", EmitDefaultValue = false)]
-        public string DefaultShippingContactId { get; set; }
 
         /// <summary>
         /// It is a value that allows identifying if the email is corporate or not.
@@ -141,11 +106,25 @@ namespace Conekta.net.Model
         public string CustomReference { get; set; }
 
         /// <summary>
+        /// An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc).
+        /// </summary>
+        /// <value>An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc).</value>
+        [DataMember(Name = "email", IsRequired = true, EmitDefaultValue = true)]
+        public string Email { get; set; }
+
+        /// <summary>
         /// It is a parameter that allows to identify in the response, the Conekta ID of a payment method (payment_id)
         /// </summary>
         /// <value>It is a parameter that allows to identify in the response, the Conekta ID of a payment method (payment_id)</value>
         [DataMember(Name = "default_payment_source_id", EmitDefaultValue = false)]
         public string DefaultPaymentSourceId { get; set; }
+
+        /// <summary>
+        /// It is a parameter that allows to identify in the response, the Conekta ID of the shipping address (shipping_contact)
+        /// </summary>
+        /// <value>It is a parameter that allows to identify in the response, the Conekta ID of the shipping address (shipping_contact)</value>
+        [DataMember(Name = "default_shipping_contact_id", EmitDefaultValue = false)]
+        public string DefaultShippingContactId { get; set; }
 
         /// <summary>
         /// Gets or Sets FiscalEntities
@@ -154,14 +133,37 @@ namespace Conekta.net.Model
         public List<CustomerFiscalEntitiesRequest> FiscalEntities { get; set; }
 
         /// <summary>
-        /// Gets or Sets PaymentSources
+        /// Client&#39;s name
         /// </summary>
+        /// <value>Client&#39;s name</value>
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Contains details of the payment methods that the customer has active or has used in Conekta
+        /// </summary>
+        /// <value>Contains details of the payment methods that the customer has active or has used in Conekta</value>
         [DataMember(Name = "payment_sources", EmitDefaultValue = false)]
         public List<ConsumerPaymentSourcesRequest> PaymentSources { get; set; }
 
         /// <summary>
-        /// Gets or Sets ShippingContacts
+        /// Is the customer&#39;s phone number
         /// </summary>
+        /// <value>Is the customer&#39;s phone number</value>
+        [DataMember(Name = "phone", IsRequired = true, EmitDefaultValue = true)]
+        public string Phone { get; set; }
+
+        /// <summary>
+        /// Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription
+        /// </summary>
+        /// <value>Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription</value>
+        [DataMember(Name = "plan_id", EmitDefaultValue = false)]
+        public string PlanId { get; set; }
+
+        /// <summary>
+        /// Contains the detail of the shipping addresses that the client has active or has used in Conekta
+        /// </summary>
+        /// <value>Contains the detail of the shipping addresses that the client has active or has used in Conekta</value>
         [DataMember(Name = "shipping_contacts", EmitDefaultValue = false)]
         public List<CustomerShippingContacts> ShippingContacts { get; set; }
 
@@ -180,16 +182,16 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class Customer {\n");
             sb.Append("  AntifraudInfo: ").Append(AntifraudInfo).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Email: ").Append(Email).Append("\n");
-            sb.Append("  Phone: ").Append(Phone).Append("\n");
-            sb.Append("  PlanId: ").Append(PlanId).Append("\n");
-            sb.Append("  DefaultShippingContactId: ").Append(DefaultShippingContactId).Append("\n");
             sb.Append("  Corporate: ").Append(Corporate).Append("\n");
             sb.Append("  CustomReference: ").Append(CustomReference).Append("\n");
+            sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  DefaultPaymentSourceId: ").Append(DefaultPaymentSourceId).Append("\n");
+            sb.Append("  DefaultShippingContactId: ").Append(DefaultShippingContactId).Append("\n");
             sb.Append("  FiscalEntities: ").Append(FiscalEntities).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  PaymentSources: ").Append(PaymentSources).Append("\n");
+            sb.Append("  Phone: ").Append(Phone).Append("\n");
+            sb.Append("  PlanId: ").Append(PlanId).Append("\n");
             sb.Append("  ShippingContacts: ").Append(ShippingContacts).Append("\n");
             sb.Append("  Subscription: ").Append(Subscription).Append("\n");
             sb.Append("}\n");
@@ -233,14 +235,45 @@ namespace Conekta.net.Model
                     this.AntifraudInfo.Equals(input.AntifraudInfo))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.Corporate == input.Corporate ||
+                    this.Corporate.Equals(input.Corporate)
+                ) && 
+                (
+                    this.CustomReference == input.CustomReference ||
+                    (this.CustomReference != null &&
+                    this.CustomReference.Equals(input.CustomReference))
                 ) && 
                 (
                     this.Email == input.Email ||
                     (this.Email != null &&
                     this.Email.Equals(input.Email))
+                ) && 
+                (
+                    this.DefaultPaymentSourceId == input.DefaultPaymentSourceId ||
+                    (this.DefaultPaymentSourceId != null &&
+                    this.DefaultPaymentSourceId.Equals(input.DefaultPaymentSourceId))
+                ) && 
+                (
+                    this.DefaultShippingContactId == input.DefaultShippingContactId ||
+                    (this.DefaultShippingContactId != null &&
+                    this.DefaultShippingContactId.Equals(input.DefaultShippingContactId))
+                ) && 
+                (
+                    this.FiscalEntities == input.FiscalEntities ||
+                    this.FiscalEntities != null &&
+                    input.FiscalEntities != null &&
+                    this.FiscalEntities.SequenceEqual(input.FiscalEntities)
+                ) && 
+                (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.PaymentSources == input.PaymentSources ||
+                    this.PaymentSources != null &&
+                    input.PaymentSources != null &&
+                    this.PaymentSources.SequenceEqual(input.PaymentSources)
                 ) && 
                 (
                     this.Phone == input.Phone ||
@@ -251,37 +284,6 @@ namespace Conekta.net.Model
                     this.PlanId == input.PlanId ||
                     (this.PlanId != null &&
                     this.PlanId.Equals(input.PlanId))
-                ) && 
-                (
-                    this.DefaultShippingContactId == input.DefaultShippingContactId ||
-                    (this.DefaultShippingContactId != null &&
-                    this.DefaultShippingContactId.Equals(input.DefaultShippingContactId))
-                ) && 
-                (
-                    this.Corporate == input.Corporate ||
-                    this.Corporate.Equals(input.Corporate)
-                ) && 
-                (
-                    this.CustomReference == input.CustomReference ||
-                    (this.CustomReference != null &&
-                    this.CustomReference.Equals(input.CustomReference))
-                ) && 
-                (
-                    this.DefaultPaymentSourceId == input.DefaultPaymentSourceId ||
-                    (this.DefaultPaymentSourceId != null &&
-                    this.DefaultPaymentSourceId.Equals(input.DefaultPaymentSourceId))
-                ) && 
-                (
-                    this.FiscalEntities == input.FiscalEntities ||
-                    this.FiscalEntities != null &&
-                    input.FiscalEntities != null &&
-                    this.FiscalEntities.SequenceEqual(input.FiscalEntities)
-                ) && 
-                (
-                    this.PaymentSources == input.PaymentSources ||
-                    this.PaymentSources != null &&
-                    input.PaymentSources != null &&
-                    this.PaymentSources.SequenceEqual(input.PaymentSources)
                 ) && 
                 (
                     this.ShippingContacts == input.ShippingContacts ||
@@ -309,13 +311,34 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.AntifraudInfo.GetHashCode();
                 }
-                if (this.Name != null)
+                hashCode = (hashCode * 59) + this.Corporate.GetHashCode();
+                if (this.CustomReference != null)
                 {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                    hashCode = (hashCode * 59) + this.CustomReference.GetHashCode();
                 }
                 if (this.Email != null)
                 {
                     hashCode = (hashCode * 59) + this.Email.GetHashCode();
+                }
+                if (this.DefaultPaymentSourceId != null)
+                {
+                    hashCode = (hashCode * 59) + this.DefaultPaymentSourceId.GetHashCode();
+                }
+                if (this.DefaultShippingContactId != null)
+                {
+                    hashCode = (hashCode * 59) + this.DefaultShippingContactId.GetHashCode();
+                }
+                if (this.FiscalEntities != null)
+                {
+                    hashCode = (hashCode * 59) + this.FiscalEntities.GetHashCode();
+                }
+                if (this.Name != null)
+                {
+                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.PaymentSources != null)
+                {
+                    hashCode = (hashCode * 59) + this.PaymentSources.GetHashCode();
                 }
                 if (this.Phone != null)
                 {
@@ -324,27 +347,6 @@ namespace Conekta.net.Model
                 if (this.PlanId != null)
                 {
                     hashCode = (hashCode * 59) + this.PlanId.GetHashCode();
-                }
-                if (this.DefaultShippingContactId != null)
-                {
-                    hashCode = (hashCode * 59) + this.DefaultShippingContactId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Corporate.GetHashCode();
-                if (this.CustomReference != null)
-                {
-                    hashCode = (hashCode * 59) + this.CustomReference.GetHashCode();
-                }
-                if (this.DefaultPaymentSourceId != null)
-                {
-                    hashCode = (hashCode * 59) + this.DefaultPaymentSourceId.GetHashCode();
-                }
-                if (this.FiscalEntities != null)
-                {
-                    hashCode = (hashCode * 59) + this.FiscalEntities.GetHashCode();
-                }
-                if (this.PaymentSources != null)
-                {
-                    hashCode = (hashCode * 59) + this.PaymentSources.GetHashCode();
                 }
                 if (this.ShippingContacts != null)
                 {

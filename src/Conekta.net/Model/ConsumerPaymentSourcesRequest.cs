@@ -21,7 +21,6 @@ using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using JsonSubTypes;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 using System.Reflection;
@@ -169,44 +168,6 @@ namespace Conekta.net.Model
             {
                 return newConsumerPaymentSourcesRequest;
             }
-
-            try
-            {
-                var discriminatorObj = JObject.Parse(jsonString)["type"];
-                string discriminatorValue =  discriminatorObj == null ?string.Empty :discriminatorObj.ToString();
-                switch (discriminatorValue)
-                {
-                    case "card":
-                        newConsumerPaymentSourcesRequest = new ConsumerPaymentSourcesRequest(JsonConvert.DeserializeObject<PaymentSourcesCard>(jsonString, ConsumerPaymentSourcesRequest.AdditionalPropertiesSerializerSettings));
-                        return newConsumerPaymentSourcesRequest;
-                    case "cash":
-                        newConsumerPaymentSourcesRequest = new ConsumerPaymentSourcesRequest(JsonConvert.DeserializeObject<PaymentSourcesCash>(jsonString, ConsumerPaymentSourcesRequest.AdditionalPropertiesSerializerSettings));
-                        return newConsumerPaymentSourcesRequest;
-                    case "oxxo_cash":
-                        newConsumerPaymentSourcesRequest = new ConsumerPaymentSourcesRequest(JsonConvert.DeserializeObject<PaymentSourcesCash>(jsonString, ConsumerPaymentSourcesRequest.AdditionalPropertiesSerializerSettings));
-                        return newConsumerPaymentSourcesRequest;
-                    case "payment_sources_card":
-                        newConsumerPaymentSourcesRequest = new ConsumerPaymentSourcesRequest(JsonConvert.DeserializeObject<PaymentSourcesCard>(jsonString, ConsumerPaymentSourcesRequest.AdditionalPropertiesSerializerSettings));
-                        return newConsumerPaymentSourcesRequest;
-                    case "payment_sources_cash":
-                        newConsumerPaymentSourcesRequest = new ConsumerPaymentSourcesRequest(JsonConvert.DeserializeObject<PaymentSourcesCash>(jsonString, ConsumerPaymentSourcesRequest.AdditionalPropertiesSerializerSettings));
-                        return newConsumerPaymentSourcesRequest;
-                    case "payment_sources_spei":
-                        newConsumerPaymentSourcesRequest = new ConsumerPaymentSourcesRequest(JsonConvert.DeserializeObject<PaymentSourcesSpei>(jsonString, ConsumerPaymentSourcesRequest.AdditionalPropertiesSerializerSettings));
-                        return newConsumerPaymentSourcesRequest;
-                    case "spei":
-                        newConsumerPaymentSourcesRequest = new ConsumerPaymentSourcesRequest(JsonConvert.DeserializeObject<PaymentSourcesSpei>(jsonString, ConsumerPaymentSourcesRequest.AdditionalPropertiesSerializerSettings));
-                        return newConsumerPaymentSourcesRequest;
-                    default:
-                        System.Diagnostics.Debug.WriteLine(string.Format("Failed to lookup discriminator value `{0}` for ConsumerPaymentSourcesRequest. Possible values: card cash oxxo_cash payment_sources_card payment_sources_cash payment_sources_spei spei", discriminatorValue));
-                        break;
-                }
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to parse the json data : `{0}` {1}", jsonString, ex.ToString()));
-            }
-
             int match = 0;
             List<string> matchedTypes = new List<string>();
 

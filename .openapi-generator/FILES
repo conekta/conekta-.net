@@ -17,6 +17,7 @@ docs/ChargeResponse.md
 docs/ChargeResponseRefunds.md
 docs/ChargeResponseRefundsAllOf.md
 docs/ChargeResponseRefundsData.md
+docs/ChargesApi.md
 docs/ChargesDataResponse.md
 docs/Checkout.md
 docs/CheckoutOrderTemplate.md
@@ -55,6 +56,7 @@ docs/CustomerShippingContactsDataResponse.md
 docs/CustomerShippingContactsResponse.md
 docs/CustomerShippingContactsResponseAddress.md
 docs/CustomerUpdateFiscalEntitiesRequest.md
+docs/CustomerUpdateShippingContacts.md
 docs/CustomersAntifraudInfoResponse.md
 docs/CustomersApi.md
 docs/CustomersDataResponse.md
@@ -69,6 +71,7 @@ docs/DetailsError.md
 docs/DiscountLinesDataResponse.md
 docs/DiscountLinesResponse.md
 docs/DiscountLinesResponseAllOf.md
+docs/DiscountsApi.md
 docs/EmailCheckoutRequest.md
 docs/Error.md
 docs/ErrorAllOf.md
@@ -119,6 +122,7 @@ docs/PaymentMethod.md
 docs/PaymentMethodBankTransfer.md
 docs/PaymentMethodCard.md
 docs/PaymentMethodCash.md
+docs/PaymentMethodsApi.md
 docs/PaymentSource.md
 docs/PaymentSourceCard.md
 docs/PaymentSourceCardAllOf.md
@@ -135,10 +139,13 @@ docs/PlanRequest.md
 docs/PlanResponse.md
 docs/PlanUpdateRequest.md
 docs/PlansApi.md
+docs/ProductsApi.md
 docs/RiskRulesList.md
 docs/RiskRulesListDataInner.md
+docs/ShippingContactsApi.md
 docs/ShippingLinesOrderResponse.md
 docs/ShippingLinesRequest.md
+docs/ShippingsApi.md
 docs/SmsCheckoutRequest.md
 docs/SubscriptionEventsResponse.md
 docs/SubscriptionEventsResponseAllOf.md
@@ -146,7 +153,9 @@ docs/SubscriptionRequest.md
 docs/SubscriptionResponse.md
 docs/SubscriptionUpdateRequest.md
 docs/SubscriptionsApi.md
+docs/TaxesApi.md
 docs/UpdateCustomer.md
+docs/UpdateCustomerAntifraudInfo.md
 docs/UpdateCustomerFiscalEntitiesResponse.md
 docs/UpdateCustomerFiscalEntitiesResponseAllOf.md
 docs/UpdateCustomerPaymentSourcesResponse.md
@@ -162,16 +171,22 @@ docs/WebhookResponse.md
 docs/WebhookUpdateRequest.md
 docs/WebhooksApi.md
 docs/WhitelistsApi.md
-src/Conekta.net.Test/Api/PaymentLinkApiTests.cs
 src/Conekta.net.Test/Conekta.net.Test.csproj
 src/Conekta.net/Api/BlacklistApi.cs
+src/Conekta.net/Api/ChargesApi.cs
 src/Conekta.net/Api/CustomersApi.cs
+src/Conekta.net/Api/DiscountsApi.cs
 src/Conekta.net/Api/EventsApi.cs
 src/Conekta.net/Api/LogsApi.cs
 src/Conekta.net/Api/OrdersApi.cs
 src/Conekta.net/Api/PaymentLinkApi.cs
+src/Conekta.net/Api/PaymentMethodsApi.cs
 src/Conekta.net/Api/PlansApi.cs
+src/Conekta.net/Api/ProductsApi.cs
+src/Conekta.net/Api/ShippingContactsApi.cs
+src/Conekta.net/Api/ShippingsApi.cs
 src/Conekta.net/Api/SubscriptionsApi.cs
+src/Conekta.net/Api/TaxesApi.cs
 src/Conekta.net/Api/WebhooksApi.cs
 src/Conekta.net/Api/WhitelistsApi.cs
 src/Conekta.net/Client/ApiClient.cs
@@ -241,6 +256,7 @@ src/Conekta.net/Model/CustomerShippingContactsDataResponse.cs
 src/Conekta.net/Model/CustomerShippingContactsResponse.cs
 src/Conekta.net/Model/CustomerShippingContactsResponseAddress.cs
 src/Conekta.net/Model/CustomerUpdateFiscalEntitiesRequest.cs
+src/Conekta.net/Model/CustomerUpdateShippingContacts.cs
 src/Conekta.net/Model/CustomersAntifraudInfoResponse.cs
 src/Conekta.net/Model/CustomersDataResponse.cs
 src/Conekta.net/Model/CustomersExtraFieldsResponse.cs
@@ -326,6 +342,7 @@ src/Conekta.net/Model/SubscriptionRequest.cs
 src/Conekta.net/Model/SubscriptionResponse.cs
 src/Conekta.net/Model/SubscriptionUpdateRequest.cs
 src/Conekta.net/Model/UpdateCustomer.cs
+src/Conekta.net/Model/UpdateCustomerAntifraudInfo.cs
 src/Conekta.net/Model/UpdateCustomerFiscalEntitiesResponse.cs
 src/Conekta.net/Model/UpdateCustomerFiscalEntitiesResponseAllOf.cs
 src/Conekta.net/Model/UpdateCustomerPaymentSourcesResponse.cs

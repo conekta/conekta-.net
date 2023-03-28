@@ -39,7 +39,7 @@ namespace Example
 
             var apiInstance = new WebhooksApi(config);
             var webhookRequest = new WebhookRequest(); // WebhookRequest | requested field for webhook
-            var acceptLanguage = es;  // string | use for knowing which language to use (optional)  (default to es)
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
@@ -83,7 +83,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **webhookRequest** | [**WebhookRequest**](WebhookRequest.md) | requested field for webhook |  |
-| **acceptLanguage** | **string** | use for knowing which language to use | [optional] [default to es] |
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 
@@ -135,8 +135,8 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new WebhooksApi(config);
-            var id = 6307a60c41de27127515a575;  // string | identifier
-            var acceptLanguage = es;  // string | use for knowing which language to use (optional)  (default to es)
+            var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
@@ -179,8 +179,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | identifier |  |
-| **acceptLanguage** | **string** | use for knowing which language to use | [optional] [default to es] |
+| **id** | **string** | Identifier of the resource |  |
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 
@@ -233,8 +233,8 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new WebhooksApi(config);
-            var id = 6307a60c41de27127515a575;  // string | identifier
-            var acceptLanguage = es;  // string | use for knowing which language to use (optional)  (default to es)
+            var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
@@ -277,8 +277,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | identifier |  |
-| **acceptLanguage** | **string** | use for knowing which language to use | [optional] [default to es] |
+| **id** | **string** | Identifier of the resource |  |
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 
@@ -331,7 +331,7 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new WebhooksApi(config);
-            var acceptLanguage = es;  // string | use for knowing which language to use (optional)  (default to es)
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
             var limit = 20;  // int? | The numbers of items to return, the maximum value is 250 (optional)  (default to 20)
             var search = "search_example";  // string | General order search, e.g. by mail, reference etc. (optional) 
             var next = "next_example";  // string | next page (optional) 
@@ -378,7 +378,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **acceptLanguage** | **string** | use for knowing which language to use | [optional] [default to es] |
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 | **limit** | **int?** | The numbers of items to return, the maximum value is 250 | [optional] [default to 20] |
 | **search** | **string** | General order search, e.g. by mail, reference etc. | [optional]  |
 | **next** | **string** | next page | [optional]  |
@@ -436,9 +436,9 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new WebhooksApi(config);
-            var id = 6307a60c41de27127515a575;  // string | identifier
+            var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var webhookUpdateRequest = new WebhookUpdateRequest(); // WebhookUpdateRequest | requested fields in order to update a webhook
-            var acceptLanguage = es;  // string | use for knowing which language to use (optional)  (default to es)
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
@@ -481,9 +481,9 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | identifier |  |
+| **id** | **string** | Identifier of the resource |  |
 | **webhookUpdateRequest** | [**WebhookUpdateRequest**](WebhookUpdateRequest.md) | requested fields in order to update a webhook |  |
-| **acceptLanguage** | **string** | use for knowing which language to use | [optional] [default to es] |
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 

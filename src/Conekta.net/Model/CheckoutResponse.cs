@@ -52,7 +52,7 @@ namespace Conekta.net.Model
         /// <param name="metadata">metadata.</param>
         /// <param name="monthlyInstallmentsEnabled">monthlyInstallmentsEnabled.</param>
         /// <param name="monthlyInstallmentsOptions">monthlyInstallmentsOptions.</param>
-        /// <param name="name">checkout&#39;s name (required).</param>
+        /// <param name="name">Reason for charge (required).</param>
         /// <param name="needsShippingContact">needsShippingContact.</param>
         /// <param name="_object">_object (required).</param>
         /// <param name="paidPaymentsCount">paidPaymentsCount.</param>
@@ -182,9 +182,9 @@ namespace Conekta.net.Model
         public List<int> MonthlyInstallmentsOptions { get; set; }
 
         /// <summary>
-        /// checkout&#39;s name
+        /// Reason for charge
         /// </summary>
-        /// <value>checkout&#39;s name</value>
+        /// <value>Reason for charge</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 

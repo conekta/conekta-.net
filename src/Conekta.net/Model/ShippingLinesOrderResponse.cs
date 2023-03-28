@@ -35,11 +35,16 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ShippingLinesOrderResponse" /> class.
         /// </summary>
-        /// <param name="amount">amount.</param>
-        /// <param name="carrier">carrier.</param>
-        /// <param name="trackingNumber">trackingNumber.</param>
-        /// <param name="method">method.</param>
-        /// <param name="metadata">metadata.</param>
+        [JsonConstructorAttribute]
+        protected ShippingLinesOrderResponse() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShippingLinesOrderResponse" /> class.
+        /// </summary>
+        /// <param name="amount">Shipping amount in cents (required).</param>
+        /// <param name="carrier">Carrier name for the shipment.</param>
+        /// <param name="trackingNumber">Tracking number can be used to track the shipment.</param>
+        /// <param name="method">Method of shipment.</param>
+        /// <param name="metadata">Hash where the user can send additional information for each &#39;shipping_line&#39;..</param>
         /// <param name="id">id.</param>
         /// <param name="_object">_object.</param>
         /// <param name="parentId">parentId.</param>
@@ -56,32 +61,37 @@ namespace Conekta.net.Model
         }
 
         /// <summary>
-        /// Gets or Sets Amount
+        /// Shipping amount in cents
         /// </summary>
-        [DataMember(Name = "amount", EmitDefaultValue = false)]
+        /// <value>Shipping amount in cents</value>
+        [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
         public long Amount { get; set; }
 
         /// <summary>
-        /// Gets or Sets Carrier
+        /// Carrier name for the shipment
         /// </summary>
+        /// <value>Carrier name for the shipment</value>
         [DataMember(Name = "carrier", EmitDefaultValue = false)]
         public string Carrier { get; set; }
 
         /// <summary>
-        /// Gets or Sets TrackingNumber
+        /// Tracking number can be used to track the shipment
         /// </summary>
+        /// <value>Tracking number can be used to track the shipment</value>
         [DataMember(Name = "tracking_number", EmitDefaultValue = false)]
         public string TrackingNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets Method
+        /// Method of shipment
         /// </summary>
+        /// <value>Method of shipment</value>
         [DataMember(Name = "method", EmitDefaultValue = false)]
         public string Method { get; set; }
 
         /// <summary>
-        /// Gets or Sets Metadata
+        /// Hash where the user can send additional information for each &#39;shipping_line&#39;.
         /// </summary>
+        /// <value>Hash where the user can send additional information for each &#39;shipping_line&#39;.</value>
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }
 

@@ -28,24 +28,24 @@ namespace Conekta.net.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// cancels a checkout
+        /// Cancel Payment Link
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CheckoutResponse</returns>
         CheckoutResponse CancelCheckout(string id, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// cancels a checkout
+        /// Cancel Payment Link
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CheckoutResponse</returns>
         ApiResponse<CheckoutResponse> CancelCheckoutWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
@@ -54,7 +54,7 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="checkout">requested field for checkout</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CheckoutResponse</returns>
         CheckoutResponse CreateCheckout(Checkout checkout, string acceptLanguage = default(string), int operationIndex = 0);
@@ -67,61 +67,64 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="checkout">requested field for checkout</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CheckoutResponse</returns>
         ApiResponse<CheckoutResponse> CreateCheckoutWithHttpInfo(Checkout checkout, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
-        /// sends an email
+        /// Send an email
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="emailCheckoutRequest">requested field for sms checkout</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CheckoutResponse</returns>
         CheckoutResponse EmailCheckout(string id, EmailCheckoutRequest emailCheckoutRequest, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// sends an email
+        /// Send an email
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="emailCheckoutRequest">requested field for sms checkout</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CheckoutResponse</returns>
         ApiResponse<CheckoutResponse> EmailCheckoutWithHttpInfo(string id, EmailCheckoutRequest emailCheckoutRequest, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
-        /// returns a checkout
+        /// Get a payment link by ID
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CheckoutResponse</returns>
         CheckoutResponse GetCheckout(string id, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// returns a checkout
+        /// Get a payment link by ID
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CheckoutResponse</returns>
         ApiResponse<CheckoutResponse> GetCheckoutWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
-        /// returns a set of checkouts
+        /// Get a list of links
         /// </summary>
+        /// <remarks>
+        /// Returns a list of links generated by the merchant
+        /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -131,13 +134,13 @@ namespace Conekta.net.Api
         CheckoutsResponse GetCheckouts(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// returns a set of checkouts
+        /// Get a list of links
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of links generated by the merchant
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -146,26 +149,26 @@ namespace Conekta.net.Api
         /// <returns>ApiResponse of CheckoutsResponse</returns>
         ApiResponse<CheckoutsResponse> GetCheckoutsWithHttpInfo(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
         /// <summary>
-        /// sends an sms
+        /// Send an sms
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="smsCheckoutRequest">requested field for sms checkout</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CheckoutResponse</returns>
         CheckoutResponse SmsCheckout(string id, SmsCheckoutRequest smsCheckoutRequest, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// sends an sms
+        /// Send an sms
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="smsCheckoutRequest">requested field for sms checkout</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CheckoutResponse</returns>
         ApiResponse<CheckoutResponse> SmsCheckoutWithHttpInfo(string id, SmsCheckoutRequest smsCheckoutRequest, string acceptLanguage = default(string), int operationIndex = 0);
@@ -179,28 +182,28 @@ namespace Conekta.net.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// cancels a checkout
+        /// Cancel Payment Link
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CheckoutResponse</returns>
         System.Threading.Tasks.Task<CheckoutResponse> CancelCheckoutAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// cancels a checkout
+        /// Cancel Payment Link
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CheckoutResponse)</returns>
@@ -213,7 +216,7 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="checkout">requested field for checkout</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CheckoutResponse</returns>
@@ -227,75 +230,75 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="checkout">requested field for checkout</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CheckoutResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<CheckoutResponse>> CreateCheckoutWithHttpInfoAsync(Checkout checkout, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// sends an email
+        /// Send an email
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="emailCheckoutRequest">requested field for sms checkout</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CheckoutResponse</returns>
         System.Threading.Tasks.Task<CheckoutResponse> EmailCheckoutAsync(string id, EmailCheckoutRequest emailCheckoutRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// sends an email
+        /// Send an email
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="emailCheckoutRequest">requested field for sms checkout</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CheckoutResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<CheckoutResponse>> EmailCheckoutWithHttpInfoAsync(string id, EmailCheckoutRequest emailCheckoutRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// returns a checkout
+        /// Get a payment link by ID
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CheckoutResponse</returns>
         System.Threading.Tasks.Task<CheckoutResponse> GetCheckoutAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// returns a checkout
+        /// Get a payment link by ID
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CheckoutResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<CheckoutResponse>> GetCheckoutWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// returns a set of checkouts
+        /// Get a list of links
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of links generated by the merchant
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -306,13 +309,13 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<CheckoutsResponse> GetCheckoutsAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// returns a set of checkouts
+        /// Get a list of links
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of links generated by the merchant
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -322,30 +325,30 @@ namespace Conekta.net.Api
         /// <returns>Task of ApiResponse (CheckoutsResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<CheckoutsResponse>> GetCheckoutsWithHttpInfoAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// sends an sms
+        /// Send an sms
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="smsCheckoutRequest">requested field for sms checkout</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CheckoutResponse</returns>
         System.Threading.Tasks.Task<CheckoutResponse> SmsCheckoutAsync(string id, SmsCheckoutRequest smsCheckoutRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// sends an sms
+        /// Send an sms
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="smsCheckoutRequest">requested field for sms checkout</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CheckoutResponse)</returns>
@@ -471,11 +474,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// cancels a checkout 
+        /// Cancel Payment Link 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CheckoutResponse</returns>
         public CheckoutResponse CancelCheckout(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -485,11 +488,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// cancels a checkout 
+        /// Cancel Payment Link 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CheckoutResponse</returns>
         public Conekta.net.Client.ApiResponse<CheckoutResponse> CancelCheckoutWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -553,11 +556,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// cancels a checkout 
+        /// Cancel Payment Link 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CheckoutResponse</returns>
@@ -568,11 +571,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// cancels a checkout 
+        /// Cancel Payment Link 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CheckoutResponse)</returns>
@@ -643,7 +646,7 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="checkout">requested field for checkout</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CheckoutResponse</returns>
         public CheckoutResponse CreateCheckout(Checkout checkout, string acceptLanguage = default(string), int operationIndex = 0)
@@ -657,7 +660,7 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="checkout">requested field for checkout</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CheckoutResponse</returns>
         public Conekta.net.Client.ApiResponse<CheckoutResponse> CreateCheckoutWithHttpInfo(Checkout checkout, string acceptLanguage = default(string), int operationIndex = 0)
@@ -726,7 +729,7 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="checkout">requested field for checkout</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CheckoutResponse</returns>
@@ -741,7 +744,7 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="checkout">requested field for checkout</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CheckoutResponse)</returns>
@@ -809,12 +812,12 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// sends an email 
+        /// Send an email 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="emailCheckoutRequest">requested field for sms checkout</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CheckoutResponse</returns>
         public CheckoutResponse EmailCheckout(string id, EmailCheckoutRequest emailCheckoutRequest, string acceptLanguage = default(string), int operationIndex = 0)
@@ -824,12 +827,12 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// sends an email 
+        /// Send an email 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="emailCheckoutRequest">requested field for sms checkout</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CheckoutResponse</returns>
         public Conekta.net.Client.ApiResponse<CheckoutResponse> EmailCheckoutWithHttpInfo(string id, EmailCheckoutRequest emailCheckoutRequest, string acceptLanguage = default(string), int operationIndex = 0)
@@ -901,12 +904,12 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// sends an email 
+        /// Send an email 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="emailCheckoutRequest">requested field for sms checkout</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CheckoutResponse</returns>
@@ -917,12 +920,12 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// sends an email 
+        /// Send an email 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="emailCheckoutRequest">requested field for sms checkout</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CheckoutResponse)</returns>
@@ -997,11 +1000,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a checkout 
+        /// Get a payment link by ID 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CheckoutResponse</returns>
         public CheckoutResponse GetCheckout(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -1011,11 +1014,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a checkout 
+        /// Get a payment link by ID 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CheckoutResponse</returns>
         public Conekta.net.Client.ApiResponse<CheckoutResponse> GetCheckoutWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0)
@@ -1079,11 +1082,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a checkout 
+        /// Get a payment link by ID 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CheckoutResponse</returns>
@@ -1094,11 +1097,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a checkout 
+        /// Get a payment link by ID 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CheckoutResponse)</returns>
@@ -1165,10 +1168,10 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a set of checkouts 
+        /// Get a list of links Returns a list of links generated by the merchant
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -1182,10 +1185,10 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a set of checkouts 
+        /// Get a list of links Returns a list of links generated by the merchant
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -1262,10 +1265,10 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a set of checkouts 
+        /// Get a list of links Returns a list of links generated by the merchant
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -1280,10 +1283,10 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a set of checkouts 
+        /// Get a list of links Returns a list of links generated by the merchant
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -1363,12 +1366,12 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// sends an sms 
+        /// Send an sms 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="smsCheckoutRequest">requested field for sms checkout</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CheckoutResponse</returns>
         public CheckoutResponse SmsCheckout(string id, SmsCheckoutRequest smsCheckoutRequest, string acceptLanguage = default(string), int operationIndex = 0)
@@ -1378,12 +1381,12 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// sends an sms 
+        /// Send an sms 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="smsCheckoutRequest">requested field for sms checkout</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CheckoutResponse</returns>
         public Conekta.net.Client.ApiResponse<CheckoutResponse> SmsCheckoutWithHttpInfo(string id, SmsCheckoutRequest smsCheckoutRequest, string acceptLanguage = default(string), int operationIndex = 0)
@@ -1455,12 +1458,12 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// sends an sms 
+        /// Send an sms 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="smsCheckoutRequest">requested field for sms checkout</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CheckoutResponse</returns>
@@ -1471,12 +1474,12 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// sends an sms 
+        /// Send an sms 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">identifier</param>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="smsCheckoutRequest">requested field for sms checkout</param>
-        /// <param name="acceptLanguage">use for knowing which language to use (optional, default to es)</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CheckoutResponse)</returns>

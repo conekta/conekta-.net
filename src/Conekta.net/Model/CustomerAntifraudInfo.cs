@@ -37,7 +37,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="accountCreatedAt">accountCreatedAt.</param>
         /// <param name="firstPaidAt">firstPaidAt.</param>
-        public CustomerAntifraudInfo(long accountCreatedAt = default(long), int firstPaidAt = default(int))
+        public CustomerAntifraudInfo(long accountCreatedAt = default(long), long firstPaidAt = default(long))
         {
             this.AccountCreatedAt = accountCreatedAt;
             this.FirstPaidAt = firstPaidAt;
@@ -53,7 +53,7 @@ namespace Conekta.net.Model
         /// Gets or Sets FirstPaidAt
         /// </summary>
         [DataMember(Name = "first_paid_at", EmitDefaultValue = false)]
-        public int FirstPaidAt { get; set; }
+        public long FirstPaidAt { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

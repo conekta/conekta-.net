@@ -1,10 +1,11 @@
-# Conekta.net.Model.DeleteRiskRulesData
+# Conekta.net.Model.UpdateCustomerAntifraudInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] 
+**AccountCreatedAt** | **long** |  | [optional] 
+**FirstPaidAt** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
