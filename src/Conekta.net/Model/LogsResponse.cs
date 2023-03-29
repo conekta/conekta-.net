@@ -38,7 +38,7 @@ namespace Conekta.net.Model
         /// <param name="nextPageUrl">URL of the next page..</param>
         /// <param name="previousPageUrl">Url of the previous page..</param>
         /// <param name="data">set to page results..</param>
-        public LogsResponse(string nextPageUrl = default(string), string previousPageUrl = default(string), List<Dictionary<string, Object>> data = default(List<Dictionary<string, Object>>))
+        public LogsResponse(string nextPageUrl = default(string), string previousPageUrl = default(string), List<LogsResponseData> data = default(List<LogsResponseData>))
         {
             this.NextPageUrl = nextPageUrl;
             this.PreviousPageUrl = previousPageUrl;
@@ -94,7 +94,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>set to page results.</value>
         [DataMember(Name = "data", EmitDefaultValue = true)]
-        public List<Dictionary<string, Object>> Data { get; set; }
+        public List<LogsResponseData> Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

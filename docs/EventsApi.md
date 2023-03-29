@@ -4,14 +4,16 @@ All URIs are relative to *https://api.conekta.io*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetEvent**](EventsApi.md#getevent) | **GET** /events/{id} | returns an event |
-| [**GetEvents**](EventsApi.md#getevents) | **GET** /events | returns a set of /events |
+| [**GetEvent**](EventsApi.md#getevent) | **GET** /events/{id} | Get Event |
+| [**GetEvents**](EventsApi.md#getevents) | **GET** /events | Get list of Events |
 
 <a name="getevent"></a>
 # **GetEvent**
 > EventResponse GetEvent (string id, string acceptLanguage = null)
 
-returns an event
+Get Event
+
+Returns a single event
 
 ### Example
 ```csharp
@@ -38,7 +40,7 @@ namespace Example
 
             try
             {
-                // returns an event
+                // Get Event
                 EventResponse result = apiInstance.GetEvent(id, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -59,7 +61,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // returns an event
+    // Get Event
     ApiResponse<EventResponse> response = apiInstance.GetEventWithHttpInfo(id, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -108,7 +110,7 @@ catch (ApiException e)
 # **GetEvents**
 > GetEventsResponse GetEvents (string acceptLanguage = null, int? limit = null, string search = null, string next = null, string previous = null)
 
-returns a set of /events
+Get list of Events
 
 ### Example
 ```csharp
@@ -138,7 +140,7 @@ namespace Example
 
             try
             {
-                // returns a set of /events
+                // Get list of Events
                 GetEventsResponse result = apiInstance.GetEvents(acceptLanguage, limit, search, next, previous);
                 Debug.WriteLine(result);
             }
@@ -159,7 +161,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // returns a set of /events
+    // Get list of Events
     ApiResponse<GetEventsResponse> response = apiInstance.GetEventsWithHttpInfo(acceptLanguage, limit, search, next, previous);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -201,7 +203,6 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | successful |  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  |
-| **422** | parameter validation error |  -  |
 | **401** | authentication error |  -  |
 | **500** | internal server error |  -  |
 

@@ -5,10 +5,10 @@ All URIs are relative to *https://api.conekta.io*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**CreatePlan**](PlansApi.md#createplan) | **POST** /plans | Create Plan |
-| [**DeletePlan**](PlansApi.md#deleteplan) | **DELETE** /plans/{id} | deletes a plan |
+| [**DeletePlan**](PlansApi.md#deleteplan) | **DELETE** /plans/{id} | Delete Plan |
 | [**GetPlan**](PlansApi.md#getplan) | **GET** /plans/{id} | Get Plan |
 | [**GetPlans**](PlansApi.md#getplans) | **GET** /plans | Get A List of Plans |
-| [**UpdatePlan**](PlansApi.md#updateplan) | **PUT** /plans/{id} | updates a plan |
+| [**UpdatePlan**](PlansApi.md#updateplan) | **PUT** /plans/{id} | Update Plan |
 
 <a name="createplan"></a>
 # **CreatePlan**
@@ -113,7 +113,7 @@ catch (ApiException e)
 # **DeletePlan**
 > PlanResponse DeletePlan (string id, string acceptLanguage = null)
 
-deletes a plan
+Delete Plan
 
 ### Example
 ```csharp
@@ -140,7 +140,7 @@ namespace Example
 
             try
             {
-                // deletes a plan
+                // Delete Plan
                 PlanResponse result = apiInstance.DeletePlan(id, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -161,7 +161,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // deletes a plan
+    // Delete Plan
     ApiResponse<PlanResponse> response = apiInstance.DeletePlanWithHttpInfo(id, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -412,7 +412,7 @@ catch (ApiException e)
 # **UpdatePlan**
 > PlanResponse UpdatePlan (string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = null)
 
-updates a plan
+Update Plan
 
 ### Example
 ```csharp
@@ -440,7 +440,7 @@ namespace Example
 
             try
             {
-                // updates a plan
+                // Update Plan
                 PlanResponse result = apiInstance.UpdatePlan(id, planUpdateRequest, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -461,7 +461,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // updates a plan
+    // Update Plan
     ApiResponse<PlanResponse> response = apiInstance.UpdatePlanWithHttpInfo(id, planUpdateRequest, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

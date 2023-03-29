@@ -4,19 +4,21 @@ All URIs are relative to *https://api.conekta.io*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CancelSubscription**](SubscriptionsApi.md#cancelsubscription) | **POST** /customers/{id}/subscription/cancel | cancels a subscription |
-| [**CreateSubscription**](SubscriptionsApi.md#createsubscription) | **POST** /customers/{id}/subscription | creates a subscription |
-| [**GetAllEventsFromSubscription**](SubscriptionsApi.md#getalleventsfromsubscription) | **GET** /customers/{id}/subscription/events | You can get the events of the subscription(s) of a client, with the customer id |
-| [**GetSubscription**](SubscriptionsApi.md#getsubscription) | **GET** /customers/{id}/subscription | returns a subscription |
-| [**PauseSubscription**](SubscriptionsApi.md#pausesubscription) | **POST** /customers/{id}/subscription/pause | pauses a subscription |
-| [**ResumeSubscription**](SubscriptionsApi.md#resumesubscription) | **POST** /customers/{id}/subscription/resume | resumes a subscription |
-| [**UpdateSubscription**](SubscriptionsApi.md#updatesubscription) | **PUT** /customers/{id}/subscription | updates a subscription |
+| [**CancelSubscription**](SubscriptionsApi.md#cancelsubscription) | **POST** /customers/{id}/subscription/cancel | Cancel Subscription |
+| [**CreateSubscription**](SubscriptionsApi.md#createsubscription) | **POST** /customers/{id}/subscription | Create Subscription |
+| [**GetAllEventsFromSubscription**](SubscriptionsApi.md#getalleventsfromsubscription) | **GET** /customers/{id}/subscription/events | Get Events By Subscription |
+| [**GetSubscription**](SubscriptionsApi.md#getsubscription) | **GET** /customers/{id}/subscription | Get Subscription |
+| [**PauseSubscription**](SubscriptionsApi.md#pausesubscription) | **POST** /customers/{id}/subscription/pause | Pause Subscription |
+| [**ResumeSubscription**](SubscriptionsApi.md#resumesubscription) | **POST** /customers/{id}/subscription/resume | Resume Subscription |
+| [**UpdateSubscription**](SubscriptionsApi.md#updatesubscription) | **PUT** /customers/{id}/subscription | Update Subscription |
 
 <a name="cancelsubscription"></a>
 # **CancelSubscription**
 > SubscriptionResponse CancelSubscription (string id, string acceptLanguage = null)
 
-cancels a subscription
+Cancel Subscription
+
+You can cancel the subscription to stop the plans that your customers consume
 
 ### Example
 ```csharp
@@ -43,7 +45,7 @@ namespace Example
 
             try
             {
-                // cancels a subscription
+                // Cancel Subscription
                 SubscriptionResponse result = apiInstance.CancelSubscription(id, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -64,7 +66,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // cancels a subscription
+    // Cancel Subscription
     ApiResponse<SubscriptionResponse> response = apiInstance.CancelSubscriptionWithHttpInfo(id, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -103,9 +105,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | successful |  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  |
-| **422** | parameter validation error |  -  |
 | **401** | authentication error |  -  |
-| **402** | payment required error |  -  |
 | **404** | not found entity |  -  |
 | **500** | internal server error |  -  |
 
@@ -115,7 +115,9 @@ catch (ApiException e)
 # **CreateSubscription**
 > SubscriptionResponse CreateSubscription (string id, SubscriptionRequest subscriptionRequest, string acceptLanguage = null)
 
-creates a subscription
+Create Subscription
+
+You can create the subscription to include the plans that your customers consume
 
 ### Example
 ```csharp
@@ -143,7 +145,7 @@ namespace Example
 
             try
             {
-                // creates a subscription
+                // Create Subscription
                 SubscriptionResponse result = apiInstance.CreateSubscription(id, subscriptionRequest, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -164,7 +166,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // creates a subscription
+    // Create Subscription
     ApiResponse<SubscriptionResponse> response = apiInstance.CreateSubscriptionWithHttpInfo(id, subscriptionRequest, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -215,6 +217,8 @@ catch (ApiException e)
 # **GetAllEventsFromSubscription**
 > SubscriptionEventsResponse GetAllEventsFromSubscription (string id, string acceptLanguage = null)
 
+Get Events By Subscription
+
 You can get the events of the subscription(s) of a client, with the customer id
 
 ### Example
@@ -242,7 +246,7 @@ namespace Example
 
             try
             {
-                // You can get the events of the subscription(s) of a client, with the customer id
+                // Get Events By Subscription
                 SubscriptionEventsResponse result = apiInstance.GetAllEventsFromSubscription(id, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -263,7 +267,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // You can get the events of the subscription(s) of a client, with the customer id
+    // Get Events By Subscription
     ApiResponse<SubscriptionEventsResponse> response = apiInstance.GetAllEventsFromSubscriptionWithHttpInfo(id, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -314,7 +318,7 @@ catch (ApiException e)
 # **GetSubscription**
 > SubscriptionResponse GetSubscription (string id, string acceptLanguage = null)
 
-returns a subscription
+Get Subscription
 
 ### Example
 ```csharp
@@ -341,7 +345,7 @@ namespace Example
 
             try
             {
-                // returns a subscription
+                // Get Subscription
                 SubscriptionResponse result = apiInstance.GetSubscription(id, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -362,7 +366,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // returns a subscription
+    // Get Subscription
     ApiResponse<SubscriptionResponse> response = apiInstance.GetSubscriptionWithHttpInfo(id, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -401,7 +405,6 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | successful |  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  |
-| **422** | parameter validation error |  -  |
 | **401** | authentication error |  -  |
 | **404** | not found entity |  -  |
 | **500** | internal server error |  -  |
@@ -412,7 +415,9 @@ catch (ApiException e)
 # **PauseSubscription**
 > SubscriptionResponse PauseSubscription (string id, string acceptLanguage = null)
 
-pauses a subscription
+Pause Subscription
+
+You can pause the subscription to stop the plans that your customers consume
 
 ### Example
 ```csharp
@@ -439,7 +444,7 @@ namespace Example
 
             try
             {
-                // pauses a subscription
+                // Pause Subscription
                 SubscriptionResponse result = apiInstance.PauseSubscription(id, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -460,7 +465,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // pauses a subscription
+    // Pause Subscription
     ApiResponse<SubscriptionResponse> response = apiInstance.PauseSubscriptionWithHttpInfo(id, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -499,7 +504,6 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | successful |  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  |
-| **422** | parameter validation error |  -  |
 | **401** | authentication error |  -  |
 | **402** | payment required error |  -  |
 | **404** | not found entity |  -  |
@@ -511,7 +515,9 @@ catch (ApiException e)
 # **ResumeSubscription**
 > SubscriptionResponse ResumeSubscription (string id, string acceptLanguage = null)
 
-resumes a subscription
+Resume Subscription
+
+You can resume the subscription to start the plans that your customers consume
 
 ### Example
 ```csharp
@@ -538,7 +544,7 @@ namespace Example
 
             try
             {
-                // resumes a subscription
+                // Resume Subscription
                 SubscriptionResponse result = apiInstance.ResumeSubscription(id, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -559,7 +565,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // resumes a subscription
+    // Resume Subscription
     ApiResponse<SubscriptionResponse> response = apiInstance.ResumeSubscriptionWithHttpInfo(id, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -610,7 +616,9 @@ catch (ApiException e)
 # **UpdateSubscription**
 > SubscriptionResponse UpdateSubscription (string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = null)
 
-updates a subscription
+Update Subscription
+
+You can modify the subscription to change the plans that your customers consume
 
 ### Example
 ```csharp
@@ -638,7 +646,7 @@ namespace Example
 
             try
             {
-                // updates a subscription
+                // Update Subscription
                 SubscriptionResponse result = apiInstance.UpdateSubscription(id, subscriptionUpdateRequest, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -659,7 +667,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // updates a subscription
+    // Update Subscription
     ApiResponse<SubscriptionResponse> response = apiInstance.UpdateSubscriptionWithHttpInfo(id, subscriptionUpdateRequest, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

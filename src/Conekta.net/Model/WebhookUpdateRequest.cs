@@ -40,8 +40,8 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookUpdateRequest" /> class.
         /// </summary>
-        /// <param name="url">url (required).</param>
-        /// <param name="synchronous">synchronous (default to false).</param>
+        /// <param name="url">Here you must place the URL of your Webhook remember that you must program what you will do with the events received. Also do not forget to handle the HTTPS protocol for greater security. (required).</param>
+        /// <param name="synchronous">It is a value that allows to decide if the events will be synchronous or asynchronous. We recommend asynchronous &#x3D; false (default to false).</param>
         /// <param name="subscribedEvents">subscribedEvents.</param>
         public WebhookUpdateRequest(string url = default(string), bool synchronous = false, List<string> subscribedEvents = default(List<string>))
         {
@@ -56,14 +56,16 @@ namespace Conekta.net.Model
         }
 
         /// <summary>
-        /// Gets or Sets Url
+        /// Here you must place the URL of your Webhook remember that you must program what you will do with the events received. Also do not forget to handle the HTTPS protocol for greater security.
         /// </summary>
+        /// <value>Here you must place the URL of your Webhook remember that you must program what you will do with the events received. Also do not forget to handle the HTTPS protocol for greater security.</value>
         [DataMember(Name = "url", IsRequired = true, EmitDefaultValue = true)]
         public string Url { get; set; }
 
         /// <summary>
-        /// Gets or Sets Synchronous
+        /// It is a value that allows to decide if the events will be synchronous or asynchronous. We recommend asynchronous &#x3D; false
         /// </summary>
+        /// <value>It is a value that allows to decide if the events will be synchronous or asynchronous. We recommend asynchronous &#x3D; false</value>
         [DataMember(Name = "synchronous", EmitDefaultValue = true)]
         public bool Synchronous { get; set; }
 
@@ -165,6 +167,13 @@ namespace Conekta.net.Model
         /// <returns>Validation Result</returns>
         public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
+            // Url (string) pattern
+            Regex regexUrl = new Regex(@"^(?!.*(localhost|127\\.0\\.0\\.1)).*$", RegexOptions.CultureInvariant);
+            if (false == regexUrl.Match(this.Url).Success)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Url, must match a pattern of " + regexUrl, new [] { "Url" });
+            }
+
             yield break;
         }
     }

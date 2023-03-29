@@ -28,10 +28,10 @@ namespace Conekta.net.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// creates a new webhook
+        /// Create Webhook
         /// </summary>
         /// <remarks>
-        /// Create a new webhook.
+        /// What we do at Conekta translates into events. For example, an event of interest to us occurs at the time a payment is successfully processed. At that moment we will be interested in doing several things: Send an email to the buyer, generate an invoice, start the process of shipping the product, etc.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookRequest">requested field for webhook</param>
@@ -41,10 +41,10 @@ namespace Conekta.net.Api
         WebhookResponse CreateWebhook(WebhookRequest webhookRequest, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// creates a new webhook
+        /// Create Webhook
         /// </summary>
         /// <remarks>
-        /// Create a new webhook.
+        /// What we do at Conekta translates into events. For example, an event of interest to us occurs at the time a payment is successfully processed. At that moment we will be interested in doing several things: Send an email to the buyer, generate an invoice, start the process of shipping the product, etc.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookRequest">requested field for webhook</param>
@@ -53,7 +53,7 @@ namespace Conekta.net.Api
         /// <returns>ApiResponse of WebhookResponse</returns>
         ApiResponse<WebhookResponse> CreateWebhookWithHttpInfo(WebhookRequest webhookRequest, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
-        /// returns a deleted webhook
+        /// Delete Webhook
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -63,7 +63,7 @@ namespace Conekta.net.Api
         WebhookResponse DeleteWebhook(string id, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// returns a deleted webhook
+        /// Delete Webhook
         /// </summary>
         /// <remarks>
         /// 
@@ -75,7 +75,7 @@ namespace Conekta.net.Api
         /// <returns>ApiResponse of WebhookResponse</returns>
         ApiResponse<WebhookResponse> DeleteWebhookWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
-        /// returns a webhook
+        /// Get Webhook
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -85,7 +85,7 @@ namespace Conekta.net.Api
         WebhookResponse GetWebhook(string id, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// returns a webhook
+        /// Get Webhook
         /// </summary>
         /// <remarks>
         /// 
@@ -97,8 +97,11 @@ namespace Conekta.net.Api
         /// <returns>ApiResponse of WebhookResponse</returns>
         ApiResponse<WebhookResponse> GetWebhookWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
-        /// returns a set of /webhooks
+        /// Get List of Webhooks
         /// </summary>
+        /// <remarks>
+        /// Consume the list of webhooks you have, each environment supports 10 webhooks (For production and testing)
+        /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
@@ -110,10 +113,10 @@ namespace Conekta.net.Api
         GetWebhooksResponse GetWebhooks(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// returns a set of /webhooks
+        /// Get List of Webhooks
         /// </summary>
         /// <remarks>
-        /// 
+        /// Consume the list of webhooks you have, each environment supports 10 webhooks (For production and testing)
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
@@ -125,7 +128,7 @@ namespace Conekta.net.Api
         /// <returns>ApiResponse of GetWebhooksResponse</returns>
         ApiResponse<GetWebhooksResponse> GetWebhooksWithHttpInfo(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
         /// <summary>
-        /// updates an existing webhook
+        /// Update Webhook
         /// </summary>
         /// <remarks>
         /// updates an existing webhook
@@ -139,7 +142,7 @@ namespace Conekta.net.Api
         WebhookResponse UpdateWebhook(string id, WebhookUpdateRequest webhookUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// updates an existing webhook
+        /// Update Webhook
         /// </summary>
         /// <remarks>
         /// updates an existing webhook
@@ -161,10 +164,10 @@ namespace Conekta.net.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// creates a new webhook
+        /// Create Webhook
         /// </summary>
         /// <remarks>
-        /// Create a new webhook.
+        /// What we do at Conekta translates into events. For example, an event of interest to us occurs at the time a payment is successfully processed. At that moment we will be interested in doing several things: Send an email to the buyer, generate an invoice, start the process of shipping the product, etc.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookRequest">requested field for webhook</param>
@@ -175,10 +178,10 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<WebhookResponse> CreateWebhookAsync(WebhookRequest webhookRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// creates a new webhook
+        /// Create Webhook
         /// </summary>
         /// <remarks>
-        /// Create a new webhook.
+        /// What we do at Conekta translates into events. For example, an event of interest to us occurs at the time a payment is successfully processed. At that moment we will be interested in doing several things: Send an email to the buyer, generate an invoice, start the process of shipping the product, etc.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookRequest">requested field for webhook</param>
@@ -188,7 +191,7 @@ namespace Conekta.net.Api
         /// <returns>Task of ApiResponse (WebhookResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<WebhookResponse>> CreateWebhookWithHttpInfoAsync(WebhookRequest webhookRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// returns a deleted webhook
+        /// Delete Webhook
         /// </summary>
         /// <remarks>
         /// 
@@ -202,7 +205,7 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<WebhookResponse> DeleteWebhookAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// returns a deleted webhook
+        /// Delete Webhook
         /// </summary>
         /// <remarks>
         /// 
@@ -215,7 +218,7 @@ namespace Conekta.net.Api
         /// <returns>Task of ApiResponse (WebhookResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<WebhookResponse>> DeleteWebhookWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// returns a webhook
+        /// Get Webhook
         /// </summary>
         /// <remarks>
         /// 
@@ -229,7 +232,7 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<WebhookResponse> GetWebhookAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// returns a webhook
+        /// Get Webhook
         /// </summary>
         /// <remarks>
         /// 
@@ -242,10 +245,10 @@ namespace Conekta.net.Api
         /// <returns>Task of ApiResponse (WebhookResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<WebhookResponse>> GetWebhookWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// returns a set of /webhooks
+        /// Get List of Webhooks
         /// </summary>
         /// <remarks>
-        /// 
+        /// Consume the list of webhooks you have, each environment supports 10 webhooks (For production and testing)
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
@@ -259,10 +262,10 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<GetWebhooksResponse> GetWebhooksAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// returns a set of /webhooks
+        /// Get List of Webhooks
         /// </summary>
         /// <remarks>
-        /// 
+        /// Consume the list of webhooks you have, each environment supports 10 webhooks (For production and testing)
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
@@ -275,7 +278,7 @@ namespace Conekta.net.Api
         /// <returns>Task of ApiResponse (GetWebhooksResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetWebhooksResponse>> GetWebhooksWithHttpInfoAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// updates an existing webhook
+        /// Update Webhook
         /// </summary>
         /// <remarks>
         /// updates an existing webhook
@@ -290,7 +293,7 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<WebhookResponse> UpdateWebhookAsync(string id, WebhookUpdateRequest webhookUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// updates an existing webhook
+        /// Update Webhook
         /// </summary>
         /// <remarks>
         /// updates an existing webhook
@@ -424,7 +427,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a new webhook Create a new webhook.
+        /// Create Webhook What we do at Conekta translates into events. For example, an event of interest to us occurs at the time a payment is successfully processed. At that moment we will be interested in doing several things: Send an email to the buyer, generate an invoice, start the process of shipping the product, etc.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookRequest">requested field for webhook</param>
@@ -438,7 +441,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a new webhook Create a new webhook.
+        /// Create Webhook What we do at Conekta translates into events. For example, an event of interest to us occurs at the time a payment is successfully processed. At that moment we will be interested in doing several things: Send an email to the buyer, generate an invoice, start the process of shipping the product, etc.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookRequest">requested field for webhook</param>
@@ -507,7 +510,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a new webhook Create a new webhook.
+        /// Create Webhook What we do at Conekta translates into events. For example, an event of interest to us occurs at the time a payment is successfully processed. At that moment we will be interested in doing several things: Send an email to the buyer, generate an invoice, start the process of shipping the product, etc.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookRequest">requested field for webhook</param>
@@ -522,7 +525,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a new webhook Create a new webhook.
+        /// Create Webhook What we do at Conekta translates into events. For example, an event of interest to us occurs at the time a payment is successfully processed. At that moment we will be interested in doing several things: Send an email to the buyer, generate an invoice, start the process of shipping the product, etc.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookRequest">requested field for webhook</param>
@@ -594,7 +597,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a deleted webhook 
+        /// Delete Webhook 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -608,7 +611,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a deleted webhook 
+        /// Delete Webhook 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -676,7 +679,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a deleted webhook 
+        /// Delete Webhook 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -691,7 +694,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a deleted webhook 
+        /// Delete Webhook 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -762,7 +765,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a webhook 
+        /// Get Webhook 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -776,7 +779,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a webhook 
+        /// Get Webhook 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -844,7 +847,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a webhook 
+        /// Get Webhook 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -859,7 +862,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a webhook 
+        /// Get Webhook 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -930,7 +933,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a set of /webhooks 
+        /// Get List of Webhooks Consume the list of webhooks you have, each environment supports 10 webhooks (For production and testing)
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
@@ -947,7 +950,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a set of /webhooks 
+        /// Get List of Webhooks Consume the list of webhooks you have, each environment supports 10 webhooks (For production and testing)
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
@@ -1027,7 +1030,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a set of /webhooks 
+        /// Get List of Webhooks Consume the list of webhooks you have, each environment supports 10 webhooks (For production and testing)
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
@@ -1045,7 +1048,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a set of /webhooks 
+        /// Get List of Webhooks Consume the list of webhooks you have, each environment supports 10 webhooks (For production and testing)
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
@@ -1128,7 +1131,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// updates an existing webhook updates an existing webhook
+        /// Update Webhook updates an existing webhook
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -1143,7 +1146,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// updates an existing webhook updates an existing webhook
+        /// Update Webhook updates an existing webhook
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -1220,7 +1223,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// updates an existing webhook updates an existing webhook
+        /// Update Webhook updates an existing webhook
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -1236,7 +1239,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// updates an existing webhook updates an existing webhook
+        /// Update Webhook updates an existing webhook
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>

@@ -28,8 +28,11 @@ namespace Conekta.net.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// returns an event
+        /// Get Event
         /// </summary>
+        /// <remarks>
+        /// Returns a single event
+        /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
@@ -38,10 +41,10 @@ namespace Conekta.net.Api
         EventResponse GetEvent(string id, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// returns an event
+        /// Get Event
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a single event
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -50,7 +53,7 @@ namespace Conekta.net.Api
         /// <returns>ApiResponse of EventResponse</returns>
         ApiResponse<EventResponse> GetEventWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
-        /// returns a set of /events
+        /// Get list of Events
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
@@ -63,7 +66,7 @@ namespace Conekta.net.Api
         GetEventsResponse GetEvents(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// returns a set of /events
+        /// Get list of Events
         /// </summary>
         /// <remarks>
         /// 
@@ -87,10 +90,10 @@ namespace Conekta.net.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// returns an event
+        /// Get Event
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a single event
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -101,10 +104,10 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<EventResponse> GetEventAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// returns an event
+        /// Get Event
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a single event
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -114,7 +117,7 @@ namespace Conekta.net.Api
         /// <returns>Task of ApiResponse (EventResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<EventResponse>> GetEventWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// returns a set of /events
+        /// Get list of Events
         /// </summary>
         /// <remarks>
         /// 
@@ -131,7 +134,7 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<GetEventsResponse> GetEventsAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// returns a set of /events
+        /// Get list of Events
         /// </summary>
         /// <remarks>
         /// 
@@ -267,7 +270,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns an event 
+        /// Get Event Returns a single event
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -281,7 +284,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns an event 
+        /// Get Event Returns a single event
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -349,7 +352,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns an event 
+        /// Get Event Returns a single event
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -364,7 +367,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns an event 
+        /// Get Event Returns a single event
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -435,7 +438,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a set of /events 
+        /// Get list of Events 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
@@ -452,7 +455,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a set of /events 
+        /// Get list of Events 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
@@ -532,7 +535,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a set of /events 
+        /// Get list of Events 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
@@ -550,7 +553,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a set of /events 
+        /// Get list of Events 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>

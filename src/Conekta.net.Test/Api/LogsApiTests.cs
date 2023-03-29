@@ -72,7 +72,7 @@ namespace Conekta.net.Test.Api
 
             Assert.IsType<LogsResponse>(response);
             Assert.Equal(20, response.Data.Count);
-            Assert.NotNull(response.Data[0]["request_headers"]);
+            Assert.NotNull(response.Data[0].RequestHeaders);
         }
     }
 }

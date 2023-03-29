@@ -28,8 +28,11 @@ namespace Conekta.net.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Info for a specific log
+        /// Get Log
         /// </summary>
+        /// <remarks>
+        /// Get the details of a specific log
+        /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
@@ -38,10 +41,10 @@ namespace Conekta.net.Api
         LogResponse GetLogById(string id, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// Info for a specific log
+        /// Get Log
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get the details of a specific log
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -50,8 +53,11 @@ namespace Conekta.net.Api
         /// <returns>ApiResponse of LogResponse</returns>
         ApiResponse<LogResponse> GetLogByIdWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
-        /// returns a set of /logs
+        /// Get List Of Logs
         /// </summary>
+        /// <remarks>
+        /// Get log details in the form of a list
+        /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
@@ -63,10 +69,10 @@ namespace Conekta.net.Api
         LogsResponse GetLogs(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// returns a set of /logs
+        /// Get List Of Logs
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get log details in the form of a list
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
@@ -87,10 +93,10 @@ namespace Conekta.net.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Info for a specific log
+        /// Get Log
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get the details of a specific log
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -101,10 +107,10 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<LogResponse> GetLogByIdAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Info for a specific log
+        /// Get Log
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get the details of a specific log
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -114,10 +120,10 @@ namespace Conekta.net.Api
         /// <returns>Task of ApiResponse (LogResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<LogResponse>> GetLogByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// returns a set of /logs
+        /// Get List Of Logs
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get log details in the form of a list
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
@@ -131,10 +137,10 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<LogsResponse> GetLogsAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// returns a set of /logs
+        /// Get List Of Logs
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get log details in the form of a list
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
@@ -267,7 +273,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Info for a specific log 
+        /// Get Log Get the details of a specific log
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -281,7 +287,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Info for a specific log 
+        /// Get Log Get the details of a specific log
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -349,7 +355,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Info for a specific log 
+        /// Get Log Get the details of a specific log
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -364,7 +370,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Info for a specific log 
+        /// Get Log Get the details of a specific log
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -435,7 +441,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a set of /logs 
+        /// Get List Of Logs Get log details in the form of a list
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
@@ -452,7 +458,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a set of /logs 
+        /// Get List Of Logs Get log details in the form of a list
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
@@ -532,7 +538,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a set of /logs 
+        /// Get List Of Logs Get log details in the form of a list
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
@@ -550,7 +556,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a set of /logs 
+        /// Get List Of Logs Get log details in the form of a list
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>

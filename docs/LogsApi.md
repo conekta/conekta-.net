@@ -4,14 +4,16 @@ All URIs are relative to *https://api.conekta.io*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetLogById**](LogsApi.md#getlogbyid) | **GET** /logs/{id} | Info for a specific log |
-| [**GetLogs**](LogsApi.md#getlogs) | **GET** /logs | returns a set of /logs |
+| [**GetLogById**](LogsApi.md#getlogbyid) | **GET** /logs/{id} | Get Log |
+| [**GetLogs**](LogsApi.md#getlogs) | **GET** /logs | Get List Of Logs |
 
 <a name="getlogbyid"></a>
 # **GetLogById**
 > LogResponse GetLogById (string id, string acceptLanguage = null)
 
-Info for a specific log
+Get Log
+
+Get the details of a specific log
 
 ### Example
 ```csharp
@@ -38,7 +40,7 @@ namespace Example
 
             try
             {
-                // Info for a specific log
+                // Get Log
                 LogResponse result = apiInstance.GetLogById(id, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -59,7 +61,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Info for a specific log
+    // Get Log
     ApiResponse<LogResponse> response = apiInstance.GetLogByIdWithHttpInfo(id, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -98,7 +100,6 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | successful |  -  |
-| **422** | parameter validation error |  -  |
 | **401** | authentication error |  -  |
 | **404** | not found entity |  -  |
 | **500** | internal server error |  -  |
@@ -109,7 +110,9 @@ catch (ApiException e)
 # **GetLogs**
 > LogsResponse GetLogs (string acceptLanguage = null, int? limit = null, string search = null, string next = null, string previous = null)
 
-returns a set of /logs
+Get List Of Logs
+
+Get log details in the form of a list
 
 ### Example
 ```csharp
@@ -139,7 +142,7 @@ namespace Example
 
             try
             {
-                // returns a set of /logs
+                // Get List Of Logs
                 LogsResponse result = apiInstance.GetLogs(acceptLanguage, limit, search, next, previous);
                 Debug.WriteLine(result);
             }
@@ -160,7 +163,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // returns a set of /logs
+    // Get List Of Logs
     ApiResponse<LogsResponse> response = apiInstance.GetLogsWithHttpInfo(acceptLanguage, limit, search, next, previous);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -202,7 +205,6 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | successful |  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  |
-| **422** | parameter validation error |  -  |
 | **401** | authentication error |  -  |
 | **500** | internal server error |  -  |
 

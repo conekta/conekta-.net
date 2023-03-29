@@ -35,10 +35,10 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PlanUpdateRequest" /> class.
         /// </summary>
-        /// <param name="amount">amount.</param>
-        /// <param name="currency">currency.</param>
-        /// <param name="expiryCount">expiryCount.</param>
-        /// <param name="name">name.</param>
+        /// <param name="amount">The amount in cents that will be charged on the interval specified..</param>
+        /// <param name="currency">ISO 4217 for currencies, for the Mexican peso it is MXN/USD.</param>
+        /// <param name="expiryCount">Number of repetitions of the frequency NUMBER OF CHARGES TO BE MADE, considering the interval and frequency, this evolves over time, but is subject to the expiration count..</param>
+        /// <param name="name">The name of the plan..</param>
         public PlanUpdateRequest(int amount = default(int), string currency = default(string), int expiryCount = default(int), string name = default(string))
         {
             this.Amount = amount;
@@ -48,26 +48,30 @@ namespace Conekta.net.Model
         }
 
         /// <summary>
-        /// Gets or Sets Amount
+        /// The amount in cents that will be charged on the interval specified.
         /// </summary>
+        /// <value>The amount in cents that will be charged on the interval specified.</value>
         [DataMember(Name = "amount", EmitDefaultValue = false)]
         public int Amount { get; set; }
 
         /// <summary>
-        /// Gets or Sets Currency
+        /// ISO 4217 for currencies, for the Mexican peso it is MXN/USD
         /// </summary>
+        /// <value>ISO 4217 for currencies, for the Mexican peso it is MXN/USD</value>
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExpiryCount
+        /// Number of repetitions of the frequency NUMBER OF CHARGES TO BE MADE, considering the interval and frequency, this evolves over time, but is subject to the expiration count.
         /// </summary>
+        /// <value>Number of repetitions of the frequency NUMBER OF CHARGES TO BE MADE, considering the interval and frequency, this evolves over time, but is subject to the expiration count.</value>
         [DataMember(Name = "expiry_count", EmitDefaultValue = false)]
         public int ExpiryCount { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// The name of the plan.
         /// </summary>
+        /// <value>The name of the plan.</value>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 

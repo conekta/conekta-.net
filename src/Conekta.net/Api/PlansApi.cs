@@ -53,7 +53,7 @@ namespace Conekta.net.Api
         /// <returns>ApiResponse of PlanResponse</returns>
         ApiResponse<PlanResponse> CreatePlanWithHttpInfo(PlanRequest planRequest, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
-        /// deletes a plan
+        /// Delete Plan
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -63,7 +63,7 @@ namespace Conekta.net.Api
         PlanResponse DeletePlan(string id, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// deletes a plan
+        /// Delete Plan
         /// </summary>
         /// <remarks>
         /// 
@@ -125,7 +125,7 @@ namespace Conekta.net.Api
         /// <returns>ApiResponse of GetPlansResponse</returns>
         ApiResponse<GetPlansResponse> GetPlansWithHttpInfo(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
         /// <summary>
-        /// updates a plan
+        /// Update Plan
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -136,7 +136,7 @@ namespace Conekta.net.Api
         PlanResponse UpdatePlan(string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// updates a plan
+        /// Update Plan
         /// </summary>
         /// <remarks>
         /// 
@@ -185,7 +185,7 @@ namespace Conekta.net.Api
         /// <returns>Task of ApiResponse (PlanResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<PlanResponse>> CreatePlanWithHttpInfoAsync(PlanRequest planRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// deletes a plan
+        /// Delete Plan
         /// </summary>
         /// <remarks>
         /// 
@@ -199,7 +199,7 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<PlanResponse> DeletePlanAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// deletes a plan
+        /// Delete Plan
         /// </summary>
         /// <remarks>
         /// 
@@ -272,7 +272,7 @@ namespace Conekta.net.Api
         /// <returns>Task of ApiResponse (GetPlansResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetPlansResponse>> GetPlansWithHttpInfoAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// updates a plan
+        /// Update Plan
         /// </summary>
         /// <remarks>
         /// 
@@ -287,7 +287,7 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<PlanResponse> UpdatePlanAsync(string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// updates a plan
+        /// Update Plan
         /// </summary>
         /// <remarks>
         /// 
@@ -591,7 +591,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// deletes a plan 
+        /// Delete Plan 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -605,7 +605,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// deletes a plan 
+        /// Delete Plan 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -673,7 +673,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// deletes a plan 
+        /// Delete Plan 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -688,7 +688,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// deletes a plan 
+        /// Delete Plan 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -1125,7 +1125,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// updates a plan 
+        /// Update Plan 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -1140,7 +1140,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// updates a plan 
+        /// Update Plan 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -1217,7 +1217,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// updates a plan 
+        /// Update Plan 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -1233,7 +1233,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// updates a plan 
+        /// Update Plan 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>

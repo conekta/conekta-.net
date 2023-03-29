@@ -4,19 +4,19 @@ All URIs are relative to *https://api.conekta.io*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CreateWebhook**](WebhooksApi.md#createwebhook) | **POST** /webhooks | creates a new webhook |
-| [**DeleteWebhook**](WebhooksApi.md#deletewebhook) | **DELETE** /webhooks/{id} | returns a deleted webhook |
-| [**GetWebhook**](WebhooksApi.md#getwebhook) | **GET** /webhooks/{id} | returns a webhook |
-| [**GetWebhooks**](WebhooksApi.md#getwebhooks) | **GET** /webhooks | returns a set of /webhooks |
-| [**UpdateWebhook**](WebhooksApi.md#updatewebhook) | **PUT** /webhooks/{id} | updates an existing webhook |
+| [**CreateWebhook**](WebhooksApi.md#createwebhook) | **POST** /webhooks | Create Webhook |
+| [**DeleteWebhook**](WebhooksApi.md#deletewebhook) | **DELETE** /webhooks/{id} | Delete Webhook |
+| [**GetWebhook**](WebhooksApi.md#getwebhook) | **GET** /webhooks/{id} | Get Webhook |
+| [**GetWebhooks**](WebhooksApi.md#getwebhooks) | **GET** /webhooks | Get List of Webhooks |
+| [**UpdateWebhook**](WebhooksApi.md#updatewebhook) | **PUT** /webhooks/{id} | Update Webhook |
 
 <a name="createwebhook"></a>
 # **CreateWebhook**
 > WebhookResponse CreateWebhook (WebhookRequest webhookRequest, string acceptLanguage = null)
 
-creates a new webhook
+Create Webhook
 
-Create a new webhook.
+What we do at Conekta translates into events. For example, an event of interest to us occurs at the time a payment is successfully processed. At that moment we will be interested in doing several things: Send an email to the buyer, generate an invoice, start the process of shipping the product, etc.
 
 ### Example
 ```csharp
@@ -43,7 +43,7 @@ namespace Example
 
             try
             {
-                // creates a new webhook
+                // Create Webhook
                 WebhookResponse result = apiInstance.CreateWebhook(webhookRequest, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -64,7 +64,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // creates a new webhook
+    // Create Webhook
     ApiResponse<WebhookResponse> response = apiInstance.CreateWebhookWithHttpInfo(webhookRequest, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -103,7 +103,6 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
-| **422** | parameter validation error |  -  |
 | **401** | authentication error |  -  |
 | **500** | internal server error |  -  |
 
@@ -113,7 +112,7 @@ catch (ApiException e)
 # **DeleteWebhook**
 > WebhookResponse DeleteWebhook (string id, string acceptLanguage = null)
 
-returns a deleted webhook
+Delete Webhook
 
 ### Example
 ```csharp
@@ -140,7 +139,7 @@ namespace Example
 
             try
             {
-                // returns a deleted webhook
+                // Delete Webhook
                 WebhookResponse result = apiInstance.DeleteWebhook(id, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -161,7 +160,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // returns a deleted webhook
+    // Delete Webhook
     ApiResponse<WebhookResponse> response = apiInstance.DeleteWebhookWithHttpInfo(id, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -200,7 +199,6 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | successful |  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  |
-| **422** | parameter validation error |  -  |
 | **401** | authentication error |  -  |
 | **404** | not found entity |  -  |
 | **500** | internal server error |  -  |
@@ -211,7 +209,7 @@ catch (ApiException e)
 # **GetWebhook**
 > WebhookResponse GetWebhook (string id, string acceptLanguage = null)
 
-returns a webhook
+Get Webhook
 
 ### Example
 ```csharp
@@ -238,7 +236,7 @@ namespace Example
 
             try
             {
-                // returns a webhook
+                // Get Webhook
                 WebhookResponse result = apiInstance.GetWebhook(id, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -259,7 +257,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // returns a webhook
+    // Get Webhook
     ApiResponse<WebhookResponse> response = apiInstance.GetWebhookWithHttpInfo(id, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -298,7 +296,6 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | successful |  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  |
-| **422** | parameter validation error |  -  |
 | **401** | authentication error |  -  |
 | **404** | not found entity |  -  |
 | **500** | internal server error |  -  |
@@ -309,7 +306,9 @@ catch (ApiException e)
 # **GetWebhooks**
 > GetWebhooksResponse GetWebhooks (string acceptLanguage = null, int? limit = null, string search = null, string next = null, string previous = null)
 
-returns a set of /webhooks
+Get List of Webhooks
+
+Consume the list of webhooks you have, each environment supports 10 webhooks (For production and testing)
 
 ### Example
 ```csharp
@@ -339,7 +338,7 @@ namespace Example
 
             try
             {
-                // returns a set of /webhooks
+                // Get List of Webhooks
                 GetWebhooksResponse result = apiInstance.GetWebhooks(acceptLanguage, limit, search, next, previous);
                 Debug.WriteLine(result);
             }
@@ -360,7 +359,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // returns a set of /webhooks
+    // Get List of Webhooks
     ApiResponse<GetWebhooksResponse> response = apiInstance.GetWebhooksWithHttpInfo(acceptLanguage, limit, search, next, previous);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -402,7 +401,6 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | successful |  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  |
-| **422** | parameter validation error |  -  |
 | **401** | authentication error |  -  |
 | **500** | internal server error |  -  |
 
@@ -412,7 +410,7 @@ catch (ApiException e)
 # **UpdateWebhook**
 > WebhookResponse UpdateWebhook (string id, WebhookUpdateRequest webhookUpdateRequest, string acceptLanguage = null)
 
-updates an existing webhook
+Update Webhook
 
 updates an existing webhook
 
@@ -442,7 +440,7 @@ namespace Example
 
             try
             {
-                // updates an existing webhook
+                // Update Webhook
                 WebhookResponse result = apiInstance.UpdateWebhook(id, webhookUpdateRequest, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -463,7 +461,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // updates an existing webhook
+    // Update Webhook
     ApiResponse<WebhookResponse> response = apiInstance.UpdateWebhookWithHttpInfo(id, webhookUpdateRequest, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -503,7 +501,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
-| **422** | parameter validation error |  -  |
+| **404** | not found entity |  -  |
 | **401** | authentication error |  -  |
 | **500** | internal server error |  -  |
 

@@ -28,8 +28,11 @@ namespace Conekta.net.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// cancels a subscription
+        /// Cancel Subscription
         /// </summary>
+        /// <remarks>
+        /// You can cancel the subscription to stop the plans that your customers consume
+        /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
@@ -38,10 +41,10 @@ namespace Conekta.net.Api
         SubscriptionResponse CancelSubscription(string id, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// cancels a subscription
+        /// Cancel Subscription
         /// </summary>
         /// <remarks>
-        /// 
+        /// You can cancel the subscription to stop the plans that your customers consume
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -50,8 +53,11 @@ namespace Conekta.net.Api
         /// <returns>ApiResponse of SubscriptionResponse</returns>
         ApiResponse<SubscriptionResponse> CancelSubscriptionWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
-        /// creates a subscription
+        /// Create Subscription
         /// </summary>
+        /// <remarks>
+        /// You can create the subscription to include the plans that your customers consume
+        /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="subscriptionRequest">requested field for subscriptions</param>
@@ -61,10 +67,10 @@ namespace Conekta.net.Api
         SubscriptionResponse CreateSubscription(string id, SubscriptionRequest subscriptionRequest, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// creates a subscription
+        /// Create Subscription
         /// </summary>
         /// <remarks>
-        /// 
+        /// You can create the subscription to include the plans that your customers consume
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -74,8 +80,11 @@ namespace Conekta.net.Api
         /// <returns>ApiResponse of SubscriptionResponse</returns>
         ApiResponse<SubscriptionResponse> CreateSubscriptionWithHttpInfo(string id, SubscriptionRequest subscriptionRequest, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
-        /// You can get the events of the subscription(s) of a client, with the customer id
+        /// Get Events By Subscription
         /// </summary>
+        /// <remarks>
+        /// You can get the events of the subscription(s) of a client, with the customer id
+        /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
@@ -84,10 +93,10 @@ namespace Conekta.net.Api
         SubscriptionEventsResponse GetAllEventsFromSubscription(string id, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// You can get the events of the subscription(s) of a client, with the customer id
+        /// Get Events By Subscription
         /// </summary>
         /// <remarks>
-        /// 
+        /// You can get the events of the subscription(s) of a client, with the customer id
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -96,7 +105,7 @@ namespace Conekta.net.Api
         /// <returns>ApiResponse of SubscriptionEventsResponse</returns>
         ApiResponse<SubscriptionEventsResponse> GetAllEventsFromSubscriptionWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
-        /// returns a subscription
+        /// Get Subscription
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -106,7 +115,7 @@ namespace Conekta.net.Api
         SubscriptionResponse GetSubscription(string id, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// returns a subscription
+        /// Get Subscription
         /// </summary>
         /// <remarks>
         /// 
@@ -118,8 +127,11 @@ namespace Conekta.net.Api
         /// <returns>ApiResponse of SubscriptionResponse</returns>
         ApiResponse<SubscriptionResponse> GetSubscriptionWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
-        /// pauses a subscription
+        /// Pause Subscription
         /// </summary>
+        /// <remarks>
+        /// You can pause the subscription to stop the plans that your customers consume
+        /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
@@ -128,10 +140,10 @@ namespace Conekta.net.Api
         SubscriptionResponse PauseSubscription(string id, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// pauses a subscription
+        /// Pause Subscription
         /// </summary>
         /// <remarks>
-        /// 
+        /// You can pause the subscription to stop the plans that your customers consume
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -140,8 +152,11 @@ namespace Conekta.net.Api
         /// <returns>ApiResponse of SubscriptionResponse</returns>
         ApiResponse<SubscriptionResponse> PauseSubscriptionWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
-        /// resumes a subscription
+        /// Resume Subscription
         /// </summary>
+        /// <remarks>
+        /// You can resume the subscription to start the plans that your customers consume
+        /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
@@ -150,10 +165,10 @@ namespace Conekta.net.Api
         SubscriptionResponse ResumeSubscription(string id, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// resumes a subscription
+        /// Resume Subscription
         /// </summary>
         /// <remarks>
-        /// 
+        /// You can resume the subscription to start the plans that your customers consume
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -162,8 +177,11 @@ namespace Conekta.net.Api
         /// <returns>ApiResponse of SubscriptionResponse</returns>
         ApiResponse<SubscriptionResponse> ResumeSubscriptionWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
-        /// updates a subscription
+        /// Update Subscription
         /// </summary>
+        /// <remarks>
+        /// You can modify the subscription to change the plans that your customers consume
+        /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
@@ -173,10 +191,10 @@ namespace Conekta.net.Api
         SubscriptionResponse UpdateSubscription(string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// updates a subscription
+        /// Update Subscription
         /// </summary>
         /// <remarks>
-        /// 
+        /// You can modify the subscription to change the plans that your customers consume
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -195,10 +213,10 @@ namespace Conekta.net.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// cancels a subscription
+        /// Cancel Subscription
         /// </summary>
         /// <remarks>
-        /// 
+        /// You can cancel the subscription to stop the plans that your customers consume
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -209,10 +227,10 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<SubscriptionResponse> CancelSubscriptionAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// cancels a subscription
+        /// Cancel Subscription
         /// </summary>
         /// <remarks>
-        /// 
+        /// You can cancel the subscription to stop the plans that your customers consume
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -222,10 +240,10 @@ namespace Conekta.net.Api
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<SubscriptionResponse>> CancelSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// creates a subscription
+        /// Create Subscription
         /// </summary>
         /// <remarks>
-        /// 
+        /// You can create the subscription to include the plans that your customers consume
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -237,10 +255,10 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<SubscriptionResponse> CreateSubscriptionAsync(string id, SubscriptionRequest subscriptionRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// creates a subscription
+        /// Create Subscription
         /// </summary>
         /// <remarks>
-        /// 
+        /// You can create the subscription to include the plans that your customers consume
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -251,10 +269,10 @@ namespace Conekta.net.Api
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<SubscriptionResponse>> CreateSubscriptionWithHttpInfoAsync(string id, SubscriptionRequest subscriptionRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// You can get the events of the subscription(s) of a client, with the customer id
+        /// Get Events By Subscription
         /// </summary>
         /// <remarks>
-        /// 
+        /// You can get the events of the subscription(s) of a client, with the customer id
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -265,10 +283,10 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<SubscriptionEventsResponse> GetAllEventsFromSubscriptionAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// You can get the events of the subscription(s) of a client, with the customer id
+        /// Get Events By Subscription
         /// </summary>
         /// <remarks>
-        /// 
+        /// You can get the events of the subscription(s) of a client, with the customer id
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -278,7 +296,7 @@ namespace Conekta.net.Api
         /// <returns>Task of ApiResponse (SubscriptionEventsResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<SubscriptionEventsResponse>> GetAllEventsFromSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// returns a subscription
+        /// Get Subscription
         /// </summary>
         /// <remarks>
         /// 
@@ -292,7 +310,7 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<SubscriptionResponse> GetSubscriptionAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// returns a subscription
+        /// Get Subscription
         /// </summary>
         /// <remarks>
         /// 
@@ -305,10 +323,10 @@ namespace Conekta.net.Api
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<SubscriptionResponse>> GetSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// pauses a subscription
+        /// Pause Subscription
         /// </summary>
         /// <remarks>
-        /// 
+        /// You can pause the subscription to stop the plans that your customers consume
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -319,10 +337,10 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<SubscriptionResponse> PauseSubscriptionAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// pauses a subscription
+        /// Pause Subscription
         /// </summary>
         /// <remarks>
-        /// 
+        /// You can pause the subscription to stop the plans that your customers consume
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -332,10 +350,10 @@ namespace Conekta.net.Api
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<SubscriptionResponse>> PauseSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// resumes a subscription
+        /// Resume Subscription
         /// </summary>
         /// <remarks>
-        /// 
+        /// You can resume the subscription to start the plans that your customers consume
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -346,10 +364,10 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<SubscriptionResponse> ResumeSubscriptionAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// resumes a subscription
+        /// Resume Subscription
         /// </summary>
         /// <remarks>
-        /// 
+        /// You can resume the subscription to start the plans that your customers consume
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -359,10 +377,10 @@ namespace Conekta.net.Api
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<SubscriptionResponse>> ResumeSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// updates a subscription
+        /// Update Subscription
         /// </summary>
         /// <remarks>
-        /// 
+        /// You can modify the subscription to change the plans that your customers consume
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -374,10 +392,10 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<SubscriptionResponse> UpdateSubscriptionAsync(string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// updates a subscription
+        /// Update Subscription
         /// </summary>
         /// <remarks>
-        /// 
+        /// You can modify the subscription to change the plans that your customers consume
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -508,7 +526,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// cancels a subscription 
+        /// Cancel Subscription You can cancel the subscription to stop the plans that your customers consume
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -522,7 +540,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// cancels a subscription 
+        /// Cancel Subscription You can cancel the subscription to stop the plans that your customers consume
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -590,7 +608,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// cancels a subscription 
+        /// Cancel Subscription You can cancel the subscription to stop the plans that your customers consume
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -605,7 +623,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// cancels a subscription 
+        /// Cancel Subscription You can cancel the subscription to stop the plans that your customers consume
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -676,7 +694,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a subscription 
+        /// Create Subscription You can create the subscription to include the plans that your customers consume
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -691,7 +709,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a subscription 
+        /// Create Subscription You can create the subscription to include the plans that your customers consume
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -768,7 +786,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a subscription 
+        /// Create Subscription You can create the subscription to include the plans that your customers consume
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -784,7 +802,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// creates a subscription 
+        /// Create Subscription You can create the subscription to include the plans that your customers consume
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -864,7 +882,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// You can get the events of the subscription(s) of a client, with the customer id 
+        /// Get Events By Subscription You can get the events of the subscription(s) of a client, with the customer id
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -878,7 +896,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// You can get the events of the subscription(s) of a client, with the customer id 
+        /// Get Events By Subscription You can get the events of the subscription(s) of a client, with the customer id
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -946,7 +964,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// You can get the events of the subscription(s) of a client, with the customer id 
+        /// Get Events By Subscription You can get the events of the subscription(s) of a client, with the customer id
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -961,7 +979,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// You can get the events of the subscription(s) of a client, with the customer id 
+        /// Get Events By Subscription You can get the events of the subscription(s) of a client, with the customer id
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -1032,7 +1050,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a subscription 
+        /// Get Subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -1046,7 +1064,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a subscription 
+        /// Get Subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -1114,7 +1132,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a subscription 
+        /// Get Subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -1129,7 +1147,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// returns a subscription 
+        /// Get Subscription 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -1200,7 +1218,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// pauses a subscription 
+        /// Pause Subscription You can pause the subscription to stop the plans that your customers consume
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -1214,7 +1232,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// pauses a subscription 
+        /// Pause Subscription You can pause the subscription to stop the plans that your customers consume
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -1282,7 +1300,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// pauses a subscription 
+        /// Pause Subscription You can pause the subscription to stop the plans that your customers consume
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -1297,7 +1315,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// pauses a subscription 
+        /// Pause Subscription You can pause the subscription to stop the plans that your customers consume
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -1368,7 +1386,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// resumes a subscription 
+        /// Resume Subscription You can resume the subscription to start the plans that your customers consume
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -1382,7 +1400,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// resumes a subscription 
+        /// Resume Subscription You can resume the subscription to start the plans that your customers consume
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -1450,7 +1468,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// resumes a subscription 
+        /// Resume Subscription You can resume the subscription to start the plans that your customers consume
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -1465,7 +1483,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// resumes a subscription 
+        /// Resume Subscription You can resume the subscription to start the plans that your customers consume
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -1536,7 +1554,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// updates a subscription 
+        /// Update Subscription You can modify the subscription to change the plans that your customers consume
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -1551,7 +1569,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// updates a subscription 
+        /// Update Subscription You can modify the subscription to change the plans that your customers consume
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -1628,7 +1646,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// updates a subscription 
+        /// Update Subscription You can modify the subscription to change the plans that your customers consume
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -1644,7 +1662,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// updates a subscription 
+        /// Update Subscription You can modify the subscription to change the plans that your customers consume
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>

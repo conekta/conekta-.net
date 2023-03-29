@@ -33,8 +33,9 @@ namespace Conekta.net.Model
     public partial class PlanRequest : IEquatable<PlanRequest>, IValidatableObject
     {
         /// <summary>
-        /// Defines Interval
+        /// The interval of time between each charge.
         /// </summary>
+        /// <value>The interval of time between each charge.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum IntervalEnum
         {
@@ -66,8 +67,9 @@ namespace Conekta.net.Model
 
 
         /// <summary>
-        /// Gets or Sets Interval
+        /// The interval of time between each charge.
         /// </summary>
+        /// <value>The interval of time between each charge.</value>
         [DataMember(Name = "interval", IsRequired = true, EmitDefaultValue = true)]
         public IntervalEnum Interval { get; set; }
         /// <summary>
@@ -78,19 +80,19 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PlanRequest" /> class.
         /// </summary>
-        /// <param name="amount">amount (required).</param>
-        /// <param name="currency">currency.</param>
-        /// <param name="expiryCount">expiryCount.</param>
-        /// <param name="id">id.</param>
-        /// <param name="interval">interval (required).</param>
-        /// <param name="frequency">frequency (required).</param>
-        /// <param name="name">name (required).</param>
-        /// <param name="trialPeriodDays">trialPeriodDays.</param>
-        public PlanRequest(int amount = default(int), string currency = default(string), int expiryCount = default(int), string id = default(string), IntervalEnum interval = default(IntervalEnum), int frequency = default(int), string name = default(string), int trialPeriodDays = default(int))
+        /// <param name="amount">The amount in cents that will be charged on the interval specified. (required).</param>
+        /// <param name="currency">ISO 4217 for currencies, for the Mexican peso it is MXN/USD.</param>
+        /// <param name="expiryCount">Number of repetitions of the frequency NUMBER OF CHARGES TO BE MADE, considering the interval and frequency, this evolves over time, but is subject to the expiration count..</param>
+        /// <param name="frequency">Frequency of the charge, which together with the interval, can be every 3 weeks, every 4 months, every 2 years, every 5 fortnights (required).</param>
+        /// <param name="id">internal reference id.</param>
+        /// <param name="interval">The interval of time between each charge. (required).</param>
+        /// <param name="name">The name of the plan. (required).</param>
+        /// <param name="trialPeriodDays">The number of days the customer will have a free trial..</param>
+        public PlanRequest(int amount = default(int), string currency = default(string), int expiryCount = default(int), int frequency = default(int), string id = default(string), IntervalEnum interval = default(IntervalEnum), string name = default(string), int trialPeriodDays = default(int))
         {
             this.Amount = amount;
-            this.Interval = interval;
             this.Frequency = frequency;
+            this.Interval = interval;
             // to ensure "name" is required (not null)
             if (name == null)
             {
@@ -104,44 +106,51 @@ namespace Conekta.net.Model
         }
 
         /// <summary>
-        /// Gets or Sets Amount
+        /// The amount in cents that will be charged on the interval specified.
         /// </summary>
+        /// <value>The amount in cents that will be charged on the interval specified.</value>
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
         public int Amount { get; set; }
 
         /// <summary>
-        /// Gets or Sets Currency
+        /// ISO 4217 for currencies, for the Mexican peso it is MXN/USD
         /// </summary>
+        /// <value>ISO 4217 for currencies, for the Mexican peso it is MXN/USD</value>
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExpiryCount
+        /// Number of repetitions of the frequency NUMBER OF CHARGES TO BE MADE, considering the interval and frequency, this evolves over time, but is subject to the expiration count.
         /// </summary>
+        /// <value>Number of repetitions of the frequency NUMBER OF CHARGES TO BE MADE, considering the interval and frequency, this evolves over time, but is subject to the expiration count.</value>
         [DataMember(Name = "expiry_count", EmitDefaultValue = false)]
         public int ExpiryCount { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Frequency of the charge, which together with the interval, can be every 3 weeks, every 4 months, every 2 years, every 5 fortnights
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public string Id { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Frequency
-        /// </summary>
+        /// <value>Frequency of the charge, which together with the interval, can be every 3 weeks, every 4 months, every 2 years, every 5 fortnights</value>
         [DataMember(Name = "frequency", IsRequired = true, EmitDefaultValue = true)]
         public int Frequency { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// internal reference id
         /// </summary>
+        /// <value>internal reference id</value>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// The name of the plan.
+        /// </summary>
+        /// <value>The name of the plan.</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets TrialPeriodDays
+        /// The number of days the customer will have a free trial.
         /// </summary>
+        /// <value>The number of days the customer will have a free trial.</value>
         [DataMember(Name = "trial_period_days", EmitDefaultValue = false)]
         public int TrialPeriodDays { get; set; }
 
@@ -156,9 +165,9 @@ namespace Conekta.net.Model
             sb.Append("  Amount: ").Append(Amount).Append("\n");
             sb.Append("  Currency: ").Append(Currency).Append("\n");
             sb.Append("  ExpiryCount: ").Append(ExpiryCount).Append("\n");
+            sb.Append("  Frequency: ").Append(Frequency).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Interval: ").Append(Interval).Append("\n");
-            sb.Append("  Frequency: ").Append(Frequency).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  TrialPeriodDays: ").Append(TrialPeriodDays).Append("\n");
             sb.Append("}\n");
@@ -210,6 +219,10 @@ namespace Conekta.net.Model
                     this.ExpiryCount.Equals(input.ExpiryCount)
                 ) && 
                 (
+                    this.Frequency == input.Frequency ||
+                    this.Frequency.Equals(input.Frequency)
+                ) && 
+                (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
@@ -217,10 +230,6 @@ namespace Conekta.net.Model
                 (
                     this.Interval == input.Interval ||
                     this.Interval.Equals(input.Interval)
-                ) && 
-                (
-                    this.Frequency == input.Frequency ||
-                    this.Frequency.Equals(input.Frequency)
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -248,12 +257,12 @@ namespace Conekta.net.Model
                     hashCode = (hashCode * 59) + this.Currency.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.ExpiryCount.GetHashCode();
+                hashCode = (hashCode * 59) + this.Frequency.GetHashCode();
                 if (this.Id != null)
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Interval.GetHashCode();
-                hashCode = (hashCode * 59) + this.Frequency.GetHashCode();
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
