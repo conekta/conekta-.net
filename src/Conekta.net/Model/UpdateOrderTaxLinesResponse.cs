@@ -40,8 +40,8 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateOrderTaxLinesResponse" /> class.
         /// </summary>
-        /// <param name="amount">amount (required).</param>
-        /// <param name="description">description (required).</param>
+        /// <param name="amount">The amount to be collected for tax in cents (required).</param>
+        /// <param name="description">description or tax&#39;s name (required).</param>
         /// <param name="metadata">metadata.</param>
         /// <param name="id">id (required).</param>
         /// <param name="_object">_object.</param>
@@ -67,14 +67,16 @@ namespace Conekta.net.Model
         }
 
         /// <summary>
-        /// Gets or Sets Amount
+        /// The amount to be collected for tax in cents
         /// </summary>
+        /// <value>The amount to be collected for tax in cents</value>
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
         public long Amount { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// description or tax&#39;s name
         /// </summary>
+        /// <value>description or tax&#39;s name</value>
         [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
         public string Description { get; set; }
 

@@ -14,7 +14,7 @@ All URIs are relative to *https://api.conekta.io*
 
 Create Discount
 
-creates a new discount lines for an existing orden
+Create discount lines for an existing orden
 
 ### Example
 ```csharp
@@ -217,7 +217,7 @@ catch (ApiException e)
 
 Update Discount
 
-updates an existing discount lines for an existing orden
+Update an existing discount lines for an existing orden
 
 ### Example
 ```csharp

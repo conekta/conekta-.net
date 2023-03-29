@@ -14,7 +14,7 @@ All URIs are relative to *https://api.conekta.io*
 
 Create Tax
 
-creates a new tax lines for an existing orden
+Create a new tax lines for an existing orden
 
 ### Example
 ```csharp
@@ -104,7 +104,6 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | successful |  -  |
 | **401** | authentication error |  -  |
-| **422** | parameter validation error |  -  |
 | **404** | not found entity |  -  |
 | **500** | internal server error |  -  |
 
@@ -218,7 +217,7 @@ catch (ApiException e)
 
 Update Tax
 
-updates a tax lines for an existing orden
+Update a tax lines for an existing orden
 
 ### Example
 ```csharp

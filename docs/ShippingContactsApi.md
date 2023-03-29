@@ -14,7 +14,7 @@ All URIs are relative to *https://api.conekta.io*
 
 Create a shipping contacts
 
-Gets a customer resource that corresponds to a customer ID.
+Create a shipping contacts for a customer.
 
 ### Example
 ```csharp
@@ -218,7 +218,7 @@ catch (ApiException e)
 
 Update shipping contacts
 
-Gets a customer resource that corresponds to a customer ID.
+Update shipping contact that corresponds to a customer ID.
 
 ### Example
 ```csharp

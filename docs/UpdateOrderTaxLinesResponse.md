@@ -5,8 +5,8 @@ create a new tax lines for an existing order response
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **long** |  | 
-**Description** | **string** |  | 
+**Amount** | **long** | The amount to be collected for tax in cents | 
+**Description** | **string** | description or tax&#39;s name | 
 **Metadata** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **Id** | **string** |  | 
 **Object** | **string** |  | [optional] 

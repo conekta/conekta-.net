@@ -5,8 +5,8 @@ create a new tax lines for an existing order
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **long** |  | 
-**Description** | **string** |  | 
+**Amount** | **long** | The amount to be collected for tax in cents | 
+**Description** | **string** | description or tax&#39;s name | 
 **Metadata** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

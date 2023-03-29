@@ -31,7 +31,7 @@ namespace Conekta.net.Api
         /// Create a shipping contacts
         /// </summary>
         /// <remarks>
-        /// Gets a customer resource that corresponds to a customer ID.
+        /// Create a shipping contacts for a customer.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -45,7 +45,7 @@ namespace Conekta.net.Api
         /// Create a shipping contacts
         /// </summary>
         /// <remarks>
-        /// Gets a customer resource that corresponds to a customer ID.
+        /// Create a shipping contacts for a customer.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -85,7 +85,7 @@ namespace Conekta.net.Api
         /// Update shipping contacts
         /// </summary>
         /// <remarks>
-        /// Gets a customer resource that corresponds to a customer ID.
+        /// Update shipping contact that corresponds to a customer ID.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -100,7 +100,7 @@ namespace Conekta.net.Api
         /// Update shipping contacts
         /// </summary>
         /// <remarks>
-        /// Gets a customer resource that corresponds to a customer ID.
+        /// Update shipping contact that corresponds to a customer ID.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -123,7 +123,7 @@ namespace Conekta.net.Api
         /// Create a shipping contacts
         /// </summary>
         /// <remarks>
-        /// Gets a customer resource that corresponds to a customer ID.
+        /// Create a shipping contacts for a customer.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -138,7 +138,7 @@ namespace Conekta.net.Api
         /// Create a shipping contacts
         /// </summary>
         /// <remarks>
-        /// Gets a customer resource that corresponds to a customer ID.
+        /// Create a shipping contacts for a customer.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -181,7 +181,7 @@ namespace Conekta.net.Api
         /// Update shipping contacts
         /// </summary>
         /// <remarks>
-        /// Gets a customer resource that corresponds to a customer ID.
+        /// Update shipping contact that corresponds to a customer ID.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -197,7 +197,7 @@ namespace Conekta.net.Api
         /// Update shipping contacts
         /// </summary>
         /// <remarks>
-        /// Gets a customer resource that corresponds to a customer ID.
+        /// Update shipping contact that corresponds to a customer ID.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -329,7 +329,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create a shipping contacts Gets a customer resource that corresponds to a customer ID.
+        /// Create a shipping contacts Create a shipping contacts for a customer.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -344,7 +344,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create a shipping contacts Gets a customer resource that corresponds to a customer ID.
+        /// Create a shipping contacts Create a shipping contacts for a customer.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -421,7 +421,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create a shipping contacts Gets a customer resource that corresponds to a customer ID.
+        /// Create a shipping contacts Create a shipping contacts for a customer.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -437,7 +437,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create a shipping contacts Gets a customer resource that corresponds to a customer ID.
+        /// Create a shipping contacts Create a shipping contacts for a customer.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -703,7 +703,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Update shipping contacts Gets a customer resource that corresponds to a customer ID.
+        /// Update shipping contacts Update shipping contact that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -719,7 +719,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Update shipping contacts Gets a customer resource that corresponds to a customer ID.
+        /// Update shipping contacts Update shipping contact that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -804,7 +804,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Update shipping contacts Gets a customer resource that corresponds to a customer ID.
+        /// Update shipping contacts Update shipping contact that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -821,7 +821,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Update shipping contacts Gets a customer resource that corresponds to a customer ID.
+        /// Update shipping contacts Update shipping contact that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>

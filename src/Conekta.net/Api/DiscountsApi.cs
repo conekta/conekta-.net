@@ -31,7 +31,7 @@ namespace Conekta.net.Api
         /// Create Discount
         /// </summary>
         /// <remarks>
-        /// creates a new discount lines for an existing orden
+        /// Create discount lines for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -45,7 +45,7 @@ namespace Conekta.net.Api
         /// Create Discount
         /// </summary>
         /// <remarks>
-        /// creates a new discount lines for an existing orden
+        /// Create discount lines for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -85,7 +85,7 @@ namespace Conekta.net.Api
         /// Update Discount
         /// </summary>
         /// <remarks>
-        /// updates an existing discount lines for an existing orden
+        /// Update an existing discount lines for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -100,7 +100,7 @@ namespace Conekta.net.Api
         /// Update Discount
         /// </summary>
         /// <remarks>
-        /// updates an existing discount lines for an existing orden
+        /// Update an existing discount lines for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -123,7 +123,7 @@ namespace Conekta.net.Api
         /// Create Discount
         /// </summary>
         /// <remarks>
-        /// creates a new discount lines for an existing orden
+        /// Create discount lines for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -138,7 +138,7 @@ namespace Conekta.net.Api
         /// Create Discount
         /// </summary>
         /// <remarks>
-        /// creates a new discount lines for an existing orden
+        /// Create discount lines for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -181,7 +181,7 @@ namespace Conekta.net.Api
         /// Update Discount
         /// </summary>
         /// <remarks>
-        /// updates an existing discount lines for an existing orden
+        /// Update an existing discount lines for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -197,7 +197,7 @@ namespace Conekta.net.Api
         /// Update Discount
         /// </summary>
         /// <remarks>
-        /// updates an existing discount lines for an existing orden
+        /// Update an existing discount lines for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -329,7 +329,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create Discount creates a new discount lines for an existing orden
+        /// Create Discount Create discount lines for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -344,7 +344,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create Discount creates a new discount lines for an existing orden
+        /// Create Discount Create discount lines for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -421,7 +421,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create Discount creates a new discount lines for an existing orden
+        /// Create Discount Create discount lines for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -437,7 +437,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create Discount creates a new discount lines for an existing orden
+        /// Create Discount Create discount lines for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -703,7 +703,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Update Discount updates an existing discount lines for an existing orden
+        /// Update Discount Update an existing discount lines for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -719,7 +719,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Update Discount updates an existing discount lines for an existing orden
+        /// Update Discount Update an existing discount lines for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -804,7 +804,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Update Discount updates an existing discount lines for an existing orden
+        /// Update Discount Update an existing discount lines for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -821,7 +821,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Update Discount updates an existing discount lines for an existing orden
+        /// Update Discount Update an existing discount lines for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
