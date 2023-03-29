@@ -27,30 +27,30 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// CustomerPaymentSourcesResponse
+    /// CustomersDataResponsePaymentSources
     /// </summary>
-    [DataContract(Name = "customer_payment_sources_response")]
-    public partial class CustomerPaymentSourcesResponse : IEquatable<CustomerPaymentSourcesResponse>, IValidatableObject
+    [DataContract(Name = "customers_data_response_payment_sources")]
+    public partial class CustomersDataResponsePaymentSources : IEquatable<CustomersDataResponsePaymentSources>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomerPaymentSourcesResponse" /> class.
+        /// Initializes a new instance of the <see cref="CustomersDataResponsePaymentSources" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected CustomerPaymentSourcesResponse() { }
+        protected CustomersDataResponsePaymentSources() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomerPaymentSourcesResponse" /> class.
+        /// Initializes a new instance of the <see cref="CustomersDataResponsePaymentSources" /> class.
         /// </summary>
         /// <param name="_object">_object (required).</param>
         /// <param name="hasMore">hasMore (required).</param>
         /// <param name="nextPageUrl">URL of the next page..</param>
         /// <param name="previousPageUrl">Url of the previous page..</param>
         /// <param name="data">data.</param>
-        public CustomerPaymentSourcesResponse(string _object = default(string), bool hasMore = default(bool), string nextPageUrl = default(string), string previousPageUrl = default(string), List<CustomerPaymentSourcesData> data = default(List<CustomerPaymentSourcesData>))
+        public CustomersDataResponsePaymentSources(string _object = default(string), bool hasMore = default(bool), string nextPageUrl = default(string), string previousPageUrl = default(string), List<CustomerPaymentSourcesData> data = default(List<CustomerPaymentSourcesData>))
         {
             // to ensure "_object" is required (not null)
             if (_object == null)
             {
-                throw new ArgumentNullException("_object is a required property for CustomerPaymentSourcesResponse and cannot be null");
+                throw new ArgumentNullException("_object is a required property for CustomersDataResponsePaymentSources and cannot be null");
             }
             this.Object = _object;
             this.HasMore = hasMore;
@@ -98,7 +98,7 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CustomerPaymentSourcesResponse {\n");
+            sb.Append("class CustomersDataResponsePaymentSources {\n");
             sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  HasMore: ").Append(HasMore).Append("\n");
             sb.Append("  NextPageUrl: ").Append(NextPageUrl).Append("\n");
@@ -124,15 +124,15 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CustomerPaymentSourcesResponse);
+            return this.Equals(input as CustomersDataResponsePaymentSources);
         }
 
         /// <summary>
-        /// Returns true if CustomerPaymentSourcesResponse instances are equal
+        /// Returns true if CustomersDataResponsePaymentSources instances are equal
         /// </summary>
-        /// <param name="input">Instance of CustomerPaymentSourcesResponse to be compared</param>
+        /// <param name="input">Instance of CustomersDataResponsePaymentSources to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CustomerPaymentSourcesResponse input)
+        public bool Equals(CustomersDataResponsePaymentSources input)
         {
             if (input == null)
             {

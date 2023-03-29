@@ -31,7 +31,7 @@ namespace Conekta.net.Api
         /// Create Payment Method
         /// </summary>
         /// <remarks>
-        /// Gets a payment source that corresponds to a customer ID.
+        /// Create a payment method for a customer.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -45,7 +45,7 @@ namespace Conekta.net.Api
         /// Create Payment Method
         /// </summary>
         /// <remarks>
-        /// Gets a payment source that corresponds to a customer ID.
+        /// Create a payment method for a customer.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -58,11 +58,11 @@ namespace Conekta.net.Api
         /// Delete Payment Method
         /// </summary>
         /// <remarks>
-        /// deletes a payment  source that corresponds to a customer ID.
+        /// Delete an existing payment method
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="paymentSourcesId">identifier</param>
+        /// <param name="paymentSourcesId">Identifier of the payment method</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UpdateCustomerPaymentSourcesResponse</returns>
@@ -72,15 +72,48 @@ namespace Conekta.net.Api
         /// Delete Payment Method
         /// </summary>
         /// <remarks>
-        /// deletes a payment  source that corresponds to a customer ID.
+        /// Delete an existing payment method
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="paymentSourcesId">identifier</param>
+        /// <param name="paymentSourcesId">Identifier of the payment method</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UpdateCustomerPaymentSourcesResponse</returns>
         ApiResponse<UpdateCustomerPaymentSourcesResponse> DeleteCustomerPaymentSourcesWithHttpInfo(string id, string paymentSourcesId, string acceptLanguage = default(string), int operationIndex = 0);
+        /// <summary>
+        /// Get Payment Methods
+        /// </summary>
+        /// <remarks>
+        /// Get a list of Payment Methods
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
+        /// <param name="next">next page (optional)</param>
+        /// <param name="previous">previous page (optional)</param>
+        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>GetPaymentSourcesResponse</returns>
+        GetPaymentSourcesResponse GetCustomerPaymentSources(string id, string acceptLanguage = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string search = default(string), int operationIndex = 0);
+
+        /// <summary>
+        /// Get Payment Methods
+        /// </summary>
+        /// <remarks>
+        /// Get a list of Payment Methods
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
+        /// <param name="next">next page (optional)</param>
+        /// <param name="previous">previous page (optional)</param>
+        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of GetPaymentSourcesResponse</returns>
+        ApiResponse<GetPaymentSourcesResponse> GetCustomerPaymentSourcesWithHttpInfo(string id, string acceptLanguage = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string search = default(string), int operationIndex = 0);
         /// <summary>
         /// Update Payment Method
         /// </summary>
@@ -89,7 +122,7 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="paymentSourcesId">identifier</param>
+        /// <param name="paymentSourcesId">Identifier of the payment method</param>
         /// <param name="updatePaymentSources">requested field for customer payment sources</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -104,7 +137,7 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="paymentSourcesId">identifier</param>
+        /// <param name="paymentSourcesId">Identifier of the payment method</param>
         /// <param name="updatePaymentSources">requested field for customer payment sources</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -123,7 +156,7 @@ namespace Conekta.net.Api
         /// Create Payment Method
         /// </summary>
         /// <remarks>
-        /// Gets a payment source that corresponds to a customer ID.
+        /// Create a payment method for a customer.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -138,7 +171,7 @@ namespace Conekta.net.Api
         /// Create Payment Method
         /// </summary>
         /// <remarks>
-        /// Gets a payment source that corresponds to a customer ID.
+        /// Create a payment method for a customer.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -152,11 +185,11 @@ namespace Conekta.net.Api
         /// Delete Payment Method
         /// </summary>
         /// <remarks>
-        /// deletes a payment  source that corresponds to a customer ID.
+        /// Delete an existing payment method
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="paymentSourcesId">identifier</param>
+        /// <param name="paymentSourcesId">Identifier of the payment method</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -167,16 +200,51 @@ namespace Conekta.net.Api
         /// Delete Payment Method
         /// </summary>
         /// <remarks>
-        /// deletes a payment  source that corresponds to a customer ID.
+        /// Delete an existing payment method
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="paymentSourcesId">identifier</param>
+        /// <param name="paymentSourcesId">Identifier of the payment method</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateCustomerPaymentSourcesResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<UpdateCustomerPaymentSourcesResponse>> DeleteCustomerPaymentSourcesWithHttpInfoAsync(string id, string paymentSourcesId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Get Payment Methods
+        /// </summary>
+        /// <remarks>
+        /// Get a list of Payment Methods
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
+        /// <param name="next">next page (optional)</param>
+        /// <param name="previous">previous page (optional)</param>
+        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetPaymentSourcesResponse</returns>
+        System.Threading.Tasks.Task<GetPaymentSourcesResponse> GetCustomerPaymentSourcesAsync(string id, string acceptLanguage = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string search = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get Payment Methods
+        /// </summary>
+        /// <remarks>
+        /// Get a list of Payment Methods
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
+        /// <param name="next">next page (optional)</param>
+        /// <param name="previous">previous page (optional)</param>
+        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetPaymentSourcesResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetPaymentSourcesResponse>> GetCustomerPaymentSourcesWithHttpInfoAsync(string id, string acceptLanguage = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string search = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update Payment Method
         /// </summary>
@@ -185,7 +253,7 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="paymentSourcesId">identifier</param>
+        /// <param name="paymentSourcesId">Identifier of the payment method</param>
         /// <param name="updatePaymentSources">requested field for customer payment sources</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -201,7 +269,7 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="paymentSourcesId">identifier</param>
+        /// <param name="paymentSourcesId">Identifier of the payment method</param>
         /// <param name="updatePaymentSources">requested field for customer payment sources</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -329,7 +397,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create Payment Method Gets a payment source that corresponds to a customer ID.
+        /// Create Payment Method Create a payment method for a customer.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -344,7 +412,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create Payment Method Gets a payment source that corresponds to a customer ID.
+        /// Create Payment Method Create a payment method for a customer.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -421,7 +489,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create Payment Method Gets a payment source that corresponds to a customer ID.
+        /// Create Payment Method Create a payment method for a customer.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -437,7 +505,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create Payment Method Gets a payment source that corresponds to a customer ID.
+        /// Create Payment Method Create a payment method for a customer.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -517,11 +585,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Delete Payment Method deletes a payment  source that corresponds to a customer ID.
+        /// Delete Payment Method Delete an existing payment method
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="paymentSourcesId">identifier</param>
+        /// <param name="paymentSourcesId">Identifier of the payment method</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UpdateCustomerPaymentSourcesResponse</returns>
@@ -532,11 +600,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Delete Payment Method deletes a payment  source that corresponds to a customer ID.
+        /// Delete Payment Method Delete an existing payment method
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="paymentSourcesId">identifier</param>
+        /// <param name="paymentSourcesId">Identifier of the payment method</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UpdateCustomerPaymentSourcesResponse</returns>
@@ -608,11 +676,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Delete Payment Method deletes a payment  source that corresponds to a customer ID.
+        /// Delete Payment Method Delete an existing payment method
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="paymentSourcesId">identifier</param>
+        /// <param name="paymentSourcesId">Identifier of the payment method</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -624,11 +692,11 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Delete Payment Method deletes a payment  source that corresponds to a customer ID.
+        /// Delete Payment Method Delete an existing payment method
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="paymentSourcesId">identifier</param>
+        /// <param name="paymentSourcesId">Identifier of the payment method</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -703,11 +771,227 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
+        /// Get Payment Methods Get a list of Payment Methods
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
+        /// <param name="next">next page (optional)</param>
+        /// <param name="previous">previous page (optional)</param>
+        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>GetPaymentSourcesResponse</returns>
+        public GetPaymentSourcesResponse GetCustomerPaymentSources(string id, string acceptLanguage = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string search = default(string), int operationIndex = 0)
+        {
+            Conekta.net.Client.ApiResponse<GetPaymentSourcesResponse> localVarResponse = GetCustomerPaymentSourcesWithHttpInfo(id, acceptLanguage, limit, next, previous, search);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Payment Methods Get a list of Payment Methods
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
+        /// <param name="next">next page (optional)</param>
+        /// <param name="previous">previous page (optional)</param>
+        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of GetPaymentSourcesResponse</returns>
+        public Conekta.net.Client.ApiResponse<GetPaymentSourcesResponse> GetCustomerPaymentSourcesWithHttpInfo(string id, string acceptLanguage = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string search = default(string), int operationIndex = 0)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling PaymentMethodsApi->GetCustomerPaymentSources");
+            }
+
+            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.conekta-v2.1.0+json"
+            };
+
+            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (next != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "next", next));
+            }
+            if (previous != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "previous", previous));
+            }
+            if (search != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "search", search));
+            }
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+
+            localVarRequestOptions.Operation = "PaymentMethodsApi.GetCustomerPaymentSources";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<GetPaymentSourcesResponse>("/customers/{id}/payment_sources", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetCustomerPaymentSources", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get Payment Methods Get a list of Payment Methods
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
+        /// <param name="next">next page (optional)</param>
+        /// <param name="previous">previous page (optional)</param>
+        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetPaymentSourcesResponse</returns>
+        public async System.Threading.Tasks.Task<GetPaymentSourcesResponse> GetCustomerPaymentSourcesAsync(string id, string acceptLanguage = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string search = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Conekta.net.Client.ApiResponse<GetPaymentSourcesResponse> localVarResponse = await GetCustomerPaymentSourcesWithHttpInfoAsync(id, acceptLanguage, limit, next, previous, search, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Payment Methods Get a list of Payment Methods
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
+        /// <param name="next">next page (optional)</param>
+        /// <param name="previous">previous page (optional)</param>
+        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetPaymentSourcesResponse)</returns>
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<GetPaymentSourcesResponse>> GetCustomerPaymentSourcesWithHttpInfoAsync(string id, string acceptLanguage = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string search = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling PaymentMethodsApi->GetCustomerPaymentSources");
+            }
+
+
+            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.conekta-v2.1.0+json"
+            };
+
+            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (next != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "next", next));
+            }
+            if (previous != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "previous", previous));
+            }
+            if (search != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "search", search));
+            }
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+
+            localVarRequestOptions.Operation = "PaymentMethodsApi.GetCustomerPaymentSources";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetPaymentSourcesResponse>("/customers/{id}/payment_sources", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetCustomerPaymentSources", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Update Payment Method Gets a payment source that corresponds to a customer ID.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="paymentSourcesId">identifier</param>
+        /// <param name="paymentSourcesId">Identifier of the payment method</param>
         /// <param name="updatePaymentSources">requested field for customer payment sources</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -723,7 +1007,7 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="paymentSourcesId">identifier</param>
+        /// <param name="paymentSourcesId">Identifier of the payment method</param>
         /// <param name="updatePaymentSources">requested field for customer payment sources</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -808,7 +1092,7 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="paymentSourcesId">identifier</param>
+        /// <param name="paymentSourcesId">Identifier of the payment method</param>
         /// <param name="updatePaymentSources">requested field for customer payment sources</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -825,7 +1109,7 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="paymentSourcesId">identifier</param>
+        /// <param name="paymentSourcesId">Identifier of the payment method</param>
         /// <param name="updatePaymentSources">requested field for customer payment sources</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>

@@ -40,7 +40,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentSourcesSpei" /> class.
         /// </summary>
-        /// <param name="type">type (required).</param>
+        /// <param name="type">Type of payment source (required).</param>
         /// <param name="expiresAt">expiresAt.</param>
         public PaymentSourcesSpei(string type = default(string), long expiresAt = default(long))
         {
@@ -54,8 +54,9 @@ namespace Conekta.net.Model
         }
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Type of payment source
         /// </summary>
+        /// <value>Type of payment source</value>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 

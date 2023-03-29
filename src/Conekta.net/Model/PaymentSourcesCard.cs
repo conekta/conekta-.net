@@ -40,8 +40,8 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentSourcesCard" /> class.
         /// </summary>
-        /// <param name="type">type (required).</param>
-        /// <param name="tokenId">tokenId (required).</param>
+        /// <param name="type">Type of payment source (required).</param>
+        /// <param name="tokenId">Token id that will be used to create a \&quot;card\&quot; type payment method. See the (subscriptions)[https://developers.conekta.com/v2.1.0/reference/createsubscription] tutorial for more information on how to tokenize cards. (required).</param>
         public PaymentSourcesCard(string type = default(string), string tokenId = default(string))
         {
             // to ensure "type" is required (not null)
@@ -59,14 +59,16 @@ namespace Conekta.net.Model
         }
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Type of payment source
         /// </summary>
+        /// <value>Type of payment source</value>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
-        /// Gets or Sets TokenId
+        /// Token id that will be used to create a \&quot;card\&quot; type payment method. See the (subscriptions)[https://developers.conekta.com/v2.1.0/reference/createsubscription] tutorial for more information on how to tokenize cards.
         /// </summary>
+        /// <value>Token id that will be used to create a \&quot;card\&quot; type payment method. See the (subscriptions)[https://developers.conekta.com/v2.1.0/reference/createsubscription] tutorial for more information on how to tokenize cards.</value>
         [DataMember(Name = "token_id", IsRequired = true, EmitDefaultValue = true)]
         public string TokenId { get; set; }
 

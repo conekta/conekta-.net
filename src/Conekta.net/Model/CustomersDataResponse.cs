@@ -51,7 +51,7 @@ namespace Conekta.net.Model
         /// <param name="phone">phone.</param>
         /// <param name="fiscalEntities">fiscalEntities.</param>
         /// <param name="shippingContacts">shippingContacts.</param>
-        public CustomersDataResponse(CustomersAntifraudInfoResponse antifraudInfo = default(CustomersAntifraudInfoResponse), bool corporate = default(bool), long createdAt = default(long), string customReference = default(string), string defaultFiscalEntityId = default(string), string defaultShippingContactId = default(string), string defaultPaymentSourceId = default(string), string email = default(string), string id = default(string), bool livemode = default(bool), string name = default(string), string _object = default(string), CustomerPaymentSourcesResponse paymentSources = default(CustomerPaymentSourcesResponse), string phone = default(string), CustomerFiscalEntitiesResponse fiscalEntities = default(CustomerFiscalEntitiesResponse), CustomersShippingContactsResponse shippingContacts = default(CustomersShippingContactsResponse))
+        public CustomersDataResponse(CustomersAntifraudInfoResponse antifraudInfo = default(CustomersAntifraudInfoResponse), bool corporate = default(bool), long createdAt = default(long), string customReference = default(string), string defaultFiscalEntityId = default(string), string defaultShippingContactId = default(string), string defaultPaymentSourceId = default(string), string email = default(string), string id = default(string), bool livemode = default(bool), string name = default(string), string _object = default(string), CustomersDataResponsePaymentSources paymentSources = default(CustomersDataResponsePaymentSources), string phone = default(string), CustomerFiscalEntitiesResponse fiscalEntities = default(CustomerFiscalEntitiesResponse), CustomersShippingContactsResponse shippingContacts = default(CustomersShippingContactsResponse))
         {
             this.AntifraudInfo = antifraudInfo;
             this.Corporate = corporate;
@@ -147,7 +147,7 @@ namespace Conekta.net.Model
         /// Gets or Sets PaymentSources
         /// </summary>
         [DataMember(Name = "payment_sources", EmitDefaultValue = false)]
-        public CustomerPaymentSourcesResponse PaymentSources { get; set; }
+        public CustomersDataResponsePaymentSources PaymentSources { get; set; }
 
         /// <summary>
         /// Gets or Sets Phone

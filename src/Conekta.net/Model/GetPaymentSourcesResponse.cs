@@ -27,30 +27,30 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// CustomerPaymentSourcesResponse
+    /// GetPaymentSourcesResponse
     /// </summary>
-    [DataContract(Name = "customer_payment_sources_response")]
-    public partial class CustomerPaymentSourcesResponse : IEquatable<CustomerPaymentSourcesResponse>, IValidatableObject
+    [DataContract(Name = "get_payment_sources_response")]
+    public partial class GetPaymentSourcesResponse : IEquatable<GetPaymentSourcesResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomerPaymentSourcesResponse" /> class.
+        /// Initializes a new instance of the <see cref="GetPaymentSourcesResponse" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected CustomerPaymentSourcesResponse() { }
+        protected GetPaymentSourcesResponse() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomerPaymentSourcesResponse" /> class.
+        /// Initializes a new instance of the <see cref="GetPaymentSourcesResponse" /> class.
         /// </summary>
         /// <param name="_object">_object (required).</param>
         /// <param name="hasMore">hasMore (required).</param>
         /// <param name="nextPageUrl">URL of the next page..</param>
         /// <param name="previousPageUrl">Url of the previous page..</param>
         /// <param name="data">data.</param>
-        public CustomerPaymentSourcesResponse(string _object = default(string), bool hasMore = default(bool), string nextPageUrl = default(string), string previousPageUrl = default(string), List<CustomerPaymentSourcesData> data = default(List<CustomerPaymentSourcesData>))
+        public GetPaymentSourcesResponse(string _object = default(string), bool hasMore = default(bool), string nextPageUrl = default(string), string previousPageUrl = default(string), List<GetCustomerPaymentSourcesDataResponse> data = default(List<GetCustomerPaymentSourcesDataResponse>))
         {
             // to ensure "_object" is required (not null)
             if (_object == null)
             {
-                throw new ArgumentNullException("_object is a required property for CustomerPaymentSourcesResponse and cannot be null");
+                throw new ArgumentNullException("_object is a required property for GetPaymentSourcesResponse and cannot be null");
             }
             this.Object = _object;
             this.HasMore = hasMore;
@@ -89,7 +89,7 @@ namespace Conekta.net.Model
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name = "data", EmitDefaultValue = false)]
-        public List<CustomerPaymentSourcesData> Data { get; set; }
+        public List<GetCustomerPaymentSourcesDataResponse> Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -98,7 +98,7 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CustomerPaymentSourcesResponse {\n");
+            sb.Append("class GetPaymentSourcesResponse {\n");
             sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  HasMore: ").Append(HasMore).Append("\n");
             sb.Append("  NextPageUrl: ").Append(NextPageUrl).Append("\n");
@@ -124,15 +124,15 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CustomerPaymentSourcesResponse);
+            return this.Equals(input as GetPaymentSourcesResponse);
         }
 
         /// <summary>
-        /// Returns true if CustomerPaymentSourcesResponse instances are equal
+        /// Returns true if GetPaymentSourcesResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of CustomerPaymentSourcesResponse to be compared</param>
+        /// <param name="input">Instance of GetPaymentSourcesResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CustomerPaymentSourcesResponse input)
+        public bool Equals(GetPaymentSourcesResponse input)
         {
             if (input == null)
             {

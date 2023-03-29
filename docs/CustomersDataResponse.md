@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **Livemode** | **bool** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **Object** | **string** |  | [optional] 
-**PaymentSources** | [**CustomerPaymentSourcesResponse**](CustomerPaymentSourcesResponse.md) |  | [optional] 
+**PaymentSources** | [**CustomersDataResponsePaymentSources**](CustomersDataResponsePaymentSources.md) |  | [optional] 
 **Phone** | **string** |  | [optional] 
 **FiscalEntities** | [**CustomerFiscalEntitiesResponse**](CustomerFiscalEntitiesResponse.md) |  | [optional] 
 **ShippingContacts** | [**CustomersShippingContactsResponse**](CustomersShippingContactsResponse.md) |  | [optional] 

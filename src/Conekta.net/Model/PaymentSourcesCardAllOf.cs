@@ -35,15 +35,16 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentSourcesCardAllOf" /> class.
         /// </summary>
-        /// <param name="tokenId">tokenId.</param>
+        /// <param name="tokenId">Token id that will be used to create a \&quot;card\&quot; type payment method. See the (subscriptions)[https://developers.conekta.com/v2.1.0/reference/createsubscription] tutorial for more information on how to tokenize cards..</param>
         public PaymentSourcesCardAllOf(string tokenId = default(string))
         {
             this.TokenId = tokenId;
         }
 
         /// <summary>
-        /// Gets or Sets TokenId
+        /// Token id that will be used to create a \&quot;card\&quot; type payment method. See the (subscriptions)[https://developers.conekta.com/v2.1.0/reference/createsubscription] tutorial for more information on how to tokenize cards.
         /// </summary>
+        /// <value>Token id that will be used to create a \&quot;card\&quot; type payment method. See the (subscriptions)[https://developers.conekta.com/v2.1.0/reference/createsubscription] tutorial for more information on how to tokenize cards.</value>
         [DataMember(Name = "token_id", EmitDefaultValue = false)]
         public string TokenId { get; set; }
 

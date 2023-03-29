@@ -1,11 +1,10 @@
-# Conekta.net.Model.PaymentSourcesCash
+# Conekta.net.Model.GetPaymentSourcesResponseAllOf
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | Type of payment source | 
-**ExpiresAt** | **long** |  | [optional] 
+**Data** | [**List&lt;GetCustomerPaymentSourcesDataResponse&gt;**](GetCustomerPaymentSourcesDataResponse.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -21,7 +21,6 @@ using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using JsonSubTypes;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 using System.Reflection;
@@ -29,7 +28,7 @@ using System.Reflection;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// CreateCustomerPaymentSourcesRequest
+    /// Contains details of the payment methods that the customer has active or has used in Conekta
     /// </summary>
     [JsonConverter(typeof(CreateCustomerPaymentSourcesRequestJsonConverter))]
     [DataContract(Name = "CreateCustomerPaymentSources_request")]
@@ -169,47 +168,6 @@ namespace Conekta.net.Model
             {
                 return newCreateCustomerPaymentSourcesRequest;
             }
-
-            try
-            {
-                var discriminatorObj = JObject.Parse(jsonString)["type"];
-                string discriminatorValue =  discriminatorObj == null ?string.Empty :discriminatorObj.ToString();
-                switch (discriminatorValue)
-                {
-                    case "card":
-                        newCreateCustomerPaymentSourcesRequest = new CreateCustomerPaymentSourcesRequest(JsonConvert.DeserializeObject<PaymentSourcesCard>(jsonString, CreateCustomerPaymentSourcesRequest.AdditionalPropertiesSerializerSettings));
-                        return newCreateCustomerPaymentSourcesRequest;
-                    case "cash":
-                        newCreateCustomerPaymentSourcesRequest = new CreateCustomerPaymentSourcesRequest(JsonConvert.DeserializeObject<PaymentSourcesCash>(jsonString, CreateCustomerPaymentSourcesRequest.AdditionalPropertiesSerializerSettings));
-                        return newCreateCustomerPaymentSourcesRequest;
-                    case "oxxo_recurrent":
-                        newCreateCustomerPaymentSourcesRequest = new CreateCustomerPaymentSourcesRequest(JsonConvert.DeserializeObject<PaymentSourcesCash>(jsonString, CreateCustomerPaymentSourcesRequest.AdditionalPropertiesSerializerSettings));
-                        return newCreateCustomerPaymentSourcesRequest;
-                    case "payment_sources_card":
-                        newCreateCustomerPaymentSourcesRequest = new CreateCustomerPaymentSourcesRequest(JsonConvert.DeserializeObject<PaymentSourcesCard>(jsonString, CreateCustomerPaymentSourcesRequest.AdditionalPropertiesSerializerSettings));
-                        return newCreateCustomerPaymentSourcesRequest;
-                    case "payment_sources_cash":
-                        newCreateCustomerPaymentSourcesRequest = new CreateCustomerPaymentSourcesRequest(JsonConvert.DeserializeObject<PaymentSourcesCash>(jsonString, CreateCustomerPaymentSourcesRequest.AdditionalPropertiesSerializerSettings));
-                        return newCreateCustomerPaymentSourcesRequest;
-                    case "payment_sources_spei":
-                        newCreateCustomerPaymentSourcesRequest = new CreateCustomerPaymentSourcesRequest(JsonConvert.DeserializeObject<PaymentSourcesSpei>(jsonString, CreateCustomerPaymentSourcesRequest.AdditionalPropertiesSerializerSettings));
-                        return newCreateCustomerPaymentSourcesRequest;
-                    case "spei":
-                        newCreateCustomerPaymentSourcesRequest = new CreateCustomerPaymentSourcesRequest(JsonConvert.DeserializeObject<PaymentSourcesSpei>(jsonString, CreateCustomerPaymentSourcesRequest.AdditionalPropertiesSerializerSettings));
-                        return newCreateCustomerPaymentSourcesRequest;
-                    case "spei_recurrent":
-                        newCreateCustomerPaymentSourcesRequest = new CreateCustomerPaymentSourcesRequest(JsonConvert.DeserializeObject<PaymentSourcesSpei>(jsonString, CreateCustomerPaymentSourcesRequest.AdditionalPropertiesSerializerSettings));
-                        return newCreateCustomerPaymentSourcesRequest;
-                    default:
-                        System.Diagnostics.Debug.WriteLine(string.Format("Failed to lookup discriminator value `{0}` for CreateCustomerPaymentSourcesRequest. Possible values: card cash oxxo_recurrent payment_sources_card payment_sources_cash payment_sources_spei spei spei_recurrent", discriminatorValue));
-                        break;
-                }
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to parse the json data : `{0}` {1}", jsonString, ex.ToString()));
-            }
-
             int match = 0;
             List<string> matchedTypes = new List<string>();
 

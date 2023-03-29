@@ -99,5 +99,20 @@ namespace Conekta.net.Test.Api
             Assert.Equal(id, response.GetPaymentSourceCard().ParentId);
             Assert.Equal(paymentSourcesId, response.GetPaymentSourceCard().Id);
         }
+        /// <summary>
+        /// Test GetCustomerPaymentSources
+        /// </summary>
+        [Fact]
+        public void GetCustomerPaymentSourcesTest()
+        {
+            var getPaymentSourcesResponse = _instance.GetCustomerPaymentSources("src_2tbd5Bgy67RL9oycM");
+
+            Assert.IsType<GetPaymentSourcesResponse>(getPaymentSourcesResponse);
+            Assert.Equal("src_2tbd5Bgy67RL9oycM", getPaymentSourcesResponse.Data[0].GetPaymentSourceCard().Id);
+            Assert.IsType<PaymentSourceCard>(getPaymentSourcesResponse.Data[0].ActualInstance);
+            Assert.Null(getPaymentSourcesResponse.NextPageUrl);
+            Assert.Null(getPaymentSourcesResponse.PreviousPageUrl);
+            Assert.False(getPaymentSourcesResponse.HasMore);
+        }
     }
 }

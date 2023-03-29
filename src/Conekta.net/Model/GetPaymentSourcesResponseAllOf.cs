@@ -27,44 +27,25 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// PaymentSourcesCash
+    /// GetPaymentSourcesResponseAllOf
     /// </summary>
-    [DataContract(Name = "payment_sources_cash")]
-    public partial class PaymentSourcesCash : IEquatable<PaymentSourcesCash>, IValidatableObject
+    [DataContract(Name = "get_payment_sources_response_allOf")]
+    public partial class GetPaymentSourcesResponseAllOf : IEquatable<GetPaymentSourcesResponseAllOf>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PaymentSourcesCash" /> class.
+        /// Initializes a new instance of the <see cref="GetPaymentSourcesResponseAllOf" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected PaymentSourcesCash() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PaymentSourcesCash" /> class.
-        /// </summary>
-        /// <param name="type">Type of payment source (required).</param>
-        /// <param name="expiresAt">expiresAt.</param>
-        public PaymentSourcesCash(string type = default(string), long expiresAt = default(long))
+        /// <param name="data">data.</param>
+        public GetPaymentSourcesResponseAllOf(List<GetCustomerPaymentSourcesDataResponse> data = default(List<GetCustomerPaymentSourcesDataResponse>))
         {
-            // to ensure "type" is required (not null)
-            if (type == null)
-            {
-                throw new ArgumentNullException("type is a required property for PaymentSourcesCash and cannot be null");
-            }
-            this.Type = type;
-            this.ExpiresAt = expiresAt;
+            this.Data = data;
         }
 
         /// <summary>
-        /// Type of payment source
+        /// Gets or Sets Data
         /// </summary>
-        /// <value>Type of payment source</value>
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
-        public string Type { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ExpiresAt
-        /// </summary>
-        [DataMember(Name = "expires_at", EmitDefaultValue = false)]
-        public long ExpiresAt { get; set; }
+        [DataMember(Name = "data", EmitDefaultValue = false)]
+        public List<GetCustomerPaymentSourcesDataResponse> Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -73,9 +54,8 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class PaymentSourcesCash {\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  ExpiresAt: ").Append(ExpiresAt).Append("\n");
+            sb.Append("class GetPaymentSourcesResponseAllOf {\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -96,15 +76,15 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PaymentSourcesCash);
+            return this.Equals(input as GetPaymentSourcesResponseAllOf);
         }
 
         /// <summary>
-        /// Returns true if PaymentSourcesCash instances are equal
+        /// Returns true if GetPaymentSourcesResponseAllOf instances are equal
         /// </summary>
-        /// <param name="input">Instance of PaymentSourcesCash to be compared</param>
+        /// <param name="input">Instance of GetPaymentSourcesResponseAllOf to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PaymentSourcesCash input)
+        public bool Equals(GetPaymentSourcesResponseAllOf input)
         {
             if (input == null)
             {
@@ -112,13 +92,10 @@ namespace Conekta.net.Model
             }
             return 
                 (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.ExpiresAt == input.ExpiresAt ||
-                    this.ExpiresAt.Equals(input.ExpiresAt)
+                    this.Data == input.Data ||
+                    this.Data != null &&
+                    input.Data != null &&
+                    this.Data.SequenceEqual(input.Data)
                 );
         }
 
@@ -131,11 +108,10 @@ namespace Conekta.net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Type != null)
+                if (this.Data != null)
                 {
-                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Data.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.ExpiresAt.GetHashCode();
                 return hashCode;
             }
         }

@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Test
-        run: DOCKER_BUILDKIT=1 docker-compose -f docker-compose.yml -p ${{ github.run_id }}  run --rm  -e GITHUB_TOKEN=${{ secrets.TOKEN }}  service dotnet test ./src/Conekta.net.Test/Conekta.net.Test.csproj
+        run: DOCKER_BUILDKIT=1 docker-compose -f docker-compose.yml -p ${{ github.run_id }}  run --rm  service dotnet test ./src/Conekta.net.Test/Conekta.net.Test.csproj
       - name: remove containers
         if: always()
         run: docker-compose -f docker-compose.yml -p ${{ github.run_id }} down

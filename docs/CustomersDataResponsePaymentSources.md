@@ -1,4 +1,4 @@
-# Conekta.net.Model.CustomerPaymentSourcesResponse
+# Conekta.net.Model.CustomersDataResponsePaymentSources
 
 ## Properties
 
