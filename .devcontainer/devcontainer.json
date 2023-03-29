@@ -9,7 +9,11 @@
 		"dockerfile": "../Dockerfile"
 	}
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+	,"features": {
+		"ghcr.io/jungaretti/features/make:1" : {
+			"version" : "latest"
+		}
+	}
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 	// Uncomment the next line to run commands after the container is created.
