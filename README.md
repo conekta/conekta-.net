@@ -37,15 +37,23 @@ using Conekta.net.Model;
 
 // create the http client
 
-
+string acceptLanguage = "en";
 Configuration configuration = new()
 {
     AccessToken = "Your merchant XAPI key"
 };
 var ordersApi = new OrdersApi(configuration);
+var customerApi = new CustomersApi(config);
 
-// Create a OrderRequest
-string acceptLanguage = "en";
+// create customer
+var customer = new Customer(
+    name: "test dot",
+    phone: "+573143159063",
+    email: "test@conekta.com"
+);
+CustomerResponse customerResponse = apiInstance.CreateCustomer(customer);
+// Create OrderRequest
+
 var lineItems = new List<LineItems>{new (
         name: "toshiba",
         quantity: 1,
@@ -55,7 +63,7 @@ var charges = new List<ChargeRequest>{new (
     amount: 1555,
     paymentMethod: new ChargeRequestPaymentMethod("cash")
 )};
-var customerInfo = new OrderRequestCustomerInfo(new CustomerInfoJustCustomerId("cus_2tKcHxhTz7xU5SymF"));
+var customerInfo = new OrderRequestCustomerInfo(new CustomerInfoJustCustomerId(customerResponse.Id));
 OrderRequest orderRequest = new OrderRequest(
     currency: "MXN",
     customerInfo: customerInfo,
@@ -65,6 +73,45 @@ OrderRequest orderRequest = new OrderRequest(
             
 //Make the call to the service. This example code makes a call to /orders
 OrderResponse response = ordersApi.CreateOrder(orderRequest, acceptLanguage);
+```
+
+## Catching exception
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Conekta.net.Api;
+using Conekta.net.Client;
+using Conekta.net.Model;
+
+namespace Example
+{
+    public class CreatePlanExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration( AccessToken = "Your merchant XAPI key");
+
+            var apiInstance = new PlansApi(config);
+            var planRequest = new PlanRequest(); // PlanRequest | requested field for plan
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+
+            try
+            {
+                // Create Plan
+                PlanResponse result = apiInstance.CreatePlan(planRequest, acceptLanguage);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PlansApi.CreatePlan: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
 ```
 
 ## Running the tests
