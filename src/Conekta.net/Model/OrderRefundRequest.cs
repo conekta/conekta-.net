@@ -56,12 +56,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Amount
         /// </summary>
+        /// <example>500</example>
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
         public int Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets Reason
         /// </summary>
+        /// <example>&quot;suspected_fraud&quot;</example>
         [DataMember(Name = "reason", IsRequired = true, EmitDefaultValue = true)]
         public string Reason { get; set; }
 

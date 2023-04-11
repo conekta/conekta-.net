@@ -78,24 +78,28 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;src_2s8K1B3PBKDontpi9&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
+        /// <example>&quot;payment_source&quot;</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
+        /// <example>1675715413</example>
         [DataMember(Name = "created_at", IsRequired = true, EmitDefaultValue = true)]
         public long CreatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets ParentId
         /// </summary>
+        /// <example>&quot;cus_2s8K1B3PBKDontpi8&quot;</example>
         [DataMember(Name = "parent_id", EmitDefaultValue = false)]
         public string ParentId { get; set; }
 

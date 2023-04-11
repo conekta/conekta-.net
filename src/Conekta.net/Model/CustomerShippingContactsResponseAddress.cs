@@ -58,48 +58,56 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
+        /// <example>&quot;shipping_address&quot;</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets Street1
         /// </summary>
+        /// <example>&quot;avenida siempre viva&quot;</example>
         [DataMember(Name = "street1", EmitDefaultValue = false)]
         public string Street1 { get; set; }
 
         /// <summary>
         /// Gets or Sets Street2
         /// </summary>
+        /// <example>&quot;fake street&quot;</example>
         [DataMember(Name = "street2", EmitDefaultValue = false)]
         public string Street2 { get; set; }
 
         /// <summary>
         /// Gets or Sets PostalCode
         /// </summary>
+        /// <example>&quot;06100&quot;</example>
         [DataMember(Name = "postal_code", EmitDefaultValue = false)]
         public string PostalCode { get; set; }
 
         /// <summary>
         /// Gets or Sets City
         /// </summary>
+        /// <example>&quot;Ciudad de Mexico&quot;</example>
         [DataMember(Name = "city", EmitDefaultValue = false)]
         public string City { get; set; }
 
         /// <summary>
         /// Gets or Sets State
         /// </summary>
+        /// <example>&quot;Ciudad de Mexico&quot;</example>
         [DataMember(Name = "state", EmitDefaultValue = false)]
         public string State { get; set; }
 
         /// <summary>
         /// Gets or Sets Country
         /// </summary>
+        /// <example>&quot;MX&quot;</example>
         [DataMember(Name = "country", EmitDefaultValue = false)]
         public string Country { get; set; }
 
         /// <summary>
         /// Gets or Sets Residential
         /// </summary>
+        /// <example>true</example>
         [DataMember(Name = "residential", EmitDefaultValue = true)]
         public bool Residential { get; set; }
 

@@ -76,18 +76,21 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Amount
         /// </summary>
+        /// <example>4321</example>
         [DataMember(Name = "amount", EmitDefaultValue = false)]
         public int Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
+        /// <example>1676386026</example>
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public long CreatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets Currency
         /// </summary>
+        /// <example>&quot;MXN&quot;</example>
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 
@@ -100,36 +103,42 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
+        /// <example>&quot;Payment from order&quot;</example>
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets DeviceFingerprint
         /// </summary>
+        /// <example>&quot;6FR3chaU4Y1nGAW5NAGd1rcjAKa142Ba&quot;</example>
         [DataMember(Name = "device_fingerprint", EmitDefaultValue = false)]
         public string DeviceFingerprint { get; set; }
 
         /// <summary>
         /// Gets or Sets FailureCode
         /// </summary>
+        /// <example>&quot;suspected_fraud&quot;</example>
         [DataMember(Name = "failure_code", EmitDefaultValue = false)]
         public string FailureCode { get; set; }
 
         /// <summary>
         /// Gets or Sets FailureMessage
         /// </summary>
+        /// <example>&quot;Este cargo ha sido declinado porque el comportamiento del comprador es sospechoso.&quot;</example>
         [DataMember(Name = "failure_message", EmitDefaultValue = false)]
         public string FailureMessage { get; set; }
 
         /// <summary>
         /// Gets or Sets Fee
         /// </summary>
+        /// <example>1160</example>
         [DataMember(Name = "fee", EmitDefaultValue = false)]
         public int Fee { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;63efa757cf65380001aec040&quot;</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -148,12 +157,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets OrderId
         /// </summary>
+        /// <example>&quot;ord_2tN73UdUSNrYRPD9r&quot;</example>
         [DataMember(Name = "order_id", EmitDefaultValue = false)]
         public string OrderId { get; set; }
 
         /// <summary>
         /// Gets or Sets PaidAt
         /// </summary>
+        /// <example>1676390742</example>
         [DataMember(Name = "paid_at", EmitDefaultValue = true)]
         public int? PaidAt { get; set; }
 
@@ -172,6 +183,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
+        /// <example>&quot;pending_payment&quot;</example>
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 

@@ -70,6 +70,7 @@ namespace Conekta.net.Model
         /// The amount to be deducted from the total sum of all payments, in cents.
         /// </summary>
         /// <value>The amount to be deducted from the total sum of all payments, in cents.</value>
+        /// <example>500</example>
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
         public long Amount { get; set; }
 
@@ -77,6 +78,7 @@ namespace Conekta.net.Model
         /// Discount code.
         /// </summary>
         /// <value>Discount code.</value>
+        /// <example>&quot;123&quot;</example>
         [DataMember(Name = "code", IsRequired = true, EmitDefaultValue = true)]
         public string Code { get; set; }
 
@@ -84,24 +86,28 @@ namespace Conekta.net.Model
         /// It can be &#39;loyalty&#39;, &#39;campaign&#39;, &#39;coupon&#39; o &#39;sign&#39;
         /// </summary>
         /// <value>It can be &#39;loyalty&#39;, &#39;campaign&#39;, &#39;coupon&#39; o &#39;sign&#39;</value>
+        /// <example>&quot;loyalty&quot;</example>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;dis_lin_2tQQ58HPgPw7StE8z&quot;</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
+        /// <example>&quot;discount_line&quot;</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets ParentId
         /// </summary>
+        /// <example>&quot;ord_2tPAmKCEJqh8RE6nY&quot;</example>
         [DataMember(Name = "parent_id", EmitDefaultValue = false)]
         public string ParentId { get; set; }
 

@@ -75,6 +75,7 @@ namespace Conekta.net.Model
         /// It is a parameter that allows to identify in the response, the Conekta ID of a payment method (payment_id)
         /// </summary>
         /// <value>It is a parameter that allows to identify in the response, the Conekta ID of a payment method (payment_id)</value>
+        /// <example>&quot;src_1a2b3c4d5e6f7g8h&quot;</example>
         [DataMember(Name = "default_payment_source_id", EmitDefaultValue = false)]
         public string DefaultPaymentSourceId { get; set; }
 
@@ -82,6 +83,7 @@ namespace Conekta.net.Model
         /// An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc).
         /// </summary>
         /// <value>An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc).</value>
+        /// <example>&quot;miguel@gmail.com&quot;</example>
         [DataMember(Name = "email", EmitDefaultValue = false)]
         public string Email { get; set; }
 
@@ -89,6 +91,7 @@ namespace Conekta.net.Model
         /// Client&#39;s name
         /// </summary>
         /// <value>Client&#39;s name</value>
+        /// <example>&quot;miguel&quot;</example>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
@@ -96,6 +99,7 @@ namespace Conekta.net.Model
         /// Is the customer&#39;s phone number
         /// </summary>
         /// <value>Is the customer&#39;s phone number</value>
+        /// <example>&quot;+5215555555555&quot;</example>
         [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
@@ -103,6 +107,7 @@ namespace Conekta.net.Model
         /// Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription
         /// </summary>
         /// <value>Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription</value>
+        /// <example>&quot;plan_987234823&quot;</example>
         [DataMember(Name = "plan_id", EmitDefaultValue = false)]
         public string PlanId { get; set; }
 
@@ -110,6 +115,7 @@ namespace Conekta.net.Model
         /// It is a parameter that allows to identify in the response, the Conekta ID of the shipping address (shipping_contact)
         /// </summary>
         /// <value>It is a parameter that allows to identify in the response, the Conekta ID of the shipping address (shipping_contact)</value>
+        /// <example>&quot;ship_cont_1a2b3c4d5e6f7g8h&quot;</example>
         [DataMember(Name = "default_shipping_contact_id", EmitDefaultValue = false)]
         public string DefaultShippingContactId { get; set; }
 
@@ -117,6 +123,7 @@ namespace Conekta.net.Model
         /// It is a value that allows identifying if the email is corporate or not.
         /// </summary>
         /// <value>It is a value that allows identifying if the email is corporate or not.</value>
+        /// <example>false</example>
         [DataMember(Name = "corporate", EmitDefaultValue = true)]
         public bool Corporate { get; set; }
 

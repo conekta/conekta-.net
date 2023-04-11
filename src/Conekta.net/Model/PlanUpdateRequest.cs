@@ -51,6 +51,7 @@ namespace Conekta.net.Model
         /// The amount in cents that will be charged on the interval specified.
         /// </summary>
         /// <value>The amount in cents that will be charged on the interval specified.</value>
+        /// <example>10000</example>
         [DataMember(Name = "amount", EmitDefaultValue = false)]
         public int Amount { get; set; }
 
@@ -58,6 +59,7 @@ namespace Conekta.net.Model
         /// ISO 4217 for currencies, for the Mexican peso it is MXN/USD
         /// </summary>
         /// <value>ISO 4217 for currencies, for the Mexican peso it is MXN/USD</value>
+        /// <example>&quot;MXN&quot;</example>
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 
@@ -65,6 +67,7 @@ namespace Conekta.net.Model
         /// Number of repetitions of the frequency NUMBER OF CHARGES TO BE MADE, considering the interval and frequency, this evolves over time, but is subject to the expiration count.
         /// </summary>
         /// <value>Number of repetitions of the frequency NUMBER OF CHARGES TO BE MADE, considering the interval and frequency, this evolves over time, but is subject to the expiration count.</value>
+        /// <example>12</example>
         [DataMember(Name = "expiry_count", EmitDefaultValue = false)]
         public int ExpiryCount { get; set; }
 
@@ -72,6 +75,7 @@ namespace Conekta.net.Model
         /// The name of the plan.
         /// </summary>
         /// <value>The name of the plan.</value>
+        /// <example>&quot;Extra Plan3&quot;</example>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 

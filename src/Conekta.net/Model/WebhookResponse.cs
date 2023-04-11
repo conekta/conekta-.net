@@ -62,42 +62,49 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Deleted
         /// </summary>
+        /// <example>false</example>
         [DataMember(Name = "deleted", EmitDefaultValue = true)]
         public bool? Deleted { get; set; }
 
         /// <summary>
         /// Gets or Sets DevelopmentEnabled
         /// </summary>
+        /// <example>false</example>
         [DataMember(Name = "development_enabled", EmitDefaultValue = true)]
         public bool DevelopmentEnabled { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;6307a60c41de27127515a575&quot;</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Livemode
         /// </summary>
+        /// <example>true</example>
         [DataMember(Name = "livemode", EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
+        /// <example>&quot;event&quot;</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets ProductionEnabled
         /// </summary>
+        /// <example>true</example>
         [DataMember(Name = "production_enabled", EmitDefaultValue = true)]
         public bool ProductionEnabled { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
+        /// <example>&quot;listening&quot;</example>
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
@@ -110,12 +117,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Synchronous
         /// </summary>
+        /// <example>false</example>
         [DataMember(Name = "synchronous", EmitDefaultValue = true)]
         public bool Synchronous { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
+        /// <example>&quot;https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval&quot;</example>
         [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 

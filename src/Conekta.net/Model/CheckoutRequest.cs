@@ -91,6 +91,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets MonthlyInstallmentsEnabled
         /// </summary>
+        /// <example>false</example>
         [DataMember(Name = "monthly_installments_enabled", EmitDefaultValue = true)]
         public bool MonthlyInstallmentsEnabled { get; set; }
 
@@ -110,6 +111,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets OnDemandEnabled
         /// </summary>
+        /// <example>true</example>
         [DataMember(Name = "on_demand_enabled", EmitDefaultValue = true)]
         public bool OnDemandEnabled { get; set; }
 
@@ -124,6 +126,7 @@ namespace Conekta.net.Model
         /// This field represents the type of checkout
         /// </summary>
         /// <value>This field represents the type of checkout</value>
+        /// <example>&quot;Integration&quot;</example>
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 

@@ -58,6 +58,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
+        /// <example>1661445644</example>
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public long CreatedAt { get; set; }
 
@@ -70,24 +71,28 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;6307a60c41de27127515a575&quot;</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Livemode
         /// </summary>
+        /// <example>true</example>
         [DataMember(Name = "livemode", EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
+        /// <example>&quot;event&quot;</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
+        /// <example>&quot;webhook_ping&quot;</example>
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
@@ -100,6 +105,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets WebhookStatus
         /// </summary>
+        /// <example>&quot;successful&quot;</example>
         [DataMember(Name = "webhook_status", EmitDefaultValue = false)]
         public string WebhookStatus { get; set; }
 

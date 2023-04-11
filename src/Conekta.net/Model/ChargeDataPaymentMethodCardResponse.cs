@@ -62,36 +62,42 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets AccountType
         /// </summary>
+        /// <example>&quot;Credit&quot;</example>
         [DataMember(Name = "account_type", EmitDefaultValue = false)]
         public string AccountType { get; set; }
 
         /// <summary>
         /// Gets or Sets AuthCode
         /// </summary>
+        /// <example>&quot;867372&quot;</example>
         [DataMember(Name = "auth_code", EmitDefaultValue = false)]
         public string AuthCode { get; set; }
 
         /// <summary>
         /// Gets or Sets Brand
         /// </summary>
+        /// <example>&quot;visa&quot;</example>
         [DataMember(Name = "brand", EmitDefaultValue = false)]
         public string Brand { get; set; }
 
         /// <summary>
         /// Gets or Sets Country
         /// </summary>
+        /// <example>&quot;MX&quot;</example>
         [DataMember(Name = "country", EmitDefaultValue = false)]
         public string Country { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpMonth
         /// </summary>
+        /// <example>&quot;02&quot;</example>
         [DataMember(Name = "exp_month", EmitDefaultValue = false)]
         public string ExpMonth { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpYear
         /// </summary>
+        /// <example>&quot;30&quot;</example>
         [DataMember(Name = "exp_year", EmitDefaultValue = false)]
         public string ExpYear { get; set; }
 
@@ -104,18 +110,21 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Issuer
         /// </summary>
+        /// <example>&quot;BANAMEX&quot;</example>
         [DataMember(Name = "issuer", EmitDefaultValue = false)]
         public string Issuer { get; set; }
 
         /// <summary>
         /// Gets or Sets Last4
         /// </summary>
+        /// <example>&quot;4242&quot;</example>
         [DataMember(Name = "last4", EmitDefaultValue = false)]
         public string Last4 { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
+        /// <example>&quot;Fulanito Perez&quot;</example>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 

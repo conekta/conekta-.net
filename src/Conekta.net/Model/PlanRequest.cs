@@ -109,6 +109,7 @@ namespace Conekta.net.Model
         /// The amount in cents that will be charged on the interval specified.
         /// </summary>
         /// <value>The amount in cents that will be charged on the interval specified.</value>
+        /// <example>10000</example>
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
         public int Amount { get; set; }
 
@@ -116,6 +117,7 @@ namespace Conekta.net.Model
         /// ISO 4217 for currencies, for the Mexican peso it is MXN/USD
         /// </summary>
         /// <value>ISO 4217 for currencies, for the Mexican peso it is MXN/USD</value>
+        /// <example>&quot;MXN&quot;</example>
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 
@@ -123,6 +125,7 @@ namespace Conekta.net.Model
         /// Number of repetitions of the frequency NUMBER OF CHARGES TO BE MADE, considering the interval and frequency, this evolves over time, but is subject to the expiration count.
         /// </summary>
         /// <value>Number of repetitions of the frequency NUMBER OF CHARGES TO BE MADE, considering the interval and frequency, this evolves over time, but is subject to the expiration count.</value>
+        /// <example>12</example>
         [DataMember(Name = "expiry_count", EmitDefaultValue = false)]
         public int ExpiryCount { get; set; }
 
@@ -130,6 +133,7 @@ namespace Conekta.net.Model
         /// Frequency of the charge, which together with the interval, can be every 3 weeks, every 4 months, every 2 years, every 5 fortnights
         /// </summary>
         /// <value>Frequency of the charge, which together with the interval, can be every 3 weeks, every 4 months, every 2 years, every 5 fortnights</value>
+        /// <example>1</example>
         [DataMember(Name = "frequency", IsRequired = true, EmitDefaultValue = true)]
         public int Frequency { get; set; }
 
@@ -137,6 +141,7 @@ namespace Conekta.net.Model
         /// internal reference id
         /// </summary>
         /// <value>internal reference id</value>
+        /// <example>&quot;plan_24234&quot;</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -144,6 +149,7 @@ namespace Conekta.net.Model
         /// The name of the plan.
         /// </summary>
         /// <value>The name of the plan.</value>
+        /// <example>&quot;Extra Plan3&quot;</example>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -151,6 +157,7 @@ namespace Conekta.net.Model
         /// The number of days the customer will have a free trial.
         /// </summary>
         /// <value>The number of days the customer will have a free trial.</value>
+        /// <example>0</example>
         [DataMember(Name = "trial_period_days", EmitDefaultValue = false)]
         public int TrialPeriodDays { get; set; }
 

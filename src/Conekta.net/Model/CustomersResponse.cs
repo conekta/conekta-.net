@@ -68,6 +68,7 @@ namespace Conekta.net.Model
         /// URL of the next page.
         /// </summary>
         /// <value>URL of the next page.</value>
+        /// <example>&quot;https://api.conekta.io/customers?next&#x3D;cus_2sagTU4GQR5e1i7A5&quot;</example>
         [DataMember(Name = "next_page_url", EmitDefaultValue = true)]
         public string NextPageUrl { get; set; }
 
@@ -75,6 +76,7 @@ namespace Conekta.net.Model
         /// Url of the previous page.
         /// </summary>
         /// <value>Url of the previous page.</value>
+        /// <example>&quot;https://api.conekta.io/customers?previous&#x3D;cus_2sagTU4GQR5e1i7A5&quot;</example>
         [DataMember(Name = "previous_page_url", EmitDefaultValue = true)]
         public string PreviousPageUrl { get; set; }
 
@@ -87,12 +89,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
+        /// <example>&quot;list&quot;</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets HasMore
         /// </summary>
+        /// <example>false</example>
         [DataMember(Name = "has_more", IsRequired = true, EmitDefaultValue = true)]
         public bool HasMore { get; set; }
 

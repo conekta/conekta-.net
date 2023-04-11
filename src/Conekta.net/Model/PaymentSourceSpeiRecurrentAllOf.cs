@@ -46,12 +46,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Reference
         /// </summary>
+        /// <example>&quot;93000262276908&quot;</example>
         [DataMember(Name = "reference", EmitDefaultValue = false)]
         public string Reference { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpiresAt
         /// </summary>
+        /// <example>&quot;none&quot;</example>
         [DataMember(Name = "expires_at", EmitDefaultValue = false)]
         public string ExpiresAt { get; set; }
 

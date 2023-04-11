@@ -48,18 +48,21 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;tax_lin_2tQ8dC5mg1UADmVPo&quot;</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
+        /// <example>&quot;tax_line&quot;</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets ParentId
         /// </summary>
+        /// <example>&quot;ord_2tPAmKCEJqh8RE6nY&quot;</example>
         [DataMember(Name = "parent_id", EmitDefaultValue = false)]
         public string ParentId { get; set; }
 

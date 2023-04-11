@@ -54,6 +54,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Phonenumber
         /// </summary>
+        /// <example>&quot;5566982090&quot;</example>
         [DataMember(Name = "phonenumber", IsRequired = true, EmitDefaultValue = true)]
         public string Phonenumber { get; set; }
 

@@ -72,18 +72,21 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
+        /// <example>&quot;DevTest&quot;</example>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
+        /// <example>&quot;test@conekta.com&quot;</example>
         [DataMember(Name = "email", IsRequired = true, EmitDefaultValue = true)]
         public string Email { get; set; }
 
         /// <summary>
         /// Gets or Sets Phone
         /// </summary>
+        /// <example>&quot;5522997233&quot;</example>
         [DataMember(Name = "phone", IsRequired = true, EmitDefaultValue = true)]
         public string Phone { get; set; }
 
@@ -96,6 +99,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
+        /// <example>&quot;customer_info&quot;</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 

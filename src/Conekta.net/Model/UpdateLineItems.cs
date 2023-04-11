@@ -78,18 +78,21 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
+        /// <example>&quot;Box of Cohiba S1s&quot;</example>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets UnitPrice
         /// </summary>
+        /// <example>20000</example>
         [DataMember(Name = "unit_price", EmitDefaultValue = false)]
         public long UnitPrice { get; set; }
 
         /// <summary>
         /// Gets or Sets Quantity
         /// </summary>
+        /// <example>1</example>
         [DataMember(Name = "quantity", EmitDefaultValue = false)]
         public int Quantity { get; set; }
 

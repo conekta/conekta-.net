@@ -46,12 +46,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets AccountCreatedAt
         /// </summary>
+        /// <example>1484040996</example>
         [DataMember(Name = "account_created_at", EmitDefaultValue = false)]
         public long AccountCreatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets FirstPaidAt
         /// </summary>
+        /// <example>1485151007</example>
         [DataMember(Name = "first_paid_at", EmitDefaultValue = false)]
         public int FirstPaidAt { get; set; }
 

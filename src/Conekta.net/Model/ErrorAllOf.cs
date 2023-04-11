@@ -49,18 +49,21 @@ namespace Conekta.net.Model
         /// log id
         /// </summary>
         /// <value>log id</value>
+        /// <example>&quot;507f1f77bcf86cd799439011&quot;</example>
         [DataMember(Name = "log_id", EmitDefaultValue = true)]
         public string LogId { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
+        /// <example>&quot;authentication_error&quot;</example>
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
+        /// <example>&quot;error&quot;</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 

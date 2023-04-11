@@ -58,18 +58,21 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
+        /// <example>&quot;card&quot;</example>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets TokenId
         /// </summary>
+        /// <example>&quot;tok_2897348234&quot;</example>
         [DataMember(Name = "token_id", EmitDefaultValue = false)]
         public string TokenId { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentSourceId
         /// </summary>
+        /// <example>&quot;src_2tLkkyfMPh6v7pFry&quot;</example>
         [DataMember(Name = "payment_source_id", EmitDefaultValue = false)]
         public string PaymentSourceId { get; set; }
 

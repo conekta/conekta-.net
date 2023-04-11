@@ -56,18 +56,21 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets TaxId
         /// </summary>
+        /// <example>&quot;324234234&quot;</example>
         [DataMember(Name = "tax_id", EmitDefaultValue = false)]
         public string TaxId { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;fis_ent_2tN85VYaSMyDvjB3M&quot;</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
+        /// <example>&quot;fiscal_entity&quot;</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 

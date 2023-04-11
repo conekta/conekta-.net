@@ -94,6 +94,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets CompanyName
         /// </summary>
+        /// <example>&quot;conekta&quot;</example>
         [DataMember(Name = "company_name", EmitDefaultValue = false)]
         public string CompanyName { get; set; }
 

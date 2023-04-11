@@ -58,6 +58,7 @@ namespace Conekta.net.Model
         /// Shipping amount in cents
         /// </summary>
         /// <value>Shipping amount in cents</value>
+        /// <example>100</example>
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
         public long Amount { get; set; }
 
@@ -65,6 +66,7 @@ namespace Conekta.net.Model
         /// Carrier name for the shipment
         /// </summary>
         /// <value>Carrier name for the shipment</value>
+        /// <example>&quot;FEDEX&quot;</example>
         [DataMember(Name = "carrier", EmitDefaultValue = false)]
         public string Carrier { get; set; }
 
@@ -72,6 +74,7 @@ namespace Conekta.net.Model
         /// Tracking number can be used to track the shipment
         /// </summary>
         /// <value>Tracking number can be used to track the shipment</value>
+        /// <example>&quot;TRACK123&quot;</example>
         [DataMember(Name = "tracking_number", EmitDefaultValue = false)]
         public string TrackingNumber { get; set; }
 
@@ -79,6 +82,7 @@ namespace Conekta.net.Model
         /// Method of shipment
         /// </summary>
         /// <value>Method of shipment</value>
+        /// <example>&quot;Same day&quot;</example>
         [DataMember(Name = "method", EmitDefaultValue = false)]
         public string Method { get; set; }
 

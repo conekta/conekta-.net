@@ -4,6 +4,7 @@ CODE_OF_CONDUCT.md
 Conekta.net.sln
 LICENSE
 VERSION
+api/openapi.yaml
 conekta.png
 docs/BlacklistApi.md
 docs/ChargeDataPaymentMethodBankTransferResponse.md

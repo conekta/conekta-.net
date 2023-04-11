@@ -50,6 +50,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Code
         /// </summary>
+        /// <example>&quot;conekta.errors.authentication.missing_key&quot;</example>
         [DataMember(Name = "code", EmitDefaultValue = false)]
         public string Code { get; set; }
 
@@ -62,12 +63,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Message
         /// </summary>
+        /// <example>&quot;Acceso no autorizado.&quot;</example>
         [DataMember(Name = "message", EmitDefaultValue = false)]
         public string Message { get; set; }
 
         /// <summary>
         /// Gets or Sets DebugMessage
         /// </summary>
+        /// <example>&quot;Please include your access key in your request.&quot;</example>
         [DataMember(Name = "debug_message", EmitDefaultValue = false)]
         public string DebugMessage { get; set; }
 

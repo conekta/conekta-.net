@@ -48,12 +48,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets HasMore
         /// </summary>
+        /// <example>true</example>
         [DataMember(Name = "has_more", EmitDefaultValue = true)]
         public bool HasMore { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
+        /// <example>&quot;list&quot;</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 

@@ -77,6 +77,7 @@ namespace Conekta.net.Model
         /// The brand of the item.
         /// </summary>
         /// <value>The brand of the item.</value>
+        /// <example>&quot;Cohiba&quot;</example>
         [DataMember(Name = "brand", EmitDefaultValue = false)]
         public string Brand { get; set; }
 
@@ -84,6 +85,7 @@ namespace Conekta.net.Model
         /// Short description of the item
         /// </summary>
         /// <value>Short description of the item</value>
+        /// <example>&quot;Imported From Mex.&quot;</example>
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
@@ -98,6 +100,7 @@ namespace Conekta.net.Model
         /// The name of the item. It will be displayed in the order.
         /// </summary>
         /// <value>The name of the item. It will be displayed in the order.</value>
+        /// <example>&quot;Box of Cohiba S1s&quot;</example>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -105,6 +108,7 @@ namespace Conekta.net.Model
         /// The quantity of the item in the order.
         /// </summary>
         /// <value>The quantity of the item in the order.</value>
+        /// <example>1</example>
         [DataMember(Name = "quantity", IsRequired = true, EmitDefaultValue = true)]
         public int Quantity { get; set; }
 
@@ -112,6 +116,7 @@ namespace Conekta.net.Model
         /// The stock keeping unit for the item. It is used to identify the item in the order.
         /// </summary>
         /// <value>The stock keeping unit for the item. It is used to identify the item in the order.</value>
+        /// <example>&quot;XYZ12345&quot;</example>
         [DataMember(Name = "sku", EmitDefaultValue = false)]
         public string Sku { get; set; }
 
@@ -126,6 +131,7 @@ namespace Conekta.net.Model
         /// The price of the item in cents.
         /// </summary>
         /// <value>The price of the item in cents.</value>
+        /// <example>20000</example>
         [DataMember(Name = "unit_price", IsRequired = true, EmitDefaultValue = true)]
         public int UnitPrice { get; set; }
 

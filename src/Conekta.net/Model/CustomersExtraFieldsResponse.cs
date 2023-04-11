@@ -59,6 +59,7 @@ namespace Conekta.net.Model
         /// URL of the next page.
         /// </summary>
         /// <value>URL of the next page.</value>
+        /// <example>&quot;https://api.conekta.io/customers?next&#x3D;cus_2sagTU4GQR5e1i7A5&quot;</example>
         [DataMember(Name = "next_page_url", EmitDefaultValue = true)]
         public string NextPageUrl { get; set; }
 
@@ -66,6 +67,7 @@ namespace Conekta.net.Model
         /// Url of the previous page.
         /// </summary>
         /// <value>Url of the previous page.</value>
+        /// <example>&quot;https://api.conekta.io/customers?previous&#x3D;cus_2sagTU4GQR5e1i7A5&quot;</example>
         [DataMember(Name = "previous_page_url", EmitDefaultValue = true)]
         public string PreviousPageUrl { get; set; }
 

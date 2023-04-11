@@ -62,6 +62,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Amount
         /// </summary>
+        /// <example>40000</example>
         [DataMember(Name = "amount", EmitDefaultValue = false)]
         public int Amount { get; set; }
 
@@ -69,6 +70,7 @@ namespace Conekta.net.Model
         /// Method expiration date as unix timestamp
         /// </summary>
         /// <value>Method expiration date as unix timestamp</value>
+        /// <example>1677196303</example>
         [DataMember(Name = "expires_at", EmitDefaultValue = false)]
         public long ExpiresAt { get; set; }
 

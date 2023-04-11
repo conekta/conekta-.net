@@ -62,6 +62,7 @@ namespace Conekta.net.Model
         /// Type of payment source
         /// </summary>
         /// <value>Type of payment source</value>
+        /// <example>&quot;card | cash | spei&quot;</example>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
@@ -69,6 +70,7 @@ namespace Conekta.net.Model
         /// Token id that will be used to create a \&quot;card\&quot; type payment method. See the (subscriptions)[https://developers.conekta.com/v2.1.0/reference/createsubscription] tutorial for more information on how to tokenize cards.
         /// </summary>
         /// <value>Token id that will be used to create a \&quot;card\&quot; type payment method. See the (subscriptions)[https://developers.conekta.com/v2.1.0/reference/createsubscription] tutorial for more information on how to tokenize cards.</value>
+        /// <example>&quot;tok_32hj4g234as&quot;</example>
         [DataMember(Name = "token_id", IsRequired = true, EmitDefaultValue = true)]
         public string TokenId { get; set; }
 

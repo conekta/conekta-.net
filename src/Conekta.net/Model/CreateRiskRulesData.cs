@@ -48,18 +48,21 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
+        /// <example>&quot;this client&#39;s email was verified at 20/09/22 by internal process&quot;</example>
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
+        /// <example>&quot;email | phone | card_token&quot;</example>
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Value
         /// </summary>
+        /// <example>&quot;email@example.com | 818081808180 | src_2qUCNd5AyQqfPMBuV&quot;</example>
         [DataMember(Name = "value", EmitDefaultValue = false)]
         public string Value { get; set; }
 

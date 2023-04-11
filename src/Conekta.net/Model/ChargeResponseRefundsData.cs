@@ -67,30 +67,35 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
+        /// <example>&quot;refund&quot;</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets Amount
         /// </summary>
+        /// <example>-15000</example>
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
         public long Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;6407b5bee1329a000175ba11&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
+        /// <example>1678226878</example>
         [DataMember(Name = "created_at", IsRequired = true, EmitDefaultValue = true)]
         public long CreatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets AuthCode
         /// </summary>
+        /// <example>&quot;867372&quot;</example>
         [DataMember(Name = "auth_code", EmitDefaultValue = false)]
         public string AuthCode { get; set; }
 

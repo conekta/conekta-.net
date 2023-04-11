@@ -83,6 +83,7 @@ namespace Conekta.net.Model
         /// Phone contact
         /// </summary>
         /// <value>Phone contact</value>
+        /// <example>&quot;+525511223344&quot;</example>
         [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
@@ -90,6 +91,7 @@ namespace Conekta.net.Model
         /// Name of the person who will receive the order
         /// </summary>
         /// <value>Name of the person who will receive the order</value>
+        /// <example>&quot;Marvin Fuller&quot;</example>
         [DataMember(Name = "receiver", EmitDefaultValue = false)]
         public string Receiver { get; set; }
 
@@ -97,6 +99,7 @@ namespace Conekta.net.Model
         /// The street names between which the order will be delivered.
         /// </summary>
         /// <value>The street names between which the order will be delivered.</value>
+        /// <example>&quot;Ackerman Crescent&quot;</example>
         [DataMember(Name = "between_streets", EmitDefaultValue = false)]
         public string BetweenStreets { get; set; }
 
@@ -127,18 +130,21 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;ship_cont_2tKZsTYcsryyu7Ah8&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
+        /// <example>&quot;shipping_contact&quot;</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
+        /// <example>1675715413</example>
         [DataMember(Name = "created_at", IsRequired = true, EmitDefaultValue = true)]
         public long CreatedAt { get; set; }
 

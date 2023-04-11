@@ -70,6 +70,7 @@ namespace Conekta.net.Model
         /// The amount to be collected for tax in cents
         /// </summary>
         /// <value>The amount to be collected for tax in cents</value>
+        /// <example>100</example>
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
         public long Amount { get; set; }
 
@@ -77,6 +78,7 @@ namespace Conekta.net.Model
         /// description or tax&#39;s name
         /// </summary>
         /// <value>description or tax&#39;s name</value>
+        /// <example>&quot;testing&quot;</example>
         [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
         public string Description { get; set; }
 
@@ -89,18 +91,21 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;tax_lin_2tQ8dC5mg1UADmVPo&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
+        /// <example>&quot;tax_line&quot;</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets ParentId
         /// </summary>
+        /// <example>&quot;ord_2tPAmKCEJqh8RE6nY&quot;</example>
         [DataMember(Name = "parent_id", EmitDefaultValue = false)]
         public string ParentId { get; set; }
 

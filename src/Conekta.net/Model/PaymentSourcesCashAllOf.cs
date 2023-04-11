@@ -44,6 +44,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets ExpiresAt
         /// </summary>
+        /// <example>1553273553</example>
         [DataMember(Name = "expires_at", EmitDefaultValue = false)]
         public long ExpiresAt { get; set; }
 

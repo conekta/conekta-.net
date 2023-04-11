@@ -63,6 +63,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Currency
         /// </summary>
+        /// <example>&quot;MXN&quot;</example>
         [DataMember(Name = "currency", IsRequired = true, EmitDefaultValue = true)]
         public string Currency { get; set; }
 

@@ -57,12 +57,14 @@ namespace Conekta.net.Model
         /// Type of payment source
         /// </summary>
         /// <value>Type of payment source</value>
+        /// <example>&quot;card | cash | spei&quot;</example>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpiresAt
         /// </summary>
+        /// <example>1553273553</example>
         [DataMember(Name = "expires_at", EmitDefaultValue = false)]
         public long ExpiresAt { get; set; }
 

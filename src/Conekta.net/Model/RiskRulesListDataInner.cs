@@ -50,24 +50,28 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;2fw8EWJusiRrxdPzT&quot;</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
+        /// <example>&quot;email&quot;</example>
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Value
         /// </summary>
+        /// <example>&quot;email@example.com&quot;</example>
         [DataMember(Name = "value", EmitDefaultValue = false)]
         public string Value { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
+        /// <example>&quot;secure customer example@example.com&quot;</example>
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 

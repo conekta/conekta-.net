@@ -92,42 +92,49 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
+        /// <example>1661445644</example>
         [DataMember(Name = "created_at", IsRequired = true, EmitDefaultValue = true)]
         public long CreatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;6307a60c41de27127515a575&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets IpAddress
         /// </summary>
+        /// <example>&quot;54.235.131.48&quot;</example>
         [DataMember(Name = "ip_address", EmitDefaultValue = false)]
         public string IpAddress { get; set; }
 
         /// <summary>
         /// Gets or Sets Livemode
         /// </summary>
+        /// <example>true</example>
         [DataMember(Name = "livemode", IsRequired = true, EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
         /// <summary>
         /// Gets or Sets LoggableId
         /// </summary>
+        /// <example>&quot;ord_87632467832&quot;</example>
         [DataMember(Name = "loggable_id", EmitDefaultValue = true)]
         public string LoggableId { get; set; }
 
         /// <summary>
         /// Gets or Sets LoggableType
         /// </summary>
+        /// <example>&quot;order&quot;</example>
         [DataMember(Name = "loggable_type", EmitDefaultValue = true)]
         public string LoggableType { get; set; }
 
         /// <summary>
         /// Gets or Sets Method
         /// </summary>
+        /// <example>&quot;POST&quot;</example>
         [DataMember(Name = "method", EmitDefaultValue = false)]
         public string Method { get; set; }
 
@@ -146,6 +153,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Related
         /// </summary>
+        /// <example>&quot;FilterResource&quot;</example>
         [DataMember(Name = "related", EmitDefaultValue = false)]
         public string Related { get; set; }
 
@@ -182,30 +190,35 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
+        /// <example>&quot;200&quot;</example>
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
         /// <summary>
         /// Gets or Sets UpdatedAt
         /// </summary>
+        /// <example>&quot;2022-08-25T16:40:44.887Z&quot;</example>
         [DataMember(Name = "updated_at", EmitDefaultValue = false)]
         public string UpdatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
+        /// <example>&quot;/filter_resource&quot;</example>
         [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
         /// <summary>
         /// Gets or Sets UserAccountId
         /// </summary>
+        /// <example>&quot;5a0b7001edbb6e1725b0b2c6&quot;</example>
         [DataMember(Name = "user_account_id", EmitDefaultValue = false)]
         public string UserAccountId { get; set; }
 
         /// <summary>
         /// Gets or Sets _Version
         /// </summary>
+        /// <example>&quot;2.1.0&quot;</example>
         [DataMember(Name = "version", EmitDefaultValue = false)]
         public string _Version { get; set; }
 

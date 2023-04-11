@@ -62,42 +62,49 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Last4
         /// </summary>
+        /// <example>&quot;6410&quot;</example>
         [DataMember(Name = "last4", EmitDefaultValue = false)]
         public string Last4 { get; set; }
 
         /// <summary>
         /// Gets or Sets Bin
         /// </summary>
+        /// <example>&quot;40276657&quot;</example>
         [DataMember(Name = "bin", EmitDefaultValue = false)]
         public string Bin { get; set; }
 
         /// <summary>
         /// Gets or Sets CardType
         /// </summary>
+        /// <example>&quot;debit&quot;</example>
         [DataMember(Name = "card_type", EmitDefaultValue = false)]
         public string CardType { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpMonth
         /// </summary>
+        /// <example>&quot;10&quot;</example>
         [DataMember(Name = "exp_month", EmitDefaultValue = false)]
         public string ExpMonth { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpYear
         /// </summary>
+        /// <example>&quot;25&quot;</example>
         [DataMember(Name = "exp_year", EmitDefaultValue = false)]
         public string ExpYear { get; set; }
 
         /// <summary>
         /// Gets or Sets Brand
         /// </summary>
+        /// <example>&quot;visa&quot;</example>
         [DataMember(Name = "brand", EmitDefaultValue = false)]
         public string Brand { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
+        /// <example>&quot;Fulano Perez&quot;&quot;</example>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
@@ -116,6 +123,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets PaymentSourceStatus
         /// </summary>
+        /// <example>&quot;active&quot;</example>
         [DataMember(Name = "payment_source_status", EmitDefaultValue = false)]
         public string PaymentSourceStatus { get; set; }
 

@@ -48,6 +48,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Amount
         /// </summary>
+        /// <example>500</example>
         [DataMember(Name = "amount", EmitDefaultValue = false)]
         public long Amount { get; set; }
 
@@ -55,12 +56,14 @@ namespace Conekta.net.Model
         /// Discount code.
         /// </summary>
         /// <value>Discount code.</value>
+        /// <example>&quot;123&quot;</example>
         [DataMember(Name = "code", EmitDefaultValue = false)]
         public string Code { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
+        /// <example>&quot;loyalty&quot;</example>
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 

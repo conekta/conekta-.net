@@ -78,54 +78,63 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
+        /// <example>&quot;payment_source&quot;</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets AuthCode
         /// </summary>
+        /// <example>542563</example>
         [DataMember(Name = "auth_code", EmitDefaultValue = true)]
         public int? AuthCode { get; set; }
 
         /// <summary>
         /// Gets or Sets CashierId
         /// </summary>
+        /// <example>&quot;OINM01010&quot;</example>
         [DataMember(Name = "cashier_id", EmitDefaultValue = true)]
         public string CashierId { get; set; }
 
         /// <summary>
         /// Gets or Sets Reference
         /// </summary>
+        /// <example>&quot;93000262276908&quot;</example>
         [DataMember(Name = "reference", EmitDefaultValue = false)]
         public string Reference { get; set; }
 
         /// <summary>
         /// Gets or Sets BarcodeUrl
         /// </summary>
+        /// <example>&quot;https://pt-common-s3-stg.s3.amazonaws.com/644ebf80f2243197aad6cd8810375b905b613dbe.png?X-Amz-Algorithm&#x3D;AWS4-HMAC-SHA256&amp;X-Amz-Credential&#x3D;ASIA3UN6375MP4SLLCWV%2F20230203%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date&#x3D;20230203T215750Z&amp;X-Amz-Expires&#x3D;604800&amp;X-Amz-Security-Token&#x3D;IQoJb3JpZ2luX2VjEH4aCXVzLWVhc3QtMSJGMEQCICd79cu7DYu%2F4%2B3HnVVswydgU9yHcE9kmQIIk2TLoZJrAiBVZ0HxVSeboK5lhdQSqADjwQF62XX35jhC%2F2riB0M8uCqQBAj2%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAIaDDc5OTgwMTA4MTY4OCIMXWZds9ZI5hzUdbeGKuQDFreMyeWnWWPqDuGZ2%2BHk6usCr%2Fl096%2FNJh9xtf8htLu56K%2FhWUTx%2BjiqFWM2O%2FF5zTS%2BIV6TqkLDZ%2BQ5Jo1miQrRmR57YDz6uP2Yd1mNZ1ouq5ipnNjUuu5UWCCBAmqyZQsrVmeMQpSV2IB%2BTERCCcW2SukFEYU%2F20%2Fzy5orsoZ8DxOW460IymR3cWBk5u3Xh2cV6Y1RdPEwDEThhqYEF5w%2ByKbLENloMsI%2FUm6sG5PPrO3yQOAP9aK2muLJs9lXQRU%2FL%2FSsmS4FKSUFOqlN6YU%2Bi2Y%2FyGIKAJT2VDkngvz5Sl%2Fadj0j%2BPKftVRV5FcEhySB6Rl%2BSkPN7kVQMJp6pS8hMJ6JCyEA%2BA3eWYdIfKgQhWVXAR4oCBfJ62DH8FU3a7WfSjjpTwfVkiReWen3GGCYfUWETTVKp46MKnJ9PG0CD3KzxKV8VfmEGc5krK%2FI%2F%2BDV2wtSa%2F9qf1%2BK1YYJIK9qZGb25ljUiGhTB4T%2BMUOSQFjetiWUoOJc5Q3Jz%2FXJbiTAMTST39MhdbCgiMgfrc8OGKN5DOVbex33Z7dn0xf%2FOCkSqurhLaG08efKQBdhLNS0RlE9hbg9yZ2ywwtQIF39fI6A7eeH0T11a5HMlvm51u4rAffPHRuEJfwJoIuj%2F2s3QzDg7%2FWeBjqmAbnPOlGfysjrDdvHyG7HVnaX02kdG%2BI3Q4PFOO4Mjaa3ocpjcfPT70%2BZ5a%2FSv5vP0jDLGrLToeM9%2BAUlNepptICRu23a1tLGW4ri0twPA%2FZ4JDTtUUUgdblyG8bKpcUTNp4oOsdmLLBz3FVyr4c2xQbDZSu2zYOtoOxB18W0AC6kIbsMWVU55Bf0mBhPeBWxGrtM4Kw1SgHHlt%2F8vetQi2OwtUcg08c%3D&amp;X-Amz-SignedHeaders&#x3D;host&amp;X-Amz-Signature&#x3D;d06dfa41550003359f2aabc8006063a80dfd806a13a54d244024946a76aa9abc&quot;</example>
         [DataMember(Name = "barcode_url", EmitDefaultValue = false)]
         public string BarcodeUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpiresAt
         /// </summary>
+        /// <example>0</example>
         [DataMember(Name = "expires_at", EmitDefaultValue = false)]
         public long ExpiresAt { get; set; }
 
         /// <summary>
         /// Gets or Sets ServiceName
         /// </summary>
+        /// <example>&quot;OxxoPay&quot;</example>
         [DataMember(Name = "service_name", EmitDefaultValue = false)]
         public string ServiceName { get; set; }
 
         /// <summary>
         /// Gets or Sets Store
         /// </summary>
+        /// <example>&quot;10MON50EDI&quot;</example>
         [DataMember(Name = "store", EmitDefaultValue = true)]
         public string Store { get; set; }
 
         /// <summary>
         /// Gets or Sets StoreName
         /// </summary>
+        /// <example>&quot;OXXO&quot;</example>
         [DataMember(Name = "store_name", EmitDefaultValue = false)]
         public string StoreName { get; set; }
 

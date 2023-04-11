@@ -114,30 +114,35 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets CompanyName
         /// </summary>
+        /// <example>&quot;conekta&quot;</example>
         [DataMember(Name = "company_name", EmitDefaultValue = false)]
         public string CompanyName { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;fis_ent_2tKZsTYcsryyu7Ah8&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
+        /// <example>&quot;fiscal_entities&quot;</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
+        /// <example>1675715413</example>
         [DataMember(Name = "created_at", IsRequired = true, EmitDefaultValue = true)]
         public long CreatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets ParentId
         /// </summary>
+        /// <example>&quot;cus_2tKcHxhTz7xU5SymF&quot;</example>
         [DataMember(Name = "parent_id", EmitDefaultValue = false)]
         public string ParentId { get; set; }
 

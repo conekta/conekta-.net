@@ -59,6 +59,7 @@ namespace Conekta.net.Model
         /// The amount to be collected for tax in cents
         /// </summary>
         /// <value>The amount to be collected for tax in cents</value>
+        /// <example>100</example>
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
         public long Amount { get; set; }
 
@@ -66,6 +67,7 @@ namespace Conekta.net.Model
         /// description or tax&#39;s name
         /// </summary>
         /// <value>description or tax&#39;s name</value>
+        /// <example>&quot;testing&quot;</example>
         [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
         public string Description { get; set; }
 

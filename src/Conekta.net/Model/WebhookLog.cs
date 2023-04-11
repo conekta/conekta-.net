@@ -56,30 +56,35 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets FailedAttempts
         /// </summary>
+        /// <example>10</example>
         [DataMember(Name = "failed_attempts", EmitDefaultValue = false)]
         public int FailedAttempts { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;webhl_2svd2sh6GbqzyWBNZ&quot;</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets LastAttemptedAt
         /// </summary>
+        /// <example>1669651274</example>
         [DataMember(Name = "last_attempted_at", EmitDefaultValue = false)]
         public int LastAttemptedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets LastHttpResponseStatus
         /// </summary>
+        /// <example>200</example>
         [DataMember(Name = "last_http_response_status", EmitDefaultValue = false)]
         public int LastHttpResponseStatus { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
+        /// <example>&quot;webhook_log&quot;</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
@@ -92,6 +97,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
+        /// <example>&quot;https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval&quot;</example>
         [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 

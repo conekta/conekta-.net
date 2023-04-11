@@ -80,12 +80,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Amount
         /// </summary>
+        /// <example>21605</example>
         [DataMember(Name = "amount", EmitDefaultValue = false)]
         public int Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets AmountRefunded
         /// </summary>
+        /// <example>0</example>
         [DataMember(Name = "amount_refunded", EmitDefaultValue = false)]
         public int AmountRefunded { get; set; }
 
@@ -110,12 +112,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
+        /// <example>1676328434</example>
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public long CreatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets Currency
         /// </summary>
+        /// <example>&quot;MXN&quot;</example>
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 
@@ -140,12 +144,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;ord_2tMtQQpDvfnNjiuFG&quot;</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets IsRefundable
         /// </summary>
+        /// <example>false</example>
         [DataMember(Name = "is_refundable", EmitDefaultValue = true)]
         public bool IsRefundable { get; set; }
 
@@ -170,12 +176,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
+        /// <example>&quot;order&quot;</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentStatus
         /// </summary>
+        /// <example>&quot;paid&quot;</example>
         [DataMember(Name = "payment_status", EmitDefaultValue = false)]
         public string PaymentStatus { get; set; }
 
@@ -188,6 +196,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets UpdatedAt
         /// </summary>
+        /// <example>1676328434</example>
         [DataMember(Name = "updated_at", EmitDefaultValue = false)]
         public long UpdatedAt { get; set; }
 

@@ -86,6 +86,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
+        /// <example>1485151007</example>
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public long CreatedAt { get; set; }
 
@@ -98,48 +99,56 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets DefaultFiscalEntityId
         /// </summary>
+        /// <example>&quot;fis_ent_2tKqqAfqPi21oCmEJ&quot;</example>
         [DataMember(Name = "default_fiscal_entity_id", EmitDefaultValue = true)]
         public string DefaultFiscalEntityId { get; set; }
 
         /// <summary>
         /// Gets or Sets DefaultShippingContactId
         /// </summary>
+        /// <example>&quot;ship_cont_2tKZsTYcsryyu7Ah8&quot;</example>
         [DataMember(Name = "default_shipping_contact_id", EmitDefaultValue = false)]
         public string DefaultShippingContactId { get; set; }
 
         /// <summary>
         /// Gets or Sets DefaultPaymentSourceId
         /// </summary>
+        /// <example>&quot;src_2tHJfJ79KyUwpxTio&quot;</example>
         [DataMember(Name = "default_payment_source_id", EmitDefaultValue = true)]
         public string DefaultPaymentSourceId { get; set; }
 
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
+        /// <example>&quot;Felipe@gmail.com&quot;</example>
         [DataMember(Name = "email", EmitDefaultValue = false)]
         public string Email { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;cus_2tHJfJ79KyUwpxTik&quot;</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Livemode
         /// </summary>
+        /// <example>true</example>
         [DataMember(Name = "livemode", EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
+        /// <example>&quot;Felipe&quot;</example>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
+        /// <example>&quot;customer&quot;</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
@@ -152,6 +161,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Phone
         /// </summary>
+        /// <example>&quot;+5215555555555&quot;</example>
         [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 

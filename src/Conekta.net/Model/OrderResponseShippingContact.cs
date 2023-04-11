@@ -62,36 +62,42 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
+        /// <example>1675715413</example>
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public long CreatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;adr_1234567890&quot;</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
+        /// <example>&quot;shipping_contact&quot;</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets Phone
         /// </summary>
+        /// <example>&quot;+525511223344&quot;</example>
         [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
         /// <summary>
         /// Gets or Sets Receiver
         /// </summary>
+        /// <example>&quot;Marvin Fuller&quot;</example>
         [DataMember(Name = "receiver", EmitDefaultValue = false)]
         public string Receiver { get; set; }
 
         /// <summary>
         /// Gets or Sets BetweenStreets
         /// </summary>
+        /// <example>&quot;Ackerman Crescent&quot;</example>
         [DataMember(Name = "between_streets", EmitDefaultValue = true)]
         public string BetweenStreets { get; set; }
 
@@ -110,12 +116,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Default
         /// </summary>
+        /// <example>false</example>
         [DataMember(Name = "default", EmitDefaultValue = true)]
         public bool Default { get; set; }
 
         /// <summary>
         /// Gets or Sets Deleted
         /// </summary>
+        /// <example>false</example>
         [DataMember(Name = "deleted", EmitDefaultValue = true)]
         public bool Deleted { get; set; }
 

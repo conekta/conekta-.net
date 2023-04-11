@@ -48,18 +48,21 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets PlanId
         /// </summary>
+        /// <example>&quot;f84gdgf5g48r15fd21g8w424fd1&quot;</example>
         [DataMember(Name = "plan_id", EmitDefaultValue = false)]
         public string PlanId { get; set; }
 
         /// <summary>
         /// Gets or Sets CardId
         /// </summary>
+        /// <example>&quot;src_2qUCNd5AyQqfPMBuV&quot;</example>
         [DataMember(Name = "card_id", EmitDefaultValue = false)]
         public string CardId { get; set; }
 
         /// <summary>
         /// Gets or Sets TrialEnd
         /// </summary>
+        /// <example>1484040996</example>
         [DataMember(Name = "trial_end", EmitDefaultValue = false)]
         public int TrialEnd { get; set; }
 

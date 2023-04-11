@@ -100,12 +100,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets CanNotExpire
         /// </summary>
+        /// <example>false</example>
         [DataMember(Name = "can_not_expire", EmitDefaultValue = true)]
         public bool CanNotExpire { get; set; }
 
         /// <summary>
         /// Gets or Sets EmailsSent
         /// </summary>
+        /// <example>0</example>
         [DataMember(Name = "emails_sent", EmitDefaultValue = false)]
         public int EmailsSent { get; set; }
 
@@ -118,36 +120,42 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets ExpiresAt
         /// </summary>
+        /// <example>1676613599</example>
         [DataMember(Name = "expires_at", EmitDefaultValue = false)]
         public long ExpiresAt { get; set; }
 
         /// <summary>
         /// Gets or Sets FailureUrl
         /// </summary>
+        /// <example>&quot;http://187.216.228.66:2222/SysVentasPagos/Acceso.aspx&quot;</example>
         [DataMember(Name = "failure_url", EmitDefaultValue = false)]
         public string FailureUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets Force3dsFlow
         /// </summary>
+        /// <example>false</example>
         [DataMember(Name = "force_3ds_flow", EmitDefaultValue = true)]
         public bool Force3dsFlow { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
+        /// <example>&quot;6fca054a-8519-4c43-971e-cea35cc519bb&quot;</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets IsRedirectOnFailure
         /// </summary>
+        /// <example>false</example>
         [DataMember(Name = "is_redirect_on_failure", EmitDefaultValue = true)]
         public bool IsRedirectOnFailure { get; set; }
 
         /// <summary>
         /// Gets or Sets Livemode
         /// </summary>
+        /// <example>false</example>
         [DataMember(Name = "livemode", EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
@@ -160,6 +168,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets MonthlyInstallmentsEnabled
         /// </summary>
+        /// <example>false</example>
         [DataMember(Name = "monthly_installments_enabled", EmitDefaultValue = true)]
         public bool MonthlyInstallmentsEnabled { get; set; }
 
@@ -172,78 +181,91 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
+        /// <example>&quot;ord-2tNDzhA4Akmzj11AS&quot;</example>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets NeedsShippingContact
         /// </summary>
+        /// <example>false</example>
         [DataMember(Name = "needs_shipping_contact", EmitDefaultValue = true)]
         public bool NeedsShippingContact { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
+        /// <example>&quot;checkout&quot;</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets OnDemandEnabled
         /// </summary>
+        /// <example>true</example>
         [DataMember(Name = "on_demand_enabled", EmitDefaultValue = true)]
         public bool? OnDemandEnabled { get; set; }
 
         /// <summary>
         /// Gets or Sets PaidPaymentsCount
         /// </summary>
+        /// <example>0</example>
         [DataMember(Name = "paid_payments_count", EmitDefaultValue = false)]
         public int PaidPaymentsCount { get; set; }
 
         /// <summary>
         /// Gets or Sets Recurrent
         /// </summary>
+        /// <example>false</example>
         [DataMember(Name = "recurrent", EmitDefaultValue = true)]
         public bool Recurrent { get; set; }
 
         /// <summary>
         /// Gets or Sets Slug
         /// </summary>
+        /// <example>&quot;6fca054a85194c43971ecea35cc519bb&quot;</example>
         [DataMember(Name = "slug", EmitDefaultValue = false)]
         public string Slug { get; set; }
 
         /// <summary>
         /// Gets or Sets SmsSent
         /// </summary>
+        /// <example>0</example>
         [DataMember(Name = "sms_sent", EmitDefaultValue = false)]
         public int SmsSent { get; set; }
 
         /// <summary>
         /// Gets or Sets SuccessUrl
         /// </summary>
+        /// <example>&quot;http://187.216.228.66:2222/SysVentasPagos/Acceso.aspx&quot;</example>
         [DataMember(Name = "success_url", EmitDefaultValue = false)]
         public string SuccessUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets StartsAt
         /// </summary>
+        /// <example>1676354400</example>
         [DataMember(Name = "starts_at", EmitDefaultValue = false)]
         public int StartsAt { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
+        /// <example>&quot;Issued&quot;</example>
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
+        /// <example>&quot;HostedPayment&quot;</example>
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
+        /// <example>&quot;https://pay.stg.conekta.io/checkout/6fca054a85194c43971ecea35cc519bb&quot;</example>
         [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
