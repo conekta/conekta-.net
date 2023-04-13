@@ -4529,8 +4529,8 @@ paths:
       - Plans
   /orders/{id}/shipping_lines:
     post:
-      description: Create new shipping lines for an existing orden
-      operationId: ordersCreateShippingLines
+      description: Create new shipping for an existing orden
+      operationId: ordersCreateShipping
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
@@ -4557,17 +4557,17 @@ paths:
           - en
           type: string
       requestBody:
-        $ref: '#/components/requestBodies/shipping_lines_create'
+        $ref: '#/components/requestBodies/shipping_create'
       responses:
         "200":
           content:
             application/vnd.conekta-v2.1.0+json:
               examples:
                 sucessfull:
-                  $ref: '#/components/examples/shipping_lines'
+                  $ref: '#/components/examples/shipping'
                   value: null
               schema:
-                $ref: '#/components/schemas/shipping_lines_order_response'
+                $ref: '#/components/schemas/shipping_order_response'
           description: successful
         "401":
           content:
@@ -4623,8 +4623,8 @@ paths:
       - Shippings
   /orders/{id}/shipping_lines/{shipping_lines_id}:
     delete:
-      description: Delete shipping lines
-      operationId: ordersDeleteShippingLines
+      description: Delete shipping
+      operationId: ordersDeleteShipping
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
@@ -4662,7 +4662,7 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/shipping_lines_order_response'
+                $ref: '#/components/schemas/shipping_order_response'
           description: successful
         "401":
           content:
@@ -4732,8 +4732,8 @@ paths:
       tags:
       - Shippings
     put:
-      description: Update existing shipping lines for an existing orden
-      operationId: ordersUpdateShippingLines
+      description: Update existing shipping for an existing orden
+      operationId: ordersUpdateShipping
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
@@ -4767,13 +4767,13 @@ paths:
           - en
           type: string
       requestBody:
-        $ref: '#/components/requestBodies/shipping_lines_create'
+        $ref: '#/components/requestBodies/shipping_create'
       responses:
         "200":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/shipping_lines_order_response'
+                $ref: '#/components/schemas/shipping_order_response'
           description: successful
         "401":
           content:
@@ -6972,7 +6972,7 @@ components:
         fee: "116,"
         customer_id: null
         order_id: ord_2tHuwPhgSwq6Gt7Rg
-    shipping_lines:
+    shipping:
       value:
         amount: 0
         carrier: Fedex
@@ -7492,12 +7492,12 @@ components:
             $ref: '#/components/schemas/plan_update_request'
       description: requested field for plan
       required: true
-    shipping_lines_create:
+    shipping_create:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/shipping_lines_request'
-      description: requested field for a shipping lines
+            $ref: '#/components/schemas/shipping_request'
+      description: requested field for a shipping
       required: true
     customer_shipping_contacts:
       content:
@@ -8308,11 +8308,11 @@ components:
           type: integer
       title: plan_response
       type: object
-    shipping_lines_order_response:
+    shipping_order_response:
       allOf:
-      - $ref: '#/components/schemas/shipping_lines_request'
+      - $ref: '#/components/schemas/shipping_request'
       - $ref: '#/components/schemas/product_order_response_allOf'
-      title: shipping_lines_order_response
+      title: shipping_order_response
     customer_shipping_contacts_response:
       description: Contains the detail of the shipping addresses that the client has
         active or has used in Conekta
@@ -8735,10 +8735,10 @@ components:
         shipping_contact:
           $ref: '#/components/schemas/customer_shipping_contacts'
         shipping_lines:
-          description: "List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshippinglines).\
+          description: "List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshipping).\
             \ If the online store offers digital products."
           items:
-            $ref: '#/components/schemas/shipping_lines_request'
+            $ref: '#/components/schemas/shipping_request'
           type: array
         tax_lines:
           description: "List of [taxes](https://developers.conekta.com/v2.1.0/reference/orderscreatetaxlines)\
@@ -8792,10 +8792,10 @@ components:
         shipping_contact:
           $ref: '#/components/schemas/customer_shipping_contacts'
         shipping_lines:
-          description: "List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshippinglines).\
+          description: "List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshipping).\
             \ If the online store offers digital products."
           items:
-            $ref: '#/components/schemas/shipping_lines_request'
+            $ref: '#/components/schemas/shipping_request'
           type: array
         tax_lines:
           items:
@@ -9074,7 +9074,7 @@ components:
           type: string
       title: update_plan
       type: object
-    shipping_lines_request:
+    shipping_request:
       properties:
         amount:
           description: Shipping amount in cents
@@ -9097,19 +9097,19 @@ components:
         metadata:
           additionalProperties: true
           description: Hash where the user can send additional information for each
-            'shipping_line'.
+            'shipping'.
           example:
             key: value
           maxProperties: 100
           type: object
       required:
       - amount
-      title: shipping_lines_request
+      title: shipping_request
       type: object
     customer_shipping_contacts:
       description: |-
         [Shipping](https://developers.conekta.com/v2.1.0/reference/createcustomershippingcontacts)
-        details, required in case of sending a shipping_line. If we do not receive a shipping_contact on the order, the default shipping_contact of the customer will be used.
+        details, required in case of sending a shipping. If we do not receive a shipping_contact on the order, the default shipping_contact of the customer will be used.
       properties:
         phone:
           description: Phone contact
@@ -9140,7 +9140,7 @@ components:
     customer_update_shipping_contacts:
       description: |-
         [Shipping](https://developers.conekta.com/v2.1.0/reference/createcustomershippingcontacts)
-        details, required in case of sending a shipping_line. If we do not receive a shipping_contact on the order, the default shipping_contact of the customer will be used.
+        details, required in case of sending a shipping. If we do not receive a shipping_contact on the order, the default shipping_contact of the customer will be used.
       properties:
         phone:
           description: Phone contact

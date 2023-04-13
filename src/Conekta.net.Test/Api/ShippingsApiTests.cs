@@ -52,42 +52,42 @@ namespace Conekta.net.Test.Api
             Assert.IsType<ShippingsApi>(_instance);
         }
         /// <summary>
-        ///     Test OrdersCreateShippingLines
+        ///     Test OrdersCreateShipping
         /// </summary>
         [Fact]
-        public void OrdersCreateShippingLinesTest()
+        public void OrdersCreateShippingTest()
         {
             string id = "ord_2tVyWPnCPWbrV37mW";
-            ShippingLinesRequest shippingLinesRequest = new(
+            ShippingRequest shippingRequest = new(
                 amount: 500
             );
 
-            var response = _instance.OrdersCreateShippingLines(id, shippingLinesRequest);
+            var response = _instance.OrdersCreateShipping(id, shippingRequest);
 
-            Assert.IsType<ShippingLinesOrderResponse>(response);
+            Assert.IsType<ShippingOrderResponse>(response);
             Assert.Equal(id, response.ParentId);
-            Assert.Equal(shippingLinesRequest.Amount, response.Amount);
+            Assert.Equal(shippingRequest.Amount, response.Amount);
             Assert.Equal("shipping_line", response.Object);
         }
 
 
         /// <summary>
-        ///     Test OrdersUpdateShippingLines
+        ///     Test OrdersUpdateShipping
         /// </summary>
         [Fact]
-        public void OrdersUpdateShippingLinesTest()
+        public void OrdersUpdateShippingTest()
         {
             string id = "ord_2tVyWPnCPWbrV37mW";
-            string shippingLinesId = "ship_lin_2tVzNuDGSaDwreMg6";
-            ShippingLinesRequest shippingLinesRequest = new(
+            string shippingId = "ship_lin_2tVzNuDGSaDwreMg6";
+            ShippingRequest shippingRequest = new(
                 amount: 540
             );
 
-            var response = _instance.OrdersUpdateShippingLines(id, shippingLinesId, shippingLinesRequest);
+            var response = _instance.OrdersUpdateShipping(id, shippingId, shippingRequest);
 
-            Assert.IsType<ShippingLinesOrderResponse>(response);
-            Assert.Equal(shippingLinesRequest.Amount, response.Amount);
-            Assert.Equal(shippingLinesId, response.Id);
+            Assert.IsType<ShippingOrderResponse>(response);
+            Assert.Equal(shippingRequest.Amount, response.Amount);
+            Assert.Equal(shippingId, response.Id);
             Assert.Equal(id, response.ParentId);
         }
     }

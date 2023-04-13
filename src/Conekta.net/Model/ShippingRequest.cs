@@ -27,37 +27,31 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// ShippingLinesOrderResponse
+    /// ShippingRequest
     /// </summary>
-    [DataContract(Name = "shipping_lines_order_response")]
-    public partial class ShippingLinesOrderResponse : IEquatable<ShippingLinesOrderResponse>, IValidatableObject
+    [DataContract(Name = "shipping_request")]
+    public partial class ShippingRequest : IEquatable<ShippingRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ShippingLinesOrderResponse" /> class.
+        /// Initializes a new instance of the <see cref="ShippingRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ShippingLinesOrderResponse() { }
+        protected ShippingRequest() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ShippingLinesOrderResponse" /> class.
+        /// Initializes a new instance of the <see cref="ShippingRequest" /> class.
         /// </summary>
         /// <param name="amount">Shipping amount in cents (required).</param>
         /// <param name="carrier">Carrier name for the shipment.</param>
         /// <param name="trackingNumber">Tracking number can be used to track the shipment.</param>
         /// <param name="method">Method of shipment.</param>
-        /// <param name="metadata">Hash where the user can send additional information for each &#39;shipping_line&#39;..</param>
-        /// <param name="id">id.</param>
-        /// <param name="_object">_object.</param>
-        /// <param name="parentId">parentId.</param>
-        public ShippingLinesOrderResponse(long amount = default(long), string carrier = default(string), string trackingNumber = default(string), string method = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string id = default(string), string _object = default(string), string parentId = default(string))
+        /// <param name="metadata">Hash where the user can send additional information for each &#39;shipping&#39;..</param>
+        public ShippingRequest(long amount = default(long), string carrier = default(string), string trackingNumber = default(string), string method = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>))
         {
             this.Amount = amount;
             this.Carrier = carrier;
             this.TrackingNumber = trackingNumber;
             this.Method = method;
             this.Metadata = metadata;
-            this.Id = id;
-            this.Object = _object;
-            this.ParentId = parentId;
         }
 
         /// <summary>
@@ -93,29 +87,11 @@ namespace Conekta.net.Model
         public string Method { get; set; }
 
         /// <summary>
-        /// Hash where the user can send additional information for each &#39;shipping_line&#39;.
+        /// Hash where the user can send additional information for each &#39;shipping&#39;.
         /// </summary>
-        /// <value>Hash where the user can send additional information for each &#39;shipping_line&#39;.</value>
+        /// <value>Hash where the user can send additional information for each &#39;shipping&#39;.</value>
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Id
-        /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public string Id { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Object
-        /// </summary>
-        [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ParentId
-        /// </summary>
-        [DataMember(Name = "parent_id", EmitDefaultValue = false)]
-        public string ParentId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -124,15 +100,12 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ShippingLinesOrderResponse {\n");
+            sb.Append("class ShippingRequest {\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
             sb.Append("  Carrier: ").Append(Carrier).Append("\n");
             sb.Append("  TrackingNumber: ").Append(TrackingNumber).Append("\n");
             sb.Append("  Method: ").Append(Method).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
-            sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -153,15 +126,15 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ShippingLinesOrderResponse);
+            return this.Equals(input as ShippingRequest);
         }
 
         /// <summary>
-        /// Returns true if ShippingLinesOrderResponse instances are equal
+        /// Returns true if ShippingRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of ShippingLinesOrderResponse to be compared</param>
+        /// <param name="input">Instance of ShippingRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ShippingLinesOrderResponse input)
+        public bool Equals(ShippingRequest input)
         {
             if (input == null)
             {
@@ -192,21 +165,6 @@ namespace Conekta.net.Model
                     this.Metadata != null &&
                     input.Metadata != null &&
                     this.Metadata.SequenceEqual(input.Metadata)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
-                ) && 
-                (
-                    this.ParentId == input.ParentId ||
-                    (this.ParentId != null &&
-                    this.ParentId.Equals(input.ParentId))
                 );
         }
 
@@ -235,18 +193,6 @@ namespace Conekta.net.Model
                 if (this.Metadata != null)
                 {
                     hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.Object != null)
-                {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
-                }
-                if (this.ParentId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParentId.GetHashCode();
                 }
                 return hashCode;
             }

@@ -44,9 +44,9 @@ namespace Conekta.net.Model
         /// <param name="metadata">metadata.</param>
         /// <param name="preAuthorize">Indicates whether the order charges must be preauthorized (default to false).</param>
         /// <param name="shippingContact">shippingContact.</param>
-        /// <param name="shippingLines">List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshippinglines). If the online store offers digital products..</param>
+        /// <param name="shippingLines">List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshipping). If the online store offers digital products..</param>
         /// <param name="taxLines">taxLines.</param>
-        public OrderUpdateRequest(List<ChargeRequest> charges = default(List<ChargeRequest>), CheckoutRequest checkout = default(CheckoutRequest), string currency = default(string), OrderRequestCustomerInfo customerInfo = default(OrderRequestCustomerInfo), List<OrderDiscountLinesRequest> discountLines = default(List<OrderDiscountLinesRequest>), List<Product> lineItems = default(List<Product>), Dictionary<string, string> metadata = default(Dictionary<string, string>), bool preAuthorize = false, CustomerShippingContacts shippingContact = default(CustomerShippingContacts), List<ShippingLinesRequest> shippingLines = default(List<ShippingLinesRequest>), List<OrderTaxLinesRequest> taxLines = default(List<OrderTaxLinesRequest>))
+        public OrderUpdateRequest(List<ChargeRequest> charges = default(List<ChargeRequest>), CheckoutRequest checkout = default(CheckoutRequest), string currency = default(string), OrderRequestCustomerInfo customerInfo = default(OrderRequestCustomerInfo), List<OrderDiscountLinesRequest> discountLines = default(List<OrderDiscountLinesRequest>), List<Product> lineItems = default(List<Product>), Dictionary<string, string> metadata = default(Dictionary<string, string>), bool preAuthorize = false, CustomerShippingContacts shippingContact = default(CustomerShippingContacts), List<ShippingRequest> shippingLines = default(List<ShippingRequest>), List<OrderTaxLinesRequest> taxLines = default(List<OrderTaxLinesRequest>))
         {
             this.Charges = charges;
             this.Checkout = checkout;
@@ -121,11 +121,11 @@ namespace Conekta.net.Model
         public CustomerShippingContacts ShippingContact { get; set; }
 
         /// <summary>
-        /// List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshippinglines). If the online store offers digital products.
+        /// List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshipping). If the online store offers digital products.
         /// </summary>
-        /// <value>List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshippinglines). If the online store offers digital products.</value>
+        /// <value>List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshipping). If the online store offers digital products.</value>
         [DataMember(Name = "shipping_lines", EmitDefaultValue = false)]
-        public List<ShippingLinesRequest> ShippingLines { get; set; }
+        public List<ShippingRequest> ShippingLines { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxLines

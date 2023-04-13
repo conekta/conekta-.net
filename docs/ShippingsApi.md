@@ -4,17 +4,17 @@ All URIs are relative to *https://api.conekta.io*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OrdersCreateShippingLines**](ShippingsApi.md#orderscreateshippinglines) | **POST** /orders/{id}/shipping_lines | Create Shipping |
-| [**OrdersDeleteShippingLines**](ShippingsApi.md#ordersdeleteshippinglines) | **DELETE** /orders/{id}/shipping_lines/{shipping_lines_id} | Delete Shipping |
-| [**OrdersUpdateShippingLines**](ShippingsApi.md#ordersupdateshippinglines) | **PUT** /orders/{id}/shipping_lines/{shipping_lines_id} | Update Shipping |
+| [**OrdersCreateShipping**](ShippingsApi.md#orderscreateshipping) | **POST** /orders/{id}/shipping_lines | Create Shipping |
+| [**OrdersDeleteShipping**](ShippingsApi.md#ordersdeleteshipping) | **DELETE** /orders/{id}/shipping_lines/{shipping_lines_id} | Delete Shipping |
+| [**OrdersUpdateShipping**](ShippingsApi.md#ordersupdateshipping) | **PUT** /orders/{id}/shipping_lines/{shipping_lines_id} | Update Shipping |
 
-<a name="orderscreateshippinglines"></a>
-# **OrdersCreateShippingLines**
-> ShippingLinesOrderResponse OrdersCreateShippingLines (string id, ShippingLinesRequest shippingLinesRequest, string acceptLanguage = null)
+<a name="orderscreateshipping"></a>
+# **OrdersCreateShipping**
+> ShippingOrderResponse OrdersCreateShipping (string id, ShippingRequest shippingRequest, string acceptLanguage = null)
 
 Create Shipping
 
-Create new shipping lines for an existing orden
+Create new shipping for an existing orden
 
 ### Example
 ```csharp
@@ -26,7 +26,7 @@ using Conekta.net.Model;
 
 namespace Example
 {
-    public class OrdersCreateShippingLinesExample
+    public class OrdersCreateShippingExample
     {
         public static void Main()
         {
@@ -37,18 +37,18 @@ namespace Example
 
             var apiInstance = new ShippingsApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
-            var shippingLinesRequest = new ShippingLinesRequest(); // ShippingLinesRequest | requested field for a shipping lines
+            var shippingRequest = new ShippingRequest(); // ShippingRequest | requested field for a shipping
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
                 // Create Shipping
-                ShippingLinesOrderResponse result = apiInstance.OrdersCreateShippingLines(id, shippingLinesRequest, acceptLanguage);
+                ShippingOrderResponse result = apiInstance.OrdersCreateShipping(id, shippingRequest, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ShippingsApi.OrdersCreateShippingLines: " + e.Message);
+                Debug.Print("Exception when calling ShippingsApi.OrdersCreateShipping: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -57,21 +57,21 @@ namespace Example
 }
 ```
 
-#### Using the OrdersCreateShippingLinesWithHttpInfo variant
+#### Using the OrdersCreateShippingWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Create Shipping
-    ApiResponse<ShippingLinesOrderResponse> response = apiInstance.OrdersCreateShippingLinesWithHttpInfo(id, shippingLinesRequest, acceptLanguage);
+    ApiResponse<ShippingOrderResponse> response = apiInstance.OrdersCreateShippingWithHttpInfo(id, shippingRequest, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ShippingsApi.OrdersCreateShippingLinesWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ShippingsApi.OrdersCreateShippingWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -82,12 +82,12 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
-| **shippingLinesRequest** | [**ShippingLinesRequest**](ShippingLinesRequest.md) | requested field for a shipping lines |  |
+| **shippingRequest** | [**ShippingRequest**](ShippingRequest.md) | requested field for a shipping |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 
-[**ShippingLinesOrderResponse**](ShippingLinesOrderResponse.md)
+[**ShippingOrderResponse**](ShippingOrderResponse.md)
 
 ### Authorization
 
@@ -109,13 +109,13 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="ordersdeleteshippinglines"></a>
-# **OrdersDeleteShippingLines**
-> ShippingLinesOrderResponse OrdersDeleteShippingLines (string id, string shippingLinesId, string acceptLanguage = null)
+<a name="ordersdeleteshipping"></a>
+# **OrdersDeleteShipping**
+> ShippingOrderResponse OrdersDeleteShipping (string id, string shippingLinesId, string acceptLanguage = null)
 
 Delete Shipping
 
-Delete shipping lines
+Delete shipping
 
 ### Example
 ```csharp
@@ -127,7 +127,7 @@ using Conekta.net.Model;
 
 namespace Example
 {
-    public class OrdersDeleteShippingLinesExample
+    public class OrdersDeleteShippingExample
     {
         public static void Main()
         {
@@ -144,12 +144,12 @@ namespace Example
             try
             {
                 // Delete Shipping
-                ShippingLinesOrderResponse result = apiInstance.OrdersDeleteShippingLines(id, shippingLinesId, acceptLanguage);
+                ShippingOrderResponse result = apiInstance.OrdersDeleteShipping(id, shippingLinesId, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ShippingsApi.OrdersDeleteShippingLines: " + e.Message);
+                Debug.Print("Exception when calling ShippingsApi.OrdersDeleteShipping: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -158,21 +158,21 @@ namespace Example
 }
 ```
 
-#### Using the OrdersDeleteShippingLinesWithHttpInfo variant
+#### Using the OrdersDeleteShippingWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Delete Shipping
-    ApiResponse<ShippingLinesOrderResponse> response = apiInstance.OrdersDeleteShippingLinesWithHttpInfo(id, shippingLinesId, acceptLanguage);
+    ApiResponse<ShippingOrderResponse> response = apiInstance.OrdersDeleteShippingWithHttpInfo(id, shippingLinesId, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ShippingsApi.OrdersDeleteShippingLinesWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ShippingsApi.OrdersDeleteShippingWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -188,7 +188,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**ShippingLinesOrderResponse**](ShippingLinesOrderResponse.md)
+[**ShippingOrderResponse**](ShippingOrderResponse.md)
 
 ### Authorization
 
@@ -211,13 +211,13 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="ordersupdateshippinglines"></a>
-# **OrdersUpdateShippingLines**
-> ShippingLinesOrderResponse OrdersUpdateShippingLines (string id, string shippingLinesId, ShippingLinesRequest shippingLinesRequest, string acceptLanguage = null)
+<a name="ordersupdateshipping"></a>
+# **OrdersUpdateShipping**
+> ShippingOrderResponse OrdersUpdateShipping (string id, string shippingLinesId, ShippingRequest shippingRequest, string acceptLanguage = null)
 
 Update Shipping
 
-Update existing shipping lines for an existing orden
+Update existing shipping for an existing orden
 
 ### Example
 ```csharp
@@ -229,7 +229,7 @@ using Conekta.net.Model;
 
 namespace Example
 {
-    public class OrdersUpdateShippingLinesExample
+    public class OrdersUpdateShippingExample
     {
         public static void Main()
         {
@@ -241,18 +241,18 @@ namespace Example
             var apiInstance = new ShippingsApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var shippingLinesId = ship_lin_2tQ974hSHcsdeSZHG;  // string | identifier
-            var shippingLinesRequest = new ShippingLinesRequest(); // ShippingLinesRequest | requested field for a shipping lines
+            var shippingRequest = new ShippingRequest(); // ShippingRequest | requested field for a shipping
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
                 // Update Shipping
-                ShippingLinesOrderResponse result = apiInstance.OrdersUpdateShippingLines(id, shippingLinesId, shippingLinesRequest, acceptLanguage);
+                ShippingOrderResponse result = apiInstance.OrdersUpdateShipping(id, shippingLinesId, shippingRequest, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ShippingsApi.OrdersUpdateShippingLines: " + e.Message);
+                Debug.Print("Exception when calling ShippingsApi.OrdersUpdateShipping: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -261,21 +261,21 @@ namespace Example
 }
 ```
 
-#### Using the OrdersUpdateShippingLinesWithHttpInfo variant
+#### Using the OrdersUpdateShippingWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Update Shipping
-    ApiResponse<ShippingLinesOrderResponse> response = apiInstance.OrdersUpdateShippingLinesWithHttpInfo(id, shippingLinesId, shippingLinesRequest, acceptLanguage);
+    ApiResponse<ShippingOrderResponse> response = apiInstance.OrdersUpdateShippingWithHttpInfo(id, shippingLinesId, shippingRequest, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ShippingsApi.OrdersUpdateShippingLinesWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ShippingsApi.OrdersUpdateShippingWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -287,12 +287,12 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
 | **shippingLinesId** | **string** | identifier |  |
-| **shippingLinesRequest** | [**ShippingLinesRequest**](ShippingLinesRequest.md) | requested field for a shipping lines |  |
+| **shippingRequest** | [**ShippingRequest**](ShippingRequest.md) | requested field for a shipping |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 
-[**ShippingLinesOrderResponse**](ShippingLinesOrderResponse.md)
+[**ShippingOrderResponse**](ShippingOrderResponse.md)
 
 ### Authorization
 

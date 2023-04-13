@@ -1,4 +1,4 @@
-# Conekta.net.Model.ShippingLinesOrderResponse
+# Conekta.net.Model.ShippingOrderResponse
 
 ## Properties
 
@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Carrier** | **string** | Carrier name for the shipment | [optional] 
 **TrackingNumber** | **string** | Tracking number can be used to track the shipment | [optional] 
 **Method** | **string** | Method of shipment | [optional] 
-**Metadata** | **Dictionary&lt;string, Object&gt;** | Hash where the user can send additional information for each &#39;shipping_line&#39;. | [optional] 
+**Metadata** | **Dictionary&lt;string, Object&gt;** | Hash where the user can send additional information for each &#39;shipping&#39;. | [optional] 
 **Id** | **string** |  | [optional] 
 **Object** | **string** |  | [optional] 
 **ParentId** | **string** |  | [optional] 

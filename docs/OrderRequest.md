@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **NeedsShippingContact** | **bool** | Allows you to fill out the shipping information at checkout | [optional] 
 **PreAuthorize** | **bool** | Indicates whether the order charges must be preauthorized | [optional] [default to false]
 **ShippingContact** | [**CustomerShippingContacts**](CustomerShippingContacts.md) |  | [optional] 
-**ShippingLines** | [**List&lt;ShippingLinesRequest&gt;**](ShippingLinesRequest.md) | List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshippinglines). If the online store offers digital products. | [optional] 
+**ShippingLines** | [**List&lt;ShippingRequest&gt;**](ShippingRequest.md) | List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshipping). If the online store offers digital products. | [optional] 
 **TaxLines** | [**List&lt;OrderTaxLinesRequest&gt;**](OrderTaxLinesRequest.md) | List of [taxes](https://developers.conekta.com/v2.1.0/reference/orderscreatetaxlines) that are applied to the order. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

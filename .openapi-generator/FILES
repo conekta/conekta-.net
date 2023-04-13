@@ -150,8 +150,8 @@ docs/ProductsApi.md
 docs/RiskRulesList.md
 docs/RiskRulesListDataInner.md
 docs/ShippingContactsApi.md
-docs/ShippingLinesOrderResponse.md
-docs/ShippingLinesRequest.md
+docs/ShippingOrderResponse.md
+docs/ShippingRequest.md
 docs/ShippingsApi.md
 docs/SmsCheckoutRequest.md
 docs/SubscriptionEventsResponse.md
@@ -345,8 +345,8 @@ src/Conekta.net/Model/ProductOrderResponse.cs
 src/Conekta.net/Model/ProductOrderResponseAllOf.cs
 src/Conekta.net/Model/RiskRulesList.cs
 src/Conekta.net/Model/RiskRulesListDataInner.cs
-src/Conekta.net/Model/ShippingLinesOrderResponse.cs
-src/Conekta.net/Model/ShippingLinesRequest.cs
+src/Conekta.net/Model/ShippingOrderResponse.cs
+src/Conekta.net/Model/ShippingRequest.cs
 src/Conekta.net/Model/SmsCheckoutRequest.cs
 src/Conekta.net/Model/SubscriptionEventsResponse.cs
 src/Conekta.net/Model/SubscriptionRequest.cs
