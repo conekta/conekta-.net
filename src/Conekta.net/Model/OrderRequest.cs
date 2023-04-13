@@ -45,14 +45,14 @@ namespace Conekta.net.Model
         /// <param name="currency">Currency with which the payment will be made. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217) (required).</param>
         /// <param name="customerInfo">customerInfo (required).</param>
         /// <param name="discountLines">List of [discounts](https://developers.conekta.com/v2.1.0/reference/orderscreatediscountline) that are applied to the order. You must have at least one discount..</param>
-        /// <param name="lineItems">List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreatelineitems) that are sold in the order. You must have at least one product. (required).</param>
+        /// <param name="lineItems">List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product. (required).</param>
         /// <param name="metadata">metadata.</param>
         /// <param name="needsShippingContact">Allows you to fill out the shipping information at checkout.</param>
         /// <param name="preAuthorize">Indicates whether the order charges must be preauthorized (default to false).</param>
         /// <param name="shippingContact">shippingContact.</param>
         /// <param name="shippingLines">List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshippinglines). If the online store offers digital products..</param>
         /// <param name="taxLines">List of [taxes](https://developers.conekta.com/v2.1.0/reference/orderscreatetaxlines) that are applied to the order..</param>
-        public OrderRequest(List<ChargeRequest> charges = default(List<ChargeRequest>), CheckoutRequest checkout = default(CheckoutRequest), string currency = default(string), OrderRequestCustomerInfo customerInfo = default(OrderRequestCustomerInfo), List<OrderDiscountLinesRequest> discountLines = default(List<OrderDiscountLinesRequest>), List<LineItems> lineItems = default(List<LineItems>), Dictionary<string, string> metadata = default(Dictionary<string, string>), bool needsShippingContact = default(bool), bool preAuthorize = false, CustomerShippingContacts shippingContact = default(CustomerShippingContacts), List<ShippingLinesRequest> shippingLines = default(List<ShippingLinesRequest>), List<OrderTaxLinesRequest> taxLines = default(List<OrderTaxLinesRequest>))
+        public OrderRequest(List<ChargeRequest> charges = default(List<ChargeRequest>), CheckoutRequest checkout = default(CheckoutRequest), string currency = default(string), OrderRequestCustomerInfo customerInfo = default(OrderRequestCustomerInfo), List<OrderDiscountLinesRequest> discountLines = default(List<OrderDiscountLinesRequest>), List<Product> lineItems = default(List<Product>), Dictionary<string, string> metadata = default(Dictionary<string, string>), bool needsShippingContact = default(bool), bool preAuthorize = false, CustomerShippingContacts shippingContact = default(CustomerShippingContacts), List<ShippingLinesRequest> shippingLines = default(List<ShippingLinesRequest>), List<OrderTaxLinesRequest> taxLines = default(List<OrderTaxLinesRequest>))
         {
             // to ensure "currency" is required (not null)
             if (currency == null)
@@ -118,11 +118,11 @@ namespace Conekta.net.Model
         public List<OrderDiscountLinesRequest> DiscountLines { get; set; }
 
         /// <summary>
-        /// List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreatelineitems) that are sold in the order. You must have at least one product.
+        /// List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product.
         /// </summary>
-        /// <value>List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreatelineitems) that are sold in the order. You must have at least one product.</value>
+        /// <value>List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product.</value>
         [DataMember(Name = "line_items", IsRequired = true, EmitDefaultValue = true)]
-        public List<LineItems> LineItems { get; set; }
+        public List<Product> LineItems { get; set; }
 
         /// <summary>
         /// Gets or Sets Metadata

@@ -27,18 +27,18 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// LineItemsDataResponse
+    /// ProductDataResponse
     /// </summary>
-    [DataContract(Name = "line_items_data_response")]
-    public partial class LineItemsDataResponse : IEquatable<LineItemsDataResponse>, IValidatableObject
+    [DataContract(Name = "product_data_response")]
+    public partial class ProductDataResponse : IEquatable<ProductDataResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="LineItemsDataResponse" /> class.
+        /// Initializes a new instance of the <see cref="ProductDataResponse" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected LineItemsDataResponse() { }
+        protected ProductDataResponse() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="LineItemsDataResponse" /> class.
+        /// Initializes a new instance of the <see cref="ProductDataResponse" /> class.
         /// </summary>
         /// <param name="antifraudInfo">antifraudInfo.</param>
         /// <param name="brand">The brand of the item..</param>
@@ -52,12 +52,12 @@ namespace Conekta.net.Model
         /// <param name="id">id.</param>
         /// <param name="_object">_object.</param>
         /// <param name="parentId">parentId.</param>
-        public LineItemsDataResponse(Dictionary<string, Object> antifraudInfo = default(Dictionary<string, Object>), string brand = default(string), string description = default(string), Dictionary<string, string> metadata = default(Dictionary<string, string>), string name = default(string), int quantity = default(int), string sku = default(string), List<string> tags = default(List<string>), int unitPrice = default(int), string id = default(string), string _object = default(string), string parentId = default(string))
+        public ProductDataResponse(Dictionary<string, Object> antifraudInfo = default(Dictionary<string, Object>), string brand = default(string), string description = default(string), Dictionary<string, string> metadata = default(Dictionary<string, string>), string name = default(string), int quantity = default(int), string sku = default(string), List<string> tags = default(List<string>), int unitPrice = default(int), string id = default(string), string _object = default(string), string parentId = default(string))
         {
             // to ensure "name" is required (not null)
             if (name == null)
             {
-                throw new ArgumentNullException("name is a required property for LineItemsDataResponse and cannot be null");
+                throw new ArgumentNullException("name is a required property for ProductDataResponse and cannot be null");
             }
             this.Name = name;
             this.Quantity = quantity;
@@ -166,7 +166,7 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class LineItemsDataResponse {\n");
+            sb.Append("class ProductDataResponse {\n");
             sb.Append("  AntifraudInfo: ").Append(AntifraudInfo).Append("\n");
             sb.Append("  Brand: ").Append(Brand).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
@@ -199,15 +199,15 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LineItemsDataResponse);
+            return this.Equals(input as ProductDataResponse);
         }
 
         /// <summary>
-        /// Returns true if LineItemsDataResponse instances are equal
+        /// Returns true if ProductDataResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of LineItemsDataResponse to be compared</param>
+        /// <param name="input">Instance of ProductDataResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(LineItemsDataResponse input)
+        public bool Equals(ProductDataResponse input)
         {
             if (input == null)
             {

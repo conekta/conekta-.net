@@ -35,11 +35,11 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="lineItems">requested field for a line items</param>
+        /// <param name="product">requested field for a product</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>LineItemsOrderResponse</returns>
-        LineItemsOrderResponse OrdersCreateLineItems(string id, LineItems lineItems, string acceptLanguage = default(string), int operationIndex = 0);
+        /// <returns>ProductOrderResponse</returns>
+        ProductOrderResponse OrdersCreateProduct(string id, Product product, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Create Product
@@ -49,11 +49,11 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="lineItems">requested field for a line items</param>
+        /// <param name="product">requested field for a product</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of LineItemsOrderResponse</returns>
-        ApiResponse<LineItemsOrderResponse> OrdersCreateLineItemsWithHttpInfo(string id, LineItems lineItems, string acceptLanguage = default(string), int operationIndex = 0);
+        /// <returns>ApiResponse of ProductOrderResponse</returns>
+        ApiResponse<ProductOrderResponse> OrdersCreateProductWithHttpInfo(string id, Product product, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
         /// Delete Product
         /// </summary>
@@ -65,8 +65,8 @@ namespace Conekta.net.Api
         /// <param name="lineItemId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>LineItemsOrderResponse</returns>
-        LineItemsOrderResponse OrdersDeleteLineItems(string id, string lineItemId, string acceptLanguage = default(string), int operationIndex = 0);
+        /// <returns>ProductOrderResponse</returns>
+        ProductOrderResponse OrdersDeleteProduct(string id, string lineItemId, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Delete Product
@@ -79,37 +79,37 @@ namespace Conekta.net.Api
         /// <param name="lineItemId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of LineItemsOrderResponse</returns>
-        ApiResponse<LineItemsOrderResponse> OrdersDeleteLineItemsWithHttpInfo(string id, string lineItemId, string acceptLanguage = default(string), int operationIndex = 0);
+        /// <returns>ApiResponse of ProductOrderResponse</returns>
+        ApiResponse<ProductOrderResponse> OrdersDeleteProductWithHttpInfo(string id, string lineItemId, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
         /// Update Product
         /// </summary>
         /// <remarks>
-        /// Update a existing line items for an existing orden
+        /// Update an existing product for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="lineItemId">identifier</param>
-        /// <param name="updateLineItems">requested field for a line items</param>
+        /// <param name="updateProduct">requested field for products</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>LineItemsOrderResponse</returns>
-        LineItemsOrderResponse OrdersUpdateLineItems(string id, string lineItemId, UpdateLineItems updateLineItems, string acceptLanguage = default(string), int operationIndex = 0);
+        /// <returns>ProductOrderResponse</returns>
+        ProductOrderResponse OrdersUpdateProduct(string id, string lineItemId, UpdateProduct updateProduct, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Update Product
         /// </summary>
         /// <remarks>
-        /// Update a existing line items for an existing orden
+        /// Update an existing product for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="lineItemId">identifier</param>
-        /// <param name="updateLineItems">requested field for a line items</param>
+        /// <param name="updateProduct">requested field for products</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of LineItemsOrderResponse</returns>
-        ApiResponse<LineItemsOrderResponse> OrdersUpdateLineItemsWithHttpInfo(string id, string lineItemId, UpdateLineItems updateLineItems, string acceptLanguage = default(string), int operationIndex = 0);
+        /// <returns>ApiResponse of ProductOrderResponse</returns>
+        ApiResponse<ProductOrderResponse> OrdersUpdateProductWithHttpInfo(string id, string lineItemId, UpdateProduct updateProduct, string acceptLanguage = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -127,12 +127,12 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="lineItems">requested field for a line items</param>
+        /// <param name="product">requested field for a product</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of LineItemsOrderResponse</returns>
-        System.Threading.Tasks.Task<LineItemsOrderResponse> OrdersCreateLineItemsAsync(string id, LineItems lineItems, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ProductOrderResponse</returns>
+        System.Threading.Tasks.Task<ProductOrderResponse> OrdersCreateProductAsync(string id, Product product, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Product
@@ -142,12 +142,12 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="lineItems">requested field for a line items</param>
+        /// <param name="product">requested field for a product</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (LineItemsOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LineItemsOrderResponse>> OrdersCreateLineItemsWithHttpInfoAsync(string id, LineItems lineItems, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (ProductOrderResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ProductOrderResponse>> OrdersCreateProductWithHttpInfoAsync(string id, Product product, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete Product
         /// </summary>
@@ -160,8 +160,8 @@ namespace Conekta.net.Api
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of LineItemsOrderResponse</returns>
-        System.Threading.Tasks.Task<LineItemsOrderResponse> OrdersDeleteLineItemsAsync(string id, string lineItemId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ProductOrderResponse</returns>
+        System.Threading.Tasks.Task<ProductOrderResponse> OrdersDeleteProductAsync(string id, string lineItemId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete Product
@@ -175,39 +175,39 @@ namespace Conekta.net.Api
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (LineItemsOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LineItemsOrderResponse>> OrdersDeleteLineItemsWithHttpInfoAsync(string id, string lineItemId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (ProductOrderResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ProductOrderResponse>> OrdersDeleteProductWithHttpInfoAsync(string id, string lineItemId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update Product
         /// </summary>
         /// <remarks>
-        /// Update a existing line items for an existing orden
+        /// Update an existing product for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="lineItemId">identifier</param>
-        /// <param name="updateLineItems">requested field for a line items</param>
+        /// <param name="updateProduct">requested field for products</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of LineItemsOrderResponse</returns>
-        System.Threading.Tasks.Task<LineItemsOrderResponse> OrdersUpdateLineItemsAsync(string id, string lineItemId, UpdateLineItems updateLineItems, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ProductOrderResponse</returns>
+        System.Threading.Tasks.Task<ProductOrderResponse> OrdersUpdateProductAsync(string id, string lineItemId, UpdateProduct updateProduct, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Product
         /// </summary>
         /// <remarks>
-        /// Update a existing line items for an existing orden
+        /// Update an existing product for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="lineItemId">identifier</param>
-        /// <param name="updateLineItems">requested field for a line items</param>
+        /// <param name="updateProduct">requested field for products</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (LineItemsOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LineItemsOrderResponse>> OrdersUpdateLineItemsWithHttpInfoAsync(string id, string lineItemId, UpdateLineItems updateLineItems, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (ProductOrderResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ProductOrderResponse>> OrdersUpdateProductWithHttpInfoAsync(string id, string lineItemId, UpdateProduct updateProduct, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -333,13 +333,13 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="lineItems">requested field for a line items</param>
+        /// <param name="product">requested field for a product</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>LineItemsOrderResponse</returns>
-        public LineItemsOrderResponse OrdersCreateLineItems(string id, LineItems lineItems, string acceptLanguage = default(string), int operationIndex = 0)
+        /// <returns>ProductOrderResponse</returns>
+        public ProductOrderResponse OrdersCreateProduct(string id, Product product, string acceptLanguage = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<LineItemsOrderResponse> localVarResponse = OrdersCreateLineItemsWithHttpInfo(id, lineItems, acceptLanguage);
+            Conekta.net.Client.ApiResponse<ProductOrderResponse> localVarResponse = OrdersCreateProductWithHttpInfo(id, product, acceptLanguage);
             return localVarResponse.Data;
         }
 
@@ -348,22 +348,22 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="lineItems">requested field for a line items</param>
+        /// <param name="product">requested field for a product</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of LineItemsOrderResponse</returns>
-        public Conekta.net.Client.ApiResponse<LineItemsOrderResponse> OrdersCreateLineItemsWithHttpInfo(string id, LineItems lineItems, string acceptLanguage = default(string), int operationIndex = 0)
+        /// <returns>ApiResponse of ProductOrderResponse</returns>
+        public Conekta.net.Client.ApiResponse<ProductOrderResponse> OrdersCreateProductWithHttpInfo(string id, Product product, string acceptLanguage = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling ProductsApi->OrdersCreateLineItems");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling ProductsApi->OrdersCreateProduct");
             }
 
-            // verify the required parameter 'lineItems' is set
-            if (lineItems == null)
+            // verify the required parameter 'product' is set
+            if (product == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'lineItems' when calling ProductsApi->OrdersCreateLineItems");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'product' when calling ProductsApi->OrdersCreateProduct");
             }
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -394,9 +394,9 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
-            localVarRequestOptions.Data = lineItems;
+            localVarRequestOptions.Data = product;
 
-            localVarRequestOptions.Operation = "ProductsApi.OrdersCreateLineItems";
+            localVarRequestOptions.Operation = "ProductsApi.OrdersCreateProduct";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (bearerAuth) required
@@ -407,10 +407,10 @@ namespace Conekta.net.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<LineItemsOrderResponse>("/orders/{id}/line_items", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<ProductOrderResponse>("/orders/{id}/line_items", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("OrdersCreateLineItems", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrdersCreateProduct", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -425,14 +425,14 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="lineItems">requested field for a line items</param>
+        /// <param name="product">requested field for a product</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of LineItemsOrderResponse</returns>
-        public async System.Threading.Tasks.Task<LineItemsOrderResponse> OrdersCreateLineItemsAsync(string id, LineItems lineItems, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ProductOrderResponse</returns>
+        public async System.Threading.Tasks.Task<ProductOrderResponse> OrdersCreateProductAsync(string id, Product product, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<LineItemsOrderResponse> localVarResponse = await OrdersCreateLineItemsWithHttpInfoAsync(id, lineItems, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<ProductOrderResponse> localVarResponse = await OrdersCreateProductWithHttpInfoAsync(id, product, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -441,23 +441,23 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="lineItems">requested field for a line items</param>
+        /// <param name="product">requested field for a product</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (LineItemsOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<LineItemsOrderResponse>> OrdersCreateLineItemsWithHttpInfoAsync(string id, LineItems lineItems, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ProductOrderResponse)</returns>
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ProductOrderResponse>> OrdersCreateProductWithHttpInfoAsync(string id, Product product, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling ProductsApi->OrdersCreateLineItems");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling ProductsApi->OrdersCreateProduct");
             }
 
-            // verify the required parameter 'lineItems' is set
-            if (lineItems == null)
+            // verify the required parameter 'product' is set
+            if (product == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'lineItems' when calling ProductsApi->OrdersCreateLineItems");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'product' when calling ProductsApi->OrdersCreateProduct");
             }
 
 
@@ -489,9 +489,9 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
-            localVarRequestOptions.Data = lineItems;
+            localVarRequestOptions.Data = product;
 
-            localVarRequestOptions.Operation = "ProductsApi.OrdersCreateLineItems";
+            localVarRequestOptions.Operation = "ProductsApi.OrdersCreateProduct";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (bearerAuth) required
@@ -502,11 +502,11 @@ namespace Conekta.net.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<LineItemsOrderResponse>("/orders/{id}/line_items", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<ProductOrderResponse>("/orders/{id}/line_items", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("OrdersCreateLineItems", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrdersCreateProduct", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -524,10 +524,10 @@ namespace Conekta.net.Api
         /// <param name="lineItemId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>LineItemsOrderResponse</returns>
-        public LineItemsOrderResponse OrdersDeleteLineItems(string id, string lineItemId, string acceptLanguage = default(string), int operationIndex = 0)
+        /// <returns>ProductOrderResponse</returns>
+        public ProductOrderResponse OrdersDeleteProduct(string id, string lineItemId, string acceptLanguage = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<LineItemsOrderResponse> localVarResponse = OrdersDeleteLineItemsWithHttpInfo(id, lineItemId, acceptLanguage);
+            Conekta.net.Client.ApiResponse<ProductOrderResponse> localVarResponse = OrdersDeleteProductWithHttpInfo(id, lineItemId, acceptLanguage);
             return localVarResponse.Data;
         }
 
@@ -539,19 +539,19 @@ namespace Conekta.net.Api
         /// <param name="lineItemId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of LineItemsOrderResponse</returns>
-        public Conekta.net.Client.ApiResponse<LineItemsOrderResponse> OrdersDeleteLineItemsWithHttpInfo(string id, string lineItemId, string acceptLanguage = default(string), int operationIndex = 0)
+        /// <returns>ApiResponse of ProductOrderResponse</returns>
+        public Conekta.net.Client.ApiResponse<ProductOrderResponse> OrdersDeleteProductWithHttpInfo(string id, string lineItemId, string acceptLanguage = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling ProductsApi->OrdersDeleteLineItems");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling ProductsApi->OrdersDeleteProduct");
             }
 
             // verify the required parameter 'lineItemId' is set
             if (lineItemId == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'lineItemId' when calling ProductsApi->OrdersDeleteLineItems");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'lineItemId' when calling ProductsApi->OrdersDeleteProduct");
             }
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -583,7 +583,7 @@ namespace Conekta.net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
 
-            localVarRequestOptions.Operation = "ProductsApi.OrdersDeleteLineItems";
+            localVarRequestOptions.Operation = "ProductsApi.OrdersDeleteProduct";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (bearerAuth) required
@@ -594,10 +594,10 @@ namespace Conekta.net.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<LineItemsOrderResponse>("/orders/{id}/line_items/{line_item_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<ProductOrderResponse>("/orders/{id}/line_items/{line_item_id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("OrdersDeleteLineItems", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrdersDeleteProduct", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -616,10 +616,10 @@ namespace Conekta.net.Api
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of LineItemsOrderResponse</returns>
-        public async System.Threading.Tasks.Task<LineItemsOrderResponse> OrdersDeleteLineItemsAsync(string id, string lineItemId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ProductOrderResponse</returns>
+        public async System.Threading.Tasks.Task<ProductOrderResponse> OrdersDeleteProductAsync(string id, string lineItemId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<LineItemsOrderResponse> localVarResponse = await OrdersDeleteLineItemsWithHttpInfoAsync(id, lineItemId, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<ProductOrderResponse> localVarResponse = await OrdersDeleteProductWithHttpInfoAsync(id, lineItemId, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -632,19 +632,19 @@ namespace Conekta.net.Api
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (LineItemsOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<LineItemsOrderResponse>> OrdersDeleteLineItemsWithHttpInfoAsync(string id, string lineItemId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ProductOrderResponse)</returns>
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ProductOrderResponse>> OrdersDeleteProductWithHttpInfoAsync(string id, string lineItemId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling ProductsApi->OrdersDeleteLineItems");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling ProductsApi->OrdersDeleteProduct");
             }
 
             // verify the required parameter 'lineItemId' is set
             if (lineItemId == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'lineItemId' when calling ProductsApi->OrdersDeleteLineItems");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'lineItemId' when calling ProductsApi->OrdersDeleteProduct");
             }
 
 
@@ -677,7 +677,7 @@ namespace Conekta.net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
 
-            localVarRequestOptions.Operation = "ProductsApi.OrdersDeleteLineItems";
+            localVarRequestOptions.Operation = "ProductsApi.OrdersDeleteProduct";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (bearerAuth) required
@@ -688,11 +688,11 @@ namespace Conekta.net.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<LineItemsOrderResponse>("/orders/{id}/line_items/{line_item_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<ProductOrderResponse>("/orders/{id}/line_items/{line_item_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("OrdersDeleteLineItems", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrdersDeleteProduct", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -703,154 +703,50 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Update Product Update a existing line items for an existing orden
+        /// Update Product Update an existing product for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="lineItemId">identifier</param>
-        /// <param name="updateLineItems">requested field for a line items</param>
+        /// <param name="updateProduct">requested field for products</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>LineItemsOrderResponse</returns>
-        public LineItemsOrderResponse OrdersUpdateLineItems(string id, string lineItemId, UpdateLineItems updateLineItems, string acceptLanguage = default(string), int operationIndex = 0)
+        /// <returns>ProductOrderResponse</returns>
+        public ProductOrderResponse OrdersUpdateProduct(string id, string lineItemId, UpdateProduct updateProduct, string acceptLanguage = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<LineItemsOrderResponse> localVarResponse = OrdersUpdateLineItemsWithHttpInfo(id, lineItemId, updateLineItems, acceptLanguage);
+            Conekta.net.Client.ApiResponse<ProductOrderResponse> localVarResponse = OrdersUpdateProductWithHttpInfo(id, lineItemId, updateProduct, acceptLanguage);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Update Product Update a existing line items for an existing orden
+        /// Update Product Update an existing product for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="lineItemId">identifier</param>
-        /// <param name="updateLineItems">requested field for a line items</param>
+        /// <param name="updateProduct">requested field for products</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of LineItemsOrderResponse</returns>
-        public Conekta.net.Client.ApiResponse<LineItemsOrderResponse> OrdersUpdateLineItemsWithHttpInfo(string id, string lineItemId, UpdateLineItems updateLineItems, string acceptLanguage = default(string), int operationIndex = 0)
+        /// <returns>ApiResponse of ProductOrderResponse</returns>
+        public Conekta.net.Client.ApiResponse<ProductOrderResponse> OrdersUpdateProductWithHttpInfo(string id, string lineItemId, UpdateProduct updateProduct, string acceptLanguage = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling ProductsApi->OrdersUpdateLineItems");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling ProductsApi->OrdersUpdateProduct");
             }
 
             // verify the required parameter 'lineItemId' is set
             if (lineItemId == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'lineItemId' when calling ProductsApi->OrdersUpdateLineItems");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'lineItemId' when calling ProductsApi->OrdersUpdateProduct");
             }
 
-            // verify the required parameter 'updateLineItems' is set
-            if (updateLineItems == null)
+            // verify the required parameter 'updateProduct' is set
+            if (updateProduct == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'updateLineItems' when calling ProductsApi->OrdersUpdateLineItems");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'updateProduct' when calling ProductsApi->OrdersUpdateProduct");
             }
-
-            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/vnd.conekta-v2.1.0+json"
-            };
-
-            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.PathParameters.Add("line_item_id", Conekta.net.Client.ClientUtils.ParameterToString(lineItemId)); // path parameter
-            if (acceptLanguage != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
-            }
-            localVarRequestOptions.Data = updateLineItems;
-
-            localVarRequestOptions.Operation = "ProductsApi.OrdersUpdateLineItems";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Put<LineItemsOrderResponse>("/orders/{id}/line_items/{line_item_id}", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("OrdersUpdateLineItems", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Update Product Update a existing line items for an existing orden
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Identifier of the resource</param>
-        /// <param name="lineItemId">identifier</param>
-        /// <param name="updateLineItems">requested field for a line items</param>
-        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of LineItemsOrderResponse</returns>
-        public async System.Threading.Tasks.Task<LineItemsOrderResponse> OrdersUpdateLineItemsAsync(string id, string lineItemId, UpdateLineItems updateLineItems, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Conekta.net.Client.ApiResponse<LineItemsOrderResponse> localVarResponse = await OrdersUpdateLineItemsWithHttpInfoAsync(id, lineItemId, updateLineItems, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Update Product Update a existing line items for an existing orden
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Identifier of the resource</param>
-        /// <param name="lineItemId">identifier</param>
-        /// <param name="updateLineItems">requested field for a line items</param>
-        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (LineItemsOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<LineItemsOrderResponse>> OrdersUpdateLineItemsWithHttpInfoAsync(string id, string lineItemId, UpdateLineItems updateLineItems, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling ProductsApi->OrdersUpdateLineItems");
-            }
-
-            // verify the required parameter 'lineItemId' is set
-            if (lineItemId == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'lineItemId' when calling ProductsApi->OrdersUpdateLineItems");
-            }
-
-            // verify the required parameter 'updateLineItems' is set
-            if (updateLineItems == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'updateLineItems' when calling ProductsApi->OrdersUpdateLineItems");
-            }
-
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
 
@@ -881,9 +777,9 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
-            localVarRequestOptions.Data = updateLineItems;
+            localVarRequestOptions.Data = updateProduct;
 
-            localVarRequestOptions.Operation = "ProductsApi.OrdersUpdateLineItems";
+            localVarRequestOptions.Operation = "ProductsApi.OrdersUpdateProduct";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (bearerAuth) required
@@ -894,11 +790,115 @@ namespace Conekta.net.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<LineItemsOrderResponse>("/orders/{id}/line_items/{line_item_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = this.Client.Put<ProductOrderResponse>("/orders/{id}/line_items/{line_item_id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("OrdersUpdateProduct", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update Product Update an existing product for an existing orden
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="lineItemId">identifier</param>
+        /// <param name="updateProduct">requested field for products</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ProductOrderResponse</returns>
+        public async System.Threading.Tasks.Task<ProductOrderResponse> OrdersUpdateProductAsync(string id, string lineItemId, UpdateProduct updateProduct, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Conekta.net.Client.ApiResponse<ProductOrderResponse> localVarResponse = await OrdersUpdateProductWithHttpInfoAsync(id, lineItemId, updateProduct, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update Product Update an existing product for an existing orden
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="lineItemId">identifier</param>
+        /// <param name="updateProduct">requested field for products</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ProductOrderResponse)</returns>
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ProductOrderResponse>> OrdersUpdateProductWithHttpInfoAsync(string id, string lineItemId, UpdateProduct updateProduct, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling ProductsApi->OrdersUpdateProduct");
+            }
+
+            // verify the required parameter 'lineItemId' is set
+            if (lineItemId == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'lineItemId' when calling ProductsApi->OrdersUpdateProduct");
+            }
+
+            // verify the required parameter 'updateProduct' is set
+            if (updateProduct == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'updateProduct' when calling ProductsApi->OrdersUpdateProduct");
+            }
+
+
+            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.conekta-v2.1.0+json"
+            };
+
+            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("line_item_id", Conekta.net.Client.ClientUtils.ParameterToString(lineItemId)); // path parameter
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            localVarRequestOptions.Data = updateProduct;
+
+            localVarRequestOptions.Operation = "ProductsApi.OrdersUpdateProduct";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PutAsync<ProductOrderResponse>("/orders/{id}/line_items/{line_item_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("OrdersUpdateLineItems", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrdersUpdateProduct", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

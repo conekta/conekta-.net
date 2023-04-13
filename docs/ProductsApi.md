@@ -4,13 +4,13 @@ All URIs are relative to *https://api.conekta.io*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OrdersCreateLineItems**](ProductsApi.md#orderscreatelineitems) | **POST** /orders/{id}/line_items | Create Product |
-| [**OrdersDeleteLineItems**](ProductsApi.md#ordersdeletelineitems) | **DELETE** /orders/{id}/line_items/{line_item_id} | Delete Product |
-| [**OrdersUpdateLineItems**](ProductsApi.md#ordersupdatelineitems) | **PUT** /orders/{id}/line_items/{line_item_id} | Update Product |
+| [**OrdersCreateProduct**](ProductsApi.md#orderscreateproduct) | **POST** /orders/{id}/line_items | Create Product |
+| [**OrdersDeleteProduct**](ProductsApi.md#ordersdeleteproduct) | **DELETE** /orders/{id}/line_items/{line_item_id} | Delete Product |
+| [**OrdersUpdateProduct**](ProductsApi.md#ordersupdateproduct) | **PUT** /orders/{id}/line_items/{line_item_id} | Update Product |
 
-<a name="orderscreatelineitems"></a>
-# **OrdersCreateLineItems**
-> LineItemsOrderResponse OrdersCreateLineItems (string id, LineItems lineItems, string acceptLanguage = null)
+<a name="orderscreateproduct"></a>
+# **OrdersCreateProduct**
+> ProductOrderResponse OrdersCreateProduct (string id, Product product, string acceptLanguage = null)
 
 Create Product
 
@@ -26,7 +26,7 @@ using Conekta.net.Model;
 
 namespace Example
 {
-    public class OrdersCreateLineItemsExample
+    public class OrdersCreateProductExample
     {
         public static void Main()
         {
@@ -37,18 +37,18 @@ namespace Example
 
             var apiInstance = new ProductsApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
-            var lineItems = new LineItems(); // LineItems | requested field for a line items
+            var product = new Product(); // Product | requested field for a product
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
                 // Create Product
-                LineItemsOrderResponse result = apiInstance.OrdersCreateLineItems(id, lineItems, acceptLanguage);
+                ProductOrderResponse result = apiInstance.OrdersCreateProduct(id, product, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ProductsApi.OrdersCreateLineItems: " + e.Message);
+                Debug.Print("Exception when calling ProductsApi.OrdersCreateProduct: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -57,21 +57,21 @@ namespace Example
 }
 ```
 
-#### Using the OrdersCreateLineItemsWithHttpInfo variant
+#### Using the OrdersCreateProductWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Create Product
-    ApiResponse<LineItemsOrderResponse> response = apiInstance.OrdersCreateLineItemsWithHttpInfo(id, lineItems, acceptLanguage);
+    ApiResponse<ProductOrderResponse> response = apiInstance.OrdersCreateProductWithHttpInfo(id, product, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ProductsApi.OrdersCreateLineItemsWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ProductsApi.OrdersCreateProductWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -82,12 +82,12 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
-| **lineItems** | [**LineItems**](LineItems.md) | requested field for a line items |  |
+| **product** | [**Product**](Product.md) | requested field for a product |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 
-[**LineItemsOrderResponse**](LineItemsOrderResponse.md)
+[**ProductOrderResponse**](ProductOrderResponse.md)
 
 ### Authorization
 
@@ -109,9 +109,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="ordersdeletelineitems"></a>
-# **OrdersDeleteLineItems**
-> LineItemsOrderResponse OrdersDeleteLineItems (string id, string lineItemId, string acceptLanguage = null)
+<a name="ordersdeleteproduct"></a>
+# **OrdersDeleteProduct**
+> ProductOrderResponse OrdersDeleteProduct (string id, string lineItemId, string acceptLanguage = null)
 
 Delete Product
 
@@ -127,7 +127,7 @@ using Conekta.net.Model;
 
 namespace Example
 {
-    public class OrdersDeleteLineItemsExample
+    public class OrdersDeleteProductExample
     {
         public static void Main()
         {
@@ -144,12 +144,12 @@ namespace Example
             try
             {
                 // Delete Product
-                LineItemsOrderResponse result = apiInstance.OrdersDeleteLineItems(id, lineItemId, acceptLanguage);
+                ProductOrderResponse result = apiInstance.OrdersDeleteProduct(id, lineItemId, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ProductsApi.OrdersDeleteLineItems: " + e.Message);
+                Debug.Print("Exception when calling ProductsApi.OrdersDeleteProduct: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -158,21 +158,21 @@ namespace Example
 }
 ```
 
-#### Using the OrdersDeleteLineItemsWithHttpInfo variant
+#### Using the OrdersDeleteProductWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Delete Product
-    ApiResponse<LineItemsOrderResponse> response = apiInstance.OrdersDeleteLineItemsWithHttpInfo(id, lineItemId, acceptLanguage);
+    ApiResponse<ProductOrderResponse> response = apiInstance.OrdersDeleteProductWithHttpInfo(id, lineItemId, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ProductsApi.OrdersDeleteLineItemsWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ProductsApi.OrdersDeleteProductWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -188,7 +188,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**LineItemsOrderResponse**](LineItemsOrderResponse.md)
+[**ProductOrderResponse**](ProductOrderResponse.md)
 
 ### Authorization
 
@@ -211,13 +211,13 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="ordersupdatelineitems"></a>
-# **OrdersUpdateLineItems**
-> LineItemsOrderResponse OrdersUpdateLineItems (string id, string lineItemId, UpdateLineItems updateLineItems, string acceptLanguage = null)
+<a name="ordersupdateproduct"></a>
+# **OrdersUpdateProduct**
+> ProductOrderResponse OrdersUpdateProduct (string id, string lineItemId, UpdateProduct updateProduct, string acceptLanguage = null)
 
 Update Product
 
-Update a existing line items for an existing orden
+Update an existing product for an existing orden
 
 ### Example
 ```csharp
@@ -229,7 +229,7 @@ using Conekta.net.Model;
 
 namespace Example
 {
-    public class OrdersUpdateLineItemsExample
+    public class OrdersUpdateProductExample
     {
         public static void Main()
         {
@@ -241,18 +241,18 @@ namespace Example
             var apiInstance = new ProductsApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var lineItemId = line_item_2tQ8HkkfbauaKP9Ho;  // string | identifier
-            var updateLineItems = new UpdateLineItems(); // UpdateLineItems | requested field for a line items
+            var updateProduct = new UpdateProduct(); // UpdateProduct | requested field for products
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
                 // Update Product
-                LineItemsOrderResponse result = apiInstance.OrdersUpdateLineItems(id, lineItemId, updateLineItems, acceptLanguage);
+                ProductOrderResponse result = apiInstance.OrdersUpdateProduct(id, lineItemId, updateProduct, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ProductsApi.OrdersUpdateLineItems: " + e.Message);
+                Debug.Print("Exception when calling ProductsApi.OrdersUpdateProduct: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -261,21 +261,21 @@ namespace Example
 }
 ```
 
-#### Using the OrdersUpdateLineItemsWithHttpInfo variant
+#### Using the OrdersUpdateProductWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Update Product
-    ApiResponse<LineItemsOrderResponse> response = apiInstance.OrdersUpdateLineItemsWithHttpInfo(id, lineItemId, updateLineItems, acceptLanguage);
+    ApiResponse<ProductOrderResponse> response = apiInstance.OrdersUpdateProductWithHttpInfo(id, lineItemId, updateProduct, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ProductsApi.OrdersUpdateLineItemsWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ProductsApi.OrdersUpdateProductWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -287,12 +287,12 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
 | **lineItemId** | **string** | identifier |  |
-| **updateLineItems** | [**UpdateLineItems**](UpdateLineItems.md) | requested field for a line items |  |
+| **updateProduct** | [**UpdateProduct**](UpdateProduct.md) | requested field for products |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 
-[**LineItemsOrderResponse**](LineItemsOrderResponse.md)
+[**ProductOrderResponse**](ProductOrderResponse.md)
 
 ### Authorization
 

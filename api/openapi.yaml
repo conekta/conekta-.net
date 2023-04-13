@@ -852,7 +852,7 @@ paths:
         schema:
           type: string
       - description: identifier
-        example: line_item_2tQ8HkkfbauaKP9Ho
+        example: fis_ent_2tQ8HkkfbauaKP9Ho
         in: path
         name: fiscal_entities_id
         required: true
@@ -2193,7 +2193,7 @@ paths:
   /orders/{id}/line_items:
     post:
       description: Create a new product for an existing order.
-      operationId: ordersCreateLineItems
+      operationId: ordersCreateProduct
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
@@ -2220,13 +2220,13 @@ paths:
           - en
           type: string
       requestBody:
-        $ref: '#/components/requestBodies/line_items_create'
+        $ref: '#/components/requestBodies/product_create'
       responses:
         "200":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/line_items_order_response'
+                $ref: '#/components/schemas/product_order_response'
           description: successful
         "401":
           content:
@@ -2283,7 +2283,7 @@ paths:
   /orders/{id}/line_items/{line_item_id}:
     delete:
       description: Delete product for an existing orden
-      operationId: ordersDeleteLineItems
+      operationId: ordersDeleteProduct
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
@@ -2321,7 +2321,7 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/line_items_order_response'
+                $ref: '#/components/schemas/product_order_response'
           description: successful
         "401":
           content:
@@ -2391,8 +2391,8 @@ paths:
       tags:
       - Products
     put:
-      description: Update a existing line items for an existing orden
-      operationId: ordersUpdateLineItems
+      description: Update an existing product for an existing orden
+      operationId: ordersUpdateProduct
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
@@ -2426,13 +2426,13 @@ paths:
           - en
           type: string
       requestBody:
-        $ref: '#/components/requestBodies/line_items_update'
+        $ref: '#/components/requestBodies/product_update'
       responses:
         "200":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/line_items_order_response'
+                $ref: '#/components/schemas/product_order_response'
           description: successful
         "401":
           content:
@@ -7279,7 +7279,7 @@ components:
         type: string
     fiscal_entities_id:
       description: identifier
-      example: line_item_2tQ8HkkfbauaKP9Ho
+      example: fis_ent_2tQ8HkkfbauaKP9Ho
       in: path
       name: fiscal_entities_id
       required: true
@@ -7413,19 +7413,19 @@ components:
             $ref: '#/components/schemas/order_update_request'
       description: requested field for an order
       required: true
-    line_items_create:
+    product_create:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/line_items'
-      description: requested field for a line items
+            $ref: '#/components/schemas/product'
+      description: requested field for a product
       required: true
-    line_items_update:
+    product_update:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/update_line_items'
-      description: requested field for a line items
+            $ref: '#/components/schemas/update_product'
+      description: requested field for products
       required: true
     order_refunds_request:
       content:
@@ -8124,7 +8124,7 @@ components:
           example: false
           type: boolean
         line_items:
-          $ref: '#/components/schemas/order_response_line_items'
+          $ref: '#/components/schemas/order_response_products'
         livemode:
           type: boolean
         metadata:
@@ -8145,11 +8145,11 @@ components:
           type: integer
       title: order_response
       type: object
-    line_items_order_response:
+    product_order_response:
       allOf:
-      - $ref: '#/components/schemas/line_items'
-      - $ref: '#/components/schemas/line_items_order_response_allOf'
-      title: line_items_order_response
+      - $ref: '#/components/schemas/product'
+      - $ref: '#/components/schemas/product_order_response_allOf'
+      title: product order response
     checkout_response:
       description: checkout response
       properties:
@@ -8311,7 +8311,7 @@ components:
     shipping_lines_order_response:
       allOf:
       - $ref: '#/components/schemas/shipping_lines_request'
-      - $ref: '#/components/schemas/line_items_order_response_allOf'
+      - $ref: '#/components/schemas/product_order_response_allOf'
       title: shipping_lines_order_response
     customer_shipping_contacts_response:
       description: Contains the detail of the shipping addresses that the client has
@@ -8715,10 +8715,10 @@ components:
             $ref: '#/components/schemas/order_discount_lines_request'
           type: array
         line_items:
-          description: "List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreatelineitems)\
+          description: "List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreateproduct)\
             \ that are sold in the order. You must have at least one product."
           items:
-            $ref: '#/components/schemas/line_items'
+            $ref: '#/components/schemas/product'
           type: array
         metadata:
           additionalProperties:
@@ -8776,10 +8776,10 @@ components:
             $ref: '#/components/schemas/order_discount_lines_request'
           type: array
         line_items:
-          description: "List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreatelineitems)\
+          description: "List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreateproduct)\
             \ that are sold in the order. You must have at least one product."
           items:
-            $ref: '#/components/schemas/line_items'
+            $ref: '#/components/schemas/product'
           type: array
         metadata:
           additionalProperties:
@@ -8803,7 +8803,7 @@ components:
           type: array
       title: order_update
       type: object
-    line_items:
+    product:
       properties:
         antifraud_info:
           additionalProperties: true
@@ -8862,9 +8862,9 @@ components:
       - name
       - quantity
       - unit_price
-      title: line_items
+      title: product
       type: object
-    update_line_items:
+    update_product:
       properties:
         antifraud_info:
           additionalProperties:
@@ -8898,7 +8898,7 @@ components:
           additionalProperties:
             type: string
           type: object
-      title: update_line_items
+      title: update_product
       type: object
     checkout:
       description: It is a sub-resource of the Order model that can be stipulated
@@ -10313,7 +10313,7 @@ components:
           example: fiscal_entity
           type: string
       type: object
-    line_items_data_response_allOf:
+    product_data_response_allOf:
       properties:
         id:
           type: string
@@ -10322,22 +10322,24 @@ components:
         parent_id:
           type: string
       type: object
-    line_items_data_response:
+    product_data_response:
       allOf:
-      - $ref: '#/components/schemas/line_items'
-      - $ref: '#/components/schemas/line_items_data_response_allOf'
-      title: line_items_data_response
-    order_response_line_items_allOf:
+      - $ref: '#/components/schemas/product'
+      - $ref: '#/components/schemas/product_data_response_allOf'
+      title: product_data_response
+    order_response_products_allOf:
       properties:
         data:
           items:
-            $ref: '#/components/schemas/line_items_data_response'
+            $ref: '#/components/schemas/product_data_response'
           type: array
       type: object
-    order_response_line_items:
+    order_response_products:
       allOf:
       - $ref: '#/components/schemas/pagination'
-      - $ref: '#/components/schemas/order_response_line_items_allOf'
+      - $ref: '#/components/schemas/page'
+      - $ref: '#/components/schemas/order_response_products_allOf'
+      title: order_response_products
     order_response_shipping_contact_allOf:
       properties:
         created_at:
@@ -10352,7 +10354,7 @@ components:
       allOf:
       - $ref: '#/components/schemas/order_response_shipping_contact_allOf'
       - $ref: '#/components/schemas/customer_shipping_contacts_response'
-    line_items_order_response_allOf:
+    product_order_response_allOf:
       properties:
         id:
           type: string
@@ -10521,6 +10523,8 @@ components:
         when receiving a new payment.
       properties:
         currency:
+          description: It is the currency in which the order will be created. It must
+            be a valid ISO 4217 currency code.
           example: MXN
           maxLength: 3
           type: string
@@ -10529,7 +10533,7 @@ components:
             and "quantity" parameters that are used to calculate the total amount
             of the order.
           items:
-            $ref: '#/components/schemas/line_items'
+            $ref: '#/components/schemas/product'
           type: array
         metadata:
           additionalProperties: true

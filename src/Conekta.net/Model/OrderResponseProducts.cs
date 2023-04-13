@@ -27,31 +27,35 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// OrderResponseLineItems
+    /// OrderResponseProducts
     /// </summary>
-    [DataContract(Name = "order_response_line_items")]
-    public partial class OrderResponseLineItems : IEquatable<OrderResponseLineItems>, IValidatableObject
+    [DataContract(Name = "order_response_products")]
+    public partial class OrderResponseProducts : IEquatable<OrderResponseProducts>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrderResponseLineItems" /> class.
+        /// Initializes a new instance of the <see cref="OrderResponseProducts" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected OrderResponseLineItems() { }
+        protected OrderResponseProducts() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrderResponseLineItems" /> class.
+        /// Initializes a new instance of the <see cref="OrderResponseProducts" /> class.
         /// </summary>
         /// <param name="_object">_object (required).</param>
         /// <param name="hasMore">hasMore (required).</param>
+        /// <param name="nextPageUrl">URL of the next page..</param>
+        /// <param name="previousPageUrl">Url of the previous page..</param>
         /// <param name="data">data.</param>
-        public OrderResponseLineItems(string _object = default(string), bool hasMore = default(bool), List<LineItemsDataResponse> data = default(List<LineItemsDataResponse>))
+        public OrderResponseProducts(string _object = default(string), bool hasMore = default(bool), string nextPageUrl = default(string), string previousPageUrl = default(string), List<ProductDataResponse> data = default(List<ProductDataResponse>))
         {
             // to ensure "_object" is required (not null)
             if (_object == null)
             {
-                throw new ArgumentNullException("_object is a required property for OrderResponseLineItems and cannot be null");
+                throw new ArgumentNullException("_object is a required property for OrderResponseProducts and cannot be null");
             }
             this.Object = _object;
             this.HasMore = hasMore;
+            this.NextPageUrl = nextPageUrl;
+            this.PreviousPageUrl = previousPageUrl;
             this.Data = data;
         }
 
@@ -70,10 +74,26 @@ namespace Conekta.net.Model
         public bool HasMore { get; set; }
 
         /// <summary>
+        /// URL of the next page.
+        /// </summary>
+        /// <value>URL of the next page.</value>
+        /// <example>&quot;https://api.conekta.io/charges?limit&#x3D;10&amp;next&#x3D;chrg_1&quot;</example>
+        [DataMember(Name = "next_page_url", EmitDefaultValue = true)]
+        public string NextPageUrl { get; set; }
+
+        /// <summary>
+        /// Url of the previous page.
+        /// </summary>
+        /// <value>Url of the previous page.</value>
+        /// <example>&quot;https://api.conekta.io/charges?limit&#x3D;10&amp;previous&#x3D;chrg_1&quot;</example>
+        [DataMember(Name = "previous_page_url", EmitDefaultValue = true)]
+        public string PreviousPageUrl { get; set; }
+
+        /// <summary>
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name = "data", EmitDefaultValue = false)]
-        public List<LineItemsDataResponse> Data { get; set; }
+        public List<ProductDataResponse> Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -82,9 +102,11 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class OrderResponseLineItems {\n");
+            sb.Append("class OrderResponseProducts {\n");
             sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  HasMore: ").Append(HasMore).Append("\n");
+            sb.Append("  NextPageUrl: ").Append(NextPageUrl).Append("\n");
+            sb.Append("  PreviousPageUrl: ").Append(PreviousPageUrl).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -106,15 +128,15 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as OrderResponseLineItems);
+            return this.Equals(input as OrderResponseProducts);
         }
 
         /// <summary>
-        /// Returns true if OrderResponseLineItems instances are equal
+        /// Returns true if OrderResponseProducts instances are equal
         /// </summary>
-        /// <param name="input">Instance of OrderResponseLineItems to be compared</param>
+        /// <param name="input">Instance of OrderResponseProducts to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(OrderResponseLineItems input)
+        public bool Equals(OrderResponseProducts input)
         {
             if (input == null)
             {
@@ -129,6 +151,16 @@ namespace Conekta.net.Model
                 (
                     this.HasMore == input.HasMore ||
                     this.HasMore.Equals(input.HasMore)
+                ) && 
+                (
+                    this.NextPageUrl == input.NextPageUrl ||
+                    (this.NextPageUrl != null &&
+                    this.NextPageUrl.Equals(input.NextPageUrl))
+                ) && 
+                (
+                    this.PreviousPageUrl == input.PreviousPageUrl ||
+                    (this.PreviousPageUrl != null &&
+                    this.PreviousPageUrl.Equals(input.PreviousPageUrl))
                 ) && 
                 (
                     this.Data == input.Data ||
@@ -152,6 +184,14 @@ namespace Conekta.net.Model
                     hashCode = (hashCode * 59) + this.Object.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.HasMore.GetHashCode();
+                if (this.NextPageUrl != null)
+                {
+                    hashCode = (hashCode * 59) + this.NextPageUrl.GetHashCode();
+                }
+                if (this.PreviousPageUrl != null)
+                {
+                    hashCode = (hashCode * 59) + this.PreviousPageUrl.GetHashCode();
+                }
                 if (this.Data != null)
                 {
                     hashCode = (hashCode * 59) + this.Data.GetHashCode();

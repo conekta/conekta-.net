@@ -81,7 +81,7 @@ namespace Conekta.net.Test.Api
                 recurrent: false,
                 needsShippingContact: false,
                 expiresAt: expiresAt,
-                orderTemplate: new CheckoutOrderTemplate("MXN", new List<LineItems>() { new LineItems(name: "toshiba", quantity: 1, unitPrice: 500) })
+                orderTemplate: new CheckoutOrderTemplate("MXN", new List<Product>() { new Product(name: "toshiba", quantity: 1, unitPrice: 500) })
             );
             CheckoutResponse response = _instance.CreateCheckout(checkout);
 

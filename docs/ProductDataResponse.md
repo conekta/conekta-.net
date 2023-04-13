@@ -1,4 +1,4 @@
-# Conekta.net.Model.LineItems
+# Conekta.net.Model.ProductDataResponse
 
 ## Properties
 
@@ -13,6 +13,9 @@ Name | Type | Description | Notes
 **Sku** | **string** | The stock keeping unit for the item. It is used to identify the item in the order. | [optional] 
 **Tags** | **List&lt;string&gt;** | List of tags for the item. It is used to identify the item in the order. | [optional] 
 **UnitPrice** | **int** | The price of the item in cents. | 
+**Id** | **string** |  | [optional] 
+**Object** | **string** |  | [optional] 
+**ParentId** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

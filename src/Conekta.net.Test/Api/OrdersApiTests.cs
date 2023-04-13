@@ -56,7 +56,7 @@ public class OrdersApiTests
     [Fact]
     public void CreateOrderCashTest()
     {
-        List<LineItems> lineItems = new()
+        List<Product> products = new()
         {
             new(
                 name: "toshiba",
@@ -75,7 +75,7 @@ public class OrdersApiTests
         OrderRequest orderRequest = new(
             currency: "MXN",
             customerInfo: customerInfo,
-            lineItems: lineItems,
+            lineItems: products,
             charges: charges,
             preAuthorize: false
         );
@@ -96,7 +96,7 @@ public class OrdersApiTests
     [Fact]
     public void CreateOrderDefaultErrTest()
     {
-        List<LineItems> lineItems = new()
+        List<Product> products = new()
         {
             new(
                 name: "toshiba",
@@ -117,7 +117,7 @@ public class OrdersApiTests
         OrderRequest orderRequest = new(
             currency: "MXN",
             customerInfo: customerInfo,
-            lineItems: lineItems,
+            lineItems: products,
             charges: charges
         );
         try
@@ -137,7 +137,7 @@ public class OrdersApiTests
     [Fact]
     public void CreateOrderMsiTest()
     {
-        List<LineItems> lineItems = new()
+        List<Product> products = new()
         {
             new(
                 name: "toshiba",
@@ -155,7 +155,7 @@ public class OrdersApiTests
         OrderRequest orderRequest = new(
             currency: "MXN",
             customerInfo: customerInfo,
-            lineItems: lineItems,
+            lineItems: products,
             checkout: checkout,
             metadata: new Dictionary<string, string> { { "test", "true" } }
         );
@@ -177,7 +177,7 @@ public class OrdersApiTests
     [Fact]
     public void CreateOrderSavedCardTest()
     {
-        List<LineItems> lineItems = new()
+        List<Product> products = new()
         {
             new(
                 name: "toshiba",
@@ -194,7 +194,7 @@ public class OrdersApiTests
         OrderRequest orderRequest = new(
             currency: "MXN",
             customerInfo: customerInfo,
-            lineItems: lineItems,
+            lineItems: products,
             checkout: checkout,
             metadata: new Dictionary<string, string> { { "test", "true" } }
         );
@@ -217,7 +217,7 @@ public class OrdersApiTests
     [Fact]
     public void CreateOrderCheckoutTest()
     {
-        List<LineItems> lineItems = new()
+        List<Product> products = new()
         {
             new(
                 name: "Box of Cohiba S1s",
@@ -231,7 +231,7 @@ public class OrdersApiTests
         );
         OrderRequest orderRequest = new(
             currency: "MXN",
-            lineItems: lineItems,
+            lineItems: products,
             checkout: checkout,
             metadata: new Dictionary<string, string> { { "test", "true" } },
             customerInfo: new OrderRequestCustomerInfo(new CustomerInfoJustCustomerId("cus_2o8jK3TDtejmz1sYc"))
@@ -244,7 +244,7 @@ public class OrdersApiTests
         Assert.Equal("Integration", response.Channel.CheckoutRequestType);
         Assert.Equal("Integration", response.Checkout.Type);
         Assert.Equal(checkout.ExpiresAt, response.Checkout.ExpiresAt);
-        Assert.Equal(lineItems[0].UnitPrice, response.Amount);
+        Assert.Equal(products[0].UnitPrice, response.Amount);
         Assert.NotEmpty(response.Metadata);
         Assert.IsType<OrderResponseCheckout>(response.Checkout);
         Assert.NotEmpty(response.Checkout.Id);
@@ -409,7 +409,7 @@ public class OrdersApiTests
     public void UpdateOrderTest()
     {
         string id = "ord_2tVPCGRXnMXKdvcsj";
-        List<LineItems> lineItems = new()
+        List<Product> products = new()
         {
             new(
                 name: "Pago Mensualidad enero",
@@ -420,16 +420,16 @@ public class OrdersApiTests
             )
         };
         OrderUpdateRequest orderUpdateRequest = new(
-            lineItems: lineItems
+            lineItems: products
         );
 
         var response = _instance.UpdateOrder(id, orderUpdateRequest);
 
         Assert.IsType<OrderResponse>(response);
         Assert.Single(response.LineItems.Data);
-        Assert.Equal(lineItems[0].UnitPrice, response.LineItems.Data[0].UnitPrice);
+        Assert.Equal(products[0].UnitPrice, response.LineItems.Data[0].UnitPrice);
         Assert.Equal(id, response.Id);
-        Assert.Equal(lineItems[0].Tags, response.LineItems.Data[0].Tags);
+        Assert.Equal(products[0].Tags, response.LineItems.Data[0].Tags);
         Assert.NotEqual(response.CreatedAt, response.UpdatedAt);
     }
 }

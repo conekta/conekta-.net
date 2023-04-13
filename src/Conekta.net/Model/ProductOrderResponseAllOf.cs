@@ -27,18 +27,18 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// LineItemsDataResponseAllOf
+    /// ProductOrderResponseAllOf
     /// </summary>
-    [DataContract(Name = "line_items_data_response_allOf")]
-    public partial class LineItemsDataResponseAllOf : IEquatable<LineItemsDataResponseAllOf>, IValidatableObject
+    [DataContract(Name = "product_order_response_allOf")]
+    public partial class ProductOrderResponseAllOf : IEquatable<ProductOrderResponseAllOf>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="LineItemsDataResponseAllOf" /> class.
+        /// Initializes a new instance of the <see cref="ProductOrderResponseAllOf" /> class.
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="_object">_object.</param>
         /// <param name="parentId">parentId.</param>
-        public LineItemsDataResponseAllOf(string id = default(string), string _object = default(string), string parentId = default(string))
+        public ProductOrderResponseAllOf(string id = default(string), string _object = default(string), string parentId = default(string))
         {
             this.Id = id;
             this.Object = _object;
@@ -70,7 +70,7 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class LineItemsDataResponseAllOf {\n");
+            sb.Append("class ProductOrderResponseAllOf {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
@@ -94,15 +94,15 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LineItemsDataResponseAllOf);
+            return this.Equals(input as ProductOrderResponseAllOf);
         }
 
         /// <summary>
-        /// Returns true if LineItemsDataResponseAllOf instances are equal
+        /// Returns true if ProductOrderResponseAllOf instances are equal
         /// </summary>
-        /// <param name="input">Instance of LineItemsDataResponseAllOf to be compared</param>
+        /// <param name="input">Instance of ProductOrderResponseAllOf to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(LineItemsDataResponseAllOf input)
+        public bool Equals(ProductOrderResponseAllOf input)
         {
             if (input == null)
             {

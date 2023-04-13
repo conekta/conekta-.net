@@ -1,10 +1,12 @@
-# Conekta.net.Model.OrderResponseLineItemsAllOf
+# Conekta.net.Model.ProductDataResponseAllOf
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**List&lt;LineItemsDataResponse&gt;**](LineItemsDataResponse.md) |  | [optional] 
+**Id** | **string** |  | [optional] 
+**Object** | **string** |  | [optional] 
+**ParentId** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

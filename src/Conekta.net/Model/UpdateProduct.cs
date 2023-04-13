@@ -27,13 +27,13 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// UpdateLineItems
+    /// UpdateProduct
     /// </summary>
-    [DataContract(Name = "update_line_items")]
-    public partial class UpdateLineItems : IEquatable<UpdateLineItems>, IValidatableObject
+    [DataContract(Name = "update_product")]
+    public partial class UpdateProduct : IEquatable<UpdateProduct>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateLineItems" /> class.
+        /// Initializes a new instance of the <see cref="UpdateProduct" /> class.
         /// </summary>
         /// <param name="antifraudInfo">antifraudInfo.</param>
         /// <param name="description">description.</param>
@@ -44,7 +44,7 @@ namespace Conekta.net.Model
         /// <param name="tags">tags.</param>
         /// <param name="brand">brand.</param>
         /// <param name="metadata">metadata.</param>
-        public UpdateLineItems(Dictionary<string, Object> antifraudInfo = default(Dictionary<string, Object>), string description = default(string), string sku = default(string), string name = default(string), long unitPrice = default(long), int quantity = default(int), List<string> tags = default(List<string>), string brand = default(string), Dictionary<string, string> metadata = default(Dictionary<string, string>))
+        public UpdateProduct(Dictionary<string, Object> antifraudInfo = default(Dictionary<string, Object>), string description = default(string), string sku = default(string), string name = default(string), long unitPrice = default(long), int quantity = default(int), List<string> tags = default(List<string>), string brand = default(string), Dictionary<string, string> metadata = default(Dictionary<string, string>))
         {
             this.AntifraudInfo = antifraudInfo;
             this.Description = description;
@@ -121,7 +121,7 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class UpdateLineItems {\n");
+            sb.Append("class UpdateProduct {\n");
             sb.Append("  AntifraudInfo: ").Append(AntifraudInfo).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Sku: ").Append(Sku).Append("\n");
@@ -151,15 +151,15 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateLineItems);
+            return this.Equals(input as UpdateProduct);
         }
 
         /// <summary>
-        /// Returns true if UpdateLineItems instances are equal
+        /// Returns true if UpdateProduct instances are equal
         /// </summary>
-        /// <param name="input">Instance of UpdateLineItems to be compared</param>
+        /// <param name="input">Instance of UpdateProduct to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UpdateLineItems input)
+        public bool Equals(UpdateProduct input)
         {
             if (input == null)
             {

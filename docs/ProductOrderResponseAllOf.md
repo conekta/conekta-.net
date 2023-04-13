@@ -1,4 +1,4 @@
-# Conekta.net.Model.LineItemsOrderResponseAllOf
+# Conekta.net.Model.ProductOrderResponseAllOf
 
 ## Properties
 

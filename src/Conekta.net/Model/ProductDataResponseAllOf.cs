@@ -27,25 +27,41 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// OrderResponseLineItemsAllOf
+    /// ProductDataResponseAllOf
     /// </summary>
-    [DataContract(Name = "order_response_line_items_allOf")]
-    public partial class OrderResponseLineItemsAllOf : IEquatable<OrderResponseLineItemsAllOf>, IValidatableObject
+    [DataContract(Name = "product_data_response_allOf")]
+    public partial class ProductDataResponseAllOf : IEquatable<ProductDataResponseAllOf>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrderResponseLineItemsAllOf" /> class.
+        /// Initializes a new instance of the <see cref="ProductDataResponseAllOf" /> class.
         /// </summary>
-        /// <param name="data">data.</param>
-        public OrderResponseLineItemsAllOf(List<LineItemsDataResponse> data = default(List<LineItemsDataResponse>))
+        /// <param name="id">id.</param>
+        /// <param name="_object">_object.</param>
+        /// <param name="parentId">parentId.</param>
+        public ProductDataResponseAllOf(string id = default(string), string _object = default(string), string parentId = default(string))
         {
-            this.Data = data;
+            this.Id = id;
+            this.Object = _object;
+            this.ParentId = parentId;
         }
 
         /// <summary>
-        /// Gets or Sets Data
+        /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "data", EmitDefaultValue = false)]
-        public List<LineItemsDataResponse> Data { get; set; }
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Object
+        /// </summary>
+        [DataMember(Name = "object", EmitDefaultValue = false)]
+        public string Object { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ParentId
+        /// </summary>
+        [DataMember(Name = "parent_id", EmitDefaultValue = false)]
+        public string ParentId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,8 +70,10 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class OrderResponseLineItemsAllOf {\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("class ProductDataResponseAllOf {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -76,15 +94,15 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as OrderResponseLineItemsAllOf);
+            return this.Equals(input as ProductDataResponseAllOf);
         }
 
         /// <summary>
-        /// Returns true if OrderResponseLineItemsAllOf instances are equal
+        /// Returns true if ProductDataResponseAllOf instances are equal
         /// </summary>
-        /// <param name="input">Instance of OrderResponseLineItemsAllOf to be compared</param>
+        /// <param name="input">Instance of ProductDataResponseAllOf to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(OrderResponseLineItemsAllOf input)
+        public bool Equals(ProductDataResponseAllOf input)
         {
             if (input == null)
             {
@@ -92,10 +110,19 @@ namespace Conekta.net.Model
             }
             return 
                 (
-                    this.Data == input.Data ||
-                    this.Data != null &&
-                    input.Data != null &&
-                    this.Data.SequenceEqual(input.Data)
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.Object == input.Object ||
+                    (this.Object != null &&
+                    this.Object.Equals(input.Object))
+                ) && 
+                (
+                    this.ParentId == input.ParentId ||
+                    (this.ParentId != null &&
+                    this.ParentId.Equals(input.ParentId))
                 );
         }
 
@@ -108,9 +135,17 @@ namespace Conekta.net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Data != null)
+                if (this.Id != null)
                 {
-                    hashCode = (hashCode * 59) + this.Data.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
+                if (this.Object != null)
+                {
+                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                }
+                if (this.ParentId != null)
+                {
+                    hashCode = (hashCode * 59) + this.ParentId.GetHashCode();
                 }
                 return hashCode;
             }

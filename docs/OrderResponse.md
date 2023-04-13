@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **FiscalEntity** | [**OrderResponseFiscalEntity**](OrderResponseFiscalEntity.md) |  | [optional] 
 **Id** | **string** |  | [optional] 
 **IsRefundable** | **bool** |  | [optional] 
-**LineItems** | [**OrderResponseLineItems**](OrderResponseLineItems.md) |  | [optional] 
+**LineItems** | [**OrderResponseProducts**](OrderResponseProducts.md) |  | [optional] 
 **Livemode** | **bool** |  | [optional] 
 **Metadata** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **Object** | **string** |  | [optional] 

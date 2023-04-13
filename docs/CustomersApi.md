@@ -648,7 +648,7 @@ namespace Example
 
             var apiInstance = new CustomersApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
-            var fiscalEntitiesId = line_item_2tQ8HkkfbauaKP9Ho;  // string | identifier
+            var fiscalEntitiesId = fis_ent_2tQ8HkkfbauaKP9Ho;  // string | identifier
             var customerUpdateFiscalEntitiesRequest = new CustomerUpdateFiscalEntitiesRequest(); // CustomerUpdateFiscalEntitiesRequest | requested field for customer update fiscal entities
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 

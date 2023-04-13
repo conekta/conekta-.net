@@ -1,4 +1,4 @@
-# Conekta.net.Model.UpdateLineItems
+# Conekta.net.Model.UpdateProduct
 
 ## Properties
 

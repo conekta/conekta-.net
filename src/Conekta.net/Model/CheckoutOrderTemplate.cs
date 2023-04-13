@@ -40,10 +40,10 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CheckoutOrderTemplate" /> class.
         /// </summary>
-        /// <param name="currency">currency (required).</param>
+        /// <param name="currency">It is the currency in which the order will be created. It must be a valid ISO 4217 currency code. (required).</param>
         /// <param name="lineItems">They are the products to buy. Each contains the \&quot;unit price\&quot; and \&quot;quantity\&quot; parameters that are used to calculate the total amount of the order. (required).</param>
         /// <param name="metadata">metadata.</param>
-        public CheckoutOrderTemplate(string currency = default(string), List<LineItems> lineItems = default(List<LineItems>), Dictionary<string, Object> metadata = default(Dictionary<string, Object>))
+        public CheckoutOrderTemplate(string currency = default(string), List<Product> lineItems = default(List<Product>), Dictionary<string, Object> metadata = default(Dictionary<string, Object>))
         {
             // to ensure "currency" is required (not null)
             if (currency == null)
@@ -61,8 +61,9 @@ namespace Conekta.net.Model
         }
 
         /// <summary>
-        /// Gets or Sets Currency
+        /// It is the currency in which the order will be created. It must be a valid ISO 4217 currency code.
         /// </summary>
+        /// <value>It is the currency in which the order will be created. It must be a valid ISO 4217 currency code.</value>
         /// <example>&quot;MXN&quot;</example>
         [DataMember(Name = "currency", IsRequired = true, EmitDefaultValue = true)]
         public string Currency { get; set; }
@@ -72,7 +73,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>They are the products to buy. Each contains the \&quot;unit price\&quot; and \&quot;quantity\&quot; parameters that are used to calculate the total amount of the order.</value>
         [DataMember(Name = "line_items", IsRequired = true, EmitDefaultValue = true)]
-        public List<LineItems> LineItems { get; set; }
+        public List<Product> LineItems { get; set; }
 
         /// <summary>
         /// Gets or Sets Metadata

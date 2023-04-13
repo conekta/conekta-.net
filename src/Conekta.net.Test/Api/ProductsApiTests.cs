@@ -54,13 +54,13 @@ namespace Conekta.net.Test.Api
         }
 
         /// <summary>
-        ///     Test OrdersCreateLineItems
+        ///     Test OrdersCreateProduct
         /// </summary>
         [Fact]
-        public void OrdersCreateLineItemsTest()
+        public void OrdersCreateProductTest()
         {
             string id = "ord_2tVyWPnCPWbrV37mW";
-            LineItems lineItems = new(
+            Product product = new(
                 description: "Mes de marz.",
                 name: "Pago Mensualidad test",
                 quantity: 1,
@@ -68,31 +68,30 @@ namespace Conekta.net.Test.Api
                 tags: new List<string> { "Pago 2", "Pago mensualidad 2" }
             );
 
-            var response = _instance.OrdersCreateLineItems(id, lineItems);
+            var response = _instance.OrdersCreateProduct(id, product);
 
-            Assert.IsType<LineItemsOrderResponse>(response);
+            Assert.IsType<ProductOrderResponse>(response);
             Assert.Equal(id, response.ParentId);
             Assert.Equal("line_item", response.Object);
         }
 
-
         /// <summary>
-        ///     Test OrdersUpdateLineItems
+        ///     Test OrdersUpdateProduct
         /// </summary>
         [Fact]
-        public void OrdersUpdateLineItemsTest()
+        public void OrdersUpdateProductTest()
         {
             string id = "ord_2tVyWPnCPWbrV37mW";
-            string lineItemId = "line_item_2tVz8UkyWhSxLfUd7";
-            UpdateLineItems lineItems = new(
+            string productId = "line_item_2tVz8UkyWhSxLfUd7";
+            UpdateProduct product = new(
                 description: "Pago Mensualidad"
             );
 
-            var response = _instance.OrdersUpdateLineItems(id, lineItemId, lineItems);
+            var response = _instance.OrdersUpdateProduct(id, productId, product);
 
-            Assert.IsType<LineItemsOrderResponse>(response);
+            Assert.IsType<ProductOrderResponse>(response);
             Assert.Equal(id, response.ParentId);
-            Assert.Equal(lineItemId, response.Id);
+            Assert.Equal(productId, response.Id);
             Assert.Equal("line_item", response.Object);
         }
     }

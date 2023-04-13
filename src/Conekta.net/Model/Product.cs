@@ -27,18 +27,18 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// LineItems
+    /// Product
     /// </summary>
-    [DataContract(Name = "line_items")]
-    public partial class LineItems : IEquatable<LineItems>, IValidatableObject
+    [DataContract(Name = "product")]
+    public partial class Product : IEquatable<Product>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="LineItems" /> class.
+        /// Initializes a new instance of the <see cref="Product" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected LineItems() { }
+        protected Product() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="LineItems" /> class.
+        /// Initializes a new instance of the <see cref="Product" /> class.
         /// </summary>
         /// <param name="antifraudInfo">antifraudInfo.</param>
         /// <param name="brand">The brand of the item..</param>
@@ -49,12 +49,12 @@ namespace Conekta.net.Model
         /// <param name="sku">The stock keeping unit for the item. It is used to identify the item in the order..</param>
         /// <param name="tags">List of tags for the item. It is used to identify the item in the order..</param>
         /// <param name="unitPrice">The price of the item in cents. (required).</param>
-        public LineItems(Dictionary<string, Object> antifraudInfo = default(Dictionary<string, Object>), string brand = default(string), string description = default(string), Dictionary<string, string> metadata = default(Dictionary<string, string>), string name = default(string), int quantity = default(int), string sku = default(string), List<string> tags = default(List<string>), int unitPrice = default(int))
+        public Product(Dictionary<string, Object> antifraudInfo = default(Dictionary<string, Object>), string brand = default(string), string description = default(string), Dictionary<string, string> metadata = default(Dictionary<string, string>), string name = default(string), int quantity = default(int), string sku = default(string), List<string> tags = default(List<string>), int unitPrice = default(int))
         {
             // to ensure "name" is required (not null)
             if (name == null)
             {
-                throw new ArgumentNullException("name is a required property for LineItems and cannot be null");
+                throw new ArgumentNullException("name is a required property for Product and cannot be null");
             }
             this.Name = name;
             this.Quantity = quantity;
@@ -142,7 +142,7 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class LineItems {\n");
+            sb.Append("class Product {\n");
             sb.Append("  AntifraudInfo: ").Append(AntifraudInfo).Append("\n");
             sb.Append("  Brand: ").Append(Brand).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
@@ -172,15 +172,15 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LineItems);
+            return this.Equals(input as Product);
         }
 
         /// <summary>
-        /// Returns true if LineItems instances are equal
+        /// Returns true if Product instances are equal
         /// </summary>
-        /// <param name="input">Instance of LineItems to be compared</param>
+        /// <param name="input">Instance of Product to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(LineItems input)
+        public bool Equals(Product input)
         {
             if (input == null)
             {
