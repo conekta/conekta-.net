@@ -31,85 +31,85 @@ namespace Conekta.net.Api
         /// Create Tax
         /// </summary>
         /// <remarks>
-        /// Create a new tax lines for an existing orden
+        /// Create new taxes for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="orderTaxLinesRequest">requested field for a tax lines</param>
+        /// <param name="orderTaxRequest">requested field for a taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>UpdateOrderTaxLinesResponse</returns>
-        UpdateOrderTaxLinesResponse OrdersCreateTaxLines(string id, OrderTaxLinesRequest orderTaxLinesRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        /// <returns>UpdateOrderTaxResponse</returns>
+        UpdateOrderTaxResponse OrdersCreateTaxes(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Create Tax
         /// </summary>
         /// <remarks>
-        /// Create a new tax lines for an existing orden
+        /// Create new taxes for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="orderTaxLinesRequest">requested field for a tax lines</param>
+        /// <param name="orderTaxRequest">requested field for a taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of UpdateOrderTaxLinesResponse</returns>
-        ApiResponse<UpdateOrderTaxLinesResponse> OrdersCreateTaxLinesWithHttpInfo(string id, OrderTaxLinesRequest orderTaxLinesRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        /// <returns>ApiResponse of UpdateOrderTaxResponse</returns>
+        ApiResponse<UpdateOrderTaxResponse> OrdersCreateTaxesWithHttpInfo(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
         /// Delete Tax
         /// </summary>
         /// <remarks>
-        /// Delete a tax lines for an existing orden
+        /// Delete taxes for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="taxLinesId">identifier</param>
+        /// <param name="taxId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>UpdateOrderTaxLinesResponse</returns>
-        UpdateOrderTaxLinesResponse OrdersDeleteTaxLines(string id, string taxLinesId, string acceptLanguage = default(string), int operationIndex = 0);
+        /// <returns>UpdateOrderTaxResponse</returns>
+        UpdateOrderTaxResponse OrdersDeleteTaxes(string id, string taxId, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Delete Tax
         /// </summary>
         /// <remarks>
-        /// Delete a tax lines for an existing orden
+        /// Delete taxes for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="taxLinesId">identifier</param>
+        /// <param name="taxId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of UpdateOrderTaxLinesResponse</returns>
-        ApiResponse<UpdateOrderTaxLinesResponse> OrdersDeleteTaxLinesWithHttpInfo(string id, string taxLinesId, string acceptLanguage = default(string), int operationIndex = 0);
+        /// <returns>ApiResponse of UpdateOrderTaxResponse</returns>
+        ApiResponse<UpdateOrderTaxResponse> OrdersDeleteTaxesWithHttpInfo(string id, string taxId, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
         /// Update Tax
         /// </summary>
         /// <remarks>
-        /// Update a tax lines for an existing orden
+        /// Update taxes for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="taxLinesId">identifier</param>
-        /// <param name="updateOrderTaxLinesRequest">requested field for a tax lines</param>
+        /// <param name="taxId">identifier</param>
+        /// <param name="updateOrderTaxRequest">requested field for taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>UpdateOrderTaxLinesResponse</returns>
-        UpdateOrderTaxLinesResponse OrdersUpdateTaxLines(string id, string taxLinesId, UpdateOrderTaxLinesRequest updateOrderTaxLinesRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        /// <returns>UpdateOrderTaxResponse</returns>
+        UpdateOrderTaxResponse OrdersUpdateTaxes(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Update Tax
         /// </summary>
         /// <remarks>
-        /// Update a tax lines for an existing orden
+        /// Update taxes for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="taxLinesId">identifier</param>
-        /// <param name="updateOrderTaxLinesRequest">requested field for a tax lines</param>
+        /// <param name="taxId">identifier</param>
+        /// <param name="updateOrderTaxRequest">requested field for taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of UpdateOrderTaxLinesResponse</returns>
-        ApiResponse<UpdateOrderTaxLinesResponse> OrdersUpdateTaxLinesWithHttpInfo(string id, string taxLinesId, UpdateOrderTaxLinesRequest updateOrderTaxLinesRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        /// <returns>ApiResponse of UpdateOrderTaxResponse</returns>
+        ApiResponse<UpdateOrderTaxResponse> OrdersUpdateTaxesWithHttpInfo(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -123,91 +123,91 @@ namespace Conekta.net.Api
         /// Create Tax
         /// </summary>
         /// <remarks>
-        /// Create a new tax lines for an existing orden
+        /// Create new taxes for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="orderTaxLinesRequest">requested field for a tax lines</param>
+        /// <param name="orderTaxRequest">requested field for a taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of UpdateOrderTaxLinesResponse</returns>
-        System.Threading.Tasks.Task<UpdateOrderTaxLinesResponse> OrdersCreateTaxLinesAsync(string id, OrderTaxLinesRequest orderTaxLinesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of UpdateOrderTaxResponse</returns>
+        System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersCreateTaxesAsync(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Tax
         /// </summary>
         /// <remarks>
-        /// Create a new tax lines for an existing orden
+        /// Create new taxes for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="orderTaxLinesRequest">requested field for a tax lines</param>
+        /// <param name="orderTaxRequest">requested field for a taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (UpdateOrderTaxLinesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateOrderTaxLinesResponse>> OrdersCreateTaxLinesWithHttpInfoAsync(string id, OrderTaxLinesRequest orderTaxLinesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (UpdateOrderTaxResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UpdateOrderTaxResponse>> OrdersCreateTaxesWithHttpInfoAsync(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete Tax
         /// </summary>
         /// <remarks>
-        /// Delete a tax lines for an existing orden
+        /// Delete taxes for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="taxLinesId">identifier</param>
+        /// <param name="taxId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of UpdateOrderTaxLinesResponse</returns>
-        System.Threading.Tasks.Task<UpdateOrderTaxLinesResponse> OrdersDeleteTaxLinesAsync(string id, string taxLinesId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of UpdateOrderTaxResponse</returns>
+        System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersDeleteTaxesAsync(string id, string taxId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete Tax
         /// </summary>
         /// <remarks>
-        /// Delete a tax lines for an existing orden
+        /// Delete taxes for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="taxLinesId">identifier</param>
+        /// <param name="taxId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (UpdateOrderTaxLinesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateOrderTaxLinesResponse>> OrdersDeleteTaxLinesWithHttpInfoAsync(string id, string taxLinesId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (UpdateOrderTaxResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UpdateOrderTaxResponse>> OrdersDeleteTaxesWithHttpInfoAsync(string id, string taxId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update Tax
         /// </summary>
         /// <remarks>
-        /// Update a tax lines for an existing orden
+        /// Update taxes for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="taxLinesId">identifier</param>
-        /// <param name="updateOrderTaxLinesRequest">requested field for a tax lines</param>
+        /// <param name="taxId">identifier</param>
+        /// <param name="updateOrderTaxRequest">requested field for taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of UpdateOrderTaxLinesResponse</returns>
-        System.Threading.Tasks.Task<UpdateOrderTaxLinesResponse> OrdersUpdateTaxLinesAsync(string id, string taxLinesId, UpdateOrderTaxLinesRequest updateOrderTaxLinesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of UpdateOrderTaxResponse</returns>
+        System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersUpdateTaxesAsync(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Tax
         /// </summary>
         /// <remarks>
-        /// Update a tax lines for an existing orden
+        /// Update taxes for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="taxLinesId">identifier</param>
-        /// <param name="updateOrderTaxLinesRequest">requested field for a tax lines</param>
+        /// <param name="taxId">identifier</param>
+        /// <param name="updateOrderTaxRequest">requested field for taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (UpdateOrderTaxLinesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateOrderTaxLinesResponse>> OrdersUpdateTaxLinesWithHttpInfoAsync(string id, string taxLinesId, UpdateOrderTaxLinesRequest updateOrderTaxLinesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (UpdateOrderTaxResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UpdateOrderTaxResponse>> OrdersUpdateTaxesWithHttpInfoAsync(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -329,41 +329,41 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create Tax Create a new tax lines for an existing orden
+        /// Create Tax Create new taxes for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="orderTaxLinesRequest">requested field for a tax lines</param>
+        /// <param name="orderTaxRequest">requested field for a taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>UpdateOrderTaxLinesResponse</returns>
-        public UpdateOrderTaxLinesResponse OrdersCreateTaxLines(string id, OrderTaxLinesRequest orderTaxLinesRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        /// <returns>UpdateOrderTaxResponse</returns>
+        public UpdateOrderTaxResponse OrdersCreateTaxes(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<UpdateOrderTaxLinesResponse> localVarResponse = OrdersCreateTaxLinesWithHttpInfo(id, orderTaxLinesRequest, acceptLanguage);
+            Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> localVarResponse = OrdersCreateTaxesWithHttpInfo(id, orderTaxRequest, acceptLanguage);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Create Tax Create a new tax lines for an existing orden
+        /// Create Tax Create new taxes for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="orderTaxLinesRequest">requested field for a tax lines</param>
+        /// <param name="orderTaxRequest">requested field for a taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of UpdateOrderTaxLinesResponse</returns>
-        public Conekta.net.Client.ApiResponse<UpdateOrderTaxLinesResponse> OrdersCreateTaxLinesWithHttpInfo(string id, OrderTaxLinesRequest orderTaxLinesRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        /// <returns>ApiResponse of UpdateOrderTaxResponse</returns>
+        public Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> OrdersCreateTaxesWithHttpInfo(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling TaxesApi->OrdersCreateTaxLines");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling TaxesApi->OrdersCreateTaxes");
             }
 
-            // verify the required parameter 'orderTaxLinesRequest' is set
-            if (orderTaxLinesRequest == null)
+            // verify the required parameter 'orderTaxRequest' is set
+            if (orderTaxRequest == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'orderTaxLinesRequest' when calling TaxesApi->OrdersCreateTaxLines");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'orderTaxRequest' when calling TaxesApi->OrdersCreateTaxes");
             }
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -394,9 +394,9 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
-            localVarRequestOptions.Data = orderTaxLinesRequest;
+            localVarRequestOptions.Data = orderTaxRequest;
 
-            localVarRequestOptions.Operation = "TaxesApi.OrdersCreateTaxLines";
+            localVarRequestOptions.Operation = "TaxesApi.OrdersCreateTaxes";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (bearerAuth) required
@@ -407,10 +407,10 @@ namespace Conekta.net.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<UpdateOrderTaxLinesResponse>("/orders/{id}/tax_lines", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<UpdateOrderTaxResponse>("/orders/{id}/tax_lines", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("OrdersCreateTaxLines", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrdersCreateTaxes", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -421,43 +421,43 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create Tax Create a new tax lines for an existing orden
+        /// Create Tax Create new taxes for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="orderTaxLinesRequest">requested field for a tax lines</param>
+        /// <param name="orderTaxRequest">requested field for a taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of UpdateOrderTaxLinesResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateOrderTaxLinesResponse> OrdersCreateTaxLinesAsync(string id, OrderTaxLinesRequest orderTaxLinesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of UpdateOrderTaxResponse</returns>
+        public async System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersCreateTaxesAsync(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<UpdateOrderTaxLinesResponse> localVarResponse = await OrdersCreateTaxLinesWithHttpInfoAsync(id, orderTaxLinesRequest, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> localVarResponse = await OrdersCreateTaxesWithHttpInfoAsync(id, orderTaxRequest, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Create Tax Create a new tax lines for an existing orden
+        /// Create Tax Create new taxes for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="orderTaxLinesRequest">requested field for a tax lines</param>
+        /// <param name="orderTaxRequest">requested field for a taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (UpdateOrderTaxLinesResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateOrderTaxLinesResponse>> OrdersCreateTaxLinesWithHttpInfoAsync(string id, OrderTaxLinesRequest orderTaxLinesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (UpdateOrderTaxResponse)</returns>
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse>> OrdersCreateTaxesWithHttpInfoAsync(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling TaxesApi->OrdersCreateTaxLines");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling TaxesApi->OrdersCreateTaxes");
             }
 
-            // verify the required parameter 'orderTaxLinesRequest' is set
-            if (orderTaxLinesRequest == null)
+            // verify the required parameter 'orderTaxRequest' is set
+            if (orderTaxRequest == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'orderTaxLinesRequest' when calling TaxesApi->OrdersCreateTaxLines");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'orderTaxRequest' when calling TaxesApi->OrdersCreateTaxes");
             }
 
 
@@ -489,9 +489,9 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
-            localVarRequestOptions.Data = orderTaxLinesRequest;
+            localVarRequestOptions.Data = orderTaxRequest;
 
-            localVarRequestOptions.Operation = "TaxesApi.OrdersCreateTaxLines";
+            localVarRequestOptions.Operation = "TaxesApi.OrdersCreateTaxes";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (bearerAuth) required
@@ -502,11 +502,11 @@ namespace Conekta.net.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<UpdateOrderTaxLinesResponse>("/orders/{id}/tax_lines", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<UpdateOrderTaxResponse>("/orders/{id}/tax_lines", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("OrdersCreateTaxLines", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrdersCreateTaxes", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -517,41 +517,41 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Delete Tax Delete a tax lines for an existing orden
+        /// Delete Tax Delete taxes for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="taxLinesId">identifier</param>
+        /// <param name="taxId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>UpdateOrderTaxLinesResponse</returns>
-        public UpdateOrderTaxLinesResponse OrdersDeleteTaxLines(string id, string taxLinesId, string acceptLanguage = default(string), int operationIndex = 0)
+        /// <returns>UpdateOrderTaxResponse</returns>
+        public UpdateOrderTaxResponse OrdersDeleteTaxes(string id, string taxId, string acceptLanguage = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<UpdateOrderTaxLinesResponse> localVarResponse = OrdersDeleteTaxLinesWithHttpInfo(id, taxLinesId, acceptLanguage);
+            Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> localVarResponse = OrdersDeleteTaxesWithHttpInfo(id, taxId, acceptLanguage);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Delete Tax Delete a tax lines for an existing orden
+        /// Delete Tax Delete taxes for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="taxLinesId">identifier</param>
+        /// <param name="taxId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of UpdateOrderTaxLinesResponse</returns>
-        public Conekta.net.Client.ApiResponse<UpdateOrderTaxLinesResponse> OrdersDeleteTaxLinesWithHttpInfo(string id, string taxLinesId, string acceptLanguage = default(string), int operationIndex = 0)
+        /// <returns>ApiResponse of UpdateOrderTaxResponse</returns>
+        public Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> OrdersDeleteTaxesWithHttpInfo(string id, string taxId, string acceptLanguage = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling TaxesApi->OrdersDeleteTaxLines");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling TaxesApi->OrdersDeleteTaxes");
             }
 
-            // verify the required parameter 'taxLinesId' is set
-            if (taxLinesId == null)
+            // verify the required parameter 'taxId' is set
+            if (taxId == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'taxLinesId' when calling TaxesApi->OrdersDeleteTaxLines");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'taxId' when calling TaxesApi->OrdersDeleteTaxes");
             }
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -577,13 +577,13 @@ namespace Conekta.net.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.PathParameters.Add("tax_lines_id", Conekta.net.Client.ClientUtils.ParameterToString(taxLinesId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("tax_id", Conekta.net.Client.ClientUtils.ParameterToString(taxId)); // path parameter
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
 
-            localVarRequestOptions.Operation = "TaxesApi.OrdersDeleteTaxLines";
+            localVarRequestOptions.Operation = "TaxesApi.OrdersDeleteTaxes";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (bearerAuth) required
@@ -594,10 +594,10 @@ namespace Conekta.net.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<UpdateOrderTaxLinesResponse>("/orders/{id}/tax_lines/{tax_lines_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<UpdateOrderTaxResponse>("/orders/{id}/tax_lines/{tax_id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("OrdersDeleteTaxLines", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrdersDeleteTaxes", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -608,43 +608,43 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Delete Tax Delete a tax lines for an existing orden
+        /// Delete Tax Delete taxes for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="taxLinesId">identifier</param>
+        /// <param name="taxId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of UpdateOrderTaxLinesResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateOrderTaxLinesResponse> OrdersDeleteTaxLinesAsync(string id, string taxLinesId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of UpdateOrderTaxResponse</returns>
+        public async System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersDeleteTaxesAsync(string id, string taxId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<UpdateOrderTaxLinesResponse> localVarResponse = await OrdersDeleteTaxLinesWithHttpInfoAsync(id, taxLinesId, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> localVarResponse = await OrdersDeleteTaxesWithHttpInfoAsync(id, taxId, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Delete Tax Delete a tax lines for an existing orden
+        /// Delete Tax Delete taxes for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="taxLinesId">identifier</param>
+        /// <param name="taxId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (UpdateOrderTaxLinesResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateOrderTaxLinesResponse>> OrdersDeleteTaxLinesWithHttpInfoAsync(string id, string taxLinesId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (UpdateOrderTaxResponse)</returns>
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse>> OrdersDeleteTaxesWithHttpInfoAsync(string id, string taxId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling TaxesApi->OrdersDeleteTaxLines");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling TaxesApi->OrdersDeleteTaxes");
             }
 
-            // verify the required parameter 'taxLinesId' is set
-            if (taxLinesId == null)
+            // verify the required parameter 'taxId' is set
+            if (taxId == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'taxLinesId' when calling TaxesApi->OrdersDeleteTaxLines");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'taxId' when calling TaxesApi->OrdersDeleteTaxes");
             }
 
 
@@ -671,13 +671,13 @@ namespace Conekta.net.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.PathParameters.Add("tax_lines_id", Conekta.net.Client.ClientUtils.ParameterToString(taxLinesId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("tax_id", Conekta.net.Client.ClientUtils.ParameterToString(taxId)); // path parameter
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
 
-            localVarRequestOptions.Operation = "TaxesApi.OrdersDeleteTaxLines";
+            localVarRequestOptions.Operation = "TaxesApi.OrdersDeleteTaxes";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (bearerAuth) required
@@ -688,11 +688,11 @@ namespace Conekta.net.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<UpdateOrderTaxLinesResponse>("/orders/{id}/tax_lines/{tax_lines_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<UpdateOrderTaxResponse>("/orders/{id}/tax_lines/{tax_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("OrdersDeleteTaxLines", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrdersDeleteTaxes", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -703,154 +703,50 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Update Tax Update a tax lines for an existing orden
+        /// Update Tax Update taxes for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="taxLinesId">identifier</param>
-        /// <param name="updateOrderTaxLinesRequest">requested field for a tax lines</param>
+        /// <param name="taxId">identifier</param>
+        /// <param name="updateOrderTaxRequest">requested field for taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>UpdateOrderTaxLinesResponse</returns>
-        public UpdateOrderTaxLinesResponse OrdersUpdateTaxLines(string id, string taxLinesId, UpdateOrderTaxLinesRequest updateOrderTaxLinesRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        /// <returns>UpdateOrderTaxResponse</returns>
+        public UpdateOrderTaxResponse OrdersUpdateTaxes(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<UpdateOrderTaxLinesResponse> localVarResponse = OrdersUpdateTaxLinesWithHttpInfo(id, taxLinesId, updateOrderTaxLinesRequest, acceptLanguage);
+            Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> localVarResponse = OrdersUpdateTaxesWithHttpInfo(id, taxId, updateOrderTaxRequest, acceptLanguage);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Update Tax Update a tax lines for an existing orden
+        /// Update Tax Update taxes for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="taxLinesId">identifier</param>
-        /// <param name="updateOrderTaxLinesRequest">requested field for a tax lines</param>
+        /// <param name="taxId">identifier</param>
+        /// <param name="updateOrderTaxRequest">requested field for taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of UpdateOrderTaxLinesResponse</returns>
-        public Conekta.net.Client.ApiResponse<UpdateOrderTaxLinesResponse> OrdersUpdateTaxLinesWithHttpInfo(string id, string taxLinesId, UpdateOrderTaxLinesRequest updateOrderTaxLinesRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        /// <returns>ApiResponse of UpdateOrderTaxResponse</returns>
+        public Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> OrdersUpdateTaxesWithHttpInfo(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling TaxesApi->OrdersUpdateTaxLines");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling TaxesApi->OrdersUpdateTaxes");
             }
 
-            // verify the required parameter 'taxLinesId' is set
-            if (taxLinesId == null)
+            // verify the required parameter 'taxId' is set
+            if (taxId == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'taxLinesId' when calling TaxesApi->OrdersUpdateTaxLines");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'taxId' when calling TaxesApi->OrdersUpdateTaxes");
             }
 
-            // verify the required parameter 'updateOrderTaxLinesRequest' is set
-            if (updateOrderTaxLinesRequest == null)
+            // verify the required parameter 'updateOrderTaxRequest' is set
+            if (updateOrderTaxRequest == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'updateOrderTaxLinesRequest' when calling TaxesApi->OrdersUpdateTaxLines");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'updateOrderTaxRequest' when calling TaxesApi->OrdersUpdateTaxes");
             }
-
-            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/vnd.conekta-v2.1.0+json"
-            };
-
-            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.PathParameters.Add("tax_lines_id", Conekta.net.Client.ClientUtils.ParameterToString(taxLinesId)); // path parameter
-            if (acceptLanguage != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
-            }
-            localVarRequestOptions.Data = updateOrderTaxLinesRequest;
-
-            localVarRequestOptions.Operation = "TaxesApi.OrdersUpdateTaxLines";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Put<UpdateOrderTaxLinesResponse>("/orders/{id}/tax_lines/{tax_lines_id}", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("OrdersUpdateTaxLines", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Update Tax Update a tax lines for an existing orden
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Identifier of the resource</param>
-        /// <param name="taxLinesId">identifier</param>
-        /// <param name="updateOrderTaxLinesRequest">requested field for a tax lines</param>
-        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of UpdateOrderTaxLinesResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateOrderTaxLinesResponse> OrdersUpdateTaxLinesAsync(string id, string taxLinesId, UpdateOrderTaxLinesRequest updateOrderTaxLinesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Conekta.net.Client.ApiResponse<UpdateOrderTaxLinesResponse> localVarResponse = await OrdersUpdateTaxLinesWithHttpInfoAsync(id, taxLinesId, updateOrderTaxLinesRequest, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Update Tax Update a tax lines for an existing orden
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Identifier of the resource</param>
-        /// <param name="taxLinesId">identifier</param>
-        /// <param name="updateOrderTaxLinesRequest">requested field for a tax lines</param>
-        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (UpdateOrderTaxLinesResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateOrderTaxLinesResponse>> OrdersUpdateTaxLinesWithHttpInfoAsync(string id, string taxLinesId, UpdateOrderTaxLinesRequest updateOrderTaxLinesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling TaxesApi->OrdersUpdateTaxLines");
-            }
-
-            // verify the required parameter 'taxLinesId' is set
-            if (taxLinesId == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'taxLinesId' when calling TaxesApi->OrdersUpdateTaxLines");
-            }
-
-            // verify the required parameter 'updateOrderTaxLinesRequest' is set
-            if (updateOrderTaxLinesRequest == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'updateOrderTaxLinesRequest' when calling TaxesApi->OrdersUpdateTaxLines");
-            }
-
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
 
@@ -876,14 +772,14 @@ namespace Conekta.net.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.PathParameters.Add("tax_lines_id", Conekta.net.Client.ClientUtils.ParameterToString(taxLinesId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("tax_id", Conekta.net.Client.ClientUtils.ParameterToString(taxId)); // path parameter
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
-            localVarRequestOptions.Data = updateOrderTaxLinesRequest;
+            localVarRequestOptions.Data = updateOrderTaxRequest;
 
-            localVarRequestOptions.Operation = "TaxesApi.OrdersUpdateTaxLines";
+            localVarRequestOptions.Operation = "TaxesApi.OrdersUpdateTaxes";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (bearerAuth) required
@@ -894,11 +790,115 @@ namespace Conekta.net.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<UpdateOrderTaxLinesResponse>("/orders/{id}/tax_lines/{tax_lines_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = this.Client.Put<UpdateOrderTaxResponse>("/orders/{id}/tax_lines/{tax_id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("OrdersUpdateTaxes", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update Tax Update taxes for an existing orden
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="taxId">identifier</param>
+        /// <param name="updateOrderTaxRequest">requested field for taxes</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UpdateOrderTaxResponse</returns>
+        public async System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersUpdateTaxesAsync(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> localVarResponse = await OrdersUpdateTaxesWithHttpInfoAsync(id, taxId, updateOrderTaxRequest, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update Tax Update taxes for an existing orden
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="taxId">identifier</param>
+        /// <param name="updateOrderTaxRequest">requested field for taxes</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UpdateOrderTaxResponse)</returns>
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse>> OrdersUpdateTaxesWithHttpInfoAsync(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling TaxesApi->OrdersUpdateTaxes");
+            }
+
+            // verify the required parameter 'taxId' is set
+            if (taxId == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'taxId' when calling TaxesApi->OrdersUpdateTaxes");
+            }
+
+            // verify the required parameter 'updateOrderTaxRequest' is set
+            if (updateOrderTaxRequest == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'updateOrderTaxRequest' when calling TaxesApi->OrdersUpdateTaxes");
+            }
+
+
+            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.conekta-v2.1.0+json"
+            };
+
+            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("tax_id", Conekta.net.Client.ClientUtils.ParameterToString(taxId)); // path parameter
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            localVarRequestOptions.Data = updateOrderTaxRequest;
+
+            localVarRequestOptions.Operation = "TaxesApi.OrdersUpdateTaxes";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PutAsync<UpdateOrderTaxResponse>("/orders/{id}/tax_lines/{tax_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("OrdersUpdateTaxLines", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrdersUpdateTaxes", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

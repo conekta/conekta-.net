@@ -46,7 +46,7 @@ namespace Conekta.net.Model
         /// <param name="shippingContact">shippingContact.</param>
         /// <param name="shippingLines">List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshipping). If the online store offers digital products..</param>
         /// <param name="taxLines">taxLines.</param>
-        public OrderUpdateRequest(List<ChargeRequest> charges = default(List<ChargeRequest>), CheckoutRequest checkout = default(CheckoutRequest), string currency = default(string), OrderRequestCustomerInfo customerInfo = default(OrderRequestCustomerInfo), List<OrderDiscountLinesRequest> discountLines = default(List<OrderDiscountLinesRequest>), List<Product> lineItems = default(List<Product>), Dictionary<string, string> metadata = default(Dictionary<string, string>), bool preAuthorize = false, CustomerShippingContacts shippingContact = default(CustomerShippingContacts), List<ShippingRequest> shippingLines = default(List<ShippingRequest>), List<OrderTaxLinesRequest> taxLines = default(List<OrderTaxLinesRequest>))
+        public OrderUpdateRequest(List<ChargeRequest> charges = default(List<ChargeRequest>), CheckoutRequest checkout = default(CheckoutRequest), string currency = default(string), OrderRequestCustomerInfo customerInfo = default(OrderRequestCustomerInfo), List<OrderDiscountLinesRequest> discountLines = default(List<OrderDiscountLinesRequest>), List<Product> lineItems = default(List<Product>), Dictionary<string, string> metadata = default(Dictionary<string, string>), bool preAuthorize = false, CustomerShippingContacts shippingContact = default(CustomerShippingContacts), List<ShippingRequest> shippingLines = default(List<ShippingRequest>), List<OrderTaxRequest> taxLines = default(List<OrderTaxRequest>))
         {
             this.Charges = charges;
             this.Checkout = checkout;
@@ -131,7 +131,7 @@ namespace Conekta.net.Model
         /// Gets or Sets TaxLines
         /// </summary>
         [DataMember(Name = "tax_lines", EmitDefaultValue = false)]
-        public List<OrderTaxLinesRequest> TaxLines { get; set; }
+        public List<OrderTaxRequest> TaxLines { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

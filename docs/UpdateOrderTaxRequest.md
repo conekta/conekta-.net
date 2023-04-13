@@ -1,5 +1,5 @@
-# Conekta.net.Model.UpdateOrderTaxLinesRequest
-create a new tax lines for an existing order
+# Conekta.net.Model.UpdateOrderTaxRequest
+create new taxes for an existing order
 
 ## Properties
 

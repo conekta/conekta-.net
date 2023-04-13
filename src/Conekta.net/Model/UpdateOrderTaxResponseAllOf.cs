@@ -27,18 +27,18 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// UpdateOrderTaxLinesResponseAllOf
+    /// UpdateOrderTaxResponseAllOf
     /// </summary>
-    [DataContract(Name = "update_order_tax_lines_response_allOf")]
-    public partial class UpdateOrderTaxLinesResponseAllOf : IEquatable<UpdateOrderTaxLinesResponseAllOf>, IValidatableObject
+    [DataContract(Name = "update_order_tax_response_allOf")]
+    public partial class UpdateOrderTaxResponseAllOf : IEquatable<UpdateOrderTaxResponseAllOf>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateOrderTaxLinesResponseAllOf" /> class.
+        /// Initializes a new instance of the <see cref="UpdateOrderTaxResponseAllOf" /> class.
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="_object">_object.</param>
         /// <param name="parentId">parentId.</param>
-        public UpdateOrderTaxLinesResponseAllOf(string id = default(string), string _object = default(string), string parentId = default(string))
+        public UpdateOrderTaxResponseAllOf(string id = default(string), string _object = default(string), string parentId = default(string))
         {
             this.Id = id;
             this.Object = _object;
@@ -73,7 +73,7 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class UpdateOrderTaxLinesResponseAllOf {\n");
+            sb.Append("class UpdateOrderTaxResponseAllOf {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
@@ -97,15 +97,15 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateOrderTaxLinesResponseAllOf);
+            return this.Equals(input as UpdateOrderTaxResponseAllOf);
         }
 
         /// <summary>
-        /// Returns true if UpdateOrderTaxLinesResponseAllOf instances are equal
+        /// Returns true if UpdateOrderTaxResponseAllOf instances are equal
         /// </summary>
-        /// <param name="input">Instance of UpdateOrderTaxLinesResponseAllOf to be compared</param>
+        /// <param name="input">Instance of UpdateOrderTaxResponseAllOf to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UpdateOrderTaxLinesResponseAllOf input)
+        public bool Equals(UpdateOrderTaxResponseAllOf input)
         {
             if (input == null)
             {

@@ -113,7 +113,7 @@ docs/OrderResponseProducts.md
 docs/OrderResponseProductsAllOf.md
 docs/OrderResponseShippingContact.md
 docs/OrderResponseShippingContactAllOf.md
-docs/OrderTaxLinesRequest.md
+docs/OrderTaxRequest.md
 docs/OrderUpdateRequest.md
 docs/OrdersApi.md
 docs/OrdersResponse.md
@@ -166,9 +166,9 @@ docs/UpdateCustomerFiscalEntitiesResponse.md
 docs/UpdateCustomerFiscalEntitiesResponseAllOf.md
 docs/UpdateCustomerPaymentSourcesResponse.md
 docs/UpdateOrderDiscountLinesRequest.md
-docs/UpdateOrderTaxLinesRequest.md
-docs/UpdateOrderTaxLinesResponse.md
-docs/UpdateOrderTaxLinesResponseAllOf.md
+docs/UpdateOrderTaxRequest.md
+docs/UpdateOrderTaxResponse.md
+docs/UpdateOrderTaxResponseAllOf.md
 docs/UpdatePaymentSources.md
 docs/UpdateProduct.md
 docs/WebhookLog.md
@@ -314,7 +314,7 @@ src/Conekta.net/Model/OrderResponseProducts.cs
 src/Conekta.net/Model/OrderResponseProductsAllOf.cs
 src/Conekta.net/Model/OrderResponseShippingContact.cs
 src/Conekta.net/Model/OrderResponseShippingContactAllOf.cs
-src/Conekta.net/Model/OrderTaxLinesRequest.cs
+src/Conekta.net/Model/OrderTaxRequest.cs
 src/Conekta.net/Model/OrderUpdateRequest.cs
 src/Conekta.net/Model/OrdersResponse.cs
 src/Conekta.net/Model/Page.cs
@@ -358,9 +358,9 @@ src/Conekta.net/Model/UpdateCustomerFiscalEntitiesResponse.cs
 src/Conekta.net/Model/UpdateCustomerFiscalEntitiesResponseAllOf.cs
 src/Conekta.net/Model/UpdateCustomerPaymentSourcesResponse.cs
 src/Conekta.net/Model/UpdateOrderDiscountLinesRequest.cs
-src/Conekta.net/Model/UpdateOrderTaxLinesRequest.cs
-src/Conekta.net/Model/UpdateOrderTaxLinesResponse.cs
-src/Conekta.net/Model/UpdateOrderTaxLinesResponseAllOf.cs
+src/Conekta.net/Model/UpdateOrderTaxRequest.cs
+src/Conekta.net/Model/UpdateOrderTaxResponse.cs
+src/Conekta.net/Model/UpdateOrderTaxResponseAllOf.cs
 src/Conekta.net/Model/UpdatePaymentSources.cs
 src/Conekta.net/Model/UpdateProduct.cs
 src/Conekta.net/Model/WebhookLog.cs

@@ -27,43 +27,32 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// create a new tax lines for an existing order response
+    /// create new taxes for an existing order
     /// </summary>
-    [DataContract(Name = "update_order_tax_lines_response")]
-    public partial class UpdateOrderTaxLinesResponse : IEquatable<UpdateOrderTaxLinesResponse>, IValidatableObject
+    [DataContract(Name = "order_tax_request")]
+    public partial class OrderTaxRequest : IEquatable<OrderTaxRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateOrderTaxLinesResponse" /> class.
+        /// Initializes a new instance of the <see cref="OrderTaxRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected UpdateOrderTaxLinesResponse() { }
+        protected OrderTaxRequest() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateOrderTaxLinesResponse" /> class.
+        /// Initializes a new instance of the <see cref="OrderTaxRequest" /> class.
         /// </summary>
         /// <param name="amount">The amount to be collected for tax in cents (required).</param>
         /// <param name="description">description or tax&#39;s name (required).</param>
         /// <param name="metadata">metadata.</param>
-        /// <param name="id">id (required).</param>
-        /// <param name="_object">_object.</param>
-        /// <param name="parentId">parentId.</param>
-        public UpdateOrderTaxLinesResponse(long amount = default(long), string description = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string id = default(string), string _object = default(string), string parentId = default(string))
+        public OrderTaxRequest(long amount = default(long), string description = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>))
         {
             this.Amount = amount;
             // to ensure "description" is required (not null)
             if (description == null)
             {
-                throw new ArgumentNullException("description is a required property for UpdateOrderTaxLinesResponse and cannot be null");
+                throw new ArgumentNullException("description is a required property for OrderTaxRequest and cannot be null");
             }
             this.Description = description;
-            // to ensure "id" is required (not null)
-            if (id == null)
-            {
-                throw new ArgumentNullException("id is a required property for UpdateOrderTaxLinesResponse and cannot be null");
-            }
-            this.Id = id;
             this.Metadata = metadata;
-            this.Object = _object;
-            this.ParentId = parentId;
         }
 
         /// <summary>
@@ -89,40 +78,16 @@ namespace Conekta.net.Model
         public Dictionary<string, Object> Metadata { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
-        /// </summary>
-        /// <example>&quot;tax_lin_2tQ8dC5mg1UADmVPo&quot;</example>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
-        public string Id { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Object
-        /// </summary>
-        /// <example>&quot;tax_line&quot;</example>
-        [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ParentId
-        /// </summary>
-        /// <example>&quot;ord_2tPAmKCEJqh8RE6nY&quot;</example>
-        [DataMember(Name = "parent_id", EmitDefaultValue = false)]
-        public string ParentId { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class UpdateOrderTaxLinesResponse {\n");
+            sb.Append("class OrderTaxRequest {\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
-            sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -143,15 +108,15 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateOrderTaxLinesResponse);
+            return this.Equals(input as OrderTaxRequest);
         }
 
         /// <summary>
-        /// Returns true if UpdateOrderTaxLinesResponse instances are equal
+        /// Returns true if OrderTaxRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of UpdateOrderTaxLinesResponse to be compared</param>
+        /// <param name="input">Instance of OrderTaxRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UpdateOrderTaxLinesResponse input)
+        public bool Equals(OrderTaxRequest input)
         {
             if (input == null)
             {
@@ -172,21 +137,6 @@ namespace Conekta.net.Model
                     this.Metadata != null &&
                     input.Metadata != null &&
                     this.Metadata.SequenceEqual(input.Metadata)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
-                ) && 
-                (
-                    this.ParentId == input.ParentId ||
-                    (this.ParentId != null &&
-                    this.ParentId.Equals(input.ParentId))
                 );
         }
 
@@ -207,18 +157,6 @@ namespace Conekta.net.Model
                 if (this.Metadata != null)
                 {
                     hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.Object != null)
-                {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
-                }
-                if (this.ParentId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParentId.GetHashCode();
                 }
                 return hashCode;
             }

@@ -4621,7 +4621,7 @@ paths:
       summary: Create Shipping
       tags:
       - Shippings
-  /orders/{id}/shipping_lines/{shipping_lines_id}:
+  /orders/{id}/shipping_lines/{shipping_id}:
     delete:
       description: Delete shipping
       operationId: ordersDeleteShipping
@@ -4636,7 +4636,7 @@ paths:
       - description: identifier
         example: ship_lin_2tQ974hSHcsdeSZHG
         in: path
-        name: shipping_lines_id
+        name: shipping_id
         required: true
         schema:
           type: string
@@ -4745,7 +4745,7 @@ paths:
       - description: identifier
         example: ship_lin_2tQ974hSHcsdeSZHG
         in: path
-        name: shipping_lines_id
+        name: shipping_id
         required: true
         schema:
           type: string
@@ -6070,8 +6070,8 @@ paths:
       - Subscriptions
   /orders/{id}/tax_lines:
     post:
-      description: Create a new tax lines for an existing orden
-      operationId: ordersCreateTaxLines
+      description: Create new taxes for an existing orden
+      operationId: ordersCreateTaxes
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
@@ -6098,13 +6098,13 @@ paths:
           - en
           type: string
       requestBody:
-        $ref: '#/components/requestBodies/order_tax_lines'
+        $ref: '#/components/requestBodies/order_tax'
       responses:
         "200":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/update_order_tax_lines_response'
+                $ref: '#/components/schemas/update_order_tax_response'
           description: successful
         "401":
           content:
@@ -6158,10 +6158,10 @@ paths:
       summary: Create Tax
       tags:
       - Taxes
-  /orders/{id}/tax_lines/{tax_lines_id}:
+  /orders/{id}/tax_lines/{tax_id}:
     delete:
-      description: Delete a tax lines for an existing orden
-      operationId: ordersDeleteTaxLines
+      description: Delete taxes for an existing orden
+      operationId: ordersDeleteTaxes
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
@@ -6173,7 +6173,7 @@ paths:
       - description: identifier
         example: tax_lin_2tQ974hSHcsdeSZHG
         in: path
-        name: tax_lines_id
+        name: tax_id
         required: true
         schema:
           type: string
@@ -6199,7 +6199,7 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/update_order_tax_lines_response'
+                $ref: '#/components/schemas/update_order_tax_response'
           description: successful
         "401":
           content:
@@ -6269,8 +6269,8 @@ paths:
       tags:
       - Taxes
     put:
-      description: Update a tax lines for an existing orden
-      operationId: ordersUpdateTaxLines
+      description: Update taxes for an existing orden
+      operationId: ordersUpdateTaxes
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
@@ -6282,7 +6282,7 @@ paths:
       - description: identifier
         example: tax_lin_2tQ974hSHcsdeSZHG
         in: path
-        name: tax_lines_id
+        name: tax_id
         required: true
         schema:
           type: string
@@ -6304,13 +6304,13 @@ paths:
           - en
           type: string
       requestBody:
-        $ref: '#/components/requestBodies/order_tax_lines_update'
+        $ref: '#/components/requestBodies/order_tax_update'
       responses:
         "200":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/update_order_tax_lines_response'
+                $ref: '#/components/schemas/update_order_tax_response'
           description: successful
         "401":
           content:
@@ -7309,11 +7309,11 @@ components:
       required: true
       schema:
         type: string
-    shipping_lines_id:
+    shipping_id:
       description: identifier
       example: ship_lin_2tQ974hSHcsdeSZHG
       in: path
-      name: shipping_lines_id
+      name: shipping_id
       required: true
       schema:
         type: string
@@ -7325,11 +7325,11 @@ components:
       required: true
       schema:
         type: string
-    tax_lines_id:
+    tax_id:
       description: identifier
       example: tax_lin_2tQ974hSHcsdeSZHG
       in: path
-      name: tax_lines_id
+      name: tax_id
       required: true
       schema:
         type: string
@@ -7527,19 +7527,19 @@ components:
             $ref: '#/components/schemas/subscription_request'
       description: requested field for subscriptions
       required: true
-    order_tax_lines:
+    order_tax:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/order_tax_lines_request'
-      description: requested field for a tax lines
+            $ref: '#/components/schemas/order_tax_request'
+      description: requested field for a taxes
       required: true
-    order_tax_lines_update:
+    order_tax_update:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/update_order_tax_lines_request'
-      description: requested field for a tax lines
+            $ref: '#/components/schemas/update_order_tax_request'
+      description: requested field for taxes
       required: true
     webhook:
       content:
@@ -8418,11 +8418,11 @@ components:
           type: integer
       title: subscription_response
       type: object
-    update_order_tax_lines_response:
+    update_order_tax_response:
       allOf:
-      - $ref: '#/components/schemas/order_tax_lines_request'
-      - $ref: '#/components/schemas/update_order_tax_lines_response_allOf'
-      description: create a new tax lines for an existing order response
+      - $ref: '#/components/schemas/order_tax_request'
+      - $ref: '#/components/schemas/update_order_tax_response_allOf'
+      description: create new taxes for an existing order response
       required:
       - id
     webhook_response:
@@ -8741,10 +8741,10 @@ components:
             $ref: '#/components/schemas/shipping_request'
           type: array
         tax_lines:
-          description: "List of [taxes](https://developers.conekta.com/v2.1.0/reference/orderscreatetaxlines)\
+          description: "List of [taxes](https://developers.conekta.com/v2.1.0/reference/orderscreatetaxes)\
             \ that are applied to the order."
           items:
-            $ref: '#/components/schemas/order_tax_lines_request'
+            $ref: '#/components/schemas/order_tax_request'
           type: array
       required:
       - currency
@@ -8799,7 +8799,7 @@ components:
           type: array
         tax_lines:
           items:
-            $ref: '#/components/schemas/order_tax_lines_request'
+            $ref: '#/components/schemas/order_tax_request'
           type: array
       title: order_update
       type: object
@@ -9198,8 +9198,8 @@ components:
       - plan_id
       title: subscription_request
       type: object
-    order_tax_lines_request:
-      description: create a new tax lines for an existing order
+    order_tax_request:
+      description: create new taxes for an existing order
       properties:
         amount:
           description: The amount to be collected for tax in cents
@@ -9222,8 +9222,8 @@ components:
       - amount
       - description
       type: object
-    update_order_tax_lines_request:
-      description: create a new tax lines for an existing order
+    update_order_tax_request:
+      description: create new taxes for an existing order
       properties:
         amount:
           description: The amount to be collected for tax in cents
@@ -10456,7 +10456,7 @@ components:
           example: true
           type: boolean
       type: object
-    update_order_tax_lines_response_allOf:
+    update_order_tax_response_allOf:
       properties:
         id:
           example: tax_lin_2tQ8dC5mg1UADmVPo

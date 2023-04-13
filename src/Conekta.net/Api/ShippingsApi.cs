@@ -62,11 +62,11 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="shippingLinesId">identifier</param>
+        /// <param name="shippingId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ShippingOrderResponse</returns>
-        ShippingOrderResponse OrdersDeleteShipping(string id, string shippingLinesId, string acceptLanguage = default(string), int operationIndex = 0);
+        ShippingOrderResponse OrdersDeleteShipping(string id, string shippingId, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Delete Shipping
@@ -76,11 +76,11 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="shippingLinesId">identifier</param>
+        /// <param name="shippingId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ShippingOrderResponse</returns>
-        ApiResponse<ShippingOrderResponse> OrdersDeleteShippingWithHttpInfo(string id, string shippingLinesId, string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<ShippingOrderResponse> OrdersDeleteShippingWithHttpInfo(string id, string shippingId, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
         /// Update Shipping
         /// </summary>
@@ -89,12 +89,12 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="shippingLinesId">identifier</param>
+        /// <param name="shippingId">identifier</param>
         /// <param name="shippingRequest">requested field for a shipping</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ShippingOrderResponse</returns>
-        ShippingOrderResponse OrdersUpdateShipping(string id, string shippingLinesId, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        ShippingOrderResponse OrdersUpdateShipping(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Update Shipping
@@ -104,12 +104,12 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="shippingLinesId">identifier</param>
+        /// <param name="shippingId">identifier</param>
         /// <param name="shippingRequest">requested field for a shipping</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ShippingOrderResponse</returns>
-        ApiResponse<ShippingOrderResponse> OrdersUpdateShippingWithHttpInfo(string id, string shippingLinesId, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<ShippingOrderResponse> OrdersUpdateShippingWithHttpInfo(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -156,12 +156,12 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="shippingLinesId">identifier</param>
+        /// <param name="shippingId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShippingOrderResponse</returns>
-        System.Threading.Tasks.Task<ShippingOrderResponse> OrdersDeleteShippingAsync(string id, string shippingLinesId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ShippingOrderResponse> OrdersDeleteShippingAsync(string id, string shippingId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete Shipping
@@ -171,12 +171,12 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="shippingLinesId">identifier</param>
+        /// <param name="shippingId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShippingOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ShippingOrderResponse>> OrdersDeleteShippingWithHttpInfoAsync(string id, string shippingLinesId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ShippingOrderResponse>> OrdersDeleteShippingWithHttpInfoAsync(string id, string shippingId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update Shipping
         /// </summary>
@@ -185,13 +185,13 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="shippingLinesId">identifier</param>
+        /// <param name="shippingId">identifier</param>
         /// <param name="shippingRequest">requested field for a shipping</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShippingOrderResponse</returns>
-        System.Threading.Tasks.Task<ShippingOrderResponse> OrdersUpdateShippingAsync(string id, string shippingLinesId, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ShippingOrderResponse> OrdersUpdateShippingAsync(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Shipping
@@ -201,13 +201,13 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="shippingLinesId">identifier</param>
+        /// <param name="shippingId">identifier</param>
         /// <param name="shippingRequest">requested field for a shipping</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShippingOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ShippingOrderResponse>> OrdersUpdateShippingWithHttpInfoAsync(string id, string shippingLinesId, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ShippingOrderResponse>> OrdersUpdateShippingWithHttpInfoAsync(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -521,13 +521,13 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="shippingLinesId">identifier</param>
+        /// <param name="shippingId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ShippingOrderResponse</returns>
-        public ShippingOrderResponse OrdersDeleteShipping(string id, string shippingLinesId, string acceptLanguage = default(string), int operationIndex = 0)
+        public ShippingOrderResponse OrdersDeleteShipping(string id, string shippingId, string acceptLanguage = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<ShippingOrderResponse> localVarResponse = OrdersDeleteShippingWithHttpInfo(id, shippingLinesId, acceptLanguage);
+            Conekta.net.Client.ApiResponse<ShippingOrderResponse> localVarResponse = OrdersDeleteShippingWithHttpInfo(id, shippingId, acceptLanguage);
             return localVarResponse.Data;
         }
 
@@ -536,11 +536,11 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="shippingLinesId">identifier</param>
+        /// <param name="shippingId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ShippingOrderResponse</returns>
-        public Conekta.net.Client.ApiResponse<ShippingOrderResponse> OrdersDeleteShippingWithHttpInfo(string id, string shippingLinesId, string acceptLanguage = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<ShippingOrderResponse> OrdersDeleteShippingWithHttpInfo(string id, string shippingId, string acceptLanguage = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -548,10 +548,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling ShippingsApi->OrdersDeleteShipping");
             }
 
-            // verify the required parameter 'shippingLinesId' is set
-            if (shippingLinesId == null)
+            // verify the required parameter 'shippingId' is set
+            if (shippingId == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'shippingLinesId' when calling ShippingsApi->OrdersDeleteShipping");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'shippingId' when calling ShippingsApi->OrdersDeleteShipping");
             }
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -577,7 +577,7 @@ namespace Conekta.net.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.PathParameters.Add("shipping_lines_id", Conekta.net.Client.ClientUtils.ParameterToString(shippingLinesId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("shipping_id", Conekta.net.Client.ClientUtils.ParameterToString(shippingId)); // path parameter
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
@@ -594,7 +594,7 @@ namespace Conekta.net.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<ShippingOrderResponse>("/orders/{id}/shipping_lines/{shipping_lines_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<ShippingOrderResponse>("/orders/{id}/shipping_lines/{shipping_id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("OrdersDeleteShipping", localVarResponse);
@@ -612,14 +612,14 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="shippingLinesId">identifier</param>
+        /// <param name="shippingId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShippingOrderResponse</returns>
-        public async System.Threading.Tasks.Task<ShippingOrderResponse> OrdersDeleteShippingAsync(string id, string shippingLinesId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ShippingOrderResponse> OrdersDeleteShippingAsync(string id, string shippingId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<ShippingOrderResponse> localVarResponse = await OrdersDeleteShippingWithHttpInfoAsync(id, shippingLinesId, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<ShippingOrderResponse> localVarResponse = await OrdersDeleteShippingWithHttpInfoAsync(id, shippingId, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -628,12 +628,12 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="shippingLinesId">identifier</param>
+        /// <param name="shippingId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShippingOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ShippingOrderResponse>> OrdersDeleteShippingWithHttpInfoAsync(string id, string shippingLinesId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ShippingOrderResponse>> OrdersDeleteShippingWithHttpInfoAsync(string id, string shippingId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -641,10 +641,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling ShippingsApi->OrdersDeleteShipping");
             }
 
-            // verify the required parameter 'shippingLinesId' is set
-            if (shippingLinesId == null)
+            // verify the required parameter 'shippingId' is set
+            if (shippingId == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'shippingLinesId' when calling ShippingsApi->OrdersDeleteShipping");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'shippingId' when calling ShippingsApi->OrdersDeleteShipping");
             }
 
 
@@ -671,7 +671,7 @@ namespace Conekta.net.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.PathParameters.Add("shipping_lines_id", Conekta.net.Client.ClientUtils.ParameterToString(shippingLinesId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("shipping_id", Conekta.net.Client.ClientUtils.ParameterToString(shippingId)); // path parameter
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
@@ -688,7 +688,7 @@ namespace Conekta.net.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<ShippingOrderResponse>("/orders/{id}/shipping_lines/{shipping_lines_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<ShippingOrderResponse>("/orders/{id}/shipping_lines/{shipping_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -707,14 +707,14 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="shippingLinesId">identifier</param>
+        /// <param name="shippingId">identifier</param>
         /// <param name="shippingRequest">requested field for a shipping</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ShippingOrderResponse</returns>
-        public ShippingOrderResponse OrdersUpdateShipping(string id, string shippingLinesId, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        public ShippingOrderResponse OrdersUpdateShipping(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<ShippingOrderResponse> localVarResponse = OrdersUpdateShippingWithHttpInfo(id, shippingLinesId, shippingRequest, acceptLanguage);
+            Conekta.net.Client.ApiResponse<ShippingOrderResponse> localVarResponse = OrdersUpdateShippingWithHttpInfo(id, shippingId, shippingRequest, acceptLanguage);
             return localVarResponse.Data;
         }
 
@@ -723,12 +723,12 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="shippingLinesId">identifier</param>
+        /// <param name="shippingId">identifier</param>
         /// <param name="shippingRequest">requested field for a shipping</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ShippingOrderResponse</returns>
-        public Conekta.net.Client.ApiResponse<ShippingOrderResponse> OrdersUpdateShippingWithHttpInfo(string id, string shippingLinesId, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<ShippingOrderResponse> OrdersUpdateShippingWithHttpInfo(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -736,10 +736,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling ShippingsApi->OrdersUpdateShipping");
             }
 
-            // verify the required parameter 'shippingLinesId' is set
-            if (shippingLinesId == null)
+            // verify the required parameter 'shippingId' is set
+            if (shippingId == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'shippingLinesId' when calling ShippingsApi->OrdersUpdateShipping");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'shippingId' when calling ShippingsApi->OrdersUpdateShipping");
             }
 
             // verify the required parameter 'shippingRequest' is set
@@ -772,7 +772,7 @@ namespace Conekta.net.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.PathParameters.Add("shipping_lines_id", Conekta.net.Client.ClientUtils.ParameterToString(shippingLinesId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("shipping_id", Conekta.net.Client.ClientUtils.ParameterToString(shippingId)); // path parameter
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
@@ -790,7 +790,7 @@ namespace Conekta.net.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<ShippingOrderResponse>("/orders/{id}/shipping_lines/{shipping_lines_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<ShippingOrderResponse>("/orders/{id}/shipping_lines/{shipping_id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("OrdersUpdateShipping", localVarResponse);
@@ -808,15 +808,15 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="shippingLinesId">identifier</param>
+        /// <param name="shippingId">identifier</param>
         /// <param name="shippingRequest">requested field for a shipping</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShippingOrderResponse</returns>
-        public async System.Threading.Tasks.Task<ShippingOrderResponse> OrdersUpdateShippingAsync(string id, string shippingLinesId, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ShippingOrderResponse> OrdersUpdateShippingAsync(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<ShippingOrderResponse> localVarResponse = await OrdersUpdateShippingWithHttpInfoAsync(id, shippingLinesId, shippingRequest, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<ShippingOrderResponse> localVarResponse = await OrdersUpdateShippingWithHttpInfoAsync(id, shippingId, shippingRequest, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -825,13 +825,13 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="shippingLinesId">identifier</param>
+        /// <param name="shippingId">identifier</param>
         /// <param name="shippingRequest">requested field for a shipping</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShippingOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ShippingOrderResponse>> OrdersUpdateShippingWithHttpInfoAsync(string id, string shippingLinesId, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ShippingOrderResponse>> OrdersUpdateShippingWithHttpInfoAsync(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -839,10 +839,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling ShippingsApi->OrdersUpdateShipping");
             }
 
-            // verify the required parameter 'shippingLinesId' is set
-            if (shippingLinesId == null)
+            // verify the required parameter 'shippingId' is set
+            if (shippingId == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'shippingLinesId' when calling ShippingsApi->OrdersUpdateShipping");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'shippingId' when calling ShippingsApi->OrdersUpdateShipping");
             }
 
             // verify the required parameter 'shippingRequest' is set
@@ -876,7 +876,7 @@ namespace Conekta.net.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.PathParameters.Add("shipping_lines_id", Conekta.net.Client.ClientUtils.ParameterToString(shippingLinesId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("shipping_id", Conekta.net.Client.ClientUtils.ParameterToString(shippingId)); // path parameter
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
@@ -894,7 +894,7 @@ namespace Conekta.net.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<ShippingOrderResponse>("/orders/{id}/shipping_lines/{shipping_lines_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<ShippingOrderResponse>("/orders/{id}/shipping_lines/{shipping_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

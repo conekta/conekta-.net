@@ -56,44 +56,44 @@ namespace Conekta.net.Test.Api
         }
 
         /// <summary>
-        ///     Test OrdersCreateTaxLines
+        ///     Test OrdersCreateTax
         /// </summary>
         [Fact]
-        public void OrdersCreateTaxLinesTest()
+        public void OrdersCreateTaxTest()
         {
             string id = "ord_2tVyWPnCPWbrV37mW";
-            OrderTaxLinesRequest orderTaxLinesRequest = new(
+            OrderTaxRequest orderTaxRequest = new(
                 amount: 100,
                 description: "test",
                 metadata: new Dictionary<string, Object> { { "key", "value" } }
             );
 
-            var response = _instance.OrdersCreateTaxLines(id, orderTaxLinesRequest);
+            var response = _instance.OrdersCreateTaxes(id, orderTaxRequest);
 
-            Assert.IsType<UpdateOrderTaxLinesResponse>(response);
-            Assert.Equal(orderTaxLinesRequest.Amount, response.Amount);
+            Assert.IsType<UpdateOrderTaxResponse>(response);
+            Assert.Equal(orderTaxRequest.Amount, response.Amount);
             Assert.Equal(id, response.ParentId);
             Assert.False(string.IsNullOrEmpty(response.Id));
         }
 
         /// <summary>
-        ///     Test OrdersUpdateTaxLines
+        ///     Test OrdersUpdateTax
         /// </summary>
         [Fact]
-        public void OrdersUpdateTaxLinesTest()
+        public void OrdersUpdateTaxTest()
         {
             string id = "ord_2tVyWPnCPWbrV37mW";
-            string taxLinesId = "tax_lin_2tVzVp6AAptCRHhgt";
-            UpdateOrderTaxLinesRequest updateOrderTaxLinesRequest = new(
+            string taxId = "tax_lin_2tVzVp6AAptCRHhgt";
+            UpdateOrderTaxRequest updateOrderTaxRequest = new(
                 amount: 99
                 );
 
-            var response = _instance.OrdersUpdateTaxLines(id, taxLinesId, updateOrderTaxLinesRequest);
+            var response = _instance.OrdersUpdateTaxes(id, taxId, updateOrderTaxRequest);
 
-            Assert.IsType<UpdateOrderTaxLinesResponse>(response);
-            Assert.Equal(updateOrderTaxLinesRequest.Amount, response.Amount);
+            Assert.IsType<UpdateOrderTaxResponse>(response);
+            Assert.Equal(updateOrderTaxRequest.Amount, response.Amount);
             Assert.Equal(id, response.ParentId);
-            Assert.Equal(taxLinesId, response.Id);
+            Assert.Equal(taxId, response.Id);
         }
     }
 }

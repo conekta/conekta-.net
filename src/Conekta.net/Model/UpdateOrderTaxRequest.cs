@@ -27,30 +27,20 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// create a new tax lines for an existing order
+    /// create new taxes for an existing order
     /// </summary>
-    [DataContract(Name = "order_tax_lines_request")]
-    public partial class OrderTaxLinesRequest : IEquatable<OrderTaxLinesRequest>, IValidatableObject
+    [DataContract(Name = "update_order_tax_request")]
+    public partial class UpdateOrderTaxRequest : IEquatable<UpdateOrderTaxRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrderTaxLinesRequest" /> class.
+        /// Initializes a new instance of the <see cref="UpdateOrderTaxRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected OrderTaxLinesRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OrderTaxLinesRequest" /> class.
-        /// </summary>
-        /// <param name="amount">The amount to be collected for tax in cents (required).</param>
-        /// <param name="description">description or tax&#39;s name (required).</param>
+        /// <param name="amount">The amount to be collected for tax in cents.</param>
+        /// <param name="description">description or tax&#39;s name.</param>
         /// <param name="metadata">metadata.</param>
-        public OrderTaxLinesRequest(long amount = default(long), string description = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>))
+        public UpdateOrderTaxRequest(long amount = default(long), string description = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>))
         {
             this.Amount = amount;
-            // to ensure "description" is required (not null)
-            if (description == null)
-            {
-                throw new ArgumentNullException("description is a required property for OrderTaxLinesRequest and cannot be null");
-            }
             this.Description = description;
             this.Metadata = metadata;
         }
@@ -60,7 +50,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>The amount to be collected for tax in cents</value>
         /// <example>100</example>
-        [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "amount", EmitDefaultValue = false)]
         public long Amount { get; set; }
 
         /// <summary>
@@ -68,7 +58,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>description or tax&#39;s name</value>
         /// <example>&quot;testing&quot;</example>
-        [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
@@ -84,7 +74,7 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class OrderTaxLinesRequest {\n");
+            sb.Append("class UpdateOrderTaxRequest {\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
@@ -108,15 +98,15 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as OrderTaxLinesRequest);
+            return this.Equals(input as UpdateOrderTaxRequest);
         }
 
         /// <summary>
-        /// Returns true if OrderTaxLinesRequest instances are equal
+        /// Returns true if UpdateOrderTaxRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of OrderTaxLinesRequest to be compared</param>
+        /// <param name="input">Instance of UpdateOrderTaxRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(OrderTaxLinesRequest input)
+        public bool Equals(UpdateOrderTaxRequest input)
         {
             if (input == null)
             {

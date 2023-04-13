@@ -4,17 +4,17 @@ All URIs are relative to *https://api.conekta.io*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OrdersCreateTaxLines**](TaxesApi.md#orderscreatetaxlines) | **POST** /orders/{id}/tax_lines | Create Tax |
-| [**OrdersDeleteTaxLines**](TaxesApi.md#ordersdeletetaxlines) | **DELETE** /orders/{id}/tax_lines/{tax_lines_id} | Delete Tax |
-| [**OrdersUpdateTaxLines**](TaxesApi.md#ordersupdatetaxlines) | **PUT** /orders/{id}/tax_lines/{tax_lines_id} | Update Tax |
+| [**OrdersCreateTaxes**](TaxesApi.md#orderscreatetaxes) | **POST** /orders/{id}/tax_lines | Create Tax |
+| [**OrdersDeleteTaxes**](TaxesApi.md#ordersdeletetaxes) | **DELETE** /orders/{id}/tax_lines/{tax_id} | Delete Tax |
+| [**OrdersUpdateTaxes**](TaxesApi.md#ordersupdatetaxes) | **PUT** /orders/{id}/tax_lines/{tax_id} | Update Tax |
 
-<a name="orderscreatetaxlines"></a>
-# **OrdersCreateTaxLines**
-> UpdateOrderTaxLinesResponse OrdersCreateTaxLines (string id, OrderTaxLinesRequest orderTaxLinesRequest, string acceptLanguage = null)
+<a name="orderscreatetaxes"></a>
+# **OrdersCreateTaxes**
+> UpdateOrderTaxResponse OrdersCreateTaxes (string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = null)
 
 Create Tax
 
-Create a new tax lines for an existing orden
+Create new taxes for an existing orden
 
 ### Example
 ```csharp
@@ -26,7 +26,7 @@ using Conekta.net.Model;
 
 namespace Example
 {
-    public class OrdersCreateTaxLinesExample
+    public class OrdersCreateTaxesExample
     {
         public static void Main()
         {
@@ -37,18 +37,18 @@ namespace Example
 
             var apiInstance = new TaxesApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
-            var orderTaxLinesRequest = new OrderTaxLinesRequest(); // OrderTaxLinesRequest | requested field for a tax lines
+            var orderTaxRequest = new OrderTaxRequest(); // OrderTaxRequest | requested field for a taxes
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
                 // Create Tax
-                UpdateOrderTaxLinesResponse result = apiInstance.OrdersCreateTaxLines(id, orderTaxLinesRequest, acceptLanguage);
+                UpdateOrderTaxResponse result = apiInstance.OrdersCreateTaxes(id, orderTaxRequest, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TaxesApi.OrdersCreateTaxLines: " + e.Message);
+                Debug.Print("Exception when calling TaxesApi.OrdersCreateTaxes: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -57,21 +57,21 @@ namespace Example
 }
 ```
 
-#### Using the OrdersCreateTaxLinesWithHttpInfo variant
+#### Using the OrdersCreateTaxesWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Create Tax
-    ApiResponse<UpdateOrderTaxLinesResponse> response = apiInstance.OrdersCreateTaxLinesWithHttpInfo(id, orderTaxLinesRequest, acceptLanguage);
+    ApiResponse<UpdateOrderTaxResponse> response = apiInstance.OrdersCreateTaxesWithHttpInfo(id, orderTaxRequest, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TaxesApi.OrdersCreateTaxLinesWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TaxesApi.OrdersCreateTaxesWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -82,12 +82,12 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
-| **orderTaxLinesRequest** | [**OrderTaxLinesRequest**](OrderTaxLinesRequest.md) | requested field for a tax lines |  |
+| **orderTaxRequest** | [**OrderTaxRequest**](OrderTaxRequest.md) | requested field for a taxes |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 
-[**UpdateOrderTaxLinesResponse**](UpdateOrderTaxLinesResponse.md)
+[**UpdateOrderTaxResponse**](UpdateOrderTaxResponse.md)
 
 ### Authorization
 
@@ -109,13 +109,13 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="ordersdeletetaxlines"></a>
-# **OrdersDeleteTaxLines**
-> UpdateOrderTaxLinesResponse OrdersDeleteTaxLines (string id, string taxLinesId, string acceptLanguage = null)
+<a name="ordersdeletetaxes"></a>
+# **OrdersDeleteTaxes**
+> UpdateOrderTaxResponse OrdersDeleteTaxes (string id, string taxId, string acceptLanguage = null)
 
 Delete Tax
 
-Delete a tax lines for an existing orden
+Delete taxes for an existing orden
 
 ### Example
 ```csharp
@@ -127,7 +127,7 @@ using Conekta.net.Model;
 
 namespace Example
 {
-    public class OrdersDeleteTaxLinesExample
+    public class OrdersDeleteTaxesExample
     {
         public static void Main()
         {
@@ -138,18 +138,18 @@ namespace Example
 
             var apiInstance = new TaxesApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
-            var taxLinesId = tax_lin_2tQ974hSHcsdeSZHG;  // string | identifier
+            var taxId = tax_lin_2tQ974hSHcsdeSZHG;  // string | identifier
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
                 // Delete Tax
-                UpdateOrderTaxLinesResponse result = apiInstance.OrdersDeleteTaxLines(id, taxLinesId, acceptLanguage);
+                UpdateOrderTaxResponse result = apiInstance.OrdersDeleteTaxes(id, taxId, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TaxesApi.OrdersDeleteTaxLines: " + e.Message);
+                Debug.Print("Exception when calling TaxesApi.OrdersDeleteTaxes: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -158,21 +158,21 @@ namespace Example
 }
 ```
 
-#### Using the OrdersDeleteTaxLinesWithHttpInfo variant
+#### Using the OrdersDeleteTaxesWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Delete Tax
-    ApiResponse<UpdateOrderTaxLinesResponse> response = apiInstance.OrdersDeleteTaxLinesWithHttpInfo(id, taxLinesId, acceptLanguage);
+    ApiResponse<UpdateOrderTaxResponse> response = apiInstance.OrdersDeleteTaxesWithHttpInfo(id, taxId, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TaxesApi.OrdersDeleteTaxLinesWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TaxesApi.OrdersDeleteTaxesWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -183,12 +183,12 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
-| **taxLinesId** | **string** | identifier |  |
+| **taxId** | **string** | identifier |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 
-[**UpdateOrderTaxLinesResponse**](UpdateOrderTaxLinesResponse.md)
+[**UpdateOrderTaxResponse**](UpdateOrderTaxResponse.md)
 
 ### Authorization
 
@@ -211,13 +211,13 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="ordersupdatetaxlines"></a>
-# **OrdersUpdateTaxLines**
-> UpdateOrderTaxLinesResponse OrdersUpdateTaxLines (string id, string taxLinesId, UpdateOrderTaxLinesRequest updateOrderTaxLinesRequest, string acceptLanguage = null)
+<a name="ordersupdatetaxes"></a>
+# **OrdersUpdateTaxes**
+> UpdateOrderTaxResponse OrdersUpdateTaxes (string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = null)
 
 Update Tax
 
-Update a tax lines for an existing orden
+Update taxes for an existing orden
 
 ### Example
 ```csharp
@@ -229,7 +229,7 @@ using Conekta.net.Model;
 
 namespace Example
 {
-    public class OrdersUpdateTaxLinesExample
+    public class OrdersUpdateTaxesExample
     {
         public static void Main()
         {
@@ -240,19 +240,19 @@ namespace Example
 
             var apiInstance = new TaxesApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
-            var taxLinesId = tax_lin_2tQ974hSHcsdeSZHG;  // string | identifier
-            var updateOrderTaxLinesRequest = new UpdateOrderTaxLinesRequest(); // UpdateOrderTaxLinesRequest | requested field for a tax lines
+            var taxId = tax_lin_2tQ974hSHcsdeSZHG;  // string | identifier
+            var updateOrderTaxRequest = new UpdateOrderTaxRequest(); // UpdateOrderTaxRequest | requested field for taxes
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
                 // Update Tax
-                UpdateOrderTaxLinesResponse result = apiInstance.OrdersUpdateTaxLines(id, taxLinesId, updateOrderTaxLinesRequest, acceptLanguage);
+                UpdateOrderTaxResponse result = apiInstance.OrdersUpdateTaxes(id, taxId, updateOrderTaxRequest, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TaxesApi.OrdersUpdateTaxLines: " + e.Message);
+                Debug.Print("Exception when calling TaxesApi.OrdersUpdateTaxes: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -261,21 +261,21 @@ namespace Example
 }
 ```
 
-#### Using the OrdersUpdateTaxLinesWithHttpInfo variant
+#### Using the OrdersUpdateTaxesWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Update Tax
-    ApiResponse<UpdateOrderTaxLinesResponse> response = apiInstance.OrdersUpdateTaxLinesWithHttpInfo(id, taxLinesId, updateOrderTaxLinesRequest, acceptLanguage);
+    ApiResponse<UpdateOrderTaxResponse> response = apiInstance.OrdersUpdateTaxesWithHttpInfo(id, taxId, updateOrderTaxRequest, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TaxesApi.OrdersUpdateTaxLinesWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TaxesApi.OrdersUpdateTaxesWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -286,13 +286,13 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
-| **taxLinesId** | **string** | identifier |  |
-| **updateOrderTaxLinesRequest** | [**UpdateOrderTaxLinesRequest**](UpdateOrderTaxLinesRequest.md) | requested field for a tax lines |  |
+| **taxId** | **string** | identifier |  |
+| **updateOrderTaxRequest** | [**UpdateOrderTaxRequest**](UpdateOrderTaxRequest.md) | requested field for taxes |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 
-[**UpdateOrderTaxLinesResponse**](UpdateOrderTaxLinesResponse.md)
+[**UpdateOrderTaxResponse**](UpdateOrderTaxResponse.md)
 
 ### Authorization
 

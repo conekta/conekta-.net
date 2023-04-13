@@ -1,4 +1,4 @@
-# Conekta.net.Model.UpdateOrderTaxLinesResponseAllOf
+# Conekta.net.Model.UpdateOrderTaxResponseAllOf
 
 ## Properties
 
