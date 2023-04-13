@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Amount** | **int** |  | [optional] 
 **AmountRefunded** | **int** |  | [optional] 
-**Channel** | [**OrderResponseChannel**](OrderResponseChannel.md) |  | [optional] 
+**Channel** | [**ChargeOrderResponseChannel**](ChargeOrderResponseChannel.md) |  | [optional] 
 **Charges** | [**OrderResponseCharges**](OrderResponseCharges.md) |  | [optional] 
 **Checkout** | [**OrderResponseCheckout**](OrderResponseCheckout.md) |  | [optional] 
 **CreatedAt** | **long** |  | [optional] 

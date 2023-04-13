@@ -12,7 +12,7 @@ All URIs are relative to *https://api.conekta.io*
 
 Create charge
 
-creates a new charge for an existing orden
+Create charge for an existing orden
 
 ### Example
 ```csharp

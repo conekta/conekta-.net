@@ -4,15 +4,15 @@ All URIs are relative to *https://api.conekta.io*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CreateNewBlackListRule**](BlacklistApi.md#createnewblacklistrule) | **POST** /antifraud/blacklists |  |
-| [**DeleteRequestedBlackListRule**](BlacklistApi.md#deleterequestedblacklistrule) | **DELETE** /antifraud/blacklists |  |
-| [**GetBlackList**](BlacklistApi.md#getblacklist) | **GET** /antifraud/blacklists |  |
+| [**CreateNewBlacklistRule**](BlacklistApi.md#createnewblacklistrule) | **POST** /antifraud/blacklists | Create a blacklisted rule |
+| [**DeleteBlacklistRule**](BlacklistApi.md#deleteblacklistrule) | **DELETE** /antifraud/blacklists | Delete a blacklisted rule |
+| [**GetBlacklist**](BlacklistApi.md#getblacklist) | **GET** /antifraud/blacklists | Get a list of blacklisted rules |
 
 <a name="createnewblacklistrule"></a>
-# **CreateNewBlackListRule**
-> void CreateNewBlackListRule (CreateRiskRulesData createRiskRulesData = null)
+# **CreateNewBlacklistRule**
+> void CreateNewBlacklistRule (CreateRiskRulesData createRiskRulesData = null)
 
-
+Create a blacklisted rule
 
 ### Example
 ```csharp
@@ -24,7 +24,7 @@ using Conekta.net.Model;
 
 namespace Example
 {
-    public class CreateNewBlackListRuleExample
+    public class CreateNewBlacklistRuleExample
     {
         public static void Main()
         {
@@ -38,11 +38,12 @@ namespace Example
 
             try
             {
-                apiInstance.CreateNewBlackListRule(createRiskRulesData);
+                // Create a blacklisted rule
+                apiInstance.CreateNewBlacklistRule(createRiskRulesData);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BlacklistApi.CreateNewBlackListRule: " + e.Message);
+                Debug.Print("Exception when calling BlacklistApi.CreateNewBlacklistRule: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -51,17 +52,18 @@ namespace Example
 }
 ```
 
-#### Using the CreateNewBlackListRuleWithHttpInfo variant
+#### Using the CreateNewBlacklistRuleWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.CreateNewBlackListRuleWithHttpInfo(createRiskRulesData);
+    // Create a blacklisted rule
+    apiInstance.CreateNewBlacklistRuleWithHttpInfo(createRiskRulesData);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling BlacklistApi.CreateNewBlackListRuleWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling BlacklistApi.CreateNewBlacklistRuleWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -94,11 +96,11 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleterequestedblacklistrule"></a>
-# **DeleteRequestedBlackListRule**
-> void DeleteRequestedBlackListRule ()
+<a name="deleteblacklistrule"></a>
+# **DeleteBlacklistRule**
+> void DeleteBlacklistRule ()
 
-
+Delete a blacklisted rule
 
 ### Example
 ```csharp
@@ -110,7 +112,7 @@ using Conekta.net.Model;
 
 namespace Example
 {
-    public class DeleteRequestedBlackListRuleExample
+    public class DeleteBlacklistRuleExample
     {
         public static void Main()
         {
@@ -123,11 +125,12 @@ namespace Example
 
             try
             {
-                apiInstance.DeleteRequestedBlackListRule();
+                // Delete a blacklisted rule
+                apiInstance.DeleteBlacklistRule();
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BlacklistApi.DeleteRequestedBlackListRule: " + e.Message);
+                Debug.Print("Exception when calling BlacklistApi.DeleteBlacklistRule: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -136,17 +139,18 @@ namespace Example
 }
 ```
 
-#### Using the DeleteRequestedBlackListRuleWithHttpInfo variant
+#### Using the DeleteBlacklistRuleWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.DeleteRequestedBlackListRuleWithHttpInfo();
+    // Delete a blacklisted rule
+    apiInstance.DeleteBlacklistRuleWithHttpInfo();
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling BlacklistApi.DeleteRequestedBlackListRuleWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling BlacklistApi.DeleteBlacklistRuleWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -176,12 +180,12 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getblacklist"></a>
-# **GetBlackList**
-> RiskRulesList GetBlackList ()
+# **GetBlacklist**
+> RiskRulesList GetBlacklist ()
 
+Get a list of blacklisted rules
 
-
-returns all rules
+Return all rules
 
 ### Example
 ```csharp
@@ -193,7 +197,7 @@ using Conekta.net.Model;
 
 namespace Example
 {
-    public class GetBlackListExample
+    public class GetBlacklistExample
     {
         public static void Main()
         {
@@ -206,12 +210,13 @@ namespace Example
 
             try
             {
-                RiskRulesList result = apiInstance.GetBlackList();
+                // Get a list of blacklisted rules
+                RiskRulesList result = apiInstance.GetBlacklist();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BlacklistApi.GetBlackList: " + e.Message);
+                Debug.Print("Exception when calling BlacklistApi.GetBlacklist: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -220,20 +225,21 @@ namespace Example
 }
 ```
 
-#### Using the GetBlackListWithHttpInfo variant
+#### Using the GetBlacklistWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<RiskRulesList> response = apiInstance.GetBlackListWithHttpInfo();
+    // Get a list of blacklisted rules
+    ApiResponse<RiskRulesList> response = apiInstance.GetBlacklistWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling BlacklistApi.GetBlackListWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling BlacklistApi.GetBlacklistWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

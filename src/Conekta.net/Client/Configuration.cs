@@ -120,7 +120,7 @@ namespace Conekta.net.Client
                 {
                     new Dictionary<string, object> {
                         {"url", "https://api.conekta.io"},
-                        {"description", "conekta main server"},
+                        {"description", "Conekta main server"},
                     }
                 }
             };

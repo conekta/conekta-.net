@@ -4,15 +4,15 @@ All URIs are relative to *https://api.conekta.io*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CreateNewRuleWhitelist**](WhitelistsApi.md#createnewrulewhitelist) | **POST** /antifraud/whitelists |  |
-| [**DeleteRequestedRuleWhitelist**](WhitelistsApi.md#deleterequestedrulewhitelist) | **DELETE** /antifraud/whitelists |  |
-| [**GetWhiteList**](WhitelistsApi.md#getwhitelist) | **GET** /antifraud/whitelists |  |
+| [**CreateNewRuleWhitelist**](WhitelistsApi.md#createnewrulewhitelist) | **POST** /antifraud/whitelists | Create a whitelisted rule |
+| [**DeleteRuleWhitelist**](WhitelistsApi.md#deleterulewhitelist) | **DELETE** /antifraud/whitelists | Delete a whitelisted rule |
+| [**GetWhiteList**](WhitelistsApi.md#getwhitelist) | **GET** /antifraud/whitelists | Get a list of whitelisted rules |
 
 <a name="createnewrulewhitelist"></a>
 # **CreateNewRuleWhitelist**
 > void CreateNewRuleWhitelist (CreateRiskRulesData createRiskRulesData = null)
 
-
+Create a whitelisted rule
 
 ### Example
 ```csharp
@@ -38,6 +38,7 @@ namespace Example
 
             try
             {
+                // Create a whitelisted rule
                 apiInstance.CreateNewRuleWhitelist(createRiskRulesData);
             }
             catch (ApiException  e)
@@ -57,6 +58,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Create a whitelisted rule
     apiInstance.CreateNewRuleWhitelistWithHttpInfo(createRiskRulesData);
 }
 catch (ApiException e)
@@ -94,11 +96,11 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleterequestedrulewhitelist"></a>
-# **DeleteRequestedRuleWhitelist**
-> void DeleteRequestedRuleWhitelist ()
+<a name="deleterulewhitelist"></a>
+# **DeleteRuleWhitelist**
+> void DeleteRuleWhitelist ()
 
-
+Delete a whitelisted rule
 
 ### Example
 ```csharp
@@ -110,7 +112,7 @@ using Conekta.net.Model;
 
 namespace Example
 {
-    public class DeleteRequestedRuleWhitelistExample
+    public class DeleteRuleWhitelistExample
     {
         public static void Main()
         {
@@ -123,11 +125,12 @@ namespace Example
 
             try
             {
-                apiInstance.DeleteRequestedRuleWhitelist();
+                // Delete a whitelisted rule
+                apiInstance.DeleteRuleWhitelist();
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WhitelistsApi.DeleteRequestedRuleWhitelist: " + e.Message);
+                Debug.Print("Exception when calling WhitelistsApi.DeleteRuleWhitelist: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -136,17 +139,18 @@ namespace Example
 }
 ```
 
-#### Using the DeleteRequestedRuleWhitelistWithHttpInfo variant
+#### Using the DeleteRuleWhitelistWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.DeleteRequestedRuleWhitelistWithHttpInfo();
+    // Delete a whitelisted rule
+    apiInstance.DeleteRuleWhitelistWithHttpInfo();
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling WhitelistsApi.DeleteRequestedRuleWhitelistWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling WhitelistsApi.DeleteRuleWhitelistWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -179,9 +183,9 @@ void (empty response body)
 # **GetWhiteList**
 > RiskRulesList GetWhiteList ()
 
+Get a list of whitelisted rules
 
-
-returns all rules
+Return all rules
 
 ### Example
 ```csharp
@@ -206,6 +210,7 @@ namespace Example
 
             try
             {
+                // Get a list of whitelisted rules
                 RiskRulesList result = apiInstance.GetWhiteList();
                 Debug.WriteLine(result);
             }
@@ -226,6 +231,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Get a list of whitelisted rules
     ApiResponse<RiskRulesList> response = apiInstance.GetWhiteListWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

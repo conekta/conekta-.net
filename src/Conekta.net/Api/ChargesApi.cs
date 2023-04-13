@@ -31,7 +31,7 @@ namespace Conekta.net.Api
         /// Create charge
         /// </summary>
         /// <remarks>
-        /// creates a new charge for an existing orden
+        /// Create charge for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -45,7 +45,7 @@ namespace Conekta.net.Api
         /// Create charge
         /// </summary>
         /// <remarks>
-        /// creates a new charge for an existing orden
+        /// Create charge for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -67,7 +67,7 @@ namespace Conekta.net.Api
         /// Create charge
         /// </summary>
         /// <remarks>
-        /// creates a new charge for an existing orden
+        /// Create charge for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -82,7 +82,7 @@ namespace Conekta.net.Api
         /// Create charge
         /// </summary>
         /// <remarks>
-        /// creates a new charge for an existing orden
+        /// Create charge for an existing orden
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -213,7 +213,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create charge creates a new charge for an existing orden
+        /// Create charge Create charge for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -228,7 +228,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create charge creates a new charge for an existing orden
+        /// Create charge Create charge for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -305,7 +305,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create charge creates a new charge for an existing orden
+        /// Create charge Create charge for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -321,7 +321,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create charge creates a new charge for an existing orden
+        /// Create charge Create charge for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>

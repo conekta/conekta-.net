@@ -11,6 +11,7 @@ docs/ChargeDataPaymentMethodBankTransferResponse.md
 docs/ChargeDataPaymentMethodCardResponse.md
 docs/ChargeDataPaymentMethodCashResponse.md
 docs/ChargeOrderResponse.md
+docs/ChargeOrderResponseChannel.md
 docs/ChargeOrderResponsePaymentMethod.md
 docs/ChargeRequest.md
 docs/ChargeRequestPaymentMethod.md
@@ -81,6 +82,7 @@ docs/EventResponse.md
 docs/EventsApi.md
 docs/GetCustomerPaymentSourcesDataResponse.md
 docs/GetEventsResponse.md
+docs/GetEventsResponseAllOf.md
 docs/GetOrdersResponse.md
 docs/GetPaymentSourcesResponse.md
 docs/GetPaymentSourcesResponseAllOf.md
@@ -102,7 +104,6 @@ docs/OrderRefundRequest.md
 docs/OrderRequest.md
 docs/OrderRequestCustomerInfo.md
 docs/OrderResponse.md
-docs/OrderResponseChannel.md
 docs/OrderResponseCharges.md
 docs/OrderResponseChargesAllOf.md
 docs/OrderResponseCheckout.md
@@ -154,7 +155,6 @@ docs/ShippingLinesRequest.md
 docs/ShippingsApi.md
 docs/SmsCheckoutRequest.md
 docs/SubscriptionEventsResponse.md
-docs/SubscriptionEventsResponseAllOf.md
 docs/SubscriptionRequest.md
 docs/SubscriptionResponse.md
 docs/SubscriptionUpdateRequest.md
@@ -177,6 +177,8 @@ docs/WebhookResponse.md
 docs/WebhookUpdateRequest.md
 docs/WebhooksApi.md
 docs/WhitelistsApi.md
+src/Conekta.net.Test/Api/BlacklistApiTests.cs
+src/Conekta.net.Test/Api/WhitelistsApiTests.cs
 src/Conekta.net.Test/Conekta.net.Test.csproj
 src/Conekta.net/Api/BlacklistApi.cs
 src/Conekta.net/Api/ChargesApi.cs
@@ -217,6 +219,7 @@ src/Conekta.net/Model/ChargeDataPaymentMethodBankTransferResponse.cs
 src/Conekta.net/Model/ChargeDataPaymentMethodCardResponse.cs
 src/Conekta.net/Model/ChargeDataPaymentMethodCashResponse.cs
 src/Conekta.net/Model/ChargeOrderResponse.cs
+src/Conekta.net/Model/ChargeOrderResponseChannel.cs
 src/Conekta.net/Model/ChargeOrderResponsePaymentMethod.cs
 src/Conekta.net/Model/ChargeRequest.cs
 src/Conekta.net/Model/ChargeRequestPaymentMethod.cs
@@ -283,6 +286,7 @@ src/Conekta.net/Model/ErrorAllOf.cs
 src/Conekta.net/Model/EventResponse.cs
 src/Conekta.net/Model/GetCustomerPaymentSourcesDataResponse.cs
 src/Conekta.net/Model/GetEventsResponse.cs
+src/Conekta.net/Model/GetEventsResponseAllOf.cs
 src/Conekta.net/Model/GetOrdersResponse.cs
 src/Conekta.net/Model/GetPaymentSourcesResponse.cs
 src/Conekta.net/Model/GetPaymentSourcesResponseAllOf.cs
@@ -303,7 +307,6 @@ src/Conekta.net/Model/OrderRefundRequest.cs
 src/Conekta.net/Model/OrderRequest.cs
 src/Conekta.net/Model/OrderRequestCustomerInfo.cs
 src/Conekta.net/Model/OrderResponse.cs
-src/Conekta.net/Model/OrderResponseChannel.cs
 src/Conekta.net/Model/OrderResponseCharges.cs
 src/Conekta.net/Model/OrderResponseChargesAllOf.cs
 src/Conekta.net/Model/OrderResponseCheckout.cs
@@ -348,7 +351,6 @@ src/Conekta.net/Model/ShippingLinesOrderResponse.cs
 src/Conekta.net/Model/ShippingLinesRequest.cs
 src/Conekta.net/Model/SmsCheckoutRequest.cs
 src/Conekta.net/Model/SubscriptionEventsResponse.cs
-src/Conekta.net/Model/SubscriptionEventsResponseAllOf.cs
 src/Conekta.net/Model/SubscriptionRequest.cs
 src/Conekta.net/Model/SubscriptionResponse.cs
 src/Conekta.net/Model/SubscriptionUpdateRequest.cs

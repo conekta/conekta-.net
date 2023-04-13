@@ -55,7 +55,7 @@ namespace Conekta.net.Model
         /// <param name="referenceId">referenceId.</param>
         /// <param name="refunds">refunds.</param>
         /// <param name="status">status.</param>
-        public ChargeOrderResponse(int amount = default(int), OrderResponseChannel channel = default(OrderResponseChannel), long createdAt = default(long), string currency = default(string), string customerId = default(string), string description = default(string), string deviceFingerprint = default(string), string failureCode = default(string), string failureMessage = default(string), int fee = default(int), string id = default(string), bool livemode = default(bool), int? monthlyInstallments = default(int?), string _object = default(string), string orderId = default(string), int? paidAt = default(int?), ChargeOrderResponsePaymentMethod paymentMethod = default(ChargeOrderResponsePaymentMethod), string referenceId = default(string), List<Object> refunds = default(List<Object>), string status = default(string))
+        public ChargeOrderResponse(int amount = default(int), ChargeOrderResponseChannel channel = default(ChargeOrderResponseChannel), long createdAt = default(long), string currency = default(string), string customerId = default(string), string description = default(string), string deviceFingerprint = default(string), string failureCode = default(string), string failureMessage = default(string), int fee = default(int), string id = default(string), bool livemode = default(bool), int? monthlyInstallments = default(int?), string _object = default(string), string orderId = default(string), int? paidAt = default(int?), ChargeOrderResponsePaymentMethod paymentMethod = default(ChargeOrderResponsePaymentMethod), string referenceId = default(string), List<Object> refunds = default(List<Object>), string status = default(string))
         {
             this.Amount = amount;
             this.Channel = channel;
@@ -90,7 +90,7 @@ namespace Conekta.net.Model
         /// Gets or Sets Channel
         /// </summary>
         [DataMember(Name = "channel", EmitDefaultValue = false)]
-        public OrderResponseChannel Channel { get; set; }
+        public ChargeOrderResponseChannel Channel { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt

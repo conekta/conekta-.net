@@ -27,19 +27,19 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// OrderResponseChannel
+    /// ChargeOrderResponseChannel
     /// </summary>
-    [DataContract(Name = "order_response_channel")]
-    public partial class OrderResponseChannel : IEquatable<OrderResponseChannel>, IValidatableObject
+    [DataContract(Name = "charge_order_response_channel")]
+    public partial class ChargeOrderResponseChannel : IEquatable<ChargeOrderResponseChannel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrderResponseChannel" /> class.
+        /// Initializes a new instance of the <see cref="ChargeOrderResponseChannel" /> class.
         /// </summary>
         /// <param name="segment">segment.</param>
         /// <param name="checkoutRequestId">checkoutRequestId.</param>
         /// <param name="checkoutRequestType">checkoutRequestType.</param>
         /// <param name="id">id.</param>
-        public OrderResponseChannel(string segment = default(string), string checkoutRequestId = default(string), string checkoutRequestType = default(string), string id = default(string))
+        public ChargeOrderResponseChannel(string segment = default(string), string checkoutRequestId = default(string), string checkoutRequestType = default(string), string id = default(string))
         {
             this.Segment = segment;
             this.CheckoutRequestId = checkoutRequestId;
@@ -82,7 +82,7 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class OrderResponseChannel {\n");
+            sb.Append("class ChargeOrderResponseChannel {\n");
             sb.Append("  Segment: ").Append(Segment).Append("\n");
             sb.Append("  CheckoutRequestId: ").Append(CheckoutRequestId).Append("\n");
             sb.Append("  CheckoutRequestType: ").Append(CheckoutRequestType).Append("\n");
@@ -107,15 +107,15 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as OrderResponseChannel);
+            return this.Equals(input as ChargeOrderResponseChannel);
         }
 
         /// <summary>
-        /// Returns true if OrderResponseChannel instances are equal
+        /// Returns true if ChargeOrderResponseChannel instances are equal
         /// </summary>
-        /// <param name="input">Instance of OrderResponseChannel to be compared</param>
+        /// <param name="input">Instance of ChargeOrderResponseChannel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(OrderResponseChannel input)
+        public bool Equals(ChargeOrderResponseChannel input)
         {
             if (input == null)
             {

@@ -27,16 +27,16 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// SubscriptionEventsResponseAllOf
+    /// GetEventsResponseAllOf
     /// </summary>
-    [DataContract(Name = "subscription_events_response_allOf")]
-    public partial class SubscriptionEventsResponseAllOf : IEquatable<SubscriptionEventsResponseAllOf>, IValidatableObject
+    [DataContract(Name = "get_events_response_allOf")]
+    public partial class GetEventsResponseAllOf : IEquatable<GetEventsResponseAllOf>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SubscriptionEventsResponseAllOf" /> class.
+        /// Initializes a new instance of the <see cref="GetEventsResponseAllOf" /> class.
         /// </summary>
         /// <param name="data">data.</param>
-        public SubscriptionEventsResponseAllOf(List<EventResponse> data = default(List<EventResponse>))
+        public GetEventsResponseAllOf(List<EventResponse> data = default(List<EventResponse>))
         {
             this.Data = data;
         }
@@ -54,7 +54,7 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class SubscriptionEventsResponseAllOf {\n");
+            sb.Append("class GetEventsResponseAllOf {\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -76,15 +76,15 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SubscriptionEventsResponseAllOf);
+            return this.Equals(input as GetEventsResponseAllOf);
         }
 
         /// <summary>
-        /// Returns true if SubscriptionEventsResponseAllOf instances are equal
+        /// Returns true if GetEventsResponseAllOf instances are equal
         /// </summary>
-        /// <param name="input">Instance of SubscriptionEventsResponseAllOf to be compared</param>
+        /// <param name="input">Instance of GetEventsResponseAllOf to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(SubscriptionEventsResponseAllOf input)
+        public bool Equals(GetEventsResponseAllOf input)
         {
             if (input == null)
             {

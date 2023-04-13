@@ -28,16 +28,16 @@ namespace Conekta.net.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Create a blacklisted rule
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createRiskRulesData"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void CreateNewBlackListRule(CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0);
+        void CreateNewBlacklistRule(CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Create a blacklisted rule
         /// </summary>
         /// <remarks>
         /// 
@@ -46,17 +46,17 @@ namespace Conekta.net.Api
         /// <param name="createRiskRulesData"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CreateNewBlackListRuleWithHttpInfo(CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0);
+        ApiResponse<Object> CreateNewBlacklistRuleWithHttpInfo(CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Delete a blacklisted rule
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void DeleteRequestedBlackListRule(int operationIndex = 0);
+        void DeleteBlacklistRule(int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Delete a blacklisted rule
         /// </summary>
         /// <remarks>
         /// 
@@ -64,28 +64,28 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteRequestedBlackListRuleWithHttpInfo(int operationIndex = 0);
+        ApiResponse<Object> DeleteBlacklistRuleWithHttpInfo(int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Get a list of blacklisted rules
         /// </summary>
         /// <remarks>
-        /// returns all rules
+        /// Return all rules
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RiskRulesList</returns>
-        RiskRulesList GetBlackList(int operationIndex = 0);
+        RiskRulesList GetBlacklist(int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Get a list of blacklisted rules
         /// </summary>
         /// <remarks>
-        /// returns all rules
+        /// Return all rules
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RiskRulesList</returns>
-        ApiResponse<RiskRulesList> GetBlackListWithHttpInfo(int operationIndex = 0);
+        ApiResponse<RiskRulesList> GetBlacklistWithHttpInfo(int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -96,7 +96,7 @@ namespace Conekta.net.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Create a blacklisted rule
         /// </summary>
         /// <remarks>
         /// 
@@ -106,10 +106,10 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CreateNewBlackListRuleAsync(CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task CreateNewBlacklistRuleAsync(CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Create a blacklisted rule
         /// </summary>
         /// <remarks>
         /// 
@@ -119,9 +119,9 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CreateNewBlackListRuleWithHttpInfoAsync(CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> CreateNewBlacklistRuleWithHttpInfoAsync(CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Delete a blacklisted rule
         /// </summary>
         /// <remarks>
         /// 
@@ -130,10 +130,10 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteRequestedBlackListRuleAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteBlacklistRuleAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Delete a blacklisted rule
         /// </summary>
         /// <remarks>
         /// 
@@ -142,30 +142,30 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteRequestedBlackListRuleWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteBlacklistRuleWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Get a list of blacklisted rules
         /// </summary>
         /// <remarks>
-        /// returns all rules
+        /// Return all rules
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RiskRulesList</returns>
-        System.Threading.Tasks.Task<RiskRulesList> GetBlackListAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<RiskRulesList> GetBlacklistAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Get a list of blacklisted rules
         /// </summary>
         /// <remarks>
-        /// returns all rules
+        /// Return all rules
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RiskRulesList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RiskRulesList>> GetBlackListWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<RiskRulesList>> GetBlacklistWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -287,25 +287,25 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        ///  
+        /// Create a blacklisted rule 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createRiskRulesData"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void CreateNewBlackListRule(CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0)
+        public void CreateNewBlacklistRule(CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0)
         {
-            CreateNewBlackListRuleWithHttpInfo(createRiskRulesData);
+            CreateNewBlacklistRuleWithHttpInfo(createRiskRulesData);
         }
 
         /// <summary>
-        ///  
+        /// Create a blacklisted rule 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createRiskRulesData"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Conekta.net.Client.ApiResponse<Object> CreateNewBlackListRuleWithHttpInfo(CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<Object> CreateNewBlacklistRuleWithHttpInfo(CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0)
         {
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
 
@@ -331,7 +331,7 @@ namespace Conekta.net.Api
 
             localVarRequestOptions.Data = createRiskRulesData;
 
-            localVarRequestOptions.Operation = "BlacklistApi.CreateNewBlackListRule";
+            localVarRequestOptions.Operation = "BlacklistApi.CreateNewBlacklistRule";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (bearerAuth) required
@@ -345,7 +345,7 @@ namespace Conekta.net.Api
             var localVarResponse = this.Client.Post<Object>("/antifraud/blacklists", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CreateNewBlackListRule", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CreateNewBlacklistRule", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -356,27 +356,27 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        ///  
+        /// Create a blacklisted rule 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createRiskRulesData"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CreateNewBlackListRuleAsync(CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task CreateNewBlacklistRuleAsync(CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await CreateNewBlackListRuleWithHttpInfoAsync(createRiskRulesData, operationIndex, cancellationToken).ConfigureAwait(false);
+            await CreateNewBlacklistRuleWithHttpInfoAsync(createRiskRulesData, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        ///  
+        /// Create a blacklisted rule 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createRiskRulesData"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<Object>> CreateNewBlackListRuleWithHttpInfoAsync(CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<Object>> CreateNewBlacklistRuleWithHttpInfoAsync(CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -403,7 +403,7 @@ namespace Conekta.net.Api
 
             localVarRequestOptions.Data = createRiskRulesData;
 
-            localVarRequestOptions.Operation = "BlacklistApi.CreateNewBlackListRule";
+            localVarRequestOptions.Operation = "BlacklistApi.CreateNewBlacklistRule";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (bearerAuth) required
@@ -418,7 +418,7 @@ namespace Conekta.net.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CreateNewBlackListRule", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CreateNewBlacklistRule", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -429,23 +429,23 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        ///  
+        /// Delete a blacklisted rule 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void DeleteRequestedBlackListRule(int operationIndex = 0)
+        public void DeleteBlacklistRule(int operationIndex = 0)
         {
-            DeleteRequestedBlackListRuleWithHttpInfo();
+            DeleteBlacklistRuleWithHttpInfo();
         }
 
         /// <summary>
-        ///  
+        /// Delete a blacklisted rule 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Conekta.net.Client.ApiResponse<Object> DeleteRequestedBlackListRuleWithHttpInfo(int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<Object> DeleteBlacklistRuleWithHttpInfo(int operationIndex = 0)
         {
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
 
@@ -469,7 +469,7 @@ namespace Conekta.net.Api
             }
 
 
-            localVarRequestOptions.Operation = "BlacklistApi.DeleteRequestedBlackListRule";
+            localVarRequestOptions.Operation = "BlacklistApi.DeleteBlacklistRule";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (bearerAuth) required
@@ -483,7 +483,7 @@ namespace Conekta.net.Api
             var localVarResponse = this.Client.Delete<Object>("/antifraud/blacklists", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DeleteRequestedBlackListRule", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeleteBlacklistRule", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -494,25 +494,25 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        ///  
+        /// Delete a blacklisted rule 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteRequestedBlackListRuleAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteBlacklistRuleAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DeleteRequestedBlackListRuleWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            await DeleteBlacklistRuleWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        ///  
+        /// Delete a blacklisted rule 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<Object>> DeleteRequestedBlackListRuleWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<Object>> DeleteBlacklistRuleWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -537,7 +537,7 @@ namespace Conekta.net.Api
             }
 
 
-            localVarRequestOptions.Operation = "BlacklistApi.DeleteRequestedBlackListRule";
+            localVarRequestOptions.Operation = "BlacklistApi.DeleteBlacklistRule";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (bearerAuth) required
@@ -552,7 +552,7 @@ namespace Conekta.net.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DeleteRequestedBlackListRule", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeleteBlacklistRule", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -563,24 +563,24 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        ///  returns all rules
+        /// Get a list of blacklisted rules Return all rules
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RiskRulesList</returns>
-        public RiskRulesList GetBlackList(int operationIndex = 0)
+        public RiskRulesList GetBlacklist(int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<RiskRulesList> localVarResponse = GetBlackListWithHttpInfo();
+            Conekta.net.Client.ApiResponse<RiskRulesList> localVarResponse = GetBlacklistWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  returns all rules
+        /// Get a list of blacklisted rules Return all rules
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RiskRulesList</returns>
-        public Conekta.net.Client.ApiResponse<RiskRulesList> GetBlackListWithHttpInfo(int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<RiskRulesList> GetBlacklistWithHttpInfo(int operationIndex = 0)
         {
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
 
@@ -605,7 +605,7 @@ namespace Conekta.net.Api
             }
 
 
-            localVarRequestOptions.Operation = "BlacklistApi.GetBlackList";
+            localVarRequestOptions.Operation = "BlacklistApi.GetBlacklist";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (bearerAuth) required
@@ -619,7 +619,7 @@ namespace Conekta.net.Api
             var localVarResponse = this.Client.Get<RiskRulesList>("/antifraud/blacklists", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetBlackList", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetBlacklist", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -630,26 +630,26 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        ///  returns all rules
+        /// Get a list of blacklisted rules Return all rules
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RiskRulesList</returns>
-        public async System.Threading.Tasks.Task<RiskRulesList> GetBlackListAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<RiskRulesList> GetBlacklistAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<RiskRulesList> localVarResponse = await GetBlackListWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<RiskRulesList> localVarResponse = await GetBlacklistWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  returns all rules
+        /// Get a list of blacklisted rules Return all rules
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RiskRulesList)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<RiskRulesList>> GetBlackListWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<RiskRulesList>> GetBlacklistWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -675,7 +675,7 @@ namespace Conekta.net.Api
             }
 
 
-            localVarRequestOptions.Operation = "BlacklistApi.GetBlackList";
+            localVarRequestOptions.Operation = "BlacklistApi.GetBlacklist";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (bearerAuth) required
@@ -690,7 +690,7 @@ namespace Conekta.net.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetBlackList", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetBlacklist", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

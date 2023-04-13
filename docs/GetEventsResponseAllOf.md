@@ -1,13 +1,10 @@
-# Conekta.net.Model.OrderResponseChannel
+# Conekta.net.Model.GetEventsResponseAllOf
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Segment** | **string** |  | [optional] 
-**CheckoutRequestId** | **string** |  | [optional] 
-**CheckoutRequestType** | **string** |  | [optional] 
-**Id** | **string** |  | [optional] 
+**Data** | [**List&lt;EventResponse&gt;**](EventResponse.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -28,7 +28,7 @@ namespace Conekta.net.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Create a whitelisted rule
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createRiskRulesData"> (optional)</param>
@@ -37,7 +37,7 @@ namespace Conekta.net.Api
         void CreateNewRuleWhitelist(CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Create a whitelisted rule
         /// </summary>
         /// <remarks>
         /// 
@@ -48,15 +48,15 @@ namespace Conekta.net.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> CreateNewRuleWhitelistWithHttpInfo(CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Delete a whitelisted rule
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void DeleteRequestedRuleWhitelist(int operationIndex = 0);
+        void DeleteRuleWhitelist(int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Delete a whitelisted rule
         /// </summary>
         /// <remarks>
         /// 
@@ -64,12 +64,12 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteRequestedRuleWhitelistWithHttpInfo(int operationIndex = 0);
+        ApiResponse<Object> DeleteRuleWhitelistWithHttpInfo(int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Get a list of whitelisted rules
         /// </summary>
         /// <remarks>
-        /// returns all rules
+        /// Return all rules
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -77,10 +77,10 @@ namespace Conekta.net.Api
         RiskRulesList GetWhiteList(int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Get a list of whitelisted rules
         /// </summary>
         /// <remarks>
-        /// returns all rules
+        /// Return all rules
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -96,7 +96,7 @@ namespace Conekta.net.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Create a whitelisted rule
         /// </summary>
         /// <remarks>
         /// 
@@ -109,7 +109,7 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task CreateNewRuleWhitelistAsync(CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Create a whitelisted rule
         /// </summary>
         /// <remarks>
         /// 
@@ -121,7 +121,7 @@ namespace Conekta.net.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> CreateNewRuleWhitelistWithHttpInfoAsync(CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Delete a whitelisted rule
         /// </summary>
         /// <remarks>
         /// 
@@ -130,10 +130,10 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteRequestedRuleWhitelistAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteRuleWhitelistAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Delete a whitelisted rule
         /// </summary>
         /// <remarks>
         /// 
@@ -142,12 +142,12 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteRequestedRuleWhitelistWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteRuleWhitelistWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Get a list of whitelisted rules
         /// </summary>
         /// <remarks>
-        /// returns all rules
+        /// Return all rules
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -156,10 +156,10 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<RiskRulesList> GetWhiteListAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Get a list of whitelisted rules
         /// </summary>
         /// <remarks>
-        /// returns all rules
+        /// Return all rules
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -287,7 +287,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        ///  
+        /// Create a whitelisted rule 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createRiskRulesData"> (optional)</param>
@@ -299,7 +299,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        ///  
+        /// Create a whitelisted rule 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createRiskRulesData"> (optional)</param>
@@ -356,7 +356,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        ///  
+        /// Create a whitelisted rule 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createRiskRulesData"> (optional)</param>
@@ -369,7 +369,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        ///  
+        /// Create a whitelisted rule 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createRiskRulesData"> (optional)</param>
@@ -429,23 +429,23 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        ///  
+        /// Delete a whitelisted rule 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void DeleteRequestedRuleWhitelist(int operationIndex = 0)
+        public void DeleteRuleWhitelist(int operationIndex = 0)
         {
-            DeleteRequestedRuleWhitelistWithHttpInfo();
+            DeleteRuleWhitelistWithHttpInfo();
         }
 
         /// <summary>
-        ///  
+        /// Delete a whitelisted rule 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Conekta.net.Client.ApiResponse<Object> DeleteRequestedRuleWhitelistWithHttpInfo(int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<Object> DeleteRuleWhitelistWithHttpInfo(int operationIndex = 0)
         {
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
 
@@ -469,7 +469,7 @@ namespace Conekta.net.Api
             }
 
 
-            localVarRequestOptions.Operation = "WhitelistsApi.DeleteRequestedRuleWhitelist";
+            localVarRequestOptions.Operation = "WhitelistsApi.DeleteRuleWhitelist";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (bearerAuth) required
@@ -483,7 +483,7 @@ namespace Conekta.net.Api
             var localVarResponse = this.Client.Delete<Object>("/antifraud/whitelists", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DeleteRequestedRuleWhitelist", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeleteRuleWhitelist", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -494,25 +494,25 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        ///  
+        /// Delete a whitelisted rule 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteRequestedRuleWhitelistAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteRuleWhitelistAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DeleteRequestedRuleWhitelistWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            await DeleteRuleWhitelistWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        ///  
+        /// Delete a whitelisted rule 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<Object>> DeleteRequestedRuleWhitelistWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<Object>> DeleteRuleWhitelistWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -537,7 +537,7 @@ namespace Conekta.net.Api
             }
 
 
-            localVarRequestOptions.Operation = "WhitelistsApi.DeleteRequestedRuleWhitelist";
+            localVarRequestOptions.Operation = "WhitelistsApi.DeleteRuleWhitelist";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (bearerAuth) required
@@ -552,7 +552,7 @@ namespace Conekta.net.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DeleteRequestedRuleWhitelist", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeleteRuleWhitelist", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -563,7 +563,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        ///  returns all rules
+        /// Get a list of whitelisted rules Return all rules
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -575,7 +575,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        ///  returns all rules
+        /// Get a list of whitelisted rules Return all rules
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -630,7 +630,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        ///  returns all rules
+        /// Get a list of whitelisted rules Return all rules
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -643,7 +643,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        ///  returns all rules
+        /// Get a list of whitelisted rules Return all rules
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
