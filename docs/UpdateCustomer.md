@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **Corporate** | **bool** | It is a value that allows identifying if the email is corporate or not. | [optional] [default to false]
 **CustomReference** | **string** | It is an undefined value. | [optional] 
 **FiscalEntities** | [**List&lt;CustomerFiscalEntitiesRequest&gt;**](CustomerFiscalEntitiesRequest.md) |  | [optional] 
+**Metadata** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **PaymentSources** | [**List&lt;ConsumerPaymentMethodsRequest&gt;**](ConsumerPaymentMethodsRequest.md) | Contains details of the payment methods that the customer has active or has used in Conekta | [optional] 
 **ShippingContacts** | [**List&lt;CustomerShippingContacts&gt;**](CustomerShippingContacts.md) | Contains the detail of the shipping addresses that the client has active or has used in Conekta | [optional] 
 **Subscription** | [**SubscriptionRequest**](SubscriptionRequest.md) |  | [optional] 

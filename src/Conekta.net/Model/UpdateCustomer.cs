@@ -45,10 +45,11 @@ namespace Conekta.net.Model
         /// <param name="corporate">It is a value that allows identifying if the email is corporate or not. (default to false).</param>
         /// <param name="customReference">It is an undefined value..</param>
         /// <param name="fiscalEntities">fiscalEntities.</param>
+        /// <param name="metadata">metadata.</param>
         /// <param name="paymentSources">Contains details of the payment methods that the customer has active or has used in Conekta.</param>
         /// <param name="shippingContacts">Contains the detail of the shipping addresses that the client has active or has used in Conekta.</param>
         /// <param name="subscription">subscription.</param>
-        public UpdateCustomer(UpdateCustomerAntifraudInfo antifraudInfo = default(UpdateCustomerAntifraudInfo), string defaultPaymentSourceId = default(string), string email = default(string), string name = default(string), string phone = default(string), string planId = default(string), string defaultShippingContactId = default(string), bool corporate = false, string customReference = default(string), List<CustomerFiscalEntitiesRequest> fiscalEntities = default(List<CustomerFiscalEntitiesRequest>), List<ConsumerPaymentMethodsRequest> paymentSources = default(List<ConsumerPaymentMethodsRequest>), List<CustomerShippingContacts> shippingContacts = default(List<CustomerShippingContacts>), SubscriptionRequest subscription = default(SubscriptionRequest))
+        public UpdateCustomer(UpdateCustomerAntifraudInfo antifraudInfo = default(UpdateCustomerAntifraudInfo), string defaultPaymentSourceId = default(string), string email = default(string), string name = default(string), string phone = default(string), string planId = default(string), string defaultShippingContactId = default(string), bool corporate = false, string customReference = default(string), List<CustomerFiscalEntitiesRequest> fiscalEntities = default(List<CustomerFiscalEntitiesRequest>), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), List<ConsumerPaymentMethodsRequest> paymentSources = default(List<ConsumerPaymentMethodsRequest>), List<CustomerShippingContacts> shippingContacts = default(List<CustomerShippingContacts>), SubscriptionRequest subscription = default(SubscriptionRequest))
         {
             this.AntifraudInfo = antifraudInfo;
             this.DefaultPaymentSourceId = defaultPaymentSourceId;
@@ -60,6 +61,7 @@ namespace Conekta.net.Model
             this.Corporate = corporate;
             this.CustomReference = customReference;
             this.FiscalEntities = fiscalEntities;
+            this.Metadata = metadata;
             this.PaymentSources = paymentSources;
             this.ShippingContacts = shippingContacts;
             this.Subscription = subscription;
@@ -141,6 +143,12 @@ namespace Conekta.net.Model
         public List<CustomerFiscalEntitiesRequest> FiscalEntities { get; set; }
 
         /// <summary>
+        /// Gets or Sets Metadata
+        /// </summary>
+        [DataMember(Name = "metadata", EmitDefaultValue = false)]
+        public Dictionary<string, Object> Metadata { get; set; }
+
+        /// <summary>
         /// Contains details of the payment methods that the customer has active or has used in Conekta
         /// </summary>
         /// <value>Contains details of the payment methods that the customer has active or has used in Conekta</value>
@@ -178,6 +186,7 @@ namespace Conekta.net.Model
             sb.Append("  Corporate: ").Append(Corporate).Append("\n");
             sb.Append("  CustomReference: ").Append(CustomReference).Append("\n");
             sb.Append("  FiscalEntities: ").Append(FiscalEntities).Append("\n");
+            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  PaymentSources: ").Append(PaymentSources).Append("\n");
             sb.Append("  ShippingContacts: ").Append(ShippingContacts).Append("\n");
             sb.Append("  Subscription: ").Append(Subscription).Append("\n");
@@ -267,6 +276,12 @@ namespace Conekta.net.Model
                     this.FiscalEntities.SequenceEqual(input.FiscalEntities)
                 ) && 
                 (
+                    this.Metadata == input.Metadata ||
+                    this.Metadata != null &&
+                    input.Metadata != null &&
+                    this.Metadata.SequenceEqual(input.Metadata)
+                ) && 
+                (
                     this.PaymentSources == input.PaymentSources ||
                     this.PaymentSources != null &&
                     input.PaymentSources != null &&
@@ -330,6 +345,10 @@ namespace Conekta.net.Model
                 if (this.FiscalEntities != null)
                 {
                     hashCode = (hashCode * 59) + this.FiscalEntities.GetHashCode();
+                }
+                if (this.Metadata != null)
+                {
+                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
                 }
                 if (this.PaymentSources != null)
                 {

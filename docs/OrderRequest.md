@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **CustomerInfo** | [**OrderRequestCustomerInfo**](OrderRequestCustomerInfo.md) |  | 
 **DiscountLines** | [**List&lt;OrderDiscountLinesRequest&gt;**](OrderDiscountLinesRequest.md) | List of [discounts](https://developers.conekta.com/v2.1.0/reference/orderscreatediscountline) that are applied to the order. You must have at least one discount. | [optional] 
 **LineItems** | [**List&lt;Product&gt;**](Product.md) | List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product. | 
-**Metadata** | **Dictionary&lt;string, string&gt;** |  | [optional] 
+**Metadata** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **NeedsShippingContact** | **bool** | Allows you to fill out the shipping information at checkout | [optional] 
 **PreAuthorize** | **bool** | Indicates whether the order charges must be preauthorized | [optional] [default to false]
 **ShippingContact** | [**CustomerShippingContacts**](CustomerShippingContacts.md) |  | [optional] 

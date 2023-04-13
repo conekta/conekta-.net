@@ -47,13 +47,14 @@ namespace Conekta.net.Model
         /// <param name="defaultPaymentSourceId">It is a parameter that allows to identify in the response, the Conekta ID of a payment method (payment_id).</param>
         /// <param name="defaultShippingContactId">It is a parameter that allows to identify in the response, the Conekta ID of the shipping address (shipping_contact).</param>
         /// <param name="fiscalEntities">fiscalEntities.</param>
+        /// <param name="metadata">metadata.</param>
         /// <param name="name">Client&#39;s name (required).</param>
         /// <param name="paymentSources">Contains details of the payment methods that the customer has active or has used in Conekta.</param>
         /// <param name="phone">Is the customer&#39;s phone number (required).</param>
         /// <param name="planId">Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription.</param>
         /// <param name="shippingContacts">Contains the detail of the shipping addresses that the client has active or has used in Conekta.</param>
         /// <param name="subscription">subscription.</param>
-        public Customer(CustomerAntifraudInfo antifraudInfo = default(CustomerAntifraudInfo), bool corporate = false, string customReference = default(string), string email = default(string), string defaultPaymentSourceId = default(string), string defaultShippingContactId = default(string), List<CustomerFiscalEntitiesRequest> fiscalEntities = default(List<CustomerFiscalEntitiesRequest>), string name = default(string), List<ConsumerPaymentMethodsRequest> paymentSources = default(List<ConsumerPaymentMethodsRequest>), string phone = default(string), string planId = default(string), List<CustomerShippingContacts> shippingContacts = default(List<CustomerShippingContacts>), SubscriptionRequest subscription = default(SubscriptionRequest))
+        public Customer(CustomerAntifraudInfo antifraudInfo = default(CustomerAntifraudInfo), bool corporate = false, string customReference = default(string), string email = default(string), string defaultPaymentSourceId = default(string), string defaultShippingContactId = default(string), List<CustomerFiscalEntitiesRequest> fiscalEntities = default(List<CustomerFiscalEntitiesRequest>), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string name = default(string), List<ConsumerPaymentMethodsRequest> paymentSources = default(List<ConsumerPaymentMethodsRequest>), string phone = default(string), string planId = default(string), List<CustomerShippingContacts> shippingContacts = default(List<CustomerShippingContacts>), SubscriptionRequest subscription = default(SubscriptionRequest))
         {
             // to ensure "email" is required (not null)
             if (email == null)
@@ -79,6 +80,7 @@ namespace Conekta.net.Model
             this.DefaultPaymentSourceId = defaultPaymentSourceId;
             this.DefaultShippingContactId = defaultShippingContactId;
             this.FiscalEntities = fiscalEntities;
+            this.Metadata = metadata;
             this.PaymentSources = paymentSources;
             this.PlanId = planId;
             this.ShippingContacts = shippingContacts;
@@ -135,6 +137,12 @@ namespace Conekta.net.Model
         /// </summary>
         [DataMember(Name = "fiscal_entities", EmitDefaultValue = false)]
         public List<CustomerFiscalEntitiesRequest> FiscalEntities { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Metadata
+        /// </summary>
+        [DataMember(Name = "metadata", EmitDefaultValue = false)]
+        public Dictionary<string, Object> Metadata { get; set; }
 
         /// <summary>
         /// Client&#39;s name
@@ -195,6 +203,7 @@ namespace Conekta.net.Model
             sb.Append("  DefaultPaymentSourceId: ").Append(DefaultPaymentSourceId).Append("\n");
             sb.Append("  DefaultShippingContactId: ").Append(DefaultShippingContactId).Append("\n");
             sb.Append("  FiscalEntities: ").Append(FiscalEntities).Append("\n");
+            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  PaymentSources: ").Append(PaymentSources).Append("\n");
             sb.Append("  Phone: ").Append(Phone).Append("\n");
@@ -272,6 +281,12 @@ namespace Conekta.net.Model
                     this.FiscalEntities.SequenceEqual(input.FiscalEntities)
                 ) && 
                 (
+                    this.Metadata == input.Metadata ||
+                    this.Metadata != null &&
+                    input.Metadata != null &&
+                    this.Metadata.SequenceEqual(input.Metadata)
+                ) && 
+                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
@@ -338,6 +353,10 @@ namespace Conekta.net.Model
                 if (this.FiscalEntities != null)
                 {
                     hashCode = (hashCode * 59) + this.FiscalEntities.GetHashCode();
+                }
+                if (this.Metadata != null)
+                {
+                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
                 }
                 if (this.Name != null)
                 {

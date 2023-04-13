@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **DefaultPaymentSourceId** | **string** | It is a parameter that allows to identify in the response, the Conekta ID of a payment method (payment_id) | [optional] 
 **DefaultShippingContactId** | **string** | It is a parameter that allows to identify in the response, the Conekta ID of the shipping address (shipping_contact) | [optional] 
 **FiscalEntities** | [**List&lt;CustomerFiscalEntitiesRequest&gt;**](CustomerFiscalEntitiesRequest.md) |  | [optional] 
+**Metadata** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **Name** | **string** | Client&#39;s name | 
 **PaymentSources** | [**List&lt;ConsumerPaymentMethodsRequest&gt;**](ConsumerPaymentMethodsRequest.md) | Contains details of the payment methods that the customer has active or has used in Conekta | [optional] 
 **Phone** | **string** | Is the customer&#39;s phone number | 

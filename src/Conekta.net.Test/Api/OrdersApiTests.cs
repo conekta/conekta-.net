@@ -157,7 +157,7 @@ public class OrdersApiTests
             customerInfo: customerInfo,
             lineItems: products,
             checkout: checkout,
-            metadata: new Dictionary<string, string> { { "test", "true" } }
+            metadata: new Dictionary<string, Object> { { "test", "true" } }
         );
 
         OrderResponse response = _instance.CreateOrder(orderRequest);
@@ -196,7 +196,7 @@ public class OrdersApiTests
             customerInfo: customerInfo,
             lineItems: products,
             checkout: checkout,
-            metadata: new Dictionary<string, string> { { "test", "true" } }
+            metadata: new Dictionary<string, Object> { { "test", "true" } }
         );
 
         OrderResponse response = _instance.CreateOrder(orderRequest);
@@ -233,7 +233,7 @@ public class OrdersApiTests
             currency: "MXN",
             lineItems: products,
             checkout: checkout,
-            metadata: new Dictionary<string, string> { { "test", "true" } },
+            metadata: new Dictionary<string, Object> { { "test", "true" } },
             customerInfo: new OrderRequestCustomerInfo(new CustomerInfoJustCustomerId("cus_2o8jK3TDtejmz1sYc"))
         );
 

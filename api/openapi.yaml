@@ -8512,6 +8512,10 @@ components:
           items:
             $ref: '#/components/schemas/customer_fiscal_entities_request'
           type: array
+        metadata:
+          additionalProperties: true
+          maxProperties: 100
+          type: object
         name:
           description: Client's name
           example: miguel
@@ -8592,6 +8596,10 @@ components:
           items:
             $ref: '#/components/schemas/customer_fiscal_entities_request'
           type: array
+        metadata:
+          additionalProperties: true
+          maxProperties: 100
+          type: object
         payment_sources:
           description: Contains details of the payment methods that the customer has
             active or has used in Conekta
@@ -8700,8 +8708,8 @@ components:
             $ref: '#/components/schemas/product'
           type: array
         metadata:
-          additionalProperties:
-            type: string
+          additionalProperties: true
+          maxProperties: 100
           type: object
         needs_shipping_contact:
           description: Allows you to fill out the shipping information at checkout
