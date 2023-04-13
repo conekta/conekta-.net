@@ -27,43 +27,37 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// CustomersResponse
+    /// CustomerPaymentMethodsResponse
     /// </summary>
-    [DataContract(Name = "customers_response")]
-    public partial class CustomersResponse : IEquatable<CustomersResponse>, IValidatableObject
+    [DataContract(Name = "customer_payment_methods_response")]
+    public partial class CustomerPaymentMethodsResponse : IEquatable<CustomerPaymentMethodsResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomersResponse" /> class.
+        /// Initializes a new instance of the <see cref="CustomerPaymentMethodsResponse" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected CustomersResponse() { }
+        protected CustomerPaymentMethodsResponse() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomersResponse" /> class.
+        /// Initializes a new instance of the <see cref="CustomerPaymentMethodsResponse" /> class.
         /// </summary>
-        /// <param name="data">data.</param>
         /// <param name="_object">_object (required).</param>
         /// <param name="hasMore">hasMore (required).</param>
         /// <param name="nextPageUrl">URL of the next page..</param>
         /// <param name="previousPageUrl">Url of the previous page..</param>
-        public CustomersResponse(List<CustomerResponse> data = default(List<CustomerResponse>), string _object = default(string), bool hasMore = default(bool), string nextPageUrl = default(string), string previousPageUrl = default(string))
+        /// <param name="data">data.</param>
+        public CustomerPaymentMethodsResponse(string _object = default(string), bool hasMore = default(bool), string nextPageUrl = default(string), string previousPageUrl = default(string), List<CustomerPaymentMethodsData> data = default(List<CustomerPaymentMethodsData>))
         {
             // to ensure "_object" is required (not null)
             if (_object == null)
             {
-                throw new ArgumentNullException("_object is a required property for CustomersResponse and cannot be null");
+                throw new ArgumentNullException("_object is a required property for CustomerPaymentMethodsResponse and cannot be null");
             }
             this.Object = _object;
             this.HasMore = hasMore;
-            this.Data = data;
             this.NextPageUrl = nextPageUrl;
             this.PreviousPageUrl = previousPageUrl;
+            this.Data = data;
         }
-
-        /// <summary>
-        /// Gets or Sets Data
-        /// </summary>
-        [DataMember(Name = "data", EmitDefaultValue = false)]
-        public List<CustomerResponse> Data { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
@@ -96,18 +90,24 @@ namespace Conekta.net.Model
         public string PreviousPageUrl { get; set; }
 
         /// <summary>
+        /// Gets or Sets Data
+        /// </summary>
+        [DataMember(Name = "data", EmitDefaultValue = false)]
+        public List<CustomerPaymentMethodsData> Data { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CustomersResponse {\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("class CustomerPaymentMethodsResponse {\n");
             sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  HasMore: ").Append(HasMore).Append("\n");
             sb.Append("  NextPageUrl: ").Append(NextPageUrl).Append("\n");
             sb.Append("  PreviousPageUrl: ").Append(PreviousPageUrl).Append("\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -128,27 +128,21 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CustomersResponse);
+            return this.Equals(input as CustomerPaymentMethodsResponse);
         }
 
         /// <summary>
-        /// Returns true if CustomersResponse instances are equal
+        /// Returns true if CustomerPaymentMethodsResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of CustomersResponse to be compared</param>
+        /// <param name="input">Instance of CustomerPaymentMethodsResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CustomersResponse input)
+        public bool Equals(CustomerPaymentMethodsResponse input)
         {
             if (input == null)
             {
                 return false;
             }
             return 
-                (
-                    this.Data == input.Data ||
-                    this.Data != null &&
-                    input.Data != null &&
-                    this.Data.SequenceEqual(input.Data)
-                ) && 
                 (
                     this.Object == input.Object ||
                     (this.Object != null &&
@@ -167,6 +161,12 @@ namespace Conekta.net.Model
                     this.PreviousPageUrl == input.PreviousPageUrl ||
                     (this.PreviousPageUrl != null &&
                     this.PreviousPageUrl.Equals(input.PreviousPageUrl))
+                ) && 
+                (
+                    this.Data == input.Data ||
+                    this.Data != null &&
+                    input.Data != null &&
+                    this.Data.SequenceEqual(input.Data)
                 );
         }
 
@@ -179,10 +179,6 @@ namespace Conekta.net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Data != null)
-                {
-                    hashCode = (hashCode * 59) + this.Data.GetHashCode();
-                }
                 if (this.Object != null)
                 {
                     hashCode = (hashCode * 59) + this.Object.GetHashCode();
@@ -195,6 +191,10 @@ namespace Conekta.net.Model
                 if (this.PreviousPageUrl != null)
                 {
                     hashCode = (hashCode * 59) + this.PreviousPageUrl.GetHashCode();
+                }
+                if (this.Data != null)
+                {
+                    hashCode = (hashCode * 59) + this.Data.GetHashCode();
                 }
                 return hashCode;
             }

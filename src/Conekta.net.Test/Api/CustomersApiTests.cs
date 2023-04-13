@@ -114,9 +114,9 @@ namespace Conekta.net.Test.Api
             Assert.IsType<CustomerResponse>(response);
             Assert.Equal(id, response.Id);
             Assert.Single(response.PaymentSources.Data);
-            Assert.IsType<PaymentSourceCard>(response.PaymentSources.Data[0].ActualInstance);
-            Assert.Equal("card", response.PaymentSources.Data[0].GetPaymentSourceCard().Type);
-            Assert.Equal("credit", response.PaymentSources.Data[0].GetPaymentSourceCard().CardType);
+            Assert.IsType<PaymentMethodCardResponse>(response.PaymentSources.Data[0].ActualInstance);
+            Assert.Equal("card", response.PaymentSources.Data[0].GetPaymentMethodCardResponse().Type);
+            Assert.Equal("credit", response.PaymentSources.Data[0].GetPaymentMethodCardResponse().CardType);
             Assert.NotNull(response.Subscription);
             Assert.Equal(id, response.Subscription.CustomerId);
         }
@@ -133,10 +133,10 @@ namespace Conekta.net.Test.Api
             Assert.IsType<CustomerResponse>(response);
             Assert.Equal(id, response.Id);
             Assert.Single(response.PaymentSources.Data);
-            Assert.IsType<PaymentSourceCash>(response.PaymentSources.Data[0].ActualInstance);
-            Assert.Equal("oxxo_recurrent", response.PaymentSources.Data[0].GetPaymentSourceCash().Type);
-            Assert.Equal("Oxxo", response.PaymentSources.Data[0].GetPaymentSourceCash().Provider);
-            Assert.Equal("payment_source", response.PaymentSources.Data[0].GetPaymentSourceCash().Object);
+            Assert.IsType<PaymentMethodCashResponse>(response.PaymentSources.Data[0].ActualInstance);
+            Assert.Equal("oxxo_recurrent", response.PaymentSources.Data[0].GetPaymentMethodCashResponse().Type);
+            Assert.Equal("Oxxo", response.PaymentSources.Data[0].GetPaymentMethodCashResponse().Provider);
+            Assert.Equal("payment_source", response.PaymentSources.Data[0].GetPaymentMethodCashResponse().Object);
         }
         /// <summary>
         /// Test GetCustomerCardById
@@ -151,11 +151,11 @@ namespace Conekta.net.Test.Api
             Assert.IsType<CustomerResponse>(response);
             Assert.Equal(id, response.Id);
             Assert.Single(response.PaymentSources.Data);
-            Assert.IsType<PaymentSourceSpeiRecurrent>(response.PaymentSources.Data[0].ActualInstance);
-            Assert.Equal("spei_recurrent", response.PaymentSources.Data[0].GetPaymentSourceSpeiRecurrent().Type);
-            Assert.Equal("646180111805035870", response.PaymentSources.Data[0].GetPaymentSourceSpeiRecurrent().Reference);
-            Assert.Equal("payment_source", response.PaymentSources.Data[0].GetPaymentSourceSpeiRecurrent().Object);
-            Assert.Equal("none", response.PaymentSources.Data[0].GetPaymentSourceSpeiRecurrent().ExpiresAt);
+            Assert.IsType<PaymentMethodSpeiRecurrent>(response.PaymentSources.Data[0].ActualInstance);
+            Assert.Equal("spei_recurrent", response.PaymentSources.Data[0].GetPaymentMethodSpeiRecurrent().Type);
+            Assert.Equal("646180111805035870", response.PaymentSources.Data[0].GetPaymentMethodSpeiRecurrent().Reference);
+            Assert.Equal("payment_source", response.PaymentSources.Data[0].GetPaymentMethodSpeiRecurrent().Object);
+            Assert.Equal("none", response.PaymentSources.Data[0].GetPaymentMethodSpeiRecurrent().ExpiresAt);
         }
 
         /// <summary>
@@ -274,10 +274,10 @@ namespace Conekta.net.Test.Api
                     metadata: new Dictionary<string, object> { { "test", "true" } }
                 )
             };
-            var paymentSources = new List<ConsumerPaymentSourcesRequest>()
+            var paymentSources = new List<ConsumerPaymentMethodsRequest>()
             {
-                new ConsumerPaymentSourcesRequest(
-                    new PaymentSourcesCard("card", "tok_2tXyExrU6U7yiaTto")
+                new ConsumerPaymentMethodsRequest(
+                    new PaymentMethodCardRequest("card", "tok_2tXyExrU6U7yiaTto")
                 )
             };
             List<CustomerShippingContacts> shippingContacts = new()

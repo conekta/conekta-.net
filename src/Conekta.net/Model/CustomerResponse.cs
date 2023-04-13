@@ -57,7 +57,7 @@ namespace Conekta.net.Model
         /// <param name="phone">phone.</param>
         /// <param name="shippingContacts">shippingContacts.</param>
         /// <param name="subscription">subscription.</param>
-        public CustomerResponse(CustomerAntifraudInfoResponse antifraudInfo = default(CustomerAntifraudInfoResponse), bool corporate = default(bool), long createdAt = default(long), string customReference = default(string), string defaultFiscalEntityId = default(string), string defaultShippingContactId = default(string), string defaultPaymentSourceId = default(string), string email = default(string), CustomerFiscalEntitiesResponse fiscalEntities = default(CustomerFiscalEntitiesResponse), string id = default(string), bool livemode = default(bool), string name = default(string), string _object = default(string), CustomerPaymentSourcesResponse paymentSources = default(CustomerPaymentSourcesResponse), string phone = default(string), CustomerResponseShippingContacts shippingContacts = default(CustomerResponseShippingContacts), SubscriptionResponse subscription = default(SubscriptionResponse))
+        public CustomerResponse(CustomerAntifraudInfoResponse antifraudInfo = default(CustomerAntifraudInfoResponse), bool corporate = default(bool), long createdAt = default(long), string customReference = default(string), string defaultFiscalEntityId = default(string), string defaultShippingContactId = default(string), string defaultPaymentSourceId = default(string), string email = default(string), CustomerFiscalEntitiesResponse fiscalEntities = default(CustomerFiscalEntitiesResponse), string id = default(string), bool livemode = default(bool), string name = default(string), string _object = default(string), CustomerPaymentMethodsResponse paymentSources = default(CustomerPaymentMethodsResponse), string phone = default(string), CustomerResponseShippingContacts shippingContacts = default(CustomerResponseShippingContacts), SubscriptionResponse subscription = default(SubscriptionResponse))
         {
             this.CreatedAt = createdAt;
             // to ensure "id" is required (not null)
@@ -179,7 +179,7 @@ namespace Conekta.net.Model
         /// Gets or Sets PaymentSources
         /// </summary>
         [DataMember(Name = "payment_sources", EmitDefaultValue = false)]
-        public CustomerPaymentSourcesResponse PaymentSources { get; set; }
+        public CustomerPaymentMethodsResponse PaymentSources { get; set; }
 
         /// <summary>
         /// Gets or Sets Phone

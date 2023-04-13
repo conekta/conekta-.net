@@ -3446,7 +3446,7 @@ paths:
   /customers/{id}/payment_sources:
     get:
       description: Get a list of Payment Methods
-      operationId: GetCustomerPaymentSources
+      operationId: GetCustomerPaymentMethods
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
@@ -3529,7 +3529,7 @@ paths:
                       payment_source_status: active
                       visible_on_checkout: false
               schema:
-                $ref: '#/components/schemas/get_payment_sources_response'
+                $ref: '#/components/schemas/get_payment_method_response'
           description: successful operation
         "401":
           content:
@@ -3585,7 +3585,7 @@ paths:
       - Payment Methods
     post:
       description: Create a payment method for a customer.
-      operationId: CreateCustomerPaymentSources
+      operationId: CreateCustomerPaymentMethods
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
@@ -3612,13 +3612,13 @@ paths:
           - en
           type: string
       requestBody:
-        $ref: '#/components/requestBodies/customer_payment_sources'
+        $ref: '#/components/requestBodies/customer_payment_methods'
       responses:
         "200":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/create_customer_payment_sources_response'
+                $ref: '#/components/schemas/create_customer_payment_methods_response'
           description: successful operation
         "401":
           content:
@@ -3687,10 +3687,10 @@ paths:
       summary: Create Payment Method
       tags:
       - Payment Methods
-  /customers/{id}/payment_sources/{payment_sources_id}:
+  /customers/{id}/payment_sources/{payment_method_id}:
     delete:
       description: Delete an existing payment method
-      operationId: DeleteCustomerPaymentSources
+      operationId: DeleteCustomerPaymentMethods
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
@@ -3702,7 +3702,7 @@ paths:
       - description: Identifier of the payment method
         example: src_2tQ974hSHcsdeSZHG
         in: path
-        name: payment_sources_id
+        name: payment_method_id
         required: true
         schema:
           type: string
@@ -3728,7 +3728,7 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/update_customer_payment_sources_response'
+                $ref: '#/components/schemas/update_customer_payment_methods_response'
           description: successful operation
         "401":
           content:
@@ -3798,8 +3798,8 @@ paths:
       tags:
       - Payment Methods
     put:
-      description: Gets a payment source that corresponds to a customer ID.
-      operationId: UpdateCustomerPaymentSources
+      description: Gets a payment Method that corresponds to a customer ID.
+      operationId: UpdateCustomerPaymentMethods
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
@@ -3811,7 +3811,7 @@ paths:
       - description: Identifier of the payment method
         example: src_2tQ974hSHcsdeSZHG
         in: path
-        name: payment_sources_id
+        name: payment_method_id
         required: true
         schema:
           type: string
@@ -3833,13 +3833,13 @@ paths:
           - en
           type: string
       requestBody:
-        $ref: '#/components/requestBodies/customer_update_payment_sources'
+        $ref: '#/components/requestBodies/customer_update_payment_methods'
       responses:
         "200":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/update_customer_payment_sources_response'
+                $ref: '#/components/schemas/update_customer_payment_methods_response'
           description: successful operation
         "401":
           content:
@@ -7301,11 +7301,11 @@ components:
       required: true
       schema:
         type: string
-    payment_sources_id:
+    payment_method_id:
       description: Identifier of the payment method
       example: src_2tQ974hSHcsdeSZHG
       in: path
-      name: payment_sources_id
+      name: payment_method_id
       required: true
       schema:
         type: string
@@ -7455,7 +7455,7 @@ components:
             $ref: '#/components/schemas/smsCheckout_request'
       description: requested field for sms checkout
       required: true
-    customer_payment_sources:
+    customer_payment_methods:
       content:
         application/json:
           examples:
@@ -7468,15 +7468,15 @@ components:
                 type: spei_recurrent
                 expires_at: 1553273553
           schema:
-            $ref: '#/components/schemas/CreateCustomerPaymentSources_request'
-      description: requested field for customer payment sources
+            $ref: '#/components/schemas/CreateCustomerPaymentMethods_request'
+      description: requested field for customer payment methods
       required: true
-    customer_update_payment_sources:
+    customer_update_payment_methods:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/update_payment_sources'
-      description: requested field for customer payment sources
+            $ref: '#/components/schemas/update_payment_methods'
+      description: requested field for customer payment methods
       required: true
     plan:
       content:
@@ -7757,41 +7757,6 @@ components:
       - $ref: '#/components/schemas/error_allOf'
       description: err model
       title: error
-    customers_extra_fields_response:
-      description: customers response
-      properties:
-        next_page_url:
-          description: URL of the next page.
-          example: https://api.conekta.io/customers?next=cus_2sagTU4GQR5e1i7A5
-          nullable: true
-          type: string
-        previous_page_url:
-          description: Url of the previous page.
-          example: https://api.conekta.io/customers?previous=cus_2sagTU4GQR5e1i7A5
-          nullable: true
-          type: string
-        data:
-          items:
-            $ref: '#/components/schemas/customers_data_response'
-          type: array
-      required:
-      - data
-      title: customers_extra_fields_response
-      type: object
-    pagination:
-      description: pagination metadata
-      properties:
-        object:
-          example: list
-          type: string
-        has_more:
-          example: false
-          type: boolean
-      required:
-      - has_more
-      - object
-      title: pagination metadata
-      type: object
     customer_response:
       description: customer response
       properties:
@@ -7835,7 +7800,7 @@ components:
           example: customer
           type: string
         payment_sources:
-          $ref: '#/components/schemas/customer_payment_sources_response'
+          $ref: '#/components/schemas/customer_payment_methods_response'
         phone:
           example: +5215555555555
           type: string
@@ -7849,6 +7814,35 @@ components:
       - livemode
       - object
       title: customer response
+      type: object
+    pagination:
+      description: pagination metadata
+      properties:
+        object:
+          example: list
+          type: string
+        has_more:
+          example: false
+          type: boolean
+      required:
+      - has_more
+      - object
+      title: pagination metadata
+      type: object
+    page:
+      description: page metadata
+      properties:
+        next_page_url:
+          description: URL of the next page.
+          example: https://api.conekta.io/charges?limit=10&next=chrg_1
+          nullable: true
+          type: string
+        previous_page_url:
+          description: Url of the previous page.
+          example: https://api.conekta.io/charges?limit=10&previous=chrg_1
+          nullable: true
+          type: string
+      title: page metadata
       type: object
     customer_fiscal_entities_request:
       properties:
@@ -7876,21 +7870,6 @@ components:
       - $ref: '#/components/schemas/order_discount_lines_request'
       - $ref: '#/components/schemas/discount_lines_response_allOf'
       title: discount_lines_order_response
-    page:
-      description: page metadata
-      properties:
-        next_page_url:
-          description: URL of the next page.
-          example: https://api.conekta.io/charges?limit=10&next=chrg_1
-          nullable: true
-          type: string
-        previous_page_url:
-          description: Url of the previous page.
-          example: https://api.conekta.io/charges?limit=10&previous=chrg_1
-          nullable: true
-          type: string
-      title: page metadata
-      type: object
     event_response:
       description: event model
       properties:
@@ -8254,18 +8233,18 @@ components:
       - object
       title: checkout_response
       type: object
-    payment_source_cash:
+    payment_method_cash_response:
       allOf:
-      - $ref: '#/components/schemas/payment_source'
-      - $ref: '#/components/schemas/payment_source_cash_allOf'
-    payment_source_card:
+      - $ref: '#/components/schemas/payment_method_response'
+      - $ref: '#/components/schemas/payment_method_cash_response_allOf'
+    payment_method_card_response:
       allOf:
-      - $ref: '#/components/schemas/payment_source'
-      - $ref: '#/components/schemas/payment_source_card_allOf'
-    payment_source_spei_recurrent:
+      - $ref: '#/components/schemas/payment_method_response'
+      - $ref: '#/components/schemas/payment_method_card_response_allOf'
+    payment_method_spei_recurrent:
       allOf:
-      - $ref: '#/components/schemas/payment_source'
-      - $ref: '#/components/schemas/payment_source_spei_recurrent_allOf'
+      - $ref: '#/components/schemas/payment_method_response'
+      - $ref: '#/components/schemas/payment_method_spei_recurrent_allOf'
     plan_response:
       description: plans model
       properties:
@@ -8541,7 +8520,7 @@ components:
           description: Contains details of the payment methods that the customer has
             active or has used in Conekta
           items:
-            $ref: '#/components/schemas/consumer_payment_sources_request'
+            $ref: '#/components/schemas/consumer_payment_methods_request'
           type: array
         phone:
           description: Is the customer's phone number
@@ -8617,7 +8596,7 @@ components:
           description: Contains details of the payment methods that the customer has
             active or has used in Conekta
           items:
-            $ref: '#/components/schemas/consumer_payment_sources_request'
+            $ref: '#/components/schemas/consumer_payment_methods_request'
           type: array
         shipping_contacts:
           description: Contains the detail of the shipping addresses that the client
@@ -8972,29 +8951,29 @@ components:
       - type
       title: checkout_request
       type: object
-    payment_sources_card:
+    payment_method_card_request:
       allOf:
-      - $ref: '#/components/schemas/customer_payment_sources'
-      - $ref: '#/components/schemas/payment_sources_card_allOf'
+      - $ref: '#/components/schemas/customer_payment_method_request'
+      - $ref: '#/components/schemas/payment_method_card_request_allOf'
       required:
       - token_id
-      title: payment_sources_card
-    payment_sources_cash:
+      title: payment_method_card_request
+    payment_method_cash_request:
       allOf:
-      - $ref: '#/components/schemas/customer_payment_sources'
-      - $ref: '#/components/schemas/payment_sources_cash_allOf'
-      title: payment_sources_cash
-    payment_sources_spei:
+      - $ref: '#/components/schemas/customer_payment_method_request'
+      - $ref: '#/components/schemas/payment_method_cash_request_allOf'
+      title: payment_method_cash_request
+    payment_method_spei_request:
       allOf:
-      - $ref: '#/components/schemas/customer_payment_sources'
-      - $ref: '#/components/schemas/payment_sources_cash_allOf'
-      title: payment_sources_spei
-    update_payment_sources:
+      - $ref: '#/components/schemas/customer_payment_method_request'
+      - $ref: '#/components/schemas/payment_method_cash_request_allOf'
+      title: payment_method_spei_request
+    update_payment_methods:
       properties:
         name:
           example: name of person
           type: string
-      title: update_payment_sources_card
+      title: update_payment_methods_card
       type: object
     plan_request:
       description: a plan
@@ -9420,7 +9399,7 @@ components:
           type: string
       title: customer_info_response
       type: object
-    payment_source:
+    payment_method_response:
       properties:
         type:
           type: string
@@ -9526,16 +9505,17 @@ components:
       - customer_id
       title: customer_info_customer_id
       type: object
-    customer_payment_sources:
+    customer_payment_method_request:
+      description: Contains details of the payment methods that the customer has active
+        or has used in Conekta
       properties:
         type:
-          description: Type of payment source
+          description: Type of payment method
           example: card | cash | spei
           type: string
       required:
       - type
-      title: Contains details of the payment methods that the customer has active
-        or has used in Conekta
+      title: customer_payment_method_request
       type: object
     payment_method:
       properties:
@@ -9547,10 +9527,19 @@ components:
       required:
       - object
       type: object
+    customers_response_allOf:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/customer_response'
+          title: customers_data_response
+          type: array
+      type: object
     customers_response:
       allOf:
-      - $ref: '#/components/schemas/customers_extra_fields_response'
+      - $ref: '#/components/schemas/customers_response_allOf'
       - $ref: '#/components/schemas/pagination'
+      - $ref: '#/components/schemas/page'
       title: customers_response
     create_customer_fiscal_entities_response_allOf:
       properties:
@@ -9667,65 +9656,65 @@ components:
       required:
       - phonenumber
       type: object
-    get_customer_payment_sources_data_response:
+    get_customer_payment_method_data_response:
       discriminator:
         mapping:
-          cash: payment_source_cash
-          card: payment_source_card
-          oxxo_recurrent: payment_source_cash
-          spei_recurrent: payment_source_spei_recurrent
+          cash: payment_method_cash_response
+          card: payment_method_card_response
+          oxxo_recurrent: payment_method_cash_response
+          spei_recurrent: payment_method_spei_recurrent
         propertyName: type
       oneOf:
-      - $ref: '#/components/schemas/payment_source_cash'
-      - $ref: '#/components/schemas/payment_source_card'
-      - $ref: '#/components/schemas/payment_source_spei_recurrent'
-      title: get_customer_payment_sources_data_response
-    get_payment_sources_response_allOf:
+      - $ref: '#/components/schemas/payment_method_cash_response'
+      - $ref: '#/components/schemas/payment_method_card_response'
+      - $ref: '#/components/schemas/payment_method_spei_recurrent'
+      title: get_customer_payment_method_data_response
+    get_payment_method_response_allOf:
       properties:
         data:
           items:
-            $ref: '#/components/schemas/get_customer_payment_sources_data_response'
+            $ref: '#/components/schemas/get_customer_payment_method_data_response'
           type: array
       type: object
-    get_payment_sources_response:
+    get_payment_method_response:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/page'
-      - $ref: '#/components/schemas/get_payment_sources_response_allOf'
-      title: get_payment_sources_response
-    CreateCustomerPaymentSources_request:
+      - $ref: '#/components/schemas/get_payment_method_response_allOf'
+      title: get_payment_method_response
+    CreateCustomerPaymentMethods_request:
       description: Contains details of the payment methods that the customer has active
         or has used in Conekta
       oneOf:
-      - $ref: '#/components/schemas/payment_sources_card'
-      - $ref: '#/components/schemas/payment_sources_cash'
-      - $ref: '#/components/schemas/payment_sources_spei'
-    create_customer_payment_sources_response:
+      - $ref: '#/components/schemas/payment_method_card_request'
+      - $ref: '#/components/schemas/payment_method_cash_request'
+      - $ref: '#/components/schemas/payment_method_spei_request'
+    create_customer_payment_methods_response:
       discriminator:
         mapping:
-          cash: payment_source_cash
-          card: payment_source_card
-          oxxo_recurrent: payment_source_cash
-          spei_recurrent: payment_source_spei_recurrent
+          cash: payment_method_cash_response
+          card: payment_method_card_response
+          oxxo_recurrent: payment_method_cash_response
+          spei_recurrent: payment_method_spei_recurrent
         propertyName: type
       oneOf:
-      - $ref: '#/components/schemas/payment_source_cash'
-      - $ref: '#/components/schemas/payment_source_card'
-      - $ref: '#/components/schemas/payment_source_spei_recurrent'
-      title: create_customer_payment_sources_response
-    update_customer_payment_sources_response:
+      - $ref: '#/components/schemas/payment_method_cash_response'
+      - $ref: '#/components/schemas/payment_method_card_response'
+      - $ref: '#/components/schemas/payment_method_spei_recurrent'
+      title: create_customer_payment_methods_response
+    update_customer_payment_methods_response:
       discriminator:
         mapping:
-          cash: payment_source_cash
-          card: payment_source_card
-          oxxo_recurrent: payment_source_cash
-          spei_recurrent: payment_source_spei_recurrent
+          cash: payment_method_cash_response
+          card: payment_method_card_response
+          oxxo_recurrent: payment_method_cash_response
+          spei_recurrent: payment_method_spei_recurrent
         propertyName: type
       oneOf:
-      - $ref: '#/components/schemas/payment_source_cash'
-      - $ref: '#/components/schemas/payment_source_card'
-      - $ref: '#/components/schemas/payment_source_spei_recurrent'
-      title: update_customer_payment_sources_response
+      - $ref: '#/components/schemas/payment_method_cash_response'
+      - $ref: '#/components/schemas/payment_method_card_response'
+      - $ref: '#/components/schemas/payment_method_spei_recurrent'
+      title: update_customer_payment_methods_response
     get_plans_response_allOf:
       properties:
         data:
@@ -9819,7 +9808,7 @@ components:
           type: string
       type: object
       example: null
-    customers_antifraud_info_response:
+    customer_antifraud_info_response:
       nullable: true
       properties:
         first_paid_at:
@@ -9829,34 +9818,8 @@ components:
           example: 1484040996
           format: int64
           type: integer
-      title: customers_antifraud_info_response
+      title: customer_antifraud_info_response
       type: object
-    customerPaymentSourcesData:
-      discriminator:
-        mapping:
-          cash: payment_source_cash
-          card: payment_source_card
-          oxxo_recurrent: payment_source_cash
-          spei_recurrent: payment_source_spei_recurrent
-        propertyName: type
-      oneOf:
-      - $ref: '#/components/schemas/payment_source_cash'
-      - $ref: '#/components/schemas/payment_source_card'
-      - $ref: '#/components/schemas/payment_source_spei_recurrent'
-      title: customerPaymentSourcesData
-    customerPaymentSources:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/customerPaymentSourcesData'
-          type: array
-      title: customerPaymentSources
-      type: object
-    customers_data_response_payment_sources:
-      allOf:
-      - $ref: '#/components/schemas/pagination'
-      - $ref: '#/components/schemas/page'
-      - $ref: '#/components/schemas/customerPaymentSources'
     customer_fiscal_entities_data_response:
       allOf:
       - $ref: '#/components/schemas/customer_fiscal_entities_request'
@@ -9874,7 +9837,35 @@ components:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/customer_fiscal_entities_response_allOf'
       title: customer_fiscal_entities_response
-    customers_shipping_contacts_data_response_allOf:
+    customer_payment_methods_data:
+      discriminator:
+        mapping:
+          cash: payment_method_cash_response
+          card: payment_method_card_response
+          oxxo_recurrent: payment_method_cash_response
+          spei_recurrent: payment_method_spei_recurrent
+        propertyName: type
+      oneOf:
+      - $ref: '#/components/schemas/payment_method_cash_response'
+      - $ref: '#/components/schemas/payment_method_card_response'
+      - $ref: '#/components/schemas/payment_method_spei_recurrent'
+      title: customer_payment_methods_data
+    customerPaymentMethods:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/customer_payment_methods_data'
+          title: customer_payment_methods_data
+          type: array
+      title: customerPaymentMethods
+      type: object
+    customer_payment_methods_response:
+      allOf:
+      - $ref: '#/components/schemas/pagination'
+      - $ref: '#/components/schemas/page'
+      - $ref: '#/components/schemas/customerPaymentMethods'
+      title: customer_payment_methods_response
+    customer_shipping_contacts_data_response_allOf:
       properties:
         id:
           example: ship_cont_2tKZsTYcsryyu7Ah8
@@ -9891,95 +9882,10 @@ components:
       - id
       - object
       type: object
-    customers_shipping_contacts_data_response:
-      allOf:
-      - $ref: '#/components/schemas/customer_shipping_contacts'
-      - $ref: '#/components/schemas/customers_shipping_contacts_data_response_allOf'
-      title: customers_shipping_contacts_data_response
-    customers_shipping_contacts_response_allOf:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/customers_shipping_contacts_data_response'
-          type: array
-      type: object
-    customers_shipping_contacts_response:
-      allOf:
-      - $ref: '#/components/schemas/pagination'
-      - $ref: '#/components/schemas/customers_shipping_contacts_response_allOf'
-      title: customers_shipping_contacts_response
-    customers_data_response:
-      properties:
-        antifraud_info:
-          $ref: '#/components/schemas/customers_antifraud_info_response'
-        corporate:
-          type: boolean
-        created_at:
-          example: 1485151007
-          format: int64
-          type: integer
-        custom_reference:
-          type: string
-        default_fiscal_entity_id:
-          example: fis_ent_2tKqqAfqPi21oCmEJ
-          nullable: true
-          type: string
-        default_shipping_contact_id:
-          example: ship_cont_2tKZsTYcsryyu7Ah8
-          type: string
-        default_payment_source_id:
-          example: src_2tHJfJ79KyUwpxTio
-          nullable: true
-          type: string
-        email:
-          example: Felipe@gmail.com
-          format: email
-          type: string
-        id:
-          example: cus_2tHJfJ79KyUwpxTik
-          type: string
-        livemode:
-          example: true
-          type: boolean
-        name:
-          example: Felipe
-          type: string
-        object:
-          example: customer
-          type: string
-        payment_sources:
-          $ref: '#/components/schemas/customers_data_response_payment_sources'
-        phone:
-          example: +5215555555555
-          type: string
-        fiscal_entities:
-          $ref: '#/components/schemas/customer_fiscal_entities_response'
-        shipping_contacts:
-          $ref: '#/components/schemas/customers_shipping_contacts_response'
-      title: customers_data_response
-      type: object
-    customer_antifraud_info_response:
-      nullable: true
-      properties:
-        first_paid_at:
-          example: 1485151007
-          type: integer
-        account_created_at:
-          example: 1484040996
-          format: int64
-          type: integer
-      title: customer_antifraud_info_response
-      type: object
-    customer_payment_sources_response:
-      allOf:
-      - $ref: '#/components/schemas/pagination'
-      - $ref: '#/components/schemas/page'
-      - $ref: '#/components/schemas/customerPaymentSources'
-      title: customer_payment_sources_response
     customer_shipping_contacts_data_response:
       allOf:
       - $ref: '#/components/schemas/customer_shipping_contacts'
-      - $ref: '#/components/schemas/customers_shipping_contacts_data_response_allOf'
+      - $ref: '#/components/schemas/customer_shipping_contacts_data_response_allOf'
       title: customer_shipping_contacts_data_response
     customer_response_shipping_contacts_allOf:
       properties:
@@ -10364,7 +10270,7 @@ components:
           type: string
       type: object
       example: null
-    payment_source_cash_allOf:
+    payment_method_cash_response_allOf:
       description: use for cash responses
       properties:
         reference:
@@ -10385,7 +10291,7 @@ components:
           type: string
       type: object
       example: null
-    payment_source_card_allOf:
+    payment_method_card_response_allOf:
       description: use for card responses
       properties:
         last4:
@@ -10418,7 +10324,7 @@ components:
           type: string
       type: object
       example: null
-    payment_source_spei_recurrent_allOf:
+    payment_method_spei_recurrent_allOf:
       description: use for spei responses
       properties:
         reference:
@@ -10497,12 +10403,12 @@ components:
           format: int64
           type: integer
       type: object
-    consumer_payment_sources_request:
+    consumer_payment_methods_request:
       oneOf:
-      - $ref: '#/components/schemas/payment_sources_card'
-      - $ref: '#/components/schemas/payment_sources_cash'
-      - $ref: '#/components/schemas/payment_sources_spei'
-      title: consumer_payment_sources_request
+      - $ref: '#/components/schemas/payment_method_card_request'
+      - $ref: '#/components/schemas/payment_method_cash_request'
+      - $ref: '#/components/schemas/payment_method_spei_request'
+      title: consumer_payment_methods_request
     update_customer_antifraud_info:
       nullable: true
       properties:
@@ -10545,7 +10451,7 @@ components:
       - currency
       - line_items
       type: object
-    payment_sources_card_allOf:
+    payment_method_card_request_allOf:
       properties:
         token_id:
           description: "Token id that will be used to create a \"card\" type payment\
@@ -10555,7 +10461,7 @@ components:
           type: string
       type: object
       example: null
-    payment_sources_cash_allOf:
+    payment_method_cash_request_allOf:
       properties:
         expires_at:
           example: 1553273553

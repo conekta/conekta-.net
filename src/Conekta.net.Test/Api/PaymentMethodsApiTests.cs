@@ -47,72 +47,72 @@ namespace Conekta.net.Test.Api
         }
 
         /// <summary>
-        /// Test CreateCustomerPaymentSources
+        /// Test CreateCustomerPaymentMethods
         /// </summary>
         [Fact]
-        public void CreateCustomerPaymentSourcesTest()
+        public void CreateCustomerPaymentMethodsTest()
         {
             string id = "cus_2tXyF9BwPG14UMkkg";
-            CreateCustomerPaymentSourcesRequest createCustomerPaymentSourcesRequest = new(
-                new PaymentSourcesCash("oxxo_recurrent")
+            CreateCustomerPaymentMethodsRequest createCustomerPaymentMethodRequest = new(
+                new PaymentMethodCashRequest("oxxo_recurrent")
             );
-            var response = _instance.CreateCustomerPaymentSources(id, createCustomerPaymentSourcesRequest);
+            var response = _instance.CreateCustomerPaymentMethods(id, createCustomerPaymentMethodRequest);
 
-            Assert.IsType<CreateCustomerPaymentSourcesResponse>(response);
-            Assert.IsType<PaymentSourceCash>(response.ActualInstance);
-            Assert.Equal(id, response.GetPaymentSourceCash().ParentId);
-            Assert.False(string.IsNullOrEmpty(response.GetPaymentSourceCash().Id));
-            Assert.False(string.IsNullOrEmpty(response.GetPaymentSourceCash().BarcodeUrl));
+            Assert.IsType<CreateCustomerPaymentMethodsResponse>(response);
+            Assert.IsType<PaymentMethodCashResponse>(response.ActualInstance);
+            Assert.Equal(id, response.GetPaymentMethodCashResponse().ParentId);
+            Assert.False(string.IsNullOrEmpty(response.GetPaymentMethodCashResponse().Id));
+            Assert.False(string.IsNullOrEmpty(response.GetPaymentMethodCashResponse().BarcodeUrl));
         }
 
         /// <summary>
-        /// Test DeleteCustomerPaymentSources
+        /// Test DeleteCustomerPaymentMethods
         /// </summary>
         [Fact]
-        public void DeleteCustomerPaymentSourcesTest()
+        public void DeleteCustomerPaymentMethodsTest()
         {
             string id = "cus_2tZWxbTPtQgGJGh8P";
-            string paymentSourcesId = "src_2tZWxbTPtQgGJGh8R";
+            string paymentId = "src_2tZWxbTPtQgGJGh8R";
 
-            var response = _instance.DeleteCustomerPaymentSources(id, paymentSourcesId, "en");
+            var response = _instance.DeleteCustomerPaymentMethods(id, paymentId, "en");
 
-            Assert.IsType<UpdateCustomerPaymentSourcesResponse>(response);
-            Assert.Equal(id, response.GetPaymentSourceCard().ParentId);
-            Assert.Equal(paymentSourcesId, response.GetPaymentSourceCard().Id);
+            Assert.IsType<UpdateCustomerPaymentMethodsResponse>(response);
+            Assert.Equal(id, response.GetPaymentMethodCardResponse().ParentId);
+            Assert.Equal(paymentId, response.GetPaymentMethodCardResponse().Id);
         }
 
         /// <summary>
-        /// Test UpdateCustomerPaymentSources
+        /// Test UpdateCustomerPaymentMethods
         /// </summary>
         [Fact]
-        public void UpdateCustomerPaymentSourcesTest()
+        public void UpdateCustomerPaymentMethodTest()
         {
             string id = "cus_2tZWxbTPtQgGJGh8P";
-            string paymentSourcesId = "src_2tZWxbTPtQgGJGh8R";
-            UpdatePaymentSources updatePaymentSources = new(
+            string paymentId = "src_2tZWxbTPtQgGJGh8R";
+            UpdatePaymentMethods updatePaymentMethods = new(
                name: "name of person"
             );
-            var response = _instance.UpdateCustomerPaymentSources(id, paymentSourcesId, updatePaymentSources);
+            var response = _instance.UpdateCustomerPaymentMethods(id, paymentId, updatePaymentMethods);
 
-            Assert.IsType<UpdateCustomerPaymentSourcesResponse>(response);
-            Assert.Equal(updatePaymentSources.Name, response.GetPaymentSourceCard().Name);
-            Assert.Equal(id, response.GetPaymentSourceCard().ParentId);
-            Assert.Equal(paymentSourcesId, response.GetPaymentSourceCard().Id);
+            Assert.IsType<UpdateCustomerPaymentMethodsResponse>(response);
+            Assert.Equal(updatePaymentMethods.Name, response.GetPaymentMethodCardResponse().Name);
+            Assert.Equal(id, response.GetPaymentMethodCardResponse().ParentId);
+            Assert.Equal(paymentId, response.GetPaymentMethodCardResponse().Id);
         }
         /// <summary>
-        /// Test GetCustomerPaymentSources
+        /// Test GetCustomerPaymentMethods
         /// </summary>
         [Fact]
-        public void GetCustomerPaymentSourcesTest()
+        public void GetCustomerPaymentMethodsTest()
         {
-            var getPaymentSourcesResponse = _instance.GetCustomerPaymentSources("src_2tbd5Bgy67RL9oycM");
+            var getPaymentMethodsResponse = _instance.GetCustomerPaymentMethods("src_2tbd5Bgy67RL9oycM");
 
-            Assert.IsType<GetPaymentSourcesResponse>(getPaymentSourcesResponse);
-            Assert.Equal("src_2tbd5Bgy67RL9oycM", getPaymentSourcesResponse.Data[0].GetPaymentSourceCard().Id);
-            Assert.IsType<PaymentSourceCard>(getPaymentSourcesResponse.Data[0].ActualInstance);
-            Assert.Null(getPaymentSourcesResponse.NextPageUrl);
-            Assert.Null(getPaymentSourcesResponse.PreviousPageUrl);
-            Assert.False(getPaymentSourcesResponse.HasMore);
+            Assert.IsType<GetPaymentMethodResponse>(getPaymentMethodsResponse);
+            Assert.Equal("src_2tbd5Bgy67RL9oycM", getPaymentMethodsResponse.Data[0].GetPaymentMethodCardResponse().Id);
+            Assert.IsType<PaymentMethodCardResponse>(getPaymentMethodsResponse.Data[0].ActualInstance);
+            Assert.Null(getPaymentMethodsResponse.NextPageUrl);
+            Assert.Null(getPaymentMethodsResponse.PreviousPageUrl);
+            Assert.False(getPaymentMethodsResponse.HasMore);
         }
     }
 }

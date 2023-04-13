@@ -1,14 +1,14 @@
-# Conekta.net.Model.CustomersResponse
+# Conekta.net.Model.CustomerPaymentMethodsResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**List&lt;CustomerResponse&gt;**](CustomerResponse.md) |  | [optional] 
 **Object** | **string** |  | 
 **HasMore** | **bool** |  | 
 **NextPageUrl** | **string** | URL of the next page. | [optional] 
 **PreviousPageUrl** | **string** | Url of the previous page. | [optional] 
+**Data** | [**List&lt;CustomerPaymentMethodsData&gt;**](CustomerPaymentMethodsData.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

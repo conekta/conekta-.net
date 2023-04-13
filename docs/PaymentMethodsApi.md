@@ -4,14 +4,14 @@ All URIs are relative to *https://api.conekta.io*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CreateCustomerPaymentSources**](PaymentMethodsApi.md#createcustomerpaymentsources) | **POST** /customers/{id}/payment_sources | Create Payment Method |
-| [**DeleteCustomerPaymentSources**](PaymentMethodsApi.md#deletecustomerpaymentsources) | **DELETE** /customers/{id}/payment_sources/{payment_sources_id} | Delete Payment Method |
-| [**GetCustomerPaymentSources**](PaymentMethodsApi.md#getcustomerpaymentsources) | **GET** /customers/{id}/payment_sources | Get Payment Methods |
-| [**UpdateCustomerPaymentSources**](PaymentMethodsApi.md#updatecustomerpaymentsources) | **PUT** /customers/{id}/payment_sources/{payment_sources_id} | Update Payment Method |
+| [**CreateCustomerPaymentMethods**](PaymentMethodsApi.md#createcustomerpaymentmethods) | **POST** /customers/{id}/payment_sources | Create Payment Method |
+| [**DeleteCustomerPaymentMethods**](PaymentMethodsApi.md#deletecustomerpaymentmethods) | **DELETE** /customers/{id}/payment_sources/{payment_method_id} | Delete Payment Method |
+| [**GetCustomerPaymentMethods**](PaymentMethodsApi.md#getcustomerpaymentmethods) | **GET** /customers/{id}/payment_sources | Get Payment Methods |
+| [**UpdateCustomerPaymentMethods**](PaymentMethodsApi.md#updatecustomerpaymentmethods) | **PUT** /customers/{id}/payment_sources/{payment_method_id} | Update Payment Method |
 
-<a name="createcustomerpaymentsources"></a>
-# **CreateCustomerPaymentSources**
-> CreateCustomerPaymentSourcesResponse CreateCustomerPaymentSources (string id, CreateCustomerPaymentSourcesRequest createCustomerPaymentSourcesRequest, string acceptLanguage = null)
+<a name="createcustomerpaymentmethods"></a>
+# **CreateCustomerPaymentMethods**
+> CreateCustomerPaymentMethodsResponse CreateCustomerPaymentMethods (string id, CreateCustomerPaymentMethodsRequest createCustomerPaymentMethodsRequest, string acceptLanguage = null)
 
 Create Payment Method
 
@@ -27,7 +27,7 @@ using Conekta.net.Model;
 
 namespace Example
 {
-    public class CreateCustomerPaymentSourcesExample
+    public class CreateCustomerPaymentMethodsExample
     {
         public static void Main()
         {
@@ -38,18 +38,18 @@ namespace Example
 
             var apiInstance = new PaymentMethodsApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
-            var createCustomerPaymentSourcesRequest = new CreateCustomerPaymentSourcesRequest(); // CreateCustomerPaymentSourcesRequest | requested field for customer payment sources
+            var createCustomerPaymentMethodsRequest = new CreateCustomerPaymentMethodsRequest(); // CreateCustomerPaymentMethodsRequest | requested field for customer payment methods
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
                 // Create Payment Method
-                CreateCustomerPaymentSourcesResponse result = apiInstance.CreateCustomerPaymentSources(id, createCustomerPaymentSourcesRequest, acceptLanguage);
+                CreateCustomerPaymentMethodsResponse result = apiInstance.CreateCustomerPaymentMethods(id, createCustomerPaymentMethodsRequest, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PaymentMethodsApi.CreateCustomerPaymentSources: " + e.Message);
+                Debug.Print("Exception when calling PaymentMethodsApi.CreateCustomerPaymentMethods: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -58,21 +58,21 @@ namespace Example
 }
 ```
 
-#### Using the CreateCustomerPaymentSourcesWithHttpInfo variant
+#### Using the CreateCustomerPaymentMethodsWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Create Payment Method
-    ApiResponse<CreateCustomerPaymentSourcesResponse> response = apiInstance.CreateCustomerPaymentSourcesWithHttpInfo(id, createCustomerPaymentSourcesRequest, acceptLanguage);
+    ApiResponse<CreateCustomerPaymentMethodsResponse> response = apiInstance.CreateCustomerPaymentMethodsWithHttpInfo(id, createCustomerPaymentMethodsRequest, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling PaymentMethodsApi.CreateCustomerPaymentSourcesWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling PaymentMethodsApi.CreateCustomerPaymentMethodsWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -83,12 +83,12 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
-| **createCustomerPaymentSourcesRequest** | [**CreateCustomerPaymentSourcesRequest**](CreateCustomerPaymentSourcesRequest.md) | requested field for customer payment sources |  |
+| **createCustomerPaymentMethodsRequest** | [**CreateCustomerPaymentMethodsRequest**](CreateCustomerPaymentMethodsRequest.md) | requested field for customer payment methods |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 
-[**CreateCustomerPaymentSourcesResponse**](CreateCustomerPaymentSourcesResponse.md)
+[**CreateCustomerPaymentMethodsResponse**](CreateCustomerPaymentMethodsResponse.md)
 
 ### Authorization
 
@@ -111,9 +111,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deletecustomerpaymentsources"></a>
-# **DeleteCustomerPaymentSources**
-> UpdateCustomerPaymentSourcesResponse DeleteCustomerPaymentSources (string id, string paymentSourcesId, string acceptLanguage = null)
+<a name="deletecustomerpaymentmethods"></a>
+# **DeleteCustomerPaymentMethods**
+> UpdateCustomerPaymentMethodsResponse DeleteCustomerPaymentMethods (string id, string paymentMethodId, string acceptLanguage = null)
 
 Delete Payment Method
 
@@ -129,7 +129,7 @@ using Conekta.net.Model;
 
 namespace Example
 {
-    public class DeleteCustomerPaymentSourcesExample
+    public class DeleteCustomerPaymentMethodsExample
     {
         public static void Main()
         {
@@ -140,18 +140,18 @@ namespace Example
 
             var apiInstance = new PaymentMethodsApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
-            var paymentSourcesId = src_2tQ974hSHcsdeSZHG;  // string | Identifier of the payment method
+            var paymentMethodId = src_2tQ974hSHcsdeSZHG;  // string | Identifier of the payment method
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
                 // Delete Payment Method
-                UpdateCustomerPaymentSourcesResponse result = apiInstance.DeleteCustomerPaymentSources(id, paymentSourcesId, acceptLanguage);
+                UpdateCustomerPaymentMethodsResponse result = apiInstance.DeleteCustomerPaymentMethods(id, paymentMethodId, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PaymentMethodsApi.DeleteCustomerPaymentSources: " + e.Message);
+                Debug.Print("Exception when calling PaymentMethodsApi.DeleteCustomerPaymentMethods: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -160,21 +160,21 @@ namespace Example
 }
 ```
 
-#### Using the DeleteCustomerPaymentSourcesWithHttpInfo variant
+#### Using the DeleteCustomerPaymentMethodsWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Delete Payment Method
-    ApiResponse<UpdateCustomerPaymentSourcesResponse> response = apiInstance.DeleteCustomerPaymentSourcesWithHttpInfo(id, paymentSourcesId, acceptLanguage);
+    ApiResponse<UpdateCustomerPaymentMethodsResponse> response = apiInstance.DeleteCustomerPaymentMethodsWithHttpInfo(id, paymentMethodId, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling PaymentMethodsApi.DeleteCustomerPaymentSourcesWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling PaymentMethodsApi.DeleteCustomerPaymentMethodsWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -185,12 +185,12 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
-| **paymentSourcesId** | **string** | Identifier of the payment method |  |
+| **paymentMethodId** | **string** | Identifier of the payment method |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 
-[**UpdateCustomerPaymentSourcesResponse**](UpdateCustomerPaymentSourcesResponse.md)
+[**UpdateCustomerPaymentMethodsResponse**](UpdateCustomerPaymentMethodsResponse.md)
 
 ### Authorization
 
@@ -213,9 +213,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getcustomerpaymentsources"></a>
-# **GetCustomerPaymentSources**
-> GetPaymentSourcesResponse GetCustomerPaymentSources (string id, string acceptLanguage = null, int? limit = null, string next = null, string previous = null, string search = null)
+<a name="getcustomerpaymentmethods"></a>
+# **GetCustomerPaymentMethods**
+> GetPaymentMethodResponse GetCustomerPaymentMethods (string id, string acceptLanguage = null, int? limit = null, string next = null, string previous = null, string search = null)
 
 Get Payment Methods
 
@@ -231,7 +231,7 @@ using Conekta.net.Model;
 
 namespace Example
 {
-    public class GetCustomerPaymentSourcesExample
+    public class GetCustomerPaymentMethodsExample
     {
         public static void Main()
         {
@@ -251,12 +251,12 @@ namespace Example
             try
             {
                 // Get Payment Methods
-                GetPaymentSourcesResponse result = apiInstance.GetCustomerPaymentSources(id, acceptLanguage, limit, next, previous, search);
+                GetPaymentMethodResponse result = apiInstance.GetCustomerPaymentMethods(id, acceptLanguage, limit, next, previous, search);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PaymentMethodsApi.GetCustomerPaymentSources: " + e.Message);
+                Debug.Print("Exception when calling PaymentMethodsApi.GetCustomerPaymentMethods: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -265,21 +265,21 @@ namespace Example
 }
 ```
 
-#### Using the GetCustomerPaymentSourcesWithHttpInfo variant
+#### Using the GetCustomerPaymentMethodsWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Get Payment Methods
-    ApiResponse<GetPaymentSourcesResponse> response = apiInstance.GetCustomerPaymentSourcesWithHttpInfo(id, acceptLanguage, limit, next, previous, search);
+    ApiResponse<GetPaymentMethodResponse> response = apiInstance.GetCustomerPaymentMethodsWithHttpInfo(id, acceptLanguage, limit, next, previous, search);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling PaymentMethodsApi.GetCustomerPaymentSourcesWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling PaymentMethodsApi.GetCustomerPaymentMethodsWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -298,7 +298,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**GetPaymentSourcesResponse**](GetPaymentSourcesResponse.md)
+[**GetPaymentMethodResponse**](GetPaymentMethodResponse.md)
 
 ### Authorization
 
@@ -320,13 +320,13 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updatecustomerpaymentsources"></a>
-# **UpdateCustomerPaymentSources**
-> UpdateCustomerPaymentSourcesResponse UpdateCustomerPaymentSources (string id, string paymentSourcesId, UpdatePaymentSources updatePaymentSources, string acceptLanguage = null)
+<a name="updatecustomerpaymentmethods"></a>
+# **UpdateCustomerPaymentMethods**
+> UpdateCustomerPaymentMethodsResponse UpdateCustomerPaymentMethods (string id, string paymentMethodId, UpdatePaymentMethods updatePaymentMethods, string acceptLanguage = null)
 
 Update Payment Method
 
-Gets a payment source that corresponds to a customer ID.
+Gets a payment Method that corresponds to a customer ID.
 
 ### Example
 ```csharp
@@ -338,7 +338,7 @@ using Conekta.net.Model;
 
 namespace Example
 {
-    public class UpdateCustomerPaymentSourcesExample
+    public class UpdateCustomerPaymentMethodsExample
     {
         public static void Main()
         {
@@ -349,19 +349,19 @@ namespace Example
 
             var apiInstance = new PaymentMethodsApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
-            var paymentSourcesId = src_2tQ974hSHcsdeSZHG;  // string | Identifier of the payment method
-            var updatePaymentSources = new UpdatePaymentSources(); // UpdatePaymentSources | requested field for customer payment sources
+            var paymentMethodId = src_2tQ974hSHcsdeSZHG;  // string | Identifier of the payment method
+            var updatePaymentMethods = new UpdatePaymentMethods(); // UpdatePaymentMethods | requested field for customer payment methods
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
                 // Update Payment Method
-                UpdateCustomerPaymentSourcesResponse result = apiInstance.UpdateCustomerPaymentSources(id, paymentSourcesId, updatePaymentSources, acceptLanguage);
+                UpdateCustomerPaymentMethodsResponse result = apiInstance.UpdateCustomerPaymentMethods(id, paymentMethodId, updatePaymentMethods, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PaymentMethodsApi.UpdateCustomerPaymentSources: " + e.Message);
+                Debug.Print("Exception when calling PaymentMethodsApi.UpdateCustomerPaymentMethods: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -370,21 +370,21 @@ namespace Example
 }
 ```
 
-#### Using the UpdateCustomerPaymentSourcesWithHttpInfo variant
+#### Using the UpdateCustomerPaymentMethodsWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Update Payment Method
-    ApiResponse<UpdateCustomerPaymentSourcesResponse> response = apiInstance.UpdateCustomerPaymentSourcesWithHttpInfo(id, paymentSourcesId, updatePaymentSources, acceptLanguage);
+    ApiResponse<UpdateCustomerPaymentMethodsResponse> response = apiInstance.UpdateCustomerPaymentMethodsWithHttpInfo(id, paymentMethodId, updatePaymentMethods, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling PaymentMethodsApi.UpdateCustomerPaymentSourcesWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling PaymentMethodsApi.UpdateCustomerPaymentMethodsWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -395,13 +395,13 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
-| **paymentSourcesId** | **string** | Identifier of the payment method |  |
-| **updatePaymentSources** | [**UpdatePaymentSources**](UpdatePaymentSources.md) | requested field for customer payment sources |  |
+| **paymentMethodId** | **string** | Identifier of the payment method |  |
+| **updatePaymentMethods** | [**UpdatePaymentMethods**](UpdatePaymentMethods.md) | requested field for customer payment methods |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 
-[**UpdateCustomerPaymentSourcesResponse**](UpdateCustomerPaymentSourcesResponse.md)
+[**UpdateCustomerPaymentMethodsResponse**](UpdateCustomerPaymentMethodsResponse.md)
 
 ### Authorization
 

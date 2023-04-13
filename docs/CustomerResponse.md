@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **Livemode** | **bool** |  | 
 **Name** | **string** |  | [optional] 
 **Object** | **string** |  | 
-**PaymentSources** | [**CustomerPaymentSourcesResponse**](CustomerPaymentSourcesResponse.md) |  | [optional] 
+**PaymentSources** | [**CustomerPaymentMethodsResponse**](CustomerPaymentMethodsResponse.md) |  | [optional] 
 **Phone** | **string** |  | [optional] 
 **ShippingContacts** | [**CustomerResponseShippingContacts**](CustomerResponseShippingContacts.md) |  | [optional] 
 **Subscription** | [**SubscriptionResponse**](SubscriptionResponse.md) |  | [optional] 

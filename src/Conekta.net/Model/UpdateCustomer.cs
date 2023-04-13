@@ -48,7 +48,7 @@ namespace Conekta.net.Model
         /// <param name="paymentSources">Contains details of the payment methods that the customer has active or has used in Conekta.</param>
         /// <param name="shippingContacts">Contains the detail of the shipping addresses that the client has active or has used in Conekta.</param>
         /// <param name="subscription">subscription.</param>
-        public UpdateCustomer(UpdateCustomerAntifraudInfo antifraudInfo = default(UpdateCustomerAntifraudInfo), string defaultPaymentSourceId = default(string), string email = default(string), string name = default(string), string phone = default(string), string planId = default(string), string defaultShippingContactId = default(string), bool corporate = false, string customReference = default(string), List<CustomerFiscalEntitiesRequest> fiscalEntities = default(List<CustomerFiscalEntitiesRequest>), List<ConsumerPaymentSourcesRequest> paymentSources = default(List<ConsumerPaymentSourcesRequest>), List<CustomerShippingContacts> shippingContacts = default(List<CustomerShippingContacts>), SubscriptionRequest subscription = default(SubscriptionRequest))
+        public UpdateCustomer(UpdateCustomerAntifraudInfo antifraudInfo = default(UpdateCustomerAntifraudInfo), string defaultPaymentSourceId = default(string), string email = default(string), string name = default(string), string phone = default(string), string planId = default(string), string defaultShippingContactId = default(string), bool corporate = false, string customReference = default(string), List<CustomerFiscalEntitiesRequest> fiscalEntities = default(List<CustomerFiscalEntitiesRequest>), List<ConsumerPaymentMethodsRequest> paymentSources = default(List<ConsumerPaymentMethodsRequest>), List<CustomerShippingContacts> shippingContacts = default(List<CustomerShippingContacts>), SubscriptionRequest subscription = default(SubscriptionRequest))
         {
             this.AntifraudInfo = antifraudInfo;
             this.DefaultPaymentSourceId = defaultPaymentSourceId;
@@ -145,7 +145,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>Contains details of the payment methods that the customer has active or has used in Conekta</value>
         [DataMember(Name = "payment_sources", EmitDefaultValue = false)]
-        public List<ConsumerPaymentSourcesRequest> PaymentSources { get; set; }
+        public List<ConsumerPaymentMethodsRequest> PaymentSources { get; set; }
 
         /// <summary>
         /// Contains the detail of the shipping addresses that the client has active or has used in Conekta

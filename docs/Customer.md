@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **DefaultShippingContactId** | **string** | It is a parameter that allows to identify in the response, the Conekta ID of the shipping address (shipping_contact) | [optional] 
 **FiscalEntities** | [**List&lt;CustomerFiscalEntitiesRequest&gt;**](CustomerFiscalEntitiesRequest.md) |  | [optional] 
 **Name** | **string** | Client&#39;s name | 
-**PaymentSources** | [**List&lt;ConsumerPaymentSourcesRequest&gt;**](ConsumerPaymentSourcesRequest.md) | Contains details of the payment methods that the customer has active or has used in Conekta | [optional] 
+**PaymentSources** | [**List&lt;ConsumerPaymentMethodsRequest&gt;**](ConsumerPaymentMethodsRequest.md) | Contains details of the payment methods that the customer has active or has used in Conekta | [optional] 
 **Phone** | **string** | Is the customer&#39;s phone number | 
 **PlanId** | **string** | Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription | [optional] 
 **ShippingContacts** | [**List&lt;CustomerShippingContacts&gt;**](CustomerShippingContacts.md) | Contains the detail of the shipping addresses that the client has active or has used in Conekta | [optional] 
