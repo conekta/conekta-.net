@@ -403,6 +403,22 @@ public class OrdersApiTests
         Assert.Equal(40000, response.Amount);
     }
     /// <summary>
+    ///     Test OrdersCreateCaptureWithBody
+    /// </summary>
+    [Fact]
+    public void OrdersCreateCaptureWithBodyTest()
+    {
+        var request = new OrderCaptureRequest
+        {
+            Amount = 40000,
+        };
+        var response = _instance.OrdersCreateCapture("ord_2tVKoTd79XK1GqJmm", "en", request);
+
+        Assert.IsType<OrderResponse>(response);
+        Assert.Equal("paid", response.PaymentStatus);
+        Assert.Equal(40000, response.Amount);
+    }
+    /// <summary>
     ///     Test UpdateOrder
     /// </summary>
     [Fact]

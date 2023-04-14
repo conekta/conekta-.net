@@ -91,6 +91,7 @@ docs/LogResponse.md
 docs/LogsApi.md
 docs/LogsResponse.md
 docs/LogsResponseData.md
+docs/OrderCaptureRequest.md
 docs/OrderDiscountLinesRequest.md
 docs/OrderRefundRequest.md
 docs/OrderRequest.md
@@ -289,6 +290,7 @@ src/Conekta.net/Model/GetWebhooksResponseAllOf.cs
 src/Conekta.net/Model/LogResponse.cs
 src/Conekta.net/Model/LogsResponse.cs
 src/Conekta.net/Model/LogsResponseData.cs
+src/Conekta.net/Model/OrderCaptureRequest.cs
 src/Conekta.net/Model/OrderDiscountLinesRequest.cs
 src/Conekta.net/Model/OrderRefundRequest.cs
 src/Conekta.net/Model/OrderRequest.cs

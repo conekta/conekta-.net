@@ -144,9 +144,10 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="orderCaptureRequest">requested fields for capture order (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OrderResponse</returns>
-        OrderResponse OrdersCreateCapture(string id, string acceptLanguage = default(string), int operationIndex = 0);
+        OrderResponse OrdersCreateCapture(string id, string acceptLanguage = default(string), OrderCaptureRequest orderCaptureRequest = default(OrderCaptureRequest), int operationIndex = 0);
 
         /// <summary>
         /// Capture Order
@@ -157,9 +158,10 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="orderCaptureRequest">requested fields for capture order (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OrderResponse</returns>
-        ApiResponse<OrderResponse> OrdersCreateCaptureWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<OrderResponse> OrdersCreateCaptureWithHttpInfo(string id, string acceptLanguage = default(string), OrderCaptureRequest orderCaptureRequest = default(OrderCaptureRequest), int operationIndex = 0);
         /// <summary>
         /// Update Order
         /// </summary>
@@ -321,10 +323,11 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="orderCaptureRequest">requested fields for capture order (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OrderResponse</returns>
-        System.Threading.Tasks.Task<OrderResponse> OrdersCreateCaptureAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<OrderResponse> OrdersCreateCaptureAsync(string id, string acceptLanguage = default(string), OrderCaptureRequest orderCaptureRequest = default(OrderCaptureRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Capture Order
@@ -335,10 +338,11 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="orderCaptureRequest">requested fields for capture order (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrderResponse>> OrdersCreateCaptureWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<OrderResponse>> OrdersCreateCaptureWithHttpInfoAsync(string id, string acceptLanguage = default(string), OrderCaptureRequest orderCaptureRequest = default(OrderCaptureRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update Order
         /// </summary>
@@ -1218,11 +1222,12 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="orderCaptureRequest">requested fields for capture order (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OrderResponse</returns>
-        public OrderResponse OrdersCreateCapture(string id, string acceptLanguage = default(string), int operationIndex = 0)
+        public OrderResponse OrdersCreateCapture(string id, string acceptLanguage = default(string), OrderCaptureRequest orderCaptureRequest = default(OrderCaptureRequest), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<OrderResponse> localVarResponse = OrdersCreateCaptureWithHttpInfo(id, acceptLanguage);
+            Conekta.net.Client.ApiResponse<OrderResponse> localVarResponse = OrdersCreateCaptureWithHttpInfo(id, acceptLanguage, orderCaptureRequest);
             return localVarResponse.Data;
         }
 
@@ -1232,9 +1237,10 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="orderCaptureRequest">requested fields for capture order (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OrderResponse</returns>
-        public Conekta.net.Client.ApiResponse<OrderResponse> OrdersCreateCaptureWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<OrderResponse> OrdersCreateCaptureWithHttpInfo(string id, string acceptLanguage = default(string), OrderCaptureRequest orderCaptureRequest = default(OrderCaptureRequest), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1245,6 +1251,7 @@ namespace Conekta.net.Api
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json"
             };
 
             // to determine the Accept header
@@ -1269,6 +1276,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
+            localVarRequestOptions.Data = orderCaptureRequest;
 
             localVarRequestOptions.Operation = "OrdersApi.OrdersCreateCapture";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1300,12 +1308,13 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="orderCaptureRequest">requested fields for capture order (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OrderResponse</returns>
-        public async System.Threading.Tasks.Task<OrderResponse> OrdersCreateCaptureAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OrderResponse> OrdersCreateCaptureAsync(string id, string acceptLanguage = default(string), OrderCaptureRequest orderCaptureRequest = default(OrderCaptureRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<OrderResponse> localVarResponse = await OrdersCreateCaptureWithHttpInfoAsync(id, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<OrderResponse> localVarResponse = await OrdersCreateCaptureWithHttpInfoAsync(id, acceptLanguage, orderCaptureRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1315,10 +1324,11 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="orderCaptureRequest">requested fields for capture order (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OrderResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<OrderResponse>> OrdersCreateCaptureWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<OrderResponse>> OrdersCreateCaptureWithHttpInfoAsync(string id, string acceptLanguage = default(string), OrderCaptureRequest orderCaptureRequest = default(OrderCaptureRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1330,6 +1340,7 @@ namespace Conekta.net.Api
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json"
             };
 
             // to determine the Accept header
@@ -1354,6 +1365,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
+            localVarRequestOptions.Data = orderCaptureRequest;
 
             localVarRequestOptions.Operation = "OrdersApi.OrdersCreateCapture";
             localVarRequestOptions.OperationIndex = operationIndex;

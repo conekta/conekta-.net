@@ -2202,6 +2202,12 @@ paths:
           - es
           - en
           type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/order_capture_request'
+        description: requested fields for capture order
       responses:
         "200":
           content:
@@ -9742,6 +9748,19 @@ components:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/page'
       title: get_orders_response
+    order_capture_request:
+      properties:
+        amount:
+          description: Amount to capture
+          example: 500
+          format: int64
+          minimum: 1
+          nullable: false
+          type: integer
+      required:
+      - amount
+      title: order_capture_request
+      type: object
     orderRefund_request:
       properties:
         amount:

@@ -418,7 +418,7 @@ catch (ApiException e)
 
 <a name="orderscreatecapture"></a>
 # **OrdersCreateCapture**
-> OrderResponse OrdersCreateCapture (string id, string acceptLanguage = null)
+> OrderResponse OrdersCreateCapture (string id, string acceptLanguage = null, OrderCaptureRequest orderCaptureRequest = null)
 
 Capture Order
 
@@ -446,11 +446,12 @@ namespace Example
             var apiInstance = new OrdersApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var orderCaptureRequest = new OrderCaptureRequest(); // OrderCaptureRequest | requested fields for capture order (optional) 
 
             try
             {
                 // Capture Order
-                OrderResponse result = apiInstance.OrdersCreateCapture(id, acceptLanguage);
+                OrderResponse result = apiInstance.OrdersCreateCapture(id, acceptLanguage, orderCaptureRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -471,7 +472,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Capture Order
-    ApiResponse<OrderResponse> response = apiInstance.OrdersCreateCaptureWithHttpInfo(id, acceptLanguage);
+    ApiResponse<OrderResponse> response = apiInstance.OrdersCreateCaptureWithHttpInfo(id, acceptLanguage, orderCaptureRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -490,6 +491,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **orderCaptureRequest** | [**OrderCaptureRequest**](OrderCaptureRequest.md) | requested fields for capture order | [optional]  |
 
 ### Return type
 
@@ -501,7 +503,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/vnd.conekta-v2.1.0+json
 
 
