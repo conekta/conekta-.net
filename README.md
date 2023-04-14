@@ -51,7 +51,7 @@ var customer = new Customer(
     phone: "+573143159063",
     email: "test@conekta.com"
 );
-CustomerResponse customerResponse = apiInstance.CreateCustomer(customer);
+CustomerResponse customerResponse = customerApi.CreateCustomer(customer);
 // Create OrderRequest
 
 var lineItems = new List<LineItems>{new (
@@ -95,7 +95,7 @@ namespace Example
 
             var apiInstance = new PlansApi(config);
             var planRequest = new PlanRequest(); // PlanRequest | requested field for plan
-            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var acceptLanguage = "es";  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {

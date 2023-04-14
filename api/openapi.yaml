@@ -8195,8 +8195,8 @@ components:
         livemode:
           type: boolean
         metadata:
-          additionalProperties:
-            type: object
+          additionalProperties: true
+          maxProperties: 100
           type: object
         object:
           example: order
@@ -10245,8 +10245,8 @@ components:
           example: false
           type: boolean
         metadata:
-          additionalProperties:
-            type: object
+          additionalProperties: true
+          maxProperties: 100
           type: object
         monthly_installments_enabled:
           example: false

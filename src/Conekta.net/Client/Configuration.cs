@@ -33,7 +33,7 @@ namespace Conekta.net.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "6.0.0-alpha-2";
+        public const string Version = "6.0.0-alpha-3";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -110,7 +110,7 @@ namespace Conekta.net.Client
         public Configuration()
         {
             Proxy = null;
-            UserAgent = "Conekta/v2 .NetBindings/6.0.0-alpha-1";
+            UserAgent = "Conekta/v2 .NetBindings/" + Version;
             BasePath = "https://api.conekta.io";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -518,7 +518,7 @@ namespace Conekta.net.Client
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: 2.1.0\n";
-            report += "    SDK Package Version: 6.0.0-alpha-2\n";
+            report += "    SDK Package Version: 6.0.0-alpha-3\n";
 
             return report;
         }

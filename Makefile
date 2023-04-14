@@ -2,4 +2,7 @@ test:
 	dotnet test
 
 publish:
-	dotnet pack -c Release
+	make clean && dotnet pack -c Release
+
+clean:
+	dotnet clean

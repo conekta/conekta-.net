@@ -12,11 +12,11 @@
     <Description>This is a .net library that allows interaction with https://api.conekta.io API.</Description>
     <Copyright>Conekta</Copyright>
     <RootNamespace>Conekta.net</RootNamespace>
-    <Version>6.0.0-alpha-2</Version>
+    <Version>6.0.0-alpha-3</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Conekta.net.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/conekta/conekta-.net.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>Support new version based on Openapi</PackageReleaseNotes>
+    <PackageReleaseNotes>Fix issues, Rename models, Clean unused models</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
