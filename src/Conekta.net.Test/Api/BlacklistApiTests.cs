@@ -63,7 +63,8 @@ namespace Conekta.net.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //CreateRiskRulesData createRiskRulesData = null;
-            //instance.CreateNewBlacklistRule(createRiskRulesData);
+            //var response = instance.CreateNewBlacklistRule(createRiskRulesData);
+            //Assert.IsType<BlacklistRuleResponse>(response);
         }
 
         /// <summary>
@@ -73,7 +74,8 @@ namespace Conekta.net.Test.Api
         public void DeleteBlacklistRuleTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //instance.DeleteBlacklistRule();
+            //var response = instance.DeleteBlacklistRule();
+            //Assert.IsType<DeletedBlacklistRuleResponse>(response);
         }
 
         /// <summary>

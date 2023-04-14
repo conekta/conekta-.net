@@ -21,7 +21,58 @@ paths:
       operationId: DeleteBlacklistRule
       responses:
         "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/deleted_blacklist_rule_response'
           description: successfully deleted rule
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
       summary: Delete a blacklisted rule
       tags:
       - Blacklist
@@ -35,6 +86,37 @@ paths:
               schema:
                 $ref: '#/components/schemas/risk_rules_list'
           description: All the rules
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
       summary: Get a list of blacklisted rules
       tags:
       - Blacklist
@@ -42,11 +124,17 @@ paths:
       operationId: CreateNewBlacklistRule
       requestBody:
         content:
-          application/vnd.conekta-v2.1.0+json:
+          application/json:
             schema:
               $ref: '#/components/schemas/create_risk_rules_data'
+        description: requested field for blacklist rule
+        required: true
       responses:
         "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/blacklist_rule_response'
           description: successfully registered rule
       summary: Create a blacklisted rule
       tags:
@@ -7570,6 +7658,22 @@ components:
           schema:
             $ref: '#/components/schemas/error'
       description: authentication error
+    "500":
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          example:
+            details:
+            - debug_message: There was a runtime error and Conekta engineers have
+                been notified.
+              message: There was a runtime error and Conekta engineers have been notified.
+              param: null
+              code: conekta.errors.api.system.general_failure
+            object: error
+            type: api_error
+            log_id: 641b6f2b3cd9a50001515098
+          schema:
+            $ref: '#/components/schemas/error'
+      description: internal server error
     "404":
       content:
         application/vnd.conekta-v2.1.0+json:
@@ -7603,22 +7707,6 @@ components:
           schema:
             $ref: '#/components/schemas/error'
       description: Precondition Required
-    "500":
-      content:
-        application/vnd.conekta-v2.1.0+json:
-          example:
-            details:
-            - debug_message: There was a runtime error and Conekta engineers have
-                been notified.
-              message: There was a runtime error and Conekta engineers have been notified.
-              param: null
-              code: conekta.errors.api.system.general_failure
-            object: error
-            type: api_error
-            log_id: 641b6f2b3cd9a50001515098
-          schema:
-            $ref: '#/components/schemas/error'
-      description: internal server error
     "402":
       content:
         application/vnd.conekta-v2.1.0+json:
@@ -7674,6 +7762,12 @@ components:
             $ref: '#/components/schemas/risk_rules_list_data_inner'
           type: array
       type: object
+    error:
+      allOf:
+      - $ref: '#/components/schemas/details'
+      - $ref: '#/components/schemas/error_allOf'
+      description: err model
+      title: error
     create_risk_rules_data:
       properties:
         description:
@@ -7751,12 +7845,6 @@ components:
           type: string
       title: charges_data_response
       type: object
-    error:
-      allOf:
-      - $ref: '#/components/schemas/details'
-      - $ref: '#/components/schemas/error_allOf'
-      description: err model
-      title: error
     customer_response:
       description: customer response
       properties:
@@ -9277,6 +9365,13 @@ components:
       - url
       title: update_webhook
       type: object
+    details:
+      properties:
+        details:
+          items:
+            $ref: '#/components/schemas/details_error'
+          type: array
+      type: object
     payment_method_cash:
       allOf:
       - $ref: '#/components/schemas/payment_method'
@@ -9289,13 +9384,6 @@ components:
       allOf:
       - $ref: '#/components/schemas/payment_method'
       - $ref: '#/components/schemas/charge_data_payment_method_bank_transfer_response'
-    details:
-      properties:
-        details:
-          items:
-            $ref: '#/components/schemas/details_error'
-          type: array
-      type: object
     customer_address:
       properties:
         street1:
@@ -9534,6 +9622,38 @@ components:
           type: string
       required:
       - object
+      type: object
+    blacklist_rule_response:
+      properties:
+        id:
+          example: 2fw8EWJusiRrxdPzT
+          type: string
+        type:
+          example: email
+          type: string
+        value:
+          example: email@example.com
+          type: string
+        description:
+          example: secure customer example@example.com
+          type: string
+      title: blacklist_rule_response
+      type: object
+    deleted_blacklist_rule_response:
+      properties:
+        id:
+          example: 2fw8EWJusiRrxdPzT
+          type: string
+        type:
+          example: email
+          type: string
+        value:
+          example: email@example.com
+          type: string
+        description:
+          example: secure customer example@example.com
+          type: string
+      title: deleted_blacklist_rule_response
       type: object
     customers_response_allOf:
       properties:
@@ -9775,6 +9895,21 @@ components:
           example: secure customer example@example.com
           type: string
       type: object
+    error_allOf:
+      properties:
+        log_id:
+          description: log id
+          example: 507f1f77bcf86cd799439011
+          nullable: true
+          type: string
+        type:
+          example: authentication_error
+          type: string
+        object:
+          example: error
+          type: string
+      type: object
+      example: null
     charge_order_response_channel:
       properties:
         segment:
@@ -9801,21 +9936,6 @@ components:
       - $ref: '#/components/schemas/payment_method_cash'
       - $ref: '#/components/schemas/payment_method_card'
       - $ref: '#/components/schemas/payment_method_bank_transfer'
-    error_allOf:
-      properties:
-        log_id:
-          description: log id
-          example: 507f1f77bcf86cd799439011
-          nullable: true
-          type: string
-        type:
-          example: authentication_error
-          type: string
-        object:
-          example: error
-          type: string
-      type: object
-      example: null
     customer_antifraud_info_response:
       nullable: true
       properties:
@@ -10504,6 +10624,22 @@ components:
           nullable: true
           type: boolean
       type: object
+    details_error:
+      properties:
+        code:
+          example: conekta.errors.authentication.missing_key
+          type: string
+        param:
+          nullable: true
+          type: string
+        message:
+          example: Acceso no autorizado.
+          type: string
+        debug_message:
+          example: Please include your access key in your request.
+          type: string
+      title: details_error
+      type: object
     charge_data_payment_method_cash_response:
       description: use for cash responses
       properties:
@@ -10629,22 +10765,6 @@ components:
       title: charge_data_payment_method_bank_transfer_response
       type: object
       example: null
-    details_error:
-      properties:
-        code:
-          example: conekta.errors.authentication.missing_key
-          type: string
-        param:
-          nullable: true
-          type: string
-        message:
-          example: Acceso no autorizado.
-          type: string
-        debug_message:
-          example: Please include your access key in your request.
-          type: string
-      title: details_error
-      type: object
     charge_response_refunds_data:
       properties:
         object:

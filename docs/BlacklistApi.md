@@ -10,7 +10,7 @@ All URIs are relative to *https://api.conekta.io*
 
 <a name="createnewblacklistrule"></a>
 # **CreateNewBlacklistRule**
-> void CreateNewBlacklistRule (CreateRiskRulesData createRiskRulesData = null)
+> BlacklistRuleResponse CreateNewBlacklistRule (CreateRiskRulesData createRiskRulesData)
 
 Create a blacklisted rule
 
@@ -34,12 +34,13 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new BlacklistApi(config);
-            var createRiskRulesData = new CreateRiskRulesData(); // CreateRiskRulesData |  (optional) 
+            var createRiskRulesData = new CreateRiskRulesData(); // CreateRiskRulesData | requested field for blacklist rule
 
             try
             {
                 // Create a blacklisted rule
-                apiInstance.CreateNewBlacklistRule(createRiskRulesData);
+                BlacklistRuleResponse result = apiInstance.CreateNewBlacklistRule(createRiskRulesData);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -59,7 +60,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create a blacklisted rule
-    apiInstance.CreateNewBlacklistRuleWithHttpInfo(createRiskRulesData);
+    ApiResponse<BlacklistRuleResponse> response = apiInstance.CreateNewBlacklistRuleWithHttpInfo(createRiskRulesData);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -73,11 +77,11 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **createRiskRulesData** | [**CreateRiskRulesData**](CreateRiskRulesData.md) |  | [optional]  |
+| **createRiskRulesData** | [**CreateRiskRulesData**](CreateRiskRulesData.md) | requested field for blacklist rule |  |
 
 ### Return type
 
-void (empty response body)
+[**BlacklistRuleResponse**](BlacklistRuleResponse.md)
 
 ### Authorization
 
@@ -85,8 +89,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/vnd.conekta-v2.1.0+json
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 
 
 ### HTTP response details
@@ -98,7 +102,7 @@ void (empty response body)
 
 <a name="deleteblacklistrule"></a>
 # **DeleteBlacklistRule**
-> void DeleteBlacklistRule ()
+> DeletedBlacklistRuleResponse DeleteBlacklistRule ()
 
 Delete a blacklisted rule
 
@@ -126,7 +130,8 @@ namespace Example
             try
             {
                 // Delete a blacklisted rule
-                apiInstance.DeleteBlacklistRule();
+                DeletedBlacklistRuleResponse result = apiInstance.DeleteBlacklistRule();
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -146,7 +151,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete a blacklisted rule
-    apiInstance.DeleteBlacklistRuleWithHttpInfo();
+    ApiResponse<DeletedBlacklistRuleResponse> response = apiInstance.DeleteBlacklistRuleWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -160,7 +168,7 @@ catch (ApiException e)
 This endpoint does not need any parameter.
 ### Return type
 
-void (empty response body)
+[**DeletedBlacklistRuleResponse**](DeletedBlacklistRuleResponse.md)
 
 ### Authorization
 
@@ -169,13 +177,16 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | successfully deleted rule |  -  |
+| **401** | authentication error |  -  |
+| **404** | not found entity |  -  |
+| **500** | internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -265,6 +276,8 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | All the rules |  -  |
+| **401** | authentication error |  -  |
+| **500** | internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

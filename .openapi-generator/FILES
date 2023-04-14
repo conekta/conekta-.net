@@ -7,6 +7,7 @@ VERSION
 api/openapi.yaml
 conekta.png
 docs/BlacklistApi.md
+docs/BlacklistRuleResponse.md
 docs/ChargeDataPaymentMethodBankTransferResponse.md
 docs/ChargeDataPaymentMethodCardResponse.md
 docs/ChargeDataPaymentMethodCashResponse.md
@@ -64,6 +65,7 @@ docs/CustomerUpdateShippingContacts.md
 docs/CustomersApi.md
 docs/CustomersResponse.md
 docs/CustomersResponseAllOf.md
+docs/DeletedBlacklistRuleResponse.md
 docs/Details.md
 docs/DetailsError.md
 docs/DiscountLinesDataResponse.md
@@ -172,6 +174,8 @@ docs/WebhookResponse.md
 docs/WebhookUpdateRequest.md
 docs/WebhooksApi.md
 docs/WhitelistsApi.md
+src/Conekta.net.Test/Api/BlacklistApiTests.cs
+src/Conekta.net.Test/Api/WhitelistsApiTests.cs
 src/Conekta.net.Test/Conekta.net.Test.csproj
 src/Conekta.net/Api/BlacklistApi.cs
 src/Conekta.net/Api/ChargesApi.cs
@@ -208,6 +212,7 @@ src/Conekta.net/Client/RequestOptions.cs
 src/Conekta.net/Client/RetryConfiguration.cs
 src/Conekta.net/Conekta.net.csproj
 src/Conekta.net/Model/AbstractOpenAPISchema.cs
+src/Conekta.net/Model/BlacklistRuleResponse.cs
 src/Conekta.net/Model/ChargeDataPaymentMethodBankTransferResponse.cs
 src/Conekta.net/Model/ChargeDataPaymentMethodCardResponse.cs
 src/Conekta.net/Model/ChargeDataPaymentMethodCashResponse.cs
@@ -263,6 +268,7 @@ src/Conekta.net/Model/CustomerUpdateFiscalEntitiesRequest.cs
 src/Conekta.net/Model/CustomerUpdateShippingContacts.cs
 src/Conekta.net/Model/CustomersResponse.cs
 src/Conekta.net/Model/CustomersResponseAllOf.cs
+src/Conekta.net/Model/DeletedBlacklistRuleResponse.cs
 src/Conekta.net/Model/Details.cs
 src/Conekta.net/Model/DetailsError.cs
 src/Conekta.net/Model/DiscountLinesDataResponse.cs
