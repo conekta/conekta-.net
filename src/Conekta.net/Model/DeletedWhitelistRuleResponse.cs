@@ -27,24 +27,22 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// BlacklistRuleResponse
+    /// DeletedWhitelistRuleResponse
     /// </summary>
-    [DataContract(Name = "blacklist_rule_response")]
-    public partial class BlacklistRuleResponse : IEquatable<BlacklistRuleResponse>, IValidatableObject
+    [DataContract(Name = "deleted_whitelist_rule_response")]
+    public partial class DeletedWhitelistRuleResponse : IEquatable<DeletedWhitelistRuleResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="BlacklistRuleResponse" /> class.
+        /// Initializes a new instance of the <see cref="DeletedWhitelistRuleResponse" /> class.
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="type">type.</param>
-        /// <param name="livemode">livemode.</param>
         /// <param name="value">value.</param>
         /// <param name="description">description.</param>
-        public BlacklistRuleResponse(string id = default(string), string type = default(string), bool livemode = default(bool), string value = default(string), string description = default(string))
+        public DeletedWhitelistRuleResponse(string id = default(string), string type = default(string), string value = default(string), string description = default(string))
         {
             this.Id = id;
             this.Type = type;
-            this.Livemode = livemode;
             this.Value = value;
             this.Description = description;
         }
@@ -62,13 +60,6 @@ namespace Conekta.net.Model
         /// <example>&quot;email&quot;</example>
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Livemode
-        /// </summary>
-        /// <example>true</example>
-        [DataMember(Name = "livemode", EmitDefaultValue = true)]
-        public bool Livemode { get; set; }
 
         /// <summary>
         /// Gets or Sets Value
@@ -91,10 +82,9 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class BlacklistRuleResponse {\n");
+            sb.Append("class DeletedWhitelistRuleResponse {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  Livemode: ").Append(Livemode).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("}\n");
@@ -117,15 +107,15 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as BlacklistRuleResponse);
+            return this.Equals(input as DeletedWhitelistRuleResponse);
         }
 
         /// <summary>
-        /// Returns true if BlacklistRuleResponse instances are equal
+        /// Returns true if DeletedWhitelistRuleResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of BlacklistRuleResponse to be compared</param>
+        /// <param name="input">Instance of DeletedWhitelistRuleResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BlacklistRuleResponse input)
+        public bool Equals(DeletedWhitelistRuleResponse input)
         {
             if (input == null)
             {
@@ -141,10 +131,6 @@ namespace Conekta.net.Model
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Livemode == input.Livemode ||
-                    this.Livemode.Equals(input.Livemode)
                 ) && 
                 (
                     this.Value == input.Value ||
@@ -175,7 +161,6 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Livemode.GetHashCode();
                 if (this.Value != null)
                 {
                     hashCode = (hashCode * 59) + this.Value.GetHashCode();

@@ -6,7 +6,7 @@ LICENSE
 VERSION
 api/openapi.yaml
 conekta.png
-docs/BlacklistApi.md
+docs/AntifraudApi.md
 docs/BlacklistRuleResponse.md
 docs/ChargeDataPaymentMethodBankTransferResponse.md
 docs/ChargeDataPaymentMethodCardResponse.md
@@ -66,6 +66,7 @@ docs/CustomersApi.md
 docs/CustomersResponse.md
 docs/CustomersResponseAllOf.md
 docs/DeletedBlacklistRuleResponse.md
+docs/DeletedWhitelistRuleResponse.md
 docs/Details.md
 docs/DetailsError.md
 docs/DiscountLinesDataResponse.md
@@ -174,9 +175,8 @@ docs/WebhookRequest.md
 docs/WebhookResponse.md
 docs/WebhookUpdateRequest.md
 docs/WebhooksApi.md
-docs/WhitelistsApi.md
 src/Conekta.net.Test/Conekta.net.Test.csproj
-src/Conekta.net/Api/BlacklistApi.cs
+src/Conekta.net/Api/AntifraudApi.cs
 src/Conekta.net/Api/ChargesApi.cs
 src/Conekta.net/Api/CustomersApi.cs
 src/Conekta.net/Api/DiscountsApi.cs
@@ -192,7 +192,6 @@ src/Conekta.net/Api/ShippingsApi.cs
 src/Conekta.net/Api/SubscriptionsApi.cs
 src/Conekta.net/Api/TaxesApi.cs
 src/Conekta.net/Api/WebhooksApi.cs
-src/Conekta.net/Api/WhitelistsApi.cs
 src/Conekta.net/Client/ApiClient.cs
 src/Conekta.net/Client/ApiException.cs
 src/Conekta.net/Client/ApiResponse.cs
@@ -268,6 +267,7 @@ src/Conekta.net/Model/CustomerUpdateShippingContacts.cs
 src/Conekta.net/Model/CustomersResponse.cs
 src/Conekta.net/Model/CustomersResponseAllOf.cs
 src/Conekta.net/Model/DeletedBlacklistRuleResponse.cs
+src/Conekta.net/Model/DeletedWhitelistRuleResponse.cs
 src/Conekta.net/Model/Details.cs
 src/Conekta.net/Model/DetailsError.cs
 src/Conekta.net/Model/DiscountLinesDataResponse.cs

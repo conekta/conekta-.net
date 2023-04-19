@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] 
 **Type** | **string** |  | [optional] 
+**Livemode** | **bool** |  | [optional] 
 **Value** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 
 

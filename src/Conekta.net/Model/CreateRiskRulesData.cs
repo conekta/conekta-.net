@@ -37,11 +37,13 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="description">description.</param>
         /// <param name="type">type.</param>
+        /// <param name="livemode">livemode.</param>
         /// <param name="value">value.</param>
-        public CreateRiskRulesData(string description = default(string), string type = default(string), string value = default(string))
+        public CreateRiskRulesData(string description = default(string), string type = default(string), bool livemode = default(bool), string value = default(string))
         {
             this.Description = description;
             this.Type = type;
+            this.Livemode = livemode;
             this.Value = value;
         }
 
@@ -60,6 +62,13 @@ namespace Conekta.net.Model
         public string Type { get; set; }
 
         /// <summary>
+        /// Gets or Sets Livemode
+        /// </summary>
+        /// <example>false</example>
+        [DataMember(Name = "livemode", EmitDefaultValue = true)]
+        public bool Livemode { get; set; }
+
+        /// <summary>
         /// Gets or Sets Value
         /// </summary>
         /// <example>&quot;email@example.com | 818081808180 | src_2qUCNd5AyQqfPMBuV&quot;</example>
@@ -76,6 +85,7 @@ namespace Conekta.net.Model
             sb.Append("class CreateRiskRulesData {\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Livemode: ").Append(Livemode).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -123,6 +133,10 @@ namespace Conekta.net.Model
                     this.Type.Equals(input.Type))
                 ) && 
                 (
+                    this.Livemode == input.Livemode ||
+                    this.Livemode.Equals(input.Livemode)
+                ) && 
+                (
                     this.Value == input.Value ||
                     (this.Value != null &&
                     this.Value.Equals(input.Value))
@@ -146,6 +160,7 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.Livemode.GetHashCode();
                 if (this.Value != null)
                 {
                     hashCode = (hashCode * 59) + this.Value.GetHashCode();

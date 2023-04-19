@@ -41,8 +41,9 @@ namespace Conekta.net.Model
         /// Initializes a new instance of the <see cref="OrderRefundRequest" /> class.
         /// </summary>
         /// <param name="amount">amount (required).</param>
+        /// <param name="expiresAt">expiresAt.</param>
         /// <param name="reason">reason (required).</param>
-        public OrderRefundRequest(int amount = default(int), string reason = default(string))
+        public OrderRefundRequest(int amount = default(int), long? expiresAt = default(long?), string reason = default(string))
         {
             this.Amount = amount;
             // to ensure "reason" is required (not null)
@@ -51,6 +52,7 @@ namespace Conekta.net.Model
                 throw new ArgumentNullException("reason is a required property for OrderRefundRequest and cannot be null");
             }
             this.Reason = reason;
+            this.ExpiresAt = expiresAt;
         }
 
         /// <summary>
@@ -59,6 +61,13 @@ namespace Conekta.net.Model
         /// <example>500</example>
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
         public int Amount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ExpiresAt
+        /// </summary>
+        /// <example>1553273553</example>
+        [DataMember(Name = "expires_at", EmitDefaultValue = true)]
+        public long? ExpiresAt { get; set; }
 
         /// <summary>
         /// Gets or Sets Reason
@@ -76,6 +85,7 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class OrderRefundRequest {\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
+            sb.Append("  ExpiresAt: ").Append(ExpiresAt).Append("\n");
             sb.Append("  Reason: ").Append(Reason).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -117,6 +127,11 @@ namespace Conekta.net.Model
                     this.Amount.Equals(input.Amount)
                 ) && 
                 (
+                    this.ExpiresAt == input.ExpiresAt ||
+                    (this.ExpiresAt != null &&
+                    this.ExpiresAt.Equals(input.ExpiresAt))
+                ) && 
+                (
                     this.Reason == input.Reason ||
                     (this.Reason != null &&
                     this.Reason.Equals(input.Reason))
@@ -133,6 +148,10 @@ namespace Conekta.net.Model
             {
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.Amount.GetHashCode();
+                if (this.ExpiresAt != null)
+                {
+                    hashCode = (hashCode * 59) + this.ExpiresAt.GetHashCode();
+                }
                 if (this.Reason != null)
                 {
                     hashCode = (hashCode * 59) + this.Reason.GetHashCode();

@@ -71,7 +71,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        /// <example>&quot;secure customer example@example.com&quot;</example>
+        /// <example>&quot;banned customer example@example.com&quot;</example>
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 

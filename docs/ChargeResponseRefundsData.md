@@ -4,11 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Object** | **string** |  | 
 **Amount** | **long** |  | 
-**Id** | **string** |  | 
-**CreatedAt** | **long** |  | 
 **AuthCode** | **string** |  | [optional] 
+**CreatedAt** | **long** |  | 
+**ExpiresAt** | **long** | refund expiration date | [optional] 
+**Id** | **string** |  | 
+**Object** | **string** |  | 
+**Status** | **string** | refund status | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

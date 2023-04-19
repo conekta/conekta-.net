@@ -40,36 +40,33 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ChargeResponseRefundsData" /> class.
         /// </summary>
-        /// <param name="_object">_object (required).</param>
         /// <param name="amount">amount (required).</param>
-        /// <param name="id">id (required).</param>
-        /// <param name="createdAt">createdAt (required).</param>
         /// <param name="authCode">authCode.</param>
-        public ChargeResponseRefundsData(string _object = default(string), long amount = default(long), string id = default(string), long createdAt = default(long), string authCode = default(string))
+        /// <param name="createdAt">createdAt (required).</param>
+        /// <param name="expiresAt">refund expiration date.</param>
+        /// <param name="id">id (required).</param>
+        /// <param name="_object">_object (required).</param>
+        /// <param name="status">refund status.</param>
+        public ChargeResponseRefundsData(long amount = default(long), string authCode = default(string), long createdAt = default(long), long expiresAt = default(long), string id = default(string), string _object = default(string), string status = default(string))
         {
-            // to ensure "_object" is required (not null)
-            if (_object == null)
-            {
-                throw new ArgumentNullException("_object is a required property for ChargeResponseRefundsData and cannot be null");
-            }
-            this.Object = _object;
             this.Amount = amount;
+            this.CreatedAt = createdAt;
             // to ensure "id" is required (not null)
             if (id == null)
             {
                 throw new ArgumentNullException("id is a required property for ChargeResponseRefundsData and cannot be null");
             }
             this.Id = id;
-            this.CreatedAt = createdAt;
+            // to ensure "_object" is required (not null)
+            if (_object == null)
+            {
+                throw new ArgumentNullException("_object is a required property for ChargeResponseRefundsData and cannot be null");
+            }
+            this.Object = _object;
             this.AuthCode = authCode;
+            this.ExpiresAt = expiresAt;
+            this.Status = status;
         }
-
-        /// <summary>
-        /// Gets or Sets Object
-        /// </summary>
-        /// <example>&quot;refund&quot;</example>
-        [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets Amount
@@ -79,11 +76,11 @@ namespace Conekta.net.Model
         public long Amount { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or Sets AuthCode
         /// </summary>
-        /// <example>&quot;6407b5bee1329a000175ba11&quot;</example>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
-        public string Id { get; set; }
+        /// <example>&quot;867372&quot;</example>
+        [DataMember(Name = "auth_code", EmitDefaultValue = false)]
+        public string AuthCode { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt
@@ -93,11 +90,34 @@ namespace Conekta.net.Model
         public long CreatedAt { get; set; }
 
         /// <summary>
-        /// Gets or Sets AuthCode
+        /// refund expiration date
         /// </summary>
-        /// <example>&quot;867372&quot;</example>
-        [DataMember(Name = "auth_code", EmitDefaultValue = false)]
-        public string AuthCode { get; set; }
+        /// <value>refund expiration date</value>
+        /// <example>1678226878</example>
+        [DataMember(Name = "expires_at", EmitDefaultValue = false)]
+        public long ExpiresAt { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Id
+        /// </summary>
+        /// <example>&quot;6407b5bee1329a000175ba11&quot;</example>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Object
+        /// </summary>
+        /// <example>&quot;refund&quot;</example>
+        [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
+        public string Object { get; set; }
+
+        /// <summary>
+        /// refund status
+        /// </summary>
+        /// <value>refund status</value>
+        /// <example>&quot;pending&quot;</example>
+        [DataMember(Name = "status", EmitDefaultValue = false)]
+        public string Status { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -107,11 +127,13 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class ChargeResponseRefundsData {\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  AuthCode: ").Append(AuthCode).Append("\n");
+            sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  ExpiresAt: ").Append(ExpiresAt).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -148,13 +170,21 @@ namespace Conekta.net.Model
             }
             return 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
-                ) && 
-                (
                     this.Amount == input.Amount ||
                     this.Amount.Equals(input.Amount)
+                ) && 
+                (
+                    this.AuthCode == input.AuthCode ||
+                    (this.AuthCode != null &&
+                    this.AuthCode.Equals(input.AuthCode))
+                ) && 
+                (
+                    this.CreatedAt == input.CreatedAt ||
+                    this.CreatedAt.Equals(input.CreatedAt)
+                ) && 
+                (
+                    this.ExpiresAt == input.ExpiresAt ||
+                    this.ExpiresAt.Equals(input.ExpiresAt)
                 ) && 
                 (
                     this.Id == input.Id ||
@@ -162,13 +192,14 @@ namespace Conekta.net.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.CreatedAt == input.CreatedAt ||
-                    this.CreatedAt.Equals(input.CreatedAt)
+                    this.Object == input.Object ||
+                    (this.Object != null &&
+                    this.Object.Equals(input.Object))
                 ) && 
                 (
-                    this.AuthCode == input.AuthCode ||
-                    (this.AuthCode != null &&
-                    this.AuthCode.Equals(input.AuthCode))
+                    this.Status == input.Status ||
+                    (this.Status != null &&
+                    this.Status.Equals(input.Status))
                 );
         }
 
@@ -181,19 +212,24 @@ namespace Conekta.net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Object != null)
-                {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
-                }
                 hashCode = (hashCode * 59) + this.Amount.GetHashCode();
+                if (this.AuthCode != null)
+                {
+                    hashCode = (hashCode * 59) + this.AuthCode.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
+                hashCode = (hashCode * 59) + this.ExpiresAt.GetHashCode();
                 if (this.Id != null)
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
-                if (this.AuthCode != null)
+                if (this.Object != null)
                 {
-                    hashCode = (hashCode * 59) + this.AuthCode.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                }
+                if (this.Status != null)
+                {
+                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
                 }
                 return hashCode;
             }
