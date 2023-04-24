@@ -27,51 +27,55 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// RiskRulesListDataInner
+    /// WhitelistlistRuleResponse
     /// </summary>
-    [DataContract(Name = "risk_rules_list_data_inner")]
-    public partial class RiskRulesListDataInner : IEquatable<RiskRulesListDataInner>, IValidatableObject
+    [DataContract(Name = "whitelistlist_rule_response")]
+    public partial class WhitelistlistRuleResponse : IEquatable<WhitelistlistRuleResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="RiskRulesListDataInner" /> class.
+        /// Initializes a new instance of the <see cref="WhitelistlistRuleResponse" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="type">type.</param>
-        /// <param name="value">value.</param>
-        /// <param name="description">description.</param>
-        public RiskRulesListDataInner(string id = default(string), string type = default(string), string value = default(string), string description = default(string))
+        /// <param name="id">Whitelist rule id.</param>
+        /// <param name="field">field used for whitelists rule.</param>
+        /// <param name="value">value used for whitelists rule.</param>
+        /// <param name="description">use an description for whitelisted rule.</param>
+        public WhitelistlistRuleResponse(string id = default(string), string field = default(string), string value = default(string), string description = default(string))
         {
             this.Id = id;
-            this.Type = type;
+            this.Field = field;
             this.Value = value;
             this.Description = description;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Whitelist rule id
         /// </summary>
+        /// <value>Whitelist rule id</value>
         /// <example>&quot;2fw8EWJusiRrxdPzT&quot;</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Type
+        /// field used for whitelists rule
         /// </summary>
+        /// <value>field used for whitelists rule</value>
         /// <example>&quot;email&quot;</example>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
-        public string Type { get; set; }
+        [DataMember(Name = "field", EmitDefaultValue = false)]
+        public string Field { get; set; }
 
         /// <summary>
-        /// Gets or Sets Value
+        /// value used for whitelists rule
         /// </summary>
+        /// <value>value used for whitelists rule</value>
         /// <example>&quot;email@example.com&quot;</example>
         [DataMember(Name = "value", EmitDefaultValue = false)]
         public string Value { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// use an description for whitelisted rule
         /// </summary>
-        /// <example>&quot;secure customer example@example.com&quot;</example>
+        /// <value>use an description for whitelisted rule</value>
+        /// <example>&quot;banned customer example@example.com&quot;</example>
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
@@ -82,9 +86,9 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class RiskRulesListDataInner {\n");
+            sb.Append("class WhitelistlistRuleResponse {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Field: ").Append(Field).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("}\n");
@@ -107,15 +111,15 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RiskRulesListDataInner);
+            return this.Equals(input as WhitelistlistRuleResponse);
         }
 
         /// <summary>
-        /// Returns true if RiskRulesListDataInner instances are equal
+        /// Returns true if WhitelistlistRuleResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of RiskRulesListDataInner to be compared</param>
+        /// <param name="input">Instance of WhitelistlistRuleResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(RiskRulesListDataInner input)
+        public bool Equals(WhitelistlistRuleResponse input)
         {
             if (input == null)
             {
@@ -128,9 +132,9 @@ namespace Conekta.net.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
+                    this.Field == input.Field ||
+                    (this.Field != null &&
+                    this.Field.Equals(input.Field))
                 ) && 
                 (
                     this.Value == input.Value ||
@@ -157,9 +161,9 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                if (this.Type != null)
+                if (this.Field != null)
                 {
-                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Field.GetHashCode();
                 }
                 if (this.Value != null)
                 {

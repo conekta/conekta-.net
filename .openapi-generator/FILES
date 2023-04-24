@@ -146,8 +146,9 @@ docs/ProductDataResponseAllOf.md
 docs/ProductOrderResponse.md
 docs/ProductOrderResponseAllOf.md
 docs/ProductsApi.md
+docs/RiskRules.md
+docs/RiskRulesData.md
 docs/RiskRulesList.md
-docs/RiskRulesListDataInner.md
 docs/ShippingContactsApi.md
 docs/ShippingOrderResponse.md
 docs/ShippingRequest.md
@@ -175,6 +176,7 @@ docs/WebhookRequest.md
 docs/WebhookResponse.md
 docs/WebhookUpdateRequest.md
 docs/WebhooksApi.md
+docs/WhitelistlistRuleResponse.md
 src/Conekta.net.Test/Conekta.net.Test.csproj
 src/Conekta.net/Api/AntifraudApi.cs
 src/Conekta.net/Api/ChargesApi.cs
@@ -339,8 +341,9 @@ src/Conekta.net/Model/ProductDataResponse.cs
 src/Conekta.net/Model/ProductDataResponseAllOf.cs
 src/Conekta.net/Model/ProductOrderResponse.cs
 src/Conekta.net/Model/ProductOrderResponseAllOf.cs
+src/Conekta.net/Model/RiskRules.cs
+src/Conekta.net/Model/RiskRulesData.cs
 src/Conekta.net/Model/RiskRulesList.cs
-src/Conekta.net/Model/RiskRulesListDataInner.cs
 src/Conekta.net/Model/ShippingOrderResponse.cs
 src/Conekta.net/Model/ShippingRequest.cs
 src/Conekta.net/Model/SmsCheckoutRequest.cs
@@ -363,4 +366,5 @@ src/Conekta.net/Model/WebhookLog.cs
 src/Conekta.net/Model/WebhookRequest.cs
 src/Conekta.net/Model/WebhookResponse.cs
 src/Conekta.net/Model/WebhookUpdateRequest.cs
+src/Conekta.net/Model/WhitelistlistRuleResponse.cs
 src/Conekta.net/Utils/RuntimeInformation.cs

@@ -35,44 +35,58 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateRiskRulesData" /> class.
         /// </summary>
-        /// <param name="description">description.</param>
-        /// <param name="type">type.</param>
-        /// <param name="livemode">livemode.</param>
-        /// <param name="value">value.</param>
-        public CreateRiskRulesData(string description = default(string), string type = default(string), bool livemode = default(bool), string value = default(string))
+        [JsonConstructorAttribute]
+        protected CreateRiskRulesData() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateRiskRulesData" /> class.
+        /// </summary>
+        /// <param name="description">Description of the rule (required).</param>
+        /// <param name="field">Field to be used for the rule (required).</param>
+        /// <param name="value">Value to be used for the rule (required).</param>
+        public CreateRiskRulesData(string description = default(string), string field = default(string), string value = default(string))
         {
+            // to ensure "description" is required (not null)
+            if (description == null)
+            {
+                throw new ArgumentNullException("description is a required property for CreateRiskRulesData and cannot be null");
+            }
             this.Description = description;
-            this.Type = type;
-            this.Livemode = livemode;
+            // to ensure "field" is required (not null)
+            if (field == null)
+            {
+                throw new ArgumentNullException("field is a required property for CreateRiskRulesData and cannot be null");
+            }
+            this.Field = field;
+            // to ensure "value" is required (not null)
+            if (value == null)
+            {
+                throw new ArgumentNullException("value is a required property for CreateRiskRulesData and cannot be null");
+            }
             this.Value = value;
         }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Description of the rule
         /// </summary>
+        /// <value>Description of the rule</value>
         /// <example>&quot;this client&#39;s email was verified at 20/09/22 by internal process&quot;</example>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Field to be used for the rule
         /// </summary>
+        /// <value>Field to be used for the rule</value>
         /// <example>&quot;email | phone | card_token&quot;</example>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
-        public string Type { get; set; }
+        [DataMember(Name = "field", IsRequired = true, EmitDefaultValue = true)]
+        public string Field { get; set; }
 
         /// <summary>
-        /// Gets or Sets Livemode
+        /// Value to be used for the rule
         /// </summary>
-        /// <example>false</example>
-        [DataMember(Name = "livemode", EmitDefaultValue = true)]
-        public bool Livemode { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Value
-        /// </summary>
+        /// <value>Value to be used for the rule</value>
         /// <example>&quot;email@example.com | 818081808180 | src_2qUCNd5AyQqfPMBuV&quot;</example>
-        [DataMember(Name = "value", EmitDefaultValue = false)]
+        [DataMember(Name = "value", IsRequired = true, EmitDefaultValue = true)]
         public string Value { get; set; }
 
         /// <summary>
@@ -84,8 +98,7 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class CreateRiskRulesData {\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  Livemode: ").Append(Livemode).Append("\n");
+            sb.Append("  Field: ").Append(Field).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -128,13 +141,9 @@ namespace Conekta.net.Model
                     this.Description.Equals(input.Description))
                 ) && 
                 (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Livemode == input.Livemode ||
-                    this.Livemode.Equals(input.Livemode)
+                    this.Field == input.Field ||
+                    (this.Field != null &&
+                    this.Field.Equals(input.Field))
                 ) && 
                 (
                     this.Value == input.Value ||
@@ -156,11 +165,10 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();
                 }
-                if (this.Type != null)
+                if (this.Field != null)
                 {
-                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Field.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Livemode.GetHashCode();
                 if (this.Value != null)
                 {
                     hashCode = (hashCode * 59) + this.Value.GetHashCode();

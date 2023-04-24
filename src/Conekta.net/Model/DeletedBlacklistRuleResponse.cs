@@ -35,42 +35,46 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DeletedBlacklistRuleResponse" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="type">type.</param>
-        /// <param name="value">value.</param>
-        /// <param name="description">description.</param>
-        public DeletedBlacklistRuleResponse(string id = default(string), string type = default(string), string value = default(string), string description = default(string))
+        /// <param name="id">Blacklist rule id.</param>
+        /// <param name="field">field used for blacklists rule deleted.</param>
+        /// <param name="value">value used for blacklists rule deleted.</param>
+        /// <param name="description">use an description for blacklisted rule.</param>
+        public DeletedBlacklistRuleResponse(string id = default(string), string field = default(string), string value = default(string), string description = default(string))
         {
             this.Id = id;
-            this.Type = type;
+            this.Field = field;
             this.Value = value;
             this.Description = description;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Blacklist rule id
         /// </summary>
+        /// <value>Blacklist rule id</value>
         /// <example>&quot;2fw8EWJusiRrxdPzT&quot;</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Type
+        /// field used for blacklists rule deleted
         /// </summary>
+        /// <value>field used for blacklists rule deleted</value>
         /// <example>&quot;email&quot;</example>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
-        public string Type { get; set; }
+        [DataMember(Name = "field", EmitDefaultValue = false)]
+        public string Field { get; set; }
 
         /// <summary>
-        /// Gets or Sets Value
+        /// value used for blacklists rule deleted
         /// </summary>
+        /// <value>value used for blacklists rule deleted</value>
         /// <example>&quot;email@example.com&quot;</example>
         [DataMember(Name = "value", EmitDefaultValue = false)]
         public string Value { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// use an description for blacklisted rule
         /// </summary>
+        /// <value>use an description for blacklisted rule</value>
         /// <example>&quot;banned customer example@example.com&quot;</example>
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
@@ -84,7 +88,7 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class DeletedBlacklistRuleResponse {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Field: ").Append(Field).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("}\n");
@@ -128,9 +132,9 @@ namespace Conekta.net.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
+                    this.Field == input.Field ||
+                    (this.Field != null &&
+                    this.Field.Equals(input.Field))
                 ) && 
                 (
                     this.Value == input.Value ||
@@ -157,9 +161,9 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                if (this.Type != null)
+                if (this.Field != null)
                 {
-                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Field.GetHashCode();
                 }
                 if (this.Value != null)
                 {

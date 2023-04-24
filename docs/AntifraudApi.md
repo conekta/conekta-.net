@@ -4,18 +4,18 @@ All URIs are relative to *https://api.conekta.io*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CreateNewBlacklistRule**](AntifraudApi.md#createnewblacklistrule) | **POST** /antifraud/blacklists | Create a blacklisted rule |
-| [**CreateNewRuleWhitelist**](AntifraudApi.md#createnewrulewhitelist) | **POST** /antifraud/whitelists | Create a whitelisted rule |
-| [**DeleteBlacklistRule**](AntifraudApi.md#deleteblacklistrule) | **DELETE** /antifraud/blacklists/{id} | Delete a blacklisted rule |
-| [**DeleteRuleWhitelist**](AntifraudApi.md#deleterulewhitelist) | **DELETE** /antifraud/whitelists/{id} | Delete a whitelisted rule |
-| [**GetBlacklist**](AntifraudApi.md#getblacklist) | **GET** /antifraud/blacklists | Get a list of blacklisted rules |
-| [**GetWhiteList**](AntifraudApi.md#getwhitelist) | **GET** /antifraud/whitelists | Get a list of whitelisted rules |
+| [**CreateRuleBlacklist**](AntifraudApi.md#createruleblacklist) | **POST** /antifraud/blacklists | Create blacklisted rule |
+| [**CreateRuleWhitelist**](AntifraudApi.md#createrulewhitelist) | **POST** /antifraud/whitelists | Create whitelisted rule |
+| [**DeleteRuleBlacklist**](AntifraudApi.md#deleteruleblacklist) | **DELETE** /antifraud/blacklists/{id} | Delete blacklisted rule |
+| [**DeleteRuleWhitelist**](AntifraudApi.md#deleterulewhitelist) | **DELETE** /antifraud/whitelists/{id} | Delete whitelisted rule |
+| [**GetRuleBlacklist**](AntifraudApi.md#getruleblacklist) | **GET** /antifraud/blacklists | Get list of blacklisted rules |
+| [**GetRuleWhitelist**](AntifraudApi.md#getrulewhitelist) | **GET** /antifraud/whitelists | Get a list of whitelisted rules |
 
-<a name="createnewblacklistrule"></a>
-# **CreateNewBlacklistRule**
-> BlacklistRuleResponse CreateNewBlacklistRule (CreateRiskRulesData createRiskRulesData)
+<a name="createruleblacklist"></a>
+# **CreateRuleBlacklist**
+> BlacklistRuleResponse CreateRuleBlacklist (CreateRiskRulesData createRiskRulesData, string acceptLanguage = null)
 
-Create a blacklisted rule
+Create blacklisted rule
 
 ### Example
 ```csharp
@@ -27,7 +27,7 @@ using Conekta.net.Model;
 
 namespace Example
 {
-    public class CreateNewBlacklistRuleExample
+    public class CreateRuleBlacklistExample
     {
         public static void Main()
         {
@@ -38,16 +38,17 @@ namespace Example
 
             var apiInstance = new AntifraudApi(config);
             var createRiskRulesData = new CreateRiskRulesData(); // CreateRiskRulesData | requested field for blacklist rule
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
-                // Create a blacklisted rule
-                BlacklistRuleResponse result = apiInstance.CreateNewBlacklistRule(createRiskRulesData);
+                // Create blacklisted rule
+                BlacklistRuleResponse result = apiInstance.CreateRuleBlacklist(createRiskRulesData, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling AntifraudApi.CreateNewBlacklistRule: " + e.Message);
+                Debug.Print("Exception when calling AntifraudApi.CreateRuleBlacklist: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -56,21 +57,21 @@ namespace Example
 }
 ```
 
-#### Using the CreateNewBlacklistRuleWithHttpInfo variant
+#### Using the CreateRuleBlacklistWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Create a blacklisted rule
-    ApiResponse<BlacklistRuleResponse> response = apiInstance.CreateNewBlacklistRuleWithHttpInfo(createRiskRulesData);
+    // Create blacklisted rule
+    ApiResponse<BlacklistRuleResponse> response = apiInstance.CreateRuleBlacklistWithHttpInfo(createRiskRulesData, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling AntifraudApi.CreateNewBlacklistRuleWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling AntifraudApi.CreateRuleBlacklistWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -81,6 +82,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **createRiskRulesData** | [**CreateRiskRulesData**](CreateRiskRulesData.md) | requested field for blacklist rule |  |
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
 
@@ -100,14 +102,16 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | successfully registered rule |  -  |
+| **401** | authentication error |  -  |
+| **500** | internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createnewrulewhitelist"></a>
-# **CreateNewRuleWhitelist**
-> Error CreateNewRuleWhitelist (CreateRiskRulesData createRiskRulesData = null)
+<a name="createrulewhitelist"></a>
+# **CreateRuleWhitelist**
+> WhitelistlistRuleResponse CreateRuleWhitelist (string acceptLanguage = null, CreateRiskRulesData createRiskRulesData = null)
 
-Create a whitelisted rule
+Create whitelisted rule
 
 ### Example
 ```csharp
@@ -119,7 +123,7 @@ using Conekta.net.Model;
 
 namespace Example
 {
-    public class CreateNewRuleWhitelistExample
+    public class CreateRuleWhitelistExample
     {
         public static void Main()
         {
@@ -129,17 +133,18 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new AntifraudApi(config);
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
             var createRiskRulesData = new CreateRiskRulesData(); // CreateRiskRulesData |  (optional) 
 
             try
             {
-                // Create a whitelisted rule
-                Error result = apiInstance.CreateNewRuleWhitelist(createRiskRulesData);
+                // Create whitelisted rule
+                WhitelistlistRuleResponse result = apiInstance.CreateRuleWhitelist(acceptLanguage, createRiskRulesData);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling AntifraudApi.CreateNewRuleWhitelist: " + e.Message);
+                Debug.Print("Exception when calling AntifraudApi.CreateRuleWhitelist: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -148,21 +153,21 @@ namespace Example
 }
 ```
 
-#### Using the CreateNewRuleWhitelistWithHttpInfo variant
+#### Using the CreateRuleWhitelistWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Create a whitelisted rule
-    ApiResponse<Error> response = apiInstance.CreateNewRuleWhitelistWithHttpInfo(createRiskRulesData);
+    // Create whitelisted rule
+    ApiResponse<WhitelistlistRuleResponse> response = apiInstance.CreateRuleWhitelistWithHttpInfo(acceptLanguage, createRiskRulesData);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling AntifraudApi.CreateNewRuleWhitelistWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling AntifraudApi.CreateRuleWhitelistWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -172,11 +177,12 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 | **createRiskRulesData** | [**CreateRiskRulesData**](CreateRiskRulesData.md) |  | [optional]  |
 
 ### Return type
 
-[**Error**](Error.md)
+[**WhitelistlistRuleResponse**](WhitelistlistRuleResponse.md)
 
 ### Authorization
 
@@ -191,15 +197,17 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | internal server error |  -  |
+| **200** | successfully registered rule |  -  |
+| **401** | authentication error |  -  |
+| **500** | internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleteblacklistrule"></a>
-# **DeleteBlacklistRule**
-> DeletedBlacklistRuleResponse DeleteBlacklistRule (string id, string acceptLanguage = null)
+<a name="deleteruleblacklist"></a>
+# **DeleteRuleBlacklist**
+> DeletedBlacklistRuleResponse DeleteRuleBlacklist (string id, string acceptLanguage = null)
 
-Delete a blacklisted rule
+Delete blacklisted rule
 
 ### Example
 ```csharp
@@ -211,7 +219,7 @@ using Conekta.net.Model;
 
 namespace Example
 {
-    public class DeleteBlacklistRuleExample
+    public class DeleteRuleBlacklistExample
     {
         public static void Main()
         {
@@ -226,13 +234,13 @@ namespace Example
 
             try
             {
-                // Delete a blacklisted rule
-                DeletedBlacklistRuleResponse result = apiInstance.DeleteBlacklistRule(id, acceptLanguage);
+                // Delete blacklisted rule
+                DeletedBlacklistRuleResponse result = apiInstance.DeleteRuleBlacklist(id, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling AntifraudApi.DeleteBlacklistRule: " + e.Message);
+                Debug.Print("Exception when calling AntifraudApi.DeleteRuleBlacklist: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -241,21 +249,21 @@ namespace Example
 }
 ```
 
-#### Using the DeleteBlacklistRuleWithHttpInfo variant
+#### Using the DeleteRuleBlacklistWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Delete a blacklisted rule
-    ApiResponse<DeletedBlacklistRuleResponse> response = apiInstance.DeleteBlacklistRuleWithHttpInfo(id, acceptLanguage);
+    // Delete blacklisted rule
+    ApiResponse<DeletedBlacklistRuleResponse> response = apiInstance.DeleteRuleBlacklistWithHttpInfo(id, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling AntifraudApi.DeleteBlacklistRuleWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling AntifraudApi.DeleteRuleBlacklistWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -296,7 +304,7 @@ catch (ApiException e)
 # **DeleteRuleWhitelist**
 > DeletedWhitelistRuleResponse DeleteRuleWhitelist (string id, string acceptLanguage = null)
 
-Delete a whitelisted rule
+Delete whitelisted rule
 
 ### Example
 ```csharp
@@ -323,7 +331,7 @@ namespace Example
 
             try
             {
-                // Delete a whitelisted rule
+                // Delete whitelisted rule
                 DeletedWhitelistRuleResponse result = apiInstance.DeleteRuleWhitelist(id, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -344,7 +352,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Delete a whitelisted rule
+    // Delete whitelisted rule
     ApiResponse<DeletedWhitelistRuleResponse> response = apiInstance.DeleteRuleWhitelistWithHttpInfo(id, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -389,11 +397,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getblacklist"></a>
-# **GetBlacklist**
-> RiskRulesList GetBlacklist ()
+<a name="getruleblacklist"></a>
+# **GetRuleBlacklist**
+> RiskRulesList GetRuleBlacklist (string acceptLanguage = null)
 
-Get a list of blacklisted rules
+Get list of blacklisted rules
 
 Return all rules
 
@@ -407,7 +415,7 @@ using Conekta.net.Model;
 
 namespace Example
 {
-    public class GetBlacklistExample
+    public class GetRuleBlacklistExample
     {
         public static void Main()
         {
@@ -417,16 +425,17 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new AntifraudApi(config);
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
-                // Get a list of blacklisted rules
-                RiskRulesList result = apiInstance.GetBlacklist();
+                // Get list of blacklisted rules
+                RiskRulesList result = apiInstance.GetRuleBlacklist(acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling AntifraudApi.GetBlacklist: " + e.Message);
+                Debug.Print("Exception when calling AntifraudApi.GetRuleBlacklist: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -435,28 +444,32 @@ namespace Example
 }
 ```
 
-#### Using the GetBlacklistWithHttpInfo variant
+#### Using the GetRuleBlacklistWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Get a list of blacklisted rules
-    ApiResponse<RiskRulesList> response = apiInstance.GetBlacklistWithHttpInfo();
+    // Get list of blacklisted rules
+    ApiResponse<RiskRulesList> response = apiInstance.GetRuleBlacklistWithHttpInfo(acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling AntifraudApi.GetBlacklistWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling AntifraudApi.GetRuleBlacklistWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+
 ### Return type
 
 [**RiskRulesList**](RiskRulesList.md)
@@ -480,9 +493,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getwhitelist"></a>
-# **GetWhiteList**
-> RiskRulesList GetWhiteList ()
+<a name="getrulewhitelist"></a>
+# **GetRuleWhitelist**
+> RiskRulesList GetRuleWhitelist (string acceptLanguage = null)
 
 Get a list of whitelisted rules
 
@@ -498,7 +511,7 @@ using Conekta.net.Model;
 
 namespace Example
 {
-    public class GetWhiteListExample
+    public class GetRuleWhitelistExample
     {
         public static void Main()
         {
@@ -508,16 +521,17 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new AntifraudApi(config);
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
                 // Get a list of whitelisted rules
-                RiskRulesList result = apiInstance.GetWhiteList();
+                RiskRulesList result = apiInstance.GetRuleWhitelist(acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling AntifraudApi.GetWhiteList: " + e.Message);
+                Debug.Print("Exception when calling AntifraudApi.GetRuleWhitelist: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -526,28 +540,32 @@ namespace Example
 }
 ```
 
-#### Using the GetWhiteListWithHttpInfo variant
+#### Using the GetRuleWhitelistWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Get a list of whitelisted rules
-    ApiResponse<RiskRulesList> response = apiInstance.GetWhiteListWithHttpInfo();
+    ApiResponse<RiskRulesList> response = apiInstance.GetRuleWhitelistWithHttpInfo(acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling AntifraudApi.GetWhiteListWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling AntifraudApi.GetRuleWhitelistWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+
 ### Return type
 
 [**RiskRulesList**](RiskRulesList.md)
@@ -559,13 +577,15 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | All the rules |  -  |
+| **401** | authentication error |  -  |
+| **500** | internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

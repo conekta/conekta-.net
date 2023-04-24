@@ -27,54 +27,84 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// BlacklistRuleResponse
+    /// RiskRulesData
     /// </summary>
-    [DataContract(Name = "blacklist_rule_response")]
-    public partial class BlacklistRuleResponse : IEquatable<BlacklistRuleResponse>, IValidatableObject
+    [DataContract(Name = "risk_rules_data")]
+    public partial class RiskRulesData : IEquatable<RiskRulesData>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="BlacklistRuleResponse" /> class.
+        /// Initializes a new instance of the <see cref="RiskRulesData" /> class.
         /// </summary>
-        /// <param name="id">Blacklist rule id.</param>
-        /// <param name="field">field used for blacklists rule.</param>
-        /// <param name="value">value used for blacklists rule.</param>
-        /// <param name="description">use an description for blacklisted rule.</param>
-        public BlacklistRuleResponse(string id = default(string), string field = default(string), string value = default(string), string description = default(string))
+        /// <param name="id">rule id.</param>
+        /// <param name="field">field to be used for the rule.</param>
+        /// <param name="createdAt">rule creation date.</param>
+        /// <param name="value">value to be used for the rule.</param>
+        /// <param name="isGlobal">if the rule is global.</param>
+        /// <param name="isTest">if the rule is test.</param>
+        /// <param name="description">description of the rule.</param>
+        public RiskRulesData(string id = default(string), string field = default(string), string createdAt = default(string), string value = default(string), bool isGlobal = default(bool), bool isTest = default(bool), string description = default(string))
         {
             this.Id = id;
             this.Field = field;
+            this.CreatedAt = createdAt;
             this.Value = value;
+            this.IsGlobal = isGlobal;
+            this.IsTest = isTest;
             this.Description = description;
         }
 
         /// <summary>
-        /// Blacklist rule id
+        /// rule id
         /// </summary>
-        /// <value>Blacklist rule id</value>
-        /// <example>&quot;2fw8EWJusiRrxdPzT&quot;</example>
+        /// <value>rule id</value>
+        /// <example>&quot;618c3f2fdb8b8da9be376af9&quot;</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
-        /// field used for blacklists rule
+        /// field to be used for the rule
         /// </summary>
-        /// <value>field used for blacklists rule</value>
+        /// <value>field to be used for the rule</value>
         /// <example>&quot;email&quot;</example>
         [DataMember(Name = "field", EmitDefaultValue = false)]
         public string Field { get; set; }
 
         /// <summary>
-        /// value used for blacklists rule
+        /// rule creation date
         /// </summary>
-        /// <value>value used for blacklists rule</value>
+        /// <value>rule creation date</value>
+        /// <example>&quot;2021-11-10T21:52:47.339Z&quot;</example>
+        [DataMember(Name = "created_at", EmitDefaultValue = false)]
+        public string CreatedAt { get; set; }
+
+        /// <summary>
+        /// value to be used for the rule
+        /// </summary>
+        /// <value>value to be used for the rule</value>
         /// <example>&quot;email@example.com&quot;</example>
         [DataMember(Name = "value", EmitDefaultValue = false)]
         public string Value { get; set; }
 
         /// <summary>
-        /// use an description for blacklisted rule
+        /// if the rule is global
         /// </summary>
-        /// <value>use an description for blacklisted rule</value>
+        /// <value>if the rule is global</value>
+        /// <example>false</example>
+        [DataMember(Name = "is_global", EmitDefaultValue = true)]
+        public bool IsGlobal { get; set; }
+
+        /// <summary>
+        /// if the rule is test
+        /// </summary>
+        /// <value>if the rule is test</value>
+        /// <example>false</example>
+        [DataMember(Name = "is_test", EmitDefaultValue = true)]
+        public bool IsTest { get; set; }
+
+        /// <summary>
+        /// description of the rule
+        /// </summary>
+        /// <value>description of the rule</value>
         /// <example>&quot;secure customer example@example.com&quot;</example>
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
@@ -86,10 +116,13 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class BlacklistRuleResponse {\n");
+            sb.Append("class RiskRulesData {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Field: ").Append(Field).Append("\n");
+            sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  IsGlobal: ").Append(IsGlobal).Append("\n");
+            sb.Append("  IsTest: ").Append(IsTest).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -111,15 +144,15 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as BlacklistRuleResponse);
+            return this.Equals(input as RiskRulesData);
         }
 
         /// <summary>
-        /// Returns true if BlacklistRuleResponse instances are equal
+        /// Returns true if RiskRulesData instances are equal
         /// </summary>
-        /// <param name="input">Instance of BlacklistRuleResponse to be compared</param>
+        /// <param name="input">Instance of RiskRulesData to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BlacklistRuleResponse input)
+        public bool Equals(RiskRulesData input)
         {
             if (input == null)
             {
@@ -137,9 +170,22 @@ namespace Conekta.net.Model
                     this.Field.Equals(input.Field))
                 ) && 
                 (
+                    this.CreatedAt == input.CreatedAt ||
+                    (this.CreatedAt != null &&
+                    this.CreatedAt.Equals(input.CreatedAt))
+                ) && 
+                (
                     this.Value == input.Value ||
                     (this.Value != null &&
                     this.Value.Equals(input.Value))
+                ) && 
+                (
+                    this.IsGlobal == input.IsGlobal ||
+                    this.IsGlobal.Equals(input.IsGlobal)
+                ) && 
+                (
+                    this.IsTest == input.IsTest ||
+                    this.IsTest.Equals(input.IsTest)
                 ) && 
                 (
                     this.Description == input.Description ||
@@ -165,10 +211,16 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Field.GetHashCode();
                 }
+                if (this.CreatedAt != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
+                }
                 if (this.Value != null)
                 {
                     hashCode = (hashCode * 59) + this.Value.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.IsGlobal.GetHashCode();
+                hashCode = (hashCode * 59) + this.IsTest.GetHashCode();
                 if (this.Description != null)
                 {
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();
