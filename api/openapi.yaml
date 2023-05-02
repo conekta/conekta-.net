@@ -1126,48 +1126,6 @@ paths:
       summary: Create customer
       tags:
       - Customers
-      x-readme:
-        code-samples:
-        - language: csharp
-          code: |
-            using System.Collections.Generic;
-            using System.Diagnostics;
-            using Conekta.net.Api;
-            using Conekta.net.Client;
-            using Conekta.net.Model;
-
-            namespace Example
-            {
-                public class CreateCustomerExample
-                {
-                    public static void Main()
-                    {
-                        Configuration config = new Configuration();
-                        config.AccessToken = "key_ZLy4aP2szht1HqzkCezDEA";
-
-                        var apiInstance = new CustomersApi(config);
-                        var customer = new Customer(
-                           name: "test dot",
-                           phone: "+573143159063",
-                           email: "test@conekta.com"
-                        );
-
-                        try
-                        {
-                            CustomerResponse result = apiInstance.CreateCustomer(customer, "es");
-                            Debug.WriteLine(result);
-                        }
-                        catch (ApiException  e)
-                        {
-                            Debug.Print("Exception when calling CustomersApi.CreateCustomer: " + e.Message);
-                            Debug.Print("Status Code: " + e.ErrorCode);
-                            Debug.Print(e.StackTrace);
-                        }
-                    }
-                }
-            }
-          name: Custom sdk
-          install: dotnet add package Conekta.net
   /customers/{id}:
     delete:
       description: Deleted a customer resource that corresponds to a customer ID.
@@ -7650,6 +7608,114 @@ paths:
       summary: Update Tax
       tags:
       - Taxes
+  /tokens:
+    post:
+      description: |
+        Generate a payment token, to associate it with a card
+      operationId: createToken
+      parameters:
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/token'
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/token_response'
+          description: successful operation
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.1.0; format=application/json
+                type: string
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "422":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: parameter validation error
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Create empty token
+      tags:
+      - Tokens
   /webhooks:
     get:
       description: "Consume the list of webhooks you have, each environment supports\
@@ -8822,6 +8888,13 @@ components:
             $ref: '#/components/schemas/update_order_tax_request'
       description: requested field for taxes
       required: true
+    token:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/token'
+      description: requested field for token
+      required: true
     webhook:
       content:
         application/json:
@@ -9723,6 +9796,34 @@ components:
       description: create new taxes for an existing order response
       required:
       - id
+    token_response:
+      description: token response
+      properties:
+        checkout:
+          $ref: '#/components/schemas/token_response_checkout'
+        id:
+          description: Unique identifier for the token generated by Conekta.
+          example: cus_2tHJfJ79KyUwpxTik
+          type: string
+        livemode:
+          description: Indicates whether the token is in live mode or test mode.
+          example: true
+          type: boolean
+        object:
+          description: "Indicates the type of object, in this case token"
+          example: token
+          type: string
+        used:
+          description: Indicates if the token has been used
+          example: false
+          type: boolean
+      required:
+      - id
+      - livemode
+      - object
+      - used
+      title: token response
+      type: object
     webhook_response:
       description: webhooks model
       properties:
@@ -10547,6 +10648,15 @@ components:
             type: object
           maxProperties: 100
           type: object
+      type: object
+    token:
+      description: a token
+      properties:
+        card:
+          $ref: '#/components/schemas/token_card'
+        checkout:
+          $ref: '#/components/schemas/token_checkout'
+      title: token request
       type: object
     webhook_request:
       description: a webhook
@@ -11938,6 +12048,104 @@ components:
           type: string
       type: object
       example: null
+    token_response_checkout:
+      nullable: true
+      properties:
+        allowed_payment_methods:
+          items:
+            example: card
+            type: string
+          type: array
+        can_not_expire:
+          description: Indicates if the checkout can not expire.
+          example: false
+          type: boolean
+        emails_sent:
+          example: 0
+          type: integer
+        exclude_card_networks:
+          items:
+            example: visa
+            type: string
+          type: array
+        expires_at:
+          description: Date and time when the checkout expires.
+          example: 1675715413
+          format: int64
+          type: integer
+        failure_url:
+          description: URL to redirect the customer to if the payment process fails.
+          example: https://example.com/failure
+          type: string
+        force_3ds_flow:
+          description: Indicates if the checkout forces the 3DS flow.
+          example: false
+          type: boolean
+        id:
+          example: 524f9d2f-8c2e-4e64-a33d-6006711a91bd
+          type: string
+        livemode:
+          example: true
+          type: boolean
+        metadata:
+          additionalProperties: true
+          example:
+            key: value
+          type: object
+        monthly_installments_enabled:
+          description: Indicates if the checkout allows monthly installments.
+          example: false
+          type: boolean
+        monthly_installments_options:
+          description: List of monthly installments options.
+          items:
+            example: 3
+            type: integer
+          type: array
+        name:
+          example: tok-2toNoPZpJgRU4PvgZ
+          type: string
+        needs_shipping_contact:
+          example: false
+          type: boolean
+        object:
+          description: "Indicates the type of object, in this case checkout."
+          example: checkout
+          type: string
+        on_demand_enabled:
+          description: Indicates if the checkout allows on demand payments.
+          example: false
+          type: boolean
+        paid_payments_count:
+          description: Number of payments that have been paid.
+          example: 0
+          type: integer
+        recurrent:
+          description: Indicates if the checkout is recurrent.
+          example: false
+          type: boolean
+        sms_sent:
+          example: 0
+          type: integer
+        starts_at:
+          description: Date and time when the checkout starts.
+          example: 1675715413
+          format: int64
+          type: integer
+        status:
+          description: Status of the checkout.
+          example: Issued
+          type: string
+        success_url:
+          description: URL to redirect the customer to after the payment process is
+            completed.
+          example: https://example.com/success
+          type: string
+        type:
+          description: Type of checkout.
+          example: Integration
+          type: string
+      type: object
     charge_request_payment_method:
       description: |
         Payment method used in the charge. Go to the [payment methods](https://developers.conekta.com/reference/m%C3%A9todos-de-pago) section for more details
@@ -12058,6 +12266,54 @@ components:
           example: true
           nullable: true
           type: boolean
+      type: object
+    token_card:
+      nullable: true
+      properties:
+        cvc:
+          description: It is a value that allows identifying the security code of
+            the card.
+          example: "123"
+          maxLength: 4
+          type: string
+        device_fingerprint:
+          description: It is a value that allows identifying the device fingerprint.
+          example: zptcxk4p6w1ijwz85snf1l3bqe5g09ie
+          type: string
+        exp_month:
+          description: It is a value that allows identifying the expiration month
+            of the card.
+          example: "12"
+          maxLength: 2
+          type: string
+        exp_year:
+          description: It is a value that allows identifying the expiration year of
+            the card.
+          example: "26"
+          maxLength: 2
+          type: string
+        name:
+          description: It is a value that allows identifying the name of the cardholder.
+          example: Miguel
+          type: string
+        number:
+          description: It is a value that allows identifying the number of the card.
+          example: "4242424242424242"
+          type: string
+      required:
+      - cvc
+      - exp_month
+      - exp_year
+      - name
+      - number
+      type: object
+    token_checkout:
+      nullable: true
+      properties:
+        returns_control_on:
+          description: It is a value that allows identifying the returns control on.
+          example: Token
+          type: string
       type: object
     details_error:
       properties:

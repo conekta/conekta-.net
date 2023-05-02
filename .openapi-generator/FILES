@@ -167,6 +167,12 @@ docs/SubscriptionResponse.md
 docs/SubscriptionUpdateRequest.md
 docs/SubscriptionsApi.md
 docs/TaxesApi.md
+docs/Token.md
+docs/TokenCard.md
+docs/TokenCheckout.md
+docs/TokenResponse.md
+docs/TokenResponseCheckout.md
+docs/TokensApi.md
 docs/UpdateCustomer.md
 docs/UpdateCustomerAntifraudInfo.md
 docs/UpdateCustomerFiscalEntitiesResponse.md
@@ -184,7 +190,6 @@ docs/WebhookResponse.md
 docs/WebhookUpdateRequest.md
 docs/WebhooksApi.md
 docs/WhitelistlistRuleResponse.md
-src/Conekta.net.Test/Api/CompaniesApiTests.cs
 src/Conekta.net.Test/Conekta.net.Test.csproj
 src/Conekta.net/Api/AntifraudApi.cs
 src/Conekta.net/Api/ChargesApi.cs
@@ -202,6 +207,7 @@ src/Conekta.net/Api/ShippingContactsApi.cs
 src/Conekta.net/Api/ShippingsApi.cs
 src/Conekta.net/Api/SubscriptionsApi.cs
 src/Conekta.net/Api/TaxesApi.cs
+src/Conekta.net/Api/TokensApi.cs
 src/Conekta.net/Api/WebhooksApi.cs
 src/Conekta.net/Client/ApiClient.cs
 src/Conekta.net/Client/ApiException.cs
@@ -366,6 +372,11 @@ src/Conekta.net/Model/SubscriptionEventsResponse.cs
 src/Conekta.net/Model/SubscriptionRequest.cs
 src/Conekta.net/Model/SubscriptionResponse.cs
 src/Conekta.net/Model/SubscriptionUpdateRequest.cs
+src/Conekta.net/Model/Token.cs
+src/Conekta.net/Model/TokenCard.cs
+src/Conekta.net/Model/TokenCheckout.cs
+src/Conekta.net/Model/TokenResponse.cs
+src/Conekta.net/Model/TokenResponseCheckout.cs
 src/Conekta.net/Model/UpdateCustomer.cs
 src/Conekta.net/Model/UpdateCustomerAntifraudInfo.cs
 src/Conekta.net/Model/UpdateCustomerFiscalEntitiesResponse.cs
