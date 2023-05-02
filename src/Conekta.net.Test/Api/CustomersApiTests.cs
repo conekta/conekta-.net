@@ -167,7 +167,7 @@ namespace Conekta.net.Test.Api
             string acceptLanguage = "es";
             int limit = 21;
 
-            var response = _instance.GetCustomers(acceptLanguage, limit);
+            var response = _instance.GetCustomers(acceptLanguage, null, limit);
 
             Assert.IsType<CustomersResponse>(response);
             Assert.NotNull(response.NextPageUrl);
@@ -186,7 +186,7 @@ namespace Conekta.net.Test.Api
             int limit = 22;
             string next = "cus_2sthLBEZRLp2s6GWc";
 
-            var response = _instance.GetCustomers(acceptLanguage, limit, null, next);
+            var response = _instance.GetCustomers(acceptLanguage, null,limit, null, next);
 
             Assert.IsType<CustomersResponse>(response);
             Assert.NotNull(response.NextPageUrl);
@@ -205,7 +205,7 @@ namespace Conekta.net.Test.Api
             int limit = 23;
             string previous = "cus_2ss5YAeTKuEr5M4fD";
 
-            var response = _instance.GetCustomers(acceptLanguage, limit, null, null, previous);
+            var response = _instance.GetCustomers(acceptLanguage, null, limit, null, null, previous);
 
             Assert.IsType<CustomersResponse>(response);
             Assert.NotNull(response.NextPageUrl);

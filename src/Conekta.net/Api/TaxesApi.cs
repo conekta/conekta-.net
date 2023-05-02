@@ -37,9 +37,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="orderTaxRequest">requested field for a taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UpdateOrderTaxResponse</returns>
-        UpdateOrderTaxResponse OrdersCreateTaxes(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        UpdateOrderTaxResponse OrdersCreateTaxes(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Create Tax
@@ -51,9 +52,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="orderTaxRequest">requested field for a taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UpdateOrderTaxResponse</returns>
-        ApiResponse<UpdateOrderTaxResponse> OrdersCreateTaxesWithHttpInfo(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<UpdateOrderTaxResponse> OrdersCreateTaxesWithHttpInfo(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         /// <summary>
         /// Delete Tax
         /// </summary>
@@ -64,9 +66,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="taxId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UpdateOrderTaxResponse</returns>
-        UpdateOrderTaxResponse OrdersDeleteTaxes(string id, string taxId, string acceptLanguage = default(string), int operationIndex = 0);
+        UpdateOrderTaxResponse OrdersDeleteTaxes(string id, string taxId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Delete Tax
@@ -78,9 +81,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="taxId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UpdateOrderTaxResponse</returns>
-        ApiResponse<UpdateOrderTaxResponse> OrdersDeleteTaxesWithHttpInfo(string id, string taxId, string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<UpdateOrderTaxResponse> OrdersDeleteTaxesWithHttpInfo(string id, string taxId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         /// <summary>
         /// Update Tax
         /// </summary>
@@ -92,9 +96,10 @@ namespace Conekta.net.Api
         /// <param name="taxId">identifier</param>
         /// <param name="updateOrderTaxRequest">requested field for taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UpdateOrderTaxResponse</returns>
-        UpdateOrderTaxResponse OrdersUpdateTaxes(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        UpdateOrderTaxResponse OrdersUpdateTaxes(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Update Tax
@@ -107,9 +112,10 @@ namespace Conekta.net.Api
         /// <param name="taxId">identifier</param>
         /// <param name="updateOrderTaxRequest">requested field for taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UpdateOrderTaxResponse</returns>
-        ApiResponse<UpdateOrderTaxResponse> OrdersUpdateTaxesWithHttpInfo(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<UpdateOrderTaxResponse> OrdersUpdateTaxesWithHttpInfo(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -129,10 +135,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="orderTaxRequest">requested field for a taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateOrderTaxResponse</returns>
-        System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersCreateTaxesAsync(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersCreateTaxesAsync(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Tax
@@ -144,10 +151,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="orderTaxRequest">requested field for a taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateOrderTaxResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateOrderTaxResponse>> OrdersCreateTaxesWithHttpInfoAsync(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<UpdateOrderTaxResponse>> OrdersCreateTaxesWithHttpInfoAsync(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete Tax
         /// </summary>
@@ -158,10 +166,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="taxId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateOrderTaxResponse</returns>
-        System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersDeleteTaxesAsync(string id, string taxId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersDeleteTaxesAsync(string id, string taxId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete Tax
@@ -173,10 +182,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="taxId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateOrderTaxResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateOrderTaxResponse>> OrdersDeleteTaxesWithHttpInfoAsync(string id, string taxId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<UpdateOrderTaxResponse>> OrdersDeleteTaxesWithHttpInfoAsync(string id, string taxId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update Tax
         /// </summary>
@@ -188,10 +198,11 @@ namespace Conekta.net.Api
         /// <param name="taxId">identifier</param>
         /// <param name="updateOrderTaxRequest">requested field for taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateOrderTaxResponse</returns>
-        System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersUpdateTaxesAsync(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersUpdateTaxesAsync(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Tax
@@ -204,10 +215,11 @@ namespace Conekta.net.Api
         /// <param name="taxId">identifier</param>
         /// <param name="updateOrderTaxRequest">requested field for taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateOrderTaxResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateOrderTaxResponse>> OrdersUpdateTaxesWithHttpInfoAsync(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<UpdateOrderTaxResponse>> OrdersUpdateTaxesWithHttpInfoAsync(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -335,11 +347,12 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="orderTaxRequest">requested field for a taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UpdateOrderTaxResponse</returns>
-        public UpdateOrderTaxResponse OrdersCreateTaxes(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        public UpdateOrderTaxResponse OrdersCreateTaxes(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> localVarResponse = OrdersCreateTaxesWithHttpInfo(id, orderTaxRequest, acceptLanguage);
+            Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> localVarResponse = OrdersCreateTaxesWithHttpInfo(id, orderTaxRequest, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -350,9 +363,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="orderTaxRequest">requested field for a taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UpdateOrderTaxResponse</returns>
-        public Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> OrdersCreateTaxesWithHttpInfo(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> OrdersCreateTaxesWithHttpInfo(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -393,6 +407,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
             localVarRequestOptions.Data = orderTaxRequest;
 
@@ -427,12 +445,13 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="orderTaxRequest">requested field for a taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateOrderTaxResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersCreateTaxesAsync(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersCreateTaxesAsync(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> localVarResponse = await OrdersCreateTaxesWithHttpInfoAsync(id, orderTaxRequest, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> localVarResponse = await OrdersCreateTaxesWithHttpInfoAsync(id, orderTaxRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -443,10 +462,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="orderTaxRequest">requested field for a taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateOrderTaxResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse>> OrdersCreateTaxesWithHttpInfoAsync(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse>> OrdersCreateTaxesWithHttpInfoAsync(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -488,6 +508,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
             localVarRequestOptions.Data = orderTaxRequest;
 
@@ -523,11 +547,12 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="taxId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UpdateOrderTaxResponse</returns>
-        public UpdateOrderTaxResponse OrdersDeleteTaxes(string id, string taxId, string acceptLanguage = default(string), int operationIndex = 0)
+        public UpdateOrderTaxResponse OrdersDeleteTaxes(string id, string taxId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> localVarResponse = OrdersDeleteTaxesWithHttpInfo(id, taxId, acceptLanguage);
+            Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> localVarResponse = OrdersDeleteTaxesWithHttpInfo(id, taxId, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -538,9 +563,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="taxId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UpdateOrderTaxResponse</returns>
-        public Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> OrdersDeleteTaxesWithHttpInfo(string id, string taxId, string acceptLanguage = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> OrdersDeleteTaxesWithHttpInfo(string id, string taxId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -581,6 +607,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
 
             localVarRequestOptions.Operation = "TaxesApi.OrdersDeleteTaxes";
@@ -614,12 +644,13 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="taxId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateOrderTaxResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersDeleteTaxesAsync(string id, string taxId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersDeleteTaxesAsync(string id, string taxId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> localVarResponse = await OrdersDeleteTaxesWithHttpInfoAsync(id, taxId, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> localVarResponse = await OrdersDeleteTaxesWithHttpInfoAsync(id, taxId, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -630,10 +661,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="taxId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateOrderTaxResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse>> OrdersDeleteTaxesWithHttpInfoAsync(string id, string taxId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse>> OrdersDeleteTaxesWithHttpInfoAsync(string id, string taxId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -675,6 +707,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
 
             localVarRequestOptions.Operation = "TaxesApi.OrdersDeleteTaxes";
@@ -710,11 +746,12 @@ namespace Conekta.net.Api
         /// <param name="taxId">identifier</param>
         /// <param name="updateOrderTaxRequest">requested field for taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UpdateOrderTaxResponse</returns>
-        public UpdateOrderTaxResponse OrdersUpdateTaxes(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        public UpdateOrderTaxResponse OrdersUpdateTaxes(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> localVarResponse = OrdersUpdateTaxesWithHttpInfo(id, taxId, updateOrderTaxRequest, acceptLanguage);
+            Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> localVarResponse = OrdersUpdateTaxesWithHttpInfo(id, taxId, updateOrderTaxRequest, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -726,9 +763,10 @@ namespace Conekta.net.Api
         /// <param name="taxId">identifier</param>
         /// <param name="updateOrderTaxRequest">requested field for taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UpdateOrderTaxResponse</returns>
-        public Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> OrdersUpdateTaxesWithHttpInfo(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> OrdersUpdateTaxesWithHttpInfo(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -776,6 +814,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
             localVarRequestOptions.Data = updateOrderTaxRequest;
 
@@ -811,12 +853,13 @@ namespace Conekta.net.Api
         /// <param name="taxId">identifier</param>
         /// <param name="updateOrderTaxRequest">requested field for taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateOrderTaxResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersUpdateTaxesAsync(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersUpdateTaxesAsync(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> localVarResponse = await OrdersUpdateTaxesWithHttpInfoAsync(id, taxId, updateOrderTaxRequest, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> localVarResponse = await OrdersUpdateTaxesWithHttpInfoAsync(id, taxId, updateOrderTaxRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -828,10 +871,11 @@ namespace Conekta.net.Api
         /// <param name="taxId">identifier</param>
         /// <param name="updateOrderTaxRequest">requested field for taxes</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateOrderTaxResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse>> OrdersUpdateTaxesWithHttpInfoAsync(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse>> OrdersUpdateTaxesWithHttpInfoAsync(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -880,6 +924,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
             localVarRequestOptions.Data = updateOrderTaxRequest;
 

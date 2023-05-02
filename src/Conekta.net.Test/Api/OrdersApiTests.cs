@@ -293,7 +293,7 @@ public class OrdersApiTests
     {
         int? limit = 20;
 
-        GetOrdersResponse response = _instance.GetOrders("en", limit);
+        GetOrdersResponse response = _instance.GetOrders("en", null, limit);
 
         Assert.IsType<GetOrdersResponse>(response);
         Assert.True(response.HasMore);
@@ -314,7 +314,7 @@ public class OrdersApiTests
     {
         int? limit = 19;
 
-        GetOrdersResponse response = _instance.GetOrders("en", limit, next: "ord_2tNDyQbJacvUZiyfp");
+        GetOrdersResponse response = _instance.GetOrders("en", null, limit, next: "ord_2tNDyQbJacvUZiyfp");
 
         Assert.IsType<GetOrdersResponse>(response);
         Assert.True(response.HasMore);
@@ -333,7 +333,7 @@ public class OrdersApiTests
     {
         int? limit = 21;
 
-        GetOrdersResponse response = _instance.GetOrders("en", limit, previous: "ord_2tHuXwkFTkjAbMGjU");
+        GetOrdersResponse response = _instance.GetOrders("en", null, limit, previous: "ord_2tHuXwkFTkjAbMGjU");
 
         Assert.IsType<GetOrdersResponse>(response);
         Assert.True(response.HasMore);
@@ -352,7 +352,7 @@ public class OrdersApiTests
     {
         int? limit = 22;
 
-        GetOrdersResponse response = _instance.GetOrders("en", limit, search: "ord_2tNDzhA4Akmzj11AS");
+        GetOrdersResponse response = _instance.GetOrders("en", null,limit, search: "ord_2tNDzhA4Akmzj11AS");
 
         Assert.IsType<GetOrdersResponse>(response);
         Assert.False(response.HasMore);
@@ -412,7 +412,7 @@ public class OrdersApiTests
         {
             Amount = 40000,
         };
-        var response = _instance.OrdersCreateCapture("ord_2tVKoTd79XK1GqJmm", "en", request);
+        var response = _instance.OrdersCreateCapture("ord_2tVKoTd79XK1GqJmm", "en", null,request);
 
         Assert.IsType<OrderResponse>(response);
         Assert.Equal("paid", response.PaymentStatus);

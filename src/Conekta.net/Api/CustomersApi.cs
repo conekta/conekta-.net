@@ -36,9 +36,10 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customer">requested field for customer</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomerResponse</returns>
-        CustomerResponse CreateCustomer(Customer customer, string acceptLanguage = default(string), int operationIndex = 0);
+        CustomerResponse CreateCustomer(Customer customer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Create customer
@@ -49,9 +50,10 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customer">requested field for customer</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomerResponse</returns>
-        ApiResponse<CustomerResponse> CreateCustomerWithHttpInfo(Customer customer, string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<CustomerResponse> CreateCustomerWithHttpInfo(Customer customer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         /// <summary>
         /// Create Fiscal Entity
         /// </summary>
@@ -62,9 +64,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="customerFiscalEntitiesRequest">requested field for customer fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CreateCustomerFiscalEntitiesResponse</returns>
-        CreateCustomerFiscalEntitiesResponse CreateCustomerFiscalEntities(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        CreateCustomerFiscalEntitiesResponse CreateCustomerFiscalEntities(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Create Fiscal Entity
@@ -76,9 +79,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="customerFiscalEntitiesRequest">requested field for customer fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CreateCustomerFiscalEntitiesResponse</returns>
-        ApiResponse<CreateCustomerFiscalEntitiesResponse> CreateCustomerFiscalEntitiesWithHttpInfo(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<CreateCustomerFiscalEntitiesResponse> CreateCustomerFiscalEntitiesWithHttpInfo(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         /// <summary>
         /// Delete Customer
         /// </summary>
@@ -88,9 +92,10 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomerResponse</returns>
-        CustomerResponse DeleteCustomerById(string id, string acceptLanguage = default(string), int operationIndex = 0);
+        CustomerResponse DeleteCustomerById(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Delete Customer
@@ -101,9 +106,10 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomerResponse</returns>
-        ApiResponse<CustomerResponse> DeleteCustomerByIdWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<CustomerResponse> DeleteCustomerByIdWithHttpInfo(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         /// <summary>
         /// Get Customer
         /// </summary>
@@ -113,9 +119,10 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomerResponse</returns>
-        CustomerResponse GetCustomerById(string id, string acceptLanguage = default(string), int operationIndex = 0);
+        CustomerResponse GetCustomerById(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Get Customer
@@ -126,9 +133,10 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomerResponse</returns>
-        ApiResponse<CustomerResponse> GetCustomerByIdWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<CustomerResponse> GetCustomerByIdWithHttpInfo(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         /// <summary>
         /// Get a list of customers
         /// </summary>
@@ -137,13 +145,14 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomersResponse</returns>
-        CustomersResponse GetCustomers(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
+        CustomersResponse GetCustomers(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Get a list of customers
@@ -153,13 +162,14 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomersResponse</returns>
-        ApiResponse<CustomersResponse> GetCustomersWithHttpInfo(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
+        ApiResponse<CustomersResponse> GetCustomersWithHttpInfo(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
         /// <summary>
         /// Update customer
         /// </summary>
@@ -170,9 +180,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="updateCustomer">requested field for customer</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomerResponse</returns>
-        CustomerResponse UpdateCustomer(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), int operationIndex = 0);
+        CustomerResponse UpdateCustomer(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Update customer
@@ -184,9 +195,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="updateCustomer">requested field for customer</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomerResponse</returns>
-        ApiResponse<CustomerResponse> UpdateCustomerWithHttpInfo(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<CustomerResponse> UpdateCustomerWithHttpInfo(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         /// <summary>
         /// Update  Fiscal Entity
         /// </summary>
@@ -198,9 +210,10 @@ namespace Conekta.net.Api
         /// <param name="fiscalEntitiesId">identifier</param>
         /// <param name="customerUpdateFiscalEntitiesRequest">requested field for customer update fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UpdateCustomerFiscalEntitiesResponse</returns>
-        UpdateCustomerFiscalEntitiesResponse UpdateCustomerFiscalEntities(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        UpdateCustomerFiscalEntitiesResponse UpdateCustomerFiscalEntities(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Update  Fiscal Entity
@@ -213,9 +226,10 @@ namespace Conekta.net.Api
         /// <param name="fiscalEntitiesId">identifier</param>
         /// <param name="customerUpdateFiscalEntitiesRequest">requested field for customer update fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UpdateCustomerFiscalEntitiesResponse</returns>
-        ApiResponse<UpdateCustomerFiscalEntitiesResponse> UpdateCustomerFiscalEntitiesWithHttpInfo(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<UpdateCustomerFiscalEntitiesResponse> UpdateCustomerFiscalEntitiesWithHttpInfo(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -234,10 +248,11 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customer">requested field for customer</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerResponse</returns>
-        System.Threading.Tasks.Task<CustomerResponse> CreateCustomerAsync(Customer customer, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CustomerResponse> CreateCustomerAsync(Customer customer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create customer
@@ -248,10 +263,11 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customer">requested field for customer</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomerResponse>> CreateCustomerWithHttpInfoAsync(Customer customer, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CustomerResponse>> CreateCustomerWithHttpInfoAsync(Customer customer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create Fiscal Entity
         /// </summary>
@@ -262,10 +278,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="customerFiscalEntitiesRequest">requested field for customer fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreateCustomerFiscalEntitiesResponse</returns>
-        System.Threading.Tasks.Task<CreateCustomerFiscalEntitiesResponse> CreateCustomerFiscalEntitiesAsync(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CreateCustomerFiscalEntitiesResponse> CreateCustomerFiscalEntitiesAsync(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Fiscal Entity
@@ -277,10 +294,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="customerFiscalEntitiesRequest">requested field for customer fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreateCustomerFiscalEntitiesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateCustomerFiscalEntitiesResponse>> CreateCustomerFiscalEntitiesWithHttpInfoAsync(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CreateCustomerFiscalEntitiesResponse>> CreateCustomerFiscalEntitiesWithHttpInfoAsync(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete Customer
         /// </summary>
@@ -290,10 +308,11 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerResponse</returns>
-        System.Threading.Tasks.Task<CustomerResponse> DeleteCustomerByIdAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CustomerResponse> DeleteCustomerByIdAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete Customer
@@ -304,10 +323,11 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomerResponse>> DeleteCustomerByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CustomerResponse>> DeleteCustomerByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get Customer
         /// </summary>
@@ -317,10 +337,11 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerResponse</returns>
-        System.Threading.Tasks.Task<CustomerResponse> GetCustomerByIdAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CustomerResponse> GetCustomerByIdAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Customer
@@ -331,10 +352,11 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomerResponse>> GetCustomerByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CustomerResponse>> GetCustomerByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get a list of customers
         /// </summary>
@@ -343,6 +365,7 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -350,7 +373,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomersResponse</returns>
-        System.Threading.Tasks.Task<CustomersResponse> GetCustomersAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CustomersResponse> GetCustomersAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get a list of customers
@@ -360,6 +383,7 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -367,7 +391,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomersResponse>> GetCustomersWithHttpInfoAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CustomersResponse>> GetCustomersWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update customer
         /// </summary>
@@ -378,10 +402,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="updateCustomer">requested field for customer</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerResponse</returns>
-        System.Threading.Tasks.Task<CustomerResponse> UpdateCustomerAsync(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CustomerResponse> UpdateCustomerAsync(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update customer
@@ -393,10 +418,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="updateCustomer">requested field for customer</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomerResponse>> UpdateCustomerWithHttpInfoAsync(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CustomerResponse>> UpdateCustomerWithHttpInfoAsync(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update  Fiscal Entity
         /// </summary>
@@ -408,10 +434,11 @@ namespace Conekta.net.Api
         /// <param name="fiscalEntitiesId">identifier</param>
         /// <param name="customerUpdateFiscalEntitiesRequest">requested field for customer update fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateCustomerFiscalEntitiesResponse</returns>
-        System.Threading.Tasks.Task<UpdateCustomerFiscalEntitiesResponse> UpdateCustomerFiscalEntitiesAsync(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<UpdateCustomerFiscalEntitiesResponse> UpdateCustomerFiscalEntitiesAsync(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update  Fiscal Entity
@@ -424,10 +451,11 @@ namespace Conekta.net.Api
         /// <param name="fiscalEntitiesId">identifier</param>
         /// <param name="customerUpdateFiscalEntitiesRequest">requested field for customer update fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateCustomerFiscalEntitiesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateCustomerFiscalEntitiesResponse>> UpdateCustomerFiscalEntitiesWithHttpInfoAsync(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<UpdateCustomerFiscalEntitiesResponse>> UpdateCustomerFiscalEntitiesWithHttpInfoAsync(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -554,11 +582,12 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customer">requested field for customer</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomerResponse</returns>
-        public CustomerResponse CreateCustomer(Customer customer, string acceptLanguage = default(string), int operationIndex = 0)
+        public CustomerResponse CreateCustomer(Customer customer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<CustomerResponse> localVarResponse = CreateCustomerWithHttpInfo(customer, acceptLanguage);
+            Conekta.net.Client.ApiResponse<CustomerResponse> localVarResponse = CreateCustomerWithHttpInfo(customer, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -568,9 +597,10 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customer">requested field for customer</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomerResponse</returns>
-        public Conekta.net.Client.ApiResponse<CustomerResponse> CreateCustomerWithHttpInfo(Customer customer, string acceptLanguage = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<CustomerResponse> CreateCustomerWithHttpInfo(Customer customer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'customer' is set
             if (customer == null)
@@ -604,6 +634,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
             localVarRequestOptions.Data = customer;
 
@@ -637,12 +671,13 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customer">requested field for customer</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerResponse</returns>
-        public async System.Threading.Tasks.Task<CustomerResponse> CreateCustomerAsync(Customer customer, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CustomerResponse> CreateCustomerAsync(Customer customer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<CustomerResponse> localVarResponse = await CreateCustomerWithHttpInfoAsync(customer, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<CustomerResponse> localVarResponse = await CreateCustomerWithHttpInfoAsync(customer, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -652,10 +687,11 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customer">requested field for customer</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomerResponse>> CreateCustomerWithHttpInfoAsync(Customer customer, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomerResponse>> CreateCustomerWithHttpInfoAsync(Customer customer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'customer' is set
             if (customer == null)
@@ -690,6 +726,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
             localVarRequestOptions.Data = customer;
 
@@ -725,11 +765,12 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="customerFiscalEntitiesRequest">requested field for customer fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CreateCustomerFiscalEntitiesResponse</returns>
-        public CreateCustomerFiscalEntitiesResponse CreateCustomerFiscalEntities(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        public CreateCustomerFiscalEntitiesResponse CreateCustomerFiscalEntities(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<CreateCustomerFiscalEntitiesResponse> localVarResponse = CreateCustomerFiscalEntitiesWithHttpInfo(id, customerFiscalEntitiesRequest, acceptLanguage);
+            Conekta.net.Client.ApiResponse<CreateCustomerFiscalEntitiesResponse> localVarResponse = CreateCustomerFiscalEntitiesWithHttpInfo(id, customerFiscalEntitiesRequest, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -740,9 +781,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="customerFiscalEntitiesRequest">requested field for customer fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CreateCustomerFiscalEntitiesResponse</returns>
-        public Conekta.net.Client.ApiResponse<CreateCustomerFiscalEntitiesResponse> CreateCustomerFiscalEntitiesWithHttpInfo(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<CreateCustomerFiscalEntitiesResponse> CreateCustomerFiscalEntitiesWithHttpInfo(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -783,6 +825,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
             localVarRequestOptions.Data = customerFiscalEntitiesRequest;
 
@@ -817,12 +863,13 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="customerFiscalEntitiesRequest">requested field for customer fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreateCustomerFiscalEntitiesResponse</returns>
-        public async System.Threading.Tasks.Task<CreateCustomerFiscalEntitiesResponse> CreateCustomerFiscalEntitiesAsync(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CreateCustomerFiscalEntitiesResponse> CreateCustomerFiscalEntitiesAsync(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<CreateCustomerFiscalEntitiesResponse> localVarResponse = await CreateCustomerFiscalEntitiesWithHttpInfoAsync(id, customerFiscalEntitiesRequest, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<CreateCustomerFiscalEntitiesResponse> localVarResponse = await CreateCustomerFiscalEntitiesWithHttpInfoAsync(id, customerFiscalEntitiesRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -833,10 +880,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="customerFiscalEntitiesRequest">requested field for customer fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreateCustomerFiscalEntitiesResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CreateCustomerFiscalEntitiesResponse>> CreateCustomerFiscalEntitiesWithHttpInfoAsync(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CreateCustomerFiscalEntitiesResponse>> CreateCustomerFiscalEntitiesWithHttpInfoAsync(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -879,6 +927,10 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
+            }
             localVarRequestOptions.Data = customerFiscalEntitiesRequest;
 
             localVarRequestOptions.Operation = "CustomersApi.CreateCustomerFiscalEntities";
@@ -912,11 +964,12 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomerResponse</returns>
-        public CustomerResponse DeleteCustomerById(string id, string acceptLanguage = default(string), int operationIndex = 0)
+        public CustomerResponse DeleteCustomerById(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<CustomerResponse> localVarResponse = DeleteCustomerByIdWithHttpInfo(id, acceptLanguage);
+            Conekta.net.Client.ApiResponse<CustomerResponse> localVarResponse = DeleteCustomerByIdWithHttpInfo(id, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -926,9 +979,10 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomerResponse</returns>
-        public Conekta.net.Client.ApiResponse<CustomerResponse> DeleteCustomerByIdWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<CustomerResponse> DeleteCustomerByIdWithHttpInfo(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -962,6 +1016,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
 
             localVarRequestOptions.Operation = "CustomersApi.DeleteCustomerById";
@@ -994,12 +1052,13 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerResponse</returns>
-        public async System.Threading.Tasks.Task<CustomerResponse> DeleteCustomerByIdAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CustomerResponse> DeleteCustomerByIdAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<CustomerResponse> localVarResponse = await DeleteCustomerByIdWithHttpInfoAsync(id, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<CustomerResponse> localVarResponse = await DeleteCustomerByIdWithHttpInfoAsync(id, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1009,10 +1068,11 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomerResponse>> DeleteCustomerByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomerResponse>> DeleteCustomerByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1047,6 +1107,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
 
             localVarRequestOptions.Operation = "CustomersApi.DeleteCustomerById";
@@ -1080,11 +1144,12 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomerResponse</returns>
-        public CustomerResponse GetCustomerById(string id, string acceptLanguage = default(string), int operationIndex = 0)
+        public CustomerResponse GetCustomerById(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<CustomerResponse> localVarResponse = GetCustomerByIdWithHttpInfo(id, acceptLanguage);
+            Conekta.net.Client.ApiResponse<CustomerResponse> localVarResponse = GetCustomerByIdWithHttpInfo(id, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -1094,9 +1159,10 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomerResponse</returns>
-        public Conekta.net.Client.ApiResponse<CustomerResponse> GetCustomerByIdWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<CustomerResponse> GetCustomerByIdWithHttpInfo(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1130,6 +1196,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
 
             localVarRequestOptions.Operation = "CustomersApi.GetCustomerById";
@@ -1162,12 +1232,13 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerResponse</returns>
-        public async System.Threading.Tasks.Task<CustomerResponse> GetCustomerByIdAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CustomerResponse> GetCustomerByIdAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<CustomerResponse> localVarResponse = await GetCustomerByIdWithHttpInfoAsync(id, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<CustomerResponse> localVarResponse = await GetCustomerByIdWithHttpInfoAsync(id, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1177,10 +1248,11 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomerResponse>> GetCustomerByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomerResponse>> GetCustomerByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1216,6 +1288,10 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
+            }
 
             localVarRequestOptions.Operation = "CustomersApi.GetCustomerById";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1247,15 +1323,16 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomersResponse</returns>
-        public CustomersResponse GetCustomers(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0)
+        public CustomersResponse GetCustomers(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<CustomersResponse> localVarResponse = GetCustomersWithHttpInfo(acceptLanguage, limit, search, next, previous);
+            Conekta.net.Client.ApiResponse<CustomersResponse> localVarResponse = GetCustomersWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous);
             return localVarResponse.Data;
         }
 
@@ -1264,13 +1341,14 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomersResponse</returns>
-        public Conekta.net.Client.ApiResponse<CustomersResponse> GetCustomersWithHttpInfo(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<CustomersResponse> GetCustomersWithHttpInfo(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0)
         {
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
 
@@ -1313,6 +1391,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
 
             localVarRequestOptions.Operation = "CustomersApi.GetCustomers";
@@ -1344,6 +1426,7 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -1351,9 +1434,9 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomersResponse</returns>
-        public async System.Threading.Tasks.Task<CustomersResponse> GetCustomersAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CustomersResponse> GetCustomersAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<CustomersResponse> localVarResponse = await GetCustomersWithHttpInfoAsync(acceptLanguage, limit, search, next, previous, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<CustomersResponse> localVarResponse = await GetCustomersWithHttpInfoAsync(acceptLanguage, xChildCompanyId, limit, search, next, previous, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1362,6 +1445,7 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
@@ -1369,7 +1453,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomersResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomersResponse>> GetCustomersWithHttpInfoAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomersResponse>> GetCustomersWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -1413,6 +1497,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
 
             localVarRequestOptions.Operation = "CustomersApi.GetCustomers";
@@ -1447,11 +1535,12 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="updateCustomer">requested field for customer</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomerResponse</returns>
-        public CustomerResponse UpdateCustomer(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), int operationIndex = 0)
+        public CustomerResponse UpdateCustomer(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<CustomerResponse> localVarResponse = UpdateCustomerWithHttpInfo(id, updateCustomer, acceptLanguage);
+            Conekta.net.Client.ApiResponse<CustomerResponse> localVarResponse = UpdateCustomerWithHttpInfo(id, updateCustomer, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -1462,9 +1551,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="updateCustomer">requested field for customer</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomerResponse</returns>
-        public Conekta.net.Client.ApiResponse<CustomerResponse> UpdateCustomerWithHttpInfo(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<CustomerResponse> UpdateCustomerWithHttpInfo(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1505,6 +1595,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
             localVarRequestOptions.Data = updateCustomer;
 
@@ -1539,12 +1633,13 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="updateCustomer">requested field for customer</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerResponse</returns>
-        public async System.Threading.Tasks.Task<CustomerResponse> UpdateCustomerAsync(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CustomerResponse> UpdateCustomerAsync(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<CustomerResponse> localVarResponse = await UpdateCustomerWithHttpInfoAsync(id, updateCustomer, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<CustomerResponse> localVarResponse = await UpdateCustomerWithHttpInfoAsync(id, updateCustomer, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1555,10 +1650,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="updateCustomer">requested field for customer</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomerResponse>> UpdateCustomerWithHttpInfoAsync(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomerResponse>> UpdateCustomerWithHttpInfoAsync(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1600,6 +1696,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
             localVarRequestOptions.Data = updateCustomer;
 
@@ -1636,11 +1736,12 @@ namespace Conekta.net.Api
         /// <param name="fiscalEntitiesId">identifier</param>
         /// <param name="customerUpdateFiscalEntitiesRequest">requested field for customer update fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UpdateCustomerFiscalEntitiesResponse</returns>
-        public UpdateCustomerFiscalEntitiesResponse UpdateCustomerFiscalEntities(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        public UpdateCustomerFiscalEntitiesResponse UpdateCustomerFiscalEntities(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<UpdateCustomerFiscalEntitiesResponse> localVarResponse = UpdateCustomerFiscalEntitiesWithHttpInfo(id, fiscalEntitiesId, customerUpdateFiscalEntitiesRequest, acceptLanguage);
+            Conekta.net.Client.ApiResponse<UpdateCustomerFiscalEntitiesResponse> localVarResponse = UpdateCustomerFiscalEntitiesWithHttpInfo(id, fiscalEntitiesId, customerUpdateFiscalEntitiesRequest, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -1652,9 +1753,10 @@ namespace Conekta.net.Api
         /// <param name="fiscalEntitiesId">identifier</param>
         /// <param name="customerUpdateFiscalEntitiesRequest">requested field for customer update fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UpdateCustomerFiscalEntitiesResponse</returns>
-        public Conekta.net.Client.ApiResponse<UpdateCustomerFiscalEntitiesResponse> UpdateCustomerFiscalEntitiesWithHttpInfo(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<UpdateCustomerFiscalEntitiesResponse> UpdateCustomerFiscalEntitiesWithHttpInfo(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1702,6 +1804,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
             localVarRequestOptions.Data = customerUpdateFiscalEntitiesRequest;
 
@@ -1737,12 +1843,13 @@ namespace Conekta.net.Api
         /// <param name="fiscalEntitiesId">identifier</param>
         /// <param name="customerUpdateFiscalEntitiesRequest">requested field for customer update fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateCustomerFiscalEntitiesResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateCustomerFiscalEntitiesResponse> UpdateCustomerFiscalEntitiesAsync(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<UpdateCustomerFiscalEntitiesResponse> UpdateCustomerFiscalEntitiesAsync(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<UpdateCustomerFiscalEntitiesResponse> localVarResponse = await UpdateCustomerFiscalEntitiesWithHttpInfoAsync(id, fiscalEntitiesId, customerUpdateFiscalEntitiesRequest, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<UpdateCustomerFiscalEntitiesResponse> localVarResponse = await UpdateCustomerFiscalEntitiesWithHttpInfoAsync(id, fiscalEntitiesId, customerUpdateFiscalEntitiesRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1754,10 +1861,11 @@ namespace Conekta.net.Api
         /// <param name="fiscalEntitiesId">identifier</param>
         /// <param name="customerUpdateFiscalEntitiesRequest">requested field for customer update fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateCustomerFiscalEntitiesResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateCustomerFiscalEntitiesResponse>> UpdateCustomerFiscalEntitiesWithHttpInfoAsync(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateCustomerFiscalEntitiesResponse>> UpdateCustomerFiscalEntitiesWithHttpInfoAsync(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1806,6 +1914,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
             localVarRequestOptions.Data = customerUpdateFiscalEntitiesRequest;
 

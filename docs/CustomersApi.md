@@ -14,7 +14,7 @@ All URIs are relative to *https://api.conekta.io*
 
 <a name="createcustomer"></a>
 # **CreateCustomer**
-> CustomerResponse CreateCustomer (Customer customer, string acceptLanguage = null)
+> CustomerResponse CreateCustomer (Customer customer, string acceptLanguage = null, string xChildCompanyId = null)
 
 Create customer
 
@@ -42,11 +42,12 @@ namespace Example
             var apiInstance = new CustomersApi(config);
             var customer = new Customer(); // Customer | requested field for customer
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Create customer
-                CustomerResponse result = apiInstance.CreateCustomer(customer, acceptLanguage);
+                CustomerResponse result = apiInstance.CreateCustomer(customer, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -67,7 +68,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create customer
-    ApiResponse<CustomerResponse> response = apiInstance.CreateCustomerWithHttpInfo(customer, acceptLanguage);
+    ApiResponse<CustomerResponse> response = apiInstance.CreateCustomerWithHttpInfo(customer, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -86,6 +87,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **customer** | [**Customer**](Customer.md) | requested field for customer |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -114,7 +116,7 @@ catch (ApiException e)
 
 <a name="createcustomerfiscalentities"></a>
 # **CreateCustomerFiscalEntities**
-> CreateCustomerFiscalEntitiesResponse CreateCustomerFiscalEntities (string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = null)
+> CreateCustomerFiscalEntitiesResponse CreateCustomerFiscalEntities (string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
 Create Fiscal Entity
 
@@ -143,11 +145,12 @@ namespace Example
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var customerFiscalEntitiesRequest = new CustomerFiscalEntitiesRequest(); // CustomerFiscalEntitiesRequest | requested field for customer fiscal entities
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Create Fiscal Entity
-                CreateCustomerFiscalEntitiesResponse result = apiInstance.CreateCustomerFiscalEntities(id, customerFiscalEntitiesRequest, acceptLanguage);
+                CreateCustomerFiscalEntitiesResponse result = apiInstance.CreateCustomerFiscalEntities(id, customerFiscalEntitiesRequest, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -168,7 +171,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create Fiscal Entity
-    ApiResponse<CreateCustomerFiscalEntitiesResponse> response = apiInstance.CreateCustomerFiscalEntitiesWithHttpInfo(id, customerFiscalEntitiesRequest, acceptLanguage);
+    ApiResponse<CreateCustomerFiscalEntitiesResponse> response = apiInstance.CreateCustomerFiscalEntitiesWithHttpInfo(id, customerFiscalEntitiesRequest, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -188,6 +191,7 @@ catch (ApiException e)
 | **id** | **string** | Identifier of the resource |  |
 | **customerFiscalEntitiesRequest** | [**CustomerFiscalEntitiesRequest**](CustomerFiscalEntitiesRequest.md) | requested field for customer fiscal entities |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -216,7 +220,7 @@ catch (ApiException e)
 
 <a name="deletecustomerbyid"></a>
 # **DeleteCustomerById**
-> CustomerResponse DeleteCustomerById (string id, string acceptLanguage = null)
+> CustomerResponse DeleteCustomerById (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
 Delete Customer
 
@@ -244,11 +248,12 @@ namespace Example
             var apiInstance = new CustomersApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Delete Customer
-                CustomerResponse result = apiInstance.DeleteCustomerById(id, acceptLanguage);
+                CustomerResponse result = apiInstance.DeleteCustomerById(id, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -269,7 +274,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete Customer
-    ApiResponse<CustomerResponse> response = apiInstance.DeleteCustomerByIdWithHttpInfo(id, acceptLanguage);
+    ApiResponse<CustomerResponse> response = apiInstance.DeleteCustomerByIdWithHttpInfo(id, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -288,6 +293,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -316,7 +322,7 @@ catch (ApiException e)
 
 <a name="getcustomerbyid"></a>
 # **GetCustomerById**
-> CustomerResponse GetCustomerById (string id, string acceptLanguage = null)
+> CustomerResponse GetCustomerById (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
 Get Customer
 
@@ -344,11 +350,12 @@ namespace Example
             var apiInstance = new CustomersApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Get Customer
-                CustomerResponse result = apiInstance.GetCustomerById(id, acceptLanguage);
+                CustomerResponse result = apiInstance.GetCustomerById(id, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -369,7 +376,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get Customer
-    ApiResponse<CustomerResponse> response = apiInstance.GetCustomerByIdWithHttpInfo(id, acceptLanguage);
+    ApiResponse<CustomerResponse> response = apiInstance.GetCustomerByIdWithHttpInfo(id, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -388,6 +395,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -415,7 +423,7 @@ catch (ApiException e)
 
 <a name="getcustomers"></a>
 # **GetCustomers**
-> CustomersResponse GetCustomers (string acceptLanguage = null, int? limit = null, string search = null, string next = null, string previous = null)
+> CustomersResponse GetCustomers (string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string search = null, string next = null, string previous = null)
 
 Get a list of customers
 
@@ -442,6 +450,7 @@ namespace Example
 
             var apiInstance = new CustomersApi(config);
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
             var limit = 20;  // int? | The numbers of items to return, the maximum value is 250 (optional)  (default to 20)
             var search = "search_example";  // string | General order search, e.g. by mail, reference etc. (optional) 
             var next = "next_example";  // string | next page (optional) 
@@ -450,7 +459,7 @@ namespace Example
             try
             {
                 // Get a list of customers
-                CustomersResponse result = apiInstance.GetCustomers(acceptLanguage, limit, search, next, previous);
+                CustomersResponse result = apiInstance.GetCustomers(acceptLanguage, xChildCompanyId, limit, search, next, previous);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -471,7 +480,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get a list of customers
-    ApiResponse<CustomersResponse> response = apiInstance.GetCustomersWithHttpInfo(acceptLanguage, limit, search, next, previous);
+    ApiResponse<CustomersResponse> response = apiInstance.GetCustomersWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -489,6 +498,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 | **limit** | **int?** | The numbers of items to return, the maximum value is 250 | [optional] [default to 20] |
 | **search** | **string** | General order search, e.g. by mail, reference etc. | [optional]  |
 | **next** | **string** | next page | [optional]  |
@@ -519,7 +529,7 @@ catch (ApiException e)
 
 <a name="updatecustomer"></a>
 # **UpdateCustomer**
-> CustomerResponse UpdateCustomer (string id, UpdateCustomer updateCustomer, string acceptLanguage = null)
+> CustomerResponse UpdateCustomer (string id, UpdateCustomer updateCustomer, string acceptLanguage = null, string xChildCompanyId = null)
 
 Update customer
 
@@ -548,11 +558,12 @@ namespace Example
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var updateCustomer = new UpdateCustomer(); // UpdateCustomer | requested field for customer
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Update customer
-                CustomerResponse result = apiInstance.UpdateCustomer(id, updateCustomer, acceptLanguage);
+                CustomerResponse result = apiInstance.UpdateCustomer(id, updateCustomer, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -573,7 +584,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update customer
-    ApiResponse<CustomerResponse> response = apiInstance.UpdateCustomerWithHttpInfo(id, updateCustomer, acceptLanguage);
+    ApiResponse<CustomerResponse> response = apiInstance.UpdateCustomerWithHttpInfo(id, updateCustomer, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -593,6 +604,7 @@ catch (ApiException e)
 | **id** | **string** | Identifier of the resource |  |
 | **updateCustomer** | [**UpdateCustomer**](UpdateCustomer.md) | requested field for customer |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -621,7 +633,7 @@ catch (ApiException e)
 
 <a name="updatecustomerfiscalentities"></a>
 # **UpdateCustomerFiscalEntities**
-> UpdateCustomerFiscalEntitiesResponse UpdateCustomerFiscalEntities (string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = null)
+> UpdateCustomerFiscalEntitiesResponse UpdateCustomerFiscalEntities (string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
 Update  Fiscal Entity
 
@@ -651,11 +663,12 @@ namespace Example
             var fiscalEntitiesId = fis_ent_2tQ8HkkfbauaKP9Ho;  // string | identifier
             var customerUpdateFiscalEntitiesRequest = new CustomerUpdateFiscalEntitiesRequest(); // CustomerUpdateFiscalEntitiesRequest | requested field for customer update fiscal entities
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Update  Fiscal Entity
-                UpdateCustomerFiscalEntitiesResponse result = apiInstance.UpdateCustomerFiscalEntities(id, fiscalEntitiesId, customerUpdateFiscalEntitiesRequest, acceptLanguage);
+                UpdateCustomerFiscalEntitiesResponse result = apiInstance.UpdateCustomerFiscalEntities(id, fiscalEntitiesId, customerUpdateFiscalEntitiesRequest, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -676,7 +689,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update  Fiscal Entity
-    ApiResponse<UpdateCustomerFiscalEntitiesResponse> response = apiInstance.UpdateCustomerFiscalEntitiesWithHttpInfo(id, fiscalEntitiesId, customerUpdateFiscalEntitiesRequest, acceptLanguage);
+    ApiResponse<UpdateCustomerFiscalEntitiesResponse> response = apiInstance.UpdateCustomerFiscalEntitiesWithHttpInfo(id, fiscalEntitiesId, customerUpdateFiscalEntitiesRequest, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -697,6 +710,7 @@ catch (ApiException e)
 | **fiscalEntitiesId** | **string** | identifier |  |
 | **customerUpdateFiscalEntitiesRequest** | [**CustomerUpdateFiscalEntitiesRequest**](CustomerUpdateFiscalEntitiesRequest.md) | requested field for customer update fiscal entities |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 

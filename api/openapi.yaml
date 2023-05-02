@@ -59,6 +59,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
+        "403":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: "Unauthorized access service, please contact support team"
+                  code: conekta.errors.forbidden.authentication.invalid_whitelist_access
+                  debug_message: "Unauthorized access to whitelists service, please\
+                    \ contact support team"
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: forbidden error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -125,6 +140,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
+        "403":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: "Unauthorized access service, please contact support team"
+                  code: conekta.errors.forbidden.authentication.invalid_whitelist_access
+                  debug_message: "Unauthorized access to whitelists service, please\
+                    \ contact support team"
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: forbidden error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -173,6 +203,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       responses:
         "200":
           content:
@@ -194,6 +235,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
+        "403":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: "Unauthorized access service, please contact support team"
+                  code: conekta.errors.forbidden.authentication.invalid_whitelist_access
+                  debug_message: "Unauthorized access to whitelists service, please\
+                    \ contact support team"
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: forbidden error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -389,6 +445,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       responses:
         "200":
           content:
@@ -475,6 +542,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       requestBody:
         $ref: '#/components/requestBodies/charge_create'
       responses:
@@ -553,6 +631,237 @@ paths:
       summary: Create charge
       tags:
       - Charges
+  /companies:
+    get:
+      description: Consume the list of child companies.  This is used for holding
+        companies with several child entities.
+      operationId: getCompanies
+      parameters:
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      - description: "The numbers of items to return, the maximum value is 250"
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 20
+          format: int32
+          maximum: 250
+          minimum: 1
+          type: integer
+      - description: "General order search, e.g. by mail, reference etc."
+        in: query
+        name: search
+        required: false
+        schema:
+          type: string
+      - description: next page
+        in: query
+        name: next
+        required: false
+        schema:
+          type: string
+      - description: previous page
+        in: query
+        name: previous
+        required: false
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/get_companies_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.1.0; format=application/json
+                type: string
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get List of Companies
+      tags:
+      - Companies
+  /companies/{id}:
+    get:
+      operationId: getCompany
+      parameters:
+      - description: Identifier of the resource
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/company_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.1.0; format=application/json
+                type: string
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get Company
+      tags:
+      - Companies
   /customers:
     get:
       description: "The purpose of business is to create and maintain a client, you\
@@ -576,6 +885,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       - description: "The numbers of items to return, the maximum value is 250"
         in: query
@@ -695,6 +1015,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       requestBody:
         $ref: '#/components/requestBodies/customer'
@@ -866,6 +1197,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       responses:
         "200":
           content:
@@ -968,6 +1310,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       responses:
         "200":
           content:
@@ -1054,6 +1407,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       requestBody:
         $ref: '#/components/requestBodies/update_customer'
@@ -1157,6 +1521,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       requestBody:
         $ref: '#/components/requestBodies/customer_fiscal_entities'
@@ -1270,6 +1645,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       requestBody:
         $ref: '#/components/requestBodies/customer_update_fiscal_entities'
       responses:
@@ -1375,6 +1761,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       requestBody:
         $ref: '#/components/requestBodies/discount_line_create'
       responses:
@@ -1471,6 +1868,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       responses:
         "200":
@@ -1581,6 +1989,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       requestBody:
         $ref: '#/components/requestBodies/discount_line_update'
       responses:
@@ -1677,6 +2096,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       - description: "The numbers of items to return, the maximum value is 250"
         in: query
@@ -1796,6 +2226,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
         in: path
@@ -1908,6 +2349,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       - description: "The numbers of items to return, the maximum value is 250"
         in: query
@@ -2034,6 +2486,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       responses:
         "200":
           content:
@@ -2114,6 +2577,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       - description: "The numbers of items to return, the maximum value is 250"
         in: query
@@ -2206,6 +2680,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       requestBody:
         $ref: '#/components/requestBodies/order'
@@ -2316,6 +2801,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       responses:
         "200":
@@ -2509,6 +3005,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       requestBody:
         content:
           application/json:
@@ -2620,6 +3127,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       requestBody:
         $ref: '#/components/requestBodies/product_create'
       responses:
@@ -2716,6 +3234,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       responses:
         "200":
@@ -2826,6 +3355,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       requestBody:
         $ref: '#/components/requestBodies/product_update'
       responses:
@@ -2932,6 +3472,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       requestBody:
         $ref: '#/components/requestBodies/order_refunds_request'
       responses:
@@ -3029,6 +3580,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       - description: "The numbers of items to return, the maximum value is 250"
         in: query
@@ -3175,6 +3737,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       requestBody:
         $ref: '#/components/requestBodies/checkout'
       responses:
@@ -3296,6 +3869,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
@@ -3438,6 +4022,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
         in: path
@@ -3578,6 +4173,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
@@ -3721,6 +4327,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
@@ -3873,6 +4490,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       - description: "The numbers of items to return, the maximum value is 250"
         in: query
         name: limit
@@ -4012,6 +4640,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       requestBody:
         $ref: '#/components/requestBodies/customer_payment_methods'
       responses:
@@ -4124,6 +4763,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       responses:
         "200":
           content:
@@ -4233,6 +4883,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       requestBody:
         $ref: '#/components/requestBodies/customer_update_payment_methods'
       responses:
@@ -4329,6 +4990,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       - description: "The numbers of items to return, the maximum value is 250"
         in: query
@@ -4461,6 +5133,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       requestBody:
         $ref: '#/components/requestBodies/plan'
@@ -4701,6 +5384,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       responses:
         "200":
           content:
@@ -4826,6 +5520,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       requestBody:
         $ref: '#/components/requestBodies/plan_update'
@@ -4957,6 +5662,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       requestBody:
         $ref: '#/components/requestBodies/shipping_create'
       responses:
@@ -5057,6 +5773,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       responses:
         "200":
@@ -5167,6 +5894,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       requestBody:
         $ref: '#/components/requestBodies/shipping_create'
       responses:
@@ -5271,6 +6009,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       requestBody:
         $ref: '#/components/requestBodies/customer_shipping_contacts'
@@ -5384,6 +6133,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       responses:
         "200":
           content:
@@ -5492,6 +6252,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       requestBody:
         $ref: '#/components/requestBodies/customer_update_shipping_contacts'
@@ -5710,6 +6481,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       requestBody:
         $ref: '#/components/requestBodies/subscription'
       responses:
@@ -5839,6 +6621,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       requestBody:
         $ref: '#/components/requestBodies/subscription_update'
@@ -5971,6 +6764,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       responses:
         "200":
           content:
@@ -6084,6 +6888,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       responses:
         "200":
@@ -6228,6 +7043,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       responses:
         "200":
           content:
@@ -6355,6 +7181,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       responses:
         "200":
@@ -6498,6 +7335,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       requestBody:
         $ref: '#/components/requestBodies/order_tax'
       responses:
@@ -6594,6 +7442,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       responses:
         "200":
@@ -6704,6 +7563,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       requestBody:
         $ref: '#/components/requestBodies/order_tax_update'
       responses:
@@ -6802,6 +7672,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       - description: "The numbers of items to return, the maximum value is 250"
         in: query
@@ -7108,6 +7989,17 @@ paths:
           - es
           - en
           type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
       responses:
         "200":
           content:
@@ -7212,6 +8104,17 @@ paths:
           enum:
           - es
           - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        examples:
+          "6441b6376b60c3a638da80af":
+            summary: for spanish request/response
+            value: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
           type: string
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
@@ -7611,6 +8514,18 @@ components:
       required: true
       schema:
         type: string
+    x_child_company_id:
+      description: "In the case of a holding company, the company id of the child\
+        \ company to which will process the request."
+      examples:
+        "6441b6376b60c3a638da80af":
+          summary: for spanish request/response
+          value: 6441b6376b60c3a638da80af
+      in: header
+      name: X-Child-Company-Id
+      required: false
+      schema:
+        type: string
     limit:
       description: "The numbers of items to return, the maximum value is 250"
       in: query
@@ -7936,6 +8851,21 @@ components:
           schema:
             $ref: '#/components/schemas/error'
       description: authentication error
+    "403":
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          example:
+            details:
+            - message: "Unauthorized access service, please contact support team"
+              code: conekta.errors.forbidden.authentication.invalid_whitelist_access
+              debug_message: "Unauthorized access to whitelists service, please contact\
+                \ support team"
+            log_id: 641b6d073cd9a50001515007
+            object: error
+            type: processing_error
+          schema:
+            $ref: '#/components/schemas/error'
+      description: forbidden error
     "500":
       content:
         application/vnd.conekta-v2.1.0+json:
@@ -8110,6 +9040,71 @@ components:
           type: string
       title: charges_data_response
       type: object
+    pagination:
+      description: pagination metadata
+      properties:
+        object:
+          example: list
+          type: string
+        has_more:
+          example: false
+          type: boolean
+      required:
+      - has_more
+      - object
+      title: pagination metadata
+      type: object
+    page:
+      description: page metadata
+      properties:
+        next_page_url:
+          description: URL of the next page.
+          example: https://api.conekta.io/resources?limit=10&next=chrg_1
+          nullable: true
+          type: string
+        previous_page_url:
+          description: Url of the previous page.
+          example: https://api.conekta.io/resources?limit=10&previous=chrg_1
+          nullable: true
+          type: string
+      title: page metadata
+      type: object
+    company_response:
+      description: Company model
+      properties:
+        id:
+          description: The child company's unique identifier
+          example: 6441bb27659a060465da7335
+          type: string
+        created_at:
+          description: The resource's creation date (unix timestamp)
+          example: 1680397724
+          format: int64
+          type: integer
+        name:
+          description: The child company's name
+          example: Child Company A
+          type: string
+        object:
+          description: The resource's type
+          enum:
+          - company
+          type: string
+        parent_company_id:
+          description: Id of the parent company
+          example: 6441bb3c62db5812e7920c31
+          type: string
+        use_parent_fiscal_data:
+          description: Whether the parent company's fiscal data is to be used for
+            liquidation and tax purposes
+          example: false
+          type: boolean
+        payout_destination:
+          $ref: '#/components/schemas/company_payout_destination_response'
+        fiscal_info:
+          $ref: '#/components/schemas/company_fiscal_info_response'
+      title: company_response
+      type: object
     customer_response:
       description: customer response
       properties:
@@ -8167,35 +9162,6 @@ components:
       - livemode
       - object
       title: customer response
-      type: object
-    pagination:
-      description: pagination metadata
-      properties:
-        object:
-          example: list
-          type: string
-        has_more:
-          example: false
-          type: boolean
-      required:
-      - has_more
-      - object
-      title: pagination metadata
-      type: object
-    page:
-      description: page metadata
-      properties:
-        next_page_url:
-          description: URL of the next page.
-          example: https://api.conekta.io/charges?limit=10&next=chrg_1
-          nullable: true
-          type: string
-        previous_page_url:
-          description: Url of the previous page.
-          example: https://api.conekta.io/charges?limit=10&previous=chrg_1
-          nullable: true
-          type: string
-      title: page metadata
       type: object
     customer_fiscal_entities_request:
       properties:
@@ -9649,6 +10615,68 @@ components:
       allOf:
       - $ref: '#/components/schemas/payment_method'
       - $ref: '#/components/schemas/charge_data_payment_method_bank_transfer_response'
+    company_payout_destination_response:
+      description: Company payout destination model
+      properties:
+        object:
+          description: The resource's type
+          enum:
+          - payout_destination
+          type: string
+        currency:
+          description: currency of the receiving account
+          example: MXN
+          type: string
+        account_holder_name:
+          description: Name of the account holder
+          example: Child Company A
+          type: string
+        bank:
+          description: Name of the bank
+          example: BBVA
+          type: string
+        type:
+          description: Type of the payout destination
+          enum:
+          - bank_account
+          type: string
+        account_number:
+          description: Account number of the receiving account
+          example: "123456789012345678"
+          type: string
+      title: company_payout_destination_response
+      type: object
+    company_fiscal_info_response:
+      description: Company fiscal info model
+      properties:
+        object:
+          description: The resource's type
+          enum:
+          - fiscal_info
+          type: string
+        tax_id:
+          description: Tax ID of the company
+          example: XAXX010101000
+          type: string
+        legal_entity_name:
+          description: Legal name of the company
+          example: Child Company A
+          type: string
+        business_type:
+          description: Business type of the company
+          example: persona_moral
+          type: string
+        phone:
+          description: Phone number of the company
+          example: "5555555555"
+          type: string
+        physical_person_business_type:
+          description: Business type if 'persona_fisica'
+          type: string
+        address:
+          $ref: '#/components/schemas/company_fiscal_info_address_response'
+      title: company_fiscal_info_response
+      type: object
     customer_address:
       properties:
         street1:
@@ -9888,6 +10916,48 @@ components:
       required:
       - object
       type: object
+    company_fiscal_info_address_response:
+      description: Company fiscal info address model
+      properties:
+        object:
+          description: The resource's type
+          enum:
+          - address
+          type: string
+        street1:
+          description: Street Address
+          example: Calle 13
+          type: string
+        street2:
+          description: Colonia
+          example: Navarte
+          type: string
+        city:
+          description: City
+          example: Cuauhtémoc
+          type: string
+        state:
+          description: State
+          example: Ciudad de México
+          type: string
+        country:
+          description: Country
+          example: MX
+          type: string
+        postal_code:
+          description: Postal code
+          example: "3072"
+          type: string
+        external_number:
+          description: Street number
+          example: "123"
+          type: string
+        internal_number:
+          description: Unit / apartment number
+          example: "123"
+          type: string
+      title: company_fiscal_info_address_response
+      type: object
     whitelistlist_rule_response:
       properties:
         id:
@@ -9968,6 +11038,19 @@ components:
           type: string
       title: deleted_blacklist_rule_response
       type: object
+    get_companies_response_allOf:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/company_response'
+          type: array
+      type: object
+    get_companies_response:
+      allOf:
+      - $ref: '#/components/schemas/pagination'
+      - $ref: '#/components/schemas/page'
+      - $ref: '#/components/schemas/get_companies_response_allOf'
+      title: get_companies_response
     customers_response_allOf:
       properties:
         data:

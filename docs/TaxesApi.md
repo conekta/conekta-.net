@@ -10,7 +10,7 @@ All URIs are relative to *https://api.conekta.io*
 
 <a name="orderscreatetaxes"></a>
 # **OrdersCreateTaxes**
-> UpdateOrderTaxResponse OrdersCreateTaxes (string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = null)
+> UpdateOrderTaxResponse OrdersCreateTaxes (string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
 Create Tax
 
@@ -39,11 +39,12 @@ namespace Example
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var orderTaxRequest = new OrderTaxRequest(); // OrderTaxRequest | requested field for a taxes
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Create Tax
-                UpdateOrderTaxResponse result = apiInstance.OrdersCreateTaxes(id, orderTaxRequest, acceptLanguage);
+                UpdateOrderTaxResponse result = apiInstance.OrdersCreateTaxes(id, orderTaxRequest, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -64,7 +65,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create Tax
-    ApiResponse<UpdateOrderTaxResponse> response = apiInstance.OrdersCreateTaxesWithHttpInfo(id, orderTaxRequest, acceptLanguage);
+    ApiResponse<UpdateOrderTaxResponse> response = apiInstance.OrdersCreateTaxesWithHttpInfo(id, orderTaxRequest, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -84,6 +85,7 @@ catch (ApiException e)
 | **id** | **string** | Identifier of the resource |  |
 | **orderTaxRequest** | [**OrderTaxRequest**](OrderTaxRequest.md) | requested field for a taxes |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -111,7 +113,7 @@ catch (ApiException e)
 
 <a name="ordersdeletetaxes"></a>
 # **OrdersDeleteTaxes**
-> UpdateOrderTaxResponse OrdersDeleteTaxes (string id, string taxId, string acceptLanguage = null)
+> UpdateOrderTaxResponse OrdersDeleteTaxes (string id, string taxId, string acceptLanguage = null, string xChildCompanyId = null)
 
 Delete Tax
 
@@ -140,11 +142,12 @@ namespace Example
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var taxId = tax_lin_2tQ974hSHcsdeSZHG;  // string | identifier
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Delete Tax
-                UpdateOrderTaxResponse result = apiInstance.OrdersDeleteTaxes(id, taxId, acceptLanguage);
+                UpdateOrderTaxResponse result = apiInstance.OrdersDeleteTaxes(id, taxId, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -165,7 +168,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete Tax
-    ApiResponse<UpdateOrderTaxResponse> response = apiInstance.OrdersDeleteTaxesWithHttpInfo(id, taxId, acceptLanguage);
+    ApiResponse<UpdateOrderTaxResponse> response = apiInstance.OrdersDeleteTaxesWithHttpInfo(id, taxId, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -185,6 +188,7 @@ catch (ApiException e)
 | **id** | **string** | Identifier of the resource |  |
 | **taxId** | **string** | identifier |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -213,7 +217,7 @@ catch (ApiException e)
 
 <a name="ordersupdatetaxes"></a>
 # **OrdersUpdateTaxes**
-> UpdateOrderTaxResponse OrdersUpdateTaxes (string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = null)
+> UpdateOrderTaxResponse OrdersUpdateTaxes (string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
 Update Tax
 
@@ -243,11 +247,12 @@ namespace Example
             var taxId = tax_lin_2tQ974hSHcsdeSZHG;  // string | identifier
             var updateOrderTaxRequest = new UpdateOrderTaxRequest(); // UpdateOrderTaxRequest | requested field for taxes
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Update Tax
-                UpdateOrderTaxResponse result = apiInstance.OrdersUpdateTaxes(id, taxId, updateOrderTaxRequest, acceptLanguage);
+                UpdateOrderTaxResponse result = apiInstance.OrdersUpdateTaxes(id, taxId, updateOrderTaxRequest, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -268,7 +273,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update Tax
-    ApiResponse<UpdateOrderTaxResponse> response = apiInstance.OrdersUpdateTaxesWithHttpInfo(id, taxId, updateOrderTaxRequest, acceptLanguage);
+    ApiResponse<UpdateOrderTaxResponse> response = apiInstance.OrdersUpdateTaxesWithHttpInfo(id, taxId, updateOrderTaxRequest, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -289,6 +294,7 @@ catch (ApiException e)
 | **taxId** | **string** | identifier |  |
 | **updateOrderTaxRequest** | [**UpdateOrderTaxRequest**](UpdateOrderTaxRequest.md) | requested field for taxes |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 

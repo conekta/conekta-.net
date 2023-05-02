@@ -37,9 +37,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="chargeRequest">requested field for a charge</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ChargeOrderResponse</returns>
-        ChargeOrderResponse OrdersCreateCharge(string id, ChargeRequest chargeRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        ChargeOrderResponse OrdersCreateCharge(string id, ChargeRequest chargeRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Create charge
@@ -51,9 +52,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="chargeRequest">requested field for a charge</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ChargeOrderResponse</returns>
-        ApiResponse<ChargeOrderResponse> OrdersCreateChargeWithHttpInfo(string id, ChargeRequest chargeRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<ChargeOrderResponse> OrdersCreateChargeWithHttpInfo(string id, ChargeRequest chargeRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -73,10 +75,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="chargeRequest">requested field for a charge</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ChargeOrderResponse</returns>
-        System.Threading.Tasks.Task<ChargeOrderResponse> OrdersCreateChargeAsync(string id, ChargeRequest chargeRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ChargeOrderResponse> OrdersCreateChargeAsync(string id, ChargeRequest chargeRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create charge
@@ -88,10 +91,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="chargeRequest">requested field for a charge</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ChargeOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ChargeOrderResponse>> OrdersCreateChargeWithHttpInfoAsync(string id, ChargeRequest chargeRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ChargeOrderResponse>> OrdersCreateChargeWithHttpInfoAsync(string id, ChargeRequest chargeRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -219,11 +223,12 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="chargeRequest">requested field for a charge</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ChargeOrderResponse</returns>
-        public ChargeOrderResponse OrdersCreateCharge(string id, ChargeRequest chargeRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        public ChargeOrderResponse OrdersCreateCharge(string id, ChargeRequest chargeRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<ChargeOrderResponse> localVarResponse = OrdersCreateChargeWithHttpInfo(id, chargeRequest, acceptLanguage);
+            Conekta.net.Client.ApiResponse<ChargeOrderResponse> localVarResponse = OrdersCreateChargeWithHttpInfo(id, chargeRequest, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -234,9 +239,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="chargeRequest">requested field for a charge</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ChargeOrderResponse</returns>
-        public Conekta.net.Client.ApiResponse<ChargeOrderResponse> OrdersCreateChargeWithHttpInfo(string id, ChargeRequest chargeRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<ChargeOrderResponse> OrdersCreateChargeWithHttpInfo(string id, ChargeRequest chargeRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -277,6 +283,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
             localVarRequestOptions.Data = chargeRequest;
 
@@ -311,12 +321,13 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="chargeRequest">requested field for a charge</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ChargeOrderResponse</returns>
-        public async System.Threading.Tasks.Task<ChargeOrderResponse> OrdersCreateChargeAsync(string id, ChargeRequest chargeRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ChargeOrderResponse> OrdersCreateChargeAsync(string id, ChargeRequest chargeRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<ChargeOrderResponse> localVarResponse = await OrdersCreateChargeWithHttpInfoAsync(id, chargeRequest, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<ChargeOrderResponse> localVarResponse = await OrdersCreateChargeWithHttpInfoAsync(id, chargeRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -327,10 +338,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="chargeRequest">requested field for a charge</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ChargeOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ChargeOrderResponse>> OrdersCreateChargeWithHttpInfoAsync(string id, ChargeRequest chargeRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ChargeOrderResponse>> OrdersCreateChargeWithHttpInfoAsync(string id, ChargeRequest chargeRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -372,6 +384,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
             localVarRequestOptions.Data = chargeRequest;
 

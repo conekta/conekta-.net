@@ -13,7 +13,7 @@ All URIs are relative to *https://api.conekta.io*
 
 <a name="createorder"></a>
 # **CreateOrder**
-> OrderResponse CreateOrder (OrderRequest orderRequest, string acceptLanguage = null)
+> OrderResponse CreateOrder (OrderRequest orderRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
 Create order
 
@@ -41,11 +41,12 @@ namespace Example
             var apiInstance = new OrdersApi(config);
             var orderRequest = new OrderRequest(); // OrderRequest | requested field for order
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Create order
-                OrderResponse result = apiInstance.CreateOrder(orderRequest, acceptLanguage);
+                OrderResponse result = apiInstance.CreateOrder(orderRequest, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -66,7 +67,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create order
-    ApiResponse<OrderResponse> response = apiInstance.CreateOrderWithHttpInfo(orderRequest, acceptLanguage);
+    ApiResponse<OrderResponse> response = apiInstance.CreateOrderWithHttpInfo(orderRequest, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -85,6 +86,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **orderRequest** | [**OrderRequest**](OrderRequest.md) | requested field for order |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -113,7 +115,7 @@ catch (ApiException e)
 
 <a name="getorderbyid"></a>
 # **GetOrderById**
-> OrderResponse GetOrderById (string id, string acceptLanguage = null)
+> OrderResponse GetOrderById (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
 Get Order
 
@@ -141,11 +143,12 @@ namespace Example
             var apiInstance = new OrdersApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Get Order
-                OrderResponse result = apiInstance.GetOrderById(id, acceptLanguage);
+                OrderResponse result = apiInstance.GetOrderById(id, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -166,7 +169,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get Order
-    ApiResponse<OrderResponse> response = apiInstance.GetOrderByIdWithHttpInfo(id, acceptLanguage);
+    ApiResponse<OrderResponse> response = apiInstance.GetOrderByIdWithHttpInfo(id, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -185,6 +188,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -212,7 +216,7 @@ catch (ApiException e)
 
 <a name="getorders"></a>
 # **GetOrders**
-> GetOrdersResponse GetOrders (string acceptLanguage = null, int? limit = null, string search = null, string next = null, string previous = null)
+> GetOrdersResponse GetOrders (string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string search = null, string next = null, string previous = null)
 
 Get a list of Orders
 
@@ -239,6 +243,7 @@ namespace Example
 
             var apiInstance = new OrdersApi(config);
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
             var limit = 20;  // int? | The numbers of items to return, the maximum value is 250 (optional)  (default to 20)
             var search = "search_example";  // string | General order search, e.g. by mail, reference etc. (optional) 
             var next = "next_example";  // string | next page (optional) 
@@ -247,7 +252,7 @@ namespace Example
             try
             {
                 // Get a list of Orders
-                GetOrdersResponse result = apiInstance.GetOrders(acceptLanguage, limit, search, next, previous);
+                GetOrdersResponse result = apiInstance.GetOrders(acceptLanguage, xChildCompanyId, limit, search, next, previous);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -268,7 +273,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get a list of Orders
-    ApiResponse<GetOrdersResponse> response = apiInstance.GetOrdersWithHttpInfo(acceptLanguage, limit, search, next, previous);
+    ApiResponse<GetOrdersResponse> response = apiInstance.GetOrdersWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -286,6 +291,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 | **limit** | **int?** | The numbers of items to return, the maximum value is 250 | [optional] [default to 20] |
 | **search** | **string** | General order search, e.g. by mail, reference etc. | [optional]  |
 | **next** | **string** | next page | [optional]  |
@@ -316,7 +322,7 @@ catch (ApiException e)
 
 <a name="orderrefund"></a>
 # **OrderRefund**
-> OrderResponse OrderRefund (string id, OrderRefundRequest orderRefundRequest, string acceptLanguage = null)
+> OrderResponse OrderRefund (string id, OrderRefundRequest orderRefundRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
 Refund Order
 
@@ -345,11 +351,12 @@ namespace Example
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var orderRefundRequest = new OrderRefundRequest(); // OrderRefundRequest | requested field for a refund
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Refund Order
-                OrderResponse result = apiInstance.OrderRefund(id, orderRefundRequest, acceptLanguage);
+                OrderResponse result = apiInstance.OrderRefund(id, orderRefundRequest, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -370,7 +377,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Refund Order
-    ApiResponse<OrderResponse> response = apiInstance.OrderRefundWithHttpInfo(id, orderRefundRequest, acceptLanguage);
+    ApiResponse<OrderResponse> response = apiInstance.OrderRefundWithHttpInfo(id, orderRefundRequest, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -390,6 +397,7 @@ catch (ApiException e)
 | **id** | **string** | Identifier of the resource |  |
 | **orderRefundRequest** | [**OrderRefundRequest**](OrderRefundRequest.md) | requested field for a refund |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -418,7 +426,7 @@ catch (ApiException e)
 
 <a name="orderscreatecapture"></a>
 # **OrdersCreateCapture**
-> OrderResponse OrdersCreateCapture (string id, string acceptLanguage = null, OrderCaptureRequest orderCaptureRequest = null)
+> OrderResponse OrdersCreateCapture (string id, string acceptLanguage = null, string xChildCompanyId = null, OrderCaptureRequest orderCaptureRequest = null)
 
 Capture Order
 
@@ -446,12 +454,13 @@ namespace Example
             var apiInstance = new OrdersApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
             var orderCaptureRequest = new OrderCaptureRequest(); // OrderCaptureRequest | requested fields for capture order (optional) 
 
             try
             {
                 // Capture Order
-                OrderResponse result = apiInstance.OrdersCreateCapture(id, acceptLanguage, orderCaptureRequest);
+                OrderResponse result = apiInstance.OrdersCreateCapture(id, acceptLanguage, xChildCompanyId, orderCaptureRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -472,7 +481,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Capture Order
-    ApiResponse<OrderResponse> response = apiInstance.OrdersCreateCaptureWithHttpInfo(id, acceptLanguage, orderCaptureRequest);
+    ApiResponse<OrderResponse> response = apiInstance.OrdersCreateCaptureWithHttpInfo(id, acceptLanguage, xChildCompanyId, orderCaptureRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -491,6 +500,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 | **orderCaptureRequest** | [**OrderCaptureRequest**](OrderCaptureRequest.md) | requested fields for capture order | [optional]  |
 
 ### Return type

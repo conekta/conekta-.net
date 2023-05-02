@@ -37,9 +37,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="shippingRequest">requested field for a shipping</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ShippingOrderResponse</returns>
-        ShippingOrderResponse OrdersCreateShipping(string id, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        ShippingOrderResponse OrdersCreateShipping(string id, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Create Shipping
@@ -51,9 +52,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="shippingRequest">requested field for a shipping</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ShippingOrderResponse</returns>
-        ApiResponse<ShippingOrderResponse> OrdersCreateShippingWithHttpInfo(string id, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<ShippingOrderResponse> OrdersCreateShippingWithHttpInfo(string id, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         /// <summary>
         /// Delete Shipping
         /// </summary>
@@ -64,9 +66,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="shippingId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ShippingOrderResponse</returns>
-        ShippingOrderResponse OrdersDeleteShipping(string id, string shippingId, string acceptLanguage = default(string), int operationIndex = 0);
+        ShippingOrderResponse OrdersDeleteShipping(string id, string shippingId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Delete Shipping
@@ -78,9 +81,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="shippingId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ShippingOrderResponse</returns>
-        ApiResponse<ShippingOrderResponse> OrdersDeleteShippingWithHttpInfo(string id, string shippingId, string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<ShippingOrderResponse> OrdersDeleteShippingWithHttpInfo(string id, string shippingId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         /// <summary>
         /// Update Shipping
         /// </summary>
@@ -92,9 +96,10 @@ namespace Conekta.net.Api
         /// <param name="shippingId">identifier</param>
         /// <param name="shippingRequest">requested field for a shipping</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ShippingOrderResponse</returns>
-        ShippingOrderResponse OrdersUpdateShipping(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        ShippingOrderResponse OrdersUpdateShipping(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Update Shipping
@@ -107,9 +112,10 @@ namespace Conekta.net.Api
         /// <param name="shippingId">identifier</param>
         /// <param name="shippingRequest">requested field for a shipping</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ShippingOrderResponse</returns>
-        ApiResponse<ShippingOrderResponse> OrdersUpdateShippingWithHttpInfo(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<ShippingOrderResponse> OrdersUpdateShippingWithHttpInfo(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -129,10 +135,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="shippingRequest">requested field for a shipping</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShippingOrderResponse</returns>
-        System.Threading.Tasks.Task<ShippingOrderResponse> OrdersCreateShippingAsync(string id, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ShippingOrderResponse> OrdersCreateShippingAsync(string id, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Shipping
@@ -144,10 +151,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="shippingRequest">requested field for a shipping</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShippingOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ShippingOrderResponse>> OrdersCreateShippingWithHttpInfoAsync(string id, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ShippingOrderResponse>> OrdersCreateShippingWithHttpInfoAsync(string id, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete Shipping
         /// </summary>
@@ -158,10 +166,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="shippingId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShippingOrderResponse</returns>
-        System.Threading.Tasks.Task<ShippingOrderResponse> OrdersDeleteShippingAsync(string id, string shippingId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ShippingOrderResponse> OrdersDeleteShippingAsync(string id, string shippingId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete Shipping
@@ -173,10 +182,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="shippingId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShippingOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ShippingOrderResponse>> OrdersDeleteShippingWithHttpInfoAsync(string id, string shippingId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ShippingOrderResponse>> OrdersDeleteShippingWithHttpInfoAsync(string id, string shippingId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update Shipping
         /// </summary>
@@ -188,10 +198,11 @@ namespace Conekta.net.Api
         /// <param name="shippingId">identifier</param>
         /// <param name="shippingRequest">requested field for a shipping</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShippingOrderResponse</returns>
-        System.Threading.Tasks.Task<ShippingOrderResponse> OrdersUpdateShippingAsync(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ShippingOrderResponse> OrdersUpdateShippingAsync(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Shipping
@@ -204,10 +215,11 @@ namespace Conekta.net.Api
         /// <param name="shippingId">identifier</param>
         /// <param name="shippingRequest">requested field for a shipping</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShippingOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ShippingOrderResponse>> OrdersUpdateShippingWithHttpInfoAsync(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ShippingOrderResponse>> OrdersUpdateShippingWithHttpInfoAsync(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -335,11 +347,12 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="shippingRequest">requested field for a shipping</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ShippingOrderResponse</returns>
-        public ShippingOrderResponse OrdersCreateShipping(string id, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        public ShippingOrderResponse OrdersCreateShipping(string id, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<ShippingOrderResponse> localVarResponse = OrdersCreateShippingWithHttpInfo(id, shippingRequest, acceptLanguage);
+            Conekta.net.Client.ApiResponse<ShippingOrderResponse> localVarResponse = OrdersCreateShippingWithHttpInfo(id, shippingRequest, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -350,9 +363,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="shippingRequest">requested field for a shipping</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ShippingOrderResponse</returns>
-        public Conekta.net.Client.ApiResponse<ShippingOrderResponse> OrdersCreateShippingWithHttpInfo(string id, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<ShippingOrderResponse> OrdersCreateShippingWithHttpInfo(string id, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -393,6 +407,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
             localVarRequestOptions.Data = shippingRequest;
 
@@ -427,12 +445,13 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="shippingRequest">requested field for a shipping</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShippingOrderResponse</returns>
-        public async System.Threading.Tasks.Task<ShippingOrderResponse> OrdersCreateShippingAsync(string id, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ShippingOrderResponse> OrdersCreateShippingAsync(string id, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<ShippingOrderResponse> localVarResponse = await OrdersCreateShippingWithHttpInfoAsync(id, shippingRequest, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<ShippingOrderResponse> localVarResponse = await OrdersCreateShippingWithHttpInfoAsync(id, shippingRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -443,10 +462,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="shippingRequest">requested field for a shipping</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShippingOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ShippingOrderResponse>> OrdersCreateShippingWithHttpInfoAsync(string id, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ShippingOrderResponse>> OrdersCreateShippingWithHttpInfoAsync(string id, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -488,6 +508,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
             localVarRequestOptions.Data = shippingRequest;
 
@@ -523,11 +547,12 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="shippingId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ShippingOrderResponse</returns>
-        public ShippingOrderResponse OrdersDeleteShipping(string id, string shippingId, string acceptLanguage = default(string), int operationIndex = 0)
+        public ShippingOrderResponse OrdersDeleteShipping(string id, string shippingId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<ShippingOrderResponse> localVarResponse = OrdersDeleteShippingWithHttpInfo(id, shippingId, acceptLanguage);
+            Conekta.net.Client.ApiResponse<ShippingOrderResponse> localVarResponse = OrdersDeleteShippingWithHttpInfo(id, shippingId, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -538,9 +563,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="shippingId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ShippingOrderResponse</returns>
-        public Conekta.net.Client.ApiResponse<ShippingOrderResponse> OrdersDeleteShippingWithHttpInfo(string id, string shippingId, string acceptLanguage = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<ShippingOrderResponse> OrdersDeleteShippingWithHttpInfo(string id, string shippingId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -581,6 +607,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
 
             localVarRequestOptions.Operation = "ShippingsApi.OrdersDeleteShipping";
@@ -614,12 +644,13 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="shippingId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShippingOrderResponse</returns>
-        public async System.Threading.Tasks.Task<ShippingOrderResponse> OrdersDeleteShippingAsync(string id, string shippingId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ShippingOrderResponse> OrdersDeleteShippingAsync(string id, string shippingId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<ShippingOrderResponse> localVarResponse = await OrdersDeleteShippingWithHttpInfoAsync(id, shippingId, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<ShippingOrderResponse> localVarResponse = await OrdersDeleteShippingWithHttpInfoAsync(id, shippingId, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -630,10 +661,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="shippingId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShippingOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ShippingOrderResponse>> OrdersDeleteShippingWithHttpInfoAsync(string id, string shippingId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ShippingOrderResponse>> OrdersDeleteShippingWithHttpInfoAsync(string id, string shippingId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -675,6 +707,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
 
             localVarRequestOptions.Operation = "ShippingsApi.OrdersDeleteShipping";
@@ -710,11 +746,12 @@ namespace Conekta.net.Api
         /// <param name="shippingId">identifier</param>
         /// <param name="shippingRequest">requested field for a shipping</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ShippingOrderResponse</returns>
-        public ShippingOrderResponse OrdersUpdateShipping(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        public ShippingOrderResponse OrdersUpdateShipping(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<ShippingOrderResponse> localVarResponse = OrdersUpdateShippingWithHttpInfo(id, shippingId, shippingRequest, acceptLanguage);
+            Conekta.net.Client.ApiResponse<ShippingOrderResponse> localVarResponse = OrdersUpdateShippingWithHttpInfo(id, shippingId, shippingRequest, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -726,9 +763,10 @@ namespace Conekta.net.Api
         /// <param name="shippingId">identifier</param>
         /// <param name="shippingRequest">requested field for a shipping</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ShippingOrderResponse</returns>
-        public Conekta.net.Client.ApiResponse<ShippingOrderResponse> OrdersUpdateShippingWithHttpInfo(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<ShippingOrderResponse> OrdersUpdateShippingWithHttpInfo(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -776,6 +814,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
             localVarRequestOptions.Data = shippingRequest;
 
@@ -811,12 +853,13 @@ namespace Conekta.net.Api
         /// <param name="shippingId">identifier</param>
         /// <param name="shippingRequest">requested field for a shipping</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShippingOrderResponse</returns>
-        public async System.Threading.Tasks.Task<ShippingOrderResponse> OrdersUpdateShippingAsync(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ShippingOrderResponse> OrdersUpdateShippingAsync(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<ShippingOrderResponse> localVarResponse = await OrdersUpdateShippingWithHttpInfoAsync(id, shippingId, shippingRequest, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<ShippingOrderResponse> localVarResponse = await OrdersUpdateShippingWithHttpInfoAsync(id, shippingId, shippingRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -828,10 +871,11 @@ namespace Conekta.net.Api
         /// <param name="shippingId">identifier</param>
         /// <param name="shippingRequest">requested field for a shipping</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShippingOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ShippingOrderResponse>> OrdersUpdateShippingWithHttpInfoAsync(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ShippingOrderResponse>> OrdersUpdateShippingWithHttpInfoAsync(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -880,6 +924,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
             localVarRequestOptions.Data = shippingRequest;
 

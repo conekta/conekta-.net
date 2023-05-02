@@ -13,7 +13,7 @@ All URIs are relative to *https://api.conekta.io*
 
 <a name="cancelcheckout"></a>
 # **CancelCheckout**
-> CheckoutResponse CancelCheckout (string id, string acceptLanguage = null)
+> CheckoutResponse CancelCheckout (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
 Cancel Payment Link
 
@@ -39,11 +39,12 @@ namespace Example
             var apiInstance = new PaymentLinkApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Cancel Payment Link
-                CheckoutResponse result = apiInstance.CancelCheckout(id, acceptLanguage);
+                CheckoutResponse result = apiInstance.CancelCheckout(id, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -64,7 +65,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Cancel Payment Link
-    ApiResponse<CheckoutResponse> response = apiInstance.CancelCheckoutWithHttpInfo(id, acceptLanguage);
+    ApiResponse<CheckoutResponse> response = apiInstance.CancelCheckoutWithHttpInfo(id, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -83,6 +84,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -112,7 +114,7 @@ catch (ApiException e)
 
 <a name="createcheckout"></a>
 # **CreateCheckout**
-> CheckoutResponse CreateCheckout (Checkout checkout, string acceptLanguage = null)
+> CheckoutResponse CreateCheckout (Checkout checkout, string acceptLanguage = null, string xChildCompanyId = null)
 
 Create Unique Payment Link
 
@@ -138,11 +140,12 @@ namespace Example
             var apiInstance = new PaymentLinkApi(config);
             var checkout = new Checkout(); // Checkout | requested field for checkout
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Create Unique Payment Link
-                CheckoutResponse result = apiInstance.CreateCheckout(checkout, acceptLanguage);
+                CheckoutResponse result = apiInstance.CreateCheckout(checkout, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -163,7 +166,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create Unique Payment Link
-    ApiResponse<CheckoutResponse> response = apiInstance.CreateCheckoutWithHttpInfo(checkout, acceptLanguage);
+    ApiResponse<CheckoutResponse> response = apiInstance.CreateCheckoutWithHttpInfo(checkout, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -182,6 +185,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **checkout** | [**Checkout**](Checkout.md) | requested field for checkout |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -210,7 +214,7 @@ catch (ApiException e)
 
 <a name="emailcheckout"></a>
 # **EmailCheckout**
-> CheckoutResponse EmailCheckout (string id, EmailCheckoutRequest emailCheckoutRequest, string acceptLanguage = null)
+> CheckoutResponse EmailCheckout (string id, EmailCheckoutRequest emailCheckoutRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
 Send an email
 
@@ -237,11 +241,12 @@ namespace Example
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var emailCheckoutRequest = new EmailCheckoutRequest(); // EmailCheckoutRequest | requested field for sms checkout
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Send an email
-                CheckoutResponse result = apiInstance.EmailCheckout(id, emailCheckoutRequest, acceptLanguage);
+                CheckoutResponse result = apiInstance.EmailCheckout(id, emailCheckoutRequest, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -262,7 +267,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Send an email
-    ApiResponse<CheckoutResponse> response = apiInstance.EmailCheckoutWithHttpInfo(id, emailCheckoutRequest, acceptLanguage);
+    ApiResponse<CheckoutResponse> response = apiInstance.EmailCheckoutWithHttpInfo(id, emailCheckoutRequest, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -282,6 +287,7 @@ catch (ApiException e)
 | **id** | **string** | Identifier of the resource |  |
 | **emailCheckoutRequest** | [**EmailCheckoutRequest**](EmailCheckoutRequest.md) | requested field for sms checkout |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -311,7 +317,7 @@ catch (ApiException e)
 
 <a name="getcheckout"></a>
 # **GetCheckout**
-> CheckoutResponse GetCheckout (string id, string acceptLanguage = null)
+> CheckoutResponse GetCheckout (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
 Get a payment link by ID
 
@@ -337,11 +343,12 @@ namespace Example
             var apiInstance = new PaymentLinkApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Get a payment link by ID
-                CheckoutResponse result = apiInstance.GetCheckout(id, acceptLanguage);
+                CheckoutResponse result = apiInstance.GetCheckout(id, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -362,7 +369,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get a payment link by ID
-    ApiResponse<CheckoutResponse> response = apiInstance.GetCheckoutWithHttpInfo(id, acceptLanguage);
+    ApiResponse<CheckoutResponse> response = apiInstance.GetCheckoutWithHttpInfo(id, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -381,6 +388,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -410,7 +418,7 @@ catch (ApiException e)
 
 <a name="getcheckouts"></a>
 # **GetCheckouts**
-> CheckoutsResponse GetCheckouts (string acceptLanguage = null, int? limit = null, string search = null, string next = null, string previous = null)
+> CheckoutsResponse GetCheckouts (string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string search = null, string next = null, string previous = null)
 
 Get a list of payment links
 
@@ -437,6 +445,7 @@ namespace Example
 
             var apiInstance = new PaymentLinkApi(config);
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
             var limit = 20;  // int? | The numbers of items to return, the maximum value is 250 (optional)  (default to 20)
             var search = "search_example";  // string | General order search, e.g. by mail, reference etc. (optional) 
             var next = "next_example";  // string | next page (optional) 
@@ -445,7 +454,7 @@ namespace Example
             try
             {
                 // Get a list of payment links
-                CheckoutsResponse result = apiInstance.GetCheckouts(acceptLanguage, limit, search, next, previous);
+                CheckoutsResponse result = apiInstance.GetCheckouts(acceptLanguage, xChildCompanyId, limit, search, next, previous);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -466,7 +475,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get a list of payment links
-    ApiResponse<CheckoutsResponse> response = apiInstance.GetCheckoutsWithHttpInfo(acceptLanguage, limit, search, next, previous);
+    ApiResponse<CheckoutsResponse> response = apiInstance.GetCheckoutsWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -484,6 +493,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 | **limit** | **int?** | The numbers of items to return, the maximum value is 250 | [optional] [default to 20] |
 | **search** | **string** | General order search, e.g. by mail, reference etc. | [optional]  |
 | **next** | **string** | next page | [optional]  |
@@ -516,7 +526,7 @@ catch (ApiException e)
 
 <a name="smscheckout"></a>
 # **SmsCheckout**
-> CheckoutResponse SmsCheckout (string id, SmsCheckoutRequest smsCheckoutRequest, string acceptLanguage = null)
+> CheckoutResponse SmsCheckout (string id, SmsCheckoutRequest smsCheckoutRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
 Send an sms
 
@@ -543,11 +553,12 @@ namespace Example
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var smsCheckoutRequest = new SmsCheckoutRequest(); // SmsCheckoutRequest | requested field for sms checkout
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Send an sms
-                CheckoutResponse result = apiInstance.SmsCheckout(id, smsCheckoutRequest, acceptLanguage);
+                CheckoutResponse result = apiInstance.SmsCheckout(id, smsCheckoutRequest, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -568,7 +579,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Send an sms
-    ApiResponse<CheckoutResponse> response = apiInstance.SmsCheckoutWithHttpInfo(id, smsCheckoutRequest, acceptLanguage);
+    ApiResponse<CheckoutResponse> response = apiInstance.SmsCheckoutWithHttpInfo(id, smsCheckoutRequest, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -588,6 +599,7 @@ catch (ApiException e)
 | **id** | **string** | Identifier of the resource |  |
 | **smsCheckoutRequest** | [**SmsCheckoutRequest**](SmsCheckoutRequest.md) | requested field for sms checkout |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 

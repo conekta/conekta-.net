@@ -28,6 +28,11 @@ docs/CheckoutRequest.md
 docs/CheckoutResponse.md
 docs/CheckoutsResponse.md
 docs/CheckoutsResponseAllOf.md
+docs/CompaniesApi.md
+docs/CompanyFiscalInfoAddressResponse.md
+docs/CompanyFiscalInfoResponse.md
+docs/CompanyPayoutDestinationResponse.md
+docs/CompanyResponse.md
 docs/ConsumerPaymentMethodsRequest.md
 docs/CreateCustomerFiscalEntitiesResponse.md
 docs/CreateCustomerFiscalEntitiesResponseAllOf.md
@@ -78,6 +83,8 @@ docs/Error.md
 docs/ErrorAllOf.md
 docs/EventResponse.md
 docs/EventsApi.md
+docs/GetCompaniesResponse.md
+docs/GetCompaniesResponseAllOf.md
 docs/GetCustomerPaymentMethodDataResponse.md
 docs/GetEventsResponse.md
 docs/GetEventsResponseAllOf.md
@@ -177,9 +184,11 @@ docs/WebhookResponse.md
 docs/WebhookUpdateRequest.md
 docs/WebhooksApi.md
 docs/WhitelistlistRuleResponse.md
+src/Conekta.net.Test/Api/CompaniesApiTests.cs
 src/Conekta.net.Test/Conekta.net.Test.csproj
 src/Conekta.net/Api/AntifraudApi.cs
 src/Conekta.net/Api/ChargesApi.cs
+src/Conekta.net/Api/CompaniesApi.cs
 src/Conekta.net/Api/CustomersApi.cs
 src/Conekta.net/Api/DiscountsApi.cs
 src/Conekta.net/Api/EventsApi.cs
@@ -232,6 +241,10 @@ src/Conekta.net/Model/CheckoutRequest.cs
 src/Conekta.net/Model/CheckoutResponse.cs
 src/Conekta.net/Model/CheckoutsResponse.cs
 src/Conekta.net/Model/CheckoutsResponseAllOf.cs
+src/Conekta.net/Model/CompanyFiscalInfoAddressResponse.cs
+src/Conekta.net/Model/CompanyFiscalInfoResponse.cs
+src/Conekta.net/Model/CompanyPayoutDestinationResponse.cs
+src/Conekta.net/Model/CompanyResponse.cs
 src/Conekta.net/Model/ConsumerPaymentMethodsRequest.cs
 src/Conekta.net/Model/CreateCustomerFiscalEntitiesResponse.cs
 src/Conekta.net/Model/CreateCustomerFiscalEntitiesResponseAllOf.cs
@@ -279,6 +292,8 @@ src/Conekta.net/Model/EmailCheckoutRequest.cs
 src/Conekta.net/Model/Error.cs
 src/Conekta.net/Model/ErrorAllOf.cs
 src/Conekta.net/Model/EventResponse.cs
+src/Conekta.net/Model/GetCompaniesResponse.cs
+src/Conekta.net/Model/GetCompaniesResponseAllOf.cs
 src/Conekta.net/Model/GetCustomerPaymentMethodDataResponse.cs
 src/Conekta.net/Model/GetEventsResponse.cs
 src/Conekta.net/Model/GetEventsResponseAllOf.cs

@@ -37,9 +37,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="orderDiscountLinesRequest">requested field for a discount lines</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DiscountLinesResponse</returns>
-        DiscountLinesResponse OrdersCreateDiscountLine(string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        DiscountLinesResponse OrdersCreateDiscountLine(string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Create Discount
@@ -51,9 +52,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="orderDiscountLinesRequest">requested field for a discount lines</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DiscountLinesResponse</returns>
-        ApiResponse<DiscountLinesResponse> OrdersCreateDiscountLineWithHttpInfo(string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<DiscountLinesResponse> OrdersCreateDiscountLineWithHttpInfo(string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         /// <summary>
         /// Delete Discount
         /// </summary>
@@ -64,9 +66,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="discountLinesId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DiscountLinesResponse</returns>
-        DiscountLinesResponse OrdersDeleteDiscountLines(string id, string discountLinesId, string acceptLanguage = default(string), int operationIndex = 0);
+        DiscountLinesResponse OrdersDeleteDiscountLines(string id, string discountLinesId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Delete Discount
@@ -78,9 +81,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="discountLinesId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DiscountLinesResponse</returns>
-        ApiResponse<DiscountLinesResponse> OrdersDeleteDiscountLinesWithHttpInfo(string id, string discountLinesId, string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<DiscountLinesResponse> OrdersDeleteDiscountLinesWithHttpInfo(string id, string discountLinesId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         /// <summary>
         /// Update Discount
         /// </summary>
@@ -92,9 +96,10 @@ namespace Conekta.net.Api
         /// <param name="discountLinesId">identifier</param>
         /// <param name="updateOrderDiscountLinesRequest">requested field for a discount lines</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DiscountLinesResponse</returns>
-        DiscountLinesResponse OrdersUpdateDiscountLines(string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        DiscountLinesResponse OrdersUpdateDiscountLines(string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Update Discount
@@ -107,9 +112,10 @@ namespace Conekta.net.Api
         /// <param name="discountLinesId">identifier</param>
         /// <param name="updateOrderDiscountLinesRequest">requested field for a discount lines</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DiscountLinesResponse</returns>
-        ApiResponse<DiscountLinesResponse> OrdersUpdateDiscountLinesWithHttpInfo(string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<DiscountLinesResponse> OrdersUpdateDiscountLinesWithHttpInfo(string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -129,10 +135,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="orderDiscountLinesRequest">requested field for a discount lines</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DiscountLinesResponse</returns>
-        System.Threading.Tasks.Task<DiscountLinesResponse> OrdersCreateDiscountLineAsync(string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DiscountLinesResponse> OrdersCreateDiscountLineAsync(string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Discount
@@ -144,10 +151,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="orderDiscountLinesRequest">requested field for a discount lines</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DiscountLinesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DiscountLinesResponse>> OrdersCreateDiscountLineWithHttpInfoAsync(string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DiscountLinesResponse>> OrdersCreateDiscountLineWithHttpInfoAsync(string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete Discount
         /// </summary>
@@ -158,10 +166,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="discountLinesId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DiscountLinesResponse</returns>
-        System.Threading.Tasks.Task<DiscountLinesResponse> OrdersDeleteDiscountLinesAsync(string id, string discountLinesId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DiscountLinesResponse> OrdersDeleteDiscountLinesAsync(string id, string discountLinesId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete Discount
@@ -173,10 +182,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="discountLinesId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DiscountLinesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DiscountLinesResponse>> OrdersDeleteDiscountLinesWithHttpInfoAsync(string id, string discountLinesId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DiscountLinesResponse>> OrdersDeleteDiscountLinesWithHttpInfoAsync(string id, string discountLinesId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update Discount
         /// </summary>
@@ -188,10 +198,11 @@ namespace Conekta.net.Api
         /// <param name="discountLinesId">identifier</param>
         /// <param name="updateOrderDiscountLinesRequest">requested field for a discount lines</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DiscountLinesResponse</returns>
-        System.Threading.Tasks.Task<DiscountLinesResponse> OrdersUpdateDiscountLinesAsync(string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DiscountLinesResponse> OrdersUpdateDiscountLinesAsync(string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Discount
@@ -204,10 +215,11 @@ namespace Conekta.net.Api
         /// <param name="discountLinesId">identifier</param>
         /// <param name="updateOrderDiscountLinesRequest">requested field for a discount lines</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DiscountLinesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DiscountLinesResponse>> OrdersUpdateDiscountLinesWithHttpInfoAsync(string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DiscountLinesResponse>> OrdersUpdateDiscountLinesWithHttpInfoAsync(string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -335,11 +347,12 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="orderDiscountLinesRequest">requested field for a discount lines</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DiscountLinesResponse</returns>
-        public DiscountLinesResponse OrdersCreateDiscountLine(string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        public DiscountLinesResponse OrdersCreateDiscountLine(string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<DiscountLinesResponse> localVarResponse = OrdersCreateDiscountLineWithHttpInfo(id, orderDiscountLinesRequest, acceptLanguage);
+            Conekta.net.Client.ApiResponse<DiscountLinesResponse> localVarResponse = OrdersCreateDiscountLineWithHttpInfo(id, orderDiscountLinesRequest, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -350,9 +363,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="orderDiscountLinesRequest">requested field for a discount lines</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DiscountLinesResponse</returns>
-        public Conekta.net.Client.ApiResponse<DiscountLinesResponse> OrdersCreateDiscountLineWithHttpInfo(string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<DiscountLinesResponse> OrdersCreateDiscountLineWithHttpInfo(string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -393,6 +407,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
             localVarRequestOptions.Data = orderDiscountLinesRequest;
 
@@ -427,12 +445,13 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="orderDiscountLinesRequest">requested field for a discount lines</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DiscountLinesResponse</returns>
-        public async System.Threading.Tasks.Task<DiscountLinesResponse> OrdersCreateDiscountLineAsync(string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DiscountLinesResponse> OrdersCreateDiscountLineAsync(string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<DiscountLinesResponse> localVarResponse = await OrdersCreateDiscountLineWithHttpInfoAsync(id, orderDiscountLinesRequest, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<DiscountLinesResponse> localVarResponse = await OrdersCreateDiscountLineWithHttpInfoAsync(id, orderDiscountLinesRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -443,10 +462,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="orderDiscountLinesRequest">requested field for a discount lines</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DiscountLinesResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<DiscountLinesResponse>> OrdersCreateDiscountLineWithHttpInfoAsync(string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<DiscountLinesResponse>> OrdersCreateDiscountLineWithHttpInfoAsync(string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -488,6 +508,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
             localVarRequestOptions.Data = orderDiscountLinesRequest;
 
@@ -523,11 +547,12 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="discountLinesId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DiscountLinesResponse</returns>
-        public DiscountLinesResponse OrdersDeleteDiscountLines(string id, string discountLinesId, string acceptLanguage = default(string), int operationIndex = 0)
+        public DiscountLinesResponse OrdersDeleteDiscountLines(string id, string discountLinesId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<DiscountLinesResponse> localVarResponse = OrdersDeleteDiscountLinesWithHttpInfo(id, discountLinesId, acceptLanguage);
+            Conekta.net.Client.ApiResponse<DiscountLinesResponse> localVarResponse = OrdersDeleteDiscountLinesWithHttpInfo(id, discountLinesId, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -538,9 +563,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="discountLinesId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DiscountLinesResponse</returns>
-        public Conekta.net.Client.ApiResponse<DiscountLinesResponse> OrdersDeleteDiscountLinesWithHttpInfo(string id, string discountLinesId, string acceptLanguage = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<DiscountLinesResponse> OrdersDeleteDiscountLinesWithHttpInfo(string id, string discountLinesId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -581,6 +607,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
 
             localVarRequestOptions.Operation = "DiscountsApi.OrdersDeleteDiscountLines";
@@ -614,12 +644,13 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="discountLinesId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DiscountLinesResponse</returns>
-        public async System.Threading.Tasks.Task<DiscountLinesResponse> OrdersDeleteDiscountLinesAsync(string id, string discountLinesId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DiscountLinesResponse> OrdersDeleteDiscountLinesAsync(string id, string discountLinesId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<DiscountLinesResponse> localVarResponse = await OrdersDeleteDiscountLinesWithHttpInfoAsync(id, discountLinesId, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<DiscountLinesResponse> localVarResponse = await OrdersDeleteDiscountLinesWithHttpInfoAsync(id, discountLinesId, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -630,10 +661,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="discountLinesId">identifier</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DiscountLinesResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<DiscountLinesResponse>> OrdersDeleteDiscountLinesWithHttpInfoAsync(string id, string discountLinesId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<DiscountLinesResponse>> OrdersDeleteDiscountLinesWithHttpInfoAsync(string id, string discountLinesId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -675,6 +707,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
 
             localVarRequestOptions.Operation = "DiscountsApi.OrdersDeleteDiscountLines";
@@ -710,11 +746,12 @@ namespace Conekta.net.Api
         /// <param name="discountLinesId">identifier</param>
         /// <param name="updateOrderDiscountLinesRequest">requested field for a discount lines</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DiscountLinesResponse</returns>
-        public DiscountLinesResponse OrdersUpdateDiscountLines(string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        public DiscountLinesResponse OrdersUpdateDiscountLines(string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<DiscountLinesResponse> localVarResponse = OrdersUpdateDiscountLinesWithHttpInfo(id, discountLinesId, updateOrderDiscountLinesRequest, acceptLanguage);
+            Conekta.net.Client.ApiResponse<DiscountLinesResponse> localVarResponse = OrdersUpdateDiscountLinesWithHttpInfo(id, discountLinesId, updateOrderDiscountLinesRequest, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -726,9 +763,10 @@ namespace Conekta.net.Api
         /// <param name="discountLinesId">identifier</param>
         /// <param name="updateOrderDiscountLinesRequest">requested field for a discount lines</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DiscountLinesResponse</returns>
-        public Conekta.net.Client.ApiResponse<DiscountLinesResponse> OrdersUpdateDiscountLinesWithHttpInfo(string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<DiscountLinesResponse> OrdersUpdateDiscountLinesWithHttpInfo(string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -776,6 +814,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
             localVarRequestOptions.Data = updateOrderDiscountLinesRequest;
 
@@ -811,12 +853,13 @@ namespace Conekta.net.Api
         /// <param name="discountLinesId">identifier</param>
         /// <param name="updateOrderDiscountLinesRequest">requested field for a discount lines</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DiscountLinesResponse</returns>
-        public async System.Threading.Tasks.Task<DiscountLinesResponse> OrdersUpdateDiscountLinesAsync(string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DiscountLinesResponse> OrdersUpdateDiscountLinesAsync(string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<DiscountLinesResponse> localVarResponse = await OrdersUpdateDiscountLinesWithHttpInfoAsync(id, discountLinesId, updateOrderDiscountLinesRequest, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<DiscountLinesResponse> localVarResponse = await OrdersUpdateDiscountLinesWithHttpInfoAsync(id, discountLinesId, updateOrderDiscountLinesRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -828,10 +871,11 @@ namespace Conekta.net.Api
         /// <param name="discountLinesId">identifier</param>
         /// <param name="updateOrderDiscountLinesRequest">requested field for a discount lines</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DiscountLinesResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<DiscountLinesResponse>> OrdersUpdateDiscountLinesWithHttpInfoAsync(string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<DiscountLinesResponse>> OrdersUpdateDiscountLinesWithHttpInfoAsync(string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -880,6 +924,10 @@ namespace Conekta.net.Api
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
             localVarRequestOptions.Data = updateOrderDiscountLinesRequest;
 

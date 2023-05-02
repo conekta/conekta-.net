@@ -9,7 +9,7 @@ All URIs are relative to *https://api.conekta.io*
 
 <a name="getlogbyid"></a>
 # **GetLogById**
-> LogResponse GetLogById (string id, string acceptLanguage = null)
+> LogResponse GetLogById (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
 Get Log
 
@@ -37,11 +37,12 @@ namespace Example
             var apiInstance = new LogsApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Get Log
-                LogResponse result = apiInstance.GetLogById(id, acceptLanguage);
+                LogResponse result = apiInstance.GetLogById(id, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -62,7 +63,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get Log
-    ApiResponse<LogResponse> response = apiInstance.GetLogByIdWithHttpInfo(id, acceptLanguage);
+    ApiResponse<LogResponse> response = apiInstance.GetLogByIdWithHttpInfo(id, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -81,6 +82,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -108,7 +110,7 @@ catch (ApiException e)
 
 <a name="getlogs"></a>
 # **GetLogs**
-> LogsResponse GetLogs (string acceptLanguage = null, int? limit = null, string search = null, string next = null, string previous = null)
+> LogsResponse GetLogs (string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string search = null, string next = null, string previous = null)
 
 Get List Of Logs
 
@@ -135,6 +137,7 @@ namespace Example
 
             var apiInstance = new LogsApi(config);
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
             var limit = 20;  // int? | The numbers of items to return, the maximum value is 250 (optional)  (default to 20)
             var search = "search_example";  // string | General order search, e.g. by mail, reference etc. (optional) 
             var next = "next_example";  // string | next page (optional) 
@@ -143,7 +146,7 @@ namespace Example
             try
             {
                 // Get List Of Logs
-                LogsResponse result = apiInstance.GetLogs(acceptLanguage, limit, search, next, previous);
+                LogsResponse result = apiInstance.GetLogs(acceptLanguage, xChildCompanyId, limit, search, next, previous);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -164,7 +167,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get List Of Logs
-    ApiResponse<LogsResponse> response = apiInstance.GetLogsWithHttpInfo(acceptLanguage, limit, search, next, previous);
+    ApiResponse<LogsResponse> response = apiInstance.GetLogsWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -182,6 +185,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 | **limit** | **int?** | The numbers of items to return, the maximum value is 250 | [optional] [default to 20] |
 | **search** | **string** | General order search, e.g. by mail, reference etc. | [optional]  |
 | **next** | **string** | next page | [optional]  |

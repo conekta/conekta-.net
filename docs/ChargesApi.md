@@ -8,7 +8,7 @@ All URIs are relative to *https://api.conekta.io*
 
 <a name="orderscreatecharge"></a>
 # **OrdersCreateCharge**
-> ChargeOrderResponse OrdersCreateCharge (string id, ChargeRequest chargeRequest, string acceptLanguage = null)
+> ChargeOrderResponse OrdersCreateCharge (string id, ChargeRequest chargeRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
 Create charge
 
@@ -37,11 +37,12 @@ namespace Example
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var chargeRequest = new ChargeRequest(); // ChargeRequest | requested field for a charge
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Create charge
-                ChargeOrderResponse result = apiInstance.OrdersCreateCharge(id, chargeRequest, acceptLanguage);
+                ChargeOrderResponse result = apiInstance.OrdersCreateCharge(id, chargeRequest, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -62,7 +63,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create charge
-    ApiResponse<ChargeOrderResponse> response = apiInstance.OrdersCreateChargeWithHttpInfo(id, chargeRequest, acceptLanguage);
+    ApiResponse<ChargeOrderResponse> response = apiInstance.OrdersCreateChargeWithHttpInfo(id, chargeRequest, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -82,6 +83,7 @@ catch (ApiException e)
 | **id** | **string** | Identifier of the resource |  |
 | **chargeRequest** | [**ChargeRequest**](ChargeRequest.md) | requested field for a charge |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 

@@ -10,7 +10,7 @@ All URIs are relative to *https://api.conekta.io*
 
 <a name="orderscreateproduct"></a>
 # **OrdersCreateProduct**
-> ProductOrderResponse OrdersCreateProduct (string id, Product product, string acceptLanguage = null)
+> ProductOrderResponse OrdersCreateProduct (string id, Product product, string acceptLanguage = null, string xChildCompanyId = null)
 
 Create Product
 
@@ -39,11 +39,12 @@ namespace Example
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var product = new Product(); // Product | requested field for a product
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Create Product
-                ProductOrderResponse result = apiInstance.OrdersCreateProduct(id, product, acceptLanguage);
+                ProductOrderResponse result = apiInstance.OrdersCreateProduct(id, product, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -64,7 +65,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create Product
-    ApiResponse<ProductOrderResponse> response = apiInstance.OrdersCreateProductWithHttpInfo(id, product, acceptLanguage);
+    ApiResponse<ProductOrderResponse> response = apiInstance.OrdersCreateProductWithHttpInfo(id, product, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -84,6 +85,7 @@ catch (ApiException e)
 | **id** | **string** | Identifier of the resource |  |
 | **product** | [**Product**](Product.md) | requested field for a product |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -111,7 +113,7 @@ catch (ApiException e)
 
 <a name="ordersdeleteproduct"></a>
 # **OrdersDeleteProduct**
-> ProductOrderResponse OrdersDeleteProduct (string id, string lineItemId, string acceptLanguage = null)
+> ProductOrderResponse OrdersDeleteProduct (string id, string lineItemId, string acceptLanguage = null, string xChildCompanyId = null)
 
 Delete Product
 
@@ -140,11 +142,12 @@ namespace Example
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var lineItemId = line_item_2tQ8HkkfbauaKP9Ho;  // string | identifier
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Delete Product
-                ProductOrderResponse result = apiInstance.OrdersDeleteProduct(id, lineItemId, acceptLanguage);
+                ProductOrderResponse result = apiInstance.OrdersDeleteProduct(id, lineItemId, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -165,7 +168,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete Product
-    ApiResponse<ProductOrderResponse> response = apiInstance.OrdersDeleteProductWithHttpInfo(id, lineItemId, acceptLanguage);
+    ApiResponse<ProductOrderResponse> response = apiInstance.OrdersDeleteProductWithHttpInfo(id, lineItemId, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -185,6 +188,7 @@ catch (ApiException e)
 | **id** | **string** | Identifier of the resource |  |
 | **lineItemId** | **string** | identifier |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -213,7 +217,7 @@ catch (ApiException e)
 
 <a name="ordersupdateproduct"></a>
 # **OrdersUpdateProduct**
-> ProductOrderResponse OrdersUpdateProduct (string id, string lineItemId, UpdateProduct updateProduct, string acceptLanguage = null)
+> ProductOrderResponse OrdersUpdateProduct (string id, string lineItemId, UpdateProduct updateProduct, string acceptLanguage = null, string xChildCompanyId = null)
 
 Update Product
 
@@ -243,11 +247,12 @@ namespace Example
             var lineItemId = line_item_2tQ8HkkfbauaKP9Ho;  // string | identifier
             var updateProduct = new UpdateProduct(); // UpdateProduct | requested field for products
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Update Product
-                ProductOrderResponse result = apiInstance.OrdersUpdateProduct(id, lineItemId, updateProduct, acceptLanguage);
+                ProductOrderResponse result = apiInstance.OrdersUpdateProduct(id, lineItemId, updateProduct, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -268,7 +273,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update Product
-    ApiResponse<ProductOrderResponse> response = apiInstance.OrdersUpdateProductWithHttpInfo(id, lineItemId, updateProduct, acceptLanguage);
+    ApiResponse<ProductOrderResponse> response = apiInstance.OrdersUpdateProductWithHttpInfo(id, lineItemId, updateProduct, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -289,6 +294,7 @@ catch (ApiException e)
 | **lineItemId** | **string** | identifier |  |
 | **updateProduct** | [**UpdateProduct**](UpdateProduct.md) | requested field for products |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 

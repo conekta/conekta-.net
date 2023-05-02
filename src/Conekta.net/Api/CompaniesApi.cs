@@ -24,146 +24,138 @@ namespace Conekta.net.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IEventsApiSync : IApiAccessor
+    public interface ICompaniesApiSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get Event
+        /// Get List of Companies
         /// </summary>
         /// <remarks>
-        /// Returns a single event
+        /// Consume the list of child companies.  This is used for holding companies with several child entities.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>EventResponse</returns>
-        EventResponse GetEvent(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
-
-        /// <summary>
-        /// Get Event
-        /// </summary>
-        /// <remarks>
-        /// Returns a single event
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Identifier of the resource</param>
-        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of EventResponse</returns>
-        ApiResponse<EventResponse> GetEventWithHttpInfo(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
-        /// <summary>
-        /// Get list of Events
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GetEventsResponse</returns>
-        GetEventsResponse GetEvents(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
+        /// <returns>GetCompaniesResponse</returns>
+        GetCompaniesResponse GetCompanies(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// Get list of Events
+        /// Get List of Companies
+        /// </summary>
+        /// <remarks>
+        /// Consume the list of child companies.  This is used for holding companies with several child entities.
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
+        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
+        /// <param name="next">next page (optional)</param>
+        /// <param name="previous">previous page (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of GetCompaniesResponse</returns>
+        ApiResponse<GetCompaniesResponse> GetCompaniesWithHttpInfo(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
+        /// <summary>
+        /// Get Company
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>CompanyResponse</returns>
+        CompanyResponse GetCompany(string id, string acceptLanguage = default(string), int operationIndex = 0);
+
+        /// <summary>
+        /// Get Company
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
-        /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
-        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
-        /// <param name="next">next page (optional)</param>
-        /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GetEventsResponse</returns>
-        ApiResponse<GetEventsResponse> GetEventsWithHttpInfo(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
+        /// <returns>ApiResponse of CompanyResponse</returns>
+        ApiResponse<CompanyResponse> GetCompanyWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IEventsApiAsync : IApiAccessor
+    public interface ICompaniesApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Get Event
+        /// Get List of Companies
         /// </summary>
         /// <remarks>
-        /// Returns a single event
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Identifier of the resource</param>
-        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of EventResponse</returns>
-        System.Threading.Tasks.Task<EventResponse> GetEventAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Get Event
-        /// </summary>
-        /// <remarks>
-        /// Returns a single event
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Identifier of the resource</param>
-        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (EventResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EventResponse>> GetEventWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// Get list of Events
-        /// </summary>
-        /// <remarks>
-        /// 
+        /// Consume the list of child companies.  This is used for holding companies with several child entities.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetEventsResponse</returns>
-        System.Threading.Tasks.Task<GetEventsResponse> GetEventsAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of GetCompaniesResponse</returns>
+        System.Threading.Tasks.Task<GetCompaniesResponse> GetCompaniesAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Get list of Events
+        /// Get List of Companies
         /// </summary>
         /// <remarks>
-        /// 
+        /// Consume the list of child companies.  This is used for holding companies with several child entities.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetEventsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetEventsResponse>> GetEventsWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (GetCompaniesResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetCompaniesResponse>> GetCompaniesWithHttpInfoAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Get Company
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CompanyResponse</returns>
+        System.Threading.Tasks.Task<CompanyResponse> GetCompanyAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get Company
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CompanyResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CompanyResponse>> GetCompanyWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IEventsApi : IEventsApiSync, IEventsApiAsync
+    public interface ICompaniesApi : ICompaniesApiSync, ICompaniesApiAsync
     {
 
     }
@@ -171,23 +163,23 @@ namespace Conekta.net.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class EventsApi : IEventsApi
+    public partial class CompaniesApi : ICompaniesApi
     {
         private Conekta.net.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EventsApi"/> class.
+        /// Initializes a new instance of the <see cref="CompaniesApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public EventsApi() : this((string)null)
+        public CompaniesApi() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EventsApi"/> class.
+        /// Initializes a new instance of the <see cref="CompaniesApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public EventsApi(string basePath)
+        public CompaniesApi(string basePath)
         {
             this.Configuration = Conekta.net.Client.Configuration.MergeConfigurations(
                 Conekta.net.Client.GlobalConfiguration.Instance,
@@ -199,12 +191,12 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EventsApi"/> class
+        /// Initializes a new instance of the <see cref="CompaniesApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public EventsApi(Conekta.net.Client.Configuration configuration)
+        public CompaniesApi(Conekta.net.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -218,13 +210,13 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EventsApi"/> class
+        /// Initializes a new instance of the <see cref="CompaniesApi"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public EventsApi(Conekta.net.Client.ISynchronousClient client, Conekta.net.Client.IAsynchronousClient asyncClient, Conekta.net.Client.IReadableConfiguration configuration)
+        public CompaniesApi(Conekta.net.Client.ISynchronousClient client, Conekta.net.Client.IAsynchronousClient asyncClient, Conekta.net.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -278,216 +270,34 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Get Event Returns a single event
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Identifier of the resource</param>
-        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>EventResponse</returns>
-        public EventResponse GetEvent(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
-        {
-            Conekta.net.Client.ApiResponse<EventResponse> localVarResponse = GetEventWithHttpInfo(id, acceptLanguage, xChildCompanyId);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get Event Returns a single event
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Identifier of the resource</param>
-        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of EventResponse</returns>
-        public Conekta.net.Client.ApiResponse<EventResponse> GetEventWithHttpInfo(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling EventsApi->GetEvent");
-            }
-
-            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/vnd.conekta-v2.1.0+json"
-            };
-
-            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
-            if (acceptLanguage != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
-            }
-            if (xChildCompanyId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
-            }
-
-            localVarRequestOptions.Operation = "EventsApi.GetEvent";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<EventResponse>("/events/{id}", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetEvent", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get Event Returns a single event
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Identifier of the resource</param>
-        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of EventResponse</returns>
-        public async System.Threading.Tasks.Task<EventResponse> GetEventAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Conekta.net.Client.ApiResponse<EventResponse> localVarResponse = await GetEventWithHttpInfoAsync(id, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get Event Returns a single event
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Identifier of the resource</param>
-        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (EventResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<EventResponse>> GetEventWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling EventsApi->GetEvent");
-            }
-
-
-            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/vnd.conekta-v2.1.0+json"
-            };
-
-            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
-            if (acceptLanguage != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
-            }
-            if (xChildCompanyId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
-            }
-
-            localVarRequestOptions.Operation = "EventsApi.GetEvent";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<EventResponse>("/events/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetEvent", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get list of Events 
+        /// Get List of Companies Consume the list of child companies.  This is used for holding companies with several child entities.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GetEventsResponse</returns>
-        public GetEventsResponse GetEvents(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0)
+        /// <returns>GetCompaniesResponse</returns>
+        public GetCompaniesResponse GetCompanies(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<GetEventsResponse> localVarResponse = GetEventsWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+            Conekta.net.Client.ApiResponse<GetCompaniesResponse> localVarResponse = GetCompaniesWithHttpInfo(acceptLanguage, limit, search, next, previous);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get list of Events 
+        /// Get List of Companies Consume the list of child companies.  This is used for holding companies with several child entities.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GetEventsResponse</returns>
-        public Conekta.net.Client.ApiResponse<GetEventsResponse> GetEventsWithHttpInfo(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0)
+        /// <returns>ApiResponse of GetCompaniesResponse</returns>
+        public Conekta.net.Client.ApiResponse<GetCompaniesResponse> GetCompaniesWithHttpInfo(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0)
         {
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
 
@@ -531,12 +341,8 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
-            if (xChildCompanyId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
-            }
 
-            localVarRequestOptions.Operation = "EventsApi.GetEvents";
+            localVarRequestOptions.Operation = "CompaniesApi.GetCompanies";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (bearerAuth) required
@@ -547,10 +353,10 @@ namespace Conekta.net.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<GetEventsResponse>("/events", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<GetCompaniesResponse>("/companies", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetEvents", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetCompanies", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -561,38 +367,36 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Get list of Events 
+        /// Get List of Companies Consume the list of child companies.  This is used for holding companies with several child entities.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetEventsResponse</returns>
-        public async System.Threading.Tasks.Task<GetEventsResponse> GetEventsAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of GetCompaniesResponse</returns>
+        public async System.Threading.Tasks.Task<GetCompaniesResponse> GetCompaniesAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<GetEventsResponse> localVarResponse = await GetEventsWithHttpInfoAsync(acceptLanguage, xChildCompanyId, limit, search, next, previous, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<GetCompaniesResponse> localVarResponse = await GetCompaniesWithHttpInfoAsync(acceptLanguage, limit, search, next, previous, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get list of Events 
+        /// Get List of Companies Consume the list of child companies.  This is used for holding companies with several child entities.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetEventsResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<GetEventsResponse>> GetEventsWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (GetCompaniesResponse)</returns>
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<GetCompaniesResponse>> GetCompaniesWithHttpInfoAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -637,12 +441,8 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
-            if (xChildCompanyId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
-            }
 
-            localVarRequestOptions.Operation = "EventsApi.GetEvents";
+            localVarRequestOptions.Operation = "CompaniesApi.GetCompanies";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (bearerAuth) required
@@ -653,11 +453,179 @@ namespace Conekta.net.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<GetEventsResponse>("/events", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetCompaniesResponse>("/companies", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetEvents", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetCompanies", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get Company 
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>CompanyResponse</returns>
+        public CompanyResponse GetCompany(string id, string acceptLanguage = default(string), int operationIndex = 0)
+        {
+            Conekta.net.Client.ApiResponse<CompanyResponse> localVarResponse = GetCompanyWithHttpInfo(id, acceptLanguage);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Company 
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of CompanyResponse</returns>
+        public Conekta.net.Client.ApiResponse<CompanyResponse> GetCompanyWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling CompaniesApi->GetCompany");
+            }
+
+            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.conekta-v2.1.0+json"
+            };
+
+            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+
+            localVarRequestOptions.Operation = "CompaniesApi.GetCompany";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<CompanyResponse>("/companies/{id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetCompany", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get Company 
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CompanyResponse</returns>
+        public async System.Threading.Tasks.Task<CompanyResponse> GetCompanyAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Conekta.net.Client.ApiResponse<CompanyResponse> localVarResponse = await GetCompanyWithHttpInfoAsync(id, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Company 
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CompanyResponse)</returns>
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CompanyResponse>> GetCompanyWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling CompaniesApi->GetCompany");
+            }
+
+
+            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.conekta-v2.1.0+json"
+            };
+
+            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+
+            localVarRequestOptions.Operation = "CompaniesApi.GetCompany";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<CompanyResponse>("/companies/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetCompany", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

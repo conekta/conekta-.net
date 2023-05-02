@@ -10,7 +10,7 @@ All URIs are relative to *https://api.conekta.io*
 
 <a name="orderscreatediscountline"></a>
 # **OrdersCreateDiscountLine**
-> DiscountLinesResponse OrdersCreateDiscountLine (string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = null)
+> DiscountLinesResponse OrdersCreateDiscountLine (string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
 Create Discount
 
@@ -39,11 +39,12 @@ namespace Example
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var orderDiscountLinesRequest = new OrderDiscountLinesRequest(); // OrderDiscountLinesRequest | requested field for a discount lines
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Create Discount
-                DiscountLinesResponse result = apiInstance.OrdersCreateDiscountLine(id, orderDiscountLinesRequest, acceptLanguage);
+                DiscountLinesResponse result = apiInstance.OrdersCreateDiscountLine(id, orderDiscountLinesRequest, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -64,7 +65,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create Discount
-    ApiResponse<DiscountLinesResponse> response = apiInstance.OrdersCreateDiscountLineWithHttpInfo(id, orderDiscountLinesRequest, acceptLanguage);
+    ApiResponse<DiscountLinesResponse> response = apiInstance.OrdersCreateDiscountLineWithHttpInfo(id, orderDiscountLinesRequest, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -84,6 +85,7 @@ catch (ApiException e)
 | **id** | **string** | Identifier of the resource |  |
 | **orderDiscountLinesRequest** | [**OrderDiscountLinesRequest**](OrderDiscountLinesRequest.md) | requested field for a discount lines |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -111,7 +113,7 @@ catch (ApiException e)
 
 <a name="ordersdeletediscountlines"></a>
 # **OrdersDeleteDiscountLines**
-> DiscountLinesResponse OrdersDeleteDiscountLines (string id, string discountLinesId, string acceptLanguage = null)
+> DiscountLinesResponse OrdersDeleteDiscountLines (string id, string discountLinesId, string acceptLanguage = null, string xChildCompanyId = null)
 
 Delete Discount
 
@@ -140,11 +142,12 @@ namespace Example
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var discountLinesId = dis_lin_2tQ974hSHcsdeSZHG;  // string | identifier
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Delete Discount
-                DiscountLinesResponse result = apiInstance.OrdersDeleteDiscountLines(id, discountLinesId, acceptLanguage);
+                DiscountLinesResponse result = apiInstance.OrdersDeleteDiscountLines(id, discountLinesId, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -165,7 +168,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete Discount
-    ApiResponse<DiscountLinesResponse> response = apiInstance.OrdersDeleteDiscountLinesWithHttpInfo(id, discountLinesId, acceptLanguage);
+    ApiResponse<DiscountLinesResponse> response = apiInstance.OrdersDeleteDiscountLinesWithHttpInfo(id, discountLinesId, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -185,6 +188,7 @@ catch (ApiException e)
 | **id** | **string** | Identifier of the resource |  |
 | **discountLinesId** | **string** | identifier |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -213,7 +217,7 @@ catch (ApiException e)
 
 <a name="ordersupdatediscountlines"></a>
 # **OrdersUpdateDiscountLines**
-> DiscountLinesResponse OrdersUpdateDiscountLines (string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = null)
+> DiscountLinesResponse OrdersUpdateDiscountLines (string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
 Update Discount
 
@@ -243,11 +247,12 @@ namespace Example
             var discountLinesId = dis_lin_2tQ974hSHcsdeSZHG;  // string | identifier
             var updateOrderDiscountLinesRequest = new UpdateOrderDiscountLinesRequest(); // UpdateOrderDiscountLinesRequest | requested field for a discount lines
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Update Discount
-                DiscountLinesResponse result = apiInstance.OrdersUpdateDiscountLines(id, discountLinesId, updateOrderDiscountLinesRequest, acceptLanguage);
+                DiscountLinesResponse result = apiInstance.OrdersUpdateDiscountLines(id, discountLinesId, updateOrderDiscountLinesRequest, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -268,7 +273,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update Discount
-    ApiResponse<DiscountLinesResponse> response = apiInstance.OrdersUpdateDiscountLinesWithHttpInfo(id, discountLinesId, updateOrderDiscountLinesRequest, acceptLanguage);
+    ApiResponse<DiscountLinesResponse> response = apiInstance.OrdersUpdateDiscountLinesWithHttpInfo(id, discountLinesId, updateOrderDiscountLinesRequest, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -289,6 +294,7 @@ catch (ApiException e)
 | **discountLinesId** | **string** | identifier |  |
 | **updateOrderDiscountLinesRequest** | [**UpdateOrderDiscountLinesRequest**](UpdateOrderDiscountLinesRequest.md) | requested field for a discount lines |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 

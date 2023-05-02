@@ -10,7 +10,7 @@ All URIs are relative to *https://api.conekta.io*
 
 <a name="orderscreateshipping"></a>
 # **OrdersCreateShipping**
-> ShippingOrderResponse OrdersCreateShipping (string id, ShippingRequest shippingRequest, string acceptLanguage = null)
+> ShippingOrderResponse OrdersCreateShipping (string id, ShippingRequest shippingRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
 Create Shipping
 
@@ -39,11 +39,12 @@ namespace Example
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var shippingRequest = new ShippingRequest(); // ShippingRequest | requested field for a shipping
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Create Shipping
-                ShippingOrderResponse result = apiInstance.OrdersCreateShipping(id, shippingRequest, acceptLanguage);
+                ShippingOrderResponse result = apiInstance.OrdersCreateShipping(id, shippingRequest, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -64,7 +65,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create Shipping
-    ApiResponse<ShippingOrderResponse> response = apiInstance.OrdersCreateShippingWithHttpInfo(id, shippingRequest, acceptLanguage);
+    ApiResponse<ShippingOrderResponse> response = apiInstance.OrdersCreateShippingWithHttpInfo(id, shippingRequest, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -84,6 +85,7 @@ catch (ApiException e)
 | **id** | **string** | Identifier of the resource |  |
 | **shippingRequest** | [**ShippingRequest**](ShippingRequest.md) | requested field for a shipping |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -111,7 +113,7 @@ catch (ApiException e)
 
 <a name="ordersdeleteshipping"></a>
 # **OrdersDeleteShipping**
-> ShippingOrderResponse OrdersDeleteShipping (string id, string shippingId, string acceptLanguage = null)
+> ShippingOrderResponse OrdersDeleteShipping (string id, string shippingId, string acceptLanguage = null, string xChildCompanyId = null)
 
 Delete Shipping
 
@@ -140,11 +142,12 @@ namespace Example
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var shippingId = ship_lin_2tQ974hSHcsdeSZHG;  // string | identifier
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Delete Shipping
-                ShippingOrderResponse result = apiInstance.OrdersDeleteShipping(id, shippingId, acceptLanguage);
+                ShippingOrderResponse result = apiInstance.OrdersDeleteShipping(id, shippingId, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -165,7 +168,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete Shipping
-    ApiResponse<ShippingOrderResponse> response = apiInstance.OrdersDeleteShippingWithHttpInfo(id, shippingId, acceptLanguage);
+    ApiResponse<ShippingOrderResponse> response = apiInstance.OrdersDeleteShippingWithHttpInfo(id, shippingId, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -185,6 +188,7 @@ catch (ApiException e)
 | **id** | **string** | Identifier of the resource |  |
 | **shippingId** | **string** | identifier |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -213,7 +217,7 @@ catch (ApiException e)
 
 <a name="ordersupdateshipping"></a>
 # **OrdersUpdateShipping**
-> ShippingOrderResponse OrdersUpdateShipping (string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = null)
+> ShippingOrderResponse OrdersUpdateShipping (string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
 Update Shipping
 
@@ -243,11 +247,12 @@ namespace Example
             var shippingId = ship_lin_2tQ974hSHcsdeSZHG;  // string | identifier
             var shippingRequest = new ShippingRequest(); // ShippingRequest | requested field for a shipping
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Update Shipping
-                ShippingOrderResponse result = apiInstance.OrdersUpdateShipping(id, shippingId, shippingRequest, acceptLanguage);
+                ShippingOrderResponse result = apiInstance.OrdersUpdateShipping(id, shippingId, shippingRequest, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -268,7 +273,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update Shipping
-    ApiResponse<ShippingOrderResponse> response = apiInstance.OrdersUpdateShippingWithHttpInfo(id, shippingId, shippingRequest, acceptLanguage);
+    ApiResponse<ShippingOrderResponse> response = apiInstance.OrdersUpdateShippingWithHttpInfo(id, shippingId, shippingRequest, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -289,6 +294,7 @@ catch (ApiException e)
 | **shippingId** | **string** | identifier |  |
 | **shippingRequest** | [**ShippingRequest**](ShippingRequest.md) | requested field for a shipping |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 

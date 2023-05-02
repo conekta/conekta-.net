@@ -27,37 +27,25 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// page metadata
+    /// GetCompaniesResponseAllOf
     /// </summary>
-    [DataContract(Name = "page")]
-    public partial class Page : IEquatable<Page>, IValidatableObject
+    [DataContract(Name = "get_companies_response_allOf")]
+    public partial class GetCompaniesResponseAllOf : IEquatable<GetCompaniesResponseAllOf>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Page" /> class.
+        /// Initializes a new instance of the <see cref="GetCompaniesResponseAllOf" /> class.
         /// </summary>
-        /// <param name="nextPageUrl">URL of the next page..</param>
-        /// <param name="previousPageUrl">Url of the previous page..</param>
-        public Page(string nextPageUrl = default(string), string previousPageUrl = default(string))
+        /// <param name="data">data.</param>
+        public GetCompaniesResponseAllOf(List<CompanyResponse> data = default(List<CompanyResponse>))
         {
-            this.NextPageUrl = nextPageUrl;
-            this.PreviousPageUrl = previousPageUrl;
+            this.Data = data;
         }
 
         /// <summary>
-        /// URL of the next page.
+        /// Gets or Sets Data
         /// </summary>
-        /// <value>URL of the next page.</value>
-        /// <example>&quot;https://api.conekta.io/resources?limit&#x3D;10&amp;next&#x3D;chrg_1&quot;</example>
-        [DataMember(Name = "next_page_url", EmitDefaultValue = true)]
-        public string NextPageUrl { get; set; }
-
-        /// <summary>
-        /// Url of the previous page.
-        /// </summary>
-        /// <value>Url of the previous page.</value>
-        /// <example>&quot;https://api.conekta.io/resources?limit&#x3D;10&amp;previous&#x3D;chrg_1&quot;</example>
-        [DataMember(Name = "previous_page_url", EmitDefaultValue = true)]
-        public string PreviousPageUrl { get; set; }
+        [DataMember(Name = "data", EmitDefaultValue = false)]
+        public List<CompanyResponse> Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -66,9 +54,8 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class Page {\n");
-            sb.Append("  NextPageUrl: ").Append(NextPageUrl).Append("\n");
-            sb.Append("  PreviousPageUrl: ").Append(PreviousPageUrl).Append("\n");
+            sb.Append("class GetCompaniesResponseAllOf {\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -89,15 +76,15 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Page);
+            return this.Equals(input as GetCompaniesResponseAllOf);
         }
 
         /// <summary>
-        /// Returns true if Page instances are equal
+        /// Returns true if GetCompaniesResponseAllOf instances are equal
         /// </summary>
-        /// <param name="input">Instance of Page to be compared</param>
+        /// <param name="input">Instance of GetCompaniesResponseAllOf to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Page input)
+        public bool Equals(GetCompaniesResponseAllOf input)
         {
             if (input == null)
             {
@@ -105,14 +92,10 @@ namespace Conekta.net.Model
             }
             return 
                 (
-                    this.NextPageUrl == input.NextPageUrl ||
-                    (this.NextPageUrl != null &&
-                    this.NextPageUrl.Equals(input.NextPageUrl))
-                ) && 
-                (
-                    this.PreviousPageUrl == input.PreviousPageUrl ||
-                    (this.PreviousPageUrl != null &&
-                    this.PreviousPageUrl.Equals(input.PreviousPageUrl))
+                    this.Data == input.Data ||
+                    this.Data != null &&
+                    input.Data != null &&
+                    this.Data.SequenceEqual(input.Data)
                 );
         }
 
@@ -125,13 +108,9 @@ namespace Conekta.net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.NextPageUrl != null)
+                if (this.Data != null)
                 {
-                    hashCode = (hashCode * 59) + this.NextPageUrl.GetHashCode();
-                }
-                if (this.PreviousPageUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.PreviousPageUrl.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Data.GetHashCode();
                 }
                 return hashCode;
             }

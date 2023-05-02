@@ -68,7 +68,7 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void GetLogsTest()
         {
-            var response = _instance.GetLogs("en", 20);
+            var response = _instance.GetLogs("en", null, 20);
 
             Assert.IsType<LogsResponse>(response);
             Assert.Equal(20, response.Data.Count);

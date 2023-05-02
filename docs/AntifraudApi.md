@@ -199,13 +199,14 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | successfully registered rule |  -  |
 | **401** | authentication error |  -  |
+| **403** | forbidden error |  -  |
 | **500** | internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="deleteruleblacklist"></a>
 # **DeleteRuleBlacklist**
-> DeletedBlacklistRuleResponse DeleteRuleBlacklist (string id, string acceptLanguage = null)
+> DeletedBlacklistRuleResponse DeleteRuleBlacklist (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
 Delete blacklisted rule
 
@@ -231,11 +232,12 @@ namespace Example
             var apiInstance = new AntifraudApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Delete blacklisted rule
-                DeletedBlacklistRuleResponse result = apiInstance.DeleteRuleBlacklist(id, acceptLanguage);
+                DeletedBlacklistRuleResponse result = apiInstance.DeleteRuleBlacklist(id, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -256,7 +258,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete blacklisted rule
-    ApiResponse<DeletedBlacklistRuleResponse> response = apiInstance.DeleteRuleBlacklistWithHttpInfo(id, acceptLanguage);
+    ApiResponse<DeletedBlacklistRuleResponse> response = apiInstance.DeleteRuleBlacklistWithHttpInfo(id, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -275,6 +277,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -302,7 +305,7 @@ catch (ApiException e)
 
 <a name="deleterulewhitelist"></a>
 # **DeleteRuleWhitelist**
-> DeletedWhitelistRuleResponse DeleteRuleWhitelist (string id, string acceptLanguage = null)
+> DeletedWhitelistRuleResponse DeleteRuleWhitelist (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
 Delete whitelisted rule
 
@@ -328,11 +331,12 @@ namespace Example
             var apiInstance = new AntifraudApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Delete whitelisted rule
-                DeletedWhitelistRuleResponse result = apiInstance.DeleteRuleWhitelist(id, acceptLanguage);
+                DeletedWhitelistRuleResponse result = apiInstance.DeleteRuleWhitelist(id, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -353,7 +357,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete whitelisted rule
-    ApiResponse<DeletedWhitelistRuleResponse> response = apiInstance.DeleteRuleWhitelistWithHttpInfo(id, acceptLanguage);
+    ApiResponse<DeletedWhitelistRuleResponse> response = apiInstance.DeleteRuleWhitelistWithHttpInfo(id, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -372,6 +376,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -392,6 +397,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | successfully deleted rule |  -  |
 | **401** | authentication error |  -  |
+| **403** | forbidden error |  -  |
 | **404** | not found entity |  -  |
 | **500** | internal server error |  -  |
 
@@ -585,6 +591,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | All the rules |  -  |
 | **401** | authentication error |  -  |
+| **403** | forbidden error |  -  |
 | **500** | internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -11,7 +11,7 @@ All URIs are relative to *https://api.conekta.io*
 
 <a name="createcustomerpaymentmethods"></a>
 # **CreateCustomerPaymentMethods**
-> CreateCustomerPaymentMethodsResponse CreateCustomerPaymentMethods (string id, CreateCustomerPaymentMethodsRequest createCustomerPaymentMethodsRequest, string acceptLanguage = null)
+> CreateCustomerPaymentMethodsResponse CreateCustomerPaymentMethods (string id, CreateCustomerPaymentMethodsRequest createCustomerPaymentMethodsRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
 Create Payment Method
 
@@ -40,11 +40,12 @@ namespace Example
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var createCustomerPaymentMethodsRequest = new CreateCustomerPaymentMethodsRequest(); // CreateCustomerPaymentMethodsRequest | requested field for customer payment methods
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Create Payment Method
-                CreateCustomerPaymentMethodsResponse result = apiInstance.CreateCustomerPaymentMethods(id, createCustomerPaymentMethodsRequest, acceptLanguage);
+                CreateCustomerPaymentMethodsResponse result = apiInstance.CreateCustomerPaymentMethods(id, createCustomerPaymentMethodsRequest, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -65,7 +66,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create Payment Method
-    ApiResponse<CreateCustomerPaymentMethodsResponse> response = apiInstance.CreateCustomerPaymentMethodsWithHttpInfo(id, createCustomerPaymentMethodsRequest, acceptLanguage);
+    ApiResponse<CreateCustomerPaymentMethodsResponse> response = apiInstance.CreateCustomerPaymentMethodsWithHttpInfo(id, createCustomerPaymentMethodsRequest, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -85,6 +86,7 @@ catch (ApiException e)
 | **id** | **string** | Identifier of the resource |  |
 | **createCustomerPaymentMethodsRequest** | [**CreateCustomerPaymentMethodsRequest**](CreateCustomerPaymentMethodsRequest.md) | requested field for customer payment methods |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -113,7 +115,7 @@ catch (ApiException e)
 
 <a name="deletecustomerpaymentmethods"></a>
 # **DeleteCustomerPaymentMethods**
-> UpdateCustomerPaymentMethodsResponse DeleteCustomerPaymentMethods (string id, string paymentMethodId, string acceptLanguage = null)
+> UpdateCustomerPaymentMethodsResponse DeleteCustomerPaymentMethods (string id, string paymentMethodId, string acceptLanguage = null, string xChildCompanyId = null)
 
 Delete Payment Method
 
@@ -142,11 +144,12 @@ namespace Example
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var paymentMethodId = src_2tQ974hSHcsdeSZHG;  // string | Identifier of the payment method
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Delete Payment Method
-                UpdateCustomerPaymentMethodsResponse result = apiInstance.DeleteCustomerPaymentMethods(id, paymentMethodId, acceptLanguage);
+                UpdateCustomerPaymentMethodsResponse result = apiInstance.DeleteCustomerPaymentMethods(id, paymentMethodId, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -167,7 +170,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete Payment Method
-    ApiResponse<UpdateCustomerPaymentMethodsResponse> response = apiInstance.DeleteCustomerPaymentMethodsWithHttpInfo(id, paymentMethodId, acceptLanguage);
+    ApiResponse<UpdateCustomerPaymentMethodsResponse> response = apiInstance.DeleteCustomerPaymentMethodsWithHttpInfo(id, paymentMethodId, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -187,6 +190,7 @@ catch (ApiException e)
 | **id** | **string** | Identifier of the resource |  |
 | **paymentMethodId** | **string** | Identifier of the payment method |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -215,7 +219,7 @@ catch (ApiException e)
 
 <a name="getcustomerpaymentmethods"></a>
 # **GetCustomerPaymentMethods**
-> GetPaymentMethodResponse GetCustomerPaymentMethods (string id, string acceptLanguage = null, int? limit = null, string next = null, string previous = null, string search = null)
+> GetPaymentMethodResponse GetCustomerPaymentMethods (string id, string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string next = null, string previous = null, string search = null)
 
 Get Payment Methods
 
@@ -243,6 +247,7 @@ namespace Example
             var apiInstance = new PaymentMethodsApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
             var limit = 20;  // int? | The numbers of items to return, the maximum value is 250 (optional)  (default to 20)
             var next = "next_example";  // string | next page (optional) 
             var previous = "previous_example";  // string | previous page (optional) 
@@ -251,7 +256,7 @@ namespace Example
             try
             {
                 // Get Payment Methods
-                GetPaymentMethodResponse result = apiInstance.GetCustomerPaymentMethods(id, acceptLanguage, limit, next, previous, search);
+                GetPaymentMethodResponse result = apiInstance.GetCustomerPaymentMethods(id, acceptLanguage, xChildCompanyId, limit, next, previous, search);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -272,7 +277,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get Payment Methods
-    ApiResponse<GetPaymentMethodResponse> response = apiInstance.GetCustomerPaymentMethodsWithHttpInfo(id, acceptLanguage, limit, next, previous, search);
+    ApiResponse<GetPaymentMethodResponse> response = apiInstance.GetCustomerPaymentMethodsWithHttpInfo(id, acceptLanguage, xChildCompanyId, limit, next, previous, search);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -291,6 +296,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 | **limit** | **int?** | The numbers of items to return, the maximum value is 250 | [optional] [default to 20] |
 | **next** | **string** | next page | [optional]  |
 | **previous** | **string** | previous page | [optional]  |
@@ -322,7 +328,7 @@ catch (ApiException e)
 
 <a name="updatecustomerpaymentmethods"></a>
 # **UpdateCustomerPaymentMethods**
-> UpdateCustomerPaymentMethodsResponse UpdateCustomerPaymentMethods (string id, string paymentMethodId, UpdatePaymentMethods updatePaymentMethods, string acceptLanguage = null)
+> UpdateCustomerPaymentMethodsResponse UpdateCustomerPaymentMethods (string id, string paymentMethodId, UpdatePaymentMethods updatePaymentMethods, string acceptLanguage = null, string xChildCompanyId = null)
 
 Update Payment Method
 
@@ -352,11 +358,12 @@ namespace Example
             var paymentMethodId = src_2tQ974hSHcsdeSZHG;  // string | Identifier of the payment method
             var updatePaymentMethods = new UpdatePaymentMethods(); // UpdatePaymentMethods | requested field for customer payment methods
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Update Payment Method
-                UpdateCustomerPaymentMethodsResponse result = apiInstance.UpdateCustomerPaymentMethods(id, paymentMethodId, updatePaymentMethods, acceptLanguage);
+                UpdateCustomerPaymentMethodsResponse result = apiInstance.UpdateCustomerPaymentMethods(id, paymentMethodId, updatePaymentMethods, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -377,7 +384,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update Payment Method
-    ApiResponse<UpdateCustomerPaymentMethodsResponse> response = apiInstance.UpdateCustomerPaymentMethodsWithHttpInfo(id, paymentMethodId, updatePaymentMethods, acceptLanguage);
+    ApiResponse<UpdateCustomerPaymentMethodsResponse> response = apiInstance.UpdateCustomerPaymentMethodsWithHttpInfo(id, paymentMethodId, updatePaymentMethods, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -398,6 +405,7 @@ catch (ApiException e)
 | **paymentMethodId** | **string** | Identifier of the payment method |  |
 | **updatePaymentMethods** | [**UpdatePaymentMethods**](UpdatePaymentMethods.md) | requested field for customer payment methods |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 

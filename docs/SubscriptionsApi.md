@@ -14,7 +14,7 @@ All URIs are relative to *https://api.conekta.io*
 
 <a name="cancelsubscription"></a>
 # **CancelSubscription**
-> SubscriptionResponse CancelSubscription (string id, string acceptLanguage = null)
+> SubscriptionResponse CancelSubscription (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
 Cancel Subscription
 
@@ -42,11 +42,12 @@ namespace Example
             var apiInstance = new SubscriptionsApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Cancel Subscription
-                SubscriptionResponse result = apiInstance.CancelSubscription(id, acceptLanguage);
+                SubscriptionResponse result = apiInstance.CancelSubscription(id, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -67,7 +68,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Cancel Subscription
-    ApiResponse<SubscriptionResponse> response = apiInstance.CancelSubscriptionWithHttpInfo(id, acceptLanguage);
+    ApiResponse<SubscriptionResponse> response = apiInstance.CancelSubscriptionWithHttpInfo(id, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -86,6 +87,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -113,7 +115,7 @@ catch (ApiException e)
 
 <a name="createsubscription"></a>
 # **CreateSubscription**
-> SubscriptionResponse CreateSubscription (string id, SubscriptionRequest subscriptionRequest, string acceptLanguage = null)
+> SubscriptionResponse CreateSubscription (string id, SubscriptionRequest subscriptionRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
 Create Subscription
 
@@ -142,11 +144,12 @@ namespace Example
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var subscriptionRequest = new SubscriptionRequest(); // SubscriptionRequest | requested field for subscriptions
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Create Subscription
-                SubscriptionResponse result = apiInstance.CreateSubscription(id, subscriptionRequest, acceptLanguage);
+                SubscriptionResponse result = apiInstance.CreateSubscription(id, subscriptionRequest, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -167,7 +170,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create Subscription
-    ApiResponse<SubscriptionResponse> response = apiInstance.CreateSubscriptionWithHttpInfo(id, subscriptionRequest, acceptLanguage);
+    ApiResponse<SubscriptionResponse> response = apiInstance.CreateSubscriptionWithHttpInfo(id, subscriptionRequest, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -187,6 +190,7 @@ catch (ApiException e)
 | **id** | **string** | Identifier of the resource |  |
 | **subscriptionRequest** | [**SubscriptionRequest**](SubscriptionRequest.md) | requested field for subscriptions |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -215,7 +219,7 @@ catch (ApiException e)
 
 <a name="getalleventsfromsubscription"></a>
 # **GetAllEventsFromSubscription**
-> SubscriptionEventsResponse GetAllEventsFromSubscription (string id, string acceptLanguage = null)
+> SubscriptionEventsResponse GetAllEventsFromSubscription (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
 Get Events By Subscription
 
@@ -243,11 +247,12 @@ namespace Example
             var apiInstance = new SubscriptionsApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Get Events By Subscription
-                SubscriptionEventsResponse result = apiInstance.GetAllEventsFromSubscription(id, acceptLanguage);
+                SubscriptionEventsResponse result = apiInstance.GetAllEventsFromSubscription(id, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -268,7 +273,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get Events By Subscription
-    ApiResponse<SubscriptionEventsResponse> response = apiInstance.GetAllEventsFromSubscriptionWithHttpInfo(id, acceptLanguage);
+    ApiResponse<SubscriptionEventsResponse> response = apiInstance.GetAllEventsFromSubscriptionWithHttpInfo(id, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -287,6 +292,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -413,7 +419,7 @@ catch (ApiException e)
 
 <a name="pausesubscription"></a>
 # **PauseSubscription**
-> SubscriptionResponse PauseSubscription (string id, string acceptLanguage = null)
+> SubscriptionResponse PauseSubscription (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
 Pause Subscription
 
@@ -441,11 +447,12 @@ namespace Example
             var apiInstance = new SubscriptionsApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Pause Subscription
-                SubscriptionResponse result = apiInstance.PauseSubscription(id, acceptLanguage);
+                SubscriptionResponse result = apiInstance.PauseSubscription(id, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -466,7 +473,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Pause Subscription
-    ApiResponse<SubscriptionResponse> response = apiInstance.PauseSubscriptionWithHttpInfo(id, acceptLanguage);
+    ApiResponse<SubscriptionResponse> response = apiInstance.PauseSubscriptionWithHttpInfo(id, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -485,6 +492,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -513,7 +521,7 @@ catch (ApiException e)
 
 <a name="resumesubscription"></a>
 # **ResumeSubscription**
-> SubscriptionResponse ResumeSubscription (string id, string acceptLanguage = null)
+> SubscriptionResponse ResumeSubscription (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
 Resume Subscription
 
@@ -541,11 +549,12 @@ namespace Example
             var apiInstance = new SubscriptionsApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Resume Subscription
-                SubscriptionResponse result = apiInstance.ResumeSubscription(id, acceptLanguage);
+                SubscriptionResponse result = apiInstance.ResumeSubscription(id, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -566,7 +575,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Resume Subscription
-    ApiResponse<SubscriptionResponse> response = apiInstance.ResumeSubscriptionWithHttpInfo(id, acceptLanguage);
+    ApiResponse<SubscriptionResponse> response = apiInstance.ResumeSubscriptionWithHttpInfo(id, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -585,6 +594,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -614,7 +624,7 @@ catch (ApiException e)
 
 <a name="updatesubscription"></a>
 # **UpdateSubscription**
-> SubscriptionResponse UpdateSubscription (string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = null)
+> SubscriptionResponse UpdateSubscription (string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
 Update Subscription
 
@@ -643,11 +653,12 @@ namespace Example
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var subscriptionUpdateRequest = new SubscriptionUpdateRequest(); // SubscriptionUpdateRequest | requested field for update a subscription
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Update Subscription
-                SubscriptionResponse result = apiInstance.UpdateSubscription(id, subscriptionUpdateRequest, acceptLanguage);
+                SubscriptionResponse result = apiInstance.UpdateSubscription(id, subscriptionUpdateRequest, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -668,7 +679,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update Subscription
-    ApiResponse<SubscriptionResponse> response = apiInstance.UpdateSubscriptionWithHttpInfo(id, subscriptionUpdateRequest, acceptLanguage);
+    ApiResponse<SubscriptionResponse> response = apiInstance.UpdateSubscriptionWithHttpInfo(id, subscriptionUpdateRequest, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -688,6 +699,7 @@ catch (ApiException e)
 | **id** | **string** | Identifier of the resource |  |
 | **subscriptionUpdateRequest** | [**SubscriptionUpdateRequest**](SubscriptionUpdateRequest.md) | requested field for update a subscription |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 

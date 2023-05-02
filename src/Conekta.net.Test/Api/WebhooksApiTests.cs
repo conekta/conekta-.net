@@ -101,7 +101,7 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void GetWebhooksTest()
         {
-            var response = _instance.GetWebhooks("es", 20);
+            var response = _instance.GetWebhooks("es", null, 20);
 
             Assert.IsType<GetWebhooksResponse>(response);
             Assert.Equal(2, response.Data.Count);

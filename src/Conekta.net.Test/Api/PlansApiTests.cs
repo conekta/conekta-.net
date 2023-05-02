@@ -102,7 +102,7 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void GetPlansTest()
         {
-            var response = _instance.GetPlans("es",20);
+            var response = _instance.GetPlans("es",null, 20);
 
             Assert.IsType<GetPlansResponse>(response);
             Assert.Equal(10, response.Data.Count);

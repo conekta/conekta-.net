@@ -10,7 +10,7 @@ All URIs are relative to *https://api.conekta.io*
 
 <a name="createcustomershippingcontacts"></a>
 # **CreateCustomerShippingContacts**
-> CustomerShippingContactsResponse CreateCustomerShippingContacts (string id, CustomerShippingContacts customerShippingContacts, string acceptLanguage = null)
+> CustomerShippingContactsResponse CreateCustomerShippingContacts (string id, CustomerShippingContacts customerShippingContacts, string acceptLanguage = null, string xChildCompanyId = null)
 
 Create a shipping contacts
 
@@ -39,11 +39,12 @@ namespace Example
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var customerShippingContacts = new CustomerShippingContacts(); // CustomerShippingContacts | requested field for customer shippings contacts
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Create a shipping contacts
-                CustomerShippingContactsResponse result = apiInstance.CreateCustomerShippingContacts(id, customerShippingContacts, acceptLanguage);
+                CustomerShippingContactsResponse result = apiInstance.CreateCustomerShippingContacts(id, customerShippingContacts, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -64,7 +65,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create a shipping contacts
-    ApiResponse<CustomerShippingContactsResponse> response = apiInstance.CreateCustomerShippingContactsWithHttpInfo(id, customerShippingContacts, acceptLanguage);
+    ApiResponse<CustomerShippingContactsResponse> response = apiInstance.CreateCustomerShippingContactsWithHttpInfo(id, customerShippingContacts, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -84,6 +85,7 @@ catch (ApiException e)
 | **id** | **string** | Identifier of the resource |  |
 | **customerShippingContacts** | [**CustomerShippingContacts**](CustomerShippingContacts.md) | requested field for customer shippings contacts |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -112,7 +114,7 @@ catch (ApiException e)
 
 <a name="deletecustomershippingcontacts"></a>
 # **DeleteCustomerShippingContacts**
-> CustomerShippingContactsResponse DeleteCustomerShippingContacts (string id, string shippingContactsId, string acceptLanguage = null)
+> CustomerShippingContactsResponse DeleteCustomerShippingContacts (string id, string shippingContactsId, string acceptLanguage = null, string xChildCompanyId = null)
 
 Delete shipping contacts
 
@@ -141,11 +143,12 @@ namespace Example
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var shippingContactsId = 6307a60c41de27127515a575;  // string | identifier
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Delete shipping contacts
-                CustomerShippingContactsResponse result = apiInstance.DeleteCustomerShippingContacts(id, shippingContactsId, acceptLanguage);
+                CustomerShippingContactsResponse result = apiInstance.DeleteCustomerShippingContacts(id, shippingContactsId, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -166,7 +169,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete shipping contacts
-    ApiResponse<CustomerShippingContactsResponse> response = apiInstance.DeleteCustomerShippingContactsWithHttpInfo(id, shippingContactsId, acceptLanguage);
+    ApiResponse<CustomerShippingContactsResponse> response = apiInstance.DeleteCustomerShippingContactsWithHttpInfo(id, shippingContactsId, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -186,6 +189,7 @@ catch (ApiException e)
 | **id** | **string** | Identifier of the resource |  |
 | **shippingContactsId** | **string** | identifier |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -214,7 +218,7 @@ catch (ApiException e)
 
 <a name="updatecustomershippingcontacts"></a>
 # **UpdateCustomerShippingContacts**
-> CustomerShippingContactsResponse UpdateCustomerShippingContacts (string id, string shippingContactsId, CustomerUpdateShippingContacts customerUpdateShippingContacts, string acceptLanguage = null)
+> CustomerShippingContactsResponse UpdateCustomerShippingContacts (string id, string shippingContactsId, CustomerUpdateShippingContacts customerUpdateShippingContacts, string acceptLanguage = null, string xChildCompanyId = null)
 
 Update shipping contacts
 
@@ -244,11 +248,12 @@ namespace Example
             var shippingContactsId = 6307a60c41de27127515a575;  // string | identifier
             var customerUpdateShippingContacts = new CustomerUpdateShippingContacts(); // CustomerUpdateShippingContacts | requested field for customer update shippings contacts
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Update shipping contacts
-                CustomerShippingContactsResponse result = apiInstance.UpdateCustomerShippingContacts(id, shippingContactsId, customerUpdateShippingContacts, acceptLanguage);
+                CustomerShippingContactsResponse result = apiInstance.UpdateCustomerShippingContacts(id, shippingContactsId, customerUpdateShippingContacts, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -269,7 +274,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update shipping contacts
-    ApiResponse<CustomerShippingContactsResponse> response = apiInstance.UpdateCustomerShippingContactsWithHttpInfo(id, shippingContactsId, customerUpdateShippingContacts, acceptLanguage);
+    ApiResponse<CustomerShippingContactsResponse> response = apiInstance.UpdateCustomerShippingContactsWithHttpInfo(id, shippingContactsId, customerUpdateShippingContacts, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -290,6 +295,7 @@ catch (ApiException e)
 | **shippingContactsId** | **string** | identifier |  |
 | **customerUpdateShippingContacts** | [**CustomerUpdateShippingContacts**](CustomerUpdateShippingContacts.md) | requested field for customer update shippings contacts |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 

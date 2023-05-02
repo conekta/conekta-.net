@@ -207,7 +207,7 @@ catch (ApiException e)
 
 <a name="getwebhook"></a>
 # **GetWebhook**
-> WebhookResponse GetWebhook (string id, string acceptLanguage = null)
+> WebhookResponse GetWebhook (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
 Get Webhook
 
@@ -233,11 +233,12 @@ namespace Example
             var apiInstance = new WebhooksApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Get Webhook
-                WebhookResponse result = apiInstance.GetWebhook(id, acceptLanguage);
+                WebhookResponse result = apiInstance.GetWebhook(id, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -258,7 +259,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get Webhook
-    ApiResponse<WebhookResponse> response = apiInstance.GetWebhookWithHttpInfo(id, acceptLanguage);
+    ApiResponse<WebhookResponse> response = apiInstance.GetWebhookWithHttpInfo(id, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -277,6 +278,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
@@ -304,7 +306,7 @@ catch (ApiException e)
 
 <a name="getwebhooks"></a>
 # **GetWebhooks**
-> GetWebhooksResponse GetWebhooks (string acceptLanguage = null, int? limit = null, string search = null, string next = null, string previous = null)
+> GetWebhooksResponse GetWebhooks (string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string search = null, string next = null, string previous = null)
 
 Get List of Webhooks
 
@@ -331,6 +333,7 @@ namespace Example
 
             var apiInstance = new WebhooksApi(config);
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
             var limit = 20;  // int? | The numbers of items to return, the maximum value is 250 (optional)  (default to 20)
             var search = "search_example";  // string | General order search, e.g. by mail, reference etc. (optional) 
             var next = "next_example";  // string | next page (optional) 
@@ -339,7 +342,7 @@ namespace Example
             try
             {
                 // Get List of Webhooks
-                GetWebhooksResponse result = apiInstance.GetWebhooks(acceptLanguage, limit, search, next, previous);
+                GetWebhooksResponse result = apiInstance.GetWebhooks(acceptLanguage, xChildCompanyId, limit, search, next, previous);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -360,7 +363,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get List of Webhooks
-    ApiResponse<GetWebhooksResponse> response = apiInstance.GetWebhooksWithHttpInfo(acceptLanguage, limit, search, next, previous);
+    ApiResponse<GetWebhooksResponse> response = apiInstance.GetWebhooksWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -378,6 +381,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 | **limit** | **int?** | The numbers of items to return, the maximum value is 250 | [optional] [default to 20] |
 | **search** | **string** | General order search, e.g. by mail, reference etc. | [optional]  |
 | **next** | **string** | next page | [optional]  |
@@ -408,7 +412,7 @@ catch (ApiException e)
 
 <a name="updatewebhook"></a>
 # **UpdateWebhook**
-> WebhookResponse UpdateWebhook (string id, WebhookUpdateRequest webhookUpdateRequest, string acceptLanguage = null)
+> WebhookResponse UpdateWebhook (string id, WebhookUpdateRequest webhookUpdateRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
 Update Webhook
 
@@ -437,11 +441,12 @@ namespace Example
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var webhookUpdateRequest = new WebhookUpdateRequest(); // WebhookUpdateRequest | requested fields in order to update a webhook
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Update Webhook
-                WebhookResponse result = apiInstance.UpdateWebhook(id, webhookUpdateRequest, acceptLanguage);
+                WebhookResponse result = apiInstance.UpdateWebhook(id, webhookUpdateRequest, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -462,7 +467,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update Webhook
-    ApiResponse<WebhookResponse> response = apiInstance.UpdateWebhookWithHttpInfo(id, webhookUpdateRequest, acceptLanguage);
+    ApiResponse<WebhookResponse> response = apiInstance.UpdateWebhookWithHttpInfo(id, webhookUpdateRequest, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -482,6 +487,7 @@ catch (ApiException e)
 | **id** | **string** | Identifier of the resource |  |
 | **webhookUpdateRequest** | [**WebhookUpdateRequest**](WebhookUpdateRequest.md) | requested fields in order to update a webhook |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
 ### Return type
 
