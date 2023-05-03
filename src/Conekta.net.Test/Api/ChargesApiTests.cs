@@ -55,7 +55,7 @@ namespace Conekta.net.Test.Api
             string id = "ord_2tVKxbhNzfUnGjnXG";
             ChargeRequest chargeRequest = new(
                 amount: 40000,
-                paymentMethod: new ChargeRequestPaymentMethod("card", "tok_2tVKyGpobEKAR3xVH")
+                paymentMethod: new ChargeRequestPaymentMethod(type:"card", tokenId:"tok_2tVKyGpobEKAR3xVH")
             );
 
             var response = _instance.OrdersCreateCharge(id, chargeRequest);
@@ -76,7 +76,7 @@ namespace Conekta.net.Test.Api
             string id = "ord_2tVL8dT1Hm3y3YiaN";
             ChargeRequest chargeRequest = new(
                 amount: 40000,
-                paymentMethod: new ChargeRequestPaymentMethod("cash")
+                paymentMethod: new ChargeRequestPaymentMethod(type:"cash")
             );
 
             var response = _instance.OrdersCreateCharge(id, chargeRequest);
@@ -101,7 +101,7 @@ namespace Conekta.net.Test.Api
             string id = "ord_2tVLUFrQBB4HKz1zj";
             ChargeRequest chargeRequest = new(
                 amount: 40000,
-                paymentMethod: new ChargeRequestPaymentMethod("spei")
+                paymentMethod: new ChargeRequestPaymentMethod(type:"spei")
             );
 
             var response = _instance.OrdersCreateCharge(id, chargeRequest);

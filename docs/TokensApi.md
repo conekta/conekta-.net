@@ -4,13 +4,13 @@ All URIs are relative to *https://api.conekta.io*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CreateToken**](TokensApi.md#createtoken) | **POST** /tokens | Create empty token |
+| [**CreateToken**](TokensApi.md#createtoken) | **POST** /tokens | Create Token |
 
 <a name="createtoken"></a>
 # **CreateToken**
 > TokenResponse CreateToken (Token token, string acceptLanguage = null)
 
-Create empty token
+Create Token
 
 Generate a payment token, to associate it with a card 
 
@@ -39,7 +39,7 @@ namespace Example
 
             try
             {
-                // Create empty token
+                // Create Token
                 TokenResponse result = apiInstance.CreateToken(token, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -60,7 +60,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Create empty token
+    // Create Token
     ApiResponse<TokenResponse> response = apiInstance.CreateTokenWithHttpInfo(token, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

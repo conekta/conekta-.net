@@ -40,10 +40,11 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ChargeRequestPaymentMethod" /> class.
         /// </summary>
+        /// <param name="expiresAt">Method expiration date as unix timestamp.</param>
         /// <param name="type">type (required).</param>
         /// <param name="tokenId">tokenId.</param>
         /// <param name="paymentSourceId">paymentSourceId.</param>
-        public ChargeRequestPaymentMethod(string type = default(string), string tokenId = default(string), string paymentSourceId = default(string))
+        public ChargeRequestPaymentMethod(long expiresAt = default(long), string type = default(string), string tokenId = default(string), string paymentSourceId = default(string))
         {
             // to ensure "type" is required (not null)
             if (type == null)
@@ -51,9 +52,18 @@ namespace Conekta.net.Model
                 throw new ArgumentNullException("type is a required property for ChargeRequestPaymentMethod and cannot be null");
             }
             this.Type = type;
+            this.ExpiresAt = expiresAt;
             this.TokenId = tokenId;
             this.PaymentSourceId = paymentSourceId;
         }
+
+        /// <summary>
+        /// Method expiration date as unix timestamp
+        /// </summary>
+        /// <value>Method expiration date as unix timestamp</value>
+        /// <example>1677196303</example>
+        [DataMember(Name = "expires_at", EmitDefaultValue = false)]
+        public long ExpiresAt { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
@@ -84,6 +94,7 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class ChargeRequestPaymentMethod {\n");
+            sb.Append("  ExpiresAt: ").Append(ExpiresAt).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  TokenId: ").Append(TokenId).Append("\n");
             sb.Append("  PaymentSourceId: ").Append(PaymentSourceId).Append("\n");
@@ -123,6 +134,10 @@ namespace Conekta.net.Model
             }
             return 
                 (
+                    this.ExpiresAt == input.ExpiresAt ||
+                    this.ExpiresAt.Equals(input.ExpiresAt)
+                ) && 
+                (
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
@@ -148,6 +163,7 @@ namespace Conekta.net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                hashCode = (hashCode * 59) + this.ExpiresAt.GetHashCode();
                 if (this.Type != null)
                 {
                     hashCode = (hashCode * 59) + this.Type.GetHashCode();

@@ -5,6 +5,7 @@ Payment method used in the charge. Go to the [payment methods](https://developer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ExpiresAt** | **long** | Method expiration date as unix timestamp | [optional] 
 **Type** | **string** |  | 
 **TokenId** | **string** |  | [optional] 
 **PaymentSourceId** | **string** |  | [optional] 

@@ -64,11 +64,13 @@ public class OrdersApiTests
                 unitPrice: 1555
             )
         };
+        DateTime thirtyDaysFromNowDateTime = DateTime.Now.AddDays(30);
+        var expiresAt = (Int64)thirtyDaysFromNowDateTime.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
         List<ChargeRequest> charges = new()
         {
             new(
                 1555,
-                paymentMethod: new ChargeRequestPaymentMethod("cash")
+                paymentMethod: new ChargeRequestPaymentMethod(expiresAt:expiresAt, type:"cash")
             )
         };
         OrderRequestCustomerInfo customerInfo = new(new CustomerInfoJustCustomerId("cus_2tKcHxhTz7xU5SymF"));
@@ -89,6 +91,7 @@ public class OrdersApiTests
         Assert.IsType<PaymentMethodCash>(response.Charges.Data[0].PaymentMethod.ActualInstance);
         Assert.Equal("OxxoPay", response.Charges.Data[0].PaymentMethod.GetPaymentMethodCash().ServiceName);
         Assert.Equal("oxxo", response.Charges.Data[0].PaymentMethod.GetPaymentMethodCash().Type);
+        Assert.Equal(expiresAt, response.Charges.Data[0].PaymentMethod.GetPaymentMethodCash().ExpiresAt);
     }
     /// <summary>
     ///     Test CreateOrderDefaultErr
@@ -106,11 +109,16 @@ public class OrdersApiTests
                 tags: new List<string> {"pago", "mensualidad"}
             )
         };
+        DateTime thirtyDaysFromNowDateTime = DateTime.Now.AddDays(30);
+        var expiresAt = (Int64)thirtyDaysFromNowDateTime.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
         List<ChargeRequest> charges = new()
         {
             new(
                 2000,
-                paymentMethod: new ChargeRequestPaymentMethod("default")
+                paymentMethod: new ChargeRequestPaymentMethod(
+                    type:"default",
+                    expiresAt: expiresAt
+                    )
             )
         };
         OrderRequestCustomerInfo customerInfo = new(new CustomerInfoJustCustomerId("cus_2tKcHxhTz7xU5SymF2"));
@@ -352,7 +360,7 @@ public class OrdersApiTests
     {
         int? limit = 22;
 
-        GetOrdersResponse response = _instance.GetOrders("en", null,limit, search: "ord_2tNDzhA4Akmzj11AS");
+        GetOrdersResponse response = _instance.GetOrders("en", null, limit, search: "ord_2tNDzhA4Akmzj11AS");
 
         Assert.IsType<GetOrdersResponse>(response);
         Assert.False(response.HasMore);
@@ -412,7 +420,7 @@ public class OrdersApiTests
         {
             Amount = 40000,
         };
-        var response = _instance.OrdersCreateCapture("ord_2tVKoTd79XK1GqJmm", "en", null,request);
+        var response = _instance.OrdersCreateCapture("ord_2tVKoTd79XK1GqJmm", "en", null, request);
 
         Assert.IsType<OrderResponse>(response);
         Assert.Equal("paid", response.PaymentStatus);

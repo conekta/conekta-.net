@@ -68,6 +68,7 @@ namespace Conekta.net.Model
         /// Gets or Sets Checkout
         /// </summary>
         [DataMember(Name = "checkout", EmitDefaultValue = true)]
+        [Obsolete]
         public TokenResponseCheckout Checkout { get; set; }
 
         /// <summary>

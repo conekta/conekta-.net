@@ -7713,7 +7713,7 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: Create empty token
+      summary: Create Token
       tags:
       - Tokens
   /webhooks:
@@ -9877,11 +9877,6 @@ components:
       properties:
         amount:
           example: 40000
-          type: integer
-        expires_at:
-          description: Method expiration date as unix timestamp
-          example: 1677196303
-          format: int64
           type: integer
         monthly_installments:
           description: "How many months without interest to apply, it can be 3, 6,\
@@ -12049,6 +12044,7 @@ components:
       type: object
       example: null
     token_response_checkout:
+      deprecated: true
       nullable: true
       properties:
         allowed_payment_methods:
@@ -12150,6 +12146,11 @@ components:
       description: |
         Payment method used in the charge. Go to the [payment methods](https://developers.conekta.com/reference/m%C3%A9todos-de-pago) section for more details
       properties:
+        expires_at:
+          description: Method expiration date as unix timestamp
+          example: 1677196303
+          format: int64
+          type: integer
         type:
           example: card
           type: string
@@ -12308,6 +12309,7 @@ components:
       - number
       type: object
     token_checkout:
+      deprecated: true
       nullable: true
       properties:
         returns_control_on:

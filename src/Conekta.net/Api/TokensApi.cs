@@ -28,7 +28,7 @@ namespace Conekta.net.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Create empty token
+        /// Create Token
         /// </summary>
         /// <remarks>
         /// Generate a payment token, to associate it with a card 
@@ -41,7 +41,7 @@ namespace Conekta.net.Api
         TokenResponse CreateToken(Token token, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// Create empty token
+        /// Create Token
         /// </summary>
         /// <remarks>
         /// Generate a payment token, to associate it with a card 
@@ -62,7 +62,7 @@ namespace Conekta.net.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Create empty token
+        /// Create Token
         /// </summary>
         /// <remarks>
         /// Generate a payment token, to associate it with a card 
@@ -76,7 +76,7 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<TokenResponse> CreateTokenAsync(Token token, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Create empty token
+        /// Create Token
         /// </summary>
         /// <remarks>
         /// Generate a payment token, to associate it with a card 
@@ -209,7 +209,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create empty token Generate a payment token, to associate it with a card 
+        /// Create Token Generate a payment token, to associate it with a card 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">requested field for token</param>
@@ -223,7 +223,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create empty token Generate a payment token, to associate it with a card 
+        /// Create Token Generate a payment token, to associate it with a card 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">requested field for token</param>
@@ -292,7 +292,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create empty token Generate a payment token, to associate it with a card 
+        /// Create Token Generate a payment token, to associate it with a card 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">requested field for token</param>
@@ -307,7 +307,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        /// Create empty token Generate a payment token, to associate it with a card 
+        /// Create Token Generate a payment token, to associate it with a card 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">requested field for token</param>
