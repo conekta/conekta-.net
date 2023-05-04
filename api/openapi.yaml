@@ -9939,7 +9939,7 @@ components:
           description: Contains details of the payment methods that the customer has
             active or has used in Conekta
           items:
-            $ref: '#/components/schemas/consumer_payment_methods_request'
+            $ref: '#/components/schemas/customer_payment_methods_request'
           type: array
         phone:
           description: Is the customer's phone number
@@ -10019,7 +10019,7 @@ components:
           description: Contains details of the payment methods that the customer has
             active or has used in Conekta
           items:
-            $ref: '#/components/schemas/consumer_payment_methods_request'
+            $ref: '#/components/schemas/customer_payment_methods_request'
           type: array
         shipping_contacts:
           description: Contains the detail of the shipping addresses that the client
@@ -12175,12 +12175,12 @@ components:
           format: int64
           type: integer
       type: object
-    consumer_payment_methods_request:
+    customer_payment_methods_request:
       oneOf:
       - $ref: '#/components/schemas/payment_method_card_request'
       - $ref: '#/components/schemas/payment_method_cash_request'
       - $ref: '#/components/schemas/payment_method_spei_request'
-      title: consumer_payment_methods_request
+      title: customer_payment_methods_request
     update_customer_antifraud_info:
       nullable: true
       properties:

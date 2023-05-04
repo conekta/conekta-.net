@@ -90,6 +90,7 @@ public class OrdersApiTests
         Assert.Equal("cus_2tKcHxhTz7xU5SymF", response.CustomerInfo.CustomerId);
         Assert.IsType<PaymentMethodCash>(response.Charges.Data[0].PaymentMethod.ActualInstance);
         Assert.Equal("OxxoPay", response.Charges.Data[0].PaymentMethod.GetPaymentMethodCash().ServiceName);
+        Assert.Equal("93000262280678", response.Charges.Data[0].PaymentMethod.GetPaymentMethodCash().Reference);
         Assert.Equal("oxxo", response.Charges.Data[0].PaymentMethod.GetPaymentMethodCash().Type);
         Assert.Equal(expiresAt, response.Charges.Data[0].PaymentMethod.GetPaymentMethodCash().ExpiresAt);
     }

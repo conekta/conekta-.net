@@ -28,18 +28,18 @@ using System.Reflection;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// ConsumerPaymentMethodsRequest
+    /// CustomerPaymentMethodsRequest
     /// </summary>
-    [JsonConverter(typeof(ConsumerPaymentMethodsRequestJsonConverter))]
-    [DataContract(Name = "consumer_payment_methods_request")]
-    public partial class ConsumerPaymentMethodsRequest : AbstractOpenAPISchema, IEquatable<ConsumerPaymentMethodsRequest>, IValidatableObject
+    [JsonConverter(typeof(CustomerPaymentMethodsRequestJsonConverter))]
+    [DataContract(Name = "customer_payment_methods_request")]
+    public partial class CustomerPaymentMethodsRequest : AbstractOpenAPISchema, IEquatable<CustomerPaymentMethodsRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConsumerPaymentMethodsRequest" /> class
+        /// Initializes a new instance of the <see cref="CustomerPaymentMethodsRequest" /> class
         /// with the <see cref="PaymentMethodCardRequest" /> class
         /// </summary>
         /// <param name="actualInstance">An instance of PaymentMethodCardRequest.</param>
-        public ConsumerPaymentMethodsRequest(PaymentMethodCardRequest actualInstance)
+        public CustomerPaymentMethodsRequest(PaymentMethodCardRequest actualInstance)
         {
             this.IsNullable = false;
             this.SchemaType= "oneOf";
@@ -47,11 +47,11 @@ namespace Conekta.net.Model
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConsumerPaymentMethodsRequest" /> class
+        /// Initializes a new instance of the <see cref="CustomerPaymentMethodsRequest" /> class
         /// with the <see cref="PaymentMethodCashRequest" /> class
         /// </summary>
         /// <param name="actualInstance">An instance of PaymentMethodCashRequest.</param>
-        public ConsumerPaymentMethodsRequest(PaymentMethodCashRequest actualInstance)
+        public CustomerPaymentMethodsRequest(PaymentMethodCashRequest actualInstance)
         {
             this.IsNullable = false;
             this.SchemaType= "oneOf";
@@ -59,11 +59,11 @@ namespace Conekta.net.Model
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConsumerPaymentMethodsRequest" /> class
+        /// Initializes a new instance of the <see cref="CustomerPaymentMethodsRequest" /> class
         /// with the <see cref="PaymentMethodSpeiRequest" /> class
         /// </summary>
         /// <param name="actualInstance">An instance of PaymentMethodSpeiRequest.</param>
-        public ConsumerPaymentMethodsRequest(PaymentMethodSpeiRequest actualInstance)
+        public CustomerPaymentMethodsRequest(PaymentMethodSpeiRequest actualInstance)
         {
             this.IsNullable = false;
             this.SchemaType= "oneOf";
@@ -140,7 +140,7 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ConsumerPaymentMethodsRequest {\n");
+            sb.Append("class CustomerPaymentMethodsRequest {\n");
             sb.Append("  ActualInstance: ").Append(this.ActualInstance).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -152,21 +152,21 @@ namespace Conekta.net.Model
         /// <returns>JSON string presentation of the object</returns>
         public override string ToJson()
         {
-            return JsonConvert.SerializeObject(this.ActualInstance, ConsumerPaymentMethodsRequest.SerializerSettings);
+            return JsonConvert.SerializeObject(this.ActualInstance, CustomerPaymentMethodsRequest.SerializerSettings);
         }
 
         /// <summary>
-        /// Converts the JSON string into an instance of ConsumerPaymentMethodsRequest
+        /// Converts the JSON string into an instance of CustomerPaymentMethodsRequest
         /// </summary>
         /// <param name="jsonString">JSON string</param>
-        /// <returns>An instance of ConsumerPaymentMethodsRequest</returns>
-        public static ConsumerPaymentMethodsRequest FromJson(string jsonString)
+        /// <returns>An instance of CustomerPaymentMethodsRequest</returns>
+        public static CustomerPaymentMethodsRequest FromJson(string jsonString)
         {
-            ConsumerPaymentMethodsRequest newConsumerPaymentMethodsRequest = null;
+            CustomerPaymentMethodsRequest newCustomerPaymentMethodsRequest = null;
 
             if (string.IsNullOrEmpty(jsonString))
             {
-                return newConsumerPaymentMethodsRequest;
+                return newCustomerPaymentMethodsRequest;
             }
             int match = 0;
             List<string> matchedTypes = new List<string>();
@@ -176,11 +176,11 @@ namespace Conekta.net.Model
                 // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
                 if (typeof(PaymentMethodCardRequest).GetProperty("AdditionalProperties") == null)
                 {
-                    newConsumerPaymentMethodsRequest = new ConsumerPaymentMethodsRequest(JsonConvert.DeserializeObject<PaymentMethodCardRequest>(jsonString, ConsumerPaymentMethodsRequest.SerializerSettings));
+                    newCustomerPaymentMethodsRequest = new CustomerPaymentMethodsRequest(JsonConvert.DeserializeObject<PaymentMethodCardRequest>(jsonString, CustomerPaymentMethodsRequest.SerializerSettings));
                 }
                 else
                 {
-                    newConsumerPaymentMethodsRequest = new ConsumerPaymentMethodsRequest(JsonConvert.DeserializeObject<PaymentMethodCardRequest>(jsonString, ConsumerPaymentMethodsRequest.AdditionalPropertiesSerializerSettings));
+                    newCustomerPaymentMethodsRequest = new CustomerPaymentMethodsRequest(JsonConvert.DeserializeObject<PaymentMethodCardRequest>(jsonString, CustomerPaymentMethodsRequest.AdditionalPropertiesSerializerSettings));
                 }
                 matchedTypes.Add("PaymentMethodCardRequest");
                 match++;
@@ -196,11 +196,11 @@ namespace Conekta.net.Model
                 // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
                 if (typeof(PaymentMethodCashRequest).GetProperty("AdditionalProperties") == null)
                 {
-                    newConsumerPaymentMethodsRequest = new ConsumerPaymentMethodsRequest(JsonConvert.DeserializeObject<PaymentMethodCashRequest>(jsonString, ConsumerPaymentMethodsRequest.SerializerSettings));
+                    newCustomerPaymentMethodsRequest = new CustomerPaymentMethodsRequest(JsonConvert.DeserializeObject<PaymentMethodCashRequest>(jsonString, CustomerPaymentMethodsRequest.SerializerSettings));
                 }
                 else
                 {
-                    newConsumerPaymentMethodsRequest = new ConsumerPaymentMethodsRequest(JsonConvert.DeserializeObject<PaymentMethodCashRequest>(jsonString, ConsumerPaymentMethodsRequest.AdditionalPropertiesSerializerSettings));
+                    newCustomerPaymentMethodsRequest = new CustomerPaymentMethodsRequest(JsonConvert.DeserializeObject<PaymentMethodCashRequest>(jsonString, CustomerPaymentMethodsRequest.AdditionalPropertiesSerializerSettings));
                 }
                 matchedTypes.Add("PaymentMethodCashRequest");
                 match++;
@@ -216,11 +216,11 @@ namespace Conekta.net.Model
                 // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
                 if (typeof(PaymentMethodSpeiRequest).GetProperty("AdditionalProperties") == null)
                 {
-                    newConsumerPaymentMethodsRequest = new ConsumerPaymentMethodsRequest(JsonConvert.DeserializeObject<PaymentMethodSpeiRequest>(jsonString, ConsumerPaymentMethodsRequest.SerializerSettings));
+                    newCustomerPaymentMethodsRequest = new CustomerPaymentMethodsRequest(JsonConvert.DeserializeObject<PaymentMethodSpeiRequest>(jsonString, CustomerPaymentMethodsRequest.SerializerSettings));
                 }
                 else
                 {
-                    newConsumerPaymentMethodsRequest = new ConsumerPaymentMethodsRequest(JsonConvert.DeserializeObject<PaymentMethodSpeiRequest>(jsonString, ConsumerPaymentMethodsRequest.AdditionalPropertiesSerializerSettings));
+                    newCustomerPaymentMethodsRequest = new CustomerPaymentMethodsRequest(JsonConvert.DeserializeObject<PaymentMethodSpeiRequest>(jsonString, CustomerPaymentMethodsRequest.AdditionalPropertiesSerializerSettings));
                 }
                 matchedTypes.Add("PaymentMethodSpeiRequest");
                 match++;
@@ -241,7 +241,7 @@ namespace Conekta.net.Model
             }
 
             // deserialization is considered successful at this point if no exception has been thrown.
-            return newConsumerPaymentMethodsRequest;
+            return newCustomerPaymentMethodsRequest;
         }
 
         /// <summary>
@@ -251,15 +251,15 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ConsumerPaymentMethodsRequest);
+            return this.Equals(input as CustomerPaymentMethodsRequest);
         }
 
         /// <summary>
-        /// Returns true if ConsumerPaymentMethodsRequest instances are equal
+        /// Returns true if CustomerPaymentMethodsRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of ConsumerPaymentMethodsRequest to be compared</param>
+        /// <param name="input">Instance of CustomerPaymentMethodsRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ConsumerPaymentMethodsRequest input)
+        public bool Equals(CustomerPaymentMethodsRequest input)
         {
             if (input == null)
                 return false;
@@ -294,9 +294,9 @@ namespace Conekta.net.Model
     }
 
     /// <summary>
-    /// Custom JSON converter for ConsumerPaymentMethodsRequest
+    /// Custom JSON converter for CustomerPaymentMethodsRequest
     /// </summary>
-    public class ConsumerPaymentMethodsRequestJsonConverter : JsonConverter
+    public class CustomerPaymentMethodsRequestJsonConverter : JsonConverter
     {
         /// <summary>
         /// To write the JSON string
@@ -306,7 +306,7 @@ namespace Conekta.net.Model
         /// <param name="serializer">JSON Serializer</param>
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            writer.WriteRawValue((string)(typeof(ConsumerPaymentMethodsRequest).GetMethod("ToJson").Invoke(value, null)));
+            writer.WriteRawValue((string)(typeof(CustomerPaymentMethodsRequest).GetMethod("ToJson").Invoke(value, null)));
         }
 
         /// <summary>
@@ -321,7 +321,7 @@ namespace Conekta.net.Model
         {
             if(reader.TokenType != JsonToken.Null)
             {
-                return ConsumerPaymentMethodsRequest.FromJson(JObject.Load(reader).ToString(Formatting.None));
+                return CustomerPaymentMethodsRequest.FromJson(JObject.Load(reader).ToString(Formatting.None));
             }
             return null;
         }

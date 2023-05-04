@@ -274,9 +274,9 @@ namespace Conekta.net.Test.Api
                     metadata: new Dictionary<string, object> { { "test", "true" } }
                 )
             };
-            var paymentSources = new List<ConsumerPaymentMethodsRequest>()
+            var paymentSources = new List<CustomerPaymentMethodsRequest>()
             {
-                new ConsumerPaymentMethodsRequest(
+                new CustomerPaymentMethodsRequest(
                     new PaymentMethodCardRequest("card", "tok_2tXyExrU6U7yiaTto")
                 )
             };

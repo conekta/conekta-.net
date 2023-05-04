@@ -33,7 +33,6 @@ docs/CompanyFiscalInfoAddressResponse.md
 docs/CompanyFiscalInfoResponse.md
 docs/CompanyPayoutDestinationResponse.md
 docs/CompanyResponse.md
-docs/ConsumerPaymentMethodsRequest.md
 docs/CreateCustomerFiscalEntitiesResponse.md
 docs/CreateCustomerFiscalEntitiesResponseAllOf.md
 docs/CreateCustomerPaymentMethodsRequest.md
@@ -55,6 +54,7 @@ docs/CustomerInfoResponse.md
 docs/CustomerPaymentMethodRequest.md
 docs/CustomerPaymentMethods.md
 docs/CustomerPaymentMethodsData.md
+docs/CustomerPaymentMethodsRequest.md
 docs/CustomerPaymentMethodsResponse.md
 docs/CustomerResponse.md
 docs/CustomerResponseShippingContacts.md
@@ -251,7 +251,6 @@ src/Conekta.net/Model/CompanyFiscalInfoAddressResponse.cs
 src/Conekta.net/Model/CompanyFiscalInfoResponse.cs
 src/Conekta.net/Model/CompanyPayoutDestinationResponse.cs
 src/Conekta.net/Model/CompanyResponse.cs
-src/Conekta.net/Model/ConsumerPaymentMethodsRequest.cs
 src/Conekta.net/Model/CreateCustomerFiscalEntitiesResponse.cs
 src/Conekta.net/Model/CreateCustomerFiscalEntitiesResponseAllOf.cs
 src/Conekta.net/Model/CreateCustomerPaymentMethodsRequest.cs
@@ -273,6 +272,7 @@ src/Conekta.net/Model/CustomerInfoResponse.cs
 src/Conekta.net/Model/CustomerPaymentMethodRequest.cs
 src/Conekta.net/Model/CustomerPaymentMethods.cs
 src/Conekta.net/Model/CustomerPaymentMethodsData.cs
+src/Conekta.net/Model/CustomerPaymentMethodsRequest.cs
 src/Conekta.net/Model/CustomerPaymentMethodsResponse.cs
 src/Conekta.net/Model/CustomerResponse.cs
 src/Conekta.net/Model/CustomerResponseShippingContacts.cs

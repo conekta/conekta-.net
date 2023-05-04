@@ -1,4 +1,4 @@
-# Conekta.net.Model.ConsumerPaymentMethodsRequest
+# Conekta.net.Model.CustomerPaymentMethodsRequest
 
 ## Properties
 

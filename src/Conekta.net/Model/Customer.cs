@@ -54,7 +54,7 @@ namespace Conekta.net.Model
         /// <param name="planId">Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription.</param>
         /// <param name="shippingContacts">Contains the detail of the shipping addresses that the client has active or has used in Conekta.</param>
         /// <param name="subscription">subscription.</param>
-        public Customer(CustomerAntifraudInfo antifraudInfo = default(CustomerAntifraudInfo), bool corporate = false, string customReference = default(string), string email = default(string), string defaultPaymentSourceId = default(string), string defaultShippingContactId = default(string), List<CustomerFiscalEntitiesRequest> fiscalEntities = default(List<CustomerFiscalEntitiesRequest>), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string name = default(string), List<ConsumerPaymentMethodsRequest> paymentSources = default(List<ConsumerPaymentMethodsRequest>), string phone = default(string), string planId = default(string), List<CustomerShippingContacts> shippingContacts = default(List<CustomerShippingContacts>), SubscriptionRequest subscription = default(SubscriptionRequest))
+        public Customer(CustomerAntifraudInfo antifraudInfo = default(CustomerAntifraudInfo), bool corporate = false, string customReference = default(string), string email = default(string), string defaultPaymentSourceId = default(string), string defaultShippingContactId = default(string), List<CustomerFiscalEntitiesRequest> fiscalEntities = default(List<CustomerFiscalEntitiesRequest>), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string name = default(string), List<CustomerPaymentMethodsRequest> paymentSources = default(List<CustomerPaymentMethodsRequest>), string phone = default(string), string planId = default(string), List<CustomerShippingContacts> shippingContacts = default(List<CustomerShippingContacts>), SubscriptionRequest subscription = default(SubscriptionRequest))
         {
             // to ensure "email" is required (not null)
             if (email == null)
@@ -157,7 +157,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>Contains details of the payment methods that the customer has active or has used in Conekta</value>
         [DataMember(Name = "payment_sources", EmitDefaultValue = false)]
-        public List<ConsumerPaymentMethodsRequest> PaymentSources { get; set; }
+        public List<CustomerPaymentMethodsRequest> PaymentSources { get; set; }
 
         /// <summary>
         /// Is the customer&#39;s phone number

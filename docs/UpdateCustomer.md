@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **CustomReference** | **string** | It is an undefined value. | [optional] 
 **FiscalEntities** | [**List&lt;CustomerFiscalEntitiesRequest&gt;**](CustomerFiscalEntitiesRequest.md) |  | [optional] 
 **Metadata** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
-**PaymentSources** | [**List&lt;ConsumerPaymentMethodsRequest&gt;**](ConsumerPaymentMethodsRequest.md) | Contains details of the payment methods that the customer has active or has used in Conekta | [optional] 
+**PaymentSources** | [**List&lt;CustomerPaymentMethodsRequest&gt;**](CustomerPaymentMethodsRequest.md) | Contains details of the payment methods that the customer has active or has used in Conekta | [optional] 
 **ShippingContacts** | [**List&lt;CustomerShippingContacts&gt;**](CustomerShippingContacts.md) | Contains the detail of the shipping addresses that the client has active or has used in Conekta | [optional] 
 **Subscription** | [**SubscriptionRequest**](SubscriptionRequest.md) |  | [optional] 
 
