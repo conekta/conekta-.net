@@ -1,0 +1,41 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
+{
+	"name": "Existing Dockerfile",
+	"build": {
+		// Sets the run context to one level up instead of the .devcontainer folder.
+		"context": "..",
+		// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
+		"dockerfile": "../Dockerfile"
+	}
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	,"features": {
+		"ghcr.io/jungaretti/features/make:1" : {
+			"version" : "latest"
+		}
+	}
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Uncomment the next line to run commands after the container is created.
+	// "postCreateCommand": "cat /etc/os-release",
+	// Configure tool-specific properties.
+	,
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"doggy8088.netcore-extension-pack",
+				"Lesan.vscode-netcore-ide",
+				"kishoreithadi.dotnet-core-essentials",
+				"mfery.dotnetexplorer",
+				"matijarmk.dotnet-core-commands",
+				"leo-labs.dotnet",
+				"ms-dotnettools.csharp",
+				"GitHub.copilot"
+			]
+		}
+	}
+	// Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "devcontainer"
+
+}
