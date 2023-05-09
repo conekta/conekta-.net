@@ -73,7 +73,7 @@
   * Add support for *WebhooksApi* | [**update_webhook**](docs/WebhooksApi.md#update_webhook) | **PUT** /webhooks/{id} | Update Webhook
 
 ## 6.0.1 - 2023-05-09
-* [#56](https://github.com/conekta/conekta-.net/pull/56) Add new functionalities.
+* [#57](https://github.com/conekta/conekta-.net/pull/57) Add new functionalities.
   * Add support for *OrdersApi* | [**cancel order**](docs/OrdersApi.md#cancelorder) | **POST** /orders/{id}/cancel | Cancel Order
   * Add support for *OrdersApi* | [**OrderCancelRefund**](docs/OrdersApi.md#ordercancelrefund) | **DELETE** /orders/{id}/refunds/{refund_id} | Cancel Refund 
   * Add support for *TransferApi* | [**GetTransfer**](docs/TransfersApi.md#gettransfer) | **GET** /transfers/{id} | Get Transfer |
