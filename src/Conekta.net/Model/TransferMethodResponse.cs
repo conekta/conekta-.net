@@ -116,7 +116,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>Type of the payee.</value>
         /// <example>&quot;BankTransferPayoutMethod&quot;</example>
-        [DataMember(Name = "_type", EmitDefaultValue = false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
         /// <summary>

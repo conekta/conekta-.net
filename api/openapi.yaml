@@ -13636,7 +13636,7 @@ components:
           description: Unique identifier of the payee.
           example: payee_2icdDewRxDENBos85
           type: string
-        _type:
+        type:
           description: Type of the payee.
           example: BankTransferPayoutMethod
           type: string
@@ -13674,7 +13674,7 @@ components:
           description: Unique identifier of the payee.
           example: payee_2icdDewRxDENBos85
           type: string
-        _type:
+        type:
           description: Type of the payee.
           example: BankTransferPayoutMethod
           type: string
