@@ -466,7 +466,7 @@ public class OrdersApiTests
     {
         const string id = "ord_2tqaGQYZyvBsMKEgs";
         
-        var response =  _instance.OrdersCancel(id);
+        var response =  _instance.CancelOrder(id);
           
         Assert.IsType<OrderResponse>(response);
         Assert.Equal(id, response.Id);

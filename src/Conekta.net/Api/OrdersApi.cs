@@ -28,6 +28,33 @@ namespace Conekta.net.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// Cancel Order
+        /// </summary>
+        /// <remarks>
+        /// Cancel an order that has been previously created.
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>OrderResponse</returns>
+        OrderResponse CancelOrder(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
+
+        /// <summary>
+        /// Cancel Order
+        /// </summary>
+        /// <remarks>
+        /// Cancel an order that has been previously created.
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of OrderResponse</returns>
+        ApiResponse<OrderResponse> CancelOrderWithHttpInfo(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
+        /// <summary>
         /// Create order
         /// </summary>
         /// <remarks>
@@ -173,33 +200,6 @@ namespace Conekta.net.Api
         /// <returns>ApiResponse of OrderResponse</returns>
         ApiResponse<OrderResponse> OrderRefundWithHttpInfo(string id, OrderRefundRequest orderRefundRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         /// <summary>
-        /// Cancel Order
-        /// </summary>
-        /// <remarks>
-        /// Cancel an order that has been previously created.
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Identifier of the resource</param>
-        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>OrderResponse</returns>
-        OrderResponse OrdersCancel(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
-
-        /// <summary>
-        /// Cancel Order
-        /// </summary>
-        /// <remarks>
-        /// Cancel an order that has been previously created.
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Identifier of the resource</param>
-        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of OrderResponse</returns>
-        ApiResponse<OrderResponse> OrdersCancelWithHttpInfo(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
-        /// <summary>
         /// Capture Order
         /// </summary>
         /// <remarks>
@@ -264,6 +264,35 @@ namespace Conekta.net.Api
     public interface IOrdersApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// Cancel Order
+        /// </summary>
+        /// <remarks>
+        /// Cancel an order that has been previously created.
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of OrderResponse</returns>
+        System.Threading.Tasks.Task<OrderResponse> CancelOrderAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Cancel Order
+        /// </summary>
+        /// <remarks>
+        /// Cancel an order that has been previously created.
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (OrderResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<OrderResponse>> CancelOrderWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create order
         /// </summary>
@@ -419,35 +448,6 @@ namespace Conekta.net.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OrderResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<OrderResponse>> OrderRefundWithHttpInfoAsync(string id, OrderRefundRequest orderRefundRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// Cancel Order
-        /// </summary>
-        /// <remarks>
-        /// Cancel an order that has been previously created.
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Identifier of the resource</param>
-        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of OrderResponse</returns>
-        System.Threading.Tasks.Task<OrderResponse> OrdersCancelAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Cancel Order
-        /// </summary>
-        /// <remarks>
-        /// Cancel an order that has been previously created.
-        /// </remarks>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Identifier of the resource</param>
-        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (OrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrderResponse>> OrdersCancelWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Capture Order
         /// </summary>
@@ -626,6 +626,186 @@ namespace Conekta.net.Api
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        /// Cancel Order Cancel an order that has been previously created.
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>OrderResponse</returns>
+        public OrderResponse CancelOrder(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
+        {
+            Conekta.net.Client.ApiResponse<OrderResponse> localVarResponse = CancelOrderWithHttpInfo(id, acceptLanguage, xChildCompanyId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Cancel Order Cancel an order that has been previously created.
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of OrderResponse</returns>
+        public Conekta.net.Client.ApiResponse<OrderResponse> CancelOrderWithHttpInfo(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling OrdersApi->CancelOrder");
+            }
+
+            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.conekta-v2.1.0+json"
+            };
+
+            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
+            }
+
+            localVarRequestOptions.Operation = "OrdersApi.CancelOrder";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<OrderResponse>("/orders/{id}/cancel", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CancelOrder", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Cancel Order Cancel an order that has been previously created.
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of OrderResponse</returns>
+        public async System.Threading.Tasks.Task<OrderResponse> CancelOrderAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Conekta.net.Client.ApiResponse<OrderResponse> localVarResponse = await CancelOrderWithHttpInfoAsync(id, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Cancel Order Cancel an order that has been previously created.
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Identifier of the resource</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (OrderResponse)</returns>
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<OrderResponse>> CancelOrderWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling OrdersApi->CancelOrder");
+            }
+
+
+            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.conekta-v2.1.0+json"
+            };
+
+            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            if (xChildCompanyId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
+            }
+
+            localVarRequestOptions.Operation = "OrdersApi.CancelOrder";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<OrderResponse>("/orders/{id}/cancel", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CancelOrder", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>
@@ -1589,186 +1769,6 @@ namespace Conekta.net.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("OrderRefund", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Cancel Order Cancel an order that has been previously created.
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Identifier of the resource</param>
-        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>OrderResponse</returns>
-        public OrderResponse OrdersCancel(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
-        {
-            Conekta.net.Client.ApiResponse<OrderResponse> localVarResponse = OrdersCancelWithHttpInfo(id, acceptLanguage, xChildCompanyId);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Cancel Order Cancel an order that has been previously created.
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Identifier of the resource</param>
-        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of OrderResponse</returns>
-        public Conekta.net.Client.ApiResponse<OrderResponse> OrdersCancelWithHttpInfo(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling OrdersApi->OrdersCancel");
-            }
-
-            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/vnd.conekta-v2.1.0+json"
-            };
-
-            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
-            if (acceptLanguage != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
-            }
-            if (xChildCompanyId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
-            }
-
-            localVarRequestOptions.Operation = "OrdersApi.OrdersCancel";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<OrderResponse>("/orders/{id}/cancel", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("OrdersCancel", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Cancel Order Cancel an order that has been previously created.
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Identifier of the resource</param>
-        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of OrderResponse</returns>
-        public async System.Threading.Tasks.Task<OrderResponse> OrdersCancelAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Conekta.net.Client.ApiResponse<OrderResponse> localVarResponse = await OrdersCancelWithHttpInfoAsync(id, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Cancel Order Cancel an order that has been previously created.
-        /// </summary>
-        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Identifier of the resource</param>
-        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (OrderResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<OrderResponse>> OrdersCancelWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling OrdersApi->OrdersCancel");
-            }
-
-
-            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/vnd.conekta-v2.1.0+json"
-            };
-
-            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
-            if (acceptLanguage != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
-            }
-            if (xChildCompanyId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
-            }
-
-            localVarRequestOptions.Operation = "OrdersApi.OrdersCancel";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<OrderResponse>("/orders/{id}/cancel", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("OrdersCancel", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

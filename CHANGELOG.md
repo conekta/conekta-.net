@@ -72,3 +72,16 @@
   * Add support for *WebhooksApi* | [**get_webhooks**](docs/WebhooksApi.md#get_webhooks) | **GET** /webhooks | Get List of Webhooks
   * Add support for *WebhooksApi* | [**update_webhook**](docs/WebhooksApi.md#update_webhook) | **PUT** /webhooks/{id} | Update Webhook
 
+## 6.0.1 - 2023-05-09
+* [#56](https://github.com/conekta/conekta-.net/pull/56) Add new functionalities.
+  * Add support for *OrdersApi* | [**cancel order**](docs/OrdersApi.md#cancelorder) | **POST** /orders/{id}/cancel | Cancel Order
+  * Add support for *OrdersApi* | [**OrderCancelRefund**](docs/OrdersApi.md#ordercancelrefund) | **DELETE** /orders/{id}/refunds/{refund_id} | Cancel Refund 
+  * Add support for *TransferApi* | [**GetTransfer**](docs/TransfersApi.md#gettransfer) | **GET** /transfers/{id} | Get Transfer |
+  * Add support for *TransferApi* | [**GetTransfers**](docs/TransfersApi.md#gettransfers) | **GET** /transfers | Get a list of transfers |
+  * Add support for *TransactionsApi* | [**GetTransaction**](docs/TransactionsApi.md#gettransaction) | **GET** /transactions/{id} | Get transaction |
+  * Add support for *TransactionsApi* | [**GetTransactions**](docs/TransactionsApi.md#gettransactions) | **GET** /transactions | Get List transactions |
+  * Add support for *WebhookKeysApi* | [**CreateWebhookKey**](docs/WebhookKeysApi.md#createwebhookkey) | **POST** /webhook_keys | Create Webhook Key |
+  * Add support for *WebhookKeysApi* | [**DeleteWebhookKey**](docs/WebhookKeysApi.md#deletewebhookkey) | **DELETE** /webhook_keys/{id} | Delete Webhook key |
+  * Add support for *WebhookKeysApi* | [**GetWebhookKey**](docs/WebhookKeysApi.md#getwebhookkey) | **GET** /webhook_keys/{id} | Get Webhook Key |
+  * Add support for *WebhookKeysApi* | [**GetWebhookKeys**](docs/WebhookKeysApi.md#getwebhookkeys) | **GET** /webhook_keys | Get List of Webhook Keys |
+  * Add support for *WebhookKeysApi* | [**UpdateWebhookKey**](docs/WebhookKeysApi.md#updatewebhookkey) | **PUT** /webhook_keys/{id} | Update Webhook Key |
