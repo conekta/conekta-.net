@@ -205,10 +205,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -447,10 +444,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -544,10 +538,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -888,10 +879,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -1018,10 +1006,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -1157,10 +1142,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -1270,10 +1252,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -1368,10 +1347,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -1482,10 +1458,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -1605,10 +1578,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -1721,10 +1691,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -1829,10 +1796,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -1949,10 +1913,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -2057,10 +2018,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -2186,10 +2144,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -2310,10 +2265,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -2446,10 +2398,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -2538,10 +2487,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -2641,10 +2587,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -2762,10 +2705,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -2934,6 +2874,133 @@ paths:
       summary: Update Order
       tags:
       - Orders
+  /orders/{id}/cancel:
+    post:
+      description: Cancel an order that has been previously created.
+      operationId: ordersCancel
+      parameters:
+      - description: Identifier of the resource
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/order_response'
+          description: successful
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "402":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The card could not be processed.
+                  code: conekta.errors.processing.tokenization.used
+                  debug_message: The token has already been used.
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: payment required error
+        "404":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
+        "428":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: The order cannot be modified because it has already
+                    a charge which is pending payment.
+                  message: The order cannot be modified because it has already a charge
+                    which is pending payment.
+                  param: null
+                  code: conekta.errors.precondition_required.combo.order.cannot_be_updated_because_has_charge
+                log_id: 641b6e233cd9a50001515039
+                object: error
+                type: precondition_required_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Precondition Required
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Cancel Order
+      tags:
+      - Orders
   /orders/{id}/capture:
     post:
       description: Processes an order that has been previously authorized.
@@ -2965,10 +3032,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -3087,10 +3151,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -3195,10 +3256,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -3315,10 +3373,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -3432,10 +3487,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -3464,6 +3516,20 @@ paths:
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
+        "402":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The card could not be processed.
+                  code: conekta.errors.processing.tokenization.used
+                  debug_message: The token has already been used.
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: payment required error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -3517,6 +3583,139 @@ paths:
       summary: Refund Order
       tags:
       - Orders
+  /orders/{id}/refunds/{refund_id}:
+    delete:
+      description: "A refunded order describes the items, amount, and reason an order\
+        \ is being refunded."
+      operationId: orderCancelRefund
+      parameters:
+      - description: Identifier of the resource
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: refund identifier
+        example: 6407b5bee1329a000175ba11
+        in: path
+        name: refund_id
+        required: true
+        schema:
+          type: string
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/order_response'
+          description: successful
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "402":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The card could not be processed.
+                  code: conekta.errors.processing.tokenization.used
+                  debug_message: The token has already been used.
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: payment required error
+        "404":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
+        "422":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: parameter validation error
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Cancel Refund
+      tags:
+      - Orders
   /checkouts:
     get:
       description: Returns a list of links generated by the merchant
@@ -3541,10 +3740,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -3697,10 +3893,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -3830,10 +4023,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -3982,10 +4172,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -4134,10 +4321,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -4288,10 +4472,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -4450,10 +4631,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -4600,10 +4778,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -4723,10 +4898,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -4843,10 +5015,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -4951,10 +5120,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -5094,10 +5260,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -5344,10 +5507,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -5481,10 +5641,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -5622,10 +5779,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -5734,10 +5888,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -5854,10 +6005,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -5970,10 +6118,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -6093,10 +6238,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -6213,10 +6355,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -6441,10 +6580,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -6582,10 +6718,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -6724,10 +6857,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -6849,10 +6979,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -7003,10 +7130,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -7142,10 +7266,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -7295,10 +7416,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -7403,10 +7521,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -7523,10 +7638,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -7716,6 +7828,1014 @@ paths:
       summary: Create Token
       tags:
       - Tokens
+  /transactions:
+    get:
+      description: Get transaction details in the form of a list
+      operationId: getTransactions
+      parameters:
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+      - description: "The numbers of items to return, the maximum value is 250"
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 20
+          format: int32
+          maximum: 250
+          minimum: 1
+          type: integer
+      - description: "General order search, e.g. by mail, reference etc."
+        in: query
+        name: search
+        required: false
+        schema:
+          type: string
+      - description: next page
+        in: query
+        name: next
+        required: false
+        schema:
+          type: string
+      - description: previous page
+        in: query
+        name: previous
+        required: false
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/get_transactions_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.1.0; format=application/json
+                type: string
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get List transactions
+      tags:
+      - Transactions
+  /transactions/{id}:
+    get:
+      description: Get the details of a transaction
+      operationId: getTransaction
+      parameters:
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+      - description: Identifier of the resource
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/transaction_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.1.0; format=application/json
+                type: string
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get transaction
+      tags:
+      - Transactions
+  /transfers:
+    get:
+      description: Get transfers details in the form of a list
+      operationId: getTransfers
+      parameters:
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+      - description: "The numbers of items to return, the maximum value is 250"
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 20
+          format: int32
+          maximum: 250
+          minimum: 1
+          type: integer
+      - description: "General order search, e.g. by mail, reference etc."
+        in: query
+        name: search
+        required: false
+        schema:
+          type: string
+      - description: next page
+        in: query
+        name: next
+        required: false
+        schema:
+          type: string
+      - description: previous page
+        in: query
+        name: previous
+        required: false
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/get_transfers_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.1.0; format=application/json
+                type: string
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get a list of transfers
+      tags:
+      - Transfers
+  /transfers/{id}:
+    get:
+      description: Get the details of a Transfer
+      operationId: getTransfer
+      parameters:
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+      - description: Identifier of the resource
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/transfer_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.1.0; format=application/json
+                type: string
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get Transfer
+      tags:
+      - Transfers
+  /webhook_keys:
+    get:
+      description: Consume the list of webhook keys you have
+      operationId: getWebhookKeys
+      parameters:
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+      - description: "The numbers of items to return, the maximum value is 250"
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 20
+          format: int32
+          maximum: 250
+          minimum: 1
+          type: integer
+      - description: "General order search, e.g. by mail, reference etc."
+        in: query
+        name: search
+        required: false
+        schema:
+          type: string
+      - description: next page
+        in: query
+        name: next
+        required: false
+        schema:
+          type: string
+      - description: previous page
+        in: query
+        name: previous
+        required: false
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/get_webhook_keys_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.1.0; format=application/json
+                type: string
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get List of Webhook Keys
+      tags:
+      - Webhook keys
+    post:
+      description: Create a webhook key
+      operationId: createWebhookKey
+      parameters:
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/webhook_key_request'
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/webhook-key_create_response'
+          description: successful operation
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Create Webhook Key
+      tags:
+      - Webhook keys
+  /webhook_keys/{id}:
+    delete:
+      operationId: deleteWebhookKey
+      parameters:
+      - description: Identifier of the resource
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/webhook-key_delete_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.1.0; format=application/json
+                type: string
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Delete Webhook key
+      tags:
+      - Webhook keys
+    get:
+      operationId: getWebhookKey
+      parameters:
+      - description: Identifier of the resource
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/webhook-key_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.1.0; format=application/json
+                type: string
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get Webhook Key
+      tags:
+      - Webhook keys
+    put:
+      description: updates an existing webhook key
+      operationId: updateWebhookKey
+      parameters:
+      - description: Identifier of the resource
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/webhook_key_update_request'
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/webhook-key_response'
+          description: successful operation
+        "404":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Update Webhook Key
+      tags:
+      - Webhook keys
   /webhooks:
     get:
       description: "Consume the list of webhooks you have, each environment supports\
@@ -7741,10 +8861,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -8057,10 +9174,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -8173,10 +9287,7 @@ paths:
           type: string
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
-        examples:
-          "6441b6376b60c3a638da80af":
-            summary: for spanish request/response
-            value: 6441b6376b60c3a638da80af
+        example: 6441b6376b60c3a638da80af
         in: header
         name: X-Child-Company-Id
         required: false
@@ -8583,10 +9694,7 @@ components:
     x_child_company_id:
       description: "In the case of a holding company, the company id of the child\
         \ company to which will process the request."
-      examples:
-        "6441b6376b60c3a638da80af":
-          summary: for spanish request/response
-          value: 6441b6376b60c3a638da80af
+      example: 6441b6376b60c3a638da80af
       in: header
       name: X-Child-Company-Id
       required: false
@@ -8645,6 +9753,14 @@ components:
       example: line_item_2tQ8HkkfbauaKP9Ho
       in: path
       name: line_item_id
+      required: true
+      schema:
+        type: string
+    refund_id:
+      description: refund identifier
+      example: 6407b5bee1329a000175ba11
+      in: path
+      name: refund_id
       required: true
       schema:
         type: string
@@ -9117,9 +10233,11 @@ components:
       description: pagination metadata
       properties:
         object:
+          description: "Object type, in this case is list"
           example: list
           type: string
         has_more:
+          description: Indicates if there are more pages to be requested
           example: false
           type: boolean
       required:
@@ -9464,9 +10582,11 @@ components:
       description: order response
       properties:
         amount:
+          description: The total amount to be collected in cents
           example: 21605
           type: integer
         amount_refunded:
+          description: The total amount refunded in cents
           example: 0
           type: integer
         channel:
@@ -9476,10 +10596,14 @@ components:
         checkout:
           $ref: '#/components/schemas/order_response_checkout'
         created_at:
+          description: The time at which the object was created in seconds since the
+            Unix epoch
           example: 1676328434
           format: int64
           type: integer
         currency:
+          description: The three-letter ISO 4217 currency code. The currency of the
+            order.
           example: MXN
           type: string
         customer_info:
@@ -9497,20 +10621,30 @@ components:
         line_items:
           $ref: '#/components/schemas/order_response_products'
         livemode:
+          description: Whether the object exists in live mode or test mode
+          example: false
           type: boolean
         metadata:
           additionalProperties: true
+          description: Set of key-value pairs that you can attach to an object. This
+            can be useful for storing additional information about the object in a
+            structured format.
           maxProperties: 100
           type: object
         object:
+          description: String representing the object’s type. Objects of the same
+            type share the same value.
           example: order
           type: string
         payment_status:
+          description: The payment status of the order.
           example: paid
           type: string
         shipping_contact:
           $ref: '#/components/schemas/order_response_shipping_contact'
         updated_at:
+          description: The time at which the object was last updated in seconds since
+            the Unix epoch
           example: 1676328434
           format: int64
           type: integer
@@ -9823,6 +10957,274 @@ components:
       - object
       - used
       title: token response
+      type: object
+    transaction_response:
+      description: "The Transaction object represents the actions or steps of an order.\
+        \ Statuses can be: unprocessed, pending, available, owen, paid_out, voided,\
+        \ capture, capture_reversal, liquidation, liquidation_reversal, payout, payout_reversal,\
+        \ refund, refund_reversal, chargeback, chargeback_reversal, rounding_adjustment,\
+        \ won_chargeback, transferred, and transferred."
+      properties:
+        amount:
+          description: The amount of the transaction.
+          example: 1000
+          format: int64
+          type: integer
+        charge:
+          description: Randomly assigned unique order identifier associated with the
+            charge.
+          example: 5ee7ec58885a45585e6d9f8m
+          type: string
+        created_at:
+          description: Date and time of creation of the transaction in Unix format.
+          example: 1553273553
+          format: int64
+          type: integer
+        currency:
+          description: "The currency of the transaction. It uses the 3-letter code\
+            \ of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)"
+          example: MXN
+          maxLength: 3
+          type: string
+        fee:
+          description: The amount to be deducted for taxes and commissions.
+          example: 560
+          format: int64
+          type: integer
+        id:
+          description: Unique identifier of the transaction.
+          example: 5ee7ec5b8dea41085erb7f9e
+          type: string
+        livemode:
+          description: Indicates whether the transaction was created in live mode
+            or test mode.
+          example: true
+          type: boolean
+        net:
+          description: The net amount after deducting commissions and taxes.
+          example: 440
+          format: int64
+          type: integer
+        object:
+          description: "Object name, which is transaction."
+          example: transaction
+          type: string
+        status:
+          description: Code indicating transaction status.
+          example: pending
+          type: string
+        type:
+          description: Transaction Type
+          example: capture
+          type: string
+      required:
+      - amount
+      - charge
+      - created_at
+      - currency
+      - fee
+      - id
+      - livemode
+      - net
+      - object
+      - status
+      - type
+      title: transaction_response
+      type: object
+    transfers_response:
+      description: "A transfer represents the action of sending an amount to a business\
+        \ bank account including the status, amount and method used to make the transfer."
+      properties:
+        amount:
+          description: Amount in cents of the transfer.
+          example: 10000
+          format: int64
+          type: integer
+        created_at:
+          description: Date and time of creation of the transfer.
+          example: 1553273553
+          format: int64
+          type: integer
+        currency:
+          description: "The currency of the transfer. It uses the 3-letter code of\
+            \ the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)"
+          example: MXN
+          maxLength: 3
+          type: string
+        id:
+          description: Unique identifier of the transfer.
+          example: 5b0337d4dD344ef954fe1X4b6
+          type: string
+        livemode:
+          description: Indicates whether the transfer was created in live mode or
+            test mode.
+          example: true
+          type: boolean
+        method:
+          $ref: '#/components/schemas/transfer_method_response'
+        object:
+          description: "Object name, which is transfer."
+          example: transfer
+          type: string
+        statement_description:
+          description: Description of the transfer.
+          example: Conekta 4401234
+          type: string
+        statement_reference:
+          description: Reference number of the transfer.
+          example: "4401234"
+          type: string
+        status:
+          description: Code indicating transfer status.
+          example: pending
+          type: string
+      title: transfers_response
+      type: object
+    transfer_response:
+      description: "A transfer represents the action of sending an amount to a business\
+        \ bank account including the status, amount and method used to make the transfer."
+      properties:
+        amount:
+          description: Amount in cents of the transfer.
+          example: 10000
+          format: int64
+          type: integer
+        created_at:
+          description: Date and time of creation of the transfer in Unix format.
+          example: 1553273553
+          format: int64
+          type: integer
+        currency:
+          description: "The currency of the transfer. It uses the 3-letter code of\
+            \ the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)"
+          example: MXN
+          maxLength: 3
+          type: string
+        id:
+          description: Unique identifier of the transfer.
+          example: 5b0337d4dD344ef954fe1X4b6
+          type: string
+        livemode:
+          description: Indicates whether the transfer was created in live mode or
+            test mode.
+          example: true
+          type: boolean
+        destination:
+          $ref: '#/components/schemas/transfer_destination_response'
+        object:
+          description: "Object name, which is transfer."
+          example: transfer
+          type: string
+        statement_description:
+          description: Description of the transfer.
+          example: Conekta 4401234
+          type: string
+        statement_reference:
+          description: Reference number of the transfer.
+          example: "4401234"
+          type: string
+        status:
+          description: Code indicating transfer status.
+          example: pending
+          type: string
+      title: transfer_response
+      type: object
+    webhook-key_response:
+      description: webhook keys model
+      properties:
+        active:
+          description: Indicates if the webhook key is active
+          example: true
+          type: boolean
+        created_at:
+          description: Unix timestamp in seconds with the creation date of the webhook
+            key
+          example: 1577836800
+          format: int64
+          type: integer
+        deactivated_at:
+          description: Unix timestamp in seconds with the deactivation date of the
+            webhook key
+          example: 1577836800
+          format: int64
+          nullable: true
+          type: integer
+        id:
+          description: Unique identifier of the webhook key
+          example: 62730ba6fb7dfd6a712f118e
+          type: string
+        livemode:
+          description: Indicates if the webhook key is in live mode
+          example: false
+          type: boolean
+        object:
+          description: "Object name, value is webhook_key"
+          example: webhook_key
+          type: string
+      title: webhook_key_response
+      type: object
+    webhook-key_create_response:
+      description: webhook keys model
+      properties:
+        active:
+          description: Indicates if the webhook key is active
+          example: true
+          type: boolean
+        created_at:
+          description: Unix timestamp in seconds with the creation date of the webhook
+            key
+          example: 1577836800
+          format: int64
+          type: integer
+        id:
+          description: Unique identifier of the webhook key
+          example: 62730ba6fb7dfd6a712f118e
+          type: string
+        livemode:
+          description: Indicates if the webhook key is in live mode
+          example: false
+          type: boolean
+        object:
+          description: "Object name, value is webhook_key"
+          example: webhook_key
+          type: string
+        public_key:
+          description: Public key to be used in the webhook
+          example: '-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqULpUc6D6mSAq5a0yLY/\noOjd1mWm6q+QI8y/FI4STr2F+XgKeNnMxSqnyFrHtKQ/ut4Zi45WFnJLfEQL7aW5\n67yE2dWyo6GaL7yZUfLC0Y3sHPGzaGtvDF36ISW7LliYNoMiA3Bx5/1Sr0G23pGW\n0Mp8IO1Nlz0sJWuU/d7zCz/UN6cl9g/BP4eaQ7deS56YuWcj5sTlwqFTlwN12kpA\nIzMZ7gnvYQnZTpPny5lben6QEuxTvZcPApcyOweiESjMnXfkfWOyuYtgMrbsU6oL\nA6sWa6j0pePW7AYeBqB4tyAlenkCSqzHg8bMk5Bm7hiT6I9Pls774lJbnOYmmuNE\n8QIDAQAB\n-----END
+            PUBLIC KEY-----\n'
+          type: string
+      title: webhook_key_create_response
+      type: object
+    webhook-key_delete_response:
+      description: webhook keys model
+      properties:
+        active:
+          description: Indicates if the webhook key is active
+          example: true
+          type: boolean
+        created_at:
+          description: Unix timestamp in seconds with the creation date of the webhook
+            key
+          example: 1577836800
+          format: int64
+          type: integer
+        deleted:
+          description: Indicates if the webhook key is deleted
+          example: true
+          type: boolean
+        id:
+          description: Unique identifier of the webhook key
+          example: 62730ba6fb7dfd6a712f118e
+          type: string
+        livemode:
+          description: Indicates if the webhook key is in live mode
+          example: false
+          type: boolean
+        object:
+          description: "Object name, value is webhook_key"
+          example: webhook_key
+          type: string
+      title: webhook_key_delete_response
       type: object
     webhook_response:
       description: webhooks model
@@ -11381,6 +12783,65 @@ components:
       - $ref: '#/components/schemas/page'
       - $ref: '#/components/schemas/get_events_response_allOf'
       title: subscription_events_response
+    get_transactions_response_allOf:
+      properties:
+        data:
+          description: Transactions
+          items:
+            $ref: '#/components/schemas/transaction_response'
+          type: array
+      type: object
+    get_transactions_response:
+      allOf:
+      - $ref: '#/components/schemas/pagination'
+      - $ref: '#/components/schemas/page'
+      - $ref: '#/components/schemas/get_transactions_response_allOf'
+      title: get_transactions_response
+    get_transfers_response_allOf:
+      properties:
+        data:
+          description: Transfers
+          items:
+            $ref: '#/components/schemas/transfers_response'
+          type: array
+      type: object
+    get_transfers_response:
+      allOf:
+      - $ref: '#/components/schemas/pagination'
+      - $ref: '#/components/schemas/page'
+      - $ref: '#/components/schemas/get_transfers_response_allOf'
+      title: get_transfers_response
+    get_webhook_keys_response_allOf:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/webhook-key_response'
+          type: array
+      type: object
+    get_webhook_keys_response:
+      allOf:
+      - $ref: '#/components/schemas/pagination'
+      - $ref: '#/components/schemas/page'
+      - $ref: '#/components/schemas/get_webhook_keys_response_allOf'
+      title: get_webhook_keys_response
+    webhook_key_request:
+      properties:
+        active:
+          default: true
+          description: Indicates if the webhook key is active
+          example: true
+          type: boolean
+      title: webhook_key_request
+      type: object
+    webhook_key_update_request:
+      properties:
+        active:
+          default: false
+          description: Indicates if the webhook key is active
+          example: false
+          type: boolean
+      title: webhook_key_update_request
+      type: object
     get_webhooks_response_allOf:
       properties:
         data:
@@ -11749,6 +13210,7 @@ components:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/order_response_charges_allOf'
+      description: The charges associated with the order
     order_response_checkout:
       properties:
         allowed_payment_methods:
@@ -12141,6 +13603,82 @@ components:
           description: Type of checkout.
           example: Integration
           type: string
+      type: object
+    transfer_method_response:
+      description: Method used to make the transfer.
+      properties:
+        account_holder:
+          description: Name of the account holder.
+          example: John Doe
+          type: string
+        account_number:
+          description: Account number of the bank account.
+          example: "012180023547896764"
+          type: string
+        bank:
+          description: Name of the bank.
+          example: BBVA Bancomer
+          type: string
+        created_at:
+          description: Date and time of creation of the transfer.
+          example: 1553273553
+          format: int64
+          type: integer
+        id:
+          description: Unique identifier of the transfer.
+          example: pytmtd_2ide3qwTdDvNBosEC
+          type: string
+        object:
+          description: "Object name, which is bank_transfer_payout_method."
+          example: bank_transfer_payout_method
+          type: string
+        payee_id:
+          description: Unique identifier of the payee.
+          example: payee_2icdDewRxDENBos85
+          type: string
+        _type:
+          description: Type of the payee.
+          example: BankTransferPayoutMethod
+          type: string
+      title: transfer_method_response
+      type: object
+    transfer_destination_response:
+      description: Method used to make the transfer.
+      properties:
+        account_holder:
+          description: Name of the account holder.
+          example: John Doe
+          type: string
+        account_number:
+          description: Account number of the bank account.
+          example: "012180023547896764"
+          type: string
+        bank:
+          description: Name of the bank.
+          example: BBVA Bancomer
+          type: string
+        created_at:
+          description: Date and time of creation of the transfer.
+          example: 1553273553
+          format: int64
+          type: integer
+        id:
+          description: Unique identifier of the transfer.
+          example: pytmtd_2ide3qwTdDvNBosEC
+          type: string
+        object:
+          description: "Object name, which is bank_transfer_payout_method."
+          example: bank_transfer_payout_method
+          type: string
+        payee_id:
+          description: Unique identifier of the payee.
+          example: payee_2icdDewRxDENBos85
+          type: string
+        _type:
+          description: Type of the payee.
+          example: BankTransferPayoutMethod
+          type: string
+      title: transfer_destination_response
       type: object
     charge_request_payment_method:
       description: |

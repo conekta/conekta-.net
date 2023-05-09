@@ -41,8 +41,8 @@ namespace Conekta.net.Model
         /// Initializes a new instance of the <see cref="GetOrdersResponse" /> class.
         /// </summary>
         /// <param name="data">data (required).</param>
-        /// <param name="_object">_object (required).</param>
-        /// <param name="hasMore">hasMore (required).</param>
+        /// <param name="_object">Object type, in this case is list (required).</param>
+        /// <param name="hasMore">Indicates if there are more pages to be requested (required).</param>
         /// <param name="nextPageUrl">URL of the next page..</param>
         /// <param name="previousPageUrl">Url of the previous page..</param>
         public GetOrdersResponse(List<OrderResponse> data = default(List<OrderResponse>), string _object = default(string), bool hasMore = default(bool), string nextPageUrl = default(string), string previousPageUrl = default(string))
@@ -71,15 +71,17 @@ namespace Conekta.net.Model
         public List<OrderResponse> Data { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Object type, in this case is list
         /// </summary>
+        /// <value>Object type, in this case is list</value>
         /// <example>&quot;list&quot;</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
         /// <summary>
-        /// Gets or Sets HasMore
+        /// Indicates if there are more pages to be requested
         /// </summary>
+        /// <value>Indicates if there are more pages to be requested</value>
         /// <example>false</example>
         [DataMember(Name = "has_more", IsRequired = true, EmitDefaultValue = true)]
         public bool HasMore { get; set; }
