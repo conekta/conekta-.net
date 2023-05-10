@@ -1,0 +1,41 @@
+name: publish on nuget
+on:
+  release:
+    types: [created]
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '6.0.x'
+      - name: Check if release creator is a code owner
+        run: |
+          if [[ $(jq '.sender.type' $GITHUB_EVENT_PATH) == '"User"' ]]; then
+            creator_login=${{ github.event.release.author.login }}
+            if ! grep -q $creator_login .github/CODEOWNERS; then
+              echo "Release creator is not a code owner, skipping the rest of the workflow."
+              exit 1
+            fi
+          fi
+      - name: Build project
+        run: |
+          dotnet build src/Conekta.net/Conekta.net.csproj
+          VERSION=$(grep -oP '<Version>\K[\d.]+(?=</Version>)' src/Conekta.net/Conekta.net.csproj)
+          RELEASE_VERSION="v$VERSION"
+          RELEASE_NAME=${{ github.event.release.name }}
+          if [[ "$RELEASE_NAME" != "$RELEASE_VERSION" ]]; then
+            echo "Error: release's name '$RELEASE_NAME' doesnt match with the version '$VERSION' for .NET."
+            exit 1
+          fi
+      - name: Restore dependencies
+        run: dotnet restore
+      - name: pack
+        run: dotnet pack --configuration Release --output nuget
+      # Publish Package
+      - name: Publish Nuget
+        run: dotnet nuget push nuget/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source "nuget.org"
+        env:
+          NUGET_KEY: ${{ secrets.NUGET_API_KEY }}
