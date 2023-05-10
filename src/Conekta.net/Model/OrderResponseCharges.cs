@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// OrderResponseCharges
+    /// The charges associated with the order
     /// </summary>
     [DataContract(Name = "order_response_charges")]
     public partial class OrderResponseCharges : IEquatable<OrderResponseCharges>, IValidatableObject
@@ -40,8 +40,8 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderResponseCharges" /> class.
         /// </summary>
-        /// <param name="_object">_object (required).</param>
-        /// <param name="hasMore">hasMore (required).</param>
+        /// <param name="_object">Object type, in this case is list (required).</param>
+        /// <param name="hasMore">Indicates if there are more pages to be requested (required).</param>
         /// <param name="data">data.</param>
         public OrderResponseCharges(string _object = default(string), bool hasMore = default(bool), List<ChargesDataResponse> data = default(List<ChargesDataResponse>))
         {
@@ -56,15 +56,17 @@ namespace Conekta.net.Model
         }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Object type, in this case is list
         /// </summary>
+        /// <value>Object type, in this case is list</value>
         /// <example>&quot;list&quot;</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
         /// <summary>
-        /// Gets or Sets HasMore
+        /// Indicates if there are more pages to be requested
         /// </summary>
+        /// <value>Indicates if there are more pages to be requested</value>
         /// <example>false</example>
         [DataMember(Name = "has_more", IsRequired = true, EmitDefaultValue = true)]
         public bool HasMore { get; set; }

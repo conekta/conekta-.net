@@ -35,25 +35,25 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderResponse" /> class.
         /// </summary>
-        /// <param name="amount">amount.</param>
-        /// <param name="amountRefunded">amountRefunded.</param>
+        /// <param name="amount">The total amount to be collected in cents.</param>
+        /// <param name="amountRefunded">The total amount refunded in cents.</param>
         /// <param name="channel">channel.</param>
         /// <param name="charges">charges.</param>
         /// <param name="checkout">checkout.</param>
-        /// <param name="createdAt">createdAt.</param>
-        /// <param name="currency">currency.</param>
+        /// <param name="createdAt">The time at which the object was created in seconds since the Unix epoch.</param>
+        /// <param name="currency">The three-letter ISO 4217 currency code. The currency of the order..</param>
         /// <param name="customerInfo">customerInfo.</param>
         /// <param name="discountLines">discountLines.</param>
         /// <param name="fiscalEntity">fiscalEntity.</param>
         /// <param name="id">id.</param>
         /// <param name="isRefundable">isRefundable.</param>
         /// <param name="lineItems">lineItems.</param>
-        /// <param name="livemode">livemode.</param>
-        /// <param name="metadata">metadata.</param>
-        /// <param name="_object">_object.</param>
-        /// <param name="paymentStatus">paymentStatus.</param>
+        /// <param name="livemode">Whether the object exists in live mode or test mode.</param>
+        /// <param name="metadata">Set of key-value pairs that you can attach to an object. This can be useful for storing additional information about the object in a structured format..</param>
+        /// <param name="_object">String representing the object’s type. Objects of the same type share the same value..</param>
+        /// <param name="paymentStatus">The payment status of the order..</param>
         /// <param name="shippingContact">shippingContact.</param>
-        /// <param name="updatedAt">updatedAt.</param>
+        /// <param name="updatedAt">The time at which the object was last updated in seconds since the Unix epoch.</param>
         public OrderResponse(int amount = default(int), int amountRefunded = default(int), ChargeOrderResponseChannel channel = default(ChargeOrderResponseChannel), OrderResponseCharges charges = default(OrderResponseCharges), OrderResponseCheckout checkout = default(OrderResponseCheckout), long createdAt = default(long), string currency = default(string), OrderResponseCustomerInfo customerInfo = default(OrderResponseCustomerInfo), OrderResponseDiscountLines discountLines = default(OrderResponseDiscountLines), OrderResponseFiscalEntity fiscalEntity = default(OrderResponseFiscalEntity), string id = default(string), bool isRefundable = default(bool), OrderResponseProducts lineItems = default(OrderResponseProducts), bool livemode = default(bool), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string _object = default(string), string paymentStatus = default(string), OrderResponseShippingContact shippingContact = default(OrderResponseShippingContact), long updatedAt = default(long))
         {
             this.Amount = amount;
@@ -78,15 +78,17 @@ namespace Conekta.net.Model
         }
 
         /// <summary>
-        /// Gets or Sets Amount
+        /// The total amount to be collected in cents
         /// </summary>
+        /// <value>The total amount to be collected in cents</value>
         /// <example>21605</example>
         [DataMember(Name = "amount", EmitDefaultValue = false)]
         public int Amount { get; set; }
 
         /// <summary>
-        /// Gets or Sets AmountRefunded
+        /// The total amount refunded in cents
         /// </summary>
+        /// <value>The total amount refunded in cents</value>
         /// <example>0</example>
         [DataMember(Name = "amount_refunded", EmitDefaultValue = false)]
         public int AmountRefunded { get; set; }
@@ -110,15 +112,17 @@ namespace Conekta.net.Model
         public OrderResponseCheckout Checkout { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedAt
+        /// The time at which the object was created in seconds since the Unix epoch
         /// </summary>
+        /// <value>The time at which the object was created in seconds since the Unix epoch</value>
         /// <example>1676328434</example>
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public long CreatedAt { get; set; }
 
         /// <summary>
-        /// Gets or Sets Currency
+        /// The three-letter ISO 4217 currency code. The currency of the order.
         /// </summary>
+        /// <value>The three-letter ISO 4217 currency code. The currency of the order.</value>
         /// <example>&quot;MXN&quot;</example>
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
@@ -162,27 +166,32 @@ namespace Conekta.net.Model
         public OrderResponseProducts LineItems { get; set; }
 
         /// <summary>
-        /// Gets or Sets Livemode
+        /// Whether the object exists in live mode or test mode
         /// </summary>
+        /// <value>Whether the object exists in live mode or test mode</value>
+        /// <example>false</example>
         [DataMember(Name = "livemode", EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
         /// <summary>
-        /// Gets or Sets Metadata
+        /// Set of key-value pairs that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
         /// </summary>
+        /// <value>Set of key-value pairs that you can attach to an object. This can be useful for storing additional information about the object in a structured format.</value>
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// String representing the object’s type. Objects of the same type share the same value.
         /// </summary>
+        /// <value>String representing the object’s type. Objects of the same type share the same value.</value>
         /// <example>&quot;order&quot;</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
         /// <summary>
-        /// Gets or Sets PaymentStatus
+        /// The payment status of the order.
         /// </summary>
+        /// <value>The payment status of the order.</value>
         /// <example>&quot;paid&quot;</example>
         [DataMember(Name = "payment_status", EmitDefaultValue = false)]
         public string PaymentStatus { get; set; }
@@ -194,8 +203,9 @@ namespace Conekta.net.Model
         public OrderResponseShippingContact ShippingContact { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdatedAt
+        /// The time at which the object was last updated in seconds since the Unix epoch
         /// </summary>
+        /// <value>The time at which the object was last updated in seconds since the Unix epoch</value>
         /// <example>1676328434</example>
         [DataMember(Name = "updated_at", EmitDefaultValue = false)]
         public long UpdatedAt { get; set; }

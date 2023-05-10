@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Object** | **string** |  | 
-**HasMore** | **bool** |  | 
+**Object** | **string** | Object type, in this case is list | 
+**HasMore** | **bool** | Indicates if there are more pages to be requested | 
 **NextPageUrl** | **string** | URL of the next page. | [optional] 
 **PreviousPageUrl** | **string** | Url of the previous page. | [optional] 
 **Data** | [**List&lt;RiskRulesData&gt;**](RiskRulesData.md) |  | [optional] 

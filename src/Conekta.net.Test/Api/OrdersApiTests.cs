@@ -457,4 +457,20 @@ public class OrdersApiTests
         Assert.Equal(products[0].Tags, response.LineItems.Data[0].Tags);
         Assert.NotEqual(response.CreatedAt, response.UpdatedAt);
     }
+
+    /// <summary>
+    ///     Test CancelOrder
+    /// </summary>
+    [Fact]
+    public void CancelOrderTest()
+    {
+        const string id = "ord_2tqaGQYZyvBsMKEgs";
+        
+        var response =  _instance.CancelOrder(id);
+          
+        Assert.IsType<OrderResponse>(response);
+        Assert.Equal(id, response.Id);
+        Assert.Equal("canceled", response.PaymentStatus);
+        Assert.Equal("canceled", response.Charges.Data[0].Status);
+    }
 }
