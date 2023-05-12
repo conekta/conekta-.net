@@ -85,3 +85,6 @@
   * Add support for *WebhookKeysApi* | [**GetWebhookKey**](docs/WebhookKeysApi.md#getwebhookkey) | **GET** /webhook_keys/{id} | Get Webhook Key |
   * Add support for *WebhookKeysApi* | [**GetWebhookKeys**](docs/WebhookKeysApi.md#getwebhookkeys) | **GET** /webhook_keys | Get List of Webhook Keys |
   * Add support for *WebhookKeysApi* | [**UpdateWebhookKey**](docs/WebhookKeysApi.md#updatewebhookkey) | **PUT** /webhook_keys/{id} | Update Webhook Key |
+
+## 6.0.2 - 2023-05-12
+* [#58](https://github.com/conekta/conekta-.net/pull/58) Add customer info field in post checkout.
