@@ -8,7 +8,7 @@ All URIs are relative to *https://api.conekta.io*
 | [**OrdersDeleteDiscountLines**](DiscountsApi.md#ordersdeletediscountlines) | **DELETE** /orders/{id}/discount_lines/{discount_lines_id} | Delete Discount |
 | [**OrdersUpdateDiscountLines**](DiscountsApi.md#ordersupdatediscountlines) | **PUT** /orders/{id}/discount_lines/{discount_lines_id} | Update Discount |
 
-<a name="orderscreatediscountline"></a>
+<a id="orderscreatediscountline"></a>
 # **OrdersCreateDiscountLine**
 > DiscountLinesResponse OrdersCreateDiscountLine (string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -111,7 +111,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="ordersdeletediscountlines"></a>
+<a id="ordersdeletediscountlines"></a>
 # **OrdersDeleteDiscountLines**
 > DiscountLinesResponse OrdersDeleteDiscountLines (string id, string discountLinesId, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -215,7 +215,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="ordersupdatediscountlines"></a>
+<a id="ordersupdatediscountlines"></a>
 # **OrdersUpdateDiscountLines**
 > DiscountLinesResponse OrdersUpdateDiscountLines (string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = null, string xChildCompanyId = null)
 

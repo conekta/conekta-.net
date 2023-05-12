@@ -7,7 +7,7 @@ All URIs are relative to *https://api.conekta.io*
 | [**GetEvent**](EventsApi.md#getevent) | **GET** /events/{id} | Get Event |
 | [**GetEvents**](EventsApi.md#getevents) | **GET** /events | Get list of Events |
 
-<a name="getevent"></a>
+<a id="getevent"></a>
 # **GetEvent**
 > EventResponse GetEvent (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -108,7 +108,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getevents"></a>
+<a id="getevents"></a>
 # **GetEvents**
 > GetEventsResponse GetEvents (string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string search = null, string next = null, string previous = null)
 

@@ -7,7 +7,7 @@ All URIs are relative to *https://api.conekta.io*
 | [**GetLogById**](LogsApi.md#getlogbyid) | **GET** /logs/{id} | Get Log |
 | [**GetLogs**](LogsApi.md#getlogs) | **GET** /logs | Get List Of Logs |
 
-<a name="getlogbyid"></a>
+<a id="getlogbyid"></a>
 # **GetLogById**
 > LogResponse GetLogById (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -108,7 +108,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getlogs"></a>
+<a id="getlogs"></a>
 # **GetLogs**
 > LogsResponse GetLogs (string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string search = null, string next = null, string previous = null)
 

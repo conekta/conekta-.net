@@ -7,7 +7,7 @@ All URIs are relative to *https://api.conekta.io*
 | [**GetCompanies**](CompaniesApi.md#getcompanies) | **GET** /companies | Get List of Companies |
 | [**GetCompany**](CompaniesApi.md#getcompany) | **GET** /companies/{id} | Get Company |
 
-<a name="getcompanies"></a>
+<a id="getcompanies"></a>
 # **GetCompanies**
 > GetCompaniesResponse GetCompanies (string acceptLanguage = null, int? limit = null, string search = null, string next = null, string previous = null)
 
@@ -111,7 +111,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getcompany"></a>
+<a id="getcompany"></a>
 # **GetCompany**
 > CompanyResponse GetCompany (string id, string acceptLanguage = null)
 

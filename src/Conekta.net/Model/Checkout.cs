@@ -46,11 +46,11 @@ namespace Conekta.net.Model
         /// <param name="monthlyInstallmentsOptions">This field allows you to specify the number of months without interest..</param>
         /// <param name="name">Reason for charge (required).</param>
         /// <param name="needsShippingContact">This flag allows you to fill in the shipping information at checkout..</param>
-        /// <param name="onDemandEnabled">onDemandEnabled.</param>
+        /// <param name="onDemandEnabled">This flag allows you to specify if the link will be on demand..</param>
         /// <param name="orderTemplate">orderTemplate (required).</param>
-        /// <param name="paymentsLimitCount">paymentsLimitCount.</param>
+        /// <param name="paymentsLimitCount">It is the number of payments that can be made through the link..</param>
         /// <param name="recurrent">false: single use. true: multiple payments (required).</param>
-        /// <param name="type">type (required).</param>
+        /// <param name="type">It is the type of link that will be created. It must be a valid type. (required).</param>
         public Checkout(List<string> allowedPaymentMethods = default(List<string>), long expiresAt = default(long), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string name = default(string), bool needsShippingContact = default(bool), bool? onDemandEnabled = default(bool?), CheckoutOrderTemplate orderTemplate = default(CheckoutOrderTemplate), int paymentsLimitCount = default(int), bool recurrent = default(bool), string type = default(string))
         {
             // to ensure "allowedPaymentMethods" is required (not null)
@@ -133,8 +133,9 @@ namespace Conekta.net.Model
         public bool NeedsShippingContact { get; set; }
 
         /// <summary>
-        /// Gets or Sets OnDemandEnabled
+        /// This flag allows you to specify if the link will be on demand.
         /// </summary>
+        /// <value>This flag allows you to specify if the link will be on demand.</value>
         /// <example>true</example>
         [DataMember(Name = "on_demand_enabled", EmitDefaultValue = true)]
         public bool? OnDemandEnabled { get; set; }
@@ -146,8 +147,9 @@ namespace Conekta.net.Model
         public CheckoutOrderTemplate OrderTemplate { get; set; }
 
         /// <summary>
-        /// Gets or Sets PaymentsLimitCount
+        /// It is the number of payments that can be made through the link.
         /// </summary>
+        /// <value>It is the number of payments that can be made through the link.</value>
         /// <example>5</example>
         [DataMember(Name = "payments_limit_count", EmitDefaultValue = false)]
         public int PaymentsLimitCount { get; set; }
@@ -161,8 +163,9 @@ namespace Conekta.net.Model
         public bool Recurrent { get; set; }
 
         /// <summary>
-        /// Gets or Sets Type
+        /// It is the type of link that will be created. It must be a valid type.
         /// </summary>
+        /// <value>It is the type of link that will be created. It must be a valid type.</value>
         /// <example>&quot;PaymentLink&quot;</example>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
@@ -322,7 +325,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

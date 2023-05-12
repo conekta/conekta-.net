@@ -41,9 +41,10 @@ namespace Conekta.net.Model
         /// Initializes a new instance of the <see cref="CheckoutOrderTemplate" /> class.
         /// </summary>
         /// <param name="currency">It is the currency in which the order will be created. It must be a valid ISO 4217 currency code. (required).</param>
+        /// <param name="customerInfo">customerInfo.</param>
         /// <param name="lineItems">They are the products to buy. Each contains the \&quot;unit price\&quot; and \&quot;quantity\&quot; parameters that are used to calculate the total amount of the order. (required).</param>
-        /// <param name="metadata">metadata.</param>
-        public CheckoutOrderTemplate(string currency = default(string), List<Product> lineItems = default(List<Product>), Dictionary<string, Object> metadata = default(Dictionary<string, Object>))
+        /// <param name="metadata">It is a set of key-value pairs that you can attach to the order. It can be used to store additional information about the order in a structured format..</param>
+        public CheckoutOrderTemplate(string currency = default(string), CheckoutOrderTemplateCustomerInfo customerInfo = default(CheckoutOrderTemplateCustomerInfo), List<Product> lineItems = default(List<Product>), Dictionary<string, Object> metadata = default(Dictionary<string, Object>))
         {
             // to ensure "currency" is required (not null)
             if (currency == null)
@@ -57,6 +58,7 @@ namespace Conekta.net.Model
                 throw new ArgumentNullException("lineItems is a required property for CheckoutOrderTemplate and cannot be null");
             }
             this.LineItems = lineItems;
+            this.CustomerInfo = customerInfo;
             this.Metadata = metadata;
         }
 
@@ -69,6 +71,12 @@ namespace Conekta.net.Model
         public string Currency { get; set; }
 
         /// <summary>
+        /// Gets or Sets CustomerInfo
+        /// </summary>
+        [DataMember(Name = "customer_info", EmitDefaultValue = false)]
+        public CheckoutOrderTemplateCustomerInfo CustomerInfo { get; set; }
+
+        /// <summary>
         /// They are the products to buy. Each contains the \&quot;unit price\&quot; and \&quot;quantity\&quot; parameters that are used to calculate the total amount of the order.
         /// </summary>
         /// <value>They are the products to buy. Each contains the \&quot;unit price\&quot; and \&quot;quantity\&quot; parameters that are used to calculate the total amount of the order.</value>
@@ -76,8 +84,9 @@ namespace Conekta.net.Model
         public List<Product> LineItems { get; set; }
 
         /// <summary>
-        /// Gets or Sets Metadata
+        /// It is a set of key-value pairs that you can attach to the order. It can be used to store additional information about the order in a structured format.
         /// </summary>
+        /// <value>It is a set of key-value pairs that you can attach to the order. It can be used to store additional information about the order in a structured format.</value>
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }
 
@@ -90,6 +99,7 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class CheckoutOrderTemplate {\n");
             sb.Append("  Currency: ").Append(Currency).Append("\n");
+            sb.Append("  CustomerInfo: ").Append(CustomerInfo).Append("\n");
             sb.Append("  LineItems: ").Append(LineItems).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("}\n");
@@ -133,6 +143,11 @@ namespace Conekta.net.Model
                     this.Currency.Equals(input.Currency))
                 ) && 
                 (
+                    this.CustomerInfo == input.CustomerInfo ||
+                    (this.CustomerInfo != null &&
+                    this.CustomerInfo.Equals(input.CustomerInfo))
+                ) && 
+                (
                     this.LineItems == input.LineItems ||
                     this.LineItems != null &&
                     input.LineItems != null &&
@@ -159,6 +174,10 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Currency.GetHashCode();
                 }
+                if (this.CustomerInfo != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomerInfo.GetHashCode();
+                }
                 if (this.LineItems != null)
                 {
                     hashCode = (hashCode * 59) + this.LineItems.GetHashCode();
@@ -176,7 +195,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Currency (string) maxLength
             if (this.Currency != null && this.Currency.Length > 3)

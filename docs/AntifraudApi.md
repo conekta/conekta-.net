@@ -11,7 +11,7 @@ All URIs are relative to *https://api.conekta.io*
 | [**GetRuleBlacklist**](AntifraudApi.md#getruleblacklist) | **GET** /antifraud/blacklists | Get list of blacklisted rules |
 | [**GetRuleWhitelist**](AntifraudApi.md#getrulewhitelist) | **GET** /antifraud/whitelists | Get a list of whitelisted rules |
 
-<a name="createruleblacklist"></a>
+<a id="createruleblacklist"></a>
 # **CreateRuleBlacklist**
 > BlacklistRuleResponse CreateRuleBlacklist (CreateRiskRulesData createRiskRulesData, string acceptLanguage = null)
 
@@ -107,7 +107,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createrulewhitelist"></a>
+<a id="createrulewhitelist"></a>
 # **CreateRuleWhitelist**
 > WhitelistlistRuleResponse CreateRuleWhitelist (string acceptLanguage = null, CreateRiskRulesData createRiskRulesData = null)
 
@@ -204,7 +204,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleteruleblacklist"></a>
+<a id="deleteruleblacklist"></a>
 # **DeleteRuleBlacklist**
 > DeletedBlacklistRuleResponse DeleteRuleBlacklist (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -303,7 +303,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleterulewhitelist"></a>
+<a id="deleterulewhitelist"></a>
 # **DeleteRuleWhitelist**
 > DeletedWhitelistRuleResponse DeleteRuleWhitelist (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -403,7 +403,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getruleblacklist"></a>
+<a id="getruleblacklist"></a>
 # **GetRuleBlacklist**
 > RiskRulesList GetRuleBlacklist (string acceptLanguage = null)
 
@@ -499,7 +499,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getrulewhitelist"></a>
+<a id="getrulewhitelist"></a>
 # **GetRuleWhitelist**
 > RiskRulesList GetRuleWhitelist (string acceptLanguage = null)
 

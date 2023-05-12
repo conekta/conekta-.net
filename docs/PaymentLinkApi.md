@@ -11,7 +11,7 @@ All URIs are relative to *https://api.conekta.io*
 | [**GetCheckouts**](PaymentLinkApi.md#getcheckouts) | **GET** /checkouts | Get a list of payment links |
 | [**SmsCheckout**](PaymentLinkApi.md#smscheckout) | **POST** /checkouts/{id}/sms | Send an sms |
 
-<a name="cancelcheckout"></a>
+<a id="cancelcheckout"></a>
 # **CancelCheckout**
 > CheckoutResponse CancelCheckout (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -112,7 +112,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createcheckout"></a>
+<a id="createcheckout"></a>
 # **CreateCheckout**
 > CheckoutResponse CreateCheckout (Checkout checkout, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -212,7 +212,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="emailcheckout"></a>
+<a id="emailcheckout"></a>
 # **EmailCheckout**
 > CheckoutResponse EmailCheckout (string id, EmailCheckoutRequest emailCheckoutRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -315,7 +315,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getcheckout"></a>
+<a id="getcheckout"></a>
 # **GetCheckout**
 > CheckoutResponse GetCheckout (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -416,7 +416,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getcheckouts"></a>
+<a id="getcheckouts"></a>
 # **GetCheckouts**
 > CheckoutsResponse GetCheckouts (string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string search = null, string next = null, string previous = null)
 
@@ -524,7 +524,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="smscheckout"></a>
+<a id="smscheckout"></a>
 # **SmsCheckout**
 > CheckoutResponse SmsCheckout (string id, SmsCheckoutRequest smsCheckoutRequest, string acceptLanguage = null, string xChildCompanyId = null)
 

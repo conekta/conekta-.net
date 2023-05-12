@@ -8,7 +8,7 @@ All URIs are relative to *https://api.conekta.io*
 | [**OrdersDeleteProduct**](ProductsApi.md#ordersdeleteproduct) | **DELETE** /orders/{id}/line_items/{line_item_id} | Delete Product |
 | [**OrdersUpdateProduct**](ProductsApi.md#ordersupdateproduct) | **PUT** /orders/{id}/line_items/{line_item_id} | Update Product |
 
-<a name="orderscreateproduct"></a>
+<a id="orderscreateproduct"></a>
 # **OrdersCreateProduct**
 > ProductOrderResponse OrdersCreateProduct (string id, Product product, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -111,7 +111,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="ordersdeleteproduct"></a>
+<a id="ordersdeleteproduct"></a>
 # **OrdersDeleteProduct**
 > ProductOrderResponse OrdersDeleteProduct (string id, string lineItemId, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -215,7 +215,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="ordersupdateproduct"></a>
+<a id="ordersupdateproduct"></a>
 # **OrdersUpdateProduct**
 > ProductOrderResponse OrdersUpdateProduct (string id, string lineItemId, UpdateProduct updateProduct, string acceptLanguage = null, string xChildCompanyId = null)
 

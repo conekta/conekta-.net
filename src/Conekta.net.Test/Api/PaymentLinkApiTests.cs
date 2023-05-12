@@ -81,13 +81,40 @@ namespace Conekta.net.Test.Api
                 recurrent: false,
                 needsShippingContact: false,
                 expiresAt: expiresAt,
-                orderTemplate: new CheckoutOrderTemplate("MXN", new List<Product>() { new Product(name: "toshiba", quantity: 1, unitPrice: 500) })
+                orderTemplate: new CheckoutOrderTemplate("MXN", null, new List<Product>() { new Product(name: "toshiba", quantity: 1, unitPrice: 500) })
             );
             CheckoutResponse response = _instance.CreateCheckout(checkout);
 
             Assert.IsType<CheckoutResponse>(response);
             Assert.Equal(expiresAt, response.ExpiresAt);
             Assert.Equal("e4bcbed2-194c-4540-a922-b6d7531925a3", response.Id);
+            Assert.Equal(checkout.Type, response.Type);
+            Assert.Equal(checkout.AllowedPaymentMethods, response.AllowedPaymentMethods);
+            Assert.Equal(checkout.Name, response.Name);
+        }
+        /// <summary>
+        /// Test CreateCheckout
+        /// </summary>
+        [Fact]
+        public void CreateCheckoutPaymentLinkWithCustomerInfoTest()
+        {
+            DateTime currentTime = DateTime.UtcNow.AddDays(200);
+            long expiresAt = ((DateTimeOffset)currentTime).ToUnixTimeSeconds();
+            var customerInfo = new CheckoutOrderTemplateCustomerInfo(new CustomerInfo("steven","steven@gmail.com","5555555555")); 
+            Checkout checkout = new(
+                allowedPaymentMethods: new List<string>() { "card", "cash", "bank_transfer" },
+                type: "PaymentLink",
+                name: "Payment Link Name netcore sdk",
+                recurrent: true,
+                needsShippingContact: false,
+                expiresAt: expiresAt,
+                orderTemplate: new CheckoutOrderTemplate("MXN", customerInfo, new List<Product>() { new Product(name: "toshiba", quantity: 1, unitPrice: 500) })
+            );
+            CheckoutResponse response = _instance.CreateCheckout(checkout);
+
+            Assert.IsType<CheckoutResponse>(response);
+            Assert.Equal(expiresAt, response.ExpiresAt);
+            Assert.Equal("4b57dde6-1080-4529-8a7c-7299812a3b1a", response.Id);
             Assert.Equal(checkout.Type, response.Type);
             Assert.Equal(checkout.AllowedPaymentMethods, response.AllowedPaymentMethods);
             Assert.Equal(checkout.Name, response.Name);

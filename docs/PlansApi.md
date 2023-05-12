@@ -10,7 +10,7 @@ All URIs are relative to *https://api.conekta.io*
 | [**GetPlans**](PlansApi.md#getplans) | **GET** /plans | Get A List of Plans |
 | [**UpdatePlan**](PlansApi.md#updateplan) | **PUT** /plans/{id} | Update Plan |
 
-<a name="createplan"></a>
+<a id="createplan"></a>
 # **CreatePlan**
 > PlanResponse CreatePlan (PlanRequest planRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -111,7 +111,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleteplan"></a>
+<a id="deleteplan"></a>
 # **DeletePlan**
 > PlanResponse DeletePlan (string id, string acceptLanguage = null)
 
@@ -209,7 +209,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getplan"></a>
+<a id="getplan"></a>
 # **GetPlan**
 > PlanResponse GetPlan (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -309,7 +309,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getplans"></a>
+<a id="getplans"></a>
 # **GetPlans**
 > GetPlansResponse GetPlans (string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string search = null, string next = null, string previous = null)
 
@@ -414,7 +414,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updateplan"></a>
+<a id="updateplan"></a>
 # **UpdatePlan**
 > PlanResponse UpdatePlan (string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = null, string xChildCompanyId = null)
 

@@ -12,7 +12,7 @@ All URIs are relative to *https://api.conekta.io*
 | [**ResumeSubscription**](SubscriptionsApi.md#resumesubscription) | **POST** /customers/{id}/subscription/resume | Resume Subscription |
 | [**UpdateSubscription**](SubscriptionsApi.md#updatesubscription) | **PUT** /customers/{id}/subscription | Update Subscription |
 
-<a name="cancelsubscription"></a>
+<a id="cancelsubscription"></a>
 # **CancelSubscription**
 > SubscriptionResponse CancelSubscription (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -113,7 +113,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createsubscription"></a>
+<a id="createsubscription"></a>
 # **CreateSubscription**
 > SubscriptionResponse CreateSubscription (string id, SubscriptionRequest subscriptionRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -217,7 +217,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getalleventsfromsubscription"></a>
+<a id="getalleventsfromsubscription"></a>
 # **GetAllEventsFromSubscription**
 > SubscriptionEventsResponse GetAllEventsFromSubscription (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -320,7 +320,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getsubscription"></a>
+<a id="getsubscription"></a>
 # **GetSubscription**
 > SubscriptionResponse GetSubscription (string id, string acceptLanguage = null)
 
@@ -417,7 +417,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="pausesubscription"></a>
+<a id="pausesubscription"></a>
 # **PauseSubscription**
 > SubscriptionResponse PauseSubscription (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -519,7 +519,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="resumesubscription"></a>
+<a id="resumesubscription"></a>
 # **ResumeSubscription**
 > SubscriptionResponse ResumeSubscription (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -622,7 +622,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updatesubscription"></a>
+<a id="updatesubscription"></a>
 # **UpdateSubscription**
 > SubscriptionResponse UpdateSubscription (string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
