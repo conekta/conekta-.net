@@ -6,7 +6,7 @@ All URIs are relative to *https://api.conekta.io*
 |--------|--------------|-------------|
 | [**OrdersCreateCharge**](ChargesApi.md#orderscreatecharge) | **POST** /orders/{id}/charges | Create charge |
 
-<a name="orderscreatecharge"></a>
+<a id="orderscreatecharge"></a>
 # **OrdersCreateCharge**
 > ChargeOrderResponse OrdersCreateCharge (string id, ChargeRequest chargeRequest, string acceptLanguage = null, string xChildCompanyId = null)
 

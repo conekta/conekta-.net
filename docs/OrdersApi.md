@@ -13,7 +13,7 @@ All URIs are relative to *https://api.conekta.io*
 | [**OrdersCreateCapture**](OrdersApi.md#orderscreatecapture) | **POST** /orders/{id}/capture | Capture Order |
 | [**UpdateOrder**](OrdersApi.md#updateorder) | **PUT** /orders/{id} | Update Order |
 
-<a name="cancelorder"></a>
+<a id="cancelorder"></a>
 # **CancelOrder**
 > OrderResponse CancelOrder (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -116,7 +116,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createorder"></a>
+<a id="createorder"></a>
 # **CreateOrder**
 > OrderResponse CreateOrder (OrderRequest orderRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -218,7 +218,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getorderbyid"></a>
+<a id="getorderbyid"></a>
 # **GetOrderById**
 > OrderResponse GetOrderById (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -319,7 +319,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getorders"></a>
+<a id="getorders"></a>
 # **GetOrders**
 > GetOrdersResponse GetOrders (string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string search = null, string next = null, string previous = null)
 
@@ -425,7 +425,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="ordercancelrefund"></a>
+<a id="ordercancelrefund"></a>
 # **OrderCancelRefund**
 > OrderResponse OrderCancelRefund (string id, string refundId, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -530,7 +530,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="orderrefund"></a>
+<a id="orderrefund"></a>
 # **OrderRefund**
 > OrderResponse OrderRefund (string id, OrderRefundRequest orderRefundRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -635,7 +635,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="orderscreatecapture"></a>
+<a id="orderscreatecapture"></a>
 # **OrdersCreateCapture**
 > OrderResponse OrdersCreateCapture (string id, string acceptLanguage = null, string xChildCompanyId = null, OrderCaptureRequest orderCaptureRequest = null)
 
@@ -739,7 +739,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updateorder"></a>
+<a id="updateorder"></a>
 # **UpdateOrder**
 > OrderResponse UpdateOrder (string id, OrderUpdateRequest orderUpdateRequest, string acceptLanguage = null)
 

@@ -11751,12 +11751,14 @@ components:
           example: false
           type: boolean
         on_demand_enabled:
+          description: This flag allows you to specify if the link will be on demand.
           example: true
           nullable: true
           type: boolean
         order_template:
           $ref: '#/components/schemas/checkout_order_template'
         payments_limit_count:
+          description: It is the number of payments that can be made through the link.
           example: 5
           format: int8
           type: integer
@@ -11765,6 +11767,8 @@ components:
           example: false
           type: boolean
         type:
+          description: It is the type of link that will be created. It must be a valid
+            type.
           example: PaymentLink
           type: string
       required:
@@ -13734,6 +13738,12 @@ components:
       oneOf:
       - $ref: '#/components/schemas/customer_info'
       - $ref: '#/components/schemas/customer_info_just_customer_id'
+    checkout_order_template_customer_info:
+      description: It is the information of the customer who will be created when
+        receiving a new payment.
+      oneOf:
+      - $ref: '#/components/schemas/customer_info'
+      - $ref: '#/components/schemas/customer_info_just_customer_id'
     checkout_order_template:
       description: It maintains the attributes with which the order will be created
         when receiving a new payment.
@@ -13744,6 +13754,8 @@ components:
           example: MXN
           maxLength: 3
           type: string
+        customer_info:
+          $ref: '#/components/schemas/checkout_order_template_customer_info'
         line_items:
           description: They are the products to buy. Each contains the "unit price"
             and "quantity" parameters that are used to calculate the total amount
@@ -13753,6 +13765,9 @@ components:
           type: array
         metadata:
           additionalProperties: true
+          description: It is a set of key-value pairs that you can attach to the order.
+            It can be used to store additional information about the order in a structured
+            format.
           example:
             key: value
           maxProperties: 100

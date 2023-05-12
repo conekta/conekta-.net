@@ -12,7 +12,7 @@ All URIs are relative to *https://api.conekta.io*
 | [**UpdateCustomer**](CustomersApi.md#updatecustomer) | **PUT** /customers/{id} | Update customer |
 | [**UpdateCustomerFiscalEntities**](CustomersApi.md#updatecustomerfiscalentities) | **PUT** /customers/{id}/fiscal_entities/{fiscal_entities_id} | Update  Fiscal Entity |
 
-<a name="createcustomer"></a>
+<a id="createcustomer"></a>
 # **CreateCustomer**
 > CustomerResponse CreateCustomer (Customer customer, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -114,7 +114,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createcustomerfiscalentities"></a>
+<a id="createcustomerfiscalentities"></a>
 # **CreateCustomerFiscalEntities**
 > CreateCustomerFiscalEntitiesResponse CreateCustomerFiscalEntities (string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -218,7 +218,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deletecustomerbyid"></a>
+<a id="deletecustomerbyid"></a>
 # **DeleteCustomerById**
 > CustomerResponse DeleteCustomerById (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -320,7 +320,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getcustomerbyid"></a>
+<a id="getcustomerbyid"></a>
 # **GetCustomerById**
 > CustomerResponse GetCustomerById (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -421,7 +421,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getcustomers"></a>
+<a id="getcustomers"></a>
 # **GetCustomers**
 > CustomersResponse GetCustomers (string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string search = null, string next = null, string previous = null)
 
@@ -527,7 +527,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updatecustomer"></a>
+<a id="updatecustomer"></a>
 # **UpdateCustomer**
 > CustomerResponse UpdateCustomer (string id, UpdateCustomer updateCustomer, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -631,7 +631,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updatecustomerfiscalentities"></a>
+<a id="updatecustomerfiscalentities"></a>
 # **UpdateCustomerFiscalEntities**
 > UpdateCustomerFiscalEntitiesResponse UpdateCustomerFiscalEntities (string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = null, string xChildCompanyId = null)
 

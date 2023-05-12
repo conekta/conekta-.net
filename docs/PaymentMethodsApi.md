@@ -9,7 +9,7 @@ All URIs are relative to *https://api.conekta.io*
 | [**GetCustomerPaymentMethods**](PaymentMethodsApi.md#getcustomerpaymentmethods) | **GET** /customers/{id}/payment_sources | Get Payment Methods |
 | [**UpdateCustomerPaymentMethods**](PaymentMethodsApi.md#updatecustomerpaymentmethods) | **PUT** /customers/{id}/payment_sources/{payment_method_id} | Update Payment Method |
 
-<a name="createcustomerpaymentmethods"></a>
+<a id="createcustomerpaymentmethods"></a>
 # **CreateCustomerPaymentMethods**
 > CreateCustomerPaymentMethodsResponse CreateCustomerPaymentMethods (string id, CreateCustomerPaymentMethodsRequest createCustomerPaymentMethodsRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -113,7 +113,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deletecustomerpaymentmethods"></a>
+<a id="deletecustomerpaymentmethods"></a>
 # **DeleteCustomerPaymentMethods**
 > UpdateCustomerPaymentMethodsResponse DeleteCustomerPaymentMethods (string id, string paymentMethodId, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -217,7 +217,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getcustomerpaymentmethods"></a>
+<a id="getcustomerpaymentmethods"></a>
 # **GetCustomerPaymentMethods**
 > GetPaymentMethodResponse GetCustomerPaymentMethods (string id, string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string next = null, string previous = null, string search = null)
 
@@ -326,7 +326,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updatecustomerpaymentmethods"></a>
+<a id="updatecustomerpaymentmethods"></a>
 # **UpdateCustomerPaymentMethods**
 > UpdateCustomerPaymentMethodsResponse UpdateCustomerPaymentMethods (string id, string paymentMethodId, UpdatePaymentMethods updatePaymentMethods, string acceptLanguage = null, string xChildCompanyId = null)
 

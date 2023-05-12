@@ -7,7 +7,7 @@ All URIs are relative to *https://api.conekta.io*
 | [**GetTransaction**](TransactionsApi.md#gettransaction) | **GET** /transactions/{id} | Get transaction |
 | [**GetTransactions**](TransactionsApi.md#gettransactions) | **GET** /transactions | Get List transactions |
 
-<a name="gettransaction"></a>
+<a id="gettransaction"></a>
 # **GetTransaction**
 > TransactionResponse GetTransaction (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -108,7 +108,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="gettransactions"></a>
+<a id="gettransactions"></a>
 # **GetTransactions**
 > GetTransactionsResponse GetTransactions (string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string search = null, string next = null, string previous = null)
 

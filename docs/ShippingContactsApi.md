@@ -8,7 +8,7 @@ All URIs are relative to *https://api.conekta.io*
 | [**DeleteCustomerShippingContacts**](ShippingContactsApi.md#deletecustomershippingcontacts) | **DELETE** /customers/{id}/shipping_contacts/{shipping_contacts_id} | Delete shipping contacts |
 | [**UpdateCustomerShippingContacts**](ShippingContactsApi.md#updatecustomershippingcontacts) | **PUT** /customers/{id}/shipping_contacts/{shipping_contacts_id} | Update shipping contacts |
 
-<a name="createcustomershippingcontacts"></a>
+<a id="createcustomershippingcontacts"></a>
 # **CreateCustomerShippingContacts**
 > CustomerShippingContactsResponse CreateCustomerShippingContacts (string id, CustomerShippingContacts customerShippingContacts, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -112,7 +112,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deletecustomershippingcontacts"></a>
+<a id="deletecustomershippingcontacts"></a>
 # **DeleteCustomerShippingContacts**
 > CustomerShippingContactsResponse DeleteCustomerShippingContacts (string id, string shippingContactsId, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -216,7 +216,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updatecustomershippingcontacts"></a>
+<a id="updatecustomershippingcontacts"></a>
 # **UpdateCustomerShippingContacts**
 > CustomerShippingContactsResponse UpdateCustomerShippingContacts (string id, string shippingContactsId, CustomerUpdateShippingContacts customerUpdateShippingContacts, string acceptLanguage = null, string xChildCompanyId = null)
 

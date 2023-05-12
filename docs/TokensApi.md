@@ -6,7 +6,7 @@ All URIs are relative to *https://api.conekta.io*
 |--------|--------------|-------------|
 | [**CreateToken**](TokensApi.md#createtoken) | **POST** /tokens | Create Token |
 
-<a name="createtoken"></a>
+<a id="createtoken"></a>
 # **CreateToken**
 > TokenResponse CreateToken (Token token, string acceptLanguage = null)
 

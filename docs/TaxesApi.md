@@ -8,7 +8,7 @@ All URIs are relative to *https://api.conekta.io*
 | [**OrdersDeleteTaxes**](TaxesApi.md#ordersdeletetaxes) | **DELETE** /orders/{id}/tax_lines/{tax_id} | Delete Tax |
 | [**OrdersUpdateTaxes**](TaxesApi.md#ordersupdatetaxes) | **PUT** /orders/{id}/tax_lines/{tax_id} | Update Tax |
 
-<a name="orderscreatetaxes"></a>
+<a id="orderscreatetaxes"></a>
 # **OrdersCreateTaxes**
 > UpdateOrderTaxResponse OrdersCreateTaxes (string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -111,7 +111,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="ordersdeletetaxes"></a>
+<a id="ordersdeletetaxes"></a>
 # **OrdersDeleteTaxes**
 > UpdateOrderTaxResponse OrdersDeleteTaxes (string id, string taxId, string acceptLanguage = null, string xChildCompanyId = null)
 
@@ -215,7 +215,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="ordersupdatetaxes"></a>
+<a id="ordersupdatetaxes"></a>
 # **OrdersUpdateTaxes**
 > UpdateOrderTaxResponse OrdersUpdateTaxes (string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = null, string xChildCompanyId = null)
 

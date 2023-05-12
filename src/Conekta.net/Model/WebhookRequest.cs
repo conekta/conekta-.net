@@ -148,10 +148,10 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Url (string) pattern
-            Regex regexUrl = new Regex(@"^(?!.*(localhost|127\\.0\\.0\\.1)).*$", RegexOptions.CultureInvariant);
+            Regex regexUrl = new Regex(@"^(?!.*(localhost|127\.0\.0\.1)).*$", RegexOptions.CultureInvariant);
             if (false == regexUrl.Match(this.Url).Success)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Url, must match a pattern of " + regexUrl, new [] { "Url" });
