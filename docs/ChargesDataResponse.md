@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Amount** | **int** |  | [optional] 
+**Channel** | [**ChargeResponseChannel**](ChargeResponseChannel.md) |  | [optional] 
 **CreatedAt** | **long** |  | [optional] 
 **Currency** | **string** |  | [optional] 
 **CustomerId** | **string** |  | [optional] 
@@ -18,7 +19,8 @@ Name | Type | Description | Notes
 **Object** | **string** |  | [optional] 
 **OrderId** | **string** |  | [optional] 
 **PaidAt** | **int?** |  | [optional] 
-**PaymentMethod** | [**ChargeOrderResponsePaymentMethod**](ChargeOrderResponsePaymentMethod.md) |  | [optional] 
+**PaymentMethod** | [**ChargeResponsePaymentMethod**](ChargeResponsePaymentMethod.md) |  | [optional] 
+**ReferenceId** | **string** | Reference ID of the charge | [optional] 
 **Refunds** | [**ChargeResponseRefunds**](ChargeResponseRefunds.md) |  | [optional] 
 **Status** | **string** |  | [optional] 
 

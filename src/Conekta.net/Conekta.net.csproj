@@ -12,11 +12,11 @@
     <Description>This is a .net library that allows interaction with https://api.conekta.io API.</Description>
     <Copyright>Conekta</Copyright>
     <RootNamespace>Conekta.net</RootNamespace>
-    <Version>6.0.2</Version>
+    <Version>6.0.3</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Conekta.net.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/conekta/conekta-.net.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>Add missing properties to the checkout model</PackageReleaseNotes>
+    <PackageReleaseNotes>for charges api rename the property &#39;ChargeOrderResponsePaymentMethod&#39; to &#39;ChargeResponsePaymentMethod&#39;</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

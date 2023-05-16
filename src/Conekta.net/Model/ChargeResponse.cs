@@ -36,6 +36,7 @@ namespace Conekta.net.Model
         /// Initializes a new instance of the <see cref="ChargeResponse" /> class.
         /// </summary>
         /// <param name="amount">amount.</param>
+        /// <param name="channel">channel.</param>
         /// <param name="createdAt">createdAt.</param>
         /// <param name="currency">currency.</param>
         /// <param name="customerId">customerId.</param>
@@ -50,11 +51,13 @@ namespace Conekta.net.Model
         /// <param name="orderId">orderId.</param>
         /// <param name="paidAt">paidAt.</param>
         /// <param name="paymentMethod">paymentMethod.</param>
+        /// <param name="referenceId">Reference ID of the charge.</param>
         /// <param name="refunds">refunds.</param>
         /// <param name="status">status.</param>
-        public ChargeResponse(int amount = default(int), long createdAt = default(long), string currency = default(string), string customerId = default(string), string description = default(string), string deviceFingerprint = default(string), string failureCode = default(string), string failureMessage = default(string), int fee = default(int), string id = default(string), bool livemode = default(bool), string _object = default(string), string orderId = default(string), int? paidAt = default(int?), ChargeOrderResponsePaymentMethod paymentMethod = default(ChargeOrderResponsePaymentMethod), ChargeResponseRefunds refunds = default(ChargeResponseRefunds), string status = default(string))
+        public ChargeResponse(int amount = default(int), ChargeResponseChannel channel = default(ChargeResponseChannel), long createdAt = default(long), string currency = default(string), string customerId = default(string), string description = default(string), string deviceFingerprint = default(string), string failureCode = default(string), string failureMessage = default(string), int fee = default(int), string id = default(string), bool livemode = default(bool), string _object = default(string), string orderId = default(string), int? paidAt = default(int?), ChargeResponsePaymentMethod paymentMethod = default(ChargeResponsePaymentMethod), string referenceId = default(string), ChargeResponseRefunds refunds = default(ChargeResponseRefunds), string status = default(string))
         {
             this.Amount = amount;
+            this.Channel = channel;
             this.CreatedAt = createdAt;
             this.Currency = currency;
             this.CustomerId = customerId;
@@ -69,6 +72,7 @@ namespace Conekta.net.Model
             this.OrderId = orderId;
             this.PaidAt = paidAt;
             this.PaymentMethod = paymentMethod;
+            this.ReferenceId = referenceId;
             this.Refunds = refunds;
             this.Status = status;
         }
@@ -79,6 +83,12 @@ namespace Conekta.net.Model
         /// <example>4321</example>
         [DataMember(Name = "amount", EmitDefaultValue = false)]
         public int Amount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Channel
+        /// </summary>
+        [DataMember(Name = "channel", EmitDefaultValue = false)]
+        public ChargeResponseChannel Channel { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt
@@ -172,7 +182,15 @@ namespace Conekta.net.Model
         /// Gets or Sets PaymentMethod
         /// </summary>
         [DataMember(Name = "payment_method", EmitDefaultValue = false)]
-        public ChargeOrderResponsePaymentMethod PaymentMethod { get; set; }
+        public ChargeResponsePaymentMethod PaymentMethod { get; set; }
+
+        /// <summary>
+        /// Reference ID of the charge
+        /// </summary>
+        /// <value>Reference ID of the charge</value>
+        /// <example>&quot;ref_2tN73UdUSNrYRPD9r&quot;</example>
+        [DataMember(Name = "reference_id", EmitDefaultValue = true)]
+        public string ReferenceId { get; set; }
 
         /// <summary>
         /// Gets or Sets Refunds
@@ -196,6 +214,7 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class ChargeResponse {\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
+            sb.Append("  Channel: ").Append(Channel).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  Currency: ").Append(Currency).Append("\n");
             sb.Append("  CustomerId: ").Append(CustomerId).Append("\n");
@@ -210,6 +229,7 @@ namespace Conekta.net.Model
             sb.Append("  OrderId: ").Append(OrderId).Append("\n");
             sb.Append("  PaidAt: ").Append(PaidAt).Append("\n");
             sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
+            sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
             sb.Append("  Refunds: ").Append(Refunds).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("}\n");
@@ -250,6 +270,11 @@ namespace Conekta.net.Model
                 (
                     this.Amount == input.Amount ||
                     this.Amount.Equals(input.Amount)
+                ) && 
+                (
+                    this.Channel == input.Channel ||
+                    (this.Channel != null &&
+                    this.Channel.Equals(input.Channel))
                 ) && 
                 (
                     this.CreatedAt == input.CreatedAt ||
@@ -319,6 +344,11 @@ namespace Conekta.net.Model
                     this.PaymentMethod.Equals(input.PaymentMethod))
                 ) && 
                 (
+                    this.ReferenceId == input.ReferenceId ||
+                    (this.ReferenceId != null &&
+                    this.ReferenceId.Equals(input.ReferenceId))
+                ) && 
+                (
                     this.Refunds == input.Refunds ||
                     (this.Refunds != null &&
                     this.Refunds.Equals(input.Refunds))
@@ -340,6 +370,10 @@ namespace Conekta.net.Model
             {
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.Amount.GetHashCode();
+                if (this.Channel != null)
+                {
+                    hashCode = (hashCode * 59) + this.Channel.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
                 if (this.Currency != null)
                 {
@@ -386,6 +420,10 @@ namespace Conekta.net.Model
                 if (this.PaymentMethod != null)
                 {
                     hashCode = (hashCode * 59) + this.PaymentMethod.GetHashCode();
+                }
+                if (this.ReferenceId != null)
+                {
+                    hashCode = (hashCode * 59) + this.ReferenceId.GetHashCode();
                 }
                 if (this.Refunds != null)
                 {

@@ -55,7 +55,7 @@ namespace Conekta.net.Test.Api
             string id = "ord_2tVKxbhNzfUnGjnXG";
             ChargeRequest chargeRequest = new(
                 amount: 40000,
-                paymentMethod: new ChargeRequestPaymentMethod(type:"card", tokenId:"tok_2tVKyGpobEKAR3xVH")
+                paymentMethod: new ChargeRequestPaymentMethod(type: "card", tokenId: "tok_2tVKyGpobEKAR3xVH")
             );
 
             var response = _instance.OrdersCreateCharge(id, chargeRequest);
@@ -76,7 +76,7 @@ namespace Conekta.net.Test.Api
             string id = "ord_2tVL8dT1Hm3y3YiaN";
             ChargeRequest chargeRequest = new(
                 amount: 40000,
-                paymentMethod: new ChargeRequestPaymentMethod(type:"cash")
+                paymentMethod: new ChargeRequestPaymentMethod(type: "cash")
             );
 
             var response = _instance.OrdersCreateCharge(id, chargeRequest);
@@ -101,7 +101,7 @@ namespace Conekta.net.Test.Api
             string id = "ord_2tVLUFrQBB4HKz1zj";
             ChargeRequest chargeRequest = new(
                 amount: 40000,
-                paymentMethod: new ChargeRequestPaymentMethod(type:"spei")
+                paymentMethod: new ChargeRequestPaymentMethod(type: "spei")
             );
 
             var response = _instance.OrdersCreateCharge(id, chargeRequest);
@@ -118,5 +118,24 @@ namespace Conekta.net.Test.Api
             Assert.Equal("STP", response.PaymentMethod.GetPaymentMethodBankTransfer().Bank);
         }
 
+        /// <summary>
+        ///     Test GetAllCharges
+        /// </summary>
+        [Fact]
+        public void GetAllChargesTest()
+        {
+            var response = _instance.GetCharges(
+                   limit: 20,
+                   acceptLanguage: "es"
+               );
+
+            Assert.IsType<GetChargesResponse>(response);
+            Assert.True(response.HasMore);
+            Assert.Equal(20, response.Data.Count);
+            Assert.Equal("channel_2tqJMS7on7HBVqWKo", response.Data[0].Channel.Id);
+            Assert.Equal("93003547316416", response.Data[0].PaymentMethod.GetPaymentMethodCash().Reference);
+            Assert.True(response.Data[0].Refunds == null);
+            Assert.True(string.IsNullOrEmpty(response.Data[0].ReferenceId));
+        }
     }
 }

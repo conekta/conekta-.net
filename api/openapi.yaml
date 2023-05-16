@@ -507,6 +507,131 @@ paths:
       summary: Delete blacklisted rule
       tags:
       - Antifraud
+  /charges:
+    get:
+      operationId: getCharges
+      parameters:
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+      - description: "The numbers of items to return, the maximum value is 250"
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 20
+          format: int32
+          maximum: 250
+          minimum: 1
+          type: integer
+      - description: "General order search, e.g. by mail, reference etc."
+        in: query
+        name: search
+        required: false
+        schema:
+          type: string
+      - description: next page
+        in: query
+        name: next
+        required: false
+        schema:
+          type: string
+      - description: previous page
+        in: query
+        name: previous
+        required: false
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/get_charges_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.1.0; format=application/json
+                type: string
+        "422":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: The "custom_field" parameter is not allowed
+                  message: El parametro "custom_field" no está permitido
+                  code: conekta.errors.parameter_validation.whitelist
+                object: error
+                type: parameter_validation_error
+                log_id: 6462aa7c90fef20001633546
+              schema:
+                $ref: '#/components/schemas/error'
+          description: whitelist validation error
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get A List of Charges
+      tags:
+      - Charges
   /orders/{id}/charges:
     post:
       description: Create charge for an existing orden
@@ -10087,6 +10212,20 @@ components:
           schema:
             $ref: '#/components/schemas/error'
       description: not found entity
+    "422_whitelist":
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          example:
+            details:
+            - debug_message: The "custom_field" parameter is not allowed
+              message: El parametro "custom_field" no está permitido
+              code: conekta.errors.parameter_validation.whitelist
+            object: error
+            type: parameter_validation_error
+            log_id: 6462aa7c90fef20001633546
+          schema:
+            $ref: '#/components/schemas/error'
+      description: whitelist validation error
     "428":
       content:
         application/vnd.conekta-v2.1.0+json:
@@ -10164,13 +10303,104 @@ components:
       - field
       - value
       type: object
+    pagination:
+      description: pagination metadata
+      properties:
+        object:
+          description: "Object type, in this case is list"
+          example: list
+          type: string
+        has_more:
+          description: Indicates if there are more pages to be requested
+          example: false
+          type: boolean
+      required:
+      - has_more
+      - object
+      title: pagination metadata
+      type: object
+    page:
+      description: page metadata
+      properties:
+        next_page_url:
+          description: URL of the next page.
+          example: https://api.conekta.io/resources?limit=10&next=chrg_1
+          nullable: true
+          type: string
+        previous_page_url:
+          description: Url of the previous page.
+          example: https://api.conekta.io/resources?limit=10&previous=chrg_1
+          nullable: true
+          type: string
+      title: page metadata
+      type: object
+    charge_response:
+      properties:
+        amount:
+          example: 4321
+          type: integer
+        channel:
+          $ref: '#/components/schemas/charge_response_channel'
+        created_at:
+          example: 1676386026
+          format: int64
+          type: integer
+        currency:
+          example: MXN
+          type: string
+        customer_id:
+          type: string
+        description:
+          example: Payment from order
+          type: string
+        device_fingerprint:
+          example: 6FR3chaU4Y1nGAW5NAGd1rcjAKa142Ba
+          type: string
+        failure_code:
+          example: suspected_fraud
+          type: string
+        failure_message:
+          example: Este cargo ha sido declinado porque el comportamiento del comprador
+            es sospechoso.
+          type: string
+        fee:
+          example: 1160
+          type: integer
+        id:
+          example: 63efa757cf65380001aec040
+          type: string
+        livemode:
+          type: boolean
+        object:
+          type: string
+        order_id:
+          example: ord_2tN73UdUSNrYRPD9r
+          type: string
+        paid_at:
+          example: 1676390742
+          nullable: true
+          type: integer
+        payment_method:
+          $ref: '#/components/schemas/charge_response_payment_method'
+        reference_id:
+          description: Reference ID of the charge
+          example: ref_2tN73UdUSNrYRPD9r
+          nullable: true
+          type: string
+        refunds:
+          $ref: '#/components/schemas/charge_response_refunds'
+        status:
+          example: pending_payment
+          type: string
+      title: charges_data_response
+      type: object
     charge_order_response:
       properties:
         amount:
           example: 4321
           type: integer
         channel:
-          $ref: '#/components/schemas/charge_order_response_channel'
+          $ref: '#/components/schemas/charge_response_channel'
         created_at:
           example: 1676386026
           format: int64
@@ -10218,6 +10448,8 @@ components:
         payment_method:
           $ref: '#/components/schemas/charge_order_response_payment_method'
         reference_id:
+          description: Reference ID of the charge
+          example: ref_2tN73UdUSNrYRPD9r
           nullable: true
           type: string
         refunds:
@@ -10228,37 +10460,6 @@ components:
           example: pending_payment
           type: string
       title: charges_data_response
-      type: object
-    pagination:
-      description: pagination metadata
-      properties:
-        object:
-          description: "Object type, in this case is list"
-          example: list
-          type: string
-        has_more:
-          description: Indicates if there are more pages to be requested
-          example: false
-          type: boolean
-      required:
-      - has_more
-      - object
-      title: pagination metadata
-      type: object
-    page:
-      description: page metadata
-      properties:
-        next_page_url:
-          description: URL of the next page.
-          example: https://api.conekta.io/resources?limit=10&next=chrg_1
-          nullable: true
-          type: string
-        previous_page_url:
-          description: Url of the previous page.
-          example: https://api.conekta.io/resources?limit=10&previous=chrg_1
-          nullable: true
-          type: string
-      title: page metadata
       type: object
     company_response:
       description: Company model
@@ -10590,7 +10791,7 @@ components:
           example: 0
           type: integer
         channel:
-          $ref: '#/components/schemas/charge_order_response_channel'
+          $ref: '#/components/schemas/charge_response_channel'
         charges:
           $ref: '#/components/schemas/order_response_charges'
         checkout:
@@ -12219,59 +12420,6 @@ components:
       - postal_code
       - street1
       type: object
-    charge_response:
-      properties:
-        amount:
-          example: 4321
-          type: integer
-        created_at:
-          example: 1676386026
-          format: int64
-          type: integer
-        currency:
-          example: MXN
-          type: string
-        customer_id:
-          type: string
-        description:
-          example: Payment from order
-          type: string
-        device_fingerprint:
-          example: 6FR3chaU4Y1nGAW5NAGd1rcjAKa142Ba
-          type: string
-        failure_code:
-          example: suspected_fraud
-          type: string
-        failure_message:
-          example: Este cargo ha sido declinado porque el comportamiento del comprador
-            es sospechoso.
-          type: string
-        fee:
-          example: 1160
-          type: integer
-        id:
-          example: 63efa757cf65380001aec040
-          type: string
-        livemode:
-          type: boolean
-        object:
-          type: string
-        order_id:
-          example: ord_2tN73UdUSNrYRPD9r
-          type: string
-        paid_at:
-          example: 1676390742
-          nullable: true
-          type: integer
-        payment_method:
-          $ref: '#/components/schemas/charge_order_response_payment_method'
-        refunds:
-          $ref: '#/components/schemas/charge_response_refunds'
-        status:
-          example: pending_payment
-          type: string
-      title: charges_data_response
-      type: object
     customer_info_response:
       properties:
         name:
@@ -12549,6 +12697,19 @@ components:
           type: string
       title: deleted_blacklist_rule_response
       type: object
+    get_charges_response_allOf:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/charge_response'
+          type: array
+      type: object
+    get_charges_response:
+      allOf:
+      - $ref: '#/components/schemas/pagination'
+      - $ref: '#/components/schemas/page'
+      - $ref: '#/components/schemas/get_charges_response_allOf'
+      title: get_charges_response
     get_companies_response_allOf:
       properties:
         data:
@@ -12915,7 +13076,7 @@ components:
           type: string
       type: object
       example: null
-    charge_order_response_channel:
+    charge_response_channel:
       properties:
         segment:
           example: Checkout
@@ -12930,6 +13091,68 @@ components:
           example: channel_2tNDzhA4Akmzj11AU
           type: string
       type: object
+    charge_response_payment_method:
+      discriminator:
+        mapping:
+          cash_payment: payment_method_cash
+          card_payment: payment_method_card
+          bank_transfer_payment: payment_method_bank_transfer
+        propertyName: object
+      oneOf:
+      - $ref: '#/components/schemas/payment_method_cash'
+      - $ref: '#/components/schemas/payment_method_card'
+      - $ref: '#/components/schemas/payment_method_bank_transfer'
+      title: charge_response_payment_method
+    charge_response_refunds_data:
+      properties:
+        amount:
+          example: -15000
+          format: int64
+          type: integer
+        auth_code:
+          example: "867372"
+          type: string
+        created_at:
+          example: 1678226878
+          format: int64
+          type: integer
+        expires_at:
+          description: refund expiration date
+          example: 1678226878
+          format: int64
+          type: integer
+        id:
+          example: 6407b5bee1329a000175ba11
+          type: string
+        object:
+          example: refund
+          type: string
+        status:
+          description: refund status
+          example: pending
+          type: string
+      required:
+      - amount
+      - created_at
+      - id
+      - object
+      title: charge_response_refunds_data
+      type: object
+    charge_response_refunds_allOf:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/charge_response_refunds_data'
+          type: array
+      type: object
+    charge_response_refunds:
+      allOf:
+      - $ref: '#/components/schemas/pagination'
+      - $ref: '#/components/schemas/page'
+      - $ref: '#/components/schemas/charge_response_refunds_allOf'
+      nullable: true
+      title: charge_response_refunds
+      type: object
     charge_order_response_payment_method:
       discriminator:
         mapping:
@@ -12941,6 +13164,7 @@ components:
       - $ref: '#/components/schemas/payment_method_cash'
       - $ref: '#/components/schemas/payment_method_card'
       - $ref: '#/components/schemas/payment_method_bank_transfer'
+      title: charge_order_response_payment_method
     customer_antifraud_info_response:
       nullable: true
       properties:
@@ -14011,56 +14235,6 @@ components:
       title: charge_data_payment_method_bank_transfer_response
       type: object
       example: null
-    charge_response_refunds_data:
-      properties:
-        amount:
-          example: -15000
-          format: int64
-          type: integer
-        auth_code:
-          example: "867372"
-          type: string
-        created_at:
-          example: 1678226878
-          format: int64
-          type: integer
-        expires_at:
-          description: refund expiration date
-          example: 1678226878
-          format: int64
-          type: integer
-        id:
-          example: 6407b5bee1329a000175ba11
-          type: string
-        object:
-          example: refund
-          type: string
-        status:
-          description: refund status
-          example: pending
-          type: string
-      required:
-      - amount
-      - created_at
-      - id
-      - object
-      title: charge_response_refunds_data
-      type: object
-    charge_response_refunds_allOf:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/charge_response_refunds_data'
-          type: array
-      type: object
-    charge_response_refunds:
-      allOf:
-      - $ref: '#/components/schemas/pagination'
-      - $ref: '#/components/schemas/page'
-      - $ref: '#/components/schemas/charge_response_refunds_allOf'
-      nullable: true
-      title: charge_response_refunds
-      type: object
   securitySchemes:
     bearerAuth:
       scheme: bearer
