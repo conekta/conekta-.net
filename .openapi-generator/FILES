@@ -12,11 +12,12 @@ docs/ChargeDataPaymentMethodBankTransferResponse.md
 docs/ChargeDataPaymentMethodCardResponse.md
 docs/ChargeDataPaymentMethodCashResponse.md
 docs/ChargeOrderResponse.md
-docs/ChargeOrderResponseChannel.md
 docs/ChargeOrderResponsePaymentMethod.md
 docs/ChargeRequest.md
 docs/ChargeRequestPaymentMethod.md
 docs/ChargeResponse.md
+docs/ChargeResponseChannel.md
+docs/ChargeResponsePaymentMethod.md
 docs/ChargeResponseRefunds.md
 docs/ChargeResponseRefundsAllOf.md
 docs/ChargeResponseRefundsData.md
@@ -84,6 +85,8 @@ docs/Error.md
 docs/ErrorAllOf.md
 docs/EventResponse.md
 docs/EventsApi.md
+docs/GetChargesResponse.md
+docs/GetChargesResponseAllOf.md
 docs/GetCompaniesResponse.md
 docs/GetCompaniesResponseAllOf.md
 docs/GetCustomerPaymentMethodDataResponse.md
@@ -255,11 +258,12 @@ src/Conekta.net/Model/ChargeDataPaymentMethodBankTransferResponse.cs
 src/Conekta.net/Model/ChargeDataPaymentMethodCardResponse.cs
 src/Conekta.net/Model/ChargeDataPaymentMethodCashResponse.cs
 src/Conekta.net/Model/ChargeOrderResponse.cs
-src/Conekta.net/Model/ChargeOrderResponseChannel.cs
 src/Conekta.net/Model/ChargeOrderResponsePaymentMethod.cs
 src/Conekta.net/Model/ChargeRequest.cs
 src/Conekta.net/Model/ChargeRequestPaymentMethod.cs
 src/Conekta.net/Model/ChargeResponse.cs
+src/Conekta.net/Model/ChargeResponseChannel.cs
+src/Conekta.net/Model/ChargeResponsePaymentMethod.cs
 src/Conekta.net/Model/ChargeResponseRefunds.cs
 src/Conekta.net/Model/ChargeResponseRefundsAllOf.cs
 src/Conekta.net/Model/ChargeResponseRefundsData.cs
@@ -322,6 +326,8 @@ src/Conekta.net/Model/EmailCheckoutRequest.cs
 src/Conekta.net/Model/Error.cs
 src/Conekta.net/Model/ErrorAllOf.cs
 src/Conekta.net/Model/EventResponse.cs
+src/Conekta.net/Model/GetChargesResponse.cs
+src/Conekta.net/Model/GetChargesResponseAllOf.cs
 src/Conekta.net/Model/GetCompaniesResponse.cs
 src/Conekta.net/Model/GetCompaniesResponseAllOf.cs
 src/Conekta.net/Model/GetCustomerPaymentMethodDataResponse.cs

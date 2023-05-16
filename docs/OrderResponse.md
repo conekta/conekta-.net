@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Amount** | **int** | The total amount to be collected in cents | [optional] 
 **AmountRefunded** | **int** | The total amount refunded in cents | [optional] 
-**Channel** | [**ChargeOrderResponseChannel**](ChargeOrderResponseChannel.md) |  | [optional] 
+**Channel** | [**ChargeResponseChannel**](ChargeResponseChannel.md) |  | [optional] 
 **Charges** | [**OrderResponseCharges**](OrderResponseCharges.md) |  | [optional] 
 **Checkout** | [**OrderResponseCheckout**](OrderResponseCheckout.md) |  | [optional] 
 **CreatedAt** | **long** | The time at which the object was created in seconds since the Unix epoch | [optional] 

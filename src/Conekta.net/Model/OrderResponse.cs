@@ -54,7 +54,7 @@ namespace Conekta.net.Model
         /// <param name="paymentStatus">The payment status of the order..</param>
         /// <param name="shippingContact">shippingContact.</param>
         /// <param name="updatedAt">The time at which the object was last updated in seconds since the Unix epoch.</param>
-        public OrderResponse(int amount = default(int), int amountRefunded = default(int), ChargeOrderResponseChannel channel = default(ChargeOrderResponseChannel), OrderResponseCharges charges = default(OrderResponseCharges), OrderResponseCheckout checkout = default(OrderResponseCheckout), long createdAt = default(long), string currency = default(string), OrderResponseCustomerInfo customerInfo = default(OrderResponseCustomerInfo), OrderResponseDiscountLines discountLines = default(OrderResponseDiscountLines), OrderResponseFiscalEntity fiscalEntity = default(OrderResponseFiscalEntity), string id = default(string), bool isRefundable = default(bool), OrderResponseProducts lineItems = default(OrderResponseProducts), bool livemode = default(bool), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string _object = default(string), string paymentStatus = default(string), OrderResponseShippingContact shippingContact = default(OrderResponseShippingContact), long updatedAt = default(long))
+        public OrderResponse(int amount = default(int), int amountRefunded = default(int), ChargeResponseChannel channel = default(ChargeResponseChannel), OrderResponseCharges charges = default(OrderResponseCharges), OrderResponseCheckout checkout = default(OrderResponseCheckout), long createdAt = default(long), string currency = default(string), OrderResponseCustomerInfo customerInfo = default(OrderResponseCustomerInfo), OrderResponseDiscountLines discountLines = default(OrderResponseDiscountLines), OrderResponseFiscalEntity fiscalEntity = default(OrderResponseFiscalEntity), string id = default(string), bool isRefundable = default(bool), OrderResponseProducts lineItems = default(OrderResponseProducts), bool livemode = default(bool), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string _object = default(string), string paymentStatus = default(string), OrderResponseShippingContact shippingContact = default(OrderResponseShippingContact), long updatedAt = default(long))
         {
             this.Amount = amount;
             this.AmountRefunded = amountRefunded;
@@ -97,7 +97,7 @@ namespace Conekta.net.Model
         /// Gets or Sets Channel
         /// </summary>
         [DataMember(Name = "channel", EmitDefaultValue = false)]
-        public ChargeOrderResponseChannel Channel { get; set; }
+        public ChargeResponseChannel Channel { get; set; }
 
         /// <summary>
         /// Gets or Sets Charges

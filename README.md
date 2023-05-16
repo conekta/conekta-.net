@@ -8,13 +8,13 @@ The library supports all APIs under the following services:
 
 | API                                                                                         | Description | Service Name | Supported version |
 |---------------------------------------------------------------------------------------------| ----------- |-------|-------------------|
-| [Payments API](https://developers.conekta.com/reference)                  | Our classic integration for online payments. Current supported version | Payments API | **v2.1.0**        |
+| [Payments API](https://developers.conekta.com/v2.1.0/reference)                  | Our classic integration for online payments. Current supported version | Payments API | **v2.1.0**        |
 
-For more information, refer to our [documentation](https://developers.conekta.com/docs).
+For more information, refer to our [documentation](https://developers.conekta.com/v2.1.0/docs).
 
 ## Prerequisites
 - [Conekta account](https://panel.conekta.com/)
-- [API key](https://developers.conekta.com/docs/como-obtener-tus-api-keys).  your API credential .
+- [API key](https://developers.conekta.com/v2.1.0/docs/como-obtener-tus-api-keys).  your API credential .
 - Conekta dotnet API Library supports .net standard 2.0 and above
 
 ## Installation
@@ -134,4 +134,4 @@ For other questions, [contact our Support Team](https://developers.conekta.com/d
 This repository is available under the [MIT license](https://github.com/conekta/conekta-.net/blob/master/LICENSE).
 
 ## See also
-* [Conekta docs](https://developers.conekta.com/docs)
+* [Conekta docs](https://developers.conekta.com/v2.1.0/docs)
