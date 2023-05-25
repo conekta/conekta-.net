@@ -15,13 +15,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Test
-        run: DOCKER_BUILDKIT=1 docker-compose -f docker-compose.yml -p ${{ github.run_id }}  run --rm  service dotnet test ./src/Conekta.net.Test/Conekta.net.Test.csproj --no-build -p:CollectCoverage=true -p:CoverletOutputFormat=lcov -p:CoverletOutput=coverage/
+        run: DOCKER_BUILDKIT=1 docker-compose -f docker-compose.yml -p ${{ github.run_id }}  run service dotnet test ./src/Conekta.net.Test/Conekta.net.Test.csproj --no-build -p:CollectCoverage=true -p:CoverletOutputFormat=lcov -p:CoverletOutput=coverage/
       - name: publish code coverage
         uses: paambaati/codeclimate-action@v4.0.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
-          coverageCommand:  ${{github.workspace}}/cc-reporter format-coverage -t lcov --output "coverage/codeclimate.json" ./src/Conekta.net.Test/coverage/coverage.net6.0.info
+          coverageCommand:  ${{github.workspace}}/cc-reporter format-coverage -t lcov --output "${{github.workspace}}/coverage/codeclimate.json" ${{github.workspace}}/src/Conekta.net.Test/coverage/coverage.net6.0.info
           coverageLocations: |
             ${{github.workspace}}/coverage/coverage*.json:json
       - name: remove containers
