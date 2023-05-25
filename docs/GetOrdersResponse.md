@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Data** | [**List&lt;OrderResponse&gt;**](OrderResponse.md) |  | 
-**Object** | **string** | Object type, in this case is list | 
 **HasMore** | **bool** | Indicates if there are more pages to be requested | 
+**Object** | **string** | Object type, in this case is list | 
 **NextPageUrl** | **string** | URL of the next page. | [optional] 
 **PreviousPageUrl** | **string** | Url of the previous page. | [optional] 
 

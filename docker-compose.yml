@@ -17,3 +17,5 @@ services:
    depends_on:
     mockserver:
       condition: service_healthy
+   volumes:
+    - ./:/app
