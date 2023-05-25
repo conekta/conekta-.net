@@ -14,16 +14,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '6.0.x'
+      - uses: actions/setup-node@v2
+      - name: start mockserver
+        run: |
+          npm install -g @mockoon/cli
+          npx mockoon-cli start --data https://raw.githubusercontent.com/conekta/openapi/main/mocks/conekta_api.json --port 3000
+      - name: Execute dotnet
+        run: dotnet build
       - name: Test
-        run: DOCKER_BUILDKIT=1 docker-compose -f docker-compose.yml -p ${{ github.run_id }}  run service dotnet test ./src/Conekta.net.Test/Conekta.net.Test.csproj --no-build -p:CollectCoverage=true -p:CoverletOutputFormat=lcov -p:CoverletOutput=coverage/
+        run: dotnet test ./src/Conekta.net.Test/Conekta.net.Test.csproj --no-build -p:CollectCoverage=true -p:CoverletOutputFormat=lcov -p:CoverletOutput=coverage/
+        env:
+          BASE_PATH: http://localhost:3000
       - name: publish code coverage
         uses: paambaati/codeclimate-action@v4.0.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
-          coverageCommand:  ${{github.workspace}}/cc-reporter format-coverage -t lcov --output "${{github.workspace}}/coverage/codeclimate.json" ${{github.workspace}}/src/Conekta.net.Test/coverage/coverage.net6.0.info
+          #coverageCommand:  ${{github.workspace}}/cc-reporter format-coverage -t lcov --output "coverage/codeclimate.json" src/Conekta.net.Test/coverage/coverage.net6.0.info
           coverageLocations: |
-            ${{github.workspace}}/coverage/coverage*.json:json
-      - name: remove containers
-        if: always()
-        run: docker-compose -f docker-compose.yml -p ${{ github.run_id }} down -v
+            ${{github.workspace}}/src/Conekta.net.Test/coverage/coverage.net6.0.info:lcov
+          debug: true
