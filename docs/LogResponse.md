@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **LoggableType** | **string** |  | [optional] 
 **Method** | **string** |  | [optional] 
 **OauthTokenId** | **string** |  | [optional] 
-**QueryString** | **Dictionary&lt;string, string&gt;** |  | [optional] 
+**QueryString** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **Related** | **string** |  | [optional] 
 **RequestBody** | **Object** |  | [optional] 
 **RequestHeaders** | **Dictionary&lt;string, string&gt;** |  | [optional] 

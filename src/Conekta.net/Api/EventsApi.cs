@@ -84,6 +84,33 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetEventsResponse</returns>
         ApiResponse<GetEventsResponse> GetEventsWithHttpInfo(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
+        /// <summary>
+        /// Resend Event
+        /// </summary>
+        /// <remarks>
+        /// Try to send an event
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="eventId">event identifier</param>
+        /// <param name="webhookLogId">webhook log identifier</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>EventsResendResponse</returns>
+        EventsResendResponse ResendEvent(string eventId, string webhookLogId, string acceptLanguage = default(string), int operationIndex = 0);
+
+        /// <summary>
+        /// Resend Event
+        /// </summary>
+        /// <remarks>
+        /// Try to send an event
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="eventId">event identifier</param>
+        /// <param name="webhookLogId">webhook log identifier</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of EventsResendResponse</returns>
+        ApiResponse<EventsResendResponse> ResendEventWithHttpInfo(string eventId, string webhookLogId, string acceptLanguage = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -157,6 +184,35 @@ namespace Conekta.net.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetEventsResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetEventsResponse>> GetEventsWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Resend Event
+        /// </summary>
+        /// <remarks>
+        /// Try to send an event
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="eventId">event identifier</param>
+        /// <param name="webhookLogId">webhook log identifier</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of EventsResendResponse</returns>
+        System.Threading.Tasks.Task<EventsResendResponse> ResendEventAsync(string eventId, string webhookLogId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Resend Event
+        /// </summary>
+        /// <remarks>
+        /// Try to send an event
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="eventId">event identifier</param>
+        /// <param name="webhookLogId">webhook log identifier</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (EventsResendResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EventsResendResponse>> ResendEventWithHttpInfoAsync(string eventId, string webhookLogId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -658,6 +714,192 @@ namespace Conekta.net.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetEvents", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Resend Event Try to send an event
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="eventId">event identifier</param>
+        /// <param name="webhookLogId">webhook log identifier</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>EventsResendResponse</returns>
+        public EventsResendResponse ResendEvent(string eventId, string webhookLogId, string acceptLanguage = default(string), int operationIndex = 0)
+        {
+            Conekta.net.Client.ApiResponse<EventsResendResponse> localVarResponse = ResendEventWithHttpInfo(eventId, webhookLogId, acceptLanguage);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Resend Event Try to send an event
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="eventId">event identifier</param>
+        /// <param name="webhookLogId">webhook log identifier</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of EventsResendResponse</returns>
+        public Conekta.net.Client.ApiResponse<EventsResendResponse> ResendEventWithHttpInfo(string eventId, string webhookLogId, string acceptLanguage = default(string), int operationIndex = 0)
+        {
+            // verify the required parameter 'eventId' is set
+            if (eventId == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'eventId' when calling EventsApi->ResendEvent");
+            }
+
+            // verify the required parameter 'webhookLogId' is set
+            if (webhookLogId == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'webhookLogId' when calling EventsApi->ResendEvent");
+            }
+
+            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.conekta-v2.1.0+json"
+            };
+
+            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("event_id", Conekta.net.Client.ClientUtils.ParameterToString(eventId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("webhook_log_id", Conekta.net.Client.ClientUtils.ParameterToString(webhookLogId)); // path parameter
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+
+            localVarRequestOptions.Operation = "EventsApi.ResendEvent";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<EventsResendResponse>("/events/{event_id}/webhook_logs/{webhook_log_id}/resend", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ResendEvent", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Resend Event Try to send an event
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="eventId">event identifier</param>
+        /// <param name="webhookLogId">webhook log identifier</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of EventsResendResponse</returns>
+        public async System.Threading.Tasks.Task<EventsResendResponse> ResendEventAsync(string eventId, string webhookLogId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Conekta.net.Client.ApiResponse<EventsResendResponse> localVarResponse = await ResendEventWithHttpInfoAsync(eventId, webhookLogId, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Resend Event Try to send an event
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="eventId">event identifier</param>
+        /// <param name="webhookLogId">webhook log identifier</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (EventsResendResponse)</returns>
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<EventsResendResponse>> ResendEventWithHttpInfoAsync(string eventId, string webhookLogId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'eventId' is set
+            if (eventId == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'eventId' when calling EventsApi->ResendEvent");
+            }
+
+            // verify the required parameter 'webhookLogId' is set
+            if (webhookLogId == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'webhookLogId' when calling EventsApi->ResendEvent");
+            }
+
+
+            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.conekta-v2.1.0+json"
+            };
+
+            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("event_id", Conekta.net.Client.ClientUtils.ParameterToString(eventId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("webhook_log_id", Conekta.net.Client.ClientUtils.ParameterToString(webhookLogId)); // path parameter
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+
+            localVarRequestOptions.Operation = "EventsApi.ResendEvent";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<EventsResendResponse>("/events/{event_id}/webhook_logs/{webhook_log_id}/resend", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ResendEvent", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

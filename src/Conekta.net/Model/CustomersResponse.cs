@@ -41,19 +41,19 @@ namespace Conekta.net.Model
         /// Initializes a new instance of the <see cref="CustomersResponse" /> class.
         /// </summary>
         /// <param name="data">data.</param>
-        /// <param name="_object">Object type, in this case is list (required).</param>
         /// <param name="hasMore">Indicates if there are more pages to be requested (required).</param>
+        /// <param name="_object">Object type, in this case is list (required).</param>
         /// <param name="nextPageUrl">URL of the next page..</param>
         /// <param name="previousPageUrl">Url of the previous page..</param>
-        public CustomersResponse(List<CustomerResponse> data = default(List<CustomerResponse>), string _object = default(string), bool hasMore = default(bool), string nextPageUrl = default(string), string previousPageUrl = default(string))
+        public CustomersResponse(List<CustomerResponse> data = default(List<CustomerResponse>), bool hasMore = default(bool), string _object = default(string), string nextPageUrl = default(string), string previousPageUrl = default(string))
         {
+            this.HasMore = hasMore;
             // to ensure "_object" is required (not null)
             if (_object == null)
             {
                 throw new ArgumentNullException("_object is a required property for CustomersResponse and cannot be null");
             }
             this.Object = _object;
-            this.HasMore = hasMore;
             this.Data = data;
             this.NextPageUrl = nextPageUrl;
             this.PreviousPageUrl = previousPageUrl;
@@ -66,20 +66,20 @@ namespace Conekta.net.Model
         public List<CustomerResponse> Data { get; set; }
 
         /// <summary>
-        /// Object type, in this case is list
-        /// </summary>
-        /// <value>Object type, in this case is list</value>
-        /// <example>&quot;list&quot;</example>
-        [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string Object { get; set; }
-
-        /// <summary>
         /// Indicates if there are more pages to be requested
         /// </summary>
         /// <value>Indicates if there are more pages to be requested</value>
         /// <example>false</example>
         [DataMember(Name = "has_more", IsRequired = true, EmitDefaultValue = true)]
         public bool HasMore { get; set; }
+
+        /// <summary>
+        /// Object type, in this case is list
+        /// </summary>
+        /// <value>Object type, in this case is list</value>
+        /// <example>&quot;list&quot;</example>
+        [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
+        public string Object { get; set; }
 
         /// <summary>
         /// URL of the next page.
@@ -106,8 +106,8 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class CustomersResponse {\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  HasMore: ").Append(HasMore).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  NextPageUrl: ").Append(NextPageUrl).Append("\n");
             sb.Append("  PreviousPageUrl: ").Append(PreviousPageUrl).Append("\n");
             sb.Append("}\n");
@@ -152,13 +152,13 @@ namespace Conekta.net.Model
                     this.Data.SequenceEqual(input.Data)
                 ) && 
                 (
+                    this.HasMore == input.HasMore ||
+                    this.HasMore.Equals(input.HasMore)
+                ) && 
+                (
                     this.Object == input.Object ||
                     (this.Object != null &&
                     this.Object.Equals(input.Object))
-                ) && 
-                (
-                    this.HasMore == input.HasMore ||
-                    this.HasMore.Equals(input.HasMore)
                 ) && 
                 (
                     this.NextPageUrl == input.NextPageUrl ||
@@ -185,11 +185,11 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Data.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.HasMore.GetHashCode();
                 if (this.Object != null)
                 {
                     hashCode = (hashCode * 59) + this.Object.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.HasMore.GetHashCode();
                 if (this.NextPageUrl != null)
                 {
                     hashCode = (hashCode * 59) + this.NextPageUrl.GetHashCode();

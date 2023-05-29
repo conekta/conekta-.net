@@ -35,21 +35,31 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookKeyResponse" /> class.
         /// </summary>
+        /// <param name="id">Unique identifier of the webhook key.</param>
         /// <param name="active">Indicates if the webhook key is active.</param>
         /// <param name="createdAt">Unix timestamp in seconds with the creation date of the webhook key.</param>
         /// <param name="deactivatedAt">Unix timestamp in seconds with the deactivation date of the webhook key.</param>
-        /// <param name="id">Unique identifier of the webhook key.</param>
+        /// <param name="publicKey">Public key to be used in the webhook.</param>
         /// <param name="livemode">Indicates if the webhook key is in live mode.</param>
         /// <param name="_object">Object name, value is webhook_key.</param>
-        public WebhookKeyResponse(bool active = default(bool), long createdAt = default(long), long? deactivatedAt = default(long?), string id = default(string), bool livemode = default(bool), string _object = default(string))
+        public WebhookKeyResponse(string id = default(string), bool active = default(bool), long createdAt = default(long), long? deactivatedAt = default(long?), string publicKey = default(string), bool livemode = default(bool), string _object = default(string))
         {
+            this.Id = id;
             this.Active = active;
             this.CreatedAt = createdAt;
             this.DeactivatedAt = deactivatedAt;
-            this.Id = id;
+            this.PublicKey = publicKey;
             this.Livemode = livemode;
             this.Object = _object;
         }
+
+        /// <summary>
+        /// Unique identifier of the webhook key
+        /// </summary>
+        /// <value>Unique identifier of the webhook key</value>
+        /// <example>&quot;62730ba6fb7dfd6a712f118e&quot;</example>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public string Id { get; set; }
 
         /// <summary>
         /// Indicates if the webhook key is active
@@ -76,12 +86,12 @@ namespace Conekta.net.Model
         public long? DeactivatedAt { get; set; }
 
         /// <summary>
-        /// Unique identifier of the webhook key
+        /// Public key to be used in the webhook
         /// </summary>
-        /// <value>Unique identifier of the webhook key</value>
-        /// <example>&quot;62730ba6fb7dfd6a712f118e&quot;</example>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public string Id { get; set; }
+        /// <value>Public key to be used in the webhook</value>
+        /// <example>&quot;-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqULpUc6D6mSAq5a0yLY/\noOjd1mWm6q+QI8y/FI4STr2F+XgKeNnMxSqnyFrHtKQ/ut4Zi45WFnJLfEQL7aW5\n67yE2dWyo6GaL7yZUfLC0Y3sHPGzaGtvDF36ISW7LliYNoMiA3Bx5/1Sr0G23pGW\n0Mp8IO1Nlz0sJWuU/d7zCz/UN6cl9g/BP4eaQ7deS56YuWcj5sTlwqFTlwN12kpA\nIzMZ7gnvYQnZTpPny5lben6QEuxTvZcPApcyOweiESjMnXfkfWOyuYtgMrbsU6oL\nA6sWa6j0pePW7AYeBqB4tyAlenkCSqzHg8bMk5Bm7hiT6I9Pls774lJbnOYmmuNE\n8QIDAQAB\n-----END PUBLIC KEY-----\n&quot;</example>
+        [DataMember(Name = "public_key", EmitDefaultValue = false)]
+        public string PublicKey { get; set; }
 
         /// <summary>
         /// Indicates if the webhook key is in live mode
@@ -107,10 +117,11 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class WebhookKeyResponse {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Active: ").Append(Active).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  DeactivatedAt: ").Append(DeactivatedAt).Append("\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  PublicKey: ").Append(PublicKey).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
             sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("}\n");
@@ -149,6 +160,11 @@ namespace Conekta.net.Model
             }
             return 
                 (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
                     this.Active == input.Active ||
                     this.Active.Equals(input.Active)
                 ) && 
@@ -162,9 +178,9 @@ namespace Conekta.net.Model
                     this.DeactivatedAt.Equals(input.DeactivatedAt))
                 ) && 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    this.PublicKey == input.PublicKey ||
+                    (this.PublicKey != null &&
+                    this.PublicKey.Equals(input.PublicKey))
                 ) && 
                 (
                     this.Livemode == input.Livemode ||
@@ -186,15 +202,19 @@ namespace Conekta.net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.Active.GetHashCode();
                 hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
                 if (this.DeactivatedAt != null)
                 {
                     hashCode = (hashCode * 59) + this.DeactivatedAt.GetHashCode();
                 }
-                if (this.Id != null)
+                if (this.PublicKey != null)
                 {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                    hashCode = (hashCode * 59) + this.PublicKey.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Livemode.GetHashCode();
                 if (this.Object != null)

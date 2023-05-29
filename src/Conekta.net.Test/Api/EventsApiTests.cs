@@ -81,5 +81,21 @@ namespace Conekta.net.Test.Api
             Assert.Equal("list", response.Object);
             Assert.Equal(20, response.Data.Count);
         }
+
+        /// <summary>
+        /// Test ResendEvent
+        /// </summary>
+        [Fact]
+        public void ResendEventTest()
+        {
+            const String eventId = "6463d6e35a4c3e001819e760";
+            const String webhookLogId = "webhl_2svd2sh6GbqzyWBNZ";
+
+            var response = _instance.ResendEvent(eventId, webhookLogId);
+
+            Assert.IsType<EventsResendResponse>(response);
+            Assert.Equal(webhookLogId, response.Id);
+            Assert.Equal((int)System.Net.HttpStatusCode.MethodNotAllowed, response.LastHttpResponseStatus);
+        }
     }
 }

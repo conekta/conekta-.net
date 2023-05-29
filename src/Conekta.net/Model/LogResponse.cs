@@ -60,7 +60,7 @@ namespace Conekta.net.Model
         /// <param name="url">url.</param>
         /// <param name="userAccountId">userAccountId.</param>
         /// <param name="version">version.</param>
-        public LogResponse(long createdAt = default(long), string id = default(string), string ipAddress = default(string), bool livemode = default(bool), string loggableId = default(string), string loggableType = default(string), string method = default(string), string oauthTokenId = default(string), Dictionary<string, string> queryString = default(Dictionary<string, string>), string related = default(string), Object requestBody = default(Object), Dictionary<string, string> requestHeaders = default(Dictionary<string, string>), Object responseBody = default(Object), Dictionary<string, string> responseHeaders = default(Dictionary<string, string>), List<string> searchableTags = default(List<string>), string status = default(string), string updatedAt = default(string), string url = default(string), string userAccountId = default(string), string version = default(string))
+        public LogResponse(long createdAt = default(long), string id = default(string), string ipAddress = default(string), bool livemode = default(bool), string loggableId = default(string), string loggableType = default(string), string method = default(string), string oauthTokenId = default(string), Dictionary<string, Object> queryString = default(Dictionary<string, Object>), string related = default(string), Object requestBody = default(Object), Dictionary<string, string> requestHeaders = default(Dictionary<string, string>), Object responseBody = default(Object), Dictionary<string, string> responseHeaders = default(Dictionary<string, string>), List<string> searchableTags = default(List<string>), string status = default(string), string updatedAt = default(string), string url = default(string), string userAccountId = default(string), string version = default(string))
         {
             this.CreatedAt = createdAt;
             // to ensure "id" is required (not null)
@@ -148,7 +148,7 @@ namespace Conekta.net.Model
         /// Gets or Sets QueryString
         /// </summary>
         [DataMember(Name = "query_string", EmitDefaultValue = false)]
-        public Dictionary<string, string> QueryString { get; set; }
+        public Dictionary<string, Object> QueryString { get; set; }
 
         /// <summary>
         /// Gets or Sets Related

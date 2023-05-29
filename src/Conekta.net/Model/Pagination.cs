@@ -40,26 +40,18 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Pagination" /> class.
         /// </summary>
-        /// <param name="_object">Object type, in this case is list (required).</param>
         /// <param name="hasMore">Indicates if there are more pages to be requested (required).</param>
-        public Pagination(string _object = default(string), bool hasMore = default(bool))
+        /// <param name="_object">Object type, in this case is list (required).</param>
+        public Pagination(bool hasMore = default(bool), string _object = default(string))
         {
+            this.HasMore = hasMore;
             // to ensure "_object" is required (not null)
             if (_object == null)
             {
                 throw new ArgumentNullException("_object is a required property for Pagination and cannot be null");
             }
             this.Object = _object;
-            this.HasMore = hasMore;
         }
-
-        /// <summary>
-        /// Object type, in this case is list
-        /// </summary>
-        /// <value>Object type, in this case is list</value>
-        /// <example>&quot;list&quot;</example>
-        [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string Object { get; set; }
 
         /// <summary>
         /// Indicates if there are more pages to be requested
@@ -70,6 +62,14 @@ namespace Conekta.net.Model
         public bool HasMore { get; set; }
 
         /// <summary>
+        /// Object type, in this case is list
+        /// </summary>
+        /// <value>Object type, in this case is list</value>
+        /// <example>&quot;list&quot;</example>
+        [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
+        public string Object { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -77,8 +77,8 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class Pagination {\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  HasMore: ").Append(HasMore).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,13 +115,13 @@ namespace Conekta.net.Model
             }
             return 
                 (
+                    this.HasMore == input.HasMore ||
+                    this.HasMore.Equals(input.HasMore)
+                ) && 
+                (
                     this.Object == input.Object ||
                     (this.Object != null &&
                     this.Object.Equals(input.Object))
-                ) && 
-                (
-                    this.HasMore == input.HasMore ||
-                    this.HasMore.Equals(input.HasMore)
                 );
         }
 
@@ -134,11 +134,11 @@ namespace Conekta.net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                hashCode = (hashCode * 59) + this.HasMore.GetHashCode();
                 if (this.Object != null)
                 {
                     hashCode = (hashCode * 59) + this.Object.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.HasMore.GetHashCode();
                 return hashCode;
             }
         }
