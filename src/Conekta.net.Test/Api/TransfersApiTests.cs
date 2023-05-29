@@ -26,7 +26,7 @@ namespace Conekta.net.Test.Api
     /// </remarks>
     public class TransfersApiTests
     {
-        private TransfersApi _instance;
+        private readonly TransfersApi _instance;
 
         public TransfersApiTests()
         {

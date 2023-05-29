@@ -33,7 +33,5 @@ jobs:
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
-          #coverageCommand:  ${{github.workspace}}/cc-reporter format-coverage -t lcov --output "coverage/codeclimate.json" src/Conekta.net.Test/coverage/coverage.net6.0.info
           coverageLocations: |
             ${{github.workspace}}/src/Conekta.net.Test/coverage/coverage.net6.0.info:lcov
-          debug: true
