@@ -30,7 +30,7 @@ namespace Conekta.net.Test.Api
 
         public AntifraudApiTests()
         {
-            Configuration configuration = new()
+            Configuration configuration = new Configuration()
             {
                 BasePath = BaseTest.BasePath,
                 AccessToken = "key_uMxL6X1txuxyzQzJEXt72Aaaaba"
@@ -52,7 +52,7 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void CreateRuleBlacklistTest()
         {
-            CreateRiskRulesData createRiskRulesData = new (
+            CreateRiskRulesData createRiskRulesData = new CreateRiskRulesData (
                     description: "test description",
                     field: "email",
                     value: "fcarrero_black@gmail.com"
@@ -71,7 +71,7 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void CreateRuleWhitelistTest()
         {
-           CreateRiskRulesData createRiskRulesData = new (
+           CreateRiskRulesData createRiskRulesData = new CreateRiskRulesData(
                     description: "test description",
                     field: "email",
                     value: "fcarrero@gmail.com"

@@ -46,13 +46,14 @@ namespace Conekta.net.Model
         /// <param name="customerInfo">customerInfo (required).</param>
         /// <param name="discountLines">List of [discounts](https://developers.conekta.com/v2.1.0/reference/orderscreatediscountline) that are applied to the order. You must have at least one discount..</param>
         /// <param name="lineItems">List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product. (required).</param>
-        /// <param name="metadata">metadata.</param>
+        /// <param name="metadata">Metadata associated with the order.</param>
         /// <param name="needsShippingContact">Allows you to fill out the shipping information at checkout.</param>
         /// <param name="preAuthorize">Indicates whether the order charges must be preauthorized (default to false).</param>
+        /// <param name="processingMode">Indicates the processing mode for the order, either ecommerce, recurrent or validation..</param>
         /// <param name="shippingContact">shippingContact.</param>
         /// <param name="shippingLines">List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshipping). If the online store offers digital products..</param>
         /// <param name="taxLines">List of [taxes](https://developers.conekta.com/v2.1.0/reference/orderscreatetaxes) that are applied to the order..</param>
-        public OrderRequest(List<ChargeRequest> charges = default(List<ChargeRequest>), CheckoutRequest checkout = default(CheckoutRequest), string currency = default(string), OrderRequestCustomerInfo customerInfo = default(OrderRequestCustomerInfo), List<OrderDiscountLinesRequest> discountLines = default(List<OrderDiscountLinesRequest>), List<Product> lineItems = default(List<Product>), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), bool needsShippingContact = default(bool), bool preAuthorize = false, CustomerShippingContacts shippingContact = default(CustomerShippingContacts), List<ShippingRequest> shippingLines = default(List<ShippingRequest>), List<OrderTaxRequest> taxLines = default(List<OrderTaxRequest>))
+        public OrderRequest(List<ChargeRequest> charges = default(List<ChargeRequest>), CheckoutRequest checkout = default(CheckoutRequest), string currency = default(string), OrderRequestCustomerInfo customerInfo = default(OrderRequestCustomerInfo), List<OrderDiscountLinesRequest> discountLines = default(List<OrderDiscountLinesRequest>), List<Product> lineItems = default(List<Product>), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), bool needsShippingContact = default(bool), bool preAuthorize = false, string processingMode = default(string), CustomerShippingContacts shippingContact = default(CustomerShippingContacts), List<ShippingRequest> shippingLines = default(List<ShippingRequest>), List<OrderTaxRequest> taxLines = default(List<OrderTaxRequest>))
         {
             // to ensure "currency" is required (not null)
             if (currency == null)
@@ -78,6 +79,7 @@ namespace Conekta.net.Model
             this.Metadata = metadata;
             this.NeedsShippingContact = needsShippingContact;
             this.PreAuthorize = preAuthorize;
+            this.ProcessingMode = processingMode;
             this.ShippingContact = shippingContact;
             this.ShippingLines = shippingLines;
             this.TaxLines = taxLines;
@@ -125,8 +127,9 @@ namespace Conekta.net.Model
         public List<Product> LineItems { get; set; }
 
         /// <summary>
-        /// Gets or Sets Metadata
+        /// Metadata associated with the order
         /// </summary>
+        /// <value>Metadata associated with the order</value>
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }
 
@@ -144,6 +147,14 @@ namespace Conekta.net.Model
         /// <value>Indicates whether the order charges must be preauthorized</value>
         [DataMember(Name = "pre_authorize", EmitDefaultValue = true)]
         public bool PreAuthorize { get; set; }
+
+        /// <summary>
+        /// Indicates the processing mode for the order, either ecommerce, recurrent or validation.
+        /// </summary>
+        /// <value>Indicates the processing mode for the order, either ecommerce, recurrent or validation.</value>
+        /// <example>&quot;ecommerce&quot;</example>
+        [DataMember(Name = "processing_mode", EmitDefaultValue = false)]
+        public string ProcessingMode { get; set; }
 
         /// <summary>
         /// Gets or Sets ShippingContact
@@ -182,6 +193,7 @@ namespace Conekta.net.Model
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  NeedsShippingContact: ").Append(NeedsShippingContact).Append("\n");
             sb.Append("  PreAuthorize: ").Append(PreAuthorize).Append("\n");
+            sb.Append("  ProcessingMode: ").Append(ProcessingMode).Append("\n");
             sb.Append("  ShippingContact: ").Append(ShippingContact).Append("\n");
             sb.Append("  ShippingLines: ").Append(ShippingLines).Append("\n");
             sb.Append("  TaxLines: ").Append(TaxLines).Append("\n");
@@ -268,6 +280,11 @@ namespace Conekta.net.Model
                     this.PreAuthorize.Equals(input.PreAuthorize)
                 ) && 
                 (
+                    this.ProcessingMode == input.ProcessingMode ||
+                    (this.ProcessingMode != null &&
+                    this.ProcessingMode.Equals(input.ProcessingMode))
+                ) && 
+                (
                     this.ShippingContact == input.ShippingContact ||
                     (this.ShippingContact != null &&
                     this.ShippingContact.Equals(input.ShippingContact))
@@ -325,6 +342,10 @@ namespace Conekta.net.Model
                 }
                 hashCode = (hashCode * 59) + this.NeedsShippingContact.GetHashCode();
                 hashCode = (hashCode * 59) + this.PreAuthorize.GetHashCode();
+                if (this.ProcessingMode != null)
+                {
+                    hashCode = (hashCode * 59) + this.ProcessingMode.GetHashCode();
+                }
                 if (this.ShippingContact != null)
                 {
                     hashCode = (hashCode * 59) + this.ShippingContact.GetHashCode();

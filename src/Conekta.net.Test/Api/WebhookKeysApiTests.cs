@@ -29,7 +29,7 @@ namespace Conekta.net.Test.Api
 
         public WebhookKeysApiTests()
         {
-            Configuration configuration = new()
+            Configuration configuration = new Configuration()
             {
                 BasePath = BaseTest.BasePath,
                 AccessToken = "key_uMxL6X1txuxyzQzJEXt72Aaaa"
@@ -52,7 +52,7 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void CreateWebhookKeyTest()
         {
-            WebhookKeyRequest webhookKeyRequest = new();
+            WebhookKeyRequest webhookKeyRequest = new WebhookKeyRequest();
             var response = _instance.CreateWebhookKey( webhookKeyRequest: webhookKeyRequest);
             
             Assert.IsType<WebhookKeyCreateResponse>(response);
@@ -129,7 +129,7 @@ namespace Conekta.net.Test.Api
         public void UpdateWebhookKeyTest()
         {
             const string id = "645a613622e7da0001cad882";
-            WebhookKeyUpdateRequest request = new();
+            WebhookKeyUpdateRequest request = new WebhookKeyUpdateRequest();
             
             var response = _instance.UpdateWebhookKey(id :id,  webhookKeyUpdateRequest: request);
             

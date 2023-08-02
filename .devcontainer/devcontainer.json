@@ -20,7 +20,9 @@
 	// "postCreateCommand": "cat /etc/os-release",
 	// Configure tool-specific properties.
 	,
-
+	"containerEnv": {
+		"BASE_PATH" : "http://host.docker.internal:3000"
+	},
 	"customizations": {
 		"vscode": {
 			"extensions": [

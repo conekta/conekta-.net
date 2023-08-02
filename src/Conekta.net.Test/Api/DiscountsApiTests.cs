@@ -29,7 +29,7 @@ namespace Conekta.net.Test.Api
 
         public DiscountsApiTests()
         {
-            Configuration configuration = new()
+            Configuration configuration = new Configuration()
             {
                 BasePath = BaseTest.BasePath,
                 AccessToken = "key_uMxL6X1txuxyzQzJEXt72Aaaa"
@@ -53,7 +53,7 @@ namespace Conekta.net.Test.Api
         public void OrdersCreateDiscountLineTest()
         {
             string id = "ord_2tVyWPnCPWbrV37mW";
-            OrderDiscountLinesRequest orderDiscountLinesRequest = new(
+            OrderDiscountLinesRequest orderDiscountLinesRequest = new OrderDiscountLinesRequest(
                 amount: 500,
                 code: "track",
                 type: "loyalty"
@@ -76,7 +76,7 @@ namespace Conekta.net.Test.Api
         {
             string id = "ord_2tVyWPnCPWbrV37mW";
             string discountLinesId = "dis_lin_2tVyahK8Nts7rKRMZ";
-            UpdateOrderDiscountLinesRequest orderDiscountLinesRequest = new(
+            UpdateOrderDiscountLinesRequest orderDiscountLinesRequest = new UpdateOrderDiscountLinesRequest(
                 amount: 100
             );
 

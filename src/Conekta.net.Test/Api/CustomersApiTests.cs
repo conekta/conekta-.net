@@ -31,7 +31,7 @@ namespace Conekta.net.Test.Api
 
         public CustomersApiTests()
         {
-            Configuration configuration = new()
+            Configuration configuration = new Configuration()
             {
                 BasePath = BaseTest.BasePath,
                 AccessToken = "key_uMxL6X1txuxyzQzJEXt72A"
@@ -72,7 +72,7 @@ namespace Conekta.net.Test.Api
         public void CreateCustomerFiscalEntitiesTest()
         {
             string id = "cus_2tXyF9BwPG14UMkkg";
-            CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest = new(
+            CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest = new CustomerFiscalEntitiesRequest(
                 address: new CustomerFiscalEntitiesRequestAddress(
                     street1: "av siem",
                     city: "mexico",
@@ -221,7 +221,7 @@ namespace Conekta.net.Test.Api
         public void UpdateCustomerTest()
         {
             string id = "cus_2tYENskzTjjgkGQLt";
-            UpdateCustomer updateCustomer = new(
+            UpdateCustomer updateCustomer = new UpdateCustomer(
                 email: "dotnet@test.com"
             );
 
@@ -240,7 +240,7 @@ namespace Conekta.net.Test.Api
         {
             string id = "cus_2tYENskzTjjgkGQLt";
             string fiscalEntitiesId = "fis_ent_2tYENskzTjjgkGQLr";
-            CustomerUpdateFiscalEntitiesRequest customerFiscalEntitiesRequest = new(
+            CustomerUpdateFiscalEntitiesRequest customerFiscalEntitiesRequest = new CustomerUpdateFiscalEntitiesRequest(
                 taxId: "tax_28764234"
             );
             var response = _instance.UpdateCustomerFiscalEntities(id, fiscalEntitiesId, customerFiscalEntitiesRequest);
@@ -280,7 +280,7 @@ namespace Conekta.net.Test.Api
                     new PaymentMethodCardRequest("card", "tok_2tXyExrU6U7yiaTto")
                 )
             };
-            List<CustomerShippingContacts> shippingContacts = new()
+            List<CustomerShippingContacts> shippingContacts = new List<CustomerShippingContacts>()
             {
                 new CustomerShippingContacts(
                     address: new CustomerShippingContactsAddress(
@@ -291,12 +291,12 @@ namespace Conekta.net.Test.Api
                     phone: "+54874122144"
                 )
             };
-            SubscriptionRequest subscription = new(
+            SubscriptionRequest subscription = new SubscriptionRequest(
                 planId: "plan_2tXx672QLQ68CkmMn",
                 cardId: "card_2tXyExrU6U7yiaTto",
                 trialEnd: 1679321468
             );
-            Customer customer = new(
+            Customer customer = new Customer(
                 name: "test dot",
                 phone: "+573143159063",
                 email: "test@conekta.com",

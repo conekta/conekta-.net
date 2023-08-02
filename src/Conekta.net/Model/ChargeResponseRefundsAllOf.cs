@@ -35,15 +35,16 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ChargeResponseRefundsAllOf" /> class.
         /// </summary>
-        /// <param name="data">data.</param>
+        /// <param name="data">refunds.</param>
         public ChargeResponseRefundsAllOf(List<ChargeResponseRefundsData> data = default(List<ChargeResponseRefundsData>))
         {
             this.Data = data;
         }
 
         /// <summary>
-        /// Gets or Sets Data
+        /// refunds
         /// </summary>
+        /// <value>refunds</value>
         [DataMember(Name = "data", EmitDefaultValue = false)]
         public List<ChargeResponseRefundsData> Data { get; set; }
 

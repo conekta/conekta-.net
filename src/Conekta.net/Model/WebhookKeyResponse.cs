@@ -81,7 +81,6 @@ namespace Conekta.net.Model
         /// Unix timestamp in seconds with the deactivation date of the webhook key
         /// </summary>
         /// <value>Unix timestamp in seconds with the deactivation date of the webhook key</value>
-        /// <example>1577836800</example>
         [DataMember(Name = "deactivated_at", EmitDefaultValue = true)]
         public long? DeactivatedAt { get; set; }
 

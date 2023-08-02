@@ -36,7 +36,7 @@ namespace Conekta.net.Test.Api
 
         public ProductsApiTests()
         {
-            Configuration configuration = new()
+            Configuration configuration = new Configuration()
             {
                 BasePath = BaseTest.BasePath,
                 AccessToken = "key_uMxL6X1txuxyzQzJEXt72Aaaa"
@@ -60,7 +60,7 @@ namespace Conekta.net.Test.Api
         public void OrdersCreateProductTest()
         {
             string id = "ord_2tVyWPnCPWbrV37mW";
-            Product product = new(
+            Product product = new Product(
                 description: "Mes de marz.",
                 name: "Pago Mensualidad test",
                 quantity: 1,
@@ -83,7 +83,7 @@ namespace Conekta.net.Test.Api
         {
             string id = "ord_2tVyWPnCPWbrV37mW";
             string productId = "line_item_2tVz8UkyWhSxLfUd7";
-            UpdateProduct product = new(
+            UpdateProduct product = new UpdateProduct(
                 description: "Pago Mensualidad"
             );
 

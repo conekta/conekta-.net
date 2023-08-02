@@ -10,6 +10,30 @@ on:
   pull_request:
     branches: [ main, master ]
 jobs:
+  dotnet-framework-test:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup MSBuild path
+        uses: microsoft/setup-msbuild@v1.0.2
+      
+      - name: Run Mockoon CLI
+        uses: mockoon/cli-action@v1
+        with:
+          version: 'latest'
+          data-file: 'https://raw.githubusercontent.com/conekta/openapi/20230801/mocks/conekta_api.json'
+          port: 3001
+
+      - name: Execute dotnet
+        run: dotnet build
+
+      - name: Build and run tests for .NET Framework
+        run: dotnet test ./src/Conekta.net.Test/Conekta.net.Test.csproj --no-build -f net47
+        env:
+          BASE_PATH: http://localhost:3001
+      
   test:
     runs-on: ubuntu-latest
     steps:
@@ -17,15 +41,16 @@ jobs:
       - uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '6.0.x'
-      - uses: actions/setup-node@v2
-      - name: start mockserver
-        run: |
-          npm install -g @mockoon/cli
-          npx mockoon-cli start --data https://raw.githubusercontent.com/conekta/openapi/main/mocks/conekta_api.json --port 3000
+      - name: Run Mockoon CLI
+        uses: mockoon/cli-action@v1
+        with:
+          version: 'latest'
+          data-file: 'https://raw.githubusercontent.com/conekta/openapi/20230801/mocks/conekta_api.json'
+          port: 3000
       - name: Execute dotnet
         run: dotnet build
       - name: Test
-        run: dotnet test ./src/Conekta.net.Test/Conekta.net.Test.csproj --no-build -p:CollectCoverage=true -p:CoverletOutputFormat=lcov -p:CoverletOutput=coverage/
+        run: dotnet test ./src/Conekta.net.Test/Conekta.net.Test.csproj --no-build -p:CollectCoverage=true -p:CoverletOutputFormat=lcov -p:CoverletOutput=coverage/ -f net6.0
         env:
           BASE_PATH: http://localhost:3000
       - name: publish code coverage

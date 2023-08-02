@@ -37,7 +37,7 @@ namespace Conekta.net.Test.Api
 
         public TaxesApiTests()
         {
-            Configuration configuration = new()
+            Configuration configuration = new Configuration()
             {
                 BasePath = BaseTest.BasePath,
                 AccessToken = "key_uMxL6X1txuxyzQzJEXt72Aaaa"
@@ -62,7 +62,7 @@ namespace Conekta.net.Test.Api
         public void OrdersCreateTaxTest()
         {
             string id = "ord_2tVyWPnCPWbrV37mW";
-            OrderTaxRequest orderTaxRequest = new(
+            OrderTaxRequest orderTaxRequest = new OrderTaxRequest(
                 amount: 100,
                 description: "test",
                 metadata: new Dictionary<string, Object> { { "key", "value" } }
@@ -84,7 +84,7 @@ namespace Conekta.net.Test.Api
         {
             string id = "ord_2tVyWPnCPWbrV37mW";
             string taxId = "tax_lin_2tVzVp6AAptCRHhgt";
-            UpdateOrderTaxRequest updateOrderTaxRequest = new(
+            UpdateOrderTaxRequest updateOrderTaxRequest = new UpdateOrderTaxRequest(
                 amount: 99
                 );
 

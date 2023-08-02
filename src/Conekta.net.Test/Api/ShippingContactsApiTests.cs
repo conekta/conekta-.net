@@ -36,7 +36,7 @@ namespace Conekta.net.Test.Api
 
         public ShippingContactsApiTests()
         {
-            Configuration configuration = new()
+            Configuration configuration = new Configuration()
             {
                 BasePath = BaseTest.BasePath,
                 AccessToken = "key_uMxL6X1txuxyzQzJEXt72A"
@@ -63,7 +63,7 @@ namespace Conekta.net.Test.Api
         {
             string id = "cus_2tXyF9BwPG14UMkkg";
             CustomerShippingContacts customerShippingContacts =
-                new(
+                new CustomerShippingContacts(
                     address: new CustomerShippingContactsAddress(
                         street1: "av siem",
                         city: "mexico",
@@ -91,7 +91,7 @@ namespace Conekta.net.Test.Api
         {
             string id = "cus_2tZWxbTPtQgGJGh8P";
             string shippingContactsId = "ship_cont_2tZWzJPBf87C6TcoQ";
-            CustomerUpdateShippingContacts customerShippingContacts = new(
+            CustomerUpdateShippingContacts customerShippingContacts = new CustomerUpdateShippingContacts(
                 phone: "3143145050"
             );
 
