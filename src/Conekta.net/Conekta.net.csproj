@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo><!-- setting GenerateAssemblyInfo to false causes this bug https://github.com/dotnet/project-system/issues/3934 -->
-    <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net6.0;net47</TargetFrameworks>
     <AssemblyName>Conekta.net</AssemblyName>
     <PackageId>Conekta.net</PackageId>
     <OutputType>Library</OutputType>
@@ -12,7 +12,7 @@
     <Description>This is a .net library that allows interaction with https://api.conekta.io API.</Description>
     <Copyright>Conekta</Copyright>
     <RootNamespace>Conekta.net</RootNamespace>
-    <Version>6.0.4</Version>
+    <Version>6.0.5</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Conekta.net.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/conekta/conekta-.net.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

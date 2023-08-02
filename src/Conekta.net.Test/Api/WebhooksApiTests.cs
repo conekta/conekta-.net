@@ -29,7 +29,7 @@ namespace Conekta.net.Test.Api
 
         public WebhooksApiTests()
         {
-            Configuration configuration = new()
+            Configuration configuration = new Configuration()
             {
                 BasePath = BaseTest.BasePath,
                 AccessToken = "key_uMxL6X1txuxyzQzJEXt72Aaaa"
@@ -52,7 +52,7 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void CreateWebhookTest()
         {
-            WebhookRequest webhookRequest = new("https://webhook.site/0b8c9fa8-92c3-4a04-beea-a7ec037f6466", false);
+            WebhookRequest webhookRequest = new WebhookRequest("https://webhook.site/0b8c9fa8-92c3-4a04-beea-a7ec037f6466", false);
 
             var response = _instance.CreateWebhook(webhookRequest);
 
@@ -118,7 +118,7 @@ namespace Conekta.net.Test.Api
         public void UpdateWebhookTest()
         {
             string id = "641b1d5662d7e00001eaa46b";
-            WebhookUpdateRequest webhookRequest = new("https://updated.webhook.site/0b8c9fa8-92c3-4a04-beea-a7ec037f6466", false);
+            WebhookUpdateRequest webhookRequest = new WebhookUpdateRequest("https://updated.webhook.site/0b8c9fa8-92c3-4a04-beea-a7ec037f6466", false);
 
             var response = _instance.UpdateWebhook(id, webhookRequest);
 

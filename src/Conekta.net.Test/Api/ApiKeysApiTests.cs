@@ -29,7 +29,7 @@ namespace Conekta.net.Test.Api
 
         public ApiKeysApiTests()
         {
-            Configuration configuration = new()
+            Configuration configuration = new Configuration()
             {
                 BasePath = BaseTest.BasePath,
                 AccessToken = "key_uMxL6X1txuxyzQzJEXt72Aaaa"
@@ -52,7 +52,7 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void CreateApiKeyTest()
         {
-            var apiKeyRequest = new ApiKeyRequest(true, "test", "private");
+            var apiKeyRequest = new ApiKeyRequest("test", "private");
 
             var response = _instance.CreateApiKey(apiKeyRequest, "es");
 
@@ -117,7 +117,7 @@ namespace Conekta.net.Test.Api
         public void UpdateApiKeyTest()
         {
             const string id = "64625cc9f3e02c00163f5e4d";
-            ApiKeyUpdateRequest apiKeyUpdateRequest = new()
+            ApiKeyUpdateRequest apiKeyUpdateRequest = new ApiKeyUpdateRequest()
             {
                 Description = "online store"
             };

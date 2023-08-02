@@ -29,7 +29,7 @@ namespace Conekta.net.Test.Api
 
         public PaymentMethodsApiTests()
         {
-            Configuration configuration = new()
+            Configuration configuration = new Configuration()
             {
                 BasePath = BaseTest.BasePath,
                 AccessToken = "key_uMxL6X1txuxyzQzJEXt72A"
@@ -53,7 +53,7 @@ namespace Conekta.net.Test.Api
         public void CreateCustomerPaymentMethodsTest()
         {
             string id = "cus_2tXyF9BwPG14UMkkg";
-            CreateCustomerPaymentMethodsRequest createCustomerPaymentMethodRequest = new(
+            CreateCustomerPaymentMethodsRequest createCustomerPaymentMethodRequest = new CreateCustomerPaymentMethodsRequest(
                 new PaymentMethodCashRequest("oxxo_recurrent")
             );
             var response = _instance.CreateCustomerPaymentMethods(id, createCustomerPaymentMethodRequest);
@@ -89,7 +89,7 @@ namespace Conekta.net.Test.Api
         {
             string id = "cus_2tZWxbTPtQgGJGh8P";
             string paymentId = "src_2tZWxbTPtQgGJGh8R";
-            UpdatePaymentMethods updatePaymentMethods = new(
+            UpdatePaymentMethods updatePaymentMethods = new UpdatePaymentMethods( 
                name: "name of person"
             );
             var response = _instance.UpdateCustomerPaymentMethods(id, paymentId, updatePaymentMethods);

@@ -74,7 +74,7 @@ namespace Conekta.net.Test.Api
         {
             DateTime currentTime = DateTime.UtcNow.AddDays(200);
             long expiresAt = ((DateTimeOffset)currentTime).ToUnixTimeSeconds();
-            Checkout checkout = new(
+            Checkout checkout = new Checkout(
                 allowedPaymentMethods: new List<string>() { "card", "cash", "bank_transfer" },
                 type: "PaymentLink",
                 name: "Payment Link Name netcore sdk",
@@ -101,7 +101,7 @@ namespace Conekta.net.Test.Api
             DateTime currentTime = DateTime.UtcNow.AddDays(200);
             long expiresAt = ((DateTimeOffset)currentTime).ToUnixTimeSeconds();
             var customerInfo = new CheckoutOrderTemplateCustomerInfo(new CustomerInfo("steven","steven@gmail.com","5555555555")); 
-            Checkout checkout = new(
+            Checkout checkout = new Checkout(
                 allowedPaymentMethods: new List<string>() { "card", "cash", "bank_transfer" },
                 type: "PaymentLink",
                 name: "Payment Link Name netcore sdk",
@@ -127,7 +127,7 @@ namespace Conekta.net.Test.Api
         public void EmailCheckoutTest()
         {
             string id = "102bdf5c-3ee6-48ec-a9ff-40ec6f5f054b";
-            EmailCheckoutRequest emailCheckoutRequest = new("example@conekta.com");
+            EmailCheckoutRequest emailCheckoutRequest = new EmailCheckoutRequest("example@conekta.com");
 
             var response = _instance.EmailCheckout(id, emailCheckoutRequest);
 
@@ -179,7 +179,7 @@ namespace Conekta.net.Test.Api
         public void SmsCheckoutTest()
         {
             string id = "ce1076bb-5ee6-4d08-a0e2-ec0bfbc49883";
-            SmsCheckoutRequest smsCheckoutRequest = new("5566982090");
+            SmsCheckoutRequest smsCheckoutRequest = new SmsCheckoutRequest("5566982090");
 
             var response = _instance.SmsCheckout(id, smsCheckoutRequest);
 

@@ -29,7 +29,7 @@ namespace Conekta.net.Test.Api
 
         public SubscriptionsApiTests()
         {
-            Configuration configuration = new()
+            Configuration configuration = new Configuration()
             {
                 BasePath = BaseTest.BasePath,
                 AccessToken = "key_uMxL6X1txuxyzQzJEXt72Aaaa"
@@ -70,7 +70,7 @@ namespace Conekta.net.Test.Api
         public void CreateSubscriptionTest()
         {
             string customerId = "cus_2tXx8KUxw6311kEbs";
-            SubscriptionRequest subscriptionRequest = new(
+            SubscriptionRequest subscriptionRequest = new SubscriptionRequest(
                 planId: "contracargos-plan"
             );
             
@@ -136,7 +136,7 @@ namespace Conekta.net.Test.Api
         public void UpdateSubscriptionTest()
         {
             string customerId = "cus_2tZWxbTPtQgGJGh8P";
-            SubscriptionUpdateRequest subscriptionRequest = new(
+            SubscriptionUpdateRequest subscriptionRequest = new SubscriptionUpdateRequest(
                 trialEnd: 1679752328
             );
 

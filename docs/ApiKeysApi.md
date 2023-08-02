@@ -106,6 +106,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | successful operation |  * Content-Type - The format of the response body <br>  * Conekta-Media-Type -  <br>  |
 | **401** | authentication error |  -  |
+| **422** | parameter validation error |  -  |
 | **500** | internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -312,7 +313,7 @@ catch (ApiException e)
 
 <a id="getapikeys"></a>
 # **GetApiKeys**
-> GetApiKeysResponse GetApiKeys (string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string search = null, string next = null, string previous = null)
+> GetApiKeysResponse GetApiKeys (string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string next = null, string previous = null, string search = null)
 
 Get list of Api Keys
 
@@ -341,14 +342,14 @@ namespace Example
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
             var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
             var limit = 20;  // int? | The numbers of items to return, the maximum value is 250 (optional)  (default to 20)
-            var search = "search_example";  // string | General order search, e.g. by mail, reference etc. (optional) 
             var next = "next_example";  // string | next page (optional) 
             var previous = "previous_example";  // string | previous page (optional) 
+            var search = "search_example";  // string | General search, e.g. by id, description, prefix (optional) 
 
             try
             {
                 // Get list of Api Keys
-                GetApiKeysResponse result = apiInstance.GetApiKeys(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+                GetApiKeysResponse result = apiInstance.GetApiKeys(acceptLanguage, xChildCompanyId, limit, next, previous, search);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -369,7 +370,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get list of Api Keys
-    ApiResponse<GetApiKeysResponse> response = apiInstance.GetApiKeysWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+    ApiResponse<GetApiKeysResponse> response = apiInstance.GetApiKeysWithHttpInfo(acceptLanguage, xChildCompanyId, limit, next, previous, search);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -389,9 +390,9 @@ catch (ApiException e)
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 | **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 | **limit** | **int?** | The numbers of items to return, the maximum value is 250 | [optional] [default to 20] |
-| **search** | **string** | General order search, e.g. by mail, reference etc. | [optional]  |
 | **next** | **string** | next page | [optional]  |
 | **previous** | **string** | previous page | [optional]  |
+| **search** | **string** | General search, e.g. by id, description, prefix | [optional]  |
 
 ### Return type
 

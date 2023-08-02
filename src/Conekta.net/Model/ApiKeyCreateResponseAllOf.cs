@@ -35,16 +35,16 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiKeyCreateResponseAllOf" /> class.
         /// </summary>
-        /// <param name="authenticationToken">It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key.</param>
+        /// <param name="authenticationToken">It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place..</param>
         public ApiKeyCreateResponseAllOf(string authenticationToken = default(string))
         {
             this.AuthenticationToken = authenticationToken;
         }
 
         /// <summary>
-        /// It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key
+        /// It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place.
         /// </summary>
-        /// <value>It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key</value>
+        /// <value>It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place.</value>
         /// <example>&quot;key_rpHzxufNgjFCdprEEFZRTKi&quot;</example>
         [DataMember(Name = "authentication_token", EmitDefaultValue = false)]
         public string AuthenticationToken { get; set; }

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Type** | **string** |  | 
 **TokenId** | **string** |  | [optional] 
 **PaymentSourceId** | **string** |  | [optional] 
+**ContractId** | **string** | Optional id sent to indicate the bank contract for recurrent card charges. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

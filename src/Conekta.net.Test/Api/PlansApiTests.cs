@@ -30,7 +30,7 @@ namespace Conekta.net.Test.Api
 
         public PlansApiTests()
         {
-            Configuration configuration = new()
+            Configuration configuration = new Configuration()
             {
                 BasePath = BaseTest.BasePath,
                 AccessToken = "key_uMxL6X1txuxyzQzJEXt72Aaaa"
@@ -54,7 +54,7 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void CreatePlanTest()
         {
-            PlanRequest planRequest = new(
+            PlanRequest planRequest = new PlanRequest(
                 name: "Gold Plan",
                 amount: 10000,
                 currency: "MXN",
@@ -118,7 +118,7 @@ namespace Conekta.net.Test.Api
         public void UpdatePlanTest()
         {
             string id = "plan_2tZb5q8Z3PYpg6SJd";
-            PlanUpdateRequest planUpdateRequest = new(
+            PlanUpdateRequest planUpdateRequest = new PlanUpdateRequest(
                name: "updated name"
             );
 

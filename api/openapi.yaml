@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   contact:
     email: engineering@conekta.com
-    name: Api support client
+    name: Engineering Conekta
     url: https://github.com/conekta/openapi/issues
   description: Conekta sdk
   license:
@@ -547,12 +547,6 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
-      - description: "General order search, e.g. by mail, reference etc."
-        in: query
-        name: search
-        required: false
-        schema:
-          type: string
       - description: next page
         in: query
         name: next
@@ -562,6 +556,12 @@ paths:
       - description: previous page
         in: query
         name: previous
+        required: false
+        schema:
+          type: string
+      - description: "General search, e.g. by id, description, prefix"
+        in: query
+        name: search
         required: false
         schema:
           type: string
@@ -680,6 +680,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
+        "422":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -841,7 +856,7 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/api-key_response'
+                $ref: '#/components/schemas/api_key_response'
           description: successful
           headers:
             Content-Type:
@@ -943,7 +958,7 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/api-key_response'
+                $ref: '#/components/schemas/api_key_response'
           description: successful operation
         "404":
           content:
@@ -997,6 +1012,96 @@ paths:
       summary: Update Api Key
       tags:
       - Api Keys
+  /balances:
+    get:
+      description: Get a company's balance
+      operationId: getBalance
+      parameters:
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/balance_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.1.0; format=application/json
+                type: string
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get a company's balance
+      tags:
+      - Balances
   /charges:
     get:
       operationId: getCharges
@@ -2276,6 +2381,113 @@ paths:
       tags:
       - Customers
   /orders/{id}/discount_lines:
+    get:
+      description: Get discount lines for an existing orden
+      operationId: ordersGetDiscountLines
+      parameters:
+      - description: Identifier of the resource
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+      - description: "The numbers of items to return, the maximum value is 250"
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 20
+          format: int32
+          maximum: 250
+          minimum: 1
+          type: integer
+      - description: "General order search, e.g. by mail, reference etc."
+        in: query
+        name: search
+        required: false
+        schema:
+          type: string
+      - description: next page
+        in: query
+        name: next
+        required: false
+        schema:
+          type: string
+      - description: previous page
+        in: query
+        name: previous
+        required: false
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/get_order_discount_lines_response'
+          description: successful
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get a List of Discount
+      tags:
+      - Discounts
     post:
       description: Create discount lines for an existing orden
       operationId: ordersCreateDiscountLine
@@ -2385,7 +2597,7 @@ paths:
         required: true
         schema:
           type: string
-      - description: identifier
+      - description: discount line id identifier
         example: dis_lin_2tQ974hSHcsdeSZHG
         in: path
         name: discount_lines_id
@@ -2491,6 +2703,123 @@ paths:
       summary: Delete Discount
       tags:
       - Discounts
+    get:
+      description: Get an existing discount lines for an existing orden
+      operationId: ordersGetDiscountLine
+      parameters:
+      - description: Identifier of the resource
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: discount line id identifier
+        example: dis_lin_2tQ974hSHcsdeSZHG
+        in: path
+        name: discount_lines_id
+        required: true
+        schema:
+          type: string
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/discount_lines_response'
+          description: successful
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
+        "422":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: parameter validation error
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get Discount
+      tags:
+      - Discounts
     put:
       description: Update an existing discount lines for an existing orden
       operationId: ordersUpdateDiscountLines
@@ -2502,7 +2831,7 @@ paths:
         required: true
         schema:
           type: string
-      - description: identifier
+      - description: discount line id identifier
         example: dis_lin_2tQ974hSHcsdeSZHG
         in: path
         name: discount_lines_id
@@ -6656,6 +6985,23 @@ paths:
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
+        "428":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: The order cannot be modified because it has already
+                    a charge which is pending payment.
+                  message: The order cannot be modified because it has already a charge
+                    which is pending payment.
+                  param: null
+                  code: conekta.errors.precondition_required.combo.order.cannot_be_updated_because_has_charge
+                log_id: 641b6e233cd9a50001515039
+                object: error
+                type: precondition_required_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Precondition Required
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -10509,13 +10855,6 @@ components:
         maximum: 250
         minimum: 1
         type: integer
-    search:
-      description: "General order search, e.g. by mail, reference etc."
-      in: query
-      name: search
-      required: false
-      schema:
-        type: string
     next_page:
       description: next page
       in: query
@@ -10530,6 +10869,13 @@ components:
       required: false
       schema:
         type: string
+    search:
+      description: "General order search, e.g. by mail, reference etc."
+      in: query
+      name: search
+      required: false
+      schema:
+        type: string
     fiscal_entities_id:
       description: identifier
       example: fis_ent_2tQ8HkkfbauaKP9Ho
@@ -10539,7 +10885,7 @@ components:
       schema:
         type: string
     discount_lines_id:
-      description: identifier
+      description: discount line id identifier
       example: dis_lin_2tQ974hSHcsdeSZHG
       in: path
       name: discount_lines_id
@@ -10615,7 +10961,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/api-key_request'
+            $ref: '#/components/schemas/api_key_request'
       description: requested field for a api keys
       required: true
     charge_create:
@@ -10908,6 +11254,21 @@ components:
           schema:
             $ref: '#/components/schemas/error'
       description: not found entity
+    "422":
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          example:
+            details:
+            - message: The token does not exist.
+              param: payment_method.token_id
+              code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+              debug_message: The token does not exist.
+            log_id: 641b6d813cd9a50001515017
+            object: error
+            type: parameter_validation_error
+          schema:
+            $ref: '#/components/schemas/error'
+      description: parameter validation error
     "422_whitelist":
       content:
         application/vnd.conekta-v2.1.0+json:
@@ -10953,21 +11314,6 @@ components:
           schema:
             $ref: '#/components/schemas/error'
       description: payment required error
-    "422":
-      content:
-        application/vnd.conekta-v2.1.0+json:
-          example:
-            details:
-            - message: The token does not exist.
-              param: payment_method.token_id
-              code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
-              debug_message: The token does not exist.
-            log_id: 641b6d813cd9a50001515017
-            object: error
-            type: parameter_validation_error
-          schema:
-            $ref: '#/components/schemas/error'
-      description: parameter validation error
   schemas:
     risk_rules_list:
       allOf:
@@ -10984,7 +11330,7 @@ components:
       properties:
         description:
           description: Description of the rule
-          example: this client's email was verified at 20/09/22 by internal process
+          example: this client email was verified at 20/09/22 by internal process
           type: string
         field:
           description: Field to be used for the rule
@@ -11030,7 +11376,7 @@ components:
       - object
       title: pagination metadata
       type: object
-    api-key_response:
+    api_key_response:
       description: api keys model
       properties:
         active:
@@ -11038,13 +11384,23 @@ components:
           example: true
           type: boolean
         created_at:
-          description: Unix timestamp in seconds with the creation date of the api
-            key
+          description: Unix timestamp in seconds of when the api key was created
           example: 1684167881
           format: int64
           type: integer
+        updated_at:
+          description: Unix timestamp in seconds of when the api key was last updated
+          example: 1684167923
+          format: int64
+          type: integer
+        deactivated_at:
+          description: Unix timestamp in seconds of when the api key was deleted
+          format: int64
+          nullable: true
+          type: integer
+          example: null
         description:
-          description: Detail of the use that will be given to the api key
+          description: A name or brief explanation of what this api key is used for
           example: online store
           type: string
         id:
@@ -11052,11 +11408,15 @@ components:
           example: 64625cc9f3e02c00163f5e4d
           type: string
         livemode:
-          description: Indicates if the api key is in live mode
+          description: Indicates if the api key is in production
+          example: false
+          type: boolean
+        deleted:
+          description: Indicates if the api key was deleted
           example: false
           type: boolean
         object:
-          description: "Object name, value is api_key"
+          description: "Object name, value is 'api_key'"
           example: api_key
           type: string
         prefix:
@@ -11064,10 +11424,105 @@ components:
           example: key_rp
           type: string
         role:
-          description: Indicates the user account private=owner or public=public
+          description: Indicates if the api key is private or public
           example: private
           type: string
       title: api_key_response
+      type: object
+    api_key_response_on_delete:
+      description: api keys model
+      properties:
+        active:
+          description: Indicates if the api key is active
+          example: true
+          type: boolean
+        created_at:
+          description: Unix timestamp in seconds of when the api key was created
+          example: 1684167881
+          format: int64
+          type: integer
+        description:
+          description: A name or brief explanation of what this api key is used for
+          example: online store
+          type: string
+        livemode:
+          description: Indicates if the api key is in production
+          example: false
+          type: boolean
+        prefix:
+          description: The first few characters of the authentication_token
+          example: key_rp
+          type: string
+        id:
+          description: Unique identifier of the api key
+          example: 64625cc9f3e02c00163f5e4d
+          type: string
+        object:
+          description: "Object name, value is 'api_key'"
+          example: api_key
+          type: string
+        deleted:
+          description: Indicates if the api key was deleted
+          example: false
+          type: boolean
+        role:
+          description: Indicates if the api key is private or public
+          example: private
+          type: string
+      title: api_key_response_delete
+      type: object
+    balance_response:
+      description: balance model
+      properties:
+        available:
+          description: The balance's available
+          items:
+            $ref: '#/components/schemas/balance_common_field'
+          type: array
+        cashout_retention_amount:
+          description: The balance's cashout retention amount
+          items:
+            $ref: '#/components/schemas/balance_common_field'
+          type: array
+        conekta_retention:
+          description: The balance's conekta retention
+          items:
+            $ref: '#/components/schemas/balance_common_field'
+          type: array
+        gateway:
+          description: The balance's gateway
+          items:
+            $ref: '#/components/schemas/balance_common_field'
+          type: array
+        pending:
+          description: The balance's pending
+          items:
+            $ref: '#/components/schemas/balance_common_field'
+          type: array
+        retained:
+          description: The balance's retained
+          items:
+            $ref: '#/components/schemas/balance_common_field'
+          type: array
+        retention_amount:
+          description: The balance's retention amount
+          items:
+            $ref: '#/components/schemas/balance_common_field'
+          type: array
+        target_collateral_amount:
+          description: The balance's target collateral amount
+          type: object
+        target_retention_amount:
+          description: The balance's target retention amount
+          items:
+            $ref: '#/components/schemas/balance_common_field'
+          type: array
+        temporarily_retained:
+          description: The balance's temporarily retained
+          items:
+            $ref: '#/components/schemas/balance_common_field'
+          type: array
+      title: balance_response
       type: object
     charge_response:
       properties:
@@ -11603,6 +12058,11 @@ components:
           description: The payment status of the order.
           example: paid
           type: string
+        processing_mode:
+          description: "Indicates the processing mode for the order, either ecommerce,\
+            \ recurrent or validation."
+          example: ecommerce
+          type: string
         shipping_contact:
           $ref: '#/components/schemas/order_response_shipping_contact'
         updated_at:
@@ -12112,10 +12572,10 @@ components:
         deactivated_at:
           description: Unix timestamp in seconds with the deactivation date of the
             webhook key
-          example: 1577836800
           format: int64
           nullable: true
           type: integer
+          example: null
         public_key:
           description: Public key to be used in the webhook
           example: '-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqULpUc6D6mSAq5a0yLY/\noOjd1mWm6q+QI8y/FI4STr2F+XgKeNnMxSqnyFrHtKQ/ut4Zi45WFnJLfEQL7aW5\n67yE2dWyo6GaL7yZUfLC0Y3sHPGzaGtvDF36ISW7LliYNoMiA3Bx5/1Sr0G23pGW\n0Mp8IO1Nlz0sJWuU/d7zCz/UN6cl9g/BP4eaQ7deS56YuWcj5sTlwqFTlwN12kpA\nIzMZ7gnvYQnZTpPny5lben6QEuxTvZcPApcyOweiESjMnXfkfWOyuYtgMrbsU6oL\nA6sWa6j0pePW7AYeBqB4tyAlenkCSqzHg8bMk5Bm7hiT6I9Pls774lJbnOYmmuNE\n8QIDAQAB\n-----END
@@ -12242,22 +12702,16 @@ components:
           type: string
       title: webhook_response
       type: object
-    api-key_request:
+    api_key_request:
       properties:
-        active:
-          description: Indicates if the api key is active
-          example: true
-          type: boolean
         description:
-          description: Detail of the use that will be given to the api key
+          description: A name or brief explanation of what this api key is used for
           example: online store
           type: string
         role:
           example: private
           type: string
       required:
-      - active
-      - description
       - role
       title: api_keys_request
       type: object
@@ -12513,6 +12967,7 @@ components:
           type: array
         metadata:
           additionalProperties: true
+          description: Metadata associated with the order
           maxProperties: 100
           type: object
         needs_shipping_contact:
@@ -12523,6 +12978,11 @@ components:
           default: false
           description: Indicates whether the order charges must be preauthorized
           type: boolean
+        processing_mode:
+          description: "Indicates the processing mode for the order, either ecommerce,\
+            \ recurrent or validation."
+          example: ecommerce
+          type: string
         shipping_contact:
           $ref: '#/components/schemas/customer_shipping_contacts'
         shipping_lines:
@@ -12559,7 +13019,7 @@ components:
           maxLength: 3
           type: string
         customer_info:
-          $ref: '#/components/schemas/order_request_customer_info'
+          $ref: '#/components/schemas/order_update_request_customer_info'
         discount_lines:
           description: "List of [discounts](https://developers.conekta.com/v2.1.0/reference/orderscreatediscountline)\
             \ that are applied to the order. You must have at least one discount."
@@ -13101,6 +13561,20 @@ components:
             $ref: '#/components/schemas/details_error'
           type: array
       type: object
+    balance_common_field:
+      description: balance common fields model
+      properties:
+        amount:
+          description: The balance's amount
+          example: 100
+          format: int64
+          type: integer
+        currency:
+          description: The balance's currency
+          example: MXN
+          type: string
+      title: balance_common_fiels_response
+      type: object
     payment_method_cash:
       allOf:
       - $ref: '#/components/schemas/payment_method'
@@ -13258,7 +13732,7 @@ components:
       type: object
     checkout_request:
       description: |
-        [Checkout](https://developers.conekta.com/reference/checkout) details
+        [Checkout](https://developers.conekta.com/v2.1.0/reference/payment-link) details
       properties:
         allowed_payment_methods:
           description: Are the payment methods available for this link
@@ -13487,7 +13961,7 @@ components:
       properties:
         data:
           items:
-            $ref: '#/components/schemas/api-key_response'
+            $ref: '#/components/schemas/api_key_response'
           type: array
       type: object
     get_api_keys_response:
@@ -13501,14 +13975,14 @@ components:
         authentication_token:
           description: "It is occupied as a user when authenticated with basic authentication,\
             \ with a blank password. This value will only appear once, in the request\
-            \ to create a new key"
+            \ to create a new key. Copy and save it in a safe place."
           example: key_rpHzxufNgjFCdprEEFZRTKi
           type: string
       type: object
     api_key_create_response:
       allOf:
       - $ref: '#/components/schemas/api_key_create_response_allOf'
-      - $ref: '#/components/schemas/api-key_response'
+      - $ref: '#/components/schemas/api_key_response'
       title: api_key_create_response
     api_key_update_request:
       properties:
@@ -13517,7 +13991,7 @@ components:
           example: true
           type: boolean
         description:
-          description: Detail of the use that will be given to the api key
+          description: A name or brief explanation of what this api key is used for
           example: online store
           type: string
       title: api_key_update_request
@@ -13530,7 +14004,7 @@ components:
       type: object
     delete_api_keys_response:
       allOf:
-      - $ref: '#/components/schemas/api-key_response'
+      - $ref: '#/components/schemas/api_key_response_on_delete'
       - $ref: '#/components/schemas/delete_api_keys_response_allOf'
       title: delete_api_keys_response
     get_charges_response_allOf:
@@ -13627,6 +14101,19 @@ components:
       - $ref: '#/components/schemas/customer_fiscal_entities_request'
       - $ref: '#/components/schemas/update_customer_fiscal_entities_response_allOf'
       title: update_customer_fiscal_entities_response
+    get_order_discount_lines_response_allOf:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/discount_lines_response'
+          type: array
+      type: object
+    get_order_discount_lines_response:
+      allOf:
+      - $ref: '#/components/schemas/pagination'
+      - $ref: '#/components/schemas/page'
+      - $ref: '#/components/schemas/get_order_discount_lines_response_allOf'
+      title: get_order_discount_lines_response
     get_events_response_allOf:
       properties:
         data:
@@ -13977,6 +14464,7 @@ components:
     charge_response_refunds_allOf:
       properties:
         data:
+          description: refunds
           items:
             $ref: '#/components/schemas/charge_response_refunds_data'
           type: array
@@ -14097,14 +14585,21 @@ components:
     discount_lines_response_allOf:
       properties:
         id:
+          description: The discount line id
           example: dis_lin_2tQQ58HPgPw7StE8z
           type: string
         object:
+          description: The object name
           example: discount_line
           type: string
         parent_id:
+          description: The order id
           example: ord_2tPAmKCEJqh8RE6nY
           type: string
+      required:
+      - id
+      - object
+      - parent_id
       type: object
       example: null
     WebhookLog:
@@ -14762,6 +15257,13 @@ components:
         payment_source_id:
           example: src_2tLkkyfMPh6v7pFry
           type: string
+        contract_id:
+          description: Optional id sent to indicate the bank contract for recurrent
+            card charges.
+          example: S781317595
+          maxLength: 10
+          minLength: 10
+          type: string
       required:
       - type
       type: object
@@ -14795,6 +15297,11 @@ components:
           type: integer
       type: object
     order_request_customer_info:
+      description: Customer information
+      oneOf:
+      - $ref: '#/components/schemas/customer_info'
+      - $ref: '#/components/schemas/customer_info_just_customer_id'
+    order_update_request_customer_info:
       oneOf:
       - $ref: '#/components/schemas/customer_info'
       - $ref: '#/components/schemas/customer_info_just_customer_id'
@@ -14991,6 +15498,12 @@ components:
           type: string
         brand:
           example: visa
+          type: string
+        contract_id:
+          description: Id sent for recurrent charges.
+          example: S781317595
+          maxLength: 10
+          minLength: 10
           type: string
         country:
           example: MX

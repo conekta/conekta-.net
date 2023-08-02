@@ -29,7 +29,7 @@ namespace Conekta.net.Test.Api
 
         public TokensApiTests()
         {
-            Configuration configuration = new()
+            Configuration configuration = new Configuration()
             {
                 BasePath = BaseTest.BasePath,
                 AccessToken = "key_uMxL6X1txuxyzQzJEXt72Aaaa"
@@ -52,8 +52,8 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void CreateTokenTest()
         {
-            Token token = new(
-                card: new(
+            Token token = new Token(
+                card: new TokenCard(
                     name: "Jorge López",
                     expMonth: "12",
                     expYear: "25",
@@ -75,8 +75,8 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void CreateEmptyTokenTest()
         {
-            Token token = new(
-               checkout: new( returnsControlOn: "Token")
+            Token token = new Token(
+               checkout: new TokenCheckout( returnsControlOn: "Token")
             );
             var response = _tokensApi.CreateToken(token);
 

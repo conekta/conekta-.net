@@ -36,7 +36,7 @@ namespace Conekta.net.Test.Api
 
         public ShippingsApiTests()
         {
-            Configuration configuration = new()
+            Configuration configuration = new Configuration()
             {
                 BasePath = BaseTest.BasePath,
                 AccessToken = "key_uMxL6X1txuxyzQzJEXt72Aaaa"
@@ -58,7 +58,7 @@ namespace Conekta.net.Test.Api
         public void OrdersCreateShippingTest()
         {
             string id = "ord_2tVyWPnCPWbrV37mW";
-            ShippingRequest shippingRequest = new(
+            ShippingRequest shippingRequest = new ShippingRequest(
                 amount: 500
             );
 
@@ -79,7 +79,7 @@ namespace Conekta.net.Test.Api
         {
             string id = "ord_2tVyWPnCPWbrV37mW";
             string shippingId = "ship_lin_2tVzNuDGSaDwreMg6";
-            ShippingRequest shippingRequest = new(
+            ShippingRequest shippingRequest = new ShippingRequest(
                 amount: 540
             );
 

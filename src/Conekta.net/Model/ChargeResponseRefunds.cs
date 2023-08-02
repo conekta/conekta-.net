@@ -44,7 +44,7 @@ namespace Conekta.net.Model
         /// <param name="_object">Object type, in this case is list (required).</param>
         /// <param name="nextPageUrl">URL of the next page..</param>
         /// <param name="previousPageUrl">Url of the previous page..</param>
-        /// <param name="data">data.</param>
+        /// <param name="data">refunds.</param>
         public ChargeResponseRefunds(bool hasMore = default(bool), string _object = default(string), string nextPageUrl = default(string), string previousPageUrl = default(string), List<ChargeResponseRefundsData> data = default(List<ChargeResponseRefundsData>))
         {
             this.HasMore = hasMore;
@@ -92,8 +92,9 @@ namespace Conekta.net.Model
         public string PreviousPageUrl { get; set; }
 
         /// <summary>
-        /// Gets or Sets Data
+        /// refunds
         /// </summary>
+        /// <value>refunds</value>
         [DataMember(Name = "data", EmitDefaultValue = false)]
         public List<ChargeResponseRefundsData> Data { get; set; }
 
