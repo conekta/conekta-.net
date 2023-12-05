@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Default** | **bool** |  | [optional] 
 **Id** | **string** |  | [optional] 
 **CreatedAt** | **long** |  | [optional] 
+**Metadata** | **Dictionary&lt;string, Object&gt;** | Metadata associated with the shipping contact | [optional] 
 **Object** | **string** |  | [optional] 
 **Deleted** | **bool** |  | [optional] 
 

@@ -110,7 +110,7 @@ catch (ApiException e)
 
 <a id="gettransactions"></a>
 # **GetTransactions**
-> GetTransactionsResponse GetTransactions (string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string search = null, string next = null, string previous = null)
+> GetTransactionsResponse GetTransactions (string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string next = null, string previous = null, string id = null, string chargeId = null, string type = null, string currency = null)
 
 Get List transactions
 
@@ -139,14 +139,17 @@ namespace Example
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
             var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
             var limit = 20;  // int? | The numbers of items to return, the maximum value is 250 (optional)  (default to 20)
-            var search = "search_example";  // string | General order search, e.g. by mail, reference etc. (optional) 
             var next = "next_example";  // string | next page (optional) 
             var previous = "previous_example";  // string | previous page (optional) 
+            var id = 65412a893cd69a0001c25892;  // string | id of the object to be retrieved (optional) 
+            var chargeId = 65412a893cd69a0001c25892;  // string | id of the charge used for filtering (optional) 
+            var type = capture;  // string | type of the object to be retrieved (optional) 
+            var currency = MXN;  // string | currency of the object to be retrieved (optional) 
 
             try
             {
                 // Get List transactions
-                GetTransactionsResponse result = apiInstance.GetTransactions(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+                GetTransactionsResponse result = apiInstance.GetTransactions(acceptLanguage, xChildCompanyId, limit, next, previous, id, chargeId, type, currency);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -167,7 +170,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get List transactions
-    ApiResponse<GetTransactionsResponse> response = apiInstance.GetTransactionsWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+    ApiResponse<GetTransactionsResponse> response = apiInstance.GetTransactionsWithHttpInfo(acceptLanguage, xChildCompanyId, limit, next, previous, id, chargeId, type, currency);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -187,9 +190,12 @@ catch (ApiException e)
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 | **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 | **limit** | **int?** | The numbers of items to return, the maximum value is 250 | [optional] [default to 20] |
-| **search** | **string** | General order search, e.g. by mail, reference etc. | [optional]  |
 | **next** | **string** | next page | [optional]  |
 | **previous** | **string** | previous page | [optional]  |
+| **id** | **string** | id of the object to be retrieved | [optional]  |
+| **chargeId** | **string** | id of the charge used for filtering | [optional]  |
+| **type** | **string** | type of the object to be retrieved | [optional]  |
+| **currency** | **string** | currency of the object to be retrieved | [optional]  |
 
 ### Return type
 

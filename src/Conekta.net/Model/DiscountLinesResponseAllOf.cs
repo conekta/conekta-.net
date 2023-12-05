@@ -35,35 +35,58 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DiscountLinesResponseAllOf" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="_object">_object.</param>
-        /// <param name="parentId">parentId.</param>
+        [JsonConstructorAttribute]
+        protected DiscountLinesResponseAllOf() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DiscountLinesResponseAllOf" /> class.
+        /// </summary>
+        /// <param name="id">The discount line id (required).</param>
+        /// <param name="_object">The object name (required).</param>
+        /// <param name="parentId">The order id (required).</param>
         public DiscountLinesResponseAllOf(string id = default(string), string _object = default(string), string parentId = default(string))
         {
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for DiscountLinesResponseAllOf and cannot be null");
+            }
             this.Id = id;
+            // to ensure "_object" is required (not null)
+            if (_object == null)
+            {
+                throw new ArgumentNullException("_object is a required property for DiscountLinesResponseAllOf and cannot be null");
+            }
             this.Object = _object;
+            // to ensure "parentId" is required (not null)
+            if (parentId == null)
+            {
+                throw new ArgumentNullException("parentId is a required property for DiscountLinesResponseAllOf and cannot be null");
+            }
             this.ParentId = parentId;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// The discount line id
         /// </summary>
+        /// <value>The discount line id</value>
         /// <example>&quot;dis_lin_2tQQ58HPgPw7StE8z&quot;</example>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// The object name
         /// </summary>
+        /// <value>The object name</value>
         /// <example>&quot;discount_line&quot;</example>
-        [DataMember(Name = "object", EmitDefaultValue = false)]
+        [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
         /// <summary>
-        /// Gets or Sets ParentId
+        /// The order id
         /// </summary>
+        /// <value>The order id</value>
         /// <example>&quot;ord_2tPAmKCEJqh8RE6nY&quot;</example>
-        [DataMember(Name = "parent_id", EmitDefaultValue = false)]
+        [DataMember(Name = "parent_id", IsRequired = true, EmitDefaultValue = true)]
         public string ParentId { get; set; }
 
         /// <summary>

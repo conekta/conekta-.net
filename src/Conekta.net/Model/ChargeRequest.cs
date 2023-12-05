@@ -41,10 +41,9 @@ namespace Conekta.net.Model
         /// Initializes a new instance of the <see cref="ChargeRequest" /> class.
         /// </summary>
         /// <param name="amount">amount.</param>
-        /// <param name="monthlyInstallments">How many months without interest to apply, it can be 3, 6, 9, 12 or 18.</param>
         /// <param name="paymentMethod">paymentMethod (required).</param>
         /// <param name="referenceId">Custom reference to add to the charge.</param>
-        public ChargeRequest(int amount = default(int), int monthlyInstallments = default(int), ChargeRequestPaymentMethod paymentMethod = default(ChargeRequestPaymentMethod), string referenceId = default(string))
+        public ChargeRequest(int amount = default(int), ChargeRequestPaymentMethod paymentMethod = default(ChargeRequestPaymentMethod), string referenceId = default(string))
         {
             // to ensure "paymentMethod" is required (not null)
             if (paymentMethod == null)
@@ -53,7 +52,6 @@ namespace Conekta.net.Model
             }
             this.PaymentMethod = paymentMethod;
             this.Amount = amount;
-            this.MonthlyInstallments = monthlyInstallments;
             this.ReferenceId = referenceId;
         }
 
@@ -63,13 +61,6 @@ namespace Conekta.net.Model
         /// <example>40000</example>
         [DataMember(Name = "amount", EmitDefaultValue = false)]
         public int Amount { get; set; }
-
-        /// <summary>
-        /// How many months without interest to apply, it can be 3, 6, 9, 12 or 18
-        /// </summary>
-        /// <value>How many months without interest to apply, it can be 3, 6, 9, 12 or 18</value>
-        [DataMember(Name = "monthly_installments", EmitDefaultValue = false)]
-        public int MonthlyInstallments { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentMethod
@@ -93,7 +84,6 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class ChargeRequest {\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
-            sb.Append("  MonthlyInstallments: ").Append(MonthlyInstallments).Append("\n");
             sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
             sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
             sb.Append("}\n");
@@ -136,10 +126,6 @@ namespace Conekta.net.Model
                     this.Amount.Equals(input.Amount)
                 ) && 
                 (
-                    this.MonthlyInstallments == input.MonthlyInstallments ||
-                    this.MonthlyInstallments.Equals(input.MonthlyInstallments)
-                ) && 
-                (
                     this.PaymentMethod == input.PaymentMethod ||
                     (this.PaymentMethod != null &&
                     this.PaymentMethod.Equals(input.PaymentMethod))
@@ -161,7 +147,6 @@ namespace Conekta.net.Model
             {
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.Amount.GetHashCode();
-                hashCode = (hashCode * 59) + this.MonthlyInstallments.GetHashCode();
                 if (this.PaymentMethod != null)
                 {
                     hashCode = (hashCode * 59) + this.PaymentMethod.GetHashCode();

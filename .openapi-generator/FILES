@@ -1,6 +1,7 @@
 .gitignore
 AUTHORS.md
 CODE_OF_CONDUCT.md
+CONTRIBUTING.md
 Conekta.net.sln
 LICENSE
 VERSION
@@ -11,8 +12,12 @@ docs/ApiKeyCreateResponse.md
 docs/ApiKeyCreateResponseAllOf.md
 docs/ApiKeyRequest.md
 docs/ApiKeyResponse.md
+docs/ApiKeyResponseOnDelete.md
 docs/ApiKeyUpdateRequest.md
 docs/ApiKeysApi.md
+docs/BalanceCommonField.md
+docs/BalanceResponse.md
+docs/BalancesApi.md
 docs/BlacklistRuleResponse.md
 docs/ChargeDataPaymentMethodBankTransferResponse.md
 docs/ChargeDataPaymentMethodCardResponse.md
@@ -27,6 +32,7 @@ docs/ChargeResponsePaymentMethod.md
 docs/ChargeResponseRefunds.md
 docs/ChargeResponseRefundsAllOf.md
 docs/ChargeResponseRefundsData.md
+docs/ChargeUpdateRequest.md
 docs/ChargesApi.md
 docs/ChargesDataResponse.md
 docs/Checkout.md
@@ -58,7 +64,6 @@ docs/CustomerFiscalEntitiesResponseAllOf.md
 docs/CustomerInfo.md
 docs/CustomerInfoJustCustomerId.md
 docs/CustomerInfoJustCustomerIdResponse.md
-docs/CustomerInfoResponse.md
 docs/CustomerPaymentMethodRequest.md
 docs/CustomerPaymentMethods.md
 docs/CustomerPaymentMethodsData.md
@@ -94,6 +99,7 @@ docs/ErrorAllOf.md
 docs/EventResponse.md
 docs/EventsApi.md
 docs/EventsResendResponse.md
+docs/FiscalEntityAddress.md
 docs/GetApiKeysResponse.md
 docs/GetApiKeysResponseAllOf.md
 docs/GetChargesResponse.md
@@ -103,6 +109,8 @@ docs/GetCompaniesResponseAllOf.md
 docs/GetCustomerPaymentMethodDataResponse.md
 docs/GetEventsResponse.md
 docs/GetEventsResponseAllOf.md
+docs/GetOrderDiscountLinesResponse.md
+docs/GetOrderDiscountLinesResponseAllOf.md
 docs/GetOrdersResponse.md
 docs/GetPaymentMethodResponse.md
 docs/GetPaymentMethodResponseAllOf.md
@@ -121,7 +129,12 @@ docs/LogsApi.md
 docs/LogsResponse.md
 docs/LogsResponseData.md
 docs/OrderCaptureRequest.md
+docs/OrderCustomerInfoResponse.md
 docs/OrderDiscountLinesRequest.md
+docs/OrderFiscalEntityAddressResponse.md
+docs/OrderFiscalEntityAddressResponseAllOf.md
+docs/OrderFiscalEntityRequest.md
+docs/OrderFiscalEntityResponse.md
 docs/OrderRefundRequest.md
 docs/OrderRequest.md
 docs/OrderRequestCustomerInfo.md
@@ -133,15 +146,14 @@ docs/OrderResponseCustomerInfo.md
 docs/OrderResponseCustomerInfoAllOf.md
 docs/OrderResponseDiscountLines.md
 docs/OrderResponseDiscountLinesAllOf.md
-docs/OrderResponseFiscalEntity.md
-docs/OrderResponseFiscalEntityAddress.md
-docs/OrderResponseFiscalEntityAddressAllOf.md
 docs/OrderResponseProducts.md
 docs/OrderResponseProductsAllOf.md
 docs/OrderResponseShippingContact.md
 docs/OrderResponseShippingContactAllOf.md
 docs/OrderTaxRequest.md
+docs/OrderUpdateFiscalEntityRequest.md
 docs/OrderUpdateRequest.md
+docs/OrderUpdateRequestCustomerInfo.md
 docs/OrdersApi.md
 docs/OrdersResponse.md
 docs/Page.md
@@ -227,6 +239,7 @@ docs/WhitelistlistRuleResponse.md
 src/Conekta.net.Test/Conekta.net.Test.csproj
 src/Conekta.net/Api/AntifraudApi.cs
 src/Conekta.net/Api/ApiKeysApi.cs
+src/Conekta.net/Api/BalancesApi.cs
 src/Conekta.net/Api/ChargesApi.cs
 src/Conekta.net/Api/CompaniesApi.cs
 src/Conekta.net/Api/CustomersApi.cs
@@ -269,7 +282,10 @@ src/Conekta.net/Model/ApiKeyCreateResponse.cs
 src/Conekta.net/Model/ApiKeyCreateResponseAllOf.cs
 src/Conekta.net/Model/ApiKeyRequest.cs
 src/Conekta.net/Model/ApiKeyResponse.cs
+src/Conekta.net/Model/ApiKeyResponseOnDelete.cs
 src/Conekta.net/Model/ApiKeyUpdateRequest.cs
+src/Conekta.net/Model/BalanceCommonField.cs
+src/Conekta.net/Model/BalanceResponse.cs
 src/Conekta.net/Model/BlacklistRuleResponse.cs
 src/Conekta.net/Model/ChargeDataPaymentMethodBankTransferResponse.cs
 src/Conekta.net/Model/ChargeDataPaymentMethodCardResponse.cs
@@ -284,6 +300,7 @@ src/Conekta.net/Model/ChargeResponsePaymentMethod.cs
 src/Conekta.net/Model/ChargeResponseRefunds.cs
 src/Conekta.net/Model/ChargeResponseRefundsAllOf.cs
 src/Conekta.net/Model/ChargeResponseRefundsData.cs
+src/Conekta.net/Model/ChargeUpdateRequest.cs
 src/Conekta.net/Model/ChargesDataResponse.cs
 src/Conekta.net/Model/Checkout.cs
 src/Conekta.net/Model/CheckoutOrderTemplate.cs
@@ -313,7 +330,6 @@ src/Conekta.net/Model/CustomerFiscalEntitiesResponseAllOf.cs
 src/Conekta.net/Model/CustomerInfo.cs
 src/Conekta.net/Model/CustomerInfoJustCustomerId.cs
 src/Conekta.net/Model/CustomerInfoJustCustomerIdResponse.cs
-src/Conekta.net/Model/CustomerInfoResponse.cs
 src/Conekta.net/Model/CustomerPaymentMethodRequest.cs
 src/Conekta.net/Model/CustomerPaymentMethods.cs
 src/Conekta.net/Model/CustomerPaymentMethodsData.cs
@@ -346,6 +362,7 @@ src/Conekta.net/Model/Error.cs
 src/Conekta.net/Model/ErrorAllOf.cs
 src/Conekta.net/Model/EventResponse.cs
 src/Conekta.net/Model/EventsResendResponse.cs
+src/Conekta.net/Model/FiscalEntityAddress.cs
 src/Conekta.net/Model/GetApiKeysResponse.cs
 src/Conekta.net/Model/GetApiKeysResponseAllOf.cs
 src/Conekta.net/Model/GetChargesResponse.cs
@@ -355,6 +372,8 @@ src/Conekta.net/Model/GetCompaniesResponseAllOf.cs
 src/Conekta.net/Model/GetCustomerPaymentMethodDataResponse.cs
 src/Conekta.net/Model/GetEventsResponse.cs
 src/Conekta.net/Model/GetEventsResponseAllOf.cs
+src/Conekta.net/Model/GetOrderDiscountLinesResponse.cs
+src/Conekta.net/Model/GetOrderDiscountLinesResponseAllOf.cs
 src/Conekta.net/Model/GetOrdersResponse.cs
 src/Conekta.net/Model/GetPaymentMethodResponse.cs
 src/Conekta.net/Model/GetPaymentMethodResponseAllOf.cs
@@ -372,7 +391,12 @@ src/Conekta.net/Model/LogResponse.cs
 src/Conekta.net/Model/LogsResponse.cs
 src/Conekta.net/Model/LogsResponseData.cs
 src/Conekta.net/Model/OrderCaptureRequest.cs
+src/Conekta.net/Model/OrderCustomerInfoResponse.cs
 src/Conekta.net/Model/OrderDiscountLinesRequest.cs
+src/Conekta.net/Model/OrderFiscalEntityAddressResponse.cs
+src/Conekta.net/Model/OrderFiscalEntityAddressResponseAllOf.cs
+src/Conekta.net/Model/OrderFiscalEntityRequest.cs
+src/Conekta.net/Model/OrderFiscalEntityResponse.cs
 src/Conekta.net/Model/OrderRefundRequest.cs
 src/Conekta.net/Model/OrderRequest.cs
 src/Conekta.net/Model/OrderRequestCustomerInfo.cs
@@ -384,15 +408,14 @@ src/Conekta.net/Model/OrderResponseCustomerInfo.cs
 src/Conekta.net/Model/OrderResponseCustomerInfoAllOf.cs
 src/Conekta.net/Model/OrderResponseDiscountLines.cs
 src/Conekta.net/Model/OrderResponseDiscountLinesAllOf.cs
-src/Conekta.net/Model/OrderResponseFiscalEntity.cs
-src/Conekta.net/Model/OrderResponseFiscalEntityAddress.cs
-src/Conekta.net/Model/OrderResponseFiscalEntityAddressAllOf.cs
 src/Conekta.net/Model/OrderResponseProducts.cs
 src/Conekta.net/Model/OrderResponseProductsAllOf.cs
 src/Conekta.net/Model/OrderResponseShippingContact.cs
 src/Conekta.net/Model/OrderResponseShippingContactAllOf.cs
 src/Conekta.net/Model/OrderTaxRequest.cs
+src/Conekta.net/Model/OrderUpdateFiscalEntityRequest.cs
 src/Conekta.net/Model/OrderUpdateRequest.cs
+src/Conekta.net/Model/OrderUpdateRequestCustomerInfo.cs
 src/Conekta.net/Model/OrdersResponse.cs
 src/Conekta.net/Model/Page.cs
 src/Conekta.net/Model/Pagination.cs

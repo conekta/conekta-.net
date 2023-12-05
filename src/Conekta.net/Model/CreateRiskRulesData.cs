@@ -69,7 +69,7 @@ namespace Conekta.net.Model
         /// Description of the rule
         /// </summary>
         /// <value>Description of the rule</value>
-        /// <example>&quot;this client&#39;s email was verified at 20/09/22 by internal process&quot;</example>
+        /// <example>&quot;this client email was verified at 20/09/22 by internal process&quot;</example>
         [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
         public string Description { get; set; }
 

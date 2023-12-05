@@ -43,7 +43,6 @@ namespace Conekta.net.Client
         private readonly JsonSerializerSettings _serializerSettings = new JsonSerializerSettings
         {
             // OpenAPI generated types generally hide default constructors.
-            NullValueHandling = NullValueHandling.Ignore,
             ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
             ContractResolver = new DefaultContractResolver
             {
@@ -183,7 +182,6 @@ namespace Conekta.net.Client
         public JsonSerializerSettings SerializerSettings { get; set; } = new JsonSerializerSettings
         {
             // OpenAPI generated types generally hide default constructors.
-            NullValueHandling = NullValueHandling.Ignore,
             ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
             ContractResolver = new DefaultContractResolver
             {

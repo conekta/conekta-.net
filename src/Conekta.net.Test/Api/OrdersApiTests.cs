@@ -79,7 +79,26 @@ public class OrdersApiTests
             customerInfo: customerInfo,
             lineItems: products,
             charges: charges,
-            preAuthorize: false
+            preAuthorize: false,
+            shippingContact: new CustomerShippingContacts(
+                address: new CustomerShippingContactsAddress(
+                     street1: "test",
+                     street2: "street 2",
+                     postalCode: "11011",
+                     city: "cdmx",
+                     country: "mexico"
+                    ),
+                metadata: new Dictionary<string, object>()),
+            fiscalEntity: new OrderFiscalEntityRequest(
+                address: new FiscalEntityAddress(
+                    street1: "test",
+                    street2: "street 2",
+                    postalCode: "11011",
+                    city: "cdmx",
+                    country: "mexico",
+                    externalNumber: "123"
+                    ),
+                metadata: new Dictionary<string, object>())
         );
 
         OrderResponse response = _instance.CreateOrder(orderRequest, "es");

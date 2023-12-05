@@ -36,7 +36,7 @@ namespace Conekta.net.Model
         /// Initializes a new instance of the <see cref="ApiKeyUpdateRequest" /> class.
         /// </summary>
         /// <param name="active">Indicates if the webhook key is active.</param>
-        /// <param name="description">Detail of the use that will be given to the api key.</param>
+        /// <param name="description">A name or brief explanation of what this api key is used for.</param>
         public ApiKeyUpdateRequest(bool active = default(bool), string description = default(string))
         {
             this.Active = active;
@@ -52,9 +52,9 @@ namespace Conekta.net.Model
         public bool Active { get; set; }
 
         /// <summary>
-        /// Detail of the use that will be given to the api key
+        /// A name or brief explanation of what this api key is used for
         /// </summary>
-        /// <value>Detail of the use that will be given to the api key</value>
+        /// <value>A name or brief explanation of what this api key is used for</value>
         /// <example>&quot;online store&quot;</example>
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }

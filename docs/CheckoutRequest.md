@@ -1,5 +1,5 @@
 # Conekta.net.Model.CheckoutRequest
-[Checkout](https://developers.conekta.com/reference/checkout) details 
+[Checkout](https://developers.conekta.com/v2.1.0/reference/payment-link) details 
 
 ## Properties
 
