@@ -137,5 +137,17 @@ namespace Conekta.net.Test.Api
             Assert.True(response.Data[0].Refunds == null);
             Assert.True(string.IsNullOrEmpty(response.Data[0].ReferenceId));
         }
+
+        [Fact]
+        public void UpdateChargeTest()
+        {
+           var response = _instance.UpdateCharge("6524722f28c7ba0016a5b17d", new ChargeUpdateRequest(referenceId:"123456789"));
+           
+           Assert.IsType<ChargeResponse>(response);
+           Assert.Equal("123456789", response.ReferenceId);
+           Assert.Equal("charge", response.Object);
+           Assert.Equal("cash_payment", response.PaymentMethod.GetPaymentMethodCash().Object);
+           Assert.Equal("6524722f28c7ba0016a5b17d", response.Id);
+        }
     }
 }
