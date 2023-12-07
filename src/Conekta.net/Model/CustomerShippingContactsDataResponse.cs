@@ -47,10 +47,11 @@ namespace Conekta.net.Model
         /// <param name="parentId">parentId.</param>
         /// <param name="_default">_default.</param>
         /// <param name="deleted">deleted.</param>
+        /// <param name="metadata">Metadata associated with the shipping contact.</param>
         /// <param name="id">id (required).</param>
         /// <param name="_object">_object (required).</param>
         /// <param name="createdAt">createdAt (required).</param>
-        public CustomerShippingContactsDataResponse(string phone = default(string), string receiver = default(string), string betweenStreets = default(string), CustomerShippingContactsAddress address = default(CustomerShippingContactsAddress), string parentId = default(string), bool? _default = default(bool?), bool? deleted = default(bool?), string id = default(string), string _object = default(string), long createdAt = default(long))
+        public CustomerShippingContactsDataResponse(string phone = default(string), string receiver = default(string), string betweenStreets = default(string), CustomerShippingContactsAddress address = default(CustomerShippingContactsAddress), string parentId = default(string), bool? _default = default(bool?), bool? deleted = default(bool?), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string id = default(string), string _object = default(string), long createdAt = default(long))
         {
             // to ensure "address" is required (not null)
             if (address == null)
@@ -77,6 +78,7 @@ namespace Conekta.net.Model
             this.ParentId = parentId;
             this.Default = _default;
             this.Deleted = deleted;
+            this.Metadata = metadata;
         }
 
         /// <summary>
@@ -128,6 +130,13 @@ namespace Conekta.net.Model
         public bool? Deleted { get; set; }
 
         /// <summary>
+        /// Metadata associated with the shipping contact
+        /// </summary>
+        /// <value>Metadata associated with the shipping contact</value>
+        [DataMember(Name = "metadata", EmitDefaultValue = false)]
+        public Dictionary<string, Object> Metadata { get; set; }
+
+        /// <summary>
         /// Gets or Sets Id
         /// </summary>
         /// <example>&quot;ship_cont_2tKZsTYcsryyu7Ah8&quot;</example>
@@ -163,6 +172,7 @@ namespace Conekta.net.Model
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("  Default: ").Append(Default).Append("\n");
             sb.Append("  Deleted: ").Append(Deleted).Append("\n");
+            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
@@ -237,6 +247,12 @@ namespace Conekta.net.Model
                     this.Deleted.Equals(input.Deleted))
                 ) && 
                 (
+                    this.Metadata == input.Metadata ||
+                    this.Metadata != null &&
+                    input.Metadata != null &&
+                    this.Metadata.SequenceEqual(input.Metadata)
+                ) && 
+                (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
@@ -288,6 +304,10 @@ namespace Conekta.net.Model
                 if (this.Deleted != null)
                 {
                     hashCode = (hashCode * 59) + this.Deleted.GetHashCode();
+                }
+                if (this.Metadata != null)
+                {
+                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
                 }
                 if (this.Id != null)
                 {

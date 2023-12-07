@@ -41,10 +41,12 @@ namespace Conekta.net.Model
         /// Initializes a new instance of the <see cref="ChargeRequestPaymentMethod" /> class.
         /// </summary>
         /// <param name="expiresAt">Method expiration date as unix timestamp.</param>
+        /// <param name="monthlyInstallments">How many months without interest to apply, it can be 3, 6, 9, 12 or 18.</param>
         /// <param name="type">type (required).</param>
         /// <param name="tokenId">tokenId.</param>
         /// <param name="paymentSourceId">paymentSourceId.</param>
-        public ChargeRequestPaymentMethod(long expiresAt = default(long), string type = default(string), string tokenId = default(string), string paymentSourceId = default(string))
+        /// <param name="contractId">Optional id sent to indicate the bank contract for recurrent card charges..</param>
+        public ChargeRequestPaymentMethod(long expiresAt = default(long), int monthlyInstallments = default(int), string type = default(string), string tokenId = default(string), string paymentSourceId = default(string), string contractId = default(string))
         {
             // to ensure "type" is required (not null)
             if (type == null)
@@ -53,8 +55,10 @@ namespace Conekta.net.Model
             }
             this.Type = type;
             this.ExpiresAt = expiresAt;
+            this.MonthlyInstallments = monthlyInstallments;
             this.TokenId = tokenId;
             this.PaymentSourceId = paymentSourceId;
+            this.ContractId = contractId;
         }
 
         /// <summary>
@@ -64,6 +68,13 @@ namespace Conekta.net.Model
         /// <example>1677196303</example>
         [DataMember(Name = "expires_at", EmitDefaultValue = false)]
         public long ExpiresAt { get; set; }
+
+        /// <summary>
+        /// How many months without interest to apply, it can be 3, 6, 9, 12 or 18
+        /// </summary>
+        /// <value>How many months without interest to apply, it can be 3, 6, 9, 12 or 18</value>
+        [DataMember(Name = "monthly_installments", EmitDefaultValue = false)]
+        public int MonthlyInstallments { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
@@ -87,6 +98,14 @@ namespace Conekta.net.Model
         public string PaymentSourceId { get; set; }
 
         /// <summary>
+        /// Optional id sent to indicate the bank contract for recurrent card charges.
+        /// </summary>
+        /// <value>Optional id sent to indicate the bank contract for recurrent card charges.</value>
+        /// <example>&quot;S781317595&quot;</example>
+        [DataMember(Name = "contract_id", EmitDefaultValue = false)]
+        public string ContractId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -95,9 +114,11 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class ChargeRequestPaymentMethod {\n");
             sb.Append("  ExpiresAt: ").Append(ExpiresAt).Append("\n");
+            sb.Append("  MonthlyInstallments: ").Append(MonthlyInstallments).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  TokenId: ").Append(TokenId).Append("\n");
             sb.Append("  PaymentSourceId: ").Append(PaymentSourceId).Append("\n");
+            sb.Append("  ContractId: ").Append(ContractId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -138,6 +159,10 @@ namespace Conekta.net.Model
                     this.ExpiresAt.Equals(input.ExpiresAt)
                 ) && 
                 (
+                    this.MonthlyInstallments == input.MonthlyInstallments ||
+                    this.MonthlyInstallments.Equals(input.MonthlyInstallments)
+                ) && 
+                (
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
@@ -151,6 +176,11 @@ namespace Conekta.net.Model
                     this.PaymentSourceId == input.PaymentSourceId ||
                     (this.PaymentSourceId != null &&
                     this.PaymentSourceId.Equals(input.PaymentSourceId))
+                ) && 
+                (
+                    this.ContractId == input.ContractId ||
+                    (this.ContractId != null &&
+                    this.ContractId.Equals(input.ContractId))
                 );
         }
 
@@ -164,6 +194,7 @@ namespace Conekta.net.Model
             {
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.ExpiresAt.GetHashCode();
+                hashCode = (hashCode * 59) + this.MonthlyInstallments.GetHashCode();
                 if (this.Type != null)
                 {
                     hashCode = (hashCode * 59) + this.Type.GetHashCode();
@@ -176,6 +207,10 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.PaymentSourceId.GetHashCode();
                 }
+                if (this.ContractId != null)
+                {
+                    hashCode = (hashCode * 59) + this.ContractId.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -187,6 +222,18 @@ namespace Conekta.net.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // ContractId (string) maxLength
+            if (this.ContractId != null && this.ContractId.Length > 10)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ContractId, length must be less than 10.", new [] { "ContractId" });
+            }
+
+            // ContractId (string) minLength
+            if (this.ContractId != null && this.ContractId.Length < 10)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ContractId, length must be greater than 10.", new [] { "ContractId" });
+            }
+
             yield break;
         }
     }

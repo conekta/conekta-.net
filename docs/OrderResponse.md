@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Currency** | **string** | The three-letter ISO 4217 currency code. The currency of the order. | [optional] 
 **CustomerInfo** | [**OrderResponseCustomerInfo**](OrderResponseCustomerInfo.md) |  | [optional] 
 **DiscountLines** | [**OrderResponseDiscountLines**](OrderResponseDiscountLines.md) |  | [optional] 
-**FiscalEntity** | [**OrderResponseFiscalEntity**](OrderResponseFiscalEntity.md) |  | [optional] 
+**FiscalEntity** | [**OrderFiscalEntityResponse**](OrderFiscalEntityResponse.md) |  | [optional] 
 **Id** | **string** |  | [optional] 
 **IsRefundable** | **bool** |  | [optional] 
 **LineItems** | [**OrderResponseProducts**](OrderResponseProducts.md) |  | [optional] 
@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **Metadata** | **Dictionary&lt;string, Object&gt;** | Set of key-value pairs that you can attach to an object. This can be useful for storing additional information about the object in a structured format. | [optional] 
 **Object** | **string** | String representing the object’s type. Objects of the same type share the same value. | [optional] 
 **PaymentStatus** | **string** | The payment status of the order. | [optional] 
+**ProcessingMode** | **string** | Indicates the processing mode for the order, either ecommerce, recurrent or validation. | [optional] 
 **ShippingContact** | [**OrderResponseShippingContact**](OrderResponseShippingContact.md) |  | [optional] 
 **UpdatedAt** | **long** | The time at which the object was last updated in seconds since the Unix epoch | [optional] 
 

@@ -36,14 +36,16 @@ namespace Conekta.net.Model
         /// Initializes a new instance of the <see cref="OrderResponseCustomerInfo" /> class.
         /// </summary>
         /// <param name="_object">_object.</param>
+        /// <param name="customerCustomReference">Custom reference.</param>
         /// <param name="name">name.</param>
         /// <param name="email">email.</param>
         /// <param name="phone">phone.</param>
         /// <param name="corporate">corporate (default to false).</param>
         /// <param name="customerId">customerId.</param>
-        public OrderResponseCustomerInfo(string _object = default(string), string name = default(string), string email = default(string), string phone = default(string), bool corporate = false, string customerId = default(string))
+        public OrderResponseCustomerInfo(string _object = default(string), string customerCustomReference = default(string), string name = default(string), string email = default(string), string phone = default(string), bool corporate = false, string customerId = default(string))
         {
             this.Object = _object;
+            this.CustomerCustomReference = customerCustomReference;
             this.Name = name;
             this.Email = email;
             this.Phone = phone;
@@ -57,6 +59,14 @@ namespace Conekta.net.Model
         /// <example>&quot;customer_info&quot;</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
+
+        /// <summary>
+        /// Custom reference
+        /// </summary>
+        /// <value>Custom reference</value>
+        /// <example>&quot;custom_reference&quot;</example>
+        [DataMember(Name = "customer_custom_reference", EmitDefaultValue = true)]
+        public string CustomerCustomReference { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -101,6 +111,7 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class OrderResponseCustomerInfo {\n");
             sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  CustomerCustomReference: ").Append(CustomerCustomReference).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  Phone: ").Append(Phone).Append("\n");
@@ -147,6 +158,11 @@ namespace Conekta.net.Model
                     this.Object.Equals(input.Object))
                 ) && 
                 (
+                    this.CustomerCustomReference == input.CustomerCustomReference ||
+                    (this.CustomerCustomReference != null &&
+                    this.CustomerCustomReference.Equals(input.CustomerCustomReference))
+                ) && 
+                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
@@ -184,6 +200,10 @@ namespace Conekta.net.Model
                 if (this.Object != null)
                 {
                     hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                }
+                if (this.CustomerCustomReference != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomerCustomReference.GetHashCode();
                 }
                 if (this.Name != null)
                 {

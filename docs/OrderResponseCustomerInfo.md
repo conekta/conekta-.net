@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Object** | **string** |  | [optional] 
+**CustomerCustomReference** | **string** | Custom reference | [optional] 
 **Name** | **string** |  | [optional] 
 **Email** | **string** |  | [optional] 
 **Phone** | **string** |  | [optional] 

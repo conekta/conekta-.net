@@ -41,23 +41,24 @@ namespace Conekta.net.Model
         /// Initializes a new instance of the <see cref="CustomerResponse" /> class.
         /// </summary>
         /// <param name="antifraudInfo">antifraudInfo.</param>
-        /// <param name="corporate">corporate.</param>
-        /// <param name="createdAt">createdAt (required).</param>
-        /// <param name="customReference">customReference.</param>
+        /// <param name="corporate">true if the customer is a company.</param>
+        /// <param name="createdAt">Creation date of the object (required).</param>
+        /// <param name="customReference">Custom reference.</param>
         /// <param name="defaultFiscalEntityId">defaultFiscalEntityId.</param>
         /// <param name="defaultShippingContactId">defaultShippingContactId.</param>
         /// <param name="defaultPaymentSourceId">defaultPaymentSourceId.</param>
         /// <param name="email">email.</param>
         /// <param name="fiscalEntities">fiscalEntities.</param>
-        /// <param name="id">id (required).</param>
-        /// <param name="livemode">livemode (required).</param>
-        /// <param name="name">name.</param>
+        /// <param name="id">Customer&#39;s ID (required).</param>
+        /// <param name="livemode">true if the object exists in live mode or the value false if the object exists in test mode (required).</param>
+        /// <param name="name">Customer&#39;s name (required).</param>
+        /// <param name="metadata">metadata.</param>
         /// <param name="_object">_object (required).</param>
         /// <param name="paymentSources">paymentSources.</param>
-        /// <param name="phone">phone.</param>
+        /// <param name="phone">Customer&#39;s phone number.</param>
         /// <param name="shippingContacts">shippingContacts.</param>
         /// <param name="subscription">subscription.</param>
-        public CustomerResponse(CustomerAntifraudInfoResponse antifraudInfo = default(CustomerAntifraudInfoResponse), bool corporate = default(bool), long createdAt = default(long), string customReference = default(string), string defaultFiscalEntityId = default(string), string defaultShippingContactId = default(string), string defaultPaymentSourceId = default(string), string email = default(string), CustomerFiscalEntitiesResponse fiscalEntities = default(CustomerFiscalEntitiesResponse), string id = default(string), bool livemode = default(bool), string name = default(string), string _object = default(string), CustomerPaymentMethodsResponse paymentSources = default(CustomerPaymentMethodsResponse), string phone = default(string), CustomerResponseShippingContacts shippingContacts = default(CustomerResponseShippingContacts), SubscriptionResponse subscription = default(SubscriptionResponse))
+        public CustomerResponse(CustomerAntifraudInfoResponse antifraudInfo = default(CustomerAntifraudInfoResponse), bool corporate = default(bool), long createdAt = default(long), string customReference = default(string), string defaultFiscalEntityId = default(string), string defaultShippingContactId = default(string), string defaultPaymentSourceId = default(string), string email = default(string), CustomerFiscalEntitiesResponse fiscalEntities = default(CustomerFiscalEntitiesResponse), string id = default(string), bool livemode = default(bool), string name = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string _object = default(string), CustomerPaymentMethodsResponse paymentSources = default(CustomerPaymentMethodsResponse), string phone = default(string), CustomerResponseShippingContacts shippingContacts = default(CustomerResponseShippingContacts), SubscriptionResponse subscription = default(SubscriptionResponse))
         {
             this.CreatedAt = createdAt;
             // to ensure "id" is required (not null)
@@ -67,6 +68,12 @@ namespace Conekta.net.Model
             }
             this.Id = id;
             this.Livemode = livemode;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for CustomerResponse and cannot be null");
+            }
+            this.Name = name;
             // to ensure "_object" is required (not null)
             if (_object == null)
             {
@@ -81,7 +88,7 @@ namespace Conekta.net.Model
             this.DefaultPaymentSourceId = defaultPaymentSourceId;
             this.Email = email;
             this.FiscalEntities = fiscalEntities;
-            this.Name = name;
+            this.Metadata = metadata;
             this.PaymentSources = paymentSources;
             this.Phone = phone;
             this.ShippingContacts = shippingContacts;
@@ -95,21 +102,25 @@ namespace Conekta.net.Model
         public CustomerAntifraudInfoResponse AntifraudInfo { get; set; }
 
         /// <summary>
-        /// Gets or Sets Corporate
+        /// true if the customer is a company
         /// </summary>
+        /// <value>true if the customer is a company</value>
         [DataMember(Name = "corporate", EmitDefaultValue = true)]
         public bool Corporate { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedAt
+        /// Creation date of the object
         /// </summary>
+        /// <value>Creation date of the object</value>
         /// <example>1485151007</example>
         [DataMember(Name = "created_at", IsRequired = true, EmitDefaultValue = true)]
         public long CreatedAt { get; set; }
 
         /// <summary>
-        /// Gets or Sets CustomReference
+        /// Custom reference
         /// </summary>
+        /// <value>Custom reference</value>
+        /// <example>&quot;custom_reference&quot;</example>
         [DataMember(Name = "custom_reference", EmitDefaultValue = false)]
         public string CustomReference { get; set; }
 
@@ -148,25 +159,34 @@ namespace Conekta.net.Model
         public CustomerFiscalEntitiesResponse FiscalEntities { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Customer&#39;s ID
         /// </summary>
+        /// <value>Customer&#39;s ID</value>
         /// <example>&quot;cus_2tHJfJ79KyUwpxTik&quot;</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Livemode
+        /// true if the object exists in live mode or the value false if the object exists in test mode
         /// </summary>
+        /// <value>true if the object exists in live mode or the value false if the object exists in test mode</value>
         /// <example>true</example>
         [DataMember(Name = "livemode", IsRequired = true, EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Customer&#39;s name
         /// </summary>
+        /// <value>Customer&#39;s name</value>
         /// <example>&quot;Felipe&quot;</example>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Metadata
+        /// </summary>
+        [DataMember(Name = "metadata", EmitDefaultValue = false)]
+        public Dictionary<string, Object> Metadata { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
@@ -182,8 +202,9 @@ namespace Conekta.net.Model
         public CustomerPaymentMethodsResponse PaymentSources { get; set; }
 
         /// <summary>
-        /// Gets or Sets Phone
+        /// Customer&#39;s phone number
         /// </summary>
+        /// <value>Customer&#39;s phone number</value>
         /// <example>&quot;+5215555555555&quot;</example>
         [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
@@ -220,6 +241,7 @@ namespace Conekta.net.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  PaymentSources: ").Append(PaymentSources).Append("\n");
             sb.Append("  Phone: ").Append(Phone).Append("\n");
@@ -318,6 +340,12 @@ namespace Conekta.net.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.Metadata == input.Metadata ||
+                    this.Metadata != null &&
+                    input.Metadata != null &&
+                    this.Metadata.SequenceEqual(input.Metadata)
+                ) && 
+                (
                     this.Object == input.Object ||
                     (this.Object != null &&
                     this.Object.Equals(input.Object))
@@ -391,6 +419,10 @@ namespace Conekta.net.Model
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.Metadata != null)
+                {
+                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
                 }
                 if (this.Object != null)
                 {

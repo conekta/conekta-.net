@@ -56,14 +56,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Street1
         /// </summary>
-        /// <example>&quot;avenida siempre viva&quot;</example>
+        /// <example>&quot;Nuevo Leon 254&quot;</example>
         [DataMember(Name = "street1", EmitDefaultValue = false)]
         public string Street1 { get; set; }
 
         /// <summary>
         /// Gets or Sets Street2
         /// </summary>
-        /// <example>&quot;fake street&quot;</example>
+        /// <example>&quot;Departamento 404&quot;</example>
         [DataMember(Name = "street2", EmitDefaultValue = false)]
         public string Street2 { get; set; }
 

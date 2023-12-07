@@ -1,9 +1,10 @@
-# Conekta.net.Model.CustomerInfoResponse
+# Conekta.net.Model.OrderCustomerInfoResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CustomerCustomReference** | **string** | Custom reference | [optional] 
 **Name** | **string** |  | [optional] 
 **Email** | **string** |  | [optional] 
 **Phone** | **string** |  | [optional] 

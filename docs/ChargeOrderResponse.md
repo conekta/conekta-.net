@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **DeviceFingerprint** | **string** |  | [optional] 
 **FailureCode** | **string** |  | [optional] 
 **FailureMessage** | **string** |  | [optional] 
-**Fee** | **int** |  | [optional] 
 **Id** | **string** |  | [optional] 
 **Livemode** | **bool** |  | [optional] 
 **MonthlyInstallments** | **int?** |  | [optional] 

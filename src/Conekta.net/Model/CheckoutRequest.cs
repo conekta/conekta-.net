@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// [Checkout](https://developers.conekta.com/reference/checkout) details 
+    /// [Checkout](https://developers.conekta.com/v2.1.0/reference/payment-link) details 
     /// </summary>
     [DataContract(Name = "checkout_request")]
     public partial class CheckoutRequest : IEquatable<CheckoutRequest>, IValidatableObject

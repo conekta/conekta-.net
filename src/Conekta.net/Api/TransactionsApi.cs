@@ -64,12 +64,15 @@ namespace Conekta.net.Api
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
-        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
+        /// <param name="id">id of the object to be retrieved (optional)</param>
+        /// <param name="chargeId">id of the charge used for filtering (optional)</param>
+        /// <param name="type">type of the object to be retrieved (optional)</param>
+        /// <param name="currency">currency of the object to be retrieved (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetTransactionsResponse</returns>
-        GetTransactionsResponse GetTransactions(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
+        GetTransactionsResponse GetTransactions(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string id = default(string), string chargeId = default(string), string type = default(string), string currency = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Get List transactions
@@ -81,12 +84,15 @@ namespace Conekta.net.Api
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
-        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
+        /// <param name="id">id of the object to be retrieved (optional)</param>
+        /// <param name="chargeId">id of the charge used for filtering (optional)</param>
+        /// <param name="type">type of the object to be retrieved (optional)</param>
+        /// <param name="currency">currency of the object to be retrieved (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetTransactionsResponse</returns>
-        ApiResponse<GetTransactionsResponse> GetTransactionsWithHttpInfo(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
+        ApiResponse<GetTransactionsResponse> GetTransactionsWithHttpInfo(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string id = default(string), string chargeId = default(string), string type = default(string), string currency = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -135,13 +141,16 @@ namespace Conekta.net.Api
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
-        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
+        /// <param name="id">id of the object to be retrieved (optional)</param>
+        /// <param name="chargeId">id of the charge used for filtering (optional)</param>
+        /// <param name="type">type of the object to be retrieved (optional)</param>
+        /// <param name="currency">currency of the object to be retrieved (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetTransactionsResponse</returns>
-        System.Threading.Tasks.Task<GetTransactionsResponse> GetTransactionsAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetTransactionsResponse> GetTransactionsAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string id = default(string), string chargeId = default(string), string type = default(string), string currency = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get List transactions
@@ -153,13 +162,16 @@ namespace Conekta.net.Api
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
-        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
+        /// <param name="id">id of the object to be retrieved (optional)</param>
+        /// <param name="chargeId">id of the charge used for filtering (optional)</param>
+        /// <param name="type">type of the object to be retrieved (optional)</param>
+        /// <param name="currency">currency of the object to be retrieved (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetTransactionsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetTransactionsResponse>> GetTransactionsWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetTransactionsResponse>> GetTransactionsWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string id = default(string), string chargeId = default(string), string type = default(string), string currency = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -467,14 +479,17 @@ namespace Conekta.net.Api
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
-        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
+        /// <param name="id">id of the object to be retrieved (optional)</param>
+        /// <param name="chargeId">id of the charge used for filtering (optional)</param>
+        /// <param name="type">type of the object to be retrieved (optional)</param>
+        /// <param name="currency">currency of the object to be retrieved (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetTransactionsResponse</returns>
-        public GetTransactionsResponse GetTransactions(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0)
+        public GetTransactionsResponse GetTransactions(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string id = default(string), string chargeId = default(string), string type = default(string), string currency = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<GetTransactionsResponse> localVarResponse = GetTransactionsWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+            Conekta.net.Client.ApiResponse<GetTransactionsResponse> localVarResponse = GetTransactionsWithHttpInfo(acceptLanguage, xChildCompanyId, limit, next, previous, id, chargeId, type, currency);
             return localVarResponse.Data;
         }
 
@@ -485,12 +500,15 @@ namespace Conekta.net.Api
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
-        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
+        /// <param name="id">id of the object to be retrieved (optional)</param>
+        /// <param name="chargeId">id of the charge used for filtering (optional)</param>
+        /// <param name="type">type of the object to be retrieved (optional)</param>
+        /// <param name="currency">currency of the object to be retrieved (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetTransactionsResponse</returns>
-        public Conekta.net.Client.ApiResponse<GetTransactionsResponse> GetTransactionsWithHttpInfo(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<GetTransactionsResponse> GetTransactionsWithHttpInfo(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string id = default(string), string chargeId = default(string), string type = default(string), string currency = default(string), int operationIndex = 0)
         {
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
 
@@ -518,10 +536,6 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
-            if (search != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "search", search));
-            }
             if (next != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "next", next));
@@ -529,6 +543,22 @@ namespace Conekta.net.Api
             if (previous != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "previous", previous));
+            }
+            if (id != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "id", id));
+            }
+            if (chargeId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "charge_id", chargeId));
+            }
+            if (type != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "type", type));
+            }
+            if (currency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "currency", currency));
             }
             if (acceptLanguage != null)
             {
@@ -570,15 +600,18 @@ namespace Conekta.net.Api
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
-        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
+        /// <param name="id">id of the object to be retrieved (optional)</param>
+        /// <param name="chargeId">id of the charge used for filtering (optional)</param>
+        /// <param name="type">type of the object to be retrieved (optional)</param>
+        /// <param name="currency">currency of the object to be retrieved (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetTransactionsResponse</returns>
-        public async System.Threading.Tasks.Task<GetTransactionsResponse> GetTransactionsAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetTransactionsResponse> GetTransactionsAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string id = default(string), string chargeId = default(string), string type = default(string), string currency = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<GetTransactionsResponse> localVarResponse = await GetTransactionsWithHttpInfoAsync(acceptLanguage, xChildCompanyId, limit, search, next, previous, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<GetTransactionsResponse> localVarResponse = await GetTransactionsWithHttpInfoAsync(acceptLanguage, xChildCompanyId, limit, next, previous, id, chargeId, type, currency, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -589,13 +622,16 @@ namespace Conekta.net.Api
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="limit">The numbers of items to return, the maximum value is 250 (optional, default to 20)</param>
-        /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
+        /// <param name="id">id of the object to be retrieved (optional)</param>
+        /// <param name="chargeId">id of the charge used for filtering (optional)</param>
+        /// <param name="type">type of the object to be retrieved (optional)</param>
+        /// <param name="currency">currency of the object to be retrieved (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetTransactionsResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<GetTransactionsResponse>> GetTransactionsWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<GetTransactionsResponse>> GetTransactionsWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string id = default(string), string chargeId = default(string), string type = default(string), string currency = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -624,10 +660,6 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
-            if (search != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "search", search));
-            }
             if (next != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "next", next));
@@ -635,6 +667,22 @@ namespace Conekta.net.Api
             if (previous != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "previous", previous));
+            }
+            if (id != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "id", id));
+            }
+            if (chargeId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "charge_id", chargeId));
+            }
+            if (type != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "type", type));
+            }
+            if (currency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "currency", currency));
             }
             if (acceptLanguage != null)
             {

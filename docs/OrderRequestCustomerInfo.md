@@ -1,4 +1,5 @@
 # Conekta.net.Model.OrderRequestCustomerInfo
+Customer information
 
 ## Properties
 

@@ -2,12 +2,12 @@
 
 ## How to contribute step-by-step
 
-1. Fork the `conekta/conekta-.net repository.
+1. Fork the `conekta/#$repo repository.
 2. Create a new branch from `main` in your fork. This makes it easier for you to keep track of your changes.
 3. Make the desired changes to the code.
     * If you are adding new functionality or fixing a bug, we recommend you add unit tests that cover it.
 4. Push the changes to your fork.
-5. Create a pull request to the `conekta/conekta-.net` repository.
+5. Create a pull request to the `conekta/#$repo` repository.
 6. In your pull request, please describe in detail:
     * What problem you’re solving
     * Your approach to fixing the problem

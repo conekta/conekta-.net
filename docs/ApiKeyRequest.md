@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Active** | **bool** | Indicates if the api key is active | 
-**Description** | **string** | Detail of the use that will be given to the api key | 
+**Description** | **string** | A name or brief explanation of what this api key is used for | [optional] 
 **Role** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

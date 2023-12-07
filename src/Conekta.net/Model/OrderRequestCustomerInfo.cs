@@ -28,7 +28,7 @@ using System.Reflection;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// OrderRequestCustomerInfo
+    /// Customer information
     /// </summary>
     [JsonConverter(typeof(OrderRequestCustomerInfoJsonConverter))]
     [DataContract(Name = "order_request_customer_info")]

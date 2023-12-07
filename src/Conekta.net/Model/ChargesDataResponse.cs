@@ -44,7 +44,6 @@ namespace Conekta.net.Model
         /// <param name="deviceFingerprint">deviceFingerprint.</param>
         /// <param name="failureCode">failureCode.</param>
         /// <param name="failureMessage">failureMessage.</param>
-        /// <param name="fee">fee.</param>
         /// <param name="id">id.</param>
         /// <param name="livemode">livemode.</param>
         /// <param name="_object">_object.</param>
@@ -54,7 +53,7 @@ namespace Conekta.net.Model
         /// <param name="referenceId">Reference ID of the charge.</param>
         /// <param name="refunds">refunds.</param>
         /// <param name="status">status.</param>
-        public ChargesDataResponse(int amount = default(int), ChargeResponseChannel channel = default(ChargeResponseChannel), long createdAt = default(long), string currency = default(string), string customerId = default(string), string description = default(string), string deviceFingerprint = default(string), string failureCode = default(string), string failureMessage = default(string), int fee = default(int), string id = default(string), bool livemode = default(bool), string _object = default(string), string orderId = default(string), int? paidAt = default(int?), ChargeResponsePaymentMethod paymentMethod = default(ChargeResponsePaymentMethod), string referenceId = default(string), ChargeResponseRefunds refunds = default(ChargeResponseRefunds), string status = default(string))
+        public ChargesDataResponse(int amount = default(int), ChargeResponseChannel channel = default(ChargeResponseChannel), long createdAt = default(long), string currency = default(string), string customerId = default(string), string description = default(string), string deviceFingerprint = default(string), string failureCode = default(string), string failureMessage = default(string), string id = default(string), bool livemode = default(bool), string _object = default(string), string orderId = default(string), int? paidAt = default(int?), ChargeResponsePaymentMethod paymentMethod = default(ChargeResponsePaymentMethod), string referenceId = default(string), ChargeResponseRefunds refunds = default(ChargeResponseRefunds), string status = default(string))
         {
             this.Amount = amount;
             this.Channel = channel;
@@ -65,7 +64,6 @@ namespace Conekta.net.Model
             this.DeviceFingerprint = deviceFingerprint;
             this.FailureCode = failureCode;
             this.FailureMessage = failureMessage;
-            this.Fee = fee;
             this.Id = id;
             this.Livemode = livemode;
             this.Object = _object;
@@ -137,13 +135,6 @@ namespace Conekta.net.Model
         /// <example>&quot;Este cargo ha sido declinado porque el comportamiento del comprador es sospechoso.&quot;</example>
         [DataMember(Name = "failure_message", EmitDefaultValue = false)]
         public string FailureMessage { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Fee
-        /// </summary>
-        /// <example>1160</example>
-        [DataMember(Name = "fee", EmitDefaultValue = false)]
-        public int Fee { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -222,7 +213,6 @@ namespace Conekta.net.Model
             sb.Append("  DeviceFingerprint: ").Append(DeviceFingerprint).Append("\n");
             sb.Append("  FailureCode: ").Append(FailureCode).Append("\n");
             sb.Append("  FailureMessage: ").Append(FailureMessage).Append("\n");
-            sb.Append("  Fee: ").Append(Fee).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
             sb.Append("  Object: ").Append(Object).Append("\n");
@@ -311,10 +301,6 @@ namespace Conekta.net.Model
                     this.FailureMessage.Equals(input.FailureMessage))
                 ) && 
                 (
-                    this.Fee == input.Fee ||
-                    this.Fee.Equals(input.Fee)
-                ) && 
-                (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
@@ -399,7 +385,6 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.FailureMessage.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Fee.GetHashCode();
                 if (this.Id != null)
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();

@@ -52,7 +52,7 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void CreateApiKeyTest()
         {
-            var apiKeyRequest = new ApiKeyRequest(true, "test", "private");
+            var apiKeyRequest = new ApiKeyRequest("test", "private");
 
             var response = _instance.CreateApiKey(apiKeyRequest, "es");
 

@@ -27,16 +27,16 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// OrderResponseFiscalEntityAddressAllOf
+    /// OrderFiscalEntityAddressResponseAllOf
     /// </summary>
-    [DataContract(Name = "order_response_fiscal_entity_address_allOf")]
-    public partial class OrderResponseFiscalEntityAddressAllOf : IEquatable<OrderResponseFiscalEntityAddressAllOf>, IValidatableObject
+    [DataContract(Name = "order_fiscal_entity_address_response_allOf")]
+    public partial class OrderFiscalEntityAddressResponseAllOf : IEquatable<OrderFiscalEntityAddressResponseAllOf>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrderResponseFiscalEntityAddressAllOf" /> class.
+        /// Initializes a new instance of the <see cref="OrderFiscalEntityAddressResponseAllOf" /> class.
         /// </summary>
         /// <param name="_object">_object.</param>
-        public OrderResponseFiscalEntityAddressAllOf(string _object = default(string))
+        public OrderFiscalEntityAddressResponseAllOf(string _object = default(string))
         {
             this.Object = _object;
         }
@@ -55,7 +55,7 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class OrderResponseFiscalEntityAddressAllOf {\n");
+            sb.Append("class OrderFiscalEntityAddressResponseAllOf {\n");
             sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -77,15 +77,15 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as OrderResponseFiscalEntityAddressAllOf);
+            return this.Equals(input as OrderFiscalEntityAddressResponseAllOf);
         }
 
         /// <summary>
-        /// Returns true if OrderResponseFiscalEntityAddressAllOf instances are equal
+        /// Returns true if OrderFiscalEntityAddressResponseAllOf instances are equal
         /// </summary>
-        /// <param name="input">Instance of OrderResponseFiscalEntityAddressAllOf to be compared</param>
+        /// <param name="input">Instance of OrderFiscalEntityAddressResponseAllOf to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(OrderResponseFiscalEntityAddressAllOf input)
+        public bool Equals(OrderFiscalEntityAddressResponseAllOf input)
         {
             if (input == null)
             {

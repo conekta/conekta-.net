@@ -27,27 +27,37 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// CustomerInfoResponse
+    /// OrderCustomerInfoResponse
     /// </summary>
-    [DataContract(Name = "customer_info_response")]
-    public partial class CustomerInfoResponse : IEquatable<CustomerInfoResponse>, IValidatableObject
+    [DataContract(Name = "order_customer_info_response")]
+    public partial class OrderCustomerInfoResponse : IEquatable<OrderCustomerInfoResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomerInfoResponse" /> class.
+        /// Initializes a new instance of the <see cref="OrderCustomerInfoResponse" /> class.
         /// </summary>
+        /// <param name="customerCustomReference">Custom reference.</param>
         /// <param name="name">name.</param>
         /// <param name="email">email.</param>
         /// <param name="phone">phone.</param>
         /// <param name="corporate">corporate (default to false).</param>
         /// <param name="_object">_object.</param>
-        public CustomerInfoResponse(string name = default(string), string email = default(string), string phone = default(string), bool corporate = false, string _object = default(string))
+        public OrderCustomerInfoResponse(string customerCustomReference = default(string), string name = default(string), string email = default(string), string phone = default(string), bool corporate = false, string _object = default(string))
         {
+            this.CustomerCustomReference = customerCustomReference;
             this.Name = name;
             this.Email = email;
             this.Phone = phone;
             this.Corporate = corporate;
             this.Object = _object;
         }
+
+        /// <summary>
+        /// Custom reference
+        /// </summary>
+        /// <value>Custom reference</value>
+        /// <example>&quot;custom_reference&quot;</example>
+        [DataMember(Name = "customer_custom_reference", EmitDefaultValue = true)]
+        public string CustomerCustomReference { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -90,7 +100,8 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CustomerInfoResponse {\n");
+            sb.Append("class OrderCustomerInfoResponse {\n");
+            sb.Append("  CustomerCustomReference: ").Append(CustomerCustomReference).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  Phone: ").Append(Phone).Append("\n");
@@ -116,21 +127,26 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CustomerInfoResponse);
+            return this.Equals(input as OrderCustomerInfoResponse);
         }
 
         /// <summary>
-        /// Returns true if CustomerInfoResponse instances are equal
+        /// Returns true if OrderCustomerInfoResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of CustomerInfoResponse to be compared</param>
+        /// <param name="input">Instance of OrderCustomerInfoResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CustomerInfoResponse input)
+        public bool Equals(OrderCustomerInfoResponse input)
         {
             if (input == null)
             {
                 return false;
             }
             return 
+                (
+                    this.CustomerCustomReference == input.CustomerCustomReference ||
+                    (this.CustomerCustomReference != null &&
+                    this.CustomerCustomReference.Equals(input.CustomerCustomReference))
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
@@ -166,6 +182,10 @@ namespace Conekta.net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.CustomerCustomReference != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomerCustomReference.GetHashCode();
+                }
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();

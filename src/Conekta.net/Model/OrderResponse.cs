@@ -52,9 +52,10 @@ namespace Conekta.net.Model
         /// <param name="metadata">Set of key-value pairs that you can attach to an object. This can be useful for storing additional information about the object in a structured format..</param>
         /// <param name="_object">String representing the object’s type. Objects of the same type share the same value..</param>
         /// <param name="paymentStatus">The payment status of the order..</param>
+        /// <param name="processingMode">Indicates the processing mode for the order, either ecommerce, recurrent or validation..</param>
         /// <param name="shippingContact">shippingContact.</param>
         /// <param name="updatedAt">The time at which the object was last updated in seconds since the Unix epoch.</param>
-        public OrderResponse(int amount = default(int), int amountRefunded = default(int), ChargeResponseChannel channel = default(ChargeResponseChannel), OrderResponseCharges charges = default(OrderResponseCharges), OrderResponseCheckout checkout = default(OrderResponseCheckout), long createdAt = default(long), string currency = default(string), OrderResponseCustomerInfo customerInfo = default(OrderResponseCustomerInfo), OrderResponseDiscountLines discountLines = default(OrderResponseDiscountLines), OrderResponseFiscalEntity fiscalEntity = default(OrderResponseFiscalEntity), string id = default(string), bool isRefundable = default(bool), OrderResponseProducts lineItems = default(OrderResponseProducts), bool livemode = default(bool), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string _object = default(string), string paymentStatus = default(string), OrderResponseShippingContact shippingContact = default(OrderResponseShippingContact), long updatedAt = default(long))
+        public OrderResponse(int amount = default(int), int amountRefunded = default(int), ChargeResponseChannel channel = default(ChargeResponseChannel), OrderResponseCharges charges = default(OrderResponseCharges), OrderResponseCheckout checkout = default(OrderResponseCheckout), long createdAt = default(long), string currency = default(string), OrderResponseCustomerInfo customerInfo = default(OrderResponseCustomerInfo), OrderResponseDiscountLines discountLines = default(OrderResponseDiscountLines), OrderFiscalEntityResponse fiscalEntity = default(OrderFiscalEntityResponse), string id = default(string), bool isRefundable = default(bool), OrderResponseProducts lineItems = default(OrderResponseProducts), bool livemode = default(bool), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string _object = default(string), string paymentStatus = default(string), string processingMode = default(string), OrderResponseShippingContact shippingContact = default(OrderResponseShippingContact), long updatedAt = default(long))
         {
             this.Amount = amount;
             this.AmountRefunded = amountRefunded;
@@ -73,6 +74,7 @@ namespace Conekta.net.Model
             this.Metadata = metadata;
             this.Object = _object;
             this.PaymentStatus = paymentStatus;
+            this.ProcessingMode = processingMode;
             this.ShippingContact = shippingContact;
             this.UpdatedAt = updatedAt;
         }
@@ -142,8 +144,8 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets FiscalEntity
         /// </summary>
-        [DataMember(Name = "fiscal_entity", EmitDefaultValue = false)]
-        public OrderResponseFiscalEntity FiscalEntity { get; set; }
+        [DataMember(Name = "fiscal_entity", EmitDefaultValue = true)]
+        public OrderFiscalEntityResponse FiscalEntity { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -197,6 +199,14 @@ namespace Conekta.net.Model
         public string PaymentStatus { get; set; }
 
         /// <summary>
+        /// Indicates the processing mode for the order, either ecommerce, recurrent or validation.
+        /// </summary>
+        /// <value>Indicates the processing mode for the order, either ecommerce, recurrent or validation.</value>
+        /// <example>&quot;ecommerce&quot;</example>
+        [DataMember(Name = "processing_mode", EmitDefaultValue = false)]
+        public string ProcessingMode { get; set; }
+
+        /// <summary>
         /// Gets or Sets ShippingContact
         /// </summary>
         [DataMember(Name = "shipping_contact", EmitDefaultValue = false)]
@@ -235,6 +245,7 @@ namespace Conekta.net.Model
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  PaymentStatus: ").Append(PaymentStatus).Append("\n");
+            sb.Append("  ProcessingMode: ").Append(ProcessingMode).Append("\n");
             sb.Append("  ShippingContact: ").Append(ShippingContact).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("}\n");
@@ -354,6 +365,11 @@ namespace Conekta.net.Model
                     this.PaymentStatus.Equals(input.PaymentStatus))
                 ) && 
                 (
+                    this.ProcessingMode == input.ProcessingMode ||
+                    (this.ProcessingMode != null &&
+                    this.ProcessingMode.Equals(input.ProcessingMode))
+                ) && 
+                (
                     this.ShippingContact == input.ShippingContact ||
                     (this.ShippingContact != null &&
                     this.ShippingContact.Equals(input.ShippingContact))
@@ -425,6 +441,10 @@ namespace Conekta.net.Model
                 if (this.PaymentStatus != null)
                 {
                     hashCode = (hashCode * 59) + this.PaymentStatus.GetHashCode();
+                }
+                if (this.ProcessingMode != null)
+                {
+                    hashCode = (hashCode * 59) + this.ProcessingMode.GetHashCode();
                 }
                 if (this.ShippingContact != null)
                 {

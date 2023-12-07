@@ -42,8 +42,8 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="url">Here you must place the URL of your Webhook remember that you must program what you will do with the events received. Also do not forget to handle the HTTPS protocol for greater security. (required).</param>
         /// <param name="synchronous">It is a value that allows to decide if the events will be synchronous or asynchronous. We recommend asynchronous &#x3D; false (default to false).</param>
-        /// <param name="subscribedEvents">subscribedEvents.</param>
-        public WebhookUpdateRequest(string url = default(string), bool synchronous = false, List<string> subscribedEvents = default(List<string>))
+        /// <param name="events">events.</param>
+        public WebhookUpdateRequest(string url = default(string), bool synchronous = false, List<string> events = default(List<string>))
         {
             // to ensure "url" is required (not null)
             if (url == null)
@@ -52,7 +52,7 @@ namespace Conekta.net.Model
             }
             this.Url = url;
             this.Synchronous = synchronous;
-            this.SubscribedEvents = subscribedEvents;
+            this.Events = events;
         }
 
         /// <summary>
@@ -72,10 +72,10 @@ namespace Conekta.net.Model
         public bool Synchronous { get; set; }
 
         /// <summary>
-        /// Gets or Sets SubscribedEvents
+        /// Gets or Sets Events
         /// </summary>
-        [DataMember(Name = "subscribed_events", EmitDefaultValue = false)]
-        public List<string> SubscribedEvents { get; set; }
+        [DataMember(Name = "events", EmitDefaultValue = false)]
+        public List<string> Events { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -87,7 +87,7 @@ namespace Conekta.net.Model
             sb.Append("class WebhookUpdateRequest {\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
             sb.Append("  Synchronous: ").Append(Synchronous).Append("\n");
-            sb.Append("  SubscribedEvents: ").Append(SubscribedEvents).Append("\n");
+            sb.Append("  Events: ").Append(Events).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -133,10 +133,10 @@ namespace Conekta.net.Model
                     this.Synchronous.Equals(input.Synchronous)
                 ) && 
                 (
-                    this.SubscribedEvents == input.SubscribedEvents ||
-                    this.SubscribedEvents != null &&
-                    input.SubscribedEvents != null &&
-                    this.SubscribedEvents.SequenceEqual(input.SubscribedEvents)
+                    this.Events == input.Events ||
+                    this.Events != null &&
+                    input.Events != null &&
+                    this.Events.SequenceEqual(input.Events)
                 );
         }
 
@@ -154,9 +154,9 @@ namespace Conekta.net.Model
                     hashCode = (hashCode * 59) + this.Url.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Synchronous.GetHashCode();
-                if (this.SubscribedEvents != null)
+                if (this.Events != null)
                 {
-                    hashCode = (hashCode * 59) + this.SubscribedEvents.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Events.GetHashCode();
                 }
                 return hashCode;
             }
