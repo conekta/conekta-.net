@@ -65,6 +65,7 @@ namespace Conekta.net.Test.Api
             var response = _instance.GetBalance("es");
             
             Assert.IsType<BalanceResponse>(response);
+            Assert.Equal("MXN", response.Available[0].Currency);
         }
     }
 }
