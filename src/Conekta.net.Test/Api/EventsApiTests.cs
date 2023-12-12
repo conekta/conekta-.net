@@ -58,7 +58,7 @@ namespace Conekta.net.Test.Api
 
             Assert.IsType<EventResponse>(response);
             Assert.Single(response.WebhookLogs);
-            Assert.Equal("event", response.Object);
+            Assert.Equal("event", response.VarObject);
             Assert.Equal("webhook_ping", response.Type);
             Assert.True(response.Livemode);
             Assert.Equal("webhl_2tSipZiQaZ1DLH33n", response.WebhookLogs[0].Id);
@@ -78,7 +78,7 @@ namespace Conekta.net.Test.Api
             Assert.True(response.HasMore);
             Assert.Null(response.PreviousPageUrl);
             Assert.NotNull(response.NextPageUrl);
-            Assert.Equal("list", response.Object);
+            Assert.Equal("list", response.VarObject);
             Assert.Equal(20, response.Data.Count);
         }
 

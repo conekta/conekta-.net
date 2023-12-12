@@ -108,7 +108,7 @@ namespace Conekta.net.Test.Api
             Assert.Null(response.NextPageUrl);
             Assert.Null(response.PreviousPageUrl);
             Assert.False(response.HasMore);
-            Assert.Equal("list", response.Object);
+            Assert.Equal("list", response.VarObject);
         }
 
         /// <summary>

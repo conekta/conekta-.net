@@ -10,868 +10,599 @@
 
 
 using System;
-using System.Collections;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Reflection;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using System.Threading;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using Conekta.net.Utils;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-using RestSharp;
-using RestSharp.Serializers;
-using RestSharpMethod = RestSharp.Method;
-using Polly;
+using System.Net.Http;
+using System.Net.Security;
 
 namespace Conekta.net.Client
 {
     /// <summary>
-    /// Allows RestSharp to Serialize/Deserialize JSON using our custom logic, but only when ContentType is JSON.
+    /// Represents a set of configuration settings
     /// </summary>
-    internal class CustomJsonCodec : IRestSerializer, ISerializer, IDeserializer
+    public class Configuration : IReadableConfiguration
     {
-        private readonly IReadableConfiguration _configuration;
-        private static readonly string _contentType = "application/json";
-        private readonly JsonSerializerSettings _serializerSettings = new JsonSerializerSettings
+        #region Constants
+
+        /// <summary>
+        /// Version of the package.
+        /// </summary>
+        /// <value>Version of the package.</value>
+        public const string Version = "6.0.6";
+
+        /// <summary>
+        /// Identifier for ISO 8601 DateTime Format
+        /// </summary>
+        /// <remarks>See https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx#Anchor_8 for more information.</remarks>
+        // ReSharper disable once InconsistentNaming
+        public const string ISO8601_DATETIME_FORMAT = "o";
+
+        #endregion Constants
+
+        #region Static Members
+
+        /// <summary>
+        /// Default creation of exceptions for a given method name and response object
+        /// </summary>
+        public static readonly ExceptionFactory DefaultExceptionFactory = (methodName, response) =>
         {
-            // OpenAPI generated types generally hide default constructors.
-            ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
-            ContractResolver = new DefaultContractResolver
+            var status = (int)response.StatusCode;
+            if (status >= 400)
             {
-                NamingStrategy = new CamelCaseNamingStrategy
-                {
-                    OverrideSpecifiedNames = false
-                }
+                return new ApiException(status,
+                    string.Format("Error calling {0}: {1}", methodName, response.RawContent),
+                    response.RawContent, response.Headers);
             }
+            return null;
         };
 
-        public CustomJsonCodec(IReadableConfiguration configuration)
-        {
-            _configuration = configuration;
-        }
+        #endregion Static Members
 
-        public CustomJsonCodec(JsonSerializerSettings serializerSettings, IReadableConfiguration configuration)
-        {
-            _serializerSettings = serializerSettings;
-            _configuration = configuration;
-        }
+        #region Private Members
 
         /// <summary>
-        /// Serialize the object into a JSON string.
+        /// Defines the base path of the target API server.
+        /// Example: http://localhost:3000/v1/
         /// </summary>
-        /// <param name="obj">Object to be serialized.</param>
-        /// <returns>A JSON string.</returns>
-        public string Serialize(object obj)
-        {
-            if (obj != null && obj is Conekta.net.Model.AbstractOpenAPISchema)
-            {
-                // the object to be serialized is an oneOf/anyOf schema
-                return ((Conekta.net.Model.AbstractOpenAPISchema)obj).ToJson();
-            }
-            else
-            {
-                return JsonConvert.SerializeObject(obj, _serializerSettings);
-            }
-        }
+        private string _basePath;
 
-        public string Serialize(Parameter bodyParameter) => Serialize(bodyParameter.Value);
-
-        public T Deserialize<T>(RestResponse response)
-        {
-            var result = (T)Deserialize(response, typeof(T));
-            return result;
-        }
+        private bool _useDefaultCredentials = false;
 
         /// <summary>
-        /// Deserialize the JSON string into a proper object.
+        /// Gets or sets the API key based on the authentication name.
+        /// This is the key and value comprising the "secret" for accessing an API.
         /// </summary>
-        /// <param name="response">The HTTP response.</param>
-        /// <param name="type">Object type.</param>
-        /// <returns>Object representation of the JSON string.</returns>
-        internal object Deserialize(RestResponse response, Type type)
-        {
-            if (type == typeof(byte[])) // return byte array
-            {
-                return response.RawBytes;
-            }
+        /// <value>The API key.</value>
+        private IDictionary<string, string> _apiKey;
 
-            // TODO: ? if (type.IsAssignableFrom(typeof(Stream)))
-            if (type == typeof(Stream))
+        /// <summary>
+        /// Gets or sets the prefix (e.g. Token) of the API key based on the authentication name.
+        /// </summary>
+        /// <value>The prefix of the API key.</value>
+        private IDictionary<string, string> _apiKeyPrefix;
+
+        private string _dateTimeFormat = ISO8601_DATETIME_FORMAT;
+        private string _tempFolderPath = Path.GetTempPath();
+
+        /// <summary>
+        /// Gets or sets the servers defined in the OpenAPI spec.
+        /// </summary>
+        /// <value>The servers</value>
+        private IList<IReadOnlyDictionary<string, object>> _servers;
+
+        /// <summary>
+        /// Gets or sets the operation servers defined in the OpenAPI spec.
+        /// </summary>
+        /// <value>The operation servers</value>
+        private IReadOnlyDictionary<string, List<IReadOnlyDictionary<string, object>>> _operationServers;
+
+        #endregion Private Members
+
+        #region Constructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Configuration" /> class
+        /// </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
+        public Configuration()
+        {
+            Proxy = null;
+            UserAgent = $"Conekta/v2 .NetBindings/{Version}";
+            BasePath = "https://api.conekta.io";
+            DefaultHeaders = new ConcurrentDictionary<string, string>();
+            ApiKey = new ConcurrentDictionary<string, string>();
+            ApiKeyPrefix = new ConcurrentDictionary<string, string>();
+            Servers = new List<IReadOnlyDictionary<string, object>>()
             {
-                var bytes = response.RawBytes;
-                if (response.Headers != null)
                 {
-                    var filePath = string.IsNullOrEmpty(_configuration.TempFolderPath)
-                        ? Path.GetTempPath()
-                        : _configuration.TempFolderPath;
-                    var regex = new Regex(@"Content-Disposition=.*filename=['""]?([^'""\s]+)['""]?$");
-                    foreach (var header in response.Headers)
-                    {
-                        var match = regex.Match(header.ToString());
-                        if (match.Success)
-                        {
-                            string fileName = filePath + ClientUtils.SanitizeFilename(match.Groups[1].Value.Replace("\"", "").Replace("'", ""));
-                            File.WriteAllBytes(fileName, bytes);
-                            return new FileStream(fileName, FileMode.Open);
-                        }
+                    new Dictionary<string, object> {
+                        {"url", "https://api.conekta.io"},
+                        {"description", "Conekta main server"},
                     }
                 }
-                var stream = new MemoryStream(bytes);
-                return stream;
-            }
-
-            if (type.Name.StartsWith("System.Nullable`1[[System.DateTime")) // return a datetime object
-            {
-                return DateTime.Parse(response.Content, null, System.Globalization.DateTimeStyles.RoundtripKind);
-            }
-
-            if (type == typeof(string) || type.Name.StartsWith("System.Nullable")) // return primitive type
-            {
-                return Convert.ChangeType(response.Content, type);
-            }
-
-            // at this point, it must be a model (json)
-            try
-            {
-                return JsonConvert.DeserializeObject(response.Content, type, _serializerSettings);
-            }
-            catch (Exception e)
-            {
-                throw new ApiException(500, e.Message);
-            }
-        }
-
-        public ISerializer Serializer => this;
-        public IDeserializer Deserializer => this;
-
-        public string[] AcceptedContentTypes => RestSharp.Serializers.ContentType.JsonAccept;
-
-        public SupportsContentType SupportsContentType => contentType =>
-            contentType.EndsWith("json", StringComparison.InvariantCultureIgnoreCase) ||
-            contentType.EndsWith("javascript", StringComparison.InvariantCultureIgnoreCase);
-
-        public string ContentType
-        {
-            get { return _contentType; }
-            set { throw new InvalidOperationException("Not allowed to set content type."); }
-        }
-
-        public DataFormat DataFormat => DataFormat.Json;
-    }
-    /// <summary>
-    /// Provides a default implementation of an Api client (both synchronous and asynchronous implementations),
-    /// encapsulating general REST accessor use cases.
-    /// </summary>
-    public partial class ApiClient : ISynchronousClient, IAsynchronousClient
-    {   
-        private readonly string _baseUrl;
-        private readonly string _conektaUserAgent;
-
-        /// <summary>
-        /// Specifies the settings on a <see cref="JsonSerializer" /> object.
-        /// These settings can be adjusted to accommodate custom serialization rules.
-        /// </summary>
-        public JsonSerializerSettings SerializerSettings { get; set; } = new JsonSerializerSettings
-        {
-            // OpenAPI generated types generally hide default constructors.
-            ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
-            ContractResolver = new DefaultContractResolver
-            {
-                NamingStrategy = new CamelCaseNamingStrategy
-                {
-                    OverrideSpecifiedNames = false
-                }
-            }
-        };
-
-        /// <summary>
-        /// Allows for extending request processing for <see cref="ApiClient"/> generated code.
-        /// </summary>
-        /// <param name="request">The RestSharp request object</param>
-        partial void InterceptRequest(RestRequest request);
-
-        /// <summary>
-        /// Allows for extending response processing for <see cref="ApiClient"/> generated code.
-        /// </summary>
-        /// <param name="request">The RestSharp request object</param>
-        /// <param name="response">The RestSharp response object</param>
-        partial void InterceptResponse(RestRequest request, RestResponse response);
-
-        private string GetConektaUserAgent() 
-        {
-          var values = new Dictionary<string, object>
-            {
-                { "bindings_version", Configuration.Version  },
-                { "lang", ".net" },
-                { "publisher", "conekta" },
-                { "conekta_net_target_framework", RuntimeInformation.ConektaNetTargetFramework },
             };
-            try
+            OperationServers = new Dictionary<string, List<IReadOnlyDictionary<string, object>>>()
             {
-                values.Add("lang_version", RuntimeInformation.GetRuntimeVersion());
-            }
-            catch (Exception)
-            {
-                values.Add("lang_version", "(unknown)");
-            }
+            };
 
-            try
-            {
-                values.Add("os_version", RuntimeInformation.GetOsVersion());
-            }
-            catch (Exception)
-            {
-                values.Add("os_version", "(unknown)");
-            }
-
-            try
-            {
-                values.Add("newtonsoft_json_version", RuntimeInformation.GetNewtonsoftJsonVersion());
-            }
-            catch (Exception)
-            {
-                values.Add("newtonsoft_json_version", "(unknown)");
-            }
-
-            return Newtonsoft.Json.JsonConvert.SerializeObject(values, Formatting.None);
+            // Setting Timeout has side effects (forces ApiClient creation).
+            Timeout = 100000;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApiClient" />, defaulting to the global configurations' base url.
+        /// Initializes a new instance of the <see cref="Configuration" /> class
         /// </summary>
-        public ApiClient()
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
+        public Configuration(
+            IDictionary<string, string> defaultHeaders,
+            IDictionary<string, string> apiKey,
+            IDictionary<string, string> apiKeyPrefix,
+            string basePath = "https://api.conekta.io") : this()
         {
-            _baseUrl = Conekta.net.Client.GlobalConfiguration.Instance.BasePath;
-            _conektaUserAgent = GetConektaUserAgent();
+            if (string.IsNullOrWhiteSpace(basePath))
+                throw new ArgumentException("The provided basePath is invalid.", "basePath");
+            if (defaultHeaders == null)
+                throw new ArgumentNullException("defaultHeaders");
+            if (apiKey == null)
+                throw new ArgumentNullException("apiKey");
+            if (apiKeyPrefix == null)
+                throw new ArgumentNullException("apiKeyPrefix");
+
+            BasePath = basePath;
+
+            foreach (var keyValuePair in defaultHeaders)
+            {
+                DefaultHeaders.Add(keyValuePair);
+            }
+
+            foreach (var keyValuePair in apiKey)
+            {
+                ApiKey.Add(keyValuePair);
+            }
+
+            foreach (var keyValuePair in apiKeyPrefix)
+            {
+                ApiKeyPrefix.Add(keyValuePair);
+            }
+        }
+
+        #endregion Constructors
+
+        #region Properties
+
+        /// <summary>
+        /// Gets or sets the base path for API access.
+        /// </summary>
+        public virtual string BasePath 
+        {
+            get { return _basePath; }
+            set { _basePath = value; }
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApiClient" />
+        /// Determine whether or not the "default credentials" (e.g. the user account under which the current process is running) will be sent along to the server. The default is false.
         /// </summary>
-        /// <param name="basePath">The target service's base path in URL format.</param>
-        /// <exception cref="ArgumentException"></exception>
-        public ApiClient(string basePath)
+        public virtual bool UseDefaultCredentials
         {
-            if (string.IsNullOrEmpty(basePath))
-                throw new ArgumentException("basePath cannot be empty");
-
-            _baseUrl = basePath;
-            _conektaUserAgent = GetConektaUserAgent();
+            get { return _useDefaultCredentials; }
+            set { _useDefaultCredentials = value; }
         }
 
         /// <summary>
-        /// Constructs the RestSharp version of an http method
+        /// Gets or sets the default header.
         /// </summary>
-        /// <param name="method">Swagger Client Custom HttpMethod</param>
-        /// <returns>RestSharp's HttpMethod instance.</returns>
-        /// <exception cref="ArgumentOutOfRangeException"></exception>
-        private RestSharpMethod Method(HttpMethod method)
+        [Obsolete("Use DefaultHeaders instead.")]
+        public virtual IDictionary<string, string> DefaultHeader
         {
-            RestSharpMethod other;
-            switch (method)
+            get
             {
-                case HttpMethod.Get:
-                    other = RestSharpMethod.Get;
-                    break;
-                case HttpMethod.Post:
-                    other = RestSharpMethod.Post;
-                    break;
-                case HttpMethod.Put:
-                    other = RestSharpMethod.Put;
-                    break;
-                case HttpMethod.Delete:
-                    other = RestSharpMethod.Delete;
-                    break;
-                case HttpMethod.Head:
-                    other = RestSharpMethod.Head;
-                    break;
-                case HttpMethod.Options:
-                    other = RestSharpMethod.Options;
-                    break;
-                case HttpMethod.Patch:
-                    other = RestSharpMethod.Patch;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException("method", method, null);
+                return DefaultHeaders;
             }
-
-            return other;
+            set
+            {
+                DefaultHeaders = value;
+            }
         }
 
         /// <summary>
-        /// Provides all logic for constructing a new RestSharp <see cref="RestRequest"/>.
-        /// At this point, all information for querying the service is known. Here, it is simply
-        /// mapped into the RestSharp request.
+        /// Gets or sets the default headers.
         /// </summary>
-        /// <param name="method">The http verb.</param>
-        /// <param name="path">The target path (or resource).</param>
-        /// <param name="options">The additional request options.</param>
-        /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
-        /// GlobalConfiguration has been done before calling this method.</param>
-        /// <returns>[private] A new RestRequest instance.</returns>
-        /// <exception cref="ArgumentNullException"></exception>
-        private RestRequest NewRequest(
-            HttpMethod method,
-            string path,
-            RequestOptions options,
-            IReadableConfiguration configuration)
+        public virtual IDictionary<string, string> DefaultHeaders { get; set; }
+
+        /// <summary>
+        /// Gets or sets the HTTP timeout (milliseconds) of ApiClient. Default to 100000 milliseconds.
+        /// </summary>
+        public virtual int Timeout { get; set; }
+
+        /// <summary>
+        /// Gets or sets the proxy
+        /// </summary>
+        /// <value>Proxy.</value>
+        public virtual WebProxy Proxy { get; set; }
+
+        /// <summary>
+        /// Gets or sets the HTTP user agent.
+        /// </summary>
+        /// <value>Http user agent.</value>
+        public virtual string UserAgent { get; set; }
+
+        /// <summary>
+        /// Gets or sets the username (HTTP basic authentication).
+        /// </summary>
+        /// <value>The username.</value>
+        public virtual string Username { get; set; }
+
+        /// <summary>
+        /// Gets or sets the password (HTTP basic authentication).
+        /// </summary>
+        /// <value>The password.</value>
+        public virtual string Password { get; set; }
+
+        /// <summary>
+        /// Gets the API key with prefix.
+        /// </summary>
+        /// <param name="apiKeyIdentifier">API key identifier (authentication scheme).</param>
+        /// <returns>API key with prefix.</returns>
+        public string GetApiKeyWithPrefix(string apiKeyIdentifier)
         {
-            if (path == null) throw new ArgumentNullException("path");
-            if (options == null) throw new ArgumentNullException("options");
-            if (configuration == null) throw new ArgumentNullException("configuration");
-
-            RestRequest request = new RestRequest(path, Method(method));
-            request.AddHeader("X-Conekta-Client-User-Agent", _conektaUserAgent);
-            if (options.PathParameters != null)
+            string apiKeyValue;
+            ApiKey.TryGetValue(apiKeyIdentifier, out apiKeyValue);
+            string apiKeyPrefix;
+            if (ApiKeyPrefix.TryGetValue(apiKeyIdentifier, out apiKeyPrefix))
             {
-                foreach (var pathParam in options.PathParameters)
-                {
-                    request.AddParameter(pathParam.Key, pathParam.Value, ParameterType.UrlSegment);
-                }
+                return apiKeyPrefix + " " + apiKeyValue;
             }
 
-            if (options.QueryParameters != null)
+            return apiKeyValue;
+        }
+
+        /// <summary>
+        /// Gets or sets certificate collection to be sent with requests.
+        /// </summary>
+        /// <value>X509 Certificate collection.</value>
+        public X509CertificateCollection ClientCertificates { get; set; }
+
+        /// <summary>
+        /// Gets or sets the access token for OAuth2 authentication.
+        ///
+        /// This helper property simplifies code generation.
+        /// </summary>
+        /// <value>The access token.</value>
+        public virtual string AccessToken { get; set; }
+
+        /// <summary>
+        /// Gets or sets the temporary folder path to store the files downloaded from the server.
+        /// </summary>
+        /// <value>Folder path.</value>
+        public virtual string TempFolderPath
+        {
+            get { return _tempFolderPath; }
+
+            set
             {
-                foreach (var queryParam in options.QueryParameters)
+                if (string.IsNullOrEmpty(value))
                 {
-                    foreach (var value in queryParam.Value)
-                    {
-                        request.AddQueryParameter(queryParam.Key, value);
-                    }
+                    _tempFolderPath = Path.GetTempPath();
+                    return;
                 }
-            }
 
-            if (configuration.DefaultHeaders != null)
-            {
-                foreach (var headerParam in configuration.DefaultHeaders)
+                // create the directory if it does not exist
+                if (!Directory.Exists(value))
                 {
-                    request.AddHeader(headerParam.Key, headerParam.Value);
+                    Directory.CreateDirectory(value);
                 }
-            }
 
-            if (options.HeaderParameters != null)
-            {
-                foreach (var headerParam in options.HeaderParameters)
+                // check if the path contains directory separator at the end
+                if (value[value.Length - 1] == Path.DirectorySeparatorChar)
                 {
-                    foreach (var value in headerParam.Value)
-                    {
-                        request.AddHeader(headerParam.Key, value);
-                    }
-                }
-            }
-
-            if (options.FormParameters != null)
-            {
-                foreach (var formParam in options.FormParameters)
-                {
-                    request.AddParameter(formParam.Key, formParam.Value);
-                }
-            }
-
-            if (options.Data != null)
-            {
-                if (options.Data is Stream stream)
-                {
-                    var contentType = "application/octet-stream";
-                    if (options.HeaderParameters != null)
-                    {
-                        var contentTypes = options.HeaderParameters["Content-Type"];
-                        contentType = contentTypes[0];
-                    }
-
-                    var bytes = ClientUtils.ReadAsBytes(stream);
-                    request.AddParameter(contentType, bytes, ParameterType.RequestBody);
+                    _tempFolderPath = value;
                 }
                 else
                 {
-                    if (options.HeaderParameters != null)
+                    _tempFolderPath = value + Path.DirectorySeparatorChar;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the date time format used when serializing in the ApiClient
+        /// By default, it's set to ISO 8601 - "o", for others see:
+        /// https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx
+        /// and https://msdn.microsoft.com/en-us/library/8kb3ddd4(v=vs.110).aspx
+        /// No validation is done to ensure that the string you're providing is valid
+        /// </summary>
+        /// <value>The DateTimeFormat string</value>
+        public virtual string DateTimeFormat
+        {
+            get { return _dateTimeFormat; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    // Never allow a blank or null string, go back to the default
+                    _dateTimeFormat = ISO8601_DATETIME_FORMAT;
+                    return;
+                }
+
+                // Caution, no validation when you choose date time format other than ISO 8601
+                // Take a look at the above links
+                _dateTimeFormat = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the prefix (e.g. Token) of the API key based on the authentication name.
+        ///
+        /// Whatever you set here will be prepended to the value defined in AddApiKey.
+        ///
+        /// An example invocation here might be:
+        /// <example>
+        /// ApiKeyPrefix["Authorization"] = "Bearer";
+        /// </example>
+        /// … where ApiKey["Authorization"] would then be used to set the value of your bearer token.
+        ///
+        /// <remarks>
+        /// OAuth2 workflows should set tokens via AccessToken.
+        /// </remarks>
+        /// </summary>
+        /// <value>The prefix of the API key.</value>
+        public virtual IDictionary<string, string> ApiKeyPrefix
+        {
+            get { return _apiKeyPrefix; }
+            set
+            {
+                if (value == null)
+                {
+                    throw new InvalidOperationException("ApiKeyPrefix collection may not be null.");
+                }
+                _apiKeyPrefix = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the API key based on the authentication name.
+        /// </summary>
+        /// <value>The API key.</value>
+        public virtual IDictionary<string, string> ApiKey
+        {
+            get { return _apiKey; }
+            set
+            {
+                if (value == null)
+                {
+                    throw new InvalidOperationException("ApiKey collection may not be null.");
+                }
+                _apiKey = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the servers.
+        /// </summary>
+        /// <value>The servers.</value>
+        public virtual IList<IReadOnlyDictionary<string, object>> Servers
+        {
+            get { return _servers; }
+            set
+            {
+                if (value == null)
+                {
+                    throw new InvalidOperationException("Servers may not be null.");
+                }
+                _servers = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the operation servers.
+        /// </summary>
+        /// <value>The operation servers.</value>
+        public virtual IReadOnlyDictionary<string, List<IReadOnlyDictionary<string, object>>> OperationServers
+        {
+            get { return _operationServers; }
+            set
+            {
+                if (value == null)
+                {
+                    throw new InvalidOperationException("Operation servers may not be null.");
+                }
+                _operationServers = value;
+            }
+        }
+
+        /// <summary>
+        /// Returns URL based on server settings without providing values
+        /// for the variables
+        /// </summary>
+        /// <param name="index">Array index of the server settings.</param>
+        /// <return>The server URL.</return>
+        public string GetServerUrl(int index)
+        {
+            return GetServerUrl(Servers, index, null);
+        }
+
+        /// <summary>
+        /// Returns URL based on server settings.
+        /// </summary>
+        /// <param name="index">Array index of the server settings.</param>
+        /// <param name="inputVariables">Dictionary of the variables and the corresponding values.</param>
+        /// <return>The server URL.</return>
+        public string GetServerUrl(int index, Dictionary<string, string> inputVariables)
+        {
+            return GetServerUrl(Servers, index, inputVariables);
+        }
+
+        /// <summary>
+        /// Returns URL based on operation server settings.
+        /// </summary>
+        /// <param name="operation">Operation associated with the request path.</param>
+        /// <param name="index">Array index of the server settings.</param>
+        /// <return>The operation server URL.</return>
+        public string GetOperationServerUrl(string operation, int index)
+        {
+            return GetOperationServerUrl(operation, index, null);
+        }
+
+        /// <summary>
+        /// Returns URL based on operation server settings.
+        /// </summary>
+        /// <param name="operation">Operation associated with the request path.</param>
+        /// <param name="index">Array index of the server settings.</param>
+        /// <param name="inputVariables">Dictionary of the variables and the corresponding values.</param>
+        /// <return>The operation server URL.</return>
+        public string GetOperationServerUrl(string operation, int index, Dictionary<string, string> inputVariables)
+        {
+            if (operation != null && OperationServers.TryGetValue(operation, out var operationServer))
+            {
+                return GetServerUrl(operationServer, index, inputVariables);
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Returns URL based on server settings.
+        /// </summary>
+        /// <param name="servers">Dictionary of server settings.</param>
+        /// <param name="index">Array index of the server settings.</param>
+        /// <param name="inputVariables">Dictionary of the variables and the corresponding values.</param>
+        /// <return>The server URL.</return>
+        private string GetServerUrl(IList<IReadOnlyDictionary<string, object>> servers, int index, Dictionary<string, string> inputVariables)
+        {
+            if (index < 0 || index >= servers.Count)
+            {
+                throw new InvalidOperationException($"Invalid index {index} when selecting the server. Must be less than {servers.Count}.");
+            }
+
+            if (inputVariables == null)
+            {
+                inputVariables = new Dictionary<string, string>();
+            }
+
+            IReadOnlyDictionary<string, object> server = servers[index];
+            string url = (string)server["url"];
+
+            if (server.ContainsKey("variables"))
+            {
+                // go through each variable and assign a value
+                foreach (KeyValuePair<string, object> variable in (IReadOnlyDictionary<string, object>)server["variables"])
+                {
+
+                    IReadOnlyDictionary<string, object> serverVariables = (IReadOnlyDictionary<string, object>)(variable.Value);
+
+                    if (inputVariables.ContainsKey(variable.Key))
                     {
-                        var contentTypes = options.HeaderParameters["Content-Type"];
-                        if (contentTypes == null || contentTypes.Any(header => header.Contains("application/json")))
+                        if (((List<string>)serverVariables["enum_values"]).Contains(inputVariables[variable.Key]))
                         {
-                            request.RequestFormat = DataFormat.Json;
+                            url = url.Replace("{" + variable.Key + "}", inputVariables[variable.Key]);
                         }
                         else
                         {
-                            // TODO: Generated client user should add additional handlers. RestSharp only supports XML and JSON, with XML as default.
+                            throw new InvalidOperationException($"The variable `{variable.Key}` in the server URL has invalid value #{inputVariables[variable.Key]}. Must be {(List<string>)serverVariables["enum_values"]}");
                         }
                     }
                     else
                     {
-                        // Here, we'll assume JSON APIs are more common. XML can be forced by adding produces/consumes to openapi spec explicitly.
-                        request.RequestFormat = DataFormat.Json;
-                    }
-
-                    request.AddJsonBody(options.Data);
-                }
-            }
-
-            if (options.FileParameters != null)
-            {
-                foreach (var fileParam in options.FileParameters)
-                {
-                    foreach (var file in fileParam.Value)
-                    {
-                        var bytes = ClientUtils.ReadAsBytes(file);
-                        var fileStream = file as FileStream;
-                        if (fileStream != null)
-                            request.AddFile(fileParam.Key, bytes, System.IO.Path.GetFileName(fileStream.Name));
-                        else
-                            request.AddFile(fileParam.Key, bytes, "no_file_name_provided");
+                        // use default value
+                        url = url.Replace("{" + variable.Key + "}", (string)serverVariables["default_value"]);
                     }
                 }
             }
 
-            return request;
+            return url;
+        }
+        
+        /// <summary>
+        /// Gets and Sets the RemoteCertificateValidationCallback
+        /// </summary>
+        public RemoteCertificateValidationCallback RemoteCertificateValidationCallback { get; set; }
+
+        #endregion Properties
+
+        #region Methods
+
+        /// <summary>
+        /// Returns a string with essential information for debugging.
+        /// </summary>
+        public static string ToDebugReport()
+        {
+            string report = "C# SDK (Conekta.net) Debug Report:\n";
+            report += "    OS: " + System.Environment.OSVersion + "\n";
+            report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
+            report += "    Version of the API: 2.1.0\n";
+            report += "    SDK Package Version: 6.0.6\n";
+
+            return report;
         }
 
-        private ApiResponse<T> ToApiResponse<T>(RestResponse<T> response)
+        /// <summary>
+        /// Add Api Key Header.
+        /// </summary>
+        /// <param name="key">Api Key name.</param>
+        /// <param name="value">Api Key value.</param>
+        /// <returns></returns>
+        public void AddApiKey(string key, string value)
         {
-            T result = response.Data;
-            string rawContent = response.Content;
+            ApiKey[key] = value;
+        }
 
-            var transformed = new ApiResponse<T>(response.StatusCode, new Multimap<string, string>(), result, rawContent)
+        /// <summary>
+        /// Sets the API key prefix.
+        /// </summary>
+        /// <param name="key">Api Key name.</param>
+        /// <param name="value">Api Key value.</param>
+        public void AddApiKeyPrefix(string key, string value)
+        {
+            ApiKeyPrefix[key] = value;
+        }
+
+        #endregion Methods
+
+        #region Static Members
+        /// <summary>
+        /// Merge configurations.
+        /// </summary>
+        /// <param name="first">First configuration.</param>
+        /// <param name="second">Second configuration.</param>
+        /// <return>Merged configuration.</return>
+        public static IReadableConfiguration MergeConfigurations(IReadableConfiguration first, IReadableConfiguration second)
+        {
+            if (second == null) return first ?? GlobalConfiguration.Instance;
+
+            Dictionary<string, string> apiKey = first.ApiKey.ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+            Dictionary<string, string> apiKeyPrefix = first.ApiKeyPrefix.ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+            Dictionary<string, string> defaultHeaders = first.DefaultHeaders.ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+
+            foreach (var kvp in second.ApiKey) apiKey[kvp.Key] = kvp.Value;
+            foreach (var kvp in second.ApiKeyPrefix) apiKeyPrefix[kvp.Key] = kvp.Value;
+            foreach (var kvp in second.DefaultHeaders) defaultHeaders[kvp.Key] = kvp.Value;
+
+            var config = new Configuration
             {
-                ErrorText = response.ErrorMessage,
-                Cookies = new List<Cookie>()
+                ApiKey = apiKey,
+                ApiKeyPrefix = apiKeyPrefix,
+                DefaultHeaders = defaultHeaders,
+                BasePath = second.BasePath ?? first.BasePath,
+                Timeout = second.Timeout,
+                Proxy = second.Proxy ?? first.Proxy,
+                UserAgent = second.UserAgent ?? first.UserAgent,
+                Username = second.Username ?? first.Username,
+                Password = second.Password ?? first.Password,
+                AccessToken = second.AccessToken ?? first.AccessToken,
+                TempFolderPath = second.TempFolderPath ?? first.TempFolderPath,
+                DateTimeFormat = second.DateTimeFormat ?? first.DateTimeFormat,
+                ClientCertificates = second.ClientCertificates ?? first.ClientCertificates,
+                UseDefaultCredentials = second.UseDefaultCredentials,
+                RemoteCertificateValidationCallback = second.RemoteCertificateValidationCallback ?? first.RemoteCertificateValidationCallback,
             };
-
-            if (response.Headers != null)
-            {
-                foreach (var responseHeader in response.Headers)
-                {
-                    transformed.Headers.Add(responseHeader.Name, ClientUtils.ParameterToString(responseHeader.Value));
-                }
-            }
-
-            if (response.ContentHeaders != null)
-            {
-                foreach (var responseHeader in response.ContentHeaders)
-                {
-                    transformed.Headers.Add(responseHeader.Name, ClientUtils.ParameterToString(responseHeader.Value));
-                }
-            }
-
-            if (response.Cookies != null)
-            {
-                foreach (var responseCookies in response.Cookies.Cast<Cookie>())
-                {
-                    transformed.Cookies.Add(
-                        new Cookie(
-                            responseCookies.Name,
-                            responseCookies.Value,
-                            responseCookies.Path,
-                            responseCookies.Domain)
-                        );
-                }
-            }
-
-            return transformed;
+            return config;
         }
-
-        private ApiResponse<T> Exec<T>(RestRequest req, RequestOptions options, IReadableConfiguration configuration)
-        {
-            var baseUrl = configuration.GetOperationServerUrl(options.Operation, options.OperationIndex) ?? _baseUrl;
-
-            var cookies = new CookieContainer();
-
-            if (options.Cookies != null && options.Cookies.Count > 0)
-            {
-                foreach (var cookie in options.Cookies)
-                {
-                    cookies.Add(new Cookie(cookie.Name, cookie.Value));
-                }
-            }
-
-            var clientOptions = new RestClientOptions(baseUrl)
-            {
-                ClientCertificates = configuration.ClientCertificates,
-                CookieContainer = cookies,
-                MaxTimeout = configuration.Timeout,
-                Proxy = configuration.Proxy,
-                UserAgent = configuration.UserAgent
-            };
-
-            RestClient client = new RestClient(clientOptions)
-                .UseSerializer(() => new CustomJsonCodec(SerializerSettings, configuration));
-
-            InterceptRequest(req);
-
-            RestResponse<T> response;
-            if (RetryConfiguration.RetryPolicy != null)
-            {
-                var policy = RetryConfiguration.RetryPolicy;
-                var policyResult = policy.ExecuteAndCapture(() => client.Execute(req));
-                response = (policyResult.Outcome == OutcomeType.Successful) ? client.Deserialize<T>(policyResult.Result) : new RestResponse<T>
-                {
-                    Request = req,
-                    ErrorException = policyResult.FinalException
-                };
-            }
-            else
-            {
-                response = client.Execute<T>(req);
-            }
-
-            // if the response type is oneOf/anyOf, call FromJSON to deserialize the data
-            if (typeof(Conekta.net.Model.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
-            {
-                try
-                {
-                    response.Data = (T) typeof(T).GetMethod("FromJson").Invoke(null, new object[] { response.Content });
-                }
-                catch (Exception ex)
-                {
-                    throw ex.InnerException != null ? ex.InnerException : ex;
-                }
-            }
-            else if (typeof(T).Name == "Stream") // for binary response
-            {
-                response.Data = (T)(object)new MemoryStream(response.RawBytes);
-            }
-            else if (typeof(T).Name == "Byte[]") // for byte response
-            {
-                response.Data = (T)(object)response.RawBytes;
-            }
-            else if (typeof(T).Name == "String") // for string response
-            {
-                response.Data = (T)(object)response.Content;
-            }
-
-            InterceptResponse(req, response);
-
-            var result = ToApiResponse(response);
-            if (response.ErrorMessage != null)
-            {
-                result.ErrorText = response.ErrorMessage;
-            }
-
-            if (response.Cookies != null && response.Cookies.Count > 0)
-            {
-                if (result.Cookies == null) result.Cookies = new List<Cookie>();
-                foreach (var restResponseCookie in response.Cookies.Cast<Cookie>())
-                {
-                    var cookie = new Cookie(
-                        restResponseCookie.Name,
-                        restResponseCookie.Value,
-                        restResponseCookie.Path,
-                        restResponseCookie.Domain
-                    )
-                    {
-                        Comment = restResponseCookie.Comment,
-                        CommentUri = restResponseCookie.CommentUri,
-                        Discard = restResponseCookie.Discard,
-                        Expired = restResponseCookie.Expired,
-                        Expires = restResponseCookie.Expires,
-                        HttpOnly = restResponseCookie.HttpOnly,
-                        Port = restResponseCookie.Port,
-                        Secure = restResponseCookie.Secure,
-                        Version = restResponseCookie.Version
-                    };
-
-                    result.Cookies.Add(cookie);
-                }
-            }
-            return result;
-        }
-
-        private async Task<ApiResponse<T>> ExecAsync<T>(RestRequest req, RequestOptions options, IReadableConfiguration configuration, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            var baseUrl = configuration.GetOperationServerUrl(options.Operation, options.OperationIndex) ?? _baseUrl;
-
-            var clientOptions = new RestClientOptions(baseUrl)
-            {
-                ClientCertificates = configuration.ClientCertificates,
-                MaxTimeout = configuration.Timeout,
-                Proxy = configuration.Proxy,
-                UserAgent = configuration.UserAgent
-            };
-
-            RestClient client = new RestClient(clientOptions)
-                .UseSerializer(() => new CustomJsonCodec(SerializerSettings, configuration));
-
-            InterceptRequest(req);
-
-            RestResponse<T> response;
-            if (RetryConfiguration.AsyncRetryPolicy != null)
-            {
-                var policy = RetryConfiguration.AsyncRetryPolicy;
-                var policyResult = await policy.ExecuteAndCaptureAsync((ct) => client.ExecuteAsync(req, ct), cancellationToken).ConfigureAwait(false);
-                response = (policyResult.Outcome == OutcomeType.Successful) ? client.Deserialize<T>(policyResult.Result) : new RestResponse<T>
-                {
-                    Request = req,
-                    ErrorException = policyResult.FinalException
-                };
-            }
-            else
-            {
-                response = await client.ExecuteAsync<T>(req, cancellationToken).ConfigureAwait(false);
-            }
-
-            // if the response type is oneOf/anyOf, call FromJSON to deserialize the data
-            if (typeof(Conekta.net.Model.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
-            {
-                response.Data = (T) typeof(T).GetMethod("FromJson").Invoke(null, new object[] { response.Content });
-            }
-            else if (typeof(T).Name == "Stream") // for binary response
-            {
-                response.Data = (T)(object)new MemoryStream(response.RawBytes);
-            }
-            else if (typeof(T).Name == "Byte[]") // for byte response
-            {
-                response.Data = (T)(object)response.RawBytes;
-            }
-
-            InterceptResponse(req, response);
-
-            var result = ToApiResponse(response);
-            if (response.ErrorMessage != null)
-            {
-                result.ErrorText = response.ErrorMessage;
-            }
-
-            if (response.Cookies != null && response.Cookies.Count > 0)
-            {
-                if (result.Cookies == null) result.Cookies = new List<Cookie>();
-                foreach (var restResponseCookie in response.Cookies.Cast<Cookie>())
-                {
-                    var cookie = new Cookie(
-                        restResponseCookie.Name,
-                        restResponseCookie.Value,
-                        restResponseCookie.Path,
-                        restResponseCookie.Domain
-                    )
-                    {
-                        Comment = restResponseCookie.Comment,
-                        CommentUri = restResponseCookie.CommentUri,
-                        Discard = restResponseCookie.Discard,
-                        Expired = restResponseCookie.Expired,
-                        Expires = restResponseCookie.Expires,
-                        HttpOnly = restResponseCookie.HttpOnly,
-                        Port = restResponseCookie.Port,
-                        Secure = restResponseCookie.Secure,
-                        Version = restResponseCookie.Version
-                    };
-
-                    result.Cookies.Add(cookie);
-                }
-            }
-            return result;
-        }
-
-        #region IAsynchronousClient
-        /// <summary>
-        /// Make a HTTP GET request (async).
-        /// </summary>
-        /// <param name="path">The target path (or resource).</param>
-        /// <param name="options">The additional request options.</param>
-        /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
-        /// GlobalConfiguration has been done before calling this method.</param>
-        /// <param name="cancellationToken">Token that enables callers to cancel the request.</param>
-        /// <returns>A Task containing ApiResponse</returns>
-        public Task<ApiResponse<T>> GetAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            var config = configuration ?? GlobalConfiguration.Instance;
-            return ExecAsync<T>(NewRequest(HttpMethod.Get, path, options, config), options, config, cancellationToken);
-        }
-
-        /// <summary>
-        /// Make a HTTP POST request (async).
-        /// </summary>
-        /// <param name="path">The target path (or resource).</param>
-        /// <param name="options">The additional request options.</param>
-        /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
-        /// GlobalConfiguration has been done before calling this method.</param>
-        /// <param name="cancellationToken">Token that enables callers to cancel the request.</param>
-        /// <returns>A Task containing ApiResponse</returns>
-        public Task<ApiResponse<T>> PostAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            var config = configuration ?? GlobalConfiguration.Instance;
-            return ExecAsync<T>(NewRequest(HttpMethod.Post, path, options, config), options, config, cancellationToken);
-        }
-
-        /// <summary>
-        /// Make a HTTP PUT request (async).
-        /// </summary>
-        /// <param name="path">The target path (or resource).</param>
-        /// <param name="options">The additional request options.</param>
-        /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
-        /// GlobalConfiguration has been done before calling this method.</param>
-        /// <param name="cancellationToken">Token that enables callers to cancel the request.</param>
-        /// <returns>A Task containing ApiResponse</returns>
-        public Task<ApiResponse<T>> PutAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            var config = configuration ?? GlobalConfiguration.Instance;
-            return ExecAsync<T>(NewRequest(HttpMethod.Put, path, options, config), options, config, cancellationToken);
-        }
-
-        /// <summary>
-        /// Make a HTTP DELETE request (async).
-        /// </summary>
-        /// <param name="path">The target path (or resource).</param>
-        /// <param name="options">The additional request options.</param>
-        /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
-        /// GlobalConfiguration has been done before calling this method.</param>
-        /// <param name="cancellationToken">Token that enables callers to cancel the request.</param>
-        /// <returns>A Task containing ApiResponse</returns>
-        public Task<ApiResponse<T>> DeleteAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            var config = configuration ?? GlobalConfiguration.Instance;
-            return ExecAsync<T>(NewRequest(HttpMethod.Delete, path, options, config), options, config, cancellationToken);
-        }
-
-        /// <summary>
-        /// Make a HTTP HEAD request (async).
-        /// </summary>
-        /// <param name="path">The target path (or resource).</param>
-        /// <param name="options">The additional request options.</param>
-        /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
-        /// GlobalConfiguration has been done before calling this method.</param>
-        /// <param name="cancellationToken">Token that enables callers to cancel the request.</param>
-        /// <returns>A Task containing ApiResponse</returns>
-        public Task<ApiResponse<T>> HeadAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            var config = configuration ?? GlobalConfiguration.Instance;
-            return ExecAsync<T>(NewRequest(HttpMethod.Head, path, options, config), options, config, cancellationToken);
-        }
-
-        /// <summary>
-        /// Make a HTTP OPTION request (async).
-        /// </summary>
-        /// <param name="path">The target path (or resource).</param>
-        /// <param name="options">The additional request options.</param>
-        /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
-        /// GlobalConfiguration has been done before calling this method.</param>
-        /// <param name="cancellationToken">Token that enables callers to cancel the request.</param>
-        /// <returns>A Task containing ApiResponse</returns>
-        public Task<ApiResponse<T>> OptionsAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            var config = configuration ?? GlobalConfiguration.Instance;
-            return ExecAsync<T>(NewRequest(HttpMethod.Options, path, options, config), options, config, cancellationToken);
-        }
-
-        /// <summary>
-        /// Make a HTTP PATCH request (async).
-        /// </summary>
-        /// <param name="path">The target path (or resource).</param>
-        /// <param name="options">The additional request options.</param>
-        /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
-        /// GlobalConfiguration has been done before calling this method.</param>
-        /// <param name="cancellationToken">Token that enables callers to cancel the request.</param>
-        /// <returns>A Task containing ApiResponse</returns>
-        public Task<ApiResponse<T>> PatchAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            var config = configuration ?? GlobalConfiguration.Instance;
-            return ExecAsync<T>(NewRequest(HttpMethod.Patch, path, options, config), options, config, cancellationToken);
-        }
-        #endregion IAsynchronousClient
-
-        #region ISynchronousClient
-        /// <summary>
-        /// Make a HTTP GET request (synchronous).
-        /// </summary>
-        /// <param name="path">The target path (or resource).</param>
-        /// <param name="options">The additional request options.</param>
-        /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
-        /// GlobalConfiguration has been done before calling this method.</param>
-        /// <returns>A Task containing ApiResponse</returns>
-        public ApiResponse<T> Get<T>(string path, RequestOptions options, IReadableConfiguration configuration = null)
-        {
-            var config = configuration ?? GlobalConfiguration.Instance;
-            return Exec<T>(NewRequest(HttpMethod.Get, path, options, config), options, config);
-        }
-
-        /// <summary>
-        /// Make a HTTP POST request (synchronous).
-        /// </summary>
-        /// <param name="path">The target path (or resource).</param>
-        /// <param name="options">The additional request options.</param>
-        /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
-        /// GlobalConfiguration has been done before calling this method.</param>
-        /// <returns>A Task containing ApiResponse</returns>
-        public ApiResponse<T> Post<T>(string path, RequestOptions options, IReadableConfiguration configuration = null)
-        {
-            var config = configuration ?? GlobalConfiguration.Instance;
-            return Exec<T>(NewRequest(HttpMethod.Post, path, options, config), options, config);
-        }
-
-        /// <summary>
-        /// Make a HTTP PUT request (synchronous).
-        /// </summary>
-        /// <param name="path">The target path (or resource).</param>
-        /// <param name="options">The additional request options.</param>
-        /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
-        /// GlobalConfiguration has been done before calling this method.</param>
-        /// <returns>A Task containing ApiResponse</returns>
-        public ApiResponse<T> Put<T>(string path, RequestOptions options, IReadableConfiguration configuration = null)
-        {
-            var config = configuration ?? GlobalConfiguration.Instance;
-            return Exec<T>(NewRequest(HttpMethod.Put, path, options, config), options, config);
-        }
-
-        /// <summary>
-        /// Make a HTTP DELETE request (synchronous).
-        /// </summary>
-        /// <param name="path">The target path (or resource).</param>
-        /// <param name="options">The additional request options.</param>
-        /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
-        /// GlobalConfiguration has been done before calling this method.</param>
-        /// <returns>A Task containing ApiResponse</returns>
-        public ApiResponse<T> Delete<T>(string path, RequestOptions options, IReadableConfiguration configuration = null)
-        {
-            var config = configuration ?? GlobalConfiguration.Instance;
-            return Exec<T>(NewRequest(HttpMethod.Delete, path, options, config), options, config);
-        }
-
-        /// <summary>
-        /// Make a HTTP HEAD request (synchronous).
-        /// </summary>
-        /// <param name="path">The target path (or resource).</param>
-        /// <param name="options">The additional request options.</param>
-        /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
-        /// GlobalConfiguration has been done before calling this method.</param>
-        /// <returns>A Task containing ApiResponse</returns>
-        public ApiResponse<T> Head<T>(string path, RequestOptions options, IReadableConfiguration configuration = null)
-        {
-            var config = configuration ?? GlobalConfiguration.Instance;
-            return Exec<T>(NewRequest(HttpMethod.Head, path, options, config), options, config);
-        }
-
-        /// <summary>
-        /// Make a HTTP OPTION request (synchronous).
-        /// </summary>
-        /// <param name="path">The target path (or resource).</param>
-        /// <param name="options">The additional request options.</param>
-        /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
-        /// GlobalConfiguration has been done before calling this method.</param>
-        /// <returns>A Task containing ApiResponse</returns>
-        public ApiResponse<T> Options<T>(string path, RequestOptions options, IReadableConfiguration configuration = null)
-        {
-            var config = configuration ?? GlobalConfiguration.Instance;
-            return Exec<T>(NewRequest(HttpMethod.Options, path, options, config), options, config);
-        }
-
-        /// <summary>
-        /// Make a HTTP PATCH request (synchronous).
-        /// </summary>
-        /// <param name="path">The target path (or resource).</param>
-        /// <param name="options">The additional request options.</param>
-        /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
-        /// GlobalConfiguration has been done before calling this method.</param>
-        /// <returns>A Task containing ApiResponse</returns>
-        public ApiResponse<T> Patch<T>(string path, RequestOptions options, IReadableConfiguration configuration = null)
-        {
-            var config = configuration ?? GlobalConfiguration.Instance;
-            return Exec<T>(NewRequest(HttpMethod.Patch, path, options, config), options, config);
-        }
-        #endregion ISynchronousClient
+        #endregion Static Members
     }
 }

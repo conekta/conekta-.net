@@ -24,7 +24,7 @@
   "packageTitle" : "Conekta Library",
   "gitUserId": "conekta",
   "gitRepoId": "conekta-.net",
-  "httpUserAgent": "Conekta/v2 .NetBindings",
+  "httpUserAgent": "Conekta/v2 .NetBindings/{Version}",
   "packageAuthors" : "engineering@conekta.com",
   "packageCompany" : "Conekta",
   "useGenericHost" : false,
@@ -33,5 +33,5 @@
   "packageCopyright" : "Conekta",
   "PackageReleaseNotes" : "",
   "releaseNote" : "support for resend event, api keys and webhook keys",
-  "packageVersion" : "6.0.5"
+  "packageVersion" : "6.0.6"
 }

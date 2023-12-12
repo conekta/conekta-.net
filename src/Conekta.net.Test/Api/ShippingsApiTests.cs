@@ -67,7 +67,7 @@ namespace Conekta.net.Test.Api
             Assert.IsType<ShippingOrderResponse>(response);
             Assert.Equal(id, response.ParentId);
             Assert.Equal(shippingRequest.Amount, response.Amount);
-            Assert.Equal("shipping_line", response.Object);
+            Assert.Equal("shipping_line", response.VarObject);
         }
 
 
