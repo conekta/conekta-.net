@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** |  | 
 **Id** | **string** |  | 
-**Object** | **string** |  | 
+**VarObject** | **string** |  | 
 **CreatedAt** | **long** |  | 
 **ParentId** | **string** |  | [optional] 
 **Last4** | **string** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **ExpYear** | **string** |  | [optional] 
 **Brand** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] 
-**Default** | **bool** |  | [optional] 
+**VarDefault** | **bool** |  | [optional] 
 **VisibleOnCheckout** | **bool** |  | [optional] 
 **PaymentSourceStatus** | **string** |  | [optional] 
 

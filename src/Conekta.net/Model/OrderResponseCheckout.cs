@@ -50,7 +50,7 @@ namespace Conekta.net.Model
         /// <param name="monthlyInstallmentsOptions">monthlyInstallmentsOptions.</param>
         /// <param name="name">name.</param>
         /// <param name="needsShippingContact">needsShippingContact.</param>
-        /// <param name="_object">_object.</param>
+        /// <param name="varObject">varObject.</param>
         /// <param name="onDemandEnabled">onDemandEnabled.</param>
         /// <param name="paidPaymentsCount">paidPaymentsCount.</param>
         /// <param name="recurrent">recurrent.</param>
@@ -61,7 +61,7 @@ namespace Conekta.net.Model
         /// <param name="status">status.</param>
         /// <param name="type">type.</param>
         /// <param name="url">url.</param>
-        public OrderResponseCheckout(List<string> allowedPaymentMethods = default(List<string>), bool canNotExpire = default(bool), int emailsSent = default(int), List<Object> excludeCardNetworks = default(List<Object>), long expiresAt = default(long), string failureUrl = default(string), bool force3dsFlow = default(bool), string id = default(string), bool isRedirectOnFailure = default(bool), bool livemode = default(bool), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string name = default(string), bool needsShippingContact = default(bool), string _object = default(string), bool? onDemandEnabled = default(bool?), int paidPaymentsCount = default(int), bool recurrent = default(bool), string slug = default(string), int smsSent = default(int), string successUrl = default(string), int startsAt = default(int), string status = default(string), string type = default(string), string url = default(string))
+        public OrderResponseCheckout(List<string> allowedPaymentMethods = default(List<string>), bool canNotExpire = default(bool), int emailsSent = default(int), List<Object> excludeCardNetworks = default(List<Object>), long expiresAt = default(long), string failureUrl = default(string), bool force3dsFlow = default(bool), string id = default(string), bool isRedirectOnFailure = default(bool), bool livemode = default(bool), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string name = default(string), bool needsShippingContact = default(bool), string varObject = default(string), bool? onDemandEnabled = default(bool?), int paidPaymentsCount = default(int), bool recurrent = default(bool), string slug = default(string), int smsSent = default(int), string successUrl = default(string), int startsAt = default(int), string status = default(string), string type = default(string), string url = default(string))
         {
             this.AllowedPaymentMethods = allowedPaymentMethods;
             this.CanNotExpire = canNotExpire;
@@ -78,7 +78,7 @@ namespace Conekta.net.Model
             this.MonthlyInstallmentsOptions = monthlyInstallmentsOptions;
             this.Name = name;
             this.NeedsShippingContact = needsShippingContact;
-            this.Object = _object;
+            this.VarObject = varObject;
             this.OnDemandEnabled = onDemandEnabled;
             this.PaidPaymentsCount = paidPaymentsCount;
             this.Recurrent = recurrent;
@@ -127,7 +127,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets FailureUrl
         /// </summary>
-        /// <example>&quot;http://187.216.228.66:2222/SysVentasPagos/Acceso.aspx&quot;</example>
+        /// <example>http://187.216.228.66:2222/SysVentasPagos/Acceso.aspx</example>
         [DataMember(Name = "failure_url", EmitDefaultValue = false)]
         public string FailureUrl { get; set; }
 
@@ -141,7 +141,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;6fca054a-8519-4c43-971e-cea35cc519bb&quot;</example>
+        /// <example>6fca054a-8519-4c43-971e-cea35cc519bb</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -181,7 +181,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /// <example>&quot;ord-2tNDzhA4Akmzj11AS&quot;</example>
+        /// <example>ord-2tNDzhA4Akmzj11AS</example>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
@@ -193,11 +193,11 @@ namespace Conekta.net.Model
         public bool NeedsShippingContact { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;checkout&quot;</example>
+        /// <example>checkout</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Gets or Sets OnDemandEnabled
@@ -223,7 +223,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Slug
         /// </summary>
-        /// <example>&quot;6fca054a85194c43971ecea35cc519bb&quot;</example>
+        /// <example>6fca054a85194c43971ecea35cc519bb</example>
         [DataMember(Name = "slug", EmitDefaultValue = false)]
         public string Slug { get; set; }
 
@@ -237,7 +237,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets SuccessUrl
         /// </summary>
-        /// <example>&quot;http://187.216.228.66:2222/SysVentasPagos/Acceso.aspx&quot;</example>
+        /// <example>http://187.216.228.66:2222/SysVentasPagos/Acceso.aspx</example>
         [DataMember(Name = "success_url", EmitDefaultValue = false)]
         public string SuccessUrl { get; set; }
 
@@ -251,21 +251,21 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        /// <example>&quot;Issued&quot;</example>
+        /// <example>Issued</example>
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        /// <example>&quot;HostedPayment&quot;</example>
+        /// <example>HostedPayment</example>
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
-        /// <example>&quot;https://pay.stg.conekta.io/checkout/6fca054a85194c43971ecea35cc519bb&quot;</example>
+        /// <example>https://pay.stg.conekta.io/checkout/6fca054a85194c43971ecea35cc519bb</example>
         [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
@@ -292,7 +292,7 @@ namespace Conekta.net.Model
             sb.Append("  MonthlyInstallmentsOptions: ").Append(MonthlyInstallmentsOptions).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  NeedsShippingContact: ").Append(NeedsShippingContact).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  OnDemandEnabled: ").Append(OnDemandEnabled).Append("\n");
             sb.Append("  PaidPaymentsCount: ").Append(PaidPaymentsCount).Append("\n");
             sb.Append("  Recurrent: ").Append(Recurrent).Append("\n");
@@ -410,9 +410,9 @@ namespace Conekta.net.Model
                     this.NeedsShippingContact.Equals(input.NeedsShippingContact)
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.OnDemandEnabled == input.OnDemandEnabled ||
@@ -507,9 +507,9 @@ namespace Conekta.net.Model
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.NeedsShippingContact.GetHashCode();
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.OnDemandEnabled != null)
                 {

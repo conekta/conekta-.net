@@ -90,6 +90,7 @@ namespace Conekta.net.Model
         /// Those are the payment methods that will be available for the link
         /// </summary>
         /// <value>Those are the payment methods that will be available for the link</value>
+        /// <example>[&quot;cash&quot;,&quot;card&quot;,&quot;bank_transfer&quot;]</example>
         [DataMember(Name = "allowed_payment_methods", IsRequired = true, EmitDefaultValue = true)]
         public List<string> AllowedPaymentMethods { get; set; }
 
@@ -113,6 +114,7 @@ namespace Conekta.net.Model
         /// This field allows you to specify the number of months without interest.
         /// </summary>
         /// <value>This field allows you to specify the number of months without interest.</value>
+        /// <example>[3,6,12]</example>
         [DataMember(Name = "monthly_installments_options", EmitDefaultValue = false)]
         public List<int> MonthlyInstallmentsOptions { get; set; }
 
@@ -120,7 +122,7 @@ namespace Conekta.net.Model
         /// Reason for charge
         /// </summary>
         /// <value>Reason for charge</value>
-        /// <example>&quot;Payment Link Name 1594138857&quot;</example>
+        /// <example>Payment Link Name 1594138857</example>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -166,7 +168,7 @@ namespace Conekta.net.Model
         /// It is the type of link that will be created. It must be a valid type.
         /// </summary>
         /// <value>It is the type of link that will be created. It must be a valid type.</value>
-        /// <example>&quot;PaymentLink&quot;</example>
+        /// <example>PaymentLink</example>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 

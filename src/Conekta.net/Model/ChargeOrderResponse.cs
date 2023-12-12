@@ -47,14 +47,14 @@ namespace Conekta.net.Model
         /// <param name="id">id.</param>
         /// <param name="livemode">livemode.</param>
         /// <param name="monthlyInstallments">monthlyInstallments.</param>
-        /// <param name="_object">_object.</param>
+        /// <param name="varObject">varObject.</param>
         /// <param name="orderId">orderId.</param>
         /// <param name="paidAt">paidAt.</param>
         /// <param name="paymentMethod">paymentMethod.</param>
         /// <param name="referenceId">Reference ID of the charge.</param>
         /// <param name="refunds">refunds.</param>
         /// <param name="status">status.</param>
-        public ChargeOrderResponse(int amount = default(int), ChargeResponseChannel channel = default(ChargeResponseChannel), long createdAt = default(long), string currency = default(string), string customerId = default(string), string description = default(string), string deviceFingerprint = default(string), string failureCode = default(string), string failureMessage = default(string), string id = default(string), bool livemode = default(bool), int? monthlyInstallments = default(int?), string _object = default(string), string orderId = default(string), int? paidAt = default(int?), ChargeOrderResponsePaymentMethod paymentMethod = default(ChargeOrderResponsePaymentMethod), string referenceId = default(string), List<Object> refunds = default(List<Object>), string status = default(string))
+        public ChargeOrderResponse(int amount = default(int), ChargeResponseChannel channel = default(ChargeResponseChannel), long createdAt = default(long), string currency = default(string), string customerId = default(string), string description = default(string), string deviceFingerprint = default(string), string failureCode = default(string), string failureMessage = default(string), string id = default(string), bool livemode = default(bool), int? monthlyInstallments = default(int?), string varObject = default(string), string orderId = default(string), int? paidAt = default(int?), ChargeOrderResponsePaymentMethod paymentMethod = default(ChargeOrderResponsePaymentMethod), string referenceId = default(string), List<Object> refunds = default(List<Object>), string status = default(string))
         {
             this.Amount = amount;
             this.Channel = channel;
@@ -68,7 +68,7 @@ namespace Conekta.net.Model
             this.Id = id;
             this.Livemode = livemode;
             this.MonthlyInstallments = monthlyInstallments;
-            this.Object = _object;
+            this.VarObject = varObject;
             this.OrderId = orderId;
             this.PaidAt = paidAt;
             this.PaymentMethod = paymentMethod;
@@ -100,7 +100,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Currency
         /// </summary>
-        /// <example>&quot;MXN&quot;</example>
+        /// <example>MXN</example>
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 
@@ -113,35 +113,35 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        /// <example>&quot;Payment from order&quot;</example>
+        /// <example>Payment from order</example>
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets DeviceFingerprint
         /// </summary>
-        /// <example>&quot;6FR3chaU4Y1nGAW5NAGd1rcjAKa142Ba&quot;</example>
+        /// <example>6FR3chaU4Y1nGAW5NAGd1rcjAKa142Ba</example>
         [DataMember(Name = "device_fingerprint", EmitDefaultValue = true)]
         public string DeviceFingerprint { get; set; }
 
         /// <summary>
         /// Gets or Sets FailureCode
         /// </summary>
-        /// <example>&quot;suspected_fraud&quot;</example>
+        /// <example>suspected_fraud</example>
         [DataMember(Name = "failure_code", EmitDefaultValue = false)]
         public string FailureCode { get; set; }
 
         /// <summary>
         /// Gets or Sets FailureMessage
         /// </summary>
-        /// <example>&quot;Este cargo ha sido declinado porque el comportamiento del comprador es sospechoso.&quot;</example>
+        /// <example>Este cargo ha sido declinado porque el comportamiento del comprador es sospechoso.</example>
         [DataMember(Name = "failure_message", EmitDefaultValue = false)]
         public string FailureMessage { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;63efa757cf65380001aec040&quot;</example>
+        /// <example>63efa757cf65380001aec040</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -159,15 +159,15 @@ namespace Conekta.net.Model
         public int? MonthlyInstallments { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Gets or Sets OrderId
         /// </summary>
-        /// <example>&quot;ord_2tN73UdUSNrYRPD9r&quot;</example>
+        /// <example>ord_2tN73UdUSNrYRPD9r</example>
         [DataMember(Name = "order_id", EmitDefaultValue = false)]
         public string OrderId { get; set; }
 
@@ -188,7 +188,7 @@ namespace Conekta.net.Model
         /// Reference ID of the charge
         /// </summary>
         /// <value>Reference ID of the charge</value>
-        /// <example>&quot;ref_2tN73UdUSNrYRPD9r&quot;</example>
+        /// <example>ref_2tN73UdUSNrYRPD9r</example>
         [DataMember(Name = "reference_id", EmitDefaultValue = true)]
         public string ReferenceId { get; set; }
 
@@ -201,7 +201,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        /// <example>&quot;pending_payment&quot;</example>
+        /// <example>pending_payment</example>
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
@@ -225,7 +225,7 @@ namespace Conekta.net.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
             sb.Append("  MonthlyInstallments: ").Append(MonthlyInstallments).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  OrderId: ").Append(OrderId).Append("\n");
             sb.Append("  PaidAt: ").Append(PaidAt).Append("\n");
             sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
@@ -325,9 +325,9 @@ namespace Conekta.net.Model
                     this.MonthlyInstallments.Equals(input.MonthlyInstallments))
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.OrderId == input.OrderId ||
@@ -410,9 +410,9 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.MonthlyInstallments.GetHashCode();
                 }
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.OrderId != null)
                 {

@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **FailureMessage** | **string** |  | [optional] 
 **Id** | **string** |  | [optional] 
 **Livemode** | **bool** |  | [optional] 
-**Object** | **string** |  | [optional] 
+**VarObject** | **string** |  | [optional] 
 **OrderId** | **string** |  | [optional] 
 **PaidAt** | **int?** |  | [optional] 
 **PaymentMethod** | [**ChargeResponsePaymentMethod**](ChargeResponsePaymentMethod.md) |  | [optional] 

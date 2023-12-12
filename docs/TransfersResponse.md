@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Id** | **string** | Unique identifier of the transfer. | [optional] 
 **Livemode** | **bool** | Indicates whether the transfer was created in live mode or test mode. | [optional] 
 **Method** | [**TransferMethodResponse**](TransferMethodResponse.md) |  | [optional] 
-**Object** | **string** | Object name, which is transfer. | [optional] 
+**VarObject** | **string** | Object name, which is transfer. | [optional] 
 **StatementDescription** | **string** | Description of the transfer. | [optional] 
 **StatementReference** | **string** | Reference number of the transfer. | [optional] 
 **Status** | **string** | Code indicating transfer status. | [optional] 

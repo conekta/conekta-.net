@@ -55,7 +55,7 @@ namespace Conekta.net.Model
         /// A name or brief explanation of what this api key is used for
         /// </summary>
         /// <value>A name or brief explanation of what this api key is used for</value>
-        /// <example>&quot;online store&quot;</example>
+        /// <example>online store</example>
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 

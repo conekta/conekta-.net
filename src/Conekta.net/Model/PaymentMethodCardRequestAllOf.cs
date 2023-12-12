@@ -45,7 +45,7 @@ namespace Conekta.net.Model
         /// Token id that will be used to create a \&quot;card\&quot; type payment method. See the (subscriptions)[https://developers.conekta.com/v2.1.0/reference/createsubscription] tutorial for more information on how to tokenize cards.
         /// </summary>
         /// <value>Token id that will be used to create a \&quot;card\&quot; type payment method. See the (subscriptions)[https://developers.conekta.com/v2.1.0/reference/createsubscription] tutorial for more information on how to tokenize cards.</value>
-        /// <example>&quot;tok_32hj4g234as&quot;</example>
+        /// <example>tok_32hj4g234as</example>
         [DataMember(Name = "token_id", EmitDefaultValue = false)]
         public string TokenId { get; set; }
 

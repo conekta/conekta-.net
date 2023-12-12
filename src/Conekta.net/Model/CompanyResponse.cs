@@ -44,7 +44,6 @@ namespace Conekta.net.Model
             /// </summary>
             [EnumMember(Value = "company")]
             Company = 1
-
         }
 
 
@@ -53,24 +52,24 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>The resource&#39;s type</value>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public ObjectEnum? Object { get; set; }
+        public ObjectEnum? VarObject { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CompanyResponse" /> class.
         /// </summary>
         /// <param name="id">The child company&#39;s unique identifier.</param>
         /// <param name="createdAt">The resource&#39;s creation date (unix timestamp).</param>
         /// <param name="name">The child company&#39;s name.</param>
-        /// <param name="_object">The resource&#39;s type.</param>
+        /// <param name="varObject">The resource&#39;s type.</param>
         /// <param name="parentCompanyId">Id of the parent company.</param>
         /// <param name="useParentFiscalData">Whether the parent company&#39;s fiscal data is to be used for liquidation and tax purposes.</param>
         /// <param name="payoutDestination">payoutDestination.</param>
         /// <param name="fiscalInfo">fiscalInfo.</param>
-        public CompanyResponse(string id = default(string), long createdAt = default(long), string name = default(string), ObjectEnum? _object = default(ObjectEnum?), string parentCompanyId = default(string), bool useParentFiscalData = default(bool), CompanyPayoutDestinationResponse payoutDestination = default(CompanyPayoutDestinationResponse), CompanyFiscalInfoResponse fiscalInfo = default(CompanyFiscalInfoResponse))
+        public CompanyResponse(string id = default(string), long createdAt = default(long), string name = default(string), ObjectEnum? varObject = default(ObjectEnum?), string parentCompanyId = default(string), bool useParentFiscalData = default(bool), CompanyPayoutDestinationResponse payoutDestination = default(CompanyPayoutDestinationResponse), CompanyFiscalInfoResponse fiscalInfo = default(CompanyFiscalInfoResponse))
         {
             this.Id = id;
             this.CreatedAt = createdAt;
             this.Name = name;
-            this.Object = _object;
+            this.VarObject = varObject;
             this.ParentCompanyId = parentCompanyId;
             this.UseParentFiscalData = useParentFiscalData;
             this.PayoutDestination = payoutDestination;
@@ -81,7 +80,7 @@ namespace Conekta.net.Model
         /// The child company&#39;s unique identifier
         /// </summary>
         /// <value>The child company&#39;s unique identifier</value>
-        /// <example>&quot;6441bb27659a060465da7335&quot;</example>
+        /// <example>6441bb27659a060465da7335</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -97,7 +96,7 @@ namespace Conekta.net.Model
         /// The child company&#39;s name
         /// </summary>
         /// <value>The child company&#39;s name</value>
-        /// <example>&quot;Child Company A&quot;</example>
+        /// <example>Child Company A</example>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
@@ -105,7 +104,7 @@ namespace Conekta.net.Model
         /// Id of the parent company
         /// </summary>
         /// <value>Id of the parent company</value>
-        /// <example>&quot;6441bb3c62db5812e7920c31&quot;</example>
+        /// <example>6441bb3c62db5812e7920c31</example>
         [DataMember(Name = "parent_company_id", EmitDefaultValue = false)]
         public string ParentCompanyId { get; set; }
 
@@ -140,7 +139,7 @@ namespace Conekta.net.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  ParentCompanyId: ").Append(ParentCompanyId).Append("\n");
             sb.Append("  UseParentFiscalData: ").Append(UseParentFiscalData).Append("\n");
             sb.Append("  PayoutDestination: ").Append(PayoutDestination).Append("\n");
@@ -195,8 +194,8 @@ namespace Conekta.net.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    this.Object.Equals(input.Object)
+                    this.VarObject == input.VarObject ||
+                    this.VarObject.Equals(input.VarObject)
                 ) && 
                 (
                     this.ParentCompanyId == input.ParentCompanyId ||
@@ -237,7 +236,7 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 if (this.ParentCompanyId != null)
                 {
                     hashCode = (hashCode * 59) + this.ParentCompanyId.GetHashCode();

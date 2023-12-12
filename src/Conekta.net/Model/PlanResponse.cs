@@ -44,9 +44,9 @@ namespace Conekta.net.Model
         /// <param name="interval">interval.</param>
         /// <param name="livemode">livemode.</param>
         /// <param name="name">name.</param>
-        /// <param name="_object">_object.</param>
+        /// <param name="varObject">varObject.</param>
         /// <param name="trialPeriodDays">trialPeriodDays.</param>
-        public PlanResponse(int amount = default(int), long createdAt = default(long), string currency = default(string), int? expiryCount = default(int?), int frequency = default(int), string id = default(string), string interval = default(string), bool livemode = default(bool), string name = default(string), string _object = default(string), int? trialPeriodDays = default(int?))
+        public PlanResponse(int amount = default(int), long createdAt = default(long), string currency = default(string), int? expiryCount = default(int?), int frequency = default(int), string id = default(string), string interval = default(string), bool livemode = default(bool), string name = default(string), string varObject = default(string), int? trialPeriodDays = default(int?))
         {
             this.Amount = amount;
             this.CreatedAt = createdAt;
@@ -57,7 +57,7 @@ namespace Conekta.net.Model
             this.Interval = interval;
             this.Livemode = livemode;
             this.Name = name;
-            this.Object = _object;
+            this.VarObject = varObject;
             this.TrialPeriodDays = trialPeriodDays;
         }
 
@@ -78,7 +78,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Currency
         /// </summary>
-        /// <example>&quot;MXN&quot;</example>
+        /// <example>MXN</example>
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 
@@ -99,14 +99,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;gold-plan&quot;</example>
+        /// <example>gold-plan</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Interval
         /// </summary>
-        /// <example>&quot;month&quot;</example>
+        /// <example>month</example>
         [DataMember(Name = "interval", EmitDefaultValue = false)]
         public string Interval { get; set; }
 
@@ -120,16 +120,16 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /// <example>&quot;Extra Plan3&quot;</example>
+        /// <example>Extra Plan3</example>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;plan&quot;</example>
+        /// <example>plan</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Gets or Sets TrialPeriodDays
@@ -155,7 +155,7 @@ namespace Conekta.net.Model
             sb.Append("  Interval: ").Append(Interval).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  TrialPeriodDays: ").Append(TrialPeriodDays).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -234,9 +234,9 @@ namespace Conekta.net.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.TrialPeriodDays == input.TrialPeriodDays ||
@@ -278,9 +278,9 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.TrialPeriodDays != null)
                 {

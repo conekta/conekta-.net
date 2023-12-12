@@ -39,19 +39,19 @@ namespace Conekta.net.Model
         /// <param name="developmentEnabled">developmentEnabled.</param>
         /// <param name="id">id.</param>
         /// <param name="livemode">livemode.</param>
-        /// <param name="_object">_object.</param>
+        /// <param name="varObject">varObject.</param>
         /// <param name="productionEnabled">productionEnabled.</param>
         /// <param name="status">status.</param>
         /// <param name="subscribedEvents">subscribedEvents.</param>
         /// <param name="synchronous">synchronous.</param>
         /// <param name="url">url.</param>
-        public WebhookResponse(bool? deleted = default(bool?), bool developmentEnabled = default(bool), string id = default(string), bool livemode = default(bool), string _object = default(string), bool productionEnabled = default(bool), string status = default(string), List<string> subscribedEvents = default(List<string>), bool synchronous = default(bool), string url = default(string))
+        public WebhookResponse(bool? deleted = default(bool?), bool developmentEnabled = default(bool), string id = default(string), bool livemode = default(bool), string varObject = default(string), bool productionEnabled = default(bool), string status = default(string), List<string> subscribedEvents = default(List<string>), bool synchronous = default(bool), string url = default(string))
         {
             this.Deleted = deleted;
             this.DevelopmentEnabled = developmentEnabled;
             this.Id = id;
             this.Livemode = livemode;
-            this.Object = _object;
+            this.VarObject = varObject;
             this.ProductionEnabled = productionEnabled;
             this.Status = status;
             this.SubscribedEvents = subscribedEvents;
@@ -76,7 +76,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;6307a60c41de27127515a575&quot;</example>
+        /// <example>6307a60c41de27127515a575</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -88,11 +88,11 @@ namespace Conekta.net.Model
         public bool Livemode { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;event&quot;</example>
+        /// <example>event</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Gets or Sets ProductionEnabled
@@ -104,13 +104,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        /// <example>&quot;listening&quot;</example>
+        /// <example>listening</example>
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
         /// <summary>
         /// Gets or Sets SubscribedEvents
         /// </summary>
+        /// <example>[&quot;charge.created&quot;,&quot;charge.paid&quot;,&quot;charge.under_fraud_review&quot;,&quot;charge.fraudulent&quot;,&quot;charge.refunded&quot;,&quot;charge.preauthorized&quot;,&quot;charge.declined&quot;,&quot;charge.canceled&quot;,&quot;charge.reversed&quot;,&quot;charge.pending_confirmation&quot;]</example>
         [DataMember(Name = "subscribed_events", EmitDefaultValue = false)]
         public List<string> SubscribedEvents { get; set; }
 
@@ -124,7 +125,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
-        /// <example>&quot;https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval&quot;</example>
+        /// <example>https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval</example>
         [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
@@ -140,7 +141,7 @@ namespace Conekta.net.Model
             sb.Append("  DevelopmentEnabled: ").Append(DevelopmentEnabled).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  ProductionEnabled: ").Append(ProductionEnabled).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  SubscribedEvents: ").Append(SubscribedEvents).Append("\n");
@@ -200,9 +201,9 @@ namespace Conekta.net.Model
                     this.Livemode.Equals(input.Livemode)
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.ProductionEnabled == input.ProductionEnabled ||
@@ -249,9 +250,9 @@ namespace Conekta.net.Model
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Livemode.GetHashCode();
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.ProductionEnabled.GetHashCode();
                 if (this.Status != null)

@@ -1,0 +1,14 @@
+{{! if needed users can add this file to their templates folder to append to the csproj }}
+  <PropertyGroup>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageTags>conekta;payment;credit;cards;money;gateway;</PackageTags>
+    <PackageIcon>conekta.png</PackageIcon>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/conekta/conekta-.net</PackageProjectUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="../../LICENSE" Pack="true" PackagePath="" />
+    <None Include="../../conekta.png" Pack="true" Visible="false" PackagePath="" />
+    <None Include="../../README.md" Pack="true" PackagePath="/"/>
+  </ItemGroup>

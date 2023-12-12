@@ -44,7 +44,6 @@ namespace Conekta.net.Model
             /// </summary>
             [EnumMember(Value = "address")]
             Address = 1
-
         }
 
 
@@ -53,11 +52,11 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>The resource&#39;s type</value>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public ObjectEnum? Object { get; set; }
+        public ObjectEnum? VarObject { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CompanyFiscalInfoAddressResponse" /> class.
         /// </summary>
-        /// <param name="_object">The resource&#39;s type.</param>
+        /// <param name="varObject">The resource&#39;s type.</param>
         /// <param name="street1">Street Address.</param>
         /// <param name="street2">Colonia.</param>
         /// <param name="city">City.</param>
@@ -66,9 +65,9 @@ namespace Conekta.net.Model
         /// <param name="postalCode">Postal code.</param>
         /// <param name="externalNumber">Street number.</param>
         /// <param name="internalNumber">Unit / apartment number.</param>
-        public CompanyFiscalInfoAddressResponse(ObjectEnum? _object = default(ObjectEnum?), string street1 = default(string), string street2 = default(string), string city = default(string), string state = default(string), string country = default(string), string postalCode = default(string), string externalNumber = default(string), string internalNumber = default(string))
+        public CompanyFiscalInfoAddressResponse(ObjectEnum? varObject = default(ObjectEnum?), string street1 = default(string), string street2 = default(string), string city = default(string), string state = default(string), string country = default(string), string postalCode = default(string), string externalNumber = default(string), string internalNumber = default(string))
         {
-            this.Object = _object;
+            this.VarObject = varObject;
             this.Street1 = street1;
             this.Street2 = street2;
             this.City = city;
@@ -83,7 +82,7 @@ namespace Conekta.net.Model
         /// Street Address
         /// </summary>
         /// <value>Street Address</value>
-        /// <example>&quot;Calle 13&quot;</example>
+        /// <example>Calle 13</example>
         [DataMember(Name = "street1", EmitDefaultValue = false)]
         public string Street1 { get; set; }
 
@@ -91,7 +90,7 @@ namespace Conekta.net.Model
         /// Colonia
         /// </summary>
         /// <value>Colonia</value>
-        /// <example>&quot;Navarte&quot;</example>
+        /// <example>Navarte</example>
         [DataMember(Name = "street2", EmitDefaultValue = false)]
         public string Street2 { get; set; }
 
@@ -99,7 +98,7 @@ namespace Conekta.net.Model
         /// City
         /// </summary>
         /// <value>City</value>
-        /// <example>&quot;Cuauhtémoc&quot;</example>
+        /// <example>Cuauhtémoc</example>
         [DataMember(Name = "city", EmitDefaultValue = false)]
         public string City { get; set; }
 
@@ -107,7 +106,7 @@ namespace Conekta.net.Model
         /// State
         /// </summary>
         /// <value>State</value>
-        /// <example>&quot;Ciudad de México&quot;</example>
+        /// <example>Ciudad de México</example>
         [DataMember(Name = "state", EmitDefaultValue = false)]
         public string State { get; set; }
 
@@ -115,7 +114,7 @@ namespace Conekta.net.Model
         /// Country
         /// </summary>
         /// <value>Country</value>
-        /// <example>&quot;MX&quot;</example>
+        /// <example>MX</example>
         [DataMember(Name = "country", EmitDefaultValue = false)]
         public string Country { get; set; }
 
@@ -123,7 +122,7 @@ namespace Conekta.net.Model
         /// Postal code
         /// </summary>
         /// <value>Postal code</value>
-        /// <example>&quot;3072&quot;</example>
+        /// <example>3072</example>
         [DataMember(Name = "postal_code", EmitDefaultValue = false)]
         public string PostalCode { get; set; }
 
@@ -131,7 +130,7 @@ namespace Conekta.net.Model
         /// Street number
         /// </summary>
         /// <value>Street number</value>
-        /// <example>&quot;123&quot;</example>
+        /// <example>123</example>
         [DataMember(Name = "external_number", EmitDefaultValue = false)]
         public string ExternalNumber { get; set; }
 
@@ -139,7 +138,7 @@ namespace Conekta.net.Model
         /// Unit / apartment number
         /// </summary>
         /// <value>Unit / apartment number</value>
-        /// <example>&quot;123&quot;</example>
+        /// <example>123</example>
         [DataMember(Name = "internal_number", EmitDefaultValue = false)]
         public string InternalNumber { get; set; }
 
@@ -151,7 +150,7 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class CompanyFiscalInfoAddressResponse {\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  Street1: ").Append(Street1).Append("\n");
             sb.Append("  Street2: ").Append(Street2).Append("\n");
             sb.Append("  City: ").Append(City).Append("\n");
@@ -196,8 +195,8 @@ namespace Conekta.net.Model
             }
             return 
                 (
-                    this.Object == input.Object ||
-                    this.Object.Equals(input.Object)
+                    this.VarObject == input.VarObject ||
+                    this.VarObject.Equals(input.VarObject)
                 ) && 
                 (
                     this.Street1 == input.Street1 ||
@@ -250,7 +249,7 @@ namespace Conekta.net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 if (this.Street1 != null)
                 {
                     hashCode = (hashCode * 59) + this.Street1.GetHashCode();

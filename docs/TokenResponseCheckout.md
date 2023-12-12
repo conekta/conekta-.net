@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **MonthlyInstallmentsOptions** | **List&lt;int&gt;** | List of monthly installments options. | [optional] 
 **Name** | **string** |  | [optional] 
 **NeedsShippingContact** | **bool** |  | [optional] 
-**Object** | **string** | Indicates the type of object, in this case checkout. | [optional] 
+**VarObject** | **string** | Indicates the type of object, in this case checkout. | [optional] 
 **OnDemandEnabled** | **bool** | Indicates if the checkout allows on demand payments. | [optional] 
 **PaidPaymentsCount** | **int** | Number of payments that have been paid. | [optional] 
 **Recurrent** | **bool** | Indicates if the checkout is recurrent. | [optional] 

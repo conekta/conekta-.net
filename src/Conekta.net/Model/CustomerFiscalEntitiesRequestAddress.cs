@@ -78,35 +78,35 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Street1
         /// </summary>
-        /// <example>&quot;Nuevo Leon 254&quot;</example>
+        /// <example>Nuevo Leon 254</example>
         [DataMember(Name = "street1", IsRequired = true, EmitDefaultValue = true)]
         public string Street1 { get; set; }
 
         /// <summary>
         /// Gets or Sets Street2
         /// </summary>
-        /// <example>&quot;Departamento 404&quot;</example>
+        /// <example>Departamento 404</example>
         [DataMember(Name = "street2", EmitDefaultValue = false)]
         public string Street2 { get; set; }
 
         /// <summary>
         /// Gets or Sets PostalCode
         /// </summary>
-        /// <example>&quot;06100&quot;</example>
+        /// <example>06100</example>
         [DataMember(Name = "postal_code", IsRequired = true, EmitDefaultValue = true)]
         public string PostalCode { get; set; }
 
         /// <summary>
         /// Gets or Sets City
         /// </summary>
-        /// <example>&quot;Ciudad de Mexico&quot;</example>
+        /// <example>Ciudad de Mexico</example>
         [DataMember(Name = "city", IsRequired = true, EmitDefaultValue = true)]
         public string City { get; set; }
 
         /// <summary>
         /// Gets or Sets State
         /// </summary>
-        /// <example>&quot;Ciudad de Mexico&quot;</example>
+        /// <example>Ciudad de Mexico</example>
         [DataMember(Name = "state", EmitDefaultValue = false)]
         public string State { get; set; }
 
@@ -114,7 +114,7 @@ namespace Conekta.net.Model
         /// this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
         /// </summary>
         /// <value>this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)</value>
-        /// <example>&quot;MX&quot;</example>
+        /// <example>MX</example>
         [DataMember(Name = "country", EmitDefaultValue = false)]
         public string Country { get; set; }
 

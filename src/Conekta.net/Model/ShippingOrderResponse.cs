@@ -46,9 +46,9 @@ namespace Conekta.net.Model
         /// <param name="method">Method of shipment.</param>
         /// <param name="metadata">Hash where the user can send additional information for each &#39;shipping&#39;..</param>
         /// <param name="id">id.</param>
-        /// <param name="_object">_object.</param>
+        /// <param name="varObject">varObject.</param>
         /// <param name="parentId">parentId.</param>
-        public ShippingOrderResponse(long amount = default(long), string carrier = default(string), string trackingNumber = default(string), string method = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string id = default(string), string _object = default(string), string parentId = default(string))
+        public ShippingOrderResponse(long amount = default(long), string carrier = default(string), string trackingNumber = default(string), string method = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string id = default(string), string varObject = default(string), string parentId = default(string))
         {
             this.Amount = amount;
             this.Carrier = carrier;
@@ -56,7 +56,7 @@ namespace Conekta.net.Model
             this.Method = method;
             this.Metadata = metadata;
             this.Id = id;
-            this.Object = _object;
+            this.VarObject = varObject;
             this.ParentId = parentId;
         }
 
@@ -72,7 +72,7 @@ namespace Conekta.net.Model
         /// Carrier name for the shipment
         /// </summary>
         /// <value>Carrier name for the shipment</value>
-        /// <example>&quot;FEDEX&quot;</example>
+        /// <example>FEDEX</example>
         [DataMember(Name = "carrier", EmitDefaultValue = false)]
         public string Carrier { get; set; }
 
@@ -80,7 +80,7 @@ namespace Conekta.net.Model
         /// Tracking number can be used to track the shipment
         /// </summary>
         /// <value>Tracking number can be used to track the shipment</value>
-        /// <example>&quot;TRACK123&quot;</example>
+        /// <example>TRACK123</example>
         [DataMember(Name = "tracking_number", EmitDefaultValue = false)]
         public string TrackingNumber { get; set; }
 
@@ -88,7 +88,7 @@ namespace Conekta.net.Model
         /// Method of shipment
         /// </summary>
         /// <value>Method of shipment</value>
-        /// <example>&quot;Same day&quot;</example>
+        /// <example>Same day</example>
         [DataMember(Name = "method", EmitDefaultValue = false)]
         public string Method { get; set; }
 
@@ -96,6 +96,7 @@ namespace Conekta.net.Model
         /// Hash where the user can send additional information for each &#39;shipping&#39;.
         /// </summary>
         /// <value>Hash where the user can send additional information for each &#39;shipping&#39;.</value>
+        /// <example>{key&#x3D;value}</example>
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }
 
@@ -106,10 +107,10 @@ namespace Conekta.net.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Gets or Sets ParentId
@@ -131,7 +132,7 @@ namespace Conekta.net.Model
             sb.Append("  Method: ").Append(Method).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -199,9 +200,9 @@ namespace Conekta.net.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.ParentId == input.ParentId ||
@@ -240,9 +241,9 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.ParentId != null)
                 {

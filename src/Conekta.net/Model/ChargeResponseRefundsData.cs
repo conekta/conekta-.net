@@ -45,9 +45,9 @@ namespace Conekta.net.Model
         /// <param name="createdAt">createdAt (required).</param>
         /// <param name="expiresAt">refund expiration date.</param>
         /// <param name="id">id (required).</param>
-        /// <param name="_object">_object (required).</param>
+        /// <param name="varObject">varObject (required).</param>
         /// <param name="status">refund status.</param>
-        public ChargeResponseRefundsData(long amount = default(long), string authCode = default(string), long createdAt = default(long), long expiresAt = default(long), string id = default(string), string _object = default(string), string status = default(string))
+        public ChargeResponseRefundsData(long amount = default(long), string authCode = default(string), long createdAt = default(long), long expiresAt = default(long), string id = default(string), string varObject = default(string), string status = default(string))
         {
             this.Amount = amount;
             this.CreatedAt = createdAt;
@@ -57,12 +57,12 @@ namespace Conekta.net.Model
                 throw new ArgumentNullException("id is a required property for ChargeResponseRefundsData and cannot be null");
             }
             this.Id = id;
-            // to ensure "_object" is required (not null)
-            if (_object == null)
+            // to ensure "varObject" is required (not null)
+            if (varObject == null)
             {
-                throw new ArgumentNullException("_object is a required property for ChargeResponseRefundsData and cannot be null");
+                throw new ArgumentNullException("varObject is a required property for ChargeResponseRefundsData and cannot be null");
             }
-            this.Object = _object;
+            this.VarObject = varObject;
             this.AuthCode = authCode;
             this.ExpiresAt = expiresAt;
             this.Status = status;
@@ -78,7 +78,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets AuthCode
         /// </summary>
-        /// <example>&quot;867372&quot;</example>
+        /// <example>867372</example>
         [DataMember(Name = "auth_code", EmitDefaultValue = false)]
         public string AuthCode { get; set; }
 
@@ -100,22 +100,22 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;6407b5bee1329a000175ba11&quot;</example>
+        /// <example>6407b5bee1329a000175ba11</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;refund&quot;</example>
+        /// <example>refund</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// refund status
         /// </summary>
         /// <value>refund status</value>
-        /// <example>&quot;pending&quot;</example>
+        /// <example>pending</example>
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
@@ -132,7 +132,7 @@ namespace Conekta.net.Model
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  ExpiresAt: ").Append(ExpiresAt).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -192,9 +192,9 @@ namespace Conekta.net.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.Status == input.Status ||
@@ -223,9 +223,9 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.Status != null)
                 {

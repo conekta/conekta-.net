@@ -45,7 +45,7 @@ namespace Conekta.net.Model
         /// It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place.
         /// </summary>
         /// <value>It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place.</value>
-        /// <example>&quot;key_rpHzxufNgjFCdprEEFZRTKi&quot;</example>
+        /// <example>key_rpHzxufNgjFCdprEEFZRTKi</example>
         [DataMember(Name = "authentication_token", EmitDefaultValue = false)]
         public string AuthenticationToken { get; set; }
 

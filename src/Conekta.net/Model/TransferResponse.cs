@@ -41,11 +41,11 @@ namespace Conekta.net.Model
         /// <param name="id">Unique identifier of the transfer..</param>
         /// <param name="livemode">Indicates whether the transfer was created in live mode or test mode..</param>
         /// <param name="destination">destination.</param>
-        /// <param name="_object">Object name, which is transfer..</param>
+        /// <param name="varObject">Object name, which is transfer..</param>
         /// <param name="statementDescription">Description of the transfer..</param>
         /// <param name="statementReference">Reference number of the transfer..</param>
         /// <param name="status">Code indicating transfer status..</param>
-        public TransferResponse(long amount = default(long), long createdAt = default(long), string currency = default(string), string id = default(string), bool livemode = default(bool), TransferDestinationResponse destination = default(TransferDestinationResponse), string _object = default(string), string statementDescription = default(string), string statementReference = default(string), string status = default(string))
+        public TransferResponse(long amount = default(long), long createdAt = default(long), string currency = default(string), string id = default(string), bool livemode = default(bool), TransferDestinationResponse destination = default(TransferDestinationResponse), string varObject = default(string), string statementDescription = default(string), string statementReference = default(string), string status = default(string))
         {
             this.Amount = amount;
             this.CreatedAt = createdAt;
@@ -53,7 +53,7 @@ namespace Conekta.net.Model
             this.Id = id;
             this.Livemode = livemode;
             this.Destination = destination;
-            this.Object = _object;
+            this.VarObject = varObject;
             this.StatementDescription = statementDescription;
             this.StatementReference = statementReference;
             this.Status = status;
@@ -79,7 +79,7 @@ namespace Conekta.net.Model
         /// The currency of the transfer. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)
         /// </summary>
         /// <value>The currency of the transfer. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)</value>
-        /// <example>&quot;MXN&quot;</example>
+        /// <example>MXN</example>
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 
@@ -87,7 +87,7 @@ namespace Conekta.net.Model
         /// Unique identifier of the transfer.
         /// </summary>
         /// <value>Unique identifier of the transfer.</value>
-        /// <example>&quot;5b0337d4dD344ef954fe1X4b6&quot;</example>
+        /// <example>5b0337d4dD344ef954fe1X4b6</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -109,15 +109,15 @@ namespace Conekta.net.Model
         /// Object name, which is transfer.
         /// </summary>
         /// <value>Object name, which is transfer.</value>
-        /// <example>&quot;transfer&quot;</example>
+        /// <example>transfer</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Description of the transfer.
         /// </summary>
         /// <value>Description of the transfer.</value>
-        /// <example>&quot;Conekta 4401234&quot;</example>
+        /// <example>Conekta 4401234</example>
         [DataMember(Name = "statement_description", EmitDefaultValue = false)]
         public string StatementDescription { get; set; }
 
@@ -125,7 +125,7 @@ namespace Conekta.net.Model
         /// Reference number of the transfer.
         /// </summary>
         /// <value>Reference number of the transfer.</value>
-        /// <example>&quot;4401234&quot;</example>
+        /// <example>4401234</example>
         [DataMember(Name = "statement_reference", EmitDefaultValue = false)]
         public string StatementReference { get; set; }
 
@@ -133,7 +133,7 @@ namespace Conekta.net.Model
         /// Code indicating transfer status.
         /// </summary>
         /// <value>Code indicating transfer status.</value>
-        /// <example>&quot;pending&quot;</example>
+        /// <example>pending</example>
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
@@ -151,7 +151,7 @@ namespace Conekta.net.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
             sb.Append("  Destination: ").Append(Destination).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  StatementDescription: ").Append(StatementDescription).Append("\n");
             sb.Append("  StatementReference: ").Append(StatementReference).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
@@ -218,9 +218,9 @@ namespace Conekta.net.Model
                     this.Destination.Equals(input.Destination))
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.StatementDescription == input.StatementDescription ||
@@ -263,9 +263,9 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Destination.GetHashCode();
                 }
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.StatementDescription != null)
                 {

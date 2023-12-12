@@ -56,14 +56,14 @@ namespace Conekta.net.Model
         /// Discount code.
         /// </summary>
         /// <value>Discount code.</value>
-        /// <example>&quot;123&quot;</example>
+        /// <example>123</example>
         [DataMember(Name = "code", EmitDefaultValue = false)]
         public string Code { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        /// <example>&quot;loyalty&quot;</example>
+        /// <example>loyalty</example>
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 

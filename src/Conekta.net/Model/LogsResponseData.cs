@@ -54,8 +54,8 @@ namespace Conekta.net.Model
         /// <param name="updatedAt">updatedAt.</param>
         /// <param name="url">url.</param>
         /// <param name="userAccountId">userAccountId.</param>
-        /// <param name="version">version.</param>
-        public LogsResponseData(long createdAt = default(long), string id = default(string), string ipAddress = default(string), bool livemode = default(bool), string loggableId = default(string), string loggableType = default(string), string method = default(string), string oauthTokenId = default(string), Dictionary<string, Object> queryString = default(Dictionary<string, Object>), string related = default(string), Object requestBody = default(Object), Dictionary<string, string> requestHeaders = default(Dictionary<string, string>), Object responseBody = default(Object), Dictionary<string, string> responseHeaders = default(Dictionary<string, string>), List<string> searchableTags = default(List<string>), string status = default(string), string updatedAt = default(string), string url = default(string), string userAccountId = default(string), string version = default(string))
+        /// <param name="varVersion">varVersion.</param>
+        public LogsResponseData(long createdAt = default(long), string id = default(string), string ipAddress = default(string), bool livemode = default(bool), string loggableId = default(string), string loggableType = default(string), string method = default(string), string oauthTokenId = default(string), Dictionary<string, Object> queryString = default(Dictionary<string, Object>), string related = default(string), Object requestBody = default(Object), Dictionary<string, string> requestHeaders = default(Dictionary<string, string>), Object responseBody = default(Object), Dictionary<string, string> responseHeaders = default(Dictionary<string, string>), List<string> searchableTags = default(List<string>), string status = default(string), string updatedAt = default(string), string url = default(string), string userAccountId = default(string), string varVersion = default(string))
         {
             this.CreatedAt = createdAt;
             this.Id = id;
@@ -76,7 +76,7 @@ namespace Conekta.net.Model
             this.UpdatedAt = updatedAt;
             this.Url = url;
             this.UserAccountId = userAccountId;
-            this._Version = version;
+            this.VarVersion = varVersion;
         }
 
         /// <summary>
@@ -89,14 +89,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;6307a60c41de27127515a575&quot;</example>
+        /// <example>6307a60c41de27127515a575</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets IpAddress
         /// </summary>
-        /// <example>&quot;54.235.131.48&quot;</example>
+        /// <example>54.235.131.48</example>
         [DataMember(Name = "ip_address", EmitDefaultValue = false)]
         public string IpAddress { get; set; }
 
@@ -110,21 +110,21 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets LoggableId
         /// </summary>
-        /// <example>&quot;ord_87632467832&quot;</example>
+        /// <example>ord_87632467832</example>
         [DataMember(Name = "loggable_id", EmitDefaultValue = true)]
         public string LoggableId { get; set; }
 
         /// <summary>
         /// Gets or Sets LoggableType
         /// </summary>
-        /// <example>&quot;order&quot;</example>
+        /// <example>order</example>
         [DataMember(Name = "loggable_type", EmitDefaultValue = true)]
         public string LoggableType { get; set; }
 
         /// <summary>
         /// Gets or Sets Method
         /// </summary>
-        /// <example>&quot;POST&quot;</example>
+        /// <example>POST</example>
         [DataMember(Name = "method", EmitDefaultValue = false)]
         public string Method { get; set; }
 
@@ -137,25 +137,28 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets QueryString
         /// </summary>
+        /// <example>{&quot;amount&quot;:3000,&quot;payable&quot;:true}</example>
         [DataMember(Name = "query_string", EmitDefaultValue = false)]
         public Dictionary<string, Object> QueryString { get; set; }
 
         /// <summary>
         /// Gets or Sets Related
         /// </summary>
-        /// <example>&quot;FilterResource&quot;</example>
+        /// <example>FilterResource</example>
         [DataMember(Name = "related", EmitDefaultValue = false)]
         public string Related { get; set; }
 
         /// <summary>
         /// Gets or Sets RequestBody
         /// </summary>
+        /// <example>{&quot;filters&quot;:{&quot;amount&quot;:{&quot;amount_from&quot;:0,&quot;amount_to&quot;:0},&quot;created_at&quot;:{&quot;date_from&quot;:1653627600,&quot;date_to&quot;:1661489999},&quot;filterName&quot;:&quot;Payments&quot;,&quot;search_term&quot;:null,&quot;sort_by&quot;:&quot;created_at&quot;,&quot;sort_direction&quot;:&quot;desc&quot;,&quot;status&quot;:[],&quot;type&quot;:[]},&quot;id&quot;:&quot;78e65162-0f37-4942-847c-9bf7081d54c2&quot;,&quot;page&quot;:&quot;0&quot;,&quot;report_type&quot;:&quot;charges&quot;,&quot;testMode&quot;:false}</example>
         [DataMember(Name = "request_body", EmitDefaultValue = false)]
         public Object RequestBody { get; set; }
 
         /// <summary>
         /// Gets or Sets RequestHeaders
         /// </summary>
+        /// <example>{&quot;Accept&quot;:&quot;application/vnd.conekta-v2.1.0+json&quot;,&quot;Accept-Encoding&quot;:&quot;gzip, deflate, br&quot;,&quot;Accept-Language&quot;:&quot;es-419, es; q&#x3D;0.9, en; q&#x3D;0.8&quot;,&quot;Activitypermission&quot;:&quot;orders:read&quot;,&quot;Apiversion&quot;:&quot;2.1.0&quot;}</example>
         [DataMember(Name = "request_headers", EmitDefaultValue = false)]
         public Dictionary<string, string> RequestHeaders { get; set; }
 
@@ -168,49 +171,51 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets ResponseHeaders
         /// </summary>
+        /// <example>{&quot;Access-Control-Allow-Headers&quot;:&quot;Content-Type, Depth, User-Agent, X-File-Size, X-Requested-With, If-Modified-Since, X-File-Name, Cache-Control, X-Prototype-Version, Authorization, Accept, Date, Version, X-Forwarded-For, Host, Connection, X-Forwarded-Proto, X-Forwarded-Port, X-Amzn-Trace-Id, Accept-Encoding, Accept-Language, Referer, Origin, Activitypermission, Apiversion, Entityid, Livemode, Sec-Ch-Ua, Sec-Ch-Ua-Mobile, Sec-Ch-Ua-Platform, Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site, X-Datadog-Parent-Id, X-Datadog-Sampling-Priority, X-Datadog-Trace-Id, X-Forwarded-Host, X-Forwarded-Server, X-Real-Ip&quot;,&quot;Access-Control-Allow-Methods&quot;:&quot;POST, GET, PUT, OPTIONS&quot;,&quot;Access-Control-Allow-Origin&quot;:&quot;*&quot;,&quot;Access-Control-Max-Age&quot;:&quot;1728000&quot;,&quot;Conekta-Media-Type&quot;:&quot;conekta-v2.1.0; format&#x3D;application/json&quot;,&quot;Content-Type&quot;:&quot;application/json; charset&#x3D;utf-8&quot;,&quot;Referrer-Policy&quot;:&quot;strict-origin-when-cross-origin&quot;,&quot;Strict-Transport-Security&quot;:&quot;max-age&#x3D;31536000; includeSubDomains&quot;,&quot;X-Content-Type-Options&quot;:&quot;nosniff&quot;,&quot;X-Download-Options&quot;:&quot;noopen&quot;,&quot;X-Frame-Options&quot;:&quot;SAMEORIGIN&quot;,&quot;X-Permitted-Cross-Domain-Policies&quot;:&quot;none&quot;,&quot;X-XSS-Protection&quot;:&quot;1; mode&#x3D;block&quot;}</example>
         [DataMember(Name = "response_headers", EmitDefaultValue = false)]
         public Dictionary<string, string> ResponseHeaders { get; set; }
 
         /// <summary>
         /// Gets or Sets SearchableTags
         /// </summary>
+        /// <example>[&quot;6307a60c41de27127515a575&quot;,&quot;6307a60c41de27127515a571&quot;]</example>
         [DataMember(Name = "searchable_tags", EmitDefaultValue = false)]
         public List<string> SearchableTags { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        /// <example>&quot;200&quot;</example>
+        /// <example>200</example>
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
         /// <summary>
         /// Gets or Sets UpdatedAt
         /// </summary>
-        /// <example>&quot;2022-08-25T16:40:44.887Z&quot;</example>
+        /// <example>2022-08-25T16:40:44.887Z</example>
         [DataMember(Name = "updated_at", EmitDefaultValue = false)]
         public string UpdatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
-        /// <example>&quot;/filter_resource&quot;</example>
+        /// <example>/filter_resource</example>
         [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
         /// <summary>
         /// Gets or Sets UserAccountId
         /// </summary>
-        /// <example>&quot;5a0b7001edbb6e1725b0b2c6&quot;</example>
+        /// <example>5a0b7001edbb6e1725b0b2c6</example>
         [DataMember(Name = "user_account_id", EmitDefaultValue = false)]
         public string UserAccountId { get; set; }
 
         /// <summary>
-        /// Gets or Sets _Version
+        /// Gets or Sets VarVersion
         /// </summary>
-        /// <example>&quot;2.1.0&quot;</example>
+        /// <example>2.1.0</example>
         [DataMember(Name = "version", EmitDefaultValue = false)]
-        public string _Version { get; set; }
+        public string VarVersion { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -239,7 +244,7 @@ namespace Conekta.net.Model
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
             sb.Append("  UserAccountId: ").Append(UserAccountId).Append("\n");
-            sb.Append("  _Version: ").Append(_Version).Append("\n");
+            sb.Append("  VarVersion: ").Append(VarVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -373,9 +378,9 @@ namespace Conekta.net.Model
                     this.UserAccountId.Equals(input.UserAccountId))
                 ) && 
                 (
-                    this._Version == input._Version ||
-                    (this._Version != null &&
-                    this._Version.Equals(input._Version))
+                    this.VarVersion == input.VarVersion ||
+                    (this.VarVersion != null &&
+                    this.VarVersion.Equals(input.VarVersion))
                 );
         }
 
@@ -458,9 +463,9 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.UserAccountId.GetHashCode();
                 }
-                if (this._Version != null)
+                if (this.VarVersion != null)
                 {
-                    hashCode = (hashCode * 59) + this._Version.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarVersion.GetHashCode();
                 }
                 return hashCode;
             }

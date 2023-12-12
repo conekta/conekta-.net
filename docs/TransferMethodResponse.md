@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Bank** | **string** | Name of the bank. | [optional] 
 **CreatedAt** | **long** | Date and time of creation of the transfer. | [optional] 
 **Id** | **string** | Unique identifier of the transfer. | [optional] 
-**Object** | **string** | Object name, which is bank_transfer_payout_method. | [optional] 
+**VarObject** | **string** | Object name, which is bank_transfer_payout_method. | [optional] 
 **PayeeId** | **string** | Unique identifier of the payee. | [optional] 
 **Type** | **string** | Type of the payee. | [optional] 
 

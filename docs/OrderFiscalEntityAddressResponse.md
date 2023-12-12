@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **State** | **string** | State | [optional] 
 **Country** | **string** | this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) | 
 **ExternalNumber** | **string** | External number | 
-**Object** | **string** |  | [optional] 
+**VarObject** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

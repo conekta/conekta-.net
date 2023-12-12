@@ -55,7 +55,7 @@ namespace Conekta.net.Model
         /// The balance&#39;s currency
         /// </summary>
         /// <value>The balance&#39;s currency</value>
-        /// <example>&quot;MXN&quot;</example>
+        /// <example>MXN</example>
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 

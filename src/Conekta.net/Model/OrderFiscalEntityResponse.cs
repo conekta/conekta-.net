@@ -47,9 +47,9 @@ namespace Conekta.net.Model
         /// <param name="taxId">Tax ID of the fiscal entity.</param>
         /// <param name="id">ID of the fiscal entity (required).</param>
         /// <param name="createdAt">The time at which the object was created in seconds since the Unix epoch (required).</param>
-        /// <param name="_object">_object (required).</param>
+        /// <param name="varObject">varObject (required).</param>
         /// <param name="phone">Phone of the fiscal entity.</param>
-        public OrderFiscalEntityResponse(OrderFiscalEntityAddressResponse address = default(OrderFiscalEntityAddressResponse), string email = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string name = default(string), string taxId = default(string), string id = default(string), long createdAt = default(long), string _object = default(string), string phone = default(string))
+        public OrderFiscalEntityResponse(OrderFiscalEntityAddressResponse address = default(OrderFiscalEntityAddressResponse), string email = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string name = default(string), string taxId = default(string), string id = default(string), long createdAt = default(long), string varObject = default(string), string phone = default(string))
         {
             // to ensure "address" is required (not null)
             if (address == null)
@@ -64,12 +64,12 @@ namespace Conekta.net.Model
             }
             this.Id = id;
             this.CreatedAt = createdAt;
-            // to ensure "_object" is required (not null)
-            if (_object == null)
+            // to ensure "varObject" is required (not null)
+            if (varObject == null)
             {
-                throw new ArgumentNullException("_object is a required property for OrderFiscalEntityResponse and cannot be null");
+                throw new ArgumentNullException("varObject is a required property for OrderFiscalEntityResponse and cannot be null");
             }
-            this.Object = _object;
+            this.VarObject = varObject;
             this.Email = email;
             this.Metadata = metadata;
             this.Name = name;
@@ -87,7 +87,7 @@ namespace Conekta.net.Model
         /// Email of the fiscal entity
         /// </summary>
         /// <value>Email of the fiscal entity</value>
-        /// <example>&quot;test@gmail.com&quot;</example>
+        /// <example>test@gmail.com</example>
         [DataMember(Name = "email", EmitDefaultValue = true)]
         public string Email { get; set; }
 
@@ -102,7 +102,7 @@ namespace Conekta.net.Model
         /// Name of the fiscal entity
         /// </summary>
         /// <value>Name of the fiscal entity</value>
-        /// <example>&quot;Conekta Inc&quot;</example>
+        /// <example>Conekta Inc</example>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -110,7 +110,7 @@ namespace Conekta.net.Model
         /// Tax ID of the fiscal entity
         /// </summary>
         /// <value>Tax ID of the fiscal entity</value>
-        /// <example>&quot;324234234&quot;</example>
+        /// <example>324234234</example>
         [DataMember(Name = "tax_id", EmitDefaultValue = true)]
         public string TaxId { get; set; }
 
@@ -118,7 +118,7 @@ namespace Conekta.net.Model
         /// ID of the fiscal entity
         /// </summary>
         /// <value>ID of the fiscal entity</value>
-        /// <example>&quot;fis_ent_2tN85VYaSMyDvjB3M&quot;</example>
+        /// <example>fis_ent_2tN85VYaSMyDvjB3M</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
@@ -131,17 +131,17 @@ namespace Conekta.net.Model
         public long CreatedAt { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;fiscal_entity&quot;</example>
+        /// <example>fiscal_entity</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Phone of the fiscal entity
         /// </summary>
         /// <value>Phone of the fiscal entity</value>
-        /// <example>&quot;+525511223344&quot;</example>
+        /// <example>525511223344</example>
         [DataMember(Name = "phone", EmitDefaultValue = true)]
         public string Phone { get; set; }
 
@@ -160,7 +160,7 @@ namespace Conekta.net.Model
             sb.Append("  TaxId: ").Append(TaxId).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  Phone: ").Append(Phone).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -233,9 +233,9 @@ namespace Conekta.net.Model
                     this.CreatedAt.Equals(input.CreatedAt)
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.Phone == input.Phone ||
@@ -278,9 +278,9 @@ namespace Conekta.net.Model
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.Phone != null)
                 {

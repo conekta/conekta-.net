@@ -72,7 +72,7 @@ namespace Conekta.net.Model
         /// Discount code.
         /// </summary>
         /// <value>Discount code.</value>
-        /// <example>&quot;123&quot;</example>
+        /// <example>123</example>
         [DataMember(Name = "code", IsRequired = true, EmitDefaultValue = true)]
         public string Code { get; set; }
 
@@ -80,7 +80,7 @@ namespace Conekta.net.Model
         /// It can be &#39;loyalty&#39;, &#39;campaign&#39;, &#39;coupon&#39; o &#39;sign&#39;
         /// </summary>
         /// <value>It can be &#39;loyalty&#39;, &#39;campaign&#39;, &#39;coupon&#39; o &#39;sign&#39;</value>
-        /// <example>&quot;loyalty&quot;</example>
+        /// <example>loyalty</example>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 

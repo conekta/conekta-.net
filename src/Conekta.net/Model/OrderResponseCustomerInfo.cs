@@ -35,16 +35,16 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderResponseCustomerInfo" /> class.
         /// </summary>
-        /// <param name="_object">_object.</param>
+        /// <param name="varObject">varObject.</param>
         /// <param name="customerCustomReference">Custom reference.</param>
         /// <param name="name">name.</param>
         /// <param name="email">email.</param>
         /// <param name="phone">phone.</param>
         /// <param name="corporate">corporate (default to false).</param>
         /// <param name="customerId">customerId.</param>
-        public OrderResponseCustomerInfo(string _object = default(string), string customerCustomReference = default(string), string name = default(string), string email = default(string), string phone = default(string), bool corporate = false, string customerId = default(string))
+        public OrderResponseCustomerInfo(string varObject = default(string), string customerCustomReference = default(string), string name = default(string), string email = default(string), string phone = default(string), bool corporate = false, string customerId = default(string))
         {
-            this.Object = _object;
+            this.VarObject = varObject;
             this.CustomerCustomReference = customerCustomReference;
             this.Name = name;
             this.Email = email;
@@ -54,38 +54,38 @@ namespace Conekta.net.Model
         }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;customer_info&quot;</example>
+        /// <example>customer_info</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Custom reference
         /// </summary>
         /// <value>Custom reference</value>
-        /// <example>&quot;custom_reference&quot;</example>
+        /// <example>custom_reference</example>
         [DataMember(Name = "customer_custom_reference", EmitDefaultValue = true)]
         public string CustomerCustomReference { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /// <example>&quot;DevTest&quot;</example>
+        /// <example>DevTest</example>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
-        /// <example>&quot;test@conekta.com&quot;</example>
+        /// <example>test@conekta.com</example>
         [DataMember(Name = "email", EmitDefaultValue = false)]
         public string Email { get; set; }
 
         /// <summary>
         /// Gets or Sets Phone
         /// </summary>
-        /// <example>&quot;5522997233&quot;</example>
+        /// <example>5522997233</example>
         [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
@@ -98,7 +98,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets CustomerId
         /// </summary>
-        /// <example>&quot;cus_23874283647&quot;</example>
+        /// <example>cus_23874283647</example>
         [DataMember(Name = "customer_id", EmitDefaultValue = false)]
         public string CustomerId { get; set; }
 
@@ -110,7 +110,7 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class OrderResponseCustomerInfo {\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  CustomerCustomReference: ").Append(CustomerCustomReference).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
@@ -153,9 +153,9 @@ namespace Conekta.net.Model
             }
             return 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.CustomerCustomReference == input.CustomerCustomReference ||
@@ -197,9 +197,9 @@ namespace Conekta.net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.CustomerCustomReference != null)
                 {

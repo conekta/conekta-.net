@@ -64,21 +64,21 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets AccountType
         /// </summary>
-        /// <example>&quot;Credit&quot;</example>
+        /// <example>Credit</example>
         [DataMember(Name = "account_type", EmitDefaultValue = false)]
         public string AccountType { get; set; }
 
         /// <summary>
         /// Gets or Sets AuthCode
         /// </summary>
-        /// <example>&quot;867372&quot;</example>
+        /// <example>867372</example>
         [DataMember(Name = "auth_code", EmitDefaultValue = false)]
         public string AuthCode { get; set; }
 
         /// <summary>
         /// Gets or Sets Brand
         /// </summary>
-        /// <example>&quot;visa&quot;</example>
+        /// <example>visa</example>
         [DataMember(Name = "brand", EmitDefaultValue = false)]
         public string Brand { get; set; }
 
@@ -86,28 +86,28 @@ namespace Conekta.net.Model
         /// Id sent for recurrent charges.
         /// </summary>
         /// <value>Id sent for recurrent charges.</value>
-        /// <example>&quot;S781317595&quot;</example>
+        /// <example>S781317595</example>
         [DataMember(Name = "contract_id", EmitDefaultValue = false)]
         public string ContractId { get; set; }
 
         /// <summary>
         /// Gets or Sets Country
         /// </summary>
-        /// <example>&quot;MX&quot;</example>
+        /// <example>MX</example>
         [DataMember(Name = "country", EmitDefaultValue = false)]
         public string Country { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpMonth
         /// </summary>
-        /// <example>&quot;02&quot;</example>
+        /// <example>02</example>
         [DataMember(Name = "exp_month", EmitDefaultValue = false)]
         public string ExpMonth { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpYear
         /// </summary>
-        /// <example>&quot;30&quot;</example>
+        /// <example>30</example>
         [DataMember(Name = "exp_year", EmitDefaultValue = false)]
         public string ExpYear { get; set; }
 
@@ -120,21 +120,21 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Issuer
         /// </summary>
-        /// <example>&quot;BANAMEX&quot;</example>
+        /// <example>BANAMEX</example>
         [DataMember(Name = "issuer", EmitDefaultValue = false)]
         public string Issuer { get; set; }
 
         /// <summary>
         /// Gets or Sets Last4
         /// </summary>
-        /// <example>&quot;4242&quot;</example>
+        /// <example>4242</example>
         [DataMember(Name = "last4", EmitDefaultValue = false)]
         public string Last4 { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /// <example>&quot;Fulanito Perez&quot;</example>
+        /// <example>Fulanito Perez</example>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
@@ -314,18 +314,6 @@ namespace Conekta.net.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // ContractId (string) maxLength
-            if (this.ContractId != null && this.ContractId.Length > 10)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ContractId, length must be less than 10.", new [] { "ContractId" });
-            }
-
-            // ContractId (string) minLength
-            if (this.ContractId != null && this.ContractId.Length < 10)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ContractId, length must be greater than 10.", new [] { "ContractId" });
-            }
-
             yield break;
         }
     }

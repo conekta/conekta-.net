@@ -40,43 +40,43 @@ namespace Conekta.net.Model
         /// <param name="email">email.</param>
         /// <param name="phone">phone.</param>
         /// <param name="corporate">corporate (default to false).</param>
-        /// <param name="_object">_object.</param>
-        public OrderCustomerInfoResponse(string customerCustomReference = default(string), string name = default(string), string email = default(string), string phone = default(string), bool corporate = false, string _object = default(string))
+        /// <param name="varObject">varObject.</param>
+        public OrderCustomerInfoResponse(string customerCustomReference = default(string), string name = default(string), string email = default(string), string phone = default(string), bool corporate = false, string varObject = default(string))
         {
             this.CustomerCustomReference = customerCustomReference;
             this.Name = name;
             this.Email = email;
             this.Phone = phone;
             this.Corporate = corporate;
-            this.Object = _object;
+            this.VarObject = varObject;
         }
 
         /// <summary>
         /// Custom reference
         /// </summary>
         /// <value>Custom reference</value>
-        /// <example>&quot;custom_reference&quot;</example>
+        /// <example>custom_reference</example>
         [DataMember(Name = "customer_custom_reference", EmitDefaultValue = true)]
         public string CustomerCustomReference { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /// <example>&quot;DevTest&quot;</example>
+        /// <example>DevTest</example>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
-        /// <example>&quot;test@conekta.com&quot;</example>
+        /// <example>test@conekta.com</example>
         [DataMember(Name = "email", EmitDefaultValue = false)]
         public string Email { get; set; }
 
         /// <summary>
         /// Gets or Sets Phone
         /// </summary>
-        /// <example>&quot;5522997233&quot;</example>
+        /// <example>5522997233</example>
         [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
@@ -87,11 +87,11 @@ namespace Conekta.net.Model
         public bool Corporate { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;customer_info&quot;</example>
+        /// <example>customer_info</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -106,7 +106,7 @@ namespace Conekta.net.Model
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  Phone: ").Append(Phone).Append("\n");
             sb.Append("  Corporate: ").Append(Corporate).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -167,9 +167,9 @@ namespace Conekta.net.Model
                     this.Corporate.Equals(input.Corporate)
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 );
         }
 
@@ -199,9 +199,9 @@ namespace Conekta.net.Model
                     hashCode = (hashCode * 59) + this.Phone.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Corporate.GetHashCode();
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 return hashCode;
             }

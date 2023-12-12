@@ -74,14 +74,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Bank
         /// </summary>
-        /// <example>&quot;STP&quot;</example>
+        /// <example>STP</example>
         [DataMember(Name = "bank", EmitDefaultValue = false)]
         public string Bank { get; set; }
 
         /// <summary>
         /// Gets or Sets Clabe
         /// </summary>
-        /// <example>&quot;646180111805034237&quot;</example>
+        /// <example>646180111805034237</example>
         [DataMember(Name = "clabe", EmitDefaultValue = false)]
         public string Clabe { get; set; }
 
@@ -143,14 +143,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets ReceivingAccountNumber
         /// </summary>
-        /// <example>&quot;646180111805034237&quot;</example>
+        /// <example>646180111805034237</example>
         [DataMember(Name = "receiving_account_number", EmitDefaultValue = false)]
         public string ReceivingAccountNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets ReceivingAccountBank
         /// </summary>
-        /// <example>&quot;STP&quot;</example>
+        /// <example>STP</example>
         [DataMember(Name = "receiving_account_bank", EmitDefaultValue = false)]
         public string ReceivingAccountBank { get; set; }
 

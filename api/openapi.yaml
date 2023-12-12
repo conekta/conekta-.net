@@ -29,6 +29,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -38,6 +39,7 @@ paths:
           - es
           - en
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -105,6 +107,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -114,6 +117,7 @@ paths:
           - es
           - en
           type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -181,11 +185,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -194,6 +200,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -203,14 +210,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -296,6 +306,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -305,6 +316,7 @@ paths:
           - es
           - en
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -357,6 +369,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -366,6 +379,7 @@ paths:
           - es
           - en
           type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -420,11 +434,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -433,6 +449,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -442,14 +459,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -520,6 +540,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -529,15 +550,19 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       - description: "The numbers of items to return, the maximum value is 250"
+        explode: true
         in: query
         name: limit
         required: false
@@ -547,24 +572,31 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
+        style: form
       - description: next page
+        explode: true
         in: query
         name: next
         required: false
         schema:
           type: string
+        style: form
       - description: previous page
+        explode: true
         in: query
         name: previous
         required: false
         schema:
           type: string
+        style: form
       - description: "General search, e.g. by id, description, prefix"
+        explode: true
         in: query
         name: search
         required: false
         schema:
           type: string
+        style: form
       responses:
         "200":
           content:
@@ -575,13 +607,17 @@ paths:
           headers:
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -630,6 +666,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -639,14 +676,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/api_keys_create'
       responses:
@@ -659,13 +699,17 @@ paths:
           headers:
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -724,11 +768,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -737,6 +783,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -746,6 +793,7 @@ paths:
           - es
           - en
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -756,13 +804,17 @@ paths:
           headers:
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -821,11 +873,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -834,6 +888,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -843,14 +898,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -861,13 +919,17 @@ paths:
           headers:
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -926,11 +988,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -939,6 +1003,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -948,6 +1013,7 @@ paths:
           - es
           - en
           type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -1025,6 +1091,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -1034,6 +1101,7 @@ paths:
           - es
           - en
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -1044,28 +1112,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -1114,6 +1192,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -1123,15 +1202,19 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       - description: "The numbers of items to return, the maximum value is 250"
+        explode: true
         in: query
         name: limit
         required: false
@@ -1141,24 +1224,31 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
+        style: form
       - description: "General order search, e.g. by mail, reference etc."
+        explode: true
         in: query
         name: search
         required: false
         schema:
           type: string
+        style: form
       - description: next page
+        explode: true
         in: query
         name: next
         required: false
         schema:
           type: string
+        style: form
       - description: previous page
+        explode: true
         in: query
         name: previous
         required: false
         schema:
           type: string
+        style: form
       responses:
         "200":
           content:
@@ -1169,28 +1259,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -1233,11 +1333,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -1246,6 +1348,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -1255,14 +1358,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/charge_update'
       responses:
@@ -1275,28 +1381,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -1356,11 +1472,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -1369,6 +1487,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -1378,14 +1497,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/charge_create'
       responses:
@@ -1478,6 +1600,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -1487,7 +1610,9 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "The numbers of items to return, the maximum value is 250"
+        explode: true
         in: query
         name: limit
         required: false
@@ -1497,24 +1622,31 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
+        style: form
       - description: "General order search, e.g. by mail, reference etc."
+        explode: true
         in: query
         name: search
         required: false
         schema:
           type: string
+        style: form
       - description: next page
+        explode: true
         in: query
         name: next
         required: false
         schema:
           type: string
+        style: form
       - description: previous page
+        explode: true
         in: query
         name: previous
         required: false
         schema:
           type: string
+        style: form
       responses:
         "200":
           content:
@@ -1525,28 +1657,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -1589,11 +1731,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -1602,6 +1746,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -1611,6 +1756,7 @@ paths:
           - es
           - en
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -1621,28 +1767,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -1710,6 +1866,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -1719,15 +1876,19 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       - description: "The numbers of items to return, the maximum value is 250"
+        explode: true
         in: query
         name: limit
         required: false
@@ -1737,24 +1898,31 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
+        style: form
       - description: "General order search, e.g. by mail, reference etc."
+        explode: true
         in: query
         name: search
         required: false
         schema:
           type: string
+        style: form
       - description: next page
+        explode: true
         in: query
         name: next
         required: false
         schema:
           type: string
+        style: form
       - description: previous page
+        explode: true
         in: query
         name: previous
         required: false
         schema:
           type: string
+        style: form
       responses:
         "200":
           content:
@@ -1765,28 +1933,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -1837,6 +2015,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -1846,14 +2025,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/customer'
       responses:
@@ -1866,28 +2048,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -1960,11 +2152,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -1973,6 +2167,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -1982,14 +2177,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -2070,11 +2268,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -2083,6 +2283,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -2092,14 +2293,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -2165,11 +2369,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -2178,6 +2384,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -2187,14 +2394,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/update_customer'
       responses:
@@ -2276,11 +2486,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -2289,6 +2501,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -2298,14 +2511,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/customer_fiscal_entities'
       responses:
@@ -2389,18 +2605,22 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: identifier
         example: fis_ent_2tQ8HkkfbauaKP9Ho
+        explode: false
         in: path
         name: fiscal_entities_id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -2409,6 +2629,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -2418,14 +2639,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/customer_update_fiscal_entities'
       responses:
@@ -2509,11 +2733,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -2522,6 +2748,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -2531,15 +2758,19 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       - description: "The numbers of items to return, the maximum value is 250"
+        explode: true
         in: query
         name: limit
         required: false
@@ -2549,24 +2780,31 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
+        style: form
       - description: "General order search, e.g. by mail, reference etc."
+        explode: true
         in: query
         name: search
         required: false
         schema:
           type: string
+        style: form
       - description: next page
+        explode: true
         in: query
         name: next
         required: false
         schema:
           type: string
+        style: form
       - description: previous page
+        explode: true
         in: query
         name: previous
         required: false
         schema:
           type: string
+        style: form
       responses:
         "200":
           content:
@@ -2616,11 +2854,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -2629,6 +2869,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -2638,14 +2879,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/discount_line_create'
       responses:
@@ -2714,18 +2958,22 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: discount line id identifier
         example: dis_lin_2tQ974hSHcsdeSZHG
+        explode: false
         in: path
         name: discount_lines_id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -2734,6 +2982,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -2743,14 +2992,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -2831,18 +3083,22 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: discount line id identifier
         example: dis_lin_2tQ974hSHcsdeSZHG
+        explode: false
         in: path
         name: discount_lines_id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -2851,6 +3107,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -2860,14 +3117,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -2948,18 +3208,22 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: discount line id identifier
         example: dis_lin_2tQ974hSHcsdeSZHG
+        explode: false
         in: path
         name: discount_lines_id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -2968,6 +3232,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -2977,14 +3242,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/discount_line_update'
       responses:
@@ -3073,6 +3341,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -3082,15 +3351,19 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       - description: "The numbers of items to return, the maximum value is 250"
+        explode: true
         in: query
         name: limit
         required: false
@@ -3100,24 +3373,31 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
+        style: form
       - description: "General order search, e.g. by mail, reference etc."
+        explode: true
         in: query
         name: search
         required: false
         schema:
           type: string
+        style: form
       - description: next page
+        explode: true
         in: query
         name: next
         required: false
         schema:
           type: string
+        style: form
       - description: previous page
+        explode: true
         in: query
         name: previous
         required: false
         schema:
           type: string
+        style: form
       responses:
         "200":
           content:
@@ -3128,28 +3408,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -3199,6 +3489,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -3208,21 +3499,26 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -3233,28 +3529,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -3314,18 +3620,22 @@ paths:
       parameters:
       - description: event identifier
         example: 6463d6e35a4c3e001819e760
+        explode: false
         in: path
         name: event_id
         required: true
         schema:
           type: string
+        style: simple
       - description: webhook log identifier
         example: webhl_2tsv6NzWJHBWCkqGt
+        explode: false
         in: path
         name: webhook_log_id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -3334,6 +3644,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -3343,6 +3654,7 @@ paths:
           - es
           - en
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -3415,6 +3727,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -3424,15 +3737,19 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       - description: "The numbers of items to return, the maximum value is 250"
+        explode: true
         in: query
         name: limit
         required: false
@@ -3442,24 +3759,31 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
+        style: form
       - description: "General order search, e.g. by mail, reference etc."
+        explode: true
         in: query
         name: search
         required: false
         schema:
           type: string
+        style: form
       - description: next page
+        explode: true
         in: query
         name: next
         required: false
         schema:
           type: string
+        style: form
       - description: previous page
+        explode: true
         in: query
         name: previous
         required: false
         schema:
           type: string
+        style: form
       responses:
         "200":
           content:
@@ -3470,28 +3794,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -3535,11 +3869,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -3548,6 +3884,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -3557,14 +3894,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -3637,6 +3977,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -3646,15 +3987,19 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       - description: "The numbers of items to return, the maximum value is 250"
+        explode: true
         in: query
         name: limit
         required: false
@@ -3664,24 +4009,31 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
+        style: form
       - description: "General order search, e.g. by mail, reference etc."
+        explode: true
         in: query
         name: search
         required: false
         schema:
           type: string
+        style: form
       - description: next page
+        explode: true
         in: query
         name: next
         required: false
         schema:
           type: string
+        style: form
       - description: previous page
+        explode: true
         in: query
         name: previous
         required: false
         schema:
           type: string
+        style: form
       responses:
         "200":
           content:
@@ -3737,6 +4089,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -3746,14 +4099,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/order'
       responses:
@@ -3763,10 +4119,8 @@ paths:
               examples:
                 cash:
                   $ref: '#/components/examples/order_cash'
-                  value: null
                 card:
                   $ref: '#/components/examples/order_card'
-                  value: null
               schema:
                 $ref: '#/components/schemas/order_response'
           description: successful operation
@@ -3842,11 +4196,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -3855,6 +4211,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -3864,14 +4221,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -3937,11 +4297,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -3950,6 +4312,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -3959,6 +4322,7 @@ paths:
           - es
           - en
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/order_update'
       responses:
@@ -4042,11 +4406,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -4055,6 +4421,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -4064,14 +4431,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -4169,11 +4539,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -4182,6 +4554,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -4191,14 +4564,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -4288,11 +4664,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -4301,6 +4679,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -4310,14 +4689,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/product_create'
       responses:
@@ -4386,18 +4768,22 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: identifier
         example: line_item_2tQ8HkkfbauaKP9Ho
+        explode: false
         in: path
         name: line_item_id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -4406,6 +4792,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -4415,14 +4802,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -4503,18 +4893,22 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: identifier
         example: line_item_2tQ8HkkfbauaKP9Ho
+        explode: false
         in: path
         name: line_item_id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -4523,6 +4917,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -4532,14 +4927,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/product_update'
       responses:
@@ -4624,11 +5022,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -4637,6 +5037,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -4646,14 +5047,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/order_refunds_request'
       responses:
@@ -4752,18 +5156,22 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: refund identifier
         example: 6407b5bee1329a000175ba11
+        explode: false
         in: path
         name: refund_id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -4772,6 +5180,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -4781,14 +5190,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -4890,6 +5302,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -4899,15 +5312,19 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       - description: "The numbers of items to return, the maximum value is 250"
+        explode: true
         in: query
         name: limit
         required: false
@@ -4917,24 +5334,31 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
+        style: form
       - description: "General order search, e.g. by mail, reference etc."
+        explode: true
         in: query
         name: search
         required: false
         schema:
           type: string
+        style: form
       - description: next page
+        explode: true
         in: query
         name: next
         required: false
         schema:
           type: string
+        style: form
       - description: previous page
+        explode: true
         in: query
         name: previous
         required: false
         schema:
           type: string
+        style: form
       responses:
         "200":
           content:
@@ -4945,28 +5369,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -5043,6 +5477,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -5052,14 +5487,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/checkout'
       responses:
@@ -5072,30 +5510,40 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
               description: The version of the API used to process the request and
                 the format of the response body
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -5173,6 +5621,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -5182,21 +5631,26 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -5207,28 +5661,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -5322,6 +5786,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -5331,21 +5796,26 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -5356,28 +5826,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -5471,6 +5951,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -5480,21 +5961,26 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/checkout_email'
       responses:
@@ -5507,28 +5993,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -5622,6 +6118,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -5631,21 +6128,26 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/checkout_sms'
       responses:
@@ -5658,28 +6160,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -5768,11 +6280,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -5781,6 +6295,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -5790,15 +6305,19 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       - description: "The numbers of items to return, the maximum value is 250"
+        explode: true
         in: query
         name: limit
         required: false
@@ -5808,24 +6327,31 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
+        style: form
       - description: next page
+        explode: true
         in: query
         name: next
         required: false
         schema:
           type: string
+        style: form
       - description: previous page
+        explode: true
         in: query
         name: previous
         required: false
         schema:
           type: string
+        style: form
       - description: "General order search, e.g. by mail, reference etc."
+        explode: true
         in: query
         name: search
         required: false
         schema:
           type: string
+        style: form
       responses:
         "200":
           content:
@@ -5915,11 +6441,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -5928,6 +6456,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -5937,14 +6466,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/customer_payment_methods'
       responses:
@@ -6028,18 +6560,22 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Identifier of the payment method
         example: src_2tQ974hSHcsdeSZHG
+        explode: false
         in: path
         name: payment_method_id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -6048,6 +6584,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -6057,14 +6594,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -6145,18 +6685,22 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Identifier of the payment method
         example: src_2tQ974hSHcsdeSZHG
+        explode: false
         in: path
         name: payment_method_id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -6165,6 +6709,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -6174,14 +6719,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/customer_update_payment_methods'
       responses:
@@ -6270,6 +6818,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -6279,15 +6828,19 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       - description: "The numbers of items to return, the maximum value is 250"
+        explode: true
         in: query
         name: limit
         required: false
@@ -6297,24 +6850,31 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
+        style: form
       - description: "General order search, e.g. by mail, reference etc."
+        explode: true
         in: query
         name: search
         required: false
         schema:
           type: string
+        style: form
       - description: next page
+        explode: true
         in: query
         name: next
         required: false
         schema:
           type: string
+        style: form
       - description: previous page
+        explode: true
         in: query
         name: previous
         required: false
         schema:
           type: string
+        style: form
       responses:
         "200":
           content:
@@ -6325,28 +6885,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -6410,6 +6980,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -6419,14 +6990,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/plan'
       responses:
@@ -6439,28 +7013,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -6518,11 +7102,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -6531,6 +7117,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -6540,6 +7127,7 @@ paths:
           - es
           - en
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -6550,28 +7138,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -6644,11 +7242,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -6657,6 +7257,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -6666,14 +7267,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -6684,28 +7288,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -6778,11 +7392,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -6791,6 +7407,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -6800,14 +7417,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/plan_update'
       responses:
@@ -6820,28 +7440,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -6916,11 +7546,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -6929,6 +7561,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -6938,14 +7571,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/shipping_create'
       responses:
@@ -6955,7 +7591,6 @@ paths:
               examples:
                 sucessfull:
                   $ref: '#/components/examples/shipping'
-                  value: null
               schema:
                 $ref: '#/components/schemas/shipping_order_response'
           description: successful
@@ -7018,18 +7653,22 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: identifier
         example: ship_lin_2tQ974hSHcsdeSZHG
+        explode: false
         in: path
         name: shipping_id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -7038,6 +7677,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -7047,14 +7687,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -7152,18 +7795,22 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: identifier
         example: ship_lin_2tQ974hSHcsdeSZHG
+        explode: false
         in: path
         name: shipping_id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -7172,6 +7819,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -7181,14 +7829,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/shipping_create'
       responses:
@@ -7272,11 +7923,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -7285,6 +7938,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -7294,14 +7948,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/customer_shipping_contacts'
       responses:
@@ -7385,18 +8042,22 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: identifier
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: shipping_contacts_id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -7405,6 +8066,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -7414,14 +8076,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -7502,18 +8167,22 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: identifier
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: shipping_contacts_id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -7522,6 +8191,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -7531,14 +8201,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/customer_update_shipping_contacts'
       responses:
@@ -7621,11 +8294,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -7634,6 +8309,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -7643,6 +8319,7 @@ paths:
           - es
           - en
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -7653,28 +8330,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -7734,11 +8421,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -7747,6 +8436,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -7756,14 +8446,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/subscription'
       responses:
@@ -7776,28 +8469,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -7872,11 +8575,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -7885,6 +8590,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -7894,14 +8600,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/subscription_update'
       responses:
@@ -7914,28 +8623,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -8011,11 +8730,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -8024,6 +8745,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -8033,14 +8755,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -8051,28 +8776,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -8133,11 +8868,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -8146,6 +8883,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -8155,14 +8893,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -8173,28 +8914,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -8284,11 +9035,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -8297,6 +9050,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -8306,14 +9060,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -8324,28 +9081,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -8420,11 +9187,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -8433,6 +9202,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -8442,14 +9212,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -8460,28 +9233,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -8570,11 +9353,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -8583,6 +9368,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -8592,14 +9378,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/order_tax'
       responses:
@@ -8668,18 +9457,22 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: identifier
         example: tax_lin_2tQ974hSHcsdeSZHG
+        explode: false
         in: path
         name: tax_id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -8688,6 +9481,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -8697,14 +9491,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -8785,18 +9582,22 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: identifier
         example: tax_lin_2tQ974hSHcsdeSZHG
+        explode: false
         in: path
         name: tax_id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -8805,6 +9606,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -8814,14 +9616,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/order_tax_update'
       responses:
@@ -8912,6 +9717,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -8921,6 +9727,7 @@ paths:
           - es
           - en
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/token'
       responses:
@@ -8933,28 +9740,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -9019,6 +9836,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -9028,15 +9846,19 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       - description: "The numbers of items to return, the maximum value is 250"
+        explode: true
         in: query
         name: limit
         required: false
@@ -9046,46 +9868,59 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
+        style: form
       - description: next page
+        explode: true
         in: query
         name: next
         required: false
         schema:
           type: string
+        style: form
       - description: previous page
+        explode: true
         in: query
         name: previous
         required: false
         schema:
           type: string
+        style: form
       - description: id of the object to be retrieved
+        explode: true
         in: query
         name: id
         required: false
         schema:
           example: 65412a893cd69a0001c25892
           type: string
+        style: form
       - description: id of the charge used for filtering
+        explode: true
         in: query
         name: charge_id
         required: false
         schema:
           example: 65412a893cd69a0001c25892
           type: string
+        style: form
       - description: type of the object to be retrieved
+        explode: true
         in: query
         name: type
         required: false
         schema:
           example: capture
           type: string
+        style: form
       - description: currency of the object to be retrieved
+        explode: true
         in: query
         name: currency
         required: false
         schema:
           example: MXN
           type: string
+        style: form
       responses:
         "200":
           content:
@@ -9096,28 +9931,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -9167,6 +10012,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -9176,21 +10022,26 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -9201,28 +10052,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -9286,6 +10147,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -9295,15 +10157,19 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       - description: "The numbers of items to return, the maximum value is 250"
+        explode: true
         in: query
         name: limit
         required: false
@@ -9313,24 +10179,31 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
+        style: form
       - description: "General order search, e.g. by mail, reference etc."
+        explode: true
         in: query
         name: search
         required: false
         schema:
           type: string
+        style: form
       - description: next page
+        explode: true
         in: query
         name: next
         required: false
         schema:
           type: string
+        style: form
       - description: previous page
+        explode: true
         in: query
         name: previous
         required: false
         schema:
           type: string
+        style: form
       responses:
         "200":
           content:
@@ -9341,28 +10214,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -9412,6 +10295,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -9421,21 +10305,26 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -9446,28 +10335,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -9531,6 +10430,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -9540,15 +10440,19 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       - description: "The numbers of items to return, the maximum value is 250"
+        explode: true
         in: query
         name: limit
         required: false
@@ -9558,24 +10462,31 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
+        style: form
       - description: "General order search, e.g. by mail, reference etc."
+        explode: true
         in: query
         name: search
         required: false
         schema:
           type: string
+        style: form
       - description: next page
+        explode: true
         in: query
         name: next
         required: false
         schema:
           type: string
+        style: form
       - description: previous page
+        explode: true
         in: query
         name: previous
         required: false
         schema:
           type: string
+        style: form
       responses:
         "200":
           content:
@@ -9586,28 +10497,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -9656,6 +10577,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -9665,6 +10587,7 @@ paths:
           - es
           - en
           type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -9719,11 +10642,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -9732,6 +10657,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -9741,6 +10667,7 @@ paths:
           - es
           - en
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -9751,28 +10678,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -9830,11 +10767,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -9843,6 +10782,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -9852,14 +10792,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -9870,28 +10813,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -9950,11 +10903,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -9963,6 +10918,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -9972,6 +10928,7 @@ paths:
           - es
           - en
           type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -10050,6 +11007,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -10059,15 +11017,19 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       - description: "The numbers of items to return, the maximum value is 250"
+        explode: true
         in: query
         name: limit
         required: false
@@ -10077,24 +11039,31 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
+        style: form
       - description: "General order search, e.g. by mail, reference etc."
+        explode: true
         in: query
         name: search
         required: false
         schema:
           type: string
+        style: form
       - description: next page
+        explode: true
         in: query
         name: next
         required: false
         schema:
           type: string
+        style: form
       - description: previous page
+        explode: true
         in: query
         name: previous
         required: false
         schema:
           type: string
+        style: form
       responses:
         "200":
           content:
@@ -10105,28 +11074,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -10179,6 +11158,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -10188,6 +11168,7 @@ paths:
           - es
           - en
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/webhook'
       responses:
@@ -10239,11 +11220,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -10252,6 +11235,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -10261,6 +11245,7 @@ paths:
           - es
           - en
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -10271,28 +11256,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -10350,11 +11345,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -10363,6 +11360,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -10372,14 +11370,17 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -10390,28 +11391,38 @@ paths:
           headers:
             Date:
               description: The date and time that the response was sent
+              explode: false
               schema:
                 example: "Fri, 03 Feb 2023 16:57:48 GMT"
                 type: string
+              style: simple
             Content-Type:
               description: The format of the response body
+              explode: false
               schema:
                 example: application/json; charset=utf-8
                 type: string
+              style: simple
             Content-Length:
               description: The length of the response body in bytes
+              explode: false
               schema:
                 example: "2737"
                 type: string
+              style: simple
             Connection:
               description: The type of connection used to transfer the response
+              explode: false
               schema:
                 example: keep-alive
                 type: string
+              style: simple
             Conekta-Media-Type:
+              explode: false
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
+              style: simple
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -10476,6 +11487,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -10485,21 +11497,26 @@ paths:
           - es
           - en
           type: string
+        style: simple
       - description: "In the case of a holding company, the company id of the child\
           \ company to which will process the request."
         example: 6441b6376b60c3a638da80af
+        explode: false
         in: header
         name: X-Child-Company-Id
         required: false
         schema:
           type: string
+        style: simple
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       requestBody:
         $ref: '#/components/requestBodies/webhook_update'
       responses:
@@ -10568,11 +11585,13 @@ paths:
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
+        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
+        style: simple
       - description: Use for knowing which language to use
         examples:
           es:
@@ -10581,6 +11600,7 @@ paths:
           en:
             summary: for english request/response
             value: en
+        explode: false
         in: header
         name: Accept-Language
         required: false
@@ -10590,6 +11610,7 @@ paths:
           - es
           - en
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -10980,6 +12001,7 @@ components:
         en:
           summary: for english request/response
           value: en
+      explode: false
       in: header
       name: Accept-Language
       required: false
@@ -10989,25 +12011,31 @@ components:
         - es
         - en
         type: string
+      style: simple
     id:
       description: Identifier of the resource
       example: 6307a60c41de27127515a575
+      explode: false
       in: path
       name: id
       required: true
       schema:
         type: string
+      style: simple
     x_child_company_id:
       description: "In the case of a holding company, the company id of the child\
         \ company to which will process the request."
       example: 6441b6376b60c3a638da80af
+      explode: false
       in: header
       name: X-Child-Company-Id
       required: false
       schema:
         type: string
+      style: simple
     limit:
       description: "The numbers of items to return, the maximum value is 250"
+      explode: true
       in: query
       name: limit
       required: false
@@ -11017,139 +12045,174 @@ components:
         maximum: 250
         minimum: 1
         type: integer
+      style: form
     next_page:
       description: next page
+      explode: true
       in: query
       name: next
       required: false
       schema:
         type: string
+      style: form
     previous_page:
       description: previous page
+      explode: true
       in: query
       name: previous
       required: false
       schema:
         type: string
+      style: form
     search:
       description: "General order search, e.g. by mail, reference etc."
+      explode: true
       in: query
       name: search
       required: false
       schema:
         type: string
+      style: form
     fiscal_entities_id:
       description: identifier
       example: fis_ent_2tQ8HkkfbauaKP9Ho
+      explode: false
       in: path
       name: fiscal_entities_id
       required: true
       schema:
         type: string
+      style: simple
     discount_lines_id:
       description: discount line id identifier
       example: dis_lin_2tQ974hSHcsdeSZHG
+      explode: false
       in: path
       name: discount_lines_id
       required: true
       schema:
         type: string
+      style: simple
     event_id:
       description: event identifier
       example: 6463d6e35a4c3e001819e760
+      explode: false
       in: path
       name: event_id
       required: true
       schema:
         type: string
+      style: simple
     webhook_log_id:
       description: webhook log identifier
       example: webhl_2tsv6NzWJHBWCkqGt
+      explode: false
       in: path
       name: webhook_log_id
       required: true
       schema:
         type: string
+      style: simple
     line_items_id:
       description: identifier
       example: line_item_2tQ8HkkfbauaKP9Ho
+      explode: false
       in: path
       name: line_item_id
       required: true
       schema:
         type: string
+      style: simple
     refund_id:
       description: refund identifier
       example: 6407b5bee1329a000175ba11
+      explode: false
       in: path
       name: refund_id
       required: true
       schema:
         type: string
+      style: simple
     payment_method_id:
       description: Identifier of the payment method
       example: src_2tQ974hSHcsdeSZHG
+      explode: false
       in: path
       name: payment_method_id
       required: true
       schema:
         type: string
+      style: simple
     shipping_id:
       description: identifier
       example: ship_lin_2tQ974hSHcsdeSZHG
+      explode: false
       in: path
       name: shipping_id
       required: true
       schema:
         type: string
+      style: simple
     shipping_contacts_id:
       description: identifier
       example: 6307a60c41de27127515a575
+      explode: false
       in: path
       name: shipping_contacts_id
       required: true
       schema:
         type: string
+      style: simple
     tax_id:
       description: identifier
       example: tax_lin_2tQ974hSHcsdeSZHG
+      explode: false
       in: path
       name: tax_id
       required: true
       schema:
         type: string
+      style: simple
     id_query:
       description: id of the object to be retrieved
+      explode: true
       in: query
       name: id
       required: false
       schema:
         example: 65412a893cd69a0001c25892
         type: string
+      style: form
     charge_id:
       description: id of the charge used for filtering
+      explode: true
       in: query
       name: charge_id
       required: false
       schema:
         example: 65412a893cd69a0001c25892
         type: string
+      style: form
     type:
       description: type of the object to be retrieved
+      explode: true
       in: query
       name: type
       required: false
       schema:
         example: capture
         type: string
+      style: form
     currency:
       description: currency of the object to be retrieved
+      explode: true
       in: query
       name: currency
       required: false
       schema:
         example: MXN
         type: string
+      style: form
   requestBodies:
     api_keys_create:
       content:
@@ -11220,19 +12283,14 @@ components:
           examples:
             order_with_charges:
               $ref: '#/components/examples/order_with_charges'
-              value: null
             order_with_checkout:
               $ref: '#/components/examples/order_with_checkout'
-              value: null
             split_payment_with_2_card_charges:
               $ref: '#/components/examples/split_payment_with_2_cards'
-              value: null
             split_payment_with_3_cash_charges:
               $ref: '#/components/examples/split_payment_with_cash'
-              value: null
             split_payment_with_cash_card_charges:
               $ref: '#/components/examples/split_payment_with_cash_card'
-              value: null
           schema:
             $ref: '#/components/schemas/order_request'
       description: requested field for order
@@ -11940,7 +12998,7 @@ components:
           $ref: '#/components/schemas/customer_payment_methods_response'
         phone:
           description: Customer's phone number
-          example: +5215555555555
+          example: "5215555555555"
           type: string
         shipping_contacts:
           $ref: '#/components/schemas/customer_response_shipping_contacts'
@@ -12258,6 +13316,8 @@ components:
             structured format.
           maxProperties: 100
           type: object
+        next_action:
+          $ref: '#/components/schemas/order_next_action_response'
         object:
           description: String representing the object’s type. Objects of the same
             type share the same value.
@@ -12455,7 +13515,7 @@ components:
         active or has used in Conekta
       properties:
         phone:
-          example: +525511223344
+          example: "525511223344"
           type: string
         receiver:
           example: Marvin Fuller
@@ -13004,7 +14064,7 @@ components:
           type: array
         phone:
           description: Is the customer's phone number
-          example: +5215555555555
+          example: "5215555555555"
           type: string
         plan_id:
           description: "Contains the ID of a plan, which could together with name,\
@@ -13047,7 +14107,7 @@ components:
           type: string
         phone:
           description: Is the customer's phone number
-          example: +5215555555555
+          example: "5215555555555"
           type: string
         plan_id:
           description: "Contains the ID of a plan, which could together with name,\
@@ -13203,6 +14263,12 @@ components:
             \ recurrent or validation."
           example: ecommerce
           type: string
+        return_url:
+          description: Indicates the redirection callback upon completion of the 3DS2
+            flow.
+          example: https://my-website.com
+          format: uri
+          type: string
         shipping_contact:
           $ref: '#/components/schemas/customer_shipping_contacts'
         shipping_lines:
@@ -13217,6 +14283,9 @@ components:
           items:
             $ref: '#/components/schemas/order_tax_request'
           type: array
+        three_ds_mode:
+          description: "Indicates the 3DS2 mode for the order, either smart or strict."
+          type: string
       required:
       - currency
       - customer_info
@@ -13590,7 +14659,7 @@ components:
       properties:
         phone:
           description: Phone contact
-          example: +525511223344
+          example: "525511223344"
           type: string
         receiver:
           description: Name of the person who will receive the order
@@ -13626,7 +14695,7 @@ components:
       properties:
         phone:
           description: Phone contact
-          example: +525511223344
+          example: "525511223344"
           type: string
         receiver:
           description: Name of the person who will receive the order
@@ -15210,7 +16279,7 @@ components:
           type: string
         phone:
           description: Phone of the fiscal entity
-          example: +525511223344
+          example: "525511223344"
           nullable: true
           type: string
       required:
@@ -15247,6 +16316,35 @@ components:
       - $ref: '#/components/schemas/page'
       - $ref: '#/components/schemas/order_response_products_allOf'
       title: order_response_products
+    order_next_action_response_redirect_to_url:
+      description: contains the following attributes that will guide to continue the
+        flow
+      properties:
+        url:
+          description: "pay.conekta.com/{id} Indicates the url of the Conekta component\
+            \ to authenticate the flow through 3DS2."
+          example: https://pay.conekta.com/6fca054a85194c43971ecea35cc519bb
+          format: uri
+          type: string
+        return_url:
+          description: "Indicates the url to which the 3DS2 flow returns at the end,\
+            \ when the integration is redirected."
+          example: https://my-website.com"
+          format: uri
+          type: string
+      type: object
+    order_next_action_response:
+      description: contains the following attributes that will guide to continue the
+        flow
+      properties:
+        redirect_to_url:
+          $ref: '#/components/schemas/order_next_action_response_redirect_to_url'
+        type:
+          description: Indicates the type of action to be taken
+          example: redirect_to_url
+          type: string
+      title: order_next_action_response
+      type: object
     order_response_shipping_contact_allOf:
       properties:
         created_at:
@@ -15578,8 +16676,6 @@ components:
           description: Optional id sent to indicate the bank contract for recurrent
             card charges.
           example: S781317595
-          maxLength: 10
-          minLength: 10
           type: string
       required:
       - type
@@ -15640,7 +16736,7 @@ components:
           type: string
         phone:
           description: Phone of the fiscal entity
-          example: +525511223344
+          example: "525511223344"
           type: string
         tax_id:
           description: Tax ID of the fiscal entity
@@ -15677,7 +16773,7 @@ components:
           type: object
         phone:
           description: Phone of the fiscal entity
-          example: +525511223344
+          example: "525511223344"
           type: string
         tax_id:
           description: Tax ID of the fiscal entity
@@ -15885,8 +16981,6 @@ components:
         contract_id:
           description: Id sent for recurrent charges.
           example: S781317595
-          maxLength: 10
-          minLength: 10
           type: string
         country:
           example: MX

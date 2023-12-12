@@ -45,7 +45,7 @@ namespace Conekta.net.Model
         /// custom reference id
         /// </summary>
         /// <value>custom reference id</value>
-        /// <example>&quot;278482642&quot;</example>
+        /// <example>278482642</example>
         [DataMember(Name = "reference_id", EmitDefaultValue = false)]
         public string ReferenceId { get; set; }
 

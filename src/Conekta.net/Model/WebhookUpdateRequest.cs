@@ -59,7 +59,7 @@ namespace Conekta.net.Model
         /// Here you must place the URL of your Webhook remember that you must program what you will do with the events received. Also do not forget to handle the HTTPS protocol for greater security.
         /// </summary>
         /// <value>Here you must place the URL of your Webhook remember that you must program what you will do with the events received. Also do not forget to handle the HTTPS protocol for greater security.</value>
-        /// <example>&quot;https://webhook.site/89277eaa-a8e4-4306-8dc5-f55c80703dc8&quot;</example>
+        /// <example>https://webhook.site/89277eaa-a8e4-4306-8dc5-f55c80703dc8</example>
         [DataMember(Name = "url", IsRequired = true, EmitDefaultValue = true)]
         public string Url { get; set; }
 
@@ -74,6 +74,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Events
         /// </summary>
+        /// <example>customer.created</example>
         [DataMember(Name = "events", EmitDefaultValue = false)]
         public List<string> Events { get; set; }
 
@@ -169,11 +170,13 @@ namespace Conekta.net.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // Url (string) pattern
-            Regex regexUrl = new Regex(@"^(?!.*(localhost|127\.0\.0\.1)).*$", RegexOptions.CultureInvariant);
-            if (false == regexUrl.Match(this.Url).Success)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Url, must match a pattern of " + regexUrl, new [] { "Url" });
+            if (this.Url != null) {
+                // Url (string) pattern
+                Regex regexUrl = new Regex(@"^(?!.*(localhost|127\.0\.0\.1)).*$", RegexOptions.CultureInvariant);
+                if (!regexUrl.Match(this.Url).Success)
+                {
+                    yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Url, must match a pattern of " + regexUrl, new [] { "Url" });
+                }
             }
 
             yield break;

@@ -47,8 +47,8 @@ namespace Conekta.net.Model
         /// <param name="state">State.</param>
         /// <param name="country">this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) (required).</param>
         /// <param name="externalNumber">External number (required).</param>
-        /// <param name="_object">_object.</param>
-        public OrderFiscalEntityAddressResponse(string street1 = default(string), string street2 = default(string), string postalCode = default(string), string city = default(string), string state = default(string), string country = default(string), string externalNumber = default(string), string _object = default(string))
+        /// <param name="varObject">varObject.</param>
+        public OrderFiscalEntityAddressResponse(string street1 = default(string), string street2 = default(string), string postalCode = default(string), string city = default(string), string state = default(string), string country = default(string), string externalNumber = default(string), string varObject = default(string))
         {
             // to ensure "street1" is required (not null)
             if (street1 == null)
@@ -82,14 +82,14 @@ namespace Conekta.net.Model
             this.ExternalNumber = externalNumber;
             this.Street2 = street2;
             this.State = state;
-            this.Object = _object;
+            this.VarObject = varObject;
         }
 
         /// <summary>
         /// Street name and number
         /// </summary>
         /// <value>Street name and number</value>
-        /// <example>&quot;Nuevo Leon 254&quot;</example>
+        /// <example>Nuevo Leon 254</example>
         [DataMember(Name = "street1", IsRequired = true, EmitDefaultValue = true)]
         public string Street1 { get; set; }
 
@@ -97,7 +97,7 @@ namespace Conekta.net.Model
         /// Street name and number
         /// </summary>
         /// <value>Street name and number</value>
-        /// <example>&quot;Departamento 404&quot;</example>
+        /// <example>Departamento 404</example>
         [DataMember(Name = "street2", EmitDefaultValue = true)]
         public string Street2 { get; set; }
 
@@ -105,7 +105,7 @@ namespace Conekta.net.Model
         /// Postal code
         /// </summary>
         /// <value>Postal code</value>
-        /// <example>&quot;06100&quot;</example>
+        /// <example>06100</example>
         [DataMember(Name = "postal_code", IsRequired = true, EmitDefaultValue = true)]
         public string PostalCode { get; set; }
 
@@ -113,7 +113,7 @@ namespace Conekta.net.Model
         /// City
         /// </summary>
         /// <value>City</value>
-        /// <example>&quot;Ciudad de Mexico&quot;</example>
+        /// <example>Ciudad de Mexico</example>
         [DataMember(Name = "city", IsRequired = true, EmitDefaultValue = true)]
         public string City { get; set; }
 
@@ -121,7 +121,7 @@ namespace Conekta.net.Model
         /// State
         /// </summary>
         /// <value>State</value>
-        /// <example>&quot;Ciudad de Mexico&quot;</example>
+        /// <example>Ciudad de Mexico</example>
         [DataMember(Name = "state", EmitDefaultValue = false)]
         public string State { get; set; }
 
@@ -129,7 +129,7 @@ namespace Conekta.net.Model
         /// this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
         /// </summary>
         /// <value>this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)</value>
-        /// <example>&quot;MX&quot;</example>
+        /// <example>MX</example>
         [DataMember(Name = "country", IsRequired = true, EmitDefaultValue = true)]
         public string Country { get; set; }
 
@@ -137,16 +137,16 @@ namespace Conekta.net.Model
         /// External number
         /// </summary>
         /// <value>External number</value>
-        /// <example>&quot;123&quot;</example>
+        /// <example>123</example>
         [DataMember(Name = "external_number", IsRequired = true, EmitDefaultValue = true)]
         public string ExternalNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;fiscal_entity_address&quot;</example>
+        /// <example>fiscal_entity_address</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -163,7 +163,7 @@ namespace Conekta.net.Model
             sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("  Country: ").Append(Country).Append("\n");
             sb.Append("  ExternalNumber: ").Append(ExternalNumber).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -235,9 +235,9 @@ namespace Conekta.net.Model
                     this.ExternalNumber.Equals(input.ExternalNumber))
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 );
         }
 
@@ -278,9 +278,9 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.ExternalNumber.GetHashCode();
                 }
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 return hashCode;
             }

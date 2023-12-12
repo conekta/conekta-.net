@@ -45,10 +45,10 @@ namespace Conekta.net.Model
         /// <param name="betweenStreets">The street names between which the order will be delivered..</param>
         /// <param name="address">address (required).</param>
         /// <param name="parentId">parentId.</param>
-        /// <param name="_default">_default.</param>
+        /// <param name="varDefault">varDefault.</param>
         /// <param name="deleted">deleted.</param>
         /// <param name="metadata">Metadata associated with the shipping contact.</param>
-        public CustomerShippingContacts(string phone = default(string), string receiver = default(string), string betweenStreets = default(string), CustomerShippingContactsAddress address = default(CustomerShippingContactsAddress), string parentId = default(string), bool? _default = default(bool?), bool? deleted = default(bool?), Dictionary<string, Object> metadata = default(Dictionary<string, Object>))
+        public CustomerShippingContacts(string phone = default(string), string receiver = default(string), string betweenStreets = default(string), CustomerShippingContactsAddress address = default(CustomerShippingContactsAddress), string parentId = default(string), bool? varDefault = default(bool?), bool? deleted = default(bool?), Dictionary<string, Object> metadata = default(Dictionary<string, Object>))
         {
             // to ensure "address" is required (not null)
             if (address == null)
@@ -60,7 +60,7 @@ namespace Conekta.net.Model
             this.Receiver = receiver;
             this.BetweenStreets = betweenStreets;
             this.ParentId = parentId;
-            this.Default = _default;
+            this.VarDefault = varDefault;
             this.Deleted = deleted;
             this.Metadata = metadata;
         }
@@ -69,7 +69,7 @@ namespace Conekta.net.Model
         /// Phone contact
         /// </summary>
         /// <value>Phone contact</value>
-        /// <example>&quot;+525511223344&quot;</example>
+        /// <example>525511223344</example>
         [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
@@ -77,7 +77,7 @@ namespace Conekta.net.Model
         /// Name of the person who will receive the order
         /// </summary>
         /// <value>Name of the person who will receive the order</value>
-        /// <example>&quot;Marvin Fuller&quot;</example>
+        /// <example>Marvin Fuller</example>
         [DataMember(Name = "receiver", EmitDefaultValue = false)]
         public string Receiver { get; set; }
 
@@ -85,7 +85,7 @@ namespace Conekta.net.Model
         /// The street names between which the order will be delivered.
         /// </summary>
         /// <value>The street names between which the order will be delivered.</value>
-        /// <example>&quot;Ackerman Crescent&quot;</example>
+        /// <example>Ackerman Crescent</example>
         [DataMember(Name = "between_streets", EmitDefaultValue = false)]
         public string BetweenStreets { get; set; }
 
@@ -102,10 +102,10 @@ namespace Conekta.net.Model
         public string ParentId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Default
+        /// Gets or Sets VarDefault
         /// </summary>
         [DataMember(Name = "default", EmitDefaultValue = true)]
-        public bool? Default { get; set; }
+        public bool? VarDefault { get; set; }
 
         /// <summary>
         /// Gets or Sets Deleted
@@ -133,7 +133,7 @@ namespace Conekta.net.Model
             sb.Append("  BetweenStreets: ").Append(BetweenStreets).Append("\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
-            sb.Append("  Default: ").Append(Default).Append("\n");
+            sb.Append("  VarDefault: ").Append(VarDefault).Append("\n");
             sb.Append("  Deleted: ").Append(Deleted).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("}\n");
@@ -197,9 +197,9 @@ namespace Conekta.net.Model
                     this.ParentId.Equals(input.ParentId))
                 ) && 
                 (
-                    this.Default == input.Default ||
-                    (this.Default != null &&
-                    this.Default.Equals(input.Default))
+                    this.VarDefault == input.VarDefault ||
+                    (this.VarDefault != null &&
+                    this.VarDefault.Equals(input.VarDefault))
                 ) && 
                 (
                     this.Deleted == input.Deleted ||
@@ -243,9 +243,9 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.ParentId.GetHashCode();
                 }
-                if (this.Default != null)
+                if (this.VarDefault != null)
                 {
-                    hashCode = (hashCode * 59) + this.Default.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarDefault.GetHashCode();
                 }
                 if (this.Deleted != null)
                 {

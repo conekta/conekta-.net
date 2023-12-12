@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **Livemode** | **bool** | true if the object exists in live mode or the value false if the object exists in test mode | 
 **Name** | **string** | Customer&#39;s name | 
 **Metadata** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
-**Object** | **string** |  | 
+**VarObject** | **string** |  | 
 **PaymentSources** | [**CustomerPaymentMethodsResponse**](CustomerPaymentMethodsResponse.md) |  | [optional] 
 **Phone** | **string** | Customer&#39;s phone number | [optional] 
 **ShippingContacts** | [**CustomerResponseShippingContacts**](CustomerResponseShippingContacts.md) |  | [optional] 
