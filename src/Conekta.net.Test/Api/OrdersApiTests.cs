@@ -492,4 +492,32 @@ public class OrdersApiTests
         Assert.Equal("canceled", response.PaymentStatus);
         Assert.Equal("canceled", response.Charges.Data[0].Status);
     }
+
+    [Fact]
+    public void CreateOrder3ds()
+    {
+        List<Product> products = new()
+        {
+            new(
+                name: "toshiba",
+                quantity: 1,
+                unitPrice: 1555
+            )
+        };
+        OrderRequestCustomerInfo customerInfo = new(new CustomerInfoJustCustomerId("cus_2v4G1Zx9wRpN5vyy2"));
+        OrderRequest orderRequest = new (
+            currency: "MXN",
+            customerInfo: customerInfo,
+            threeDsMode: "smart",
+            returnUrl: "https://my-website.com.mx",
+            lineItems: products
+            );
+        
+        var response = _instance.CreateOrder(orderRequest);
+        
+        Assert.NotNull(response.NextAction);
+        Assert.Equal(orderRequest.ReturnUrl, response.NextAction.RedirectToUrl.ReturnUrl);
+        Assert.NotNull(response.NextAction.RedirectToUrl.Url);
+        Assert.Equal("redirect_to_url", response.NextAction.Type);
+    }
 }
