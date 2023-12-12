@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Method** | **string** | Method of shipment | [optional] 
 **Metadata** | **Dictionary&lt;string, Object&gt;** | Hash where the user can send additional information for each &#39;shipping&#39;. | [optional] 
 **Id** | **string** |  | [optional] 
-**Object** | **string** |  | [optional] 
+**VarObject** | **string** |  | [optional] 
 **ParentId** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

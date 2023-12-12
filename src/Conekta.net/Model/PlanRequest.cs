@@ -62,7 +62,6 @@ namespace Conekta.net.Model
             /// </summary>
             [EnumMember(Value = "year")]
             Year = 4
-
         }
 
 
@@ -117,7 +116,7 @@ namespace Conekta.net.Model
         /// ISO 4217 for currencies, for the Mexican peso it is MXN/USD
         /// </summary>
         /// <value>ISO 4217 for currencies, for the Mexican peso it is MXN/USD</value>
-        /// <example>&quot;MXN&quot;</example>
+        /// <example>MXN</example>
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 
@@ -141,7 +140,7 @@ namespace Conekta.net.Model
         /// internal reference id
         /// </summary>
         /// <value>internal reference id</value>
-        /// <example>&quot;plan_24234&quot;</example>
+        /// <example>plan_24234</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -149,7 +148,7 @@ namespace Conekta.net.Model
         /// The name of the plan.
         /// </summary>
         /// <value>The name of the plan.</value>
-        /// <example>&quot;Extra Plan3&quot;</example>
+        /// <example>Extra Plan3</example>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 

@@ -39,16 +39,16 @@ namespace Conekta.net.Model
         /// <param name="id">id.</param>
         /// <param name="lastAttemptedAt">lastAttemptedAt.</param>
         /// <param name="lastHttpResponseStatus">lastHttpResponseStatus.</param>
-        /// <param name="_object">_object.</param>
+        /// <param name="varObject">varObject.</param>
         /// <param name="responseData">responseData.</param>
         /// <param name="url">url.</param>
-        public WebhookLog(int failedAttempts = default(int), string id = default(string), int lastAttemptedAt = default(int), int lastHttpResponseStatus = default(int), string _object = default(string), Dictionary<string, Object> responseData = default(Dictionary<string, Object>), string url = default(string))
+        public WebhookLog(int failedAttempts = default(int), string id = default(string), int lastAttemptedAt = default(int), int lastHttpResponseStatus = default(int), string varObject = default(string), Dictionary<string, Object> responseData = default(Dictionary<string, Object>), string url = default(string))
         {
             this.FailedAttempts = failedAttempts;
             this.Id = id;
             this.LastAttemptedAt = lastAttemptedAt;
             this.LastHttpResponseStatus = lastHttpResponseStatus;
-            this.Object = _object;
+            this.VarObject = varObject;
             this.ResponseData = responseData;
             this.Url = url;
         }
@@ -63,7 +63,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;webhl_2svd2sh6GbqzyWBNZ&quot;</example>
+        /// <example>webhl_2svd2sh6GbqzyWBNZ</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -82,22 +82,23 @@ namespace Conekta.net.Model
         public int LastHttpResponseStatus { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;webhook_log&quot;</example>
+        /// <example>webhook_log</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Gets or Sets ResponseData
         /// </summary>
+        /// <example>{&quot;amount&quot;:3000,&quot;payable&quot;:true}</example>
         [DataMember(Name = "response_data", EmitDefaultValue = false)]
         public Dictionary<string, Object> ResponseData { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
-        /// <example>&quot;https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval&quot;</example>
+        /// <example>https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval</example>
         [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
@@ -113,7 +114,7 @@ namespace Conekta.net.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  LastAttemptedAt: ").Append(LastAttemptedAt).Append("\n");
             sb.Append("  LastHttpResponseStatus: ").Append(LastHttpResponseStatus).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  ResponseData: ").Append(ResponseData).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
             sb.Append("}\n");
@@ -169,9 +170,9 @@ namespace Conekta.net.Model
                     this.LastHttpResponseStatus.Equals(input.LastHttpResponseStatus)
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.ResponseData == input.ResponseData ||
@@ -202,9 +203,9 @@ namespace Conekta.net.Model
                 }
                 hashCode = (hashCode * 59) + this.LastAttemptedAt.GetHashCode();
                 hashCode = (hashCode * 59) + this.LastHttpResponseStatus.GetHashCode();
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.ResponseData != null)
                 {

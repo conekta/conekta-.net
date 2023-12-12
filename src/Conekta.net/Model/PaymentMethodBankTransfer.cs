@@ -41,7 +41,7 @@ namespace Conekta.net.Model
         /// Initializes a new instance of the <see cref="PaymentMethodBankTransfer" /> class.
         /// </summary>
         /// <param name="type">type.</param>
-        /// <param name="_object">_object (required).</param>
+        /// <param name="varObject">varObject (required).</param>
         /// <param name="bank">bank.</param>
         /// <param name="clabe">clabe.</param>
         /// <param name="description">description.</param>
@@ -58,14 +58,14 @@ namespace Conekta.net.Model
         /// <param name="receivingAccountTaxId">receivingAccountTaxId.</param>
         /// <param name="referenceNumber">referenceNumber.</param>
         /// <param name="trackingCode">trackingCode.</param>
-        public PaymentMethodBankTransfer(string type = default(string), string _object = default(string), string bank = default(string), string clabe = default(string), string description = default(string), int? executedAt = default(int?), long expiresAt = default(long), string issuingAccountBank = default(string), string issuingAccountNumber = default(string), string issuingAccountHolderName = default(string), string issuingAccountTaxId = default(string), List<Object> paymentAttempts = default(List<Object>), string receivingAccountHolderName = default(string), string receivingAccountNumber = default(string), string receivingAccountBank = default(string), string receivingAccountTaxId = default(string), string referenceNumber = default(string), string trackingCode = default(string))
+        public PaymentMethodBankTransfer(string type = default(string), string varObject = default(string), string bank = default(string), string clabe = default(string), string description = default(string), int? executedAt = default(int?), long expiresAt = default(long), string issuingAccountBank = default(string), string issuingAccountNumber = default(string), string issuingAccountHolderName = default(string), string issuingAccountTaxId = default(string), List<Object> paymentAttempts = default(List<Object>), string receivingAccountHolderName = default(string), string receivingAccountNumber = default(string), string receivingAccountBank = default(string), string receivingAccountTaxId = default(string), string referenceNumber = default(string), string trackingCode = default(string))
         {
-            // to ensure "_object" is required (not null)
-            if (_object == null)
+            // to ensure "varObject" is required (not null)
+            if (varObject == null)
             {
-                throw new ArgumentNullException("_object is a required property for PaymentMethodBankTransfer and cannot be null");
+                throw new ArgumentNullException("varObject is a required property for PaymentMethodBankTransfer and cannot be null");
             }
-            this.Object = _object;
+            this.VarObject = varObject;
             this.Type = type;
             this.Bank = bank;
             this.Clabe = clabe;
@@ -92,23 +92,23 @@ namespace Conekta.net.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;payment_source&quot;</example>
+        /// <example>payment_source</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Gets or Sets Bank
         /// </summary>
-        /// <example>&quot;STP&quot;</example>
+        /// <example>STP</example>
         [DataMember(Name = "bank", EmitDefaultValue = false)]
         public string Bank { get; set; }
 
         /// <summary>
         /// Gets or Sets Clabe
         /// </summary>
-        /// <example>&quot;646180111805034237&quot;</example>
+        /// <example>646180111805034237</example>
         [DataMember(Name = "clabe", EmitDefaultValue = false)]
         public string Clabe { get; set; }
 
@@ -170,14 +170,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets ReceivingAccountNumber
         /// </summary>
-        /// <example>&quot;646180111805034237&quot;</example>
+        /// <example>646180111805034237</example>
         [DataMember(Name = "receiving_account_number", EmitDefaultValue = false)]
         public string ReceivingAccountNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets ReceivingAccountBank
         /// </summary>
-        /// <example>&quot;STP&quot;</example>
+        /// <example>STP</example>
         [DataMember(Name = "receiving_account_bank", EmitDefaultValue = false)]
         public string ReceivingAccountBank { get; set; }
 
@@ -208,7 +208,7 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class PaymentMethodBankTransfer {\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  Bank: ").Append(Bank).Append("\n");
             sb.Append("  Clabe: ").Append(Clabe).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
@@ -266,9 +266,9 @@ namespace Conekta.net.Model
                     this.Type.Equals(input.Type))
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.Bank == input.Bank ||
@@ -365,9 +365,9 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 }
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.Bank != null)
                 {

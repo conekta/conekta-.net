@@ -39,17 +39,17 @@ namespace Conekta.net.Model
         /// <param name="data">data.</param>
         /// <param name="id">id.</param>
         /// <param name="livemode">livemode.</param>
-        /// <param name="_object">_object.</param>
+        /// <param name="varObject">varObject.</param>
         /// <param name="type">type.</param>
         /// <param name="webhookLogs">webhookLogs.</param>
         /// <param name="webhookStatus">webhookStatus.</param>
-        public EventResponse(long createdAt = default(long), Dictionary<string, Object> data = default(Dictionary<string, Object>), string id = default(string), bool livemode = default(bool), string _object = default(string), string type = default(string), List<WebhookLog> webhookLogs = default(List<WebhookLog>), string webhookStatus = default(string))
+        public EventResponse(long createdAt = default(long), Dictionary<string, Object> data = default(Dictionary<string, Object>), string id = default(string), bool livemode = default(bool), string varObject = default(string), string type = default(string), List<WebhookLog> webhookLogs = default(List<WebhookLog>), string webhookStatus = default(string))
         {
             this.CreatedAt = createdAt;
             this.Data = data;
             this.Id = id;
             this.Livemode = livemode;
-            this.Object = _object;
+            this.VarObject = varObject;
             this.Type = type;
             this.WebhookLogs = webhookLogs;
             this.WebhookStatus = webhookStatus;
@@ -65,13 +65,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
+        /// <example>{&quot;action&quot;:&quot;ping&quot;,&quot;livemode&quot;:true}</example>
         [DataMember(Name = "data", EmitDefaultValue = false)]
         public Dictionary<string, Object> Data { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;6307a60c41de27127515a575&quot;</example>
+        /// <example>6307a60c41de27127515a575</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -83,16 +84,16 @@ namespace Conekta.net.Model
         public bool Livemode { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;event&quot;</example>
+        /// <example>event</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        /// <example>&quot;webhook_ping&quot;</example>
+        /// <example>webhook_ping</example>
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
@@ -105,7 +106,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets WebhookStatus
         /// </summary>
-        /// <example>&quot;successful&quot;</example>
+        /// <example>successful</example>
         [DataMember(Name = "webhook_status", EmitDefaultValue = false)]
         public string WebhookStatus { get; set; }
 
@@ -121,7 +122,7 @@ namespace Conekta.net.Model
             sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  WebhookLogs: ").Append(WebhookLogs).Append("\n");
             sb.Append("  WebhookStatus: ").Append(WebhookStatus).Append("\n");
@@ -180,9 +181,9 @@ namespace Conekta.net.Model
                     this.Livemode.Equals(input.Livemode)
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.Type == input.Type ||
@@ -221,9 +222,9 @@ namespace Conekta.net.Model
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Livemode.GetHashCode();
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.Type != null)
                 {

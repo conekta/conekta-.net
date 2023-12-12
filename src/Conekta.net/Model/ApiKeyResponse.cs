@@ -43,10 +43,10 @@ namespace Conekta.net.Model
         /// <param name="id">Unique identifier of the api key.</param>
         /// <param name="livemode">Indicates if the api key is in production.</param>
         /// <param name="deleted">Indicates if the api key was deleted.</param>
-        /// <param name="_object">Object name, value is &#39;api_key&#39;.</param>
+        /// <param name="varObject">Object name, value is &#39;api_key&#39;.</param>
         /// <param name="prefix">The first few characters of the authentication_token.</param>
         /// <param name="role">Indicates if the api key is private or public.</param>
-        public ApiKeyResponse(bool active = default(bool), long createdAt = default(long), long updatedAt = default(long), long? deactivatedAt = default(long?), string description = default(string), string id = default(string), bool livemode = default(bool), bool deleted = default(bool), string _object = default(string), string prefix = default(string), string role = default(string))
+        public ApiKeyResponse(bool active = default(bool), long createdAt = default(long), long updatedAt = default(long), long? deactivatedAt = default(long?), string description = default(string), string id = default(string), bool livemode = default(bool), bool deleted = default(bool), string varObject = default(string), string prefix = default(string), string role = default(string))
         {
             this.Active = active;
             this.CreatedAt = createdAt;
@@ -56,7 +56,7 @@ namespace Conekta.net.Model
             this.Id = id;
             this.Livemode = livemode;
             this.Deleted = deleted;
-            this.Object = _object;
+            this.VarObject = varObject;
             this.Prefix = prefix;
             this.Role = role;
         }
@@ -96,7 +96,7 @@ namespace Conekta.net.Model
         /// A name or brief explanation of what this api key is used for
         /// </summary>
         /// <value>A name or brief explanation of what this api key is used for</value>
-        /// <example>&quot;online store&quot;</example>
+        /// <example>online store</example>
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
@@ -104,7 +104,7 @@ namespace Conekta.net.Model
         /// Unique identifier of the api key
         /// </summary>
         /// <value>Unique identifier of the api key</value>
-        /// <example>&quot;64625cc9f3e02c00163f5e4d&quot;</example>
+        /// <example>64625cc9f3e02c00163f5e4d</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -128,15 +128,15 @@ namespace Conekta.net.Model
         /// Object name, value is &#39;api_key&#39;
         /// </summary>
         /// <value>Object name, value is &#39;api_key&#39;</value>
-        /// <example>&quot;api_key&quot;</example>
+        /// <example>api_key</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// The first few characters of the authentication_token
         /// </summary>
         /// <value>The first few characters of the authentication_token</value>
-        /// <example>&quot;key_rp&quot;</example>
+        /// <example>key_rp</example>
         [DataMember(Name = "prefix", EmitDefaultValue = false)]
         public string Prefix { get; set; }
 
@@ -144,7 +144,7 @@ namespace Conekta.net.Model
         /// Indicates if the api key is private or public
         /// </summary>
         /// <value>Indicates if the api key is private or public</value>
-        /// <example>&quot;private&quot;</example>
+        /// <example>private</example>
         [DataMember(Name = "role", EmitDefaultValue = false)]
         public string Role { get; set; }
 
@@ -164,7 +164,7 @@ namespace Conekta.net.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
             sb.Append("  Deleted: ").Append(Deleted).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  Prefix: ").Append(Prefix).Append("\n");
             sb.Append("  Role: ").Append(Role).Append("\n");
             sb.Append("}\n");
@@ -238,9 +238,9 @@ namespace Conekta.net.Model
                     this.Deleted.Equals(input.Deleted)
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.Prefix == input.Prefix ||
@@ -280,9 +280,9 @@ namespace Conekta.net.Model
                 }
                 hashCode = (hashCode * 59) + this.Livemode.GetHashCode();
                 hashCode = (hashCode * 59) + this.Deleted.GetHashCode();
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.Prefix != null)
                 {

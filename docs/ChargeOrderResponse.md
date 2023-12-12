@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **Id** | **string** |  | [optional] 
 **Livemode** | **bool** |  | [optional] 
 **MonthlyInstallments** | **int?** |  | [optional] 
-**Object** | **string** |  | [optional] 
+**VarObject** | **string** |  | [optional] 
 **OrderId** | **string** |  | [optional] 
 **PaidAt** | **int?** |  | [optional] 
 **PaymentMethod** | [**ChargeOrderResponsePaymentMethod**](ChargeOrderResponsePaymentMethod.md) |  | [optional] 

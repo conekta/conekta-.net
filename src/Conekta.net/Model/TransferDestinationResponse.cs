@@ -40,17 +40,17 @@ namespace Conekta.net.Model
         /// <param name="bank">Name of the bank..</param>
         /// <param name="createdAt">Date and time of creation of the transfer..</param>
         /// <param name="id">Unique identifier of the transfer..</param>
-        /// <param name="_object">Object name, which is bank_transfer_payout_method..</param>
+        /// <param name="varObject">Object name, which is bank_transfer_payout_method..</param>
         /// <param name="payeeId">Unique identifier of the payee..</param>
         /// <param name="type">Type of the payee..</param>
-        public TransferDestinationResponse(string accountHolder = default(string), string accountNumber = default(string), string bank = default(string), long createdAt = default(long), string id = default(string), string _object = default(string), string payeeId = default(string), string type = default(string))
+        public TransferDestinationResponse(string accountHolder = default(string), string accountNumber = default(string), string bank = default(string), long createdAt = default(long), string id = default(string), string varObject = default(string), string payeeId = default(string), string type = default(string))
         {
             this.AccountHolder = accountHolder;
             this.AccountNumber = accountNumber;
             this.Bank = bank;
             this.CreatedAt = createdAt;
             this.Id = id;
-            this.Object = _object;
+            this.VarObject = varObject;
             this.PayeeId = payeeId;
             this.Type = type;
         }
@@ -59,7 +59,7 @@ namespace Conekta.net.Model
         /// Name of the account holder.
         /// </summary>
         /// <value>Name of the account holder.</value>
-        /// <example>&quot;John Doe&quot;</example>
+        /// <example>John Doe</example>
         [DataMember(Name = "account_holder", EmitDefaultValue = false)]
         public string AccountHolder { get; set; }
 
@@ -67,7 +67,7 @@ namespace Conekta.net.Model
         /// Account number of the bank account.
         /// </summary>
         /// <value>Account number of the bank account.</value>
-        /// <example>&quot;012180023547896764&quot;</example>
+        /// <example>012180023547896764</example>
         [DataMember(Name = "account_number", EmitDefaultValue = false)]
         public string AccountNumber { get; set; }
 
@@ -75,7 +75,7 @@ namespace Conekta.net.Model
         /// Name of the bank.
         /// </summary>
         /// <value>Name of the bank.</value>
-        /// <example>&quot;BBVA Bancomer&quot;</example>
+        /// <example>BBVA Bancomer</example>
         [DataMember(Name = "bank", EmitDefaultValue = false)]
         public string Bank { get; set; }
 
@@ -91,7 +91,7 @@ namespace Conekta.net.Model
         /// Unique identifier of the transfer.
         /// </summary>
         /// <value>Unique identifier of the transfer.</value>
-        /// <example>&quot;pytmtd_2ide3qwTdDvNBosEC&quot;</example>
+        /// <example>pytmtd_2ide3qwTdDvNBosEC</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -99,15 +99,15 @@ namespace Conekta.net.Model
         /// Object name, which is bank_transfer_payout_method.
         /// </summary>
         /// <value>Object name, which is bank_transfer_payout_method.</value>
-        /// <example>&quot;bank_transfer_payout_method&quot;</example>
+        /// <example>bank_transfer_payout_method</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Unique identifier of the payee.
         /// </summary>
         /// <value>Unique identifier of the payee.</value>
-        /// <example>&quot;payee_2icdDewRxDENBos85&quot;</example>
+        /// <example>payee_2icdDewRxDENBos85</example>
         [DataMember(Name = "payee_id", EmitDefaultValue = false)]
         public string PayeeId { get; set; }
 
@@ -115,7 +115,7 @@ namespace Conekta.net.Model
         /// Type of the payee.
         /// </summary>
         /// <value>Type of the payee.</value>
-        /// <example>&quot;BankTransferPayoutMethod&quot;</example>
+        /// <example>BankTransferPayoutMethod</example>
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
@@ -132,7 +132,7 @@ namespace Conekta.net.Model
             sb.Append("  Bank: ").Append(Bank).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  PayeeId: ").Append(PayeeId).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
@@ -195,9 +195,9 @@ namespace Conekta.net.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.PayeeId == input.PayeeId ||
@@ -237,9 +237,9 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.PayeeId != null)
                 {

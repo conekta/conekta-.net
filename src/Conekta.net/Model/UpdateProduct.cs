@@ -78,7 +78,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /// <example>&quot;Box of Cohiba S1s&quot;</example>
+        /// <example>Box of Cohiba S1s</example>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 

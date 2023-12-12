@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Object** | **string** |  | [optional] 
+**VarObject** | **string** |  | [optional] 
 **CustomerCustomReference** | **string** | Custom reference | [optional] 
 **Name** | **string** |  | [optional] 
 **Email** | **string** |  | [optional] 

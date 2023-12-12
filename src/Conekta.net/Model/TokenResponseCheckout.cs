@@ -49,7 +49,7 @@ namespace Conekta.net.Model
         /// <param name="monthlyInstallmentsOptions">List of monthly installments options..</param>
         /// <param name="name">name.</param>
         /// <param name="needsShippingContact">needsShippingContact.</param>
-        /// <param name="_object">Indicates the type of object, in this case checkout..</param>
+        /// <param name="varObject">Indicates the type of object, in this case checkout..</param>
         /// <param name="onDemandEnabled">Indicates if the checkout allows on demand payments..</param>
         /// <param name="paidPaymentsCount">Number of payments that have been paid..</param>
         /// <param name="recurrent">Indicates if the checkout is recurrent..</param>
@@ -58,7 +58,7 @@ namespace Conekta.net.Model
         /// <param name="status">Status of the checkout..</param>
         /// <param name="successUrl">URL to redirect the customer to after the payment process is completed..</param>
         /// <param name="type">Type of checkout..</param>
-        public TokenResponseCheckout(List<string> allowedPaymentMethods = default(List<string>), bool canNotExpire = default(bool), int emailsSent = default(int), List<string> excludeCardNetworks = default(List<string>), long expiresAt = default(long), string failureUrl = default(string), bool force3dsFlow = default(bool), string id = default(string), bool livemode = default(bool), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string name = default(string), bool needsShippingContact = default(bool), string _object = default(string), bool onDemandEnabled = default(bool), int paidPaymentsCount = default(int), bool recurrent = default(bool), int smsSent = default(int), long startsAt = default(long), string status = default(string), string successUrl = default(string), string type = default(string))
+        public TokenResponseCheckout(List<string> allowedPaymentMethods = default(List<string>), bool canNotExpire = default(bool), int emailsSent = default(int), List<string> excludeCardNetworks = default(List<string>), long expiresAt = default(long), string failureUrl = default(string), bool force3dsFlow = default(bool), string id = default(string), bool livemode = default(bool), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string name = default(string), bool needsShippingContact = default(bool), string varObject = default(string), bool onDemandEnabled = default(bool), int paidPaymentsCount = default(int), bool recurrent = default(bool), int smsSent = default(int), long startsAt = default(long), string status = default(string), string successUrl = default(string), string type = default(string))
         {
             this.AllowedPaymentMethods = allowedPaymentMethods;
             this.CanNotExpire = canNotExpire;
@@ -74,7 +74,7 @@ namespace Conekta.net.Model
             this.MonthlyInstallmentsOptions = monthlyInstallmentsOptions;
             this.Name = name;
             this.NeedsShippingContact = needsShippingContact;
-            this.Object = _object;
+            this.VarObject = varObject;
             this.OnDemandEnabled = onDemandEnabled;
             this.PaidPaymentsCount = paidPaymentsCount;
             this.Recurrent = recurrent;
@@ -124,7 +124,7 @@ namespace Conekta.net.Model
         /// URL to redirect the customer to if the payment process fails.
         /// </summary>
         /// <value>URL to redirect the customer to if the payment process fails.</value>
-        /// <example>&quot;https://example.com/failure&quot;</example>
+        /// <example>https://example.com/failure</example>
         [DataMember(Name = "failure_url", EmitDefaultValue = false)]
         public string FailureUrl { get; set; }
 
@@ -139,7 +139,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;524f9d2f-8c2e-4e64-a33d-6006711a91bd&quot;</example>
+        /// <example>524f9d2f-8c2e-4e64-a33d-6006711a91bd</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -153,6 +153,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Metadata
         /// </summary>
+        /// <example>{&quot;key&quot;:&quot;value&quot;}</example>
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }
 
@@ -174,7 +175,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /// <example>&quot;tok-2toNoPZpJgRU4PvgZ&quot;</example>
+        /// <example>tok-2toNoPZpJgRU4PvgZ</example>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
@@ -189,9 +190,9 @@ namespace Conekta.net.Model
         /// Indicates the type of object, in this case checkout.
         /// </summary>
         /// <value>Indicates the type of object, in this case checkout.</value>
-        /// <example>&quot;checkout&quot;</example>
+        /// <example>checkout</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Indicates if the checkout allows on demand payments.
@@ -236,7 +237,7 @@ namespace Conekta.net.Model
         /// Status of the checkout.
         /// </summary>
         /// <value>Status of the checkout.</value>
-        /// <example>&quot;Issued&quot;</example>
+        /// <example>Issued</example>
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
@@ -244,7 +245,7 @@ namespace Conekta.net.Model
         /// URL to redirect the customer to after the payment process is completed.
         /// </summary>
         /// <value>URL to redirect the customer to after the payment process is completed.</value>
-        /// <example>&quot;https://example.com/success&quot;</example>
+        /// <example>https://example.com/success</example>
         [DataMember(Name = "success_url", EmitDefaultValue = false)]
         public string SuccessUrl { get; set; }
 
@@ -252,7 +253,7 @@ namespace Conekta.net.Model
         /// Type of checkout.
         /// </summary>
         /// <value>Type of checkout.</value>
-        /// <example>&quot;Integration&quot;</example>
+        /// <example>Integration</example>
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
@@ -278,7 +279,7 @@ namespace Conekta.net.Model
             sb.Append("  MonthlyInstallmentsOptions: ").Append(MonthlyInstallmentsOptions).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  NeedsShippingContact: ").Append(NeedsShippingContact).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  OnDemandEnabled: ").Append(OnDemandEnabled).Append("\n");
             sb.Append("  PaidPaymentsCount: ").Append(PaidPaymentsCount).Append("\n");
             sb.Append("  Recurrent: ").Append(Recurrent).Append("\n");
@@ -390,9 +391,9 @@ namespace Conekta.net.Model
                     this.NeedsShippingContact.Equals(input.NeedsShippingContact)
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.OnDemandEnabled == input.OnDemandEnabled ||
@@ -475,9 +476,9 @@ namespace Conekta.net.Model
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.NeedsShippingContact.GetHashCode();
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.OnDemandEnabled.GetHashCode();
                 hashCode = (hashCode * 59) + this.PaidPaymentsCount.GetHashCode();

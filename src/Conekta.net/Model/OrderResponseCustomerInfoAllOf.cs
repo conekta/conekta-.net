@@ -35,18 +35,18 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderResponseCustomerInfoAllOf" /> class.
         /// </summary>
-        /// <param name="_object">_object.</param>
-        public OrderResponseCustomerInfoAllOf(string _object = default(string))
+        /// <param name="varObject">varObject.</param>
+        public OrderResponseCustomerInfoAllOf(string varObject = default(string))
         {
-            this.Object = _object;
+            this.VarObject = varObject;
         }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;customer_info&quot;</example>
+        /// <example>customer_info</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -56,7 +56,7 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class OrderResponseCustomerInfoAllOf {\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,9 +93,9 @@ namespace Conekta.net.Model
             }
             return 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 );
         }
 
@@ -108,9 +108,9 @@ namespace Conekta.net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 return hashCode;
             }

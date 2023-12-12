@@ -50,12 +50,13 @@ namespace Conekta.net.Model
         /// <param name="lineItems">lineItems.</param>
         /// <param name="livemode">Whether the object exists in live mode or test mode.</param>
         /// <param name="metadata">Set of key-value pairs that you can attach to an object. This can be useful for storing additional information about the object in a structured format..</param>
-        /// <param name="_object">String representing the object’s type. Objects of the same type share the same value..</param>
+        /// <param name="nextAction">nextAction.</param>
+        /// <param name="varObject">String representing the object’s type. Objects of the same type share the same value..</param>
         /// <param name="paymentStatus">The payment status of the order..</param>
         /// <param name="processingMode">Indicates the processing mode for the order, either ecommerce, recurrent or validation..</param>
         /// <param name="shippingContact">shippingContact.</param>
         /// <param name="updatedAt">The time at which the object was last updated in seconds since the Unix epoch.</param>
-        public OrderResponse(int amount = default(int), int amountRefunded = default(int), ChargeResponseChannel channel = default(ChargeResponseChannel), OrderResponseCharges charges = default(OrderResponseCharges), OrderResponseCheckout checkout = default(OrderResponseCheckout), long createdAt = default(long), string currency = default(string), OrderResponseCustomerInfo customerInfo = default(OrderResponseCustomerInfo), OrderResponseDiscountLines discountLines = default(OrderResponseDiscountLines), OrderFiscalEntityResponse fiscalEntity = default(OrderFiscalEntityResponse), string id = default(string), bool isRefundable = default(bool), OrderResponseProducts lineItems = default(OrderResponseProducts), bool livemode = default(bool), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string _object = default(string), string paymentStatus = default(string), string processingMode = default(string), OrderResponseShippingContact shippingContact = default(OrderResponseShippingContact), long updatedAt = default(long))
+        public OrderResponse(int amount = default(int), int amountRefunded = default(int), ChargeResponseChannel channel = default(ChargeResponseChannel), OrderResponseCharges charges = default(OrderResponseCharges), OrderResponseCheckout checkout = default(OrderResponseCheckout), long createdAt = default(long), string currency = default(string), OrderResponseCustomerInfo customerInfo = default(OrderResponseCustomerInfo), OrderResponseDiscountLines discountLines = default(OrderResponseDiscountLines), OrderFiscalEntityResponse fiscalEntity = default(OrderFiscalEntityResponse), string id = default(string), bool isRefundable = default(bool), OrderResponseProducts lineItems = default(OrderResponseProducts), bool livemode = default(bool), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), OrderNextActionResponse nextAction = default(OrderNextActionResponse), string varObject = default(string), string paymentStatus = default(string), string processingMode = default(string), OrderResponseShippingContact shippingContact = default(OrderResponseShippingContact), long updatedAt = default(long))
         {
             this.Amount = amount;
             this.AmountRefunded = amountRefunded;
@@ -72,7 +73,8 @@ namespace Conekta.net.Model
             this.LineItems = lineItems;
             this.Livemode = livemode;
             this.Metadata = metadata;
-            this.Object = _object;
+            this.NextAction = nextAction;
+            this.VarObject = varObject;
             this.PaymentStatus = paymentStatus;
             this.ProcessingMode = processingMode;
             this.ShippingContact = shippingContact;
@@ -125,7 +127,7 @@ namespace Conekta.net.Model
         /// The three-letter ISO 4217 currency code. The currency of the order.
         /// </summary>
         /// <value>The three-letter ISO 4217 currency code. The currency of the order.</value>
-        /// <example>&quot;MXN&quot;</example>
+        /// <example>MXN</example>
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 
@@ -150,7 +152,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;ord_2tMtQQpDvfnNjiuFG&quot;</example>
+        /// <example>ord_2tMtQQpDvfnNjiuFG</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -183,18 +185,24 @@ namespace Conekta.net.Model
         public Dictionary<string, Object> Metadata { get; set; }
 
         /// <summary>
+        /// Gets or Sets NextAction
+        /// </summary>
+        [DataMember(Name = "next_action", EmitDefaultValue = false)]
+        public OrderNextActionResponse NextAction { get; set; }
+
+        /// <summary>
         /// String representing the object’s type. Objects of the same type share the same value.
         /// </summary>
         /// <value>String representing the object’s type. Objects of the same type share the same value.</value>
-        /// <example>&quot;order&quot;</example>
+        /// <example>order</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// The payment status of the order.
         /// </summary>
         /// <value>The payment status of the order.</value>
-        /// <example>&quot;paid&quot;</example>
+        /// <example>paid</example>
         [DataMember(Name = "payment_status", EmitDefaultValue = false)]
         public string PaymentStatus { get; set; }
 
@@ -202,7 +210,7 @@ namespace Conekta.net.Model
         /// Indicates the processing mode for the order, either ecommerce, recurrent or validation.
         /// </summary>
         /// <value>Indicates the processing mode for the order, either ecommerce, recurrent or validation.</value>
-        /// <example>&quot;ecommerce&quot;</example>
+        /// <example>ecommerce</example>
         [DataMember(Name = "processing_mode", EmitDefaultValue = false)]
         public string ProcessingMode { get; set; }
 
@@ -243,7 +251,8 @@ namespace Conekta.net.Model
             sb.Append("  LineItems: ").Append(LineItems).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  NextAction: ").Append(NextAction).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  PaymentStatus: ").Append(PaymentStatus).Append("\n");
             sb.Append("  ProcessingMode: ").Append(ProcessingMode).Append("\n");
             sb.Append("  ShippingContact: ").Append(ShippingContact).Append("\n");
@@ -355,9 +364,14 @@ namespace Conekta.net.Model
                     this.Metadata.SequenceEqual(input.Metadata)
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.NextAction == input.NextAction ||
+                    (this.NextAction != null &&
+                    this.NextAction.Equals(input.NextAction))
+                ) && 
+                (
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.PaymentStatus == input.PaymentStatus ||
@@ -434,9 +448,13 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
                 }
-                if (this.Object != null)
+                if (this.NextAction != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.NextAction.GetHashCode();
+                }
+                if (this.VarObject != null)
+                {
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.PaymentStatus != null)
                 {

@@ -36,33 +36,33 @@ namespace Conekta.net.Model
         /// Initializes a new instance of the <see cref="UpdateOrderTaxResponseAllOf" /> class.
         /// </summary>
         /// <param name="id">id.</param>
-        /// <param name="_object">_object.</param>
+        /// <param name="varObject">varObject.</param>
         /// <param name="parentId">parentId.</param>
-        public UpdateOrderTaxResponseAllOf(string id = default(string), string _object = default(string), string parentId = default(string))
+        public UpdateOrderTaxResponseAllOf(string id = default(string), string varObject = default(string), string parentId = default(string))
         {
             this.Id = id;
-            this.Object = _object;
+            this.VarObject = varObject;
             this.ParentId = parentId;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;tax_lin_2tQ8dC5mg1UADmVPo&quot;</example>
+        /// <example>tax_lin_2tQ8dC5mg1UADmVPo</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;tax_line&quot;</example>
+        /// <example>tax_line</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Gets or Sets ParentId
         /// </summary>
-        /// <example>&quot;ord_2tPAmKCEJqh8RE6nY&quot;</example>
+        /// <example>ord_2tPAmKCEJqh8RE6nY</example>
         [DataMember(Name = "parent_id", EmitDefaultValue = false)]
         public string ParentId { get; set; }
 
@@ -75,7 +75,7 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class UpdateOrderTaxResponseAllOf {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -118,9 +118,9 @@ namespace Conekta.net.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.ParentId == input.ParentId ||
@@ -142,9 +142,9 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.ParentId != null)
                 {

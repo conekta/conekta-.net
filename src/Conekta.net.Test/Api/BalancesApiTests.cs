@@ -35,7 +35,7 @@ namespace Conekta.net.Test.Api
     /// </remarks>
     public class BalancesApiTests 
     {
-        private BalancesApi _instance;
+        private readonly BalancesApi _instance;
 
         public BalancesApiTests()
         {
@@ -44,7 +44,7 @@ namespace Conekta.net.Test.Api
                 BasePath = BaseTest.BasePath,
                 AccessToken = "xxxxxx"
             };
-           _instance = new BalancesApi(configuration);
+            _instance = new BalancesApi(configuration);
         }
 
         /// <summary>

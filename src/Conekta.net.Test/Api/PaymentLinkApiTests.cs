@@ -60,7 +60,7 @@ namespace Conekta.net.Test.Api
             Assert.IsType<CheckoutResponse>(response);
             Assert.Equal("Cancelled", response.Status);
             Assert.Equal(id, response.Id);
-            Assert.Equal("checkout", response.Object);
+            Assert.Equal("checkout", response.VarObject);
             Assert.Equal(5, response.PaymentsLimitCount);
             Assert.False(response.CanNotExpire);
             Assert.True(response.Recurrent);
@@ -167,7 +167,7 @@ namespace Conekta.net.Test.Api
             var response = _instance.GetCheckouts("en");
 
             Assert.IsType<CheckoutsResponse>(response);
-            Assert.Equal("list", response.Object);
+            Assert.Equal("list", response.VarObject);
             Assert.Equal("https://api-core.stg.conekta.io/checkouts?next=bac0ed14-6888-4d1d-927a-c80d3f55c009", response.NextPageUrl);
             Assert.Equal(20, response.Data.Count);
         }

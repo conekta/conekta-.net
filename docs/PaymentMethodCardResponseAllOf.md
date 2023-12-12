@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **ExpYear** | **string** |  | [optional] 
 **Brand** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] 
-**Default** | **bool** |  | [optional] 
+**VarDefault** | **bool** |  | [optional] 
 **VisibleOnCheckout** | **bool** |  | [optional] 
 **PaymentSourceStatus** | **string** |  | [optional] 
 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **BetweenStreets** | **string** | The street names between which the order will be delivered. | [optional] 
 **Address** | [**CustomerShippingContactsAddress**](CustomerShippingContactsAddress.md) |  | [optional] 
 **ParentId** | **string** |  | [optional] 
-**Default** | **bool?** |  | [optional] 
+**VarDefault** | **bool?** |  | [optional] 
 **Deleted** | **bool?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

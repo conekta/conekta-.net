@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** |  | [optional] 
-**Object** | **string** |  | 
+**VarObject** | **string** |  | 
 **AuthCode** | **string** |  | [optional] 
 **CashierId** | **string** |  | [optional] 
 **Reference** | **string** |  | [optional] 

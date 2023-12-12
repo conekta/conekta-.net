@@ -50,28 +50,28 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Segment
         /// </summary>
-        /// <example>&quot;Checkout&quot;</example>
+        /// <example>Checkout</example>
         [DataMember(Name = "segment", EmitDefaultValue = false)]
         public string Segment { get; set; }
 
         /// <summary>
         /// Gets or Sets CheckoutRequestId
         /// </summary>
-        /// <example>&quot;6fca054a-8519-4c43-971e-cea35cc519bb&quot;</example>
+        /// <example>6fca054a-8519-4c43-971e-cea35cc519bb</example>
         [DataMember(Name = "checkout_request_id", EmitDefaultValue = false)]
         public string CheckoutRequestId { get; set; }
 
         /// <summary>
         /// Gets or Sets CheckoutRequestType
         /// </summary>
-        /// <example>&quot;HostedPayment&quot;</example>
+        /// <example>HostedPayment</example>
         [DataMember(Name = "checkout_request_type", EmitDefaultValue = false)]
         public string CheckoutRequestType { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;channel_2tNDzhA4Akmzj11AU&quot;</example>
+        /// <example>channel_2tNDzhA4Akmzj11AU</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 

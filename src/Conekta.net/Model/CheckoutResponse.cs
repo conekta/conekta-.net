@@ -54,7 +54,7 @@ namespace Conekta.net.Model
         /// <param name="monthlyInstallmentsOptions">monthlyInstallmentsOptions.</param>
         /// <param name="name">Reason for charge (required).</param>
         /// <param name="needsShippingContact">needsShippingContact.</param>
-        /// <param name="_object">_object (required).</param>
+        /// <param name="varObject">varObject (required).</param>
         /// <param name="paidPaymentsCount">paidPaymentsCount.</param>
         /// <param name="paymentsLimitCount">paymentsLimitCount.</param>
         /// <param name="recurrent">recurrent.</param>
@@ -65,7 +65,7 @@ namespace Conekta.net.Model
         /// <param name="successUrl">successUrl.</param>
         /// <param name="type">type.</param>
         /// <param name="url">url.</param>
-        public CheckoutResponse(List<string> allowedPaymentMethods = default(List<string>), bool canNotExpire = default(bool), int emailsSent = default(int), List<Object> excludeCardNetworks = default(List<Object>), long expiresAt = default(long), string failureUrl = default(string), bool force3dsFlow = default(bool), string id = default(string), bool livemode = default(bool), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string name = default(string), bool needsShippingContact = default(bool), string _object = default(string), int paidPaymentsCount = default(int), int? paymentsLimitCount = default(int?), bool recurrent = default(bool), string slug = default(string), int smsSent = default(int), int startsAt = default(int), string status = default(string), string successUrl = default(string), string type = default(string), string url = default(string))
+        public CheckoutResponse(List<string> allowedPaymentMethods = default(List<string>), bool canNotExpire = default(bool), int emailsSent = default(int), List<Object> excludeCardNetworks = default(List<Object>), long expiresAt = default(long), string failureUrl = default(string), bool force3dsFlow = default(bool), string id = default(string), bool livemode = default(bool), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string name = default(string), bool needsShippingContact = default(bool), string varObject = default(string), int paidPaymentsCount = default(int), int? paymentsLimitCount = default(int?), bool recurrent = default(bool), string slug = default(string), int smsSent = default(int), int startsAt = default(int), string status = default(string), string successUrl = default(string), string type = default(string), string url = default(string))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -80,12 +80,12 @@ namespace Conekta.net.Model
                 throw new ArgumentNullException("name is a required property for CheckoutResponse and cannot be null");
             }
             this.Name = name;
-            // to ensure "_object" is required (not null)
-            if (_object == null)
+            // to ensure "varObject" is required (not null)
+            if (varObject == null)
             {
-                throw new ArgumentNullException("_object is a required property for CheckoutResponse and cannot be null");
+                throw new ArgumentNullException("varObject is a required property for CheckoutResponse and cannot be null");
             }
-            this.Object = _object;
+            this.VarObject = varObject;
             this.AllowedPaymentMethods = allowedPaymentMethods;
             this.CanNotExpire = canNotExpire;
             this.EmailsSent = emailsSent;
@@ -112,6 +112,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets AllowedPaymentMethods
         /// </summary>
+        /// <example>[&quot;cash&quot;,&quot;card&quot;,&quot;bank_transfer&quot;]</example>
         [DataMember(Name = "allowed_payment_methods", EmitDefaultValue = false)]
         public List<string> AllowedPaymentMethods { get; set; }
 
@@ -145,7 +146,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets FailureUrl
         /// </summary>
-        /// <example>&quot;https://pay.conekta.com/failure&quot;</example>
+        /// <example>https://pay.conekta.com/failure</example>
         [DataMember(Name = "failure_url", EmitDefaultValue = false)]
         public string FailureUrl { get; set; }
 
@@ -159,7 +160,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;b0bf16c4-18b9-445e-ba24-01604f329dbf&quot;</example>
+        /// <example>b0bf16c4-18b9-445e-ba24-01604f329dbf</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
@@ -173,6 +174,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Metadata
         /// </summary>
+        /// <example>{&quot;key&quot;:&quot;value&quot;}</example>
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }
 
@@ -186,6 +188,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets MonthlyInstallmentsOptions
         /// </summary>
+        /// <example>[3,6,12]</example>
         [DataMember(Name = "monthly_installments_options", EmitDefaultValue = false)]
         public List<int> MonthlyInstallmentsOptions { get; set; }
 
@@ -193,7 +196,7 @@ namespace Conekta.net.Model
         /// Reason for charge
         /// </summary>
         /// <value>Reason for charge</value>
-        /// <example>&quot;Payment Link Name 1594138857&quot;</example>
+        /// <example>Payment Link Name 1594138857</example>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -205,11 +208,11 @@ namespace Conekta.net.Model
         public bool NeedsShippingContact { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;checkout&quot;</example>
+        /// <example>checkout</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Gets or Sets PaidPaymentsCount
@@ -235,7 +238,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Slug
         /// </summary>
-        /// <example>&quot;b0bf16c418b9445eba2401604f329dbf&quot;</example>
+        /// <example>b0bf16c418b9445eba2401604f329dbf</example>
         [DataMember(Name = "slug", EmitDefaultValue = false)]
         public string Slug { get; set; }
 
@@ -256,28 +259,28 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        /// <example>&quot;Issued&quot;</example>
+        /// <example>Issued</example>
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
         /// <summary>
         /// Gets or Sets SuccessUrl
         /// </summary>
-        /// <example>&quot;https://pay.conekta.com/success&quot;</example>
+        /// <example>https://pay.conekta.com/success</example>
         [DataMember(Name = "success_url", EmitDefaultValue = false)]
         public string SuccessUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        /// <example>&quot;PaymentLink&quot;</example>
+        /// <example>PaymentLink</example>
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
-        /// <example>&quot;https://pay.conekta.com/link/b0bf16c418b9445eba2401604f329dbf&quot;</example>
+        /// <example>https://pay.conekta.com/link/b0bf16c418b9445eba2401604f329dbf</example>
         [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
@@ -303,7 +306,7 @@ namespace Conekta.net.Model
             sb.Append("  MonthlyInstallmentsOptions: ").Append(MonthlyInstallmentsOptions).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  NeedsShippingContact: ").Append(NeedsShippingContact).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  PaidPaymentsCount: ").Append(PaidPaymentsCount).Append("\n");
             sb.Append("  PaymentsLimitCount: ").Append(PaymentsLimitCount).Append("\n");
             sb.Append("  Recurrent: ").Append(Recurrent).Append("\n");
@@ -417,9 +420,9 @@ namespace Conekta.net.Model
                     this.NeedsShippingContact.Equals(input.NeedsShippingContact)
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.PaidPaymentsCount == input.PaidPaymentsCount ||
@@ -513,9 +516,9 @@ namespace Conekta.net.Model
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.NeedsShippingContact.GetHashCode();
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.PaidPaymentsCount.GetHashCode();
                 if (this.PaymentsLimitCount != null)

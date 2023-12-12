@@ -41,19 +41,19 @@ namespace Conekta.net.Model
         /// Initializes a new instance of the <see cref="GetChargesResponse" /> class.
         /// </summary>
         /// <param name="hasMore">Indicates if there are more pages to be requested (required).</param>
-        /// <param name="_object">Object type, in this case is list (required).</param>
+        /// <param name="varObject">Object type, in this case is list (required).</param>
         /// <param name="nextPageUrl">URL of the next page..</param>
         /// <param name="previousPageUrl">Url of the previous page..</param>
         /// <param name="data">data.</param>
-        public GetChargesResponse(bool hasMore = default(bool), string _object = default(string), string nextPageUrl = default(string), string previousPageUrl = default(string), List<ChargeResponse> data = default(List<ChargeResponse>))
+        public GetChargesResponse(bool hasMore = default(bool), string varObject = default(string), string nextPageUrl = default(string), string previousPageUrl = default(string), List<ChargeResponse> data = default(List<ChargeResponse>))
         {
             this.HasMore = hasMore;
-            // to ensure "_object" is required (not null)
-            if (_object == null)
+            // to ensure "varObject" is required (not null)
+            if (varObject == null)
             {
-                throw new ArgumentNullException("_object is a required property for GetChargesResponse and cannot be null");
+                throw new ArgumentNullException("varObject is a required property for GetChargesResponse and cannot be null");
             }
-            this.Object = _object;
+            this.VarObject = varObject;
             this.NextPageUrl = nextPageUrl;
             this.PreviousPageUrl = previousPageUrl;
             this.Data = data;
@@ -71,15 +71,15 @@ namespace Conekta.net.Model
         /// Object type, in this case is list
         /// </summary>
         /// <value>Object type, in this case is list</value>
-        /// <example>&quot;list&quot;</example>
+        /// <example>list</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// URL of the next page.
         /// </summary>
         /// <value>URL of the next page.</value>
-        /// <example>&quot;https://api.conekta.io/resources?limit&#x3D;10&amp;next&#x3D;chrg_1&quot;</example>
+        /// <example>https://api.conekta.io/resources?limit&#x3D;10&amp;next&#x3D;chrg_1</example>
         [DataMember(Name = "next_page_url", EmitDefaultValue = true)]
         public string NextPageUrl { get; set; }
 
@@ -87,7 +87,7 @@ namespace Conekta.net.Model
         /// Url of the previous page.
         /// </summary>
         /// <value>Url of the previous page.</value>
-        /// <example>&quot;https://api.conekta.io/resources?limit&#x3D;10&amp;previous&#x3D;chrg_1&quot;</example>
+        /// <example>https://api.conekta.io/resources?limit&#x3D;10&amp;previous&#x3D;chrg_1</example>
         [DataMember(Name = "previous_page_url", EmitDefaultValue = true)]
         public string PreviousPageUrl { get; set; }
 
@@ -106,7 +106,7 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class GetChargesResponse {\n");
             sb.Append("  HasMore: ").Append(HasMore).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  NextPageUrl: ").Append(NextPageUrl).Append("\n");
             sb.Append("  PreviousPageUrl: ").Append(PreviousPageUrl).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
@@ -150,9 +150,9 @@ namespace Conekta.net.Model
                     this.HasMore.Equals(input.HasMore)
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.NextPageUrl == input.NextPageUrl ||
@@ -182,9 +182,9 @@ namespace Conekta.net.Model
             {
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.HasMore.GetHashCode();
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.NextPageUrl != null)
                 {

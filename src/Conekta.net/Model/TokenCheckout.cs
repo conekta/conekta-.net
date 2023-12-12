@@ -45,7 +45,7 @@ namespace Conekta.net.Model
         /// It is a value that allows identifying the returns control on.
         /// </summary>
         /// <value>It is a value that allows identifying the returns control on.</value>
-        /// <example>&quot;Token&quot;</example>
+        /// <example>Token</example>
         [DataMember(Name = "returns_control_on", EmitDefaultValue = false)]
         public string ReturnsControlOn { get; set; }
 

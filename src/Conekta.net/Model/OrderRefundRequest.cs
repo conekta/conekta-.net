@@ -72,7 +72,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Reason
         /// </summary>
-        /// <example>&quot;suspected_fraud&quot;</example>
+        /// <example>suspected_fraud</example>
         [DataMember(Name = "reason", IsRequired = true, EmitDefaultValue = true)]
         public string Reason { get; set; }
 

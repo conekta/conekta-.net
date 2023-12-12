@@ -45,14 +45,14 @@ namespace Conekta.net.Model
         /// <param name="customerId">customerId.</param>
         /// <param name="id">id.</param>
         /// <param name="lastBillingCycleOrderId">lastBillingCycleOrderId.</param>
-        /// <param name="_object">_object.</param>
+        /// <param name="varObject">varObject.</param>
         /// <param name="pausedAt">pausedAt.</param>
         /// <param name="planId">planId.</param>
         /// <param name="status">status.</param>
         /// <param name="subscriptionStart">subscriptionStart.</param>
         /// <param name="trialStart">trialStart.</param>
         /// <param name="trialEnd">trialEnd.</param>
-        public SubscriptionResponse(long? billingCycleStart = default(long?), long? billingCycleEnd = default(long?), long? canceledAt = default(long?), string cardId = default(string), string chargeId = default(string), long createdAt = default(long), string customerCustomReference = default(string), string customerId = default(string), string id = default(string), string lastBillingCycleOrderId = default(string), string _object = default(string), long? pausedAt = default(long?), string planId = default(string), string status = default(string), int subscriptionStart = default(int), long? trialStart = default(long?), long? trialEnd = default(long?))
+        public SubscriptionResponse(long? billingCycleStart = default(long?), long? billingCycleEnd = default(long?), long? canceledAt = default(long?), string cardId = default(string), string chargeId = default(string), long createdAt = default(long), string customerCustomReference = default(string), string customerId = default(string), string id = default(string), string lastBillingCycleOrderId = default(string), string varObject = default(string), long? pausedAt = default(long?), string planId = default(string), string status = default(string), int subscriptionStart = default(int), long? trialStart = default(long?), long? trialEnd = default(long?))
         {
             this.BillingCycleStart = billingCycleStart;
             this.BillingCycleEnd = billingCycleEnd;
@@ -64,7 +64,7 @@ namespace Conekta.net.Model
             this.CustomerId = customerId;
             this.Id = id;
             this.LastBillingCycleOrderId = lastBillingCycleOrderId;
-            this.Object = _object;
+            this.VarObject = varObject;
             this.PausedAt = pausedAt;
             this.PlanId = planId;
             this.Status = status;
@@ -97,14 +97,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets CardId
         /// </summary>
-        /// <example>&quot;src_2tKcHxhTz7xU5SymL&quot;</example>
+        /// <example>src_2tKcHxhTz7xU5SymL</example>
         [DataMember(Name = "card_id", EmitDefaultValue = false)]
         public string CardId { get; set; }
 
         /// <summary>
         /// Gets or Sets ChargeId
         /// </summary>
-        /// <example>&quot;2tKcHxhTz7xU5SymL&quot;</example>
+        /// <example>2tKcHxhTz7xU5SymL</example>
         [DataMember(Name = "charge_id", EmitDefaultValue = true)]
         public string ChargeId { get; set; }
 
@@ -118,37 +118,37 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets CustomerCustomReference
         /// </summary>
-        /// <example>&quot;dotnet_123456&quot;</example>
+        /// <example>dotnet_123456</example>
         [DataMember(Name = "customer_custom_reference", EmitDefaultValue = false)]
         public string CustomerCustomReference { get; set; }
 
         /// <summary>
         /// Gets or Sets CustomerId
         /// </summary>
-        /// <example>&quot;cus_2tKcHxhTz7xU5SymF&quot;</example>
+        /// <example>cus_2tKcHxhTz7xU5SymF</example>
         [DataMember(Name = "customer_id", EmitDefaultValue = false)]
         public string CustomerId { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;gold-plan&quot;</example>
+        /// <example>gold-plan</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets LastBillingCycleOrderId
         /// </summary>
-        /// <example>&quot;ord_2tSoMP7bZJbLiq4z8&quot;</example>
+        /// <example>ord_2tSoMP7bZJbLiq4z8</example>
         [DataMember(Name = "last_billing_cycle_order_id", EmitDefaultValue = false)]
         public string LastBillingCycleOrderId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;subscription&quot;</example>
+        /// <example>subscription</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Gets or Sets PausedAt
@@ -160,14 +160,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets PlanId
         /// </summary>
-        /// <example>&quot;plan_2tXx672QLQ68CkmMn&quot;</example>
+        /// <example>plan_2tXx672QLQ68CkmMn</example>
         [DataMember(Name = "plan_id", EmitDefaultValue = false)]
         public string PlanId { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        /// <example>&quot;past_due&quot;</example>
+        /// <example>past_due</example>
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
@@ -210,7 +210,7 @@ namespace Conekta.net.Model
             sb.Append("  CustomerId: ").Append(CustomerId).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  LastBillingCycleOrderId: ").Append(LastBillingCycleOrderId).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  PausedAt: ").Append(PausedAt).Append("\n");
             sb.Append("  PlanId: ").Append(PlanId).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
@@ -302,9 +302,9 @@ namespace Conekta.net.Model
                     this.LastBillingCycleOrderId.Equals(input.LastBillingCycleOrderId))
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.PausedAt == input.PausedAt ||
@@ -383,9 +383,9 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.LastBillingCycleOrderId.GetHashCode();
                 }
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.PausedAt != null)
                 {

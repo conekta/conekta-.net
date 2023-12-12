@@ -69,7 +69,7 @@ namespace Conekta.net.Model
         /// Description of the rule
         /// </summary>
         /// <value>Description of the rule</value>
-        /// <example>&quot;this client email was verified at 20/09/22 by internal process&quot;</example>
+        /// <example>this client email was verified at 20/09/22 by internal process</example>
         [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
         public string Description { get; set; }
 
@@ -77,7 +77,7 @@ namespace Conekta.net.Model
         /// Field to be used for the rule
         /// </summary>
         /// <value>Field to be used for the rule</value>
-        /// <example>&quot;email | phone | card_token&quot;</example>
+        /// <example>email | phone | card_token</example>
         [DataMember(Name = "field", IsRequired = true, EmitDefaultValue = true)]
         public string Field { get; set; }
 
@@ -85,7 +85,7 @@ namespace Conekta.net.Model
         /// Value to be used for the rule
         /// </summary>
         /// <value>Value to be used for the rule</value>
-        /// <example>&quot;email@example.com | 818081808180 | src_2qUCNd5AyQqfPMBuV&quot;</example>
+        /// <example>email@example.com | 818081808180 | src_2qUCNd5AyQqfPMBuV</example>
         [DataMember(Name = "value", IsRequired = true, EmitDefaultValue = true)]
         public string Value { get; set; }
 

@@ -35,7 +35,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomerShippingContactsResponseAddress" /> class.
         /// </summary>
-        /// <param name="_object">_object.</param>
+        /// <param name="varObject">varObject.</param>
         /// <param name="street1">street1.</param>
         /// <param name="street2">street2.</param>
         /// <param name="postalCode">postalCode.</param>
@@ -43,9 +43,9 @@ namespace Conekta.net.Model
         /// <param name="state">state.</param>
         /// <param name="country">country.</param>
         /// <param name="residential">residential.</param>
-        public CustomerShippingContactsResponseAddress(string _object = default(string), string street1 = default(string), string street2 = default(string), string postalCode = default(string), string city = default(string), string state = default(string), string country = default(string), bool residential = default(bool))
+        public CustomerShippingContactsResponseAddress(string varObject = default(string), string street1 = default(string), string street2 = default(string), string postalCode = default(string), string city = default(string), string state = default(string), string country = default(string), bool residential = default(bool))
         {
-            this.Object = _object;
+            this.VarObject = varObject;
             this.Street1 = street1;
             this.Street2 = street2;
             this.PostalCode = postalCode;
@@ -56,51 +56,51 @@ namespace Conekta.net.Model
         }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;shipping_address&quot;</example>
+        /// <example>shipping_address</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Gets or Sets Street1
         /// </summary>
-        /// <example>&quot;Nuevo Leon 254&quot;</example>
+        /// <example>Nuevo Leon 254</example>
         [DataMember(Name = "street1", EmitDefaultValue = false)]
         public string Street1 { get; set; }
 
         /// <summary>
         /// Gets or Sets Street2
         /// </summary>
-        /// <example>&quot;Departamento 404&quot;</example>
+        /// <example>Departamento 404</example>
         [DataMember(Name = "street2", EmitDefaultValue = false)]
         public string Street2 { get; set; }
 
         /// <summary>
         /// Gets or Sets PostalCode
         /// </summary>
-        /// <example>&quot;06100&quot;</example>
+        /// <example>06100</example>
         [DataMember(Name = "postal_code", EmitDefaultValue = false)]
         public string PostalCode { get; set; }
 
         /// <summary>
         /// Gets or Sets City
         /// </summary>
-        /// <example>&quot;Ciudad de Mexico&quot;</example>
+        /// <example>Ciudad de Mexico</example>
         [DataMember(Name = "city", EmitDefaultValue = false)]
         public string City { get; set; }
 
         /// <summary>
         /// Gets or Sets State
         /// </summary>
-        /// <example>&quot;Ciudad de Mexico&quot;</example>
+        /// <example>Ciudad de Mexico</example>
         [DataMember(Name = "state", EmitDefaultValue = false)]
         public string State { get; set; }
 
         /// <summary>
         /// Gets or Sets Country
         /// </summary>
-        /// <example>&quot;MX&quot;</example>
+        /// <example>MX</example>
         [DataMember(Name = "country", EmitDefaultValue = false)]
         public string Country { get; set; }
 
@@ -119,7 +119,7 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class CustomerShippingContactsResponseAddress {\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  Street1: ").Append(Street1).Append("\n");
             sb.Append("  Street2: ").Append(Street2).Append("\n");
             sb.Append("  PostalCode: ").Append(PostalCode).Append("\n");
@@ -163,9 +163,9 @@ namespace Conekta.net.Model
             }
             return 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.Street1 == input.Street1 ||
@@ -212,9 +212,9 @@ namespace Conekta.net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.Street1 != null)
                 {

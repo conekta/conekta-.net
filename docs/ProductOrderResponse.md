@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Tags** | **List&lt;string&gt;** | List of tags for the item. It is used to identify the item in the order. | [optional] 
 **UnitPrice** | **int** | The price of the item in cents. | 
 **Id** | **string** |  | [optional] 
-**Object** | **string** |  | [optional] 
+**VarObject** | **string** |  | [optional] 
 **ParentId** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

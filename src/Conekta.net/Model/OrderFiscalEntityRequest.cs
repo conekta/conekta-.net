@@ -71,7 +71,7 @@ namespace Conekta.net.Model
         /// Email of the fiscal entity
         /// </summary>
         /// <value>Email of the fiscal entity</value>
-        /// <example>&quot;test@gmail.com&quot;</example>
+        /// <example>test@gmail.com</example>
         [DataMember(Name = "email", EmitDefaultValue = false)]
         public string Email { get; set; }
 
@@ -86,7 +86,7 @@ namespace Conekta.net.Model
         /// Name of the fiscal entity
         /// </summary>
         /// <value>Name of the fiscal entity</value>
-        /// <example>&quot;Conekta Inc&quot;</example>
+        /// <example>Conekta Inc</example>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -94,7 +94,7 @@ namespace Conekta.net.Model
         /// Phone of the fiscal entity
         /// </summary>
         /// <value>Phone of the fiscal entity</value>
-        /// <example>&quot;+525511223344&quot;</example>
+        /// <example>525511223344</example>
         [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
@@ -102,7 +102,7 @@ namespace Conekta.net.Model
         /// Tax ID of the fiscal entity
         /// </summary>
         /// <value>Tax ID of the fiscal entity</value>
-        /// <example>&quot;AAA010101AAA&quot;</example>
+        /// <example>AAA010101AAA</example>
         [DataMember(Name = "tax_id", EmitDefaultValue = true)]
         public string TaxId { get; set; }
 

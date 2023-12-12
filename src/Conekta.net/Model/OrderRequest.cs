@@ -51,10 +51,12 @@ namespace Conekta.net.Model
         /// <param name="needsShippingContact">Allows you to fill out the shipping information at checkout.</param>
         /// <param name="preAuthorize">Indicates whether the order charges must be preauthorized (default to false).</param>
         /// <param name="processingMode">Indicates the processing mode for the order, either ecommerce, recurrent or validation..</param>
+        /// <param name="returnUrl">Indicates the redirection callback upon completion of the 3DS2 flow..</param>
         /// <param name="shippingContact">shippingContact.</param>
         /// <param name="shippingLines">List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshipping). If the online store offers digital products..</param>
         /// <param name="taxLines">List of [taxes](https://developers.conekta.com/v2.1.0/reference/orderscreatetaxes) that are applied to the order..</param>
-        public OrderRequest(List<ChargeRequest> charges = default(List<ChargeRequest>), CheckoutRequest checkout = default(CheckoutRequest), string currency = default(string), OrderRequestCustomerInfo customerInfo = default(OrderRequestCustomerInfo), List<OrderDiscountLinesRequest> discountLines = default(List<OrderDiscountLinesRequest>), OrderFiscalEntityRequest fiscalEntity = default(OrderFiscalEntityRequest), List<Product> lineItems = default(List<Product>), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), bool needsShippingContact = default(bool), bool preAuthorize = false, string processingMode = default(string), CustomerShippingContacts shippingContact = default(CustomerShippingContacts), List<ShippingRequest> shippingLines = default(List<ShippingRequest>), List<OrderTaxRequest> taxLines = default(List<OrderTaxRequest>))
+        /// <param name="threeDsMode">Indicates the 3DS2 mode for the order, either smart or strict..</param>
+        public OrderRequest(List<ChargeRequest> charges = default(List<ChargeRequest>), CheckoutRequest checkout = default(CheckoutRequest), string currency = default(string), OrderRequestCustomerInfo customerInfo = default(OrderRequestCustomerInfo), List<OrderDiscountLinesRequest> discountLines = default(List<OrderDiscountLinesRequest>), OrderFiscalEntityRequest fiscalEntity = default(OrderFiscalEntityRequest), List<Product> lineItems = default(List<Product>), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), bool needsShippingContact = default(bool), bool preAuthorize = false, string processingMode = default(string), string returnUrl = default(string), CustomerShippingContacts shippingContact = default(CustomerShippingContacts), List<ShippingRequest> shippingLines = default(List<ShippingRequest>), List<OrderTaxRequest> taxLines = default(List<OrderTaxRequest>), string threeDsMode = default(string))
         {
             // to ensure "currency" is required (not null)
             if (currency == null)
@@ -82,9 +84,11 @@ namespace Conekta.net.Model
             this.NeedsShippingContact = needsShippingContact;
             this.PreAuthorize = preAuthorize;
             this.ProcessingMode = processingMode;
+            this.ReturnUrl = returnUrl;
             this.ShippingContact = shippingContact;
             this.ShippingLines = shippingLines;
             this.TaxLines = taxLines;
+            this.ThreeDsMode = threeDsMode;
         }
 
         /// <summary>
@@ -104,7 +108,7 @@ namespace Conekta.net.Model
         /// Currency with which the payment will be made. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)
         /// </summary>
         /// <value>Currency with which the payment will be made. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)</value>
-        /// <example>&quot;MXN&quot;</example>
+        /// <example>MXN</example>
         [DataMember(Name = "currency", IsRequired = true, EmitDefaultValue = true)]
         public string Currency { get; set; }
 
@@ -160,9 +164,17 @@ namespace Conekta.net.Model
         /// Indicates the processing mode for the order, either ecommerce, recurrent or validation.
         /// </summary>
         /// <value>Indicates the processing mode for the order, either ecommerce, recurrent or validation.</value>
-        /// <example>&quot;ecommerce&quot;</example>
+        /// <example>ecommerce</example>
         [DataMember(Name = "processing_mode", EmitDefaultValue = false)]
         public string ProcessingMode { get; set; }
+
+        /// <summary>
+        /// Indicates the redirection callback upon completion of the 3DS2 flow.
+        /// </summary>
+        /// <value>Indicates the redirection callback upon completion of the 3DS2 flow.</value>
+        /// <example>https://my-website.com</example>
+        [DataMember(Name = "return_url", EmitDefaultValue = false)]
+        public string ReturnUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets ShippingContact
@@ -185,6 +197,13 @@ namespace Conekta.net.Model
         public List<OrderTaxRequest> TaxLines { get; set; }
 
         /// <summary>
+        /// Indicates the 3DS2 mode for the order, either smart or strict.
+        /// </summary>
+        /// <value>Indicates the 3DS2 mode for the order, either smart or strict.</value>
+        [DataMember(Name = "three_ds_mode", EmitDefaultValue = false)]
+        public string ThreeDsMode { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -203,9 +222,11 @@ namespace Conekta.net.Model
             sb.Append("  NeedsShippingContact: ").Append(NeedsShippingContact).Append("\n");
             sb.Append("  PreAuthorize: ").Append(PreAuthorize).Append("\n");
             sb.Append("  ProcessingMode: ").Append(ProcessingMode).Append("\n");
+            sb.Append("  ReturnUrl: ").Append(ReturnUrl).Append("\n");
             sb.Append("  ShippingContact: ").Append(ShippingContact).Append("\n");
             sb.Append("  ShippingLines: ").Append(ShippingLines).Append("\n");
             sb.Append("  TaxLines: ").Append(TaxLines).Append("\n");
+            sb.Append("  ThreeDsMode: ").Append(ThreeDsMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -299,6 +320,11 @@ namespace Conekta.net.Model
                     this.ProcessingMode.Equals(input.ProcessingMode))
                 ) && 
                 (
+                    this.ReturnUrl == input.ReturnUrl ||
+                    (this.ReturnUrl != null &&
+                    this.ReturnUrl.Equals(input.ReturnUrl))
+                ) && 
+                (
                     this.ShippingContact == input.ShippingContact ||
                     (this.ShippingContact != null &&
                     this.ShippingContact.Equals(input.ShippingContact))
@@ -314,6 +340,11 @@ namespace Conekta.net.Model
                     this.TaxLines != null &&
                     input.TaxLines != null &&
                     this.TaxLines.SequenceEqual(input.TaxLines)
+                ) && 
+                (
+                    this.ThreeDsMode == input.ThreeDsMode ||
+                    (this.ThreeDsMode != null &&
+                    this.ThreeDsMode.Equals(input.ThreeDsMode))
                 );
         }
 
@@ -364,6 +395,10 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.ProcessingMode.GetHashCode();
                 }
+                if (this.ReturnUrl != null)
+                {
+                    hashCode = (hashCode * 59) + this.ReturnUrl.GetHashCode();
+                }
                 if (this.ShippingContact != null)
                 {
                     hashCode = (hashCode * 59) + this.ShippingContact.GetHashCode();
@@ -375,6 +410,10 @@ namespace Conekta.net.Model
                 if (this.TaxLines != null)
                 {
                     hashCode = (hashCode * 59) + this.TaxLines.GetHashCode();
+                }
+                if (this.ThreeDsMode != null)
+                {
+                    hashCode = (hashCode * 59) + this.ThreeDsMode.GetHashCode();
                 }
                 return hashCode;
             }

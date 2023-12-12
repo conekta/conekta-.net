@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **BetweenStreets** | **string** | The street names between which the order will be delivered. | [optional] 
 **Address** | [**CustomerShippingContactsAddress**](CustomerShippingContactsAddress.md) |  | 
 **ParentId** | **string** |  | [optional] 
-**Default** | **bool?** |  | [optional] 
+**VarDefault** | **bool?** |  | [optional] 
 **Deleted** | **bool?** |  | [optional] 
 **Metadata** | **Dictionary&lt;string, Object&gt;** | Metadata associated with the shipping contact | [optional] 
 

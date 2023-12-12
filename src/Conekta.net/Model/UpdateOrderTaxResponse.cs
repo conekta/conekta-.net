@@ -44,9 +44,9 @@ namespace Conekta.net.Model
         /// <param name="description">description or tax&#39;s name (required).</param>
         /// <param name="metadata">metadata.</param>
         /// <param name="id">id (required).</param>
-        /// <param name="_object">_object.</param>
+        /// <param name="varObject">varObject.</param>
         /// <param name="parentId">parentId.</param>
-        public UpdateOrderTaxResponse(long amount = default(long), string description = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string id = default(string), string _object = default(string), string parentId = default(string))
+        public UpdateOrderTaxResponse(long amount = default(long), string description = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string id = default(string), string varObject = default(string), string parentId = default(string))
         {
             this.Amount = amount;
             // to ensure "description" is required (not null)
@@ -62,7 +62,7 @@ namespace Conekta.net.Model
             }
             this.Id = id;
             this.Metadata = metadata;
-            this.Object = _object;
+            this.VarObject = varObject;
             this.ParentId = parentId;
         }
 
@@ -78,34 +78,35 @@ namespace Conekta.net.Model
         /// description or tax&#39;s name
         /// </summary>
         /// <value>description or tax&#39;s name</value>
-        /// <example>&quot;testing&quot;</example>
+        /// <example>testing</example>
         [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets Metadata
         /// </summary>
+        /// <example>{key&#x3D;value}</example>
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;tax_lin_2tQ8dC5mg1UADmVPo&quot;</example>
+        /// <example>tax_lin_2tQ8dC5mg1UADmVPo</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;tax_line&quot;</example>
+        /// <example>tax_line</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Gets or Sets ParentId
         /// </summary>
-        /// <example>&quot;ord_2tPAmKCEJqh8RE6nY&quot;</example>
+        /// <example>ord_2tPAmKCEJqh8RE6nY</example>
         [DataMember(Name = "parent_id", EmitDefaultValue = false)]
         public string ParentId { get; set; }
 
@@ -121,7 +122,7 @@ namespace Conekta.net.Model
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -179,9 +180,9 @@ namespace Conekta.net.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.ParentId == input.ParentId ||
@@ -212,9 +213,9 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.ParentId != null)
                 {

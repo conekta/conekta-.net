@@ -79,21 +79,21 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        /// <example>&quot;card&quot;</example>
+        /// <example>card</example>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets TokenId
         /// </summary>
-        /// <example>&quot;tok_2897348234&quot;</example>
+        /// <example>tok_2897348234</example>
         [DataMember(Name = "token_id", EmitDefaultValue = false)]
         public string TokenId { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentSourceId
         /// </summary>
-        /// <example>&quot;src_2tLkkyfMPh6v7pFry&quot;</example>
+        /// <example>src_2tLkkyfMPh6v7pFry</example>
         [DataMember(Name = "payment_source_id", EmitDefaultValue = false)]
         public string PaymentSourceId { get; set; }
 
@@ -101,7 +101,7 @@ namespace Conekta.net.Model
         /// Optional id sent to indicate the bank contract for recurrent card charges.
         /// </summary>
         /// <value>Optional id sent to indicate the bank contract for recurrent card charges.</value>
-        /// <example>&quot;S781317595&quot;</example>
+        /// <example>S781317595</example>
         [DataMember(Name = "contract_id", EmitDefaultValue = false)]
         public string ContractId { get; set; }
 
@@ -222,18 +222,6 @@ namespace Conekta.net.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // ContractId (string) maxLength
-            if (this.ContractId != null && this.ContractId.Length > 10)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ContractId, length must be less than 10.", new [] { "ContractId" });
-            }
-
-            // ContractId (string) minLength
-            if (this.ContractId != null && this.ContractId.Length < 10)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ContractId, length must be greater than 10.", new [] { "ContractId" });
-            }
-
             yield break;
         }
     }
