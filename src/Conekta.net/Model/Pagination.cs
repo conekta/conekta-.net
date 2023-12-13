@@ -41,16 +41,16 @@ namespace Conekta.net.Model
         /// Initializes a new instance of the <see cref="Pagination" /> class.
         /// </summary>
         /// <param name="hasMore">Indicates if there are more pages to be requested (required).</param>
-        /// <param name="_object">Object type, in this case is list (required).</param>
-        public Pagination(bool hasMore = default(bool), string _object = default(string))
+        /// <param name="varObject">Object type, in this case is list (required).</param>
+        public Pagination(bool hasMore = default(bool), string varObject = default(string))
         {
             this.HasMore = hasMore;
-            // to ensure "_object" is required (not null)
-            if (_object == null)
+            // to ensure "varObject" is required (not null)
+            if (varObject == null)
             {
-                throw new ArgumentNullException("_object is a required property for Pagination and cannot be null");
+                throw new ArgumentNullException("varObject is a required property for Pagination and cannot be null");
             }
-            this.Object = _object;
+            this.VarObject = varObject;
         }
 
         /// <summary>
@@ -65,9 +65,9 @@ namespace Conekta.net.Model
         /// Object type, in this case is list
         /// </summary>
         /// <value>Object type, in this case is list</value>
-        /// <example>&quot;list&quot;</example>
+        /// <example>list</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -78,7 +78,7 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class Pagination {\n");
             sb.Append("  HasMore: ").Append(HasMore).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -119,9 +119,9 @@ namespace Conekta.net.Model
                     this.HasMore.Equals(input.HasMore)
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 );
         }
 
@@ -135,9 +135,9 @@ namespace Conekta.net.Model
             {
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.HasMore.GetHashCode();
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 return hashCode;
             }

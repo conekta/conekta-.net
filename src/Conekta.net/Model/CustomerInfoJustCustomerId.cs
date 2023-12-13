@@ -54,7 +54,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets CustomerId
         /// </summary>
-        /// <example>&quot;cus_23874283647&quot;</example>
+        /// <example>cus_23874283647</example>
         [DataMember(Name = "customer_id", IsRequired = true, EmitDefaultValue = true)]
         public string CustomerId { get; set; }
 

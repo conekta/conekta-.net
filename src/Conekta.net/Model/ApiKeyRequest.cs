@@ -29,7 +29,7 @@ namespace Conekta.net.Model
     /// <summary>
     /// ApiKeyRequest
     /// </summary>
-    [DataContract(Name = "api-key_request")]
+    [DataContract(Name = "api_key_request")]
     public partial class ApiKeyRequest : IEquatable<ApiKeyRequest>, IValidatableObject
     {
         /// <summary>
@@ -40,46 +40,31 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiKeyRequest" /> class.
         /// </summary>
-        /// <param name="active">Indicates if the api key is active (required).</param>
-        /// <param name="description">Detail of the use that will be given to the api key (required).</param>
+        /// <param name="description">A name or brief explanation of what this api key is used for.</param>
         /// <param name="role">role (required).</param>
-        public ApiKeyRequest(bool active = default(bool), string description = default(string), string role = default(string))
+        public ApiKeyRequest(string description = default(string), string role = default(string))
         {
-            this.Active = active;
-            // to ensure "description" is required (not null)
-            if (description == null)
-            {
-                throw new ArgumentNullException("description is a required property for ApiKeyRequest and cannot be null");
-            }
-            this.Description = description;
             // to ensure "role" is required (not null)
             if (role == null)
             {
                 throw new ArgumentNullException("role is a required property for ApiKeyRequest and cannot be null");
             }
             this.Role = role;
+            this.Description = description;
         }
 
         /// <summary>
-        /// Indicates if the api key is active
+        /// A name or brief explanation of what this api key is used for
         /// </summary>
-        /// <value>Indicates if the api key is active</value>
-        /// <example>true</example>
-        [DataMember(Name = "active", IsRequired = true, EmitDefaultValue = true)]
-        public bool Active { get; set; }
-
-        /// <summary>
-        /// Detail of the use that will be given to the api key
-        /// </summary>
-        /// <value>Detail of the use that will be given to the api key</value>
-        /// <example>&quot;online store&quot;</example>
-        [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
+        /// <value>A name or brief explanation of what this api key is used for</value>
+        /// <example>online store</example>
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets Role
         /// </summary>
-        /// <example>&quot;private&quot;</example>
+        /// <example>private</example>
         [DataMember(Name = "role", IsRequired = true, EmitDefaultValue = true)]
         public string Role { get; set; }
 
@@ -91,7 +76,6 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class ApiKeyRequest {\n");
-            sb.Append("  Active: ").Append(Active).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Role: ").Append(Role).Append("\n");
             sb.Append("}\n");
@@ -130,10 +114,6 @@ namespace Conekta.net.Model
             }
             return 
                 (
-                    this.Active == input.Active ||
-                    this.Active.Equals(input.Active)
-                ) && 
-                (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
@@ -154,7 +134,6 @@ namespace Conekta.net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Active.GetHashCode();
                 if (this.Description != null)
                 {
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();

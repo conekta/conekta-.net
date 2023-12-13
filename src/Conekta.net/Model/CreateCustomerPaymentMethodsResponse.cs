@@ -185,6 +185,9 @@ namespace Conekta.net.Model
                     case "oxxo_recurrent":
                         newCreateCustomerPaymentMethodsResponse = new CreateCustomerPaymentMethodsResponse(JsonConvert.DeserializeObject<PaymentMethodCashResponse>(jsonString, CreateCustomerPaymentMethodsResponse.AdditionalPropertiesSerializerSettings));
                         return newCreateCustomerPaymentMethodsResponse;
+                    case "spei_recurrent":
+                        newCreateCustomerPaymentMethodsResponse = new CreateCustomerPaymentMethodsResponse(JsonConvert.DeserializeObject<PaymentMethodSpeiRecurrent>(jsonString, CreateCustomerPaymentMethodsResponse.AdditionalPropertiesSerializerSettings));
+                        return newCreateCustomerPaymentMethodsResponse;
                     case "payment_method_card_response":
                         newCreateCustomerPaymentMethodsResponse = new CreateCustomerPaymentMethodsResponse(JsonConvert.DeserializeObject<PaymentMethodCardResponse>(jsonString, CreateCustomerPaymentMethodsResponse.AdditionalPropertiesSerializerSettings));
                         return newCreateCustomerPaymentMethodsResponse;
@@ -194,11 +197,8 @@ namespace Conekta.net.Model
                     case "payment_method_spei_recurrent":
                         newCreateCustomerPaymentMethodsResponse = new CreateCustomerPaymentMethodsResponse(JsonConvert.DeserializeObject<PaymentMethodSpeiRecurrent>(jsonString, CreateCustomerPaymentMethodsResponse.AdditionalPropertiesSerializerSettings));
                         return newCreateCustomerPaymentMethodsResponse;
-                    case "spei_recurrent":
-                        newCreateCustomerPaymentMethodsResponse = new CreateCustomerPaymentMethodsResponse(JsonConvert.DeserializeObject<PaymentMethodSpeiRecurrent>(jsonString, CreateCustomerPaymentMethodsResponse.AdditionalPropertiesSerializerSettings));
-                        return newCreateCustomerPaymentMethodsResponse;
                     default:
-                        System.Diagnostics.Debug.WriteLine(string.Format("Failed to lookup discriminator value `{0}` for CreateCustomerPaymentMethodsResponse. Possible values: card cash oxxo_recurrent payment_method_card_response payment_method_cash_response payment_method_spei_recurrent spei_recurrent", discriminatorValue));
+                        System.Diagnostics.Debug.WriteLine(string.Format("Failed to lookup discriminator value `{0}` for CreateCustomerPaymentMethodsResponse. Possible values: card cash oxxo_recurrent spei_recurrent payment_method_card_response payment_method_cash_response payment_method_spei_recurrent", discriminatorValue));
                         break;
                 }
             }
@@ -276,7 +276,7 @@ namespace Conekta.net.Model
             }
             else if (match > 1)
             {
-                throw new InvalidDataException("The JSON string `" + jsonString + "` incorrectly matches more than one schema (should be exactly one match): " + matchedTypes);
+                throw new InvalidDataException("The JSON string `" + jsonString + "` incorrectly matches more than one schema (should be exactly one match): " + String.Join(",", matchedTypes));
             }
 
             // deserialization is considered successful at this point if no exception has been thrown.

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Id** | **string** |  | [optional] 
 **LastAttemptedAt** | **int** |  | [optional] 
 **LastHttpResponseStatus** | **int** |  | [optional] 
-**Object** | **string** |  | [optional] 
+**VarObject** | **string** |  | [optional] 
 **ResponseData** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **Url** | **string** |  | [optional] 
 

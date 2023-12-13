@@ -35,17 +35,17 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Details" /> class.
         /// </summary>
-        /// <param name="details">details.</param>
-        public Details(List<DetailsError> details = default(List<DetailsError>))
+        /// <param name="varDetails">varDetails.</param>
+        public Details(List<DetailsError> varDetails = default(List<DetailsError>))
         {
-            this._Details = details;
+            this.VarDetails = varDetails;
         }
 
         /// <summary>
-        /// Gets or Sets _Details
+        /// Gets or Sets VarDetails
         /// </summary>
         [DataMember(Name = "details", EmitDefaultValue = false)]
-        public List<DetailsError> _Details { get; set; }
+        public List<DetailsError> VarDetails { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -55,7 +55,7 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class Details {\n");
-            sb.Append("  _Details: ").Append(_Details).Append("\n");
+            sb.Append("  VarDetails: ").Append(VarDetails).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -92,10 +92,10 @@ namespace Conekta.net.Model
             }
             return 
                 (
-                    this._Details == input._Details ||
-                    this._Details != null &&
-                    input._Details != null &&
-                    this._Details.SequenceEqual(input._Details)
+                    this.VarDetails == input.VarDetails ||
+                    this.VarDetails != null &&
+                    input.VarDetails != null &&
+                    this.VarDetails.SequenceEqual(input.VarDetails)
                 );
         }
 
@@ -108,9 +108,9 @@ namespace Conekta.net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this._Details != null)
+                if (this.VarDetails != null)
                 {
-                    hashCode = (hashCode * 59) + this._Details.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarDetails.GetHashCode();
                 }
                 return hashCode;
             }

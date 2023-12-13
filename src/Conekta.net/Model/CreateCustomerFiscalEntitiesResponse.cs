@@ -47,11 +47,11 @@ namespace Conekta.net.Model
         /// <param name="metadata">metadata.</param>
         /// <param name="companyName">companyName.</param>
         /// <param name="id">id (required).</param>
-        /// <param name="_object">_object (required).</param>
+        /// <param name="varObject">varObject (required).</param>
         /// <param name="createdAt">createdAt (required).</param>
         /// <param name="parentId">parentId.</param>
-        /// <param name="_default">_default.</param>
-        public CreateCustomerFiscalEntitiesResponse(CustomerFiscalEntitiesRequestAddress address = default(CustomerFiscalEntitiesRequestAddress), string taxId = default(string), string email = default(string), string phone = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string companyName = default(string), string id = default(string), string _object = default(string), long createdAt = default(long), string parentId = default(string), bool _default = default(bool))
+        /// <param name="varDefault">varDefault.</param>
+        public CreateCustomerFiscalEntitiesResponse(CustomerFiscalEntitiesRequestAddress address = default(CustomerFiscalEntitiesRequestAddress), string taxId = default(string), string email = default(string), string phone = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string companyName = default(string), string id = default(string), string varObject = default(string), long createdAt = default(long), string parentId = default(string), bool varDefault = default(bool))
         {
             // to ensure "address" is required (not null)
             if (address == null)
@@ -65,12 +65,12 @@ namespace Conekta.net.Model
                 throw new ArgumentNullException("id is a required property for CreateCustomerFiscalEntitiesResponse and cannot be null");
             }
             this.Id = id;
-            // to ensure "_object" is required (not null)
-            if (_object == null)
+            // to ensure "varObject" is required (not null)
+            if (varObject == null)
             {
-                throw new ArgumentNullException("_object is a required property for CreateCustomerFiscalEntitiesResponse and cannot be null");
+                throw new ArgumentNullException("varObject is a required property for CreateCustomerFiscalEntitiesResponse and cannot be null");
             }
-            this.Object = _object;
+            this.VarObject = varObject;
             this.CreatedAt = createdAt;
             this.TaxId = taxId;
             this.Email = email;
@@ -78,7 +78,7 @@ namespace Conekta.net.Model
             this.Metadata = metadata;
             this.CompanyName = companyName;
             this.ParentId = parentId;
-            this.Default = _default;
+            this.VarDefault = varDefault;
         }
 
         /// <summary>
@@ -114,23 +114,23 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets CompanyName
         /// </summary>
-        /// <example>&quot;conekta&quot;</example>
+        /// <example>conekta</example>
         [DataMember(Name = "company_name", EmitDefaultValue = false)]
         public string CompanyName { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;ship_cont_2tKZsTYcsryyu7Ah8&quot;</example>
+        /// <example>ship_cont_2tKZsTYcsryyu7Ah8</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;shipping_contact&quot;</example>
+        /// <example>shipping_contact</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt
@@ -142,15 +142,15 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets ParentId
         /// </summary>
-        /// <example>&quot;cus_2tKcHxhTz7xU5SymF&quot;</example>
+        /// <example>cus_2tKcHxhTz7xU5SymF</example>
         [DataMember(Name = "parent_id", EmitDefaultValue = false)]
         public string ParentId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Default
+        /// Gets or Sets VarDefault
         /// </summary>
         [DataMember(Name = "default", EmitDefaultValue = true)]
-        public bool Default { get; set; }
+        public bool VarDefault { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -167,10 +167,10 @@ namespace Conekta.net.Model
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  CompanyName: ").Append(CompanyName).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
-            sb.Append("  Default: ").Append(Default).Append("\n");
+            sb.Append("  VarDefault: ").Append(VarDefault).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -243,9 +243,9 @@ namespace Conekta.net.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.CreatedAt == input.CreatedAt ||
@@ -257,8 +257,8 @@ namespace Conekta.net.Model
                     this.ParentId.Equals(input.ParentId))
                 ) && 
                 (
-                    this.Default == input.Default ||
-                    this.Default.Equals(input.Default)
+                    this.VarDefault == input.VarDefault ||
+                    this.VarDefault.Equals(input.VarDefault)
                 );
         }
 
@@ -299,16 +299,16 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
                 if (this.ParentId != null)
                 {
                     hashCode = (hashCode * 59) + this.ParentId.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Default.GetHashCode();
+                hashCode = (hashCode * 59) + this.VarDefault.GetHashCode();
                 return hashCode;
             }
         }

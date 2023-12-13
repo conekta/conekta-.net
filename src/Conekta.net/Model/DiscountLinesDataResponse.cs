@@ -43,10 +43,10 @@ namespace Conekta.net.Model
         /// <param name="amount">The amount to be deducted from the total sum of all payments, in cents. (required).</param>
         /// <param name="code">Discount code. (required).</param>
         /// <param name="type">It can be &#39;loyalty&#39;, &#39;campaign&#39;, &#39;coupon&#39; o &#39;sign&#39; (required).</param>
-        /// <param name="id">id.</param>
-        /// <param name="_object">_object.</param>
-        /// <param name="parentId">parentId.</param>
-        public DiscountLinesDataResponse(long amount = default(long), string code = default(string), string type = default(string), string id = default(string), string _object = default(string), string parentId = default(string))
+        /// <param name="id">The discount line id (required).</param>
+        /// <param name="varObject">The object name (required).</param>
+        /// <param name="parentId">The order id (required).</param>
+        public DiscountLinesDataResponse(long amount = default(long), string code = default(string), string type = default(string), string id = default(string), string varObject = default(string), string parentId = default(string))
         {
             this.Amount = amount;
             // to ensure "code" is required (not null)
@@ -61,8 +61,23 @@ namespace Conekta.net.Model
                 throw new ArgumentNullException("type is a required property for DiscountLinesDataResponse and cannot be null");
             }
             this.Type = type;
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for DiscountLinesDataResponse and cannot be null");
+            }
             this.Id = id;
-            this.Object = _object;
+            // to ensure "varObject" is required (not null)
+            if (varObject == null)
+            {
+                throw new ArgumentNullException("varObject is a required property for DiscountLinesDataResponse and cannot be null");
+            }
+            this.VarObject = varObject;
+            // to ensure "parentId" is required (not null)
+            if (parentId == null)
+            {
+                throw new ArgumentNullException("parentId is a required property for DiscountLinesDataResponse and cannot be null");
+            }
             this.ParentId = parentId;
         }
 
@@ -78,7 +93,7 @@ namespace Conekta.net.Model
         /// Discount code.
         /// </summary>
         /// <value>Discount code.</value>
-        /// <example>&quot;123&quot;</example>
+        /// <example>123</example>
         [DataMember(Name = "code", IsRequired = true, EmitDefaultValue = true)]
         public string Code { get; set; }
 
@@ -86,29 +101,32 @@ namespace Conekta.net.Model
         /// It can be &#39;loyalty&#39;, &#39;campaign&#39;, &#39;coupon&#39; o &#39;sign&#39;
         /// </summary>
         /// <value>It can be &#39;loyalty&#39;, &#39;campaign&#39;, &#39;coupon&#39; o &#39;sign&#39;</value>
-        /// <example>&quot;loyalty&quot;</example>
+        /// <example>loyalty</example>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// The discount line id
         /// </summary>
-        /// <example>&quot;dis_lin_2tQQ58HPgPw7StE8z&quot;</example>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        /// <value>The discount line id</value>
+        /// <example>dis_lin_2tQQ58HPgPw7StE8z</example>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// The object name
         /// </summary>
-        /// <example>&quot;discount_line&quot;</example>
-        [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        /// <value>The object name</value>
+        /// <example>discount_line</example>
+        [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
+        public string VarObject { get; set; }
 
         /// <summary>
-        /// Gets or Sets ParentId
+        /// The order id
         /// </summary>
-        /// <example>&quot;ord_2tPAmKCEJqh8RE6nY&quot;</example>
-        [DataMember(Name = "parent_id", EmitDefaultValue = false)]
+        /// <value>The order id</value>
+        /// <example>ord_2tPAmKCEJqh8RE6nY</example>
+        [DataMember(Name = "parent_id", IsRequired = true, EmitDefaultValue = true)]
         public string ParentId { get; set; }
 
         /// <summary>
@@ -123,7 +141,7 @@ namespace Conekta.net.Model
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -180,9 +198,9 @@ namespace Conekta.net.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.ParentId == input.ParentId ||
@@ -213,9 +231,9 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.ParentId != null)
                 {

@@ -19,6 +19,7 @@ using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Net.Http;
+using System.Net.Security;
 
 namespace Conekta.net.Client
 {
@@ -33,7 +34,7 @@ namespace Conekta.net.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "6.0.4";
+        public const string Version = "6.0.6";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -70,6 +71,8 @@ namespace Conekta.net.Client
         /// Example: http://localhost:3000/v1/
         /// </summary>
         private string _basePath;
+
+        private bool _useDefaultCredentials = false;
 
         /// <summary>
         /// Gets or sets the API key based on the authentication name.
@@ -110,7 +113,7 @@ namespace Conekta.net.Client
         public Configuration()
         {
             Proxy = null;
-            UserAgent = "Conekta/v2 .NetBindings/" + Version;
+            UserAgent = $"Conekta/v2 .NetBindings/{Version}";
             BasePath = "https://api.conekta.io";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -176,9 +179,19 @@ namespace Conekta.net.Client
         /// <summary>
         /// Gets or sets the base path for API access.
         /// </summary>
-        public virtual string BasePath {
+        public virtual string BasePath 
+        {
             get { return _basePath; }
             set { _basePath = value; }
+        }
+
+        /// <summary>
+        /// Determine whether or not the "default credentials" (e.g. the user account under which the current process is running) will be sent along to the server. The default is false.
+        /// </summary>
+        public virtual bool UseDefaultCredentials
+        {
+            get { return _useDefaultCredentials; }
+            set { _useDefaultCredentials = value; }
         }
 
         /// <summary>
@@ -445,7 +458,7 @@ namespace Conekta.net.Client
         /// <return>The operation server URL.</return>
         public string GetOperationServerUrl(string operation, int index, Dictionary<string, string> inputVariables)
         {
-            if (OperationServers.TryGetValue(operation, out var operationServer))
+            if (operation != null && OperationServers.TryGetValue(operation, out var operationServer))
             {
                 return GetServerUrl(operationServer, index, inputVariables);
             }
@@ -504,6 +517,11 @@ namespace Conekta.net.Client
 
             return url;
         }
+        
+        /// <summary>
+        /// Gets and Sets the RemoteCertificateValidationCallback
+        /// </summary>
+        public RemoteCertificateValidationCallback RemoteCertificateValidationCallback { get; set; }
 
         #endregion Properties
 
@@ -518,7 +536,7 @@ namespace Conekta.net.Client
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: 2.1.0\n";
-            report += "    SDK Package Version: 6.0.4\n";
+            report += "    SDK Package Version: 6.0.6\n";
 
             return report;
         }
@@ -580,6 +598,8 @@ namespace Conekta.net.Client
                 TempFolderPath = second.TempFolderPath ?? first.TempFolderPath,
                 DateTimeFormat = second.DateTimeFormat ?? first.DateTimeFormat,
                 ClientCertificates = second.ClientCertificates ?? first.ClientCertificates,
+                UseDefaultCredentials = second.UseDefaultCredentials,
+                RemoteCertificateValidationCallback = second.RemoteCertificateValidationCallback ?? first.RemoteCertificateValidationCallback,
             };
             return config;
         }

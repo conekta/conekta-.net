@@ -57,7 +57,7 @@ namespace Conekta.net.Test.Api
             
             Assert.IsType<TransactionResponse>(response);
             Assert.Equal(id, response.Id);
-            Assert.Equal("transaction", response.Object);
+            Assert.Equal("transaction", response.VarObject);
         }
 
         /// <summary>

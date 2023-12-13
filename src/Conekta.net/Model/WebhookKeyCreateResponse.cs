@@ -39,15 +39,15 @@ namespace Conekta.net.Model
         /// <param name="createdAt">Unix timestamp in seconds with the creation date of the webhook key.</param>
         /// <param name="id">Unique identifier of the webhook key.</param>
         /// <param name="livemode">Indicates if the webhook key is in live mode.</param>
-        /// <param name="_object">Object name, value is webhook_key.</param>
+        /// <param name="varObject">Object name, value is webhook_key.</param>
         /// <param name="publicKey">Public key to be used in the webhook.</param>
-        public WebhookKeyCreateResponse(bool active = default(bool), long createdAt = default(long), string id = default(string), bool livemode = default(bool), string _object = default(string), string publicKey = default(string))
+        public WebhookKeyCreateResponse(bool active = default(bool), long createdAt = default(long), string id = default(string), bool livemode = default(bool), string varObject = default(string), string publicKey = default(string))
         {
             this.Active = active;
             this.CreatedAt = createdAt;
             this.Id = id;
             this.Livemode = livemode;
-            this.Object = _object;
+            this.VarObject = varObject;
             this.PublicKey = publicKey;
         }
 
@@ -71,7 +71,7 @@ namespace Conekta.net.Model
         /// Unique identifier of the webhook key
         /// </summary>
         /// <value>Unique identifier of the webhook key</value>
-        /// <example>&quot;62730ba6fb7dfd6a712f118e&quot;</example>
+        /// <example>62730ba6fb7dfd6a712f118e</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -87,15 +87,15 @@ namespace Conekta.net.Model
         /// Object name, value is webhook_key
         /// </summary>
         /// <value>Object name, value is webhook_key</value>
-        /// <example>&quot;webhook_key&quot;</example>
+        /// <example>webhook_key</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Public key to be used in the webhook
         /// </summary>
         /// <value>Public key to be used in the webhook</value>
-        /// <example>&quot;-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqULpUc6D6mSAq5a0yLY/\noOjd1mWm6q+QI8y/FI4STr2F+XgKeNnMxSqnyFrHtKQ/ut4Zi45WFnJLfEQL7aW5\n67yE2dWyo6GaL7yZUfLC0Y3sHPGzaGtvDF36ISW7LliYNoMiA3Bx5/1Sr0G23pGW\n0Mp8IO1Nlz0sJWuU/d7zCz/UN6cl9g/BP4eaQ7deS56YuWcj5sTlwqFTlwN12kpA\nIzMZ7gnvYQnZTpPny5lben6QEuxTvZcPApcyOweiESjMnXfkfWOyuYtgMrbsU6oL\nA6sWa6j0pePW7AYeBqB4tyAlenkCSqzHg8bMk5Bm7hiT6I9Pls774lJbnOYmmuNE\n8QIDAQAB\n-----END PUBLIC KEY-----\n&quot;</example>
+        /// <example>-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqULpUc6D6mSAq5a0yLY/\noOjd1mWm6q+QI8y/FI4STr2F+XgKeNnMxSqnyFrHtKQ/ut4Zi45WFnJLfEQL7aW5\n67yE2dWyo6GaL7yZUfLC0Y3sHPGzaGtvDF36ISW7LliYNoMiA3Bx5/1Sr0G23pGW\n0Mp8IO1Nlz0sJWuU/d7zCz/UN6cl9g/BP4eaQ7deS56YuWcj5sTlwqFTlwN12kpA\nIzMZ7gnvYQnZTpPny5lben6QEuxTvZcPApcyOweiESjMnXfkfWOyuYtgMrbsU6oL\nA6sWa6j0pePW7AYeBqB4tyAlenkCSqzHg8bMk5Bm7hiT6I9Pls774lJbnOYmmuNE\n8QIDAQAB\n-----END PUBLIC KEY-----\n</example>
         [DataMember(Name = "public_key", EmitDefaultValue = false)]
         public string PublicKey { get; set; }
 
@@ -111,7 +111,7 @@ namespace Conekta.net.Model
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  PublicKey: ").Append(PublicKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -166,9 +166,9 @@ namespace Conekta.net.Model
                     this.Livemode.Equals(input.Livemode)
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.PublicKey == input.PublicKey ||
@@ -193,9 +193,9 @@ namespace Conekta.net.Model
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Livemode.GetHashCode();
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.PublicKey != null)
                 {

@@ -38,13 +38,13 @@ namespace Conekta.net.Model
         /// <param name="details">details.</param>
         /// <param name="logId">log id.</param>
         /// <param name="type">type.</param>
-        /// <param name="_object">_object.</param>
-        public Error(List<DetailsError> details = default(List<DetailsError>), string logId = default(string), string type = default(string), string _object = default(string))
+        /// <param name="varObject">varObject.</param>
+        public Error(List<DetailsError> details = default(List<DetailsError>), string logId = default(string), string type = default(string), string varObject = default(string))
         {
             this.Details = details;
             this.LogId = logId;
             this.Type = type;
-            this.Object = _object;
+            this.VarObject = varObject;
         }
 
         /// <summary>
@@ -57,23 +57,23 @@ namespace Conekta.net.Model
         /// log id
         /// </summary>
         /// <value>log id</value>
-        /// <example>&quot;507f1f77bcf86cd799439011&quot;</example>
+        /// <example>507f1f77bcf86cd799439011</example>
         [DataMember(Name = "log_id", EmitDefaultValue = true)]
         public string LogId { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        /// <example>&quot;authentication_error&quot;</example>
+        /// <example>authentication_error</example>
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;error&quot;</example>
+        /// <example>error</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -86,7 +86,7 @@ namespace Conekta.net.Model
             sb.Append("  Details: ").Append(Details).Append("\n");
             sb.Append("  LogId: ").Append(LogId).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -139,9 +139,9 @@ namespace Conekta.net.Model
                     this.Type.Equals(input.Type))
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 );
         }
 
@@ -166,9 +166,9 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 }
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 return hashCode;
             }

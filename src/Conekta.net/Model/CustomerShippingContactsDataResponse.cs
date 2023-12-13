@@ -45,12 +45,13 @@ namespace Conekta.net.Model
         /// <param name="betweenStreets">The street names between which the order will be delivered..</param>
         /// <param name="address">address (required).</param>
         /// <param name="parentId">parentId.</param>
-        /// <param name="_default">_default.</param>
+        /// <param name="varDefault">varDefault.</param>
         /// <param name="deleted">deleted.</param>
+        /// <param name="metadata">Metadata associated with the shipping contact.</param>
         /// <param name="id">id (required).</param>
-        /// <param name="_object">_object (required).</param>
+        /// <param name="varObject">varObject (required).</param>
         /// <param name="createdAt">createdAt (required).</param>
-        public CustomerShippingContactsDataResponse(string phone = default(string), string receiver = default(string), string betweenStreets = default(string), CustomerShippingContactsAddress address = default(CustomerShippingContactsAddress), string parentId = default(string), bool? _default = default(bool?), bool? deleted = default(bool?), string id = default(string), string _object = default(string), long createdAt = default(long))
+        public CustomerShippingContactsDataResponse(string phone = default(string), string receiver = default(string), string betweenStreets = default(string), CustomerShippingContactsAddress address = default(CustomerShippingContactsAddress), string parentId = default(string), bool? varDefault = default(bool?), bool? deleted = default(bool?), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string id = default(string), string varObject = default(string), long createdAt = default(long))
         {
             // to ensure "address" is required (not null)
             if (address == null)
@@ -64,26 +65,27 @@ namespace Conekta.net.Model
                 throw new ArgumentNullException("id is a required property for CustomerShippingContactsDataResponse and cannot be null");
             }
             this.Id = id;
-            // to ensure "_object" is required (not null)
-            if (_object == null)
+            // to ensure "varObject" is required (not null)
+            if (varObject == null)
             {
-                throw new ArgumentNullException("_object is a required property for CustomerShippingContactsDataResponse and cannot be null");
+                throw new ArgumentNullException("varObject is a required property for CustomerShippingContactsDataResponse and cannot be null");
             }
-            this.Object = _object;
+            this.VarObject = varObject;
             this.CreatedAt = createdAt;
             this.Phone = phone;
             this.Receiver = receiver;
             this.BetweenStreets = betweenStreets;
             this.ParentId = parentId;
-            this.Default = _default;
+            this.VarDefault = varDefault;
             this.Deleted = deleted;
+            this.Metadata = metadata;
         }
 
         /// <summary>
         /// Phone contact
         /// </summary>
         /// <value>Phone contact</value>
-        /// <example>&quot;+525511223344&quot;</example>
+        /// <example>525511223344</example>
         [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
@@ -91,7 +93,7 @@ namespace Conekta.net.Model
         /// Name of the person who will receive the order
         /// </summary>
         /// <value>Name of the person who will receive the order</value>
-        /// <example>&quot;Marvin Fuller&quot;</example>
+        /// <example>Marvin Fuller</example>
         [DataMember(Name = "receiver", EmitDefaultValue = false)]
         public string Receiver { get; set; }
 
@@ -99,7 +101,7 @@ namespace Conekta.net.Model
         /// The street names between which the order will be delivered.
         /// </summary>
         /// <value>The street names between which the order will be delivered.</value>
-        /// <example>&quot;Ackerman Crescent&quot;</example>
+        /// <example>Ackerman Crescent</example>
         [DataMember(Name = "between_streets", EmitDefaultValue = false)]
         public string BetweenStreets { get; set; }
 
@@ -116,10 +118,10 @@ namespace Conekta.net.Model
         public string ParentId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Default
+        /// Gets or Sets VarDefault
         /// </summary>
         [DataMember(Name = "default", EmitDefaultValue = true)]
-        public bool? Default { get; set; }
+        public bool? VarDefault { get; set; }
 
         /// <summary>
         /// Gets or Sets Deleted
@@ -128,18 +130,25 @@ namespace Conekta.net.Model
         public bool? Deleted { get; set; }
 
         /// <summary>
+        /// Metadata associated with the shipping contact
+        /// </summary>
+        /// <value>Metadata associated with the shipping contact</value>
+        [DataMember(Name = "metadata", EmitDefaultValue = false)]
+        public Dictionary<string, Object> Metadata { get; set; }
+
+        /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;ship_cont_2tKZsTYcsryyu7Ah8&quot;</example>
+        /// <example>ship_cont_2tKZsTYcsryyu7Ah8</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;shipping_contact&quot;</example>
+        /// <example>shipping_contact</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt
@@ -161,10 +170,11 @@ namespace Conekta.net.Model
             sb.Append("  BetweenStreets: ").Append(BetweenStreets).Append("\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
-            sb.Append("  Default: ").Append(Default).Append("\n");
+            sb.Append("  VarDefault: ").Append(VarDefault).Append("\n");
             sb.Append("  Deleted: ").Append(Deleted).Append("\n");
+            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -227,9 +237,9 @@ namespace Conekta.net.Model
                     this.ParentId.Equals(input.ParentId))
                 ) && 
                 (
-                    this.Default == input.Default ||
-                    (this.Default != null &&
-                    this.Default.Equals(input.Default))
+                    this.VarDefault == input.VarDefault ||
+                    (this.VarDefault != null &&
+                    this.VarDefault.Equals(input.VarDefault))
                 ) && 
                 (
                     this.Deleted == input.Deleted ||
@@ -237,14 +247,20 @@ namespace Conekta.net.Model
                     this.Deleted.Equals(input.Deleted))
                 ) && 
                 (
+                    this.Metadata == input.Metadata ||
+                    this.Metadata != null &&
+                    input.Metadata != null &&
+                    this.Metadata.SequenceEqual(input.Metadata)
+                ) && 
+                (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.CreatedAt == input.CreatedAt ||
@@ -281,21 +297,25 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.ParentId.GetHashCode();
                 }
-                if (this.Default != null)
+                if (this.VarDefault != null)
                 {
-                    hashCode = (hashCode * 59) + this.Default.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarDefault.GetHashCode();
                 }
                 if (this.Deleted != null)
                 {
                     hashCode = (hashCode * 59) + this.Deleted.GetHashCode();
                 }
+                if (this.Metadata != null)
+                {
+                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
+                }
                 if (this.Id != null)
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
                 return hashCode;

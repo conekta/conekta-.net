@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Description** | **string** | description or tax&#39;s name | 
 **Metadata** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **Id** | **string** |  | 
-**Object** | **string** |  | [optional] 
+**VarObject** | **string** |  | [optional] 
 **ParentId** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -35,35 +35,58 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DiscountLinesResponseAllOf" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="_object">_object.</param>
-        /// <param name="parentId">parentId.</param>
-        public DiscountLinesResponseAllOf(string id = default(string), string _object = default(string), string parentId = default(string))
+        [JsonConstructorAttribute]
+        protected DiscountLinesResponseAllOf() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DiscountLinesResponseAllOf" /> class.
+        /// </summary>
+        /// <param name="id">The discount line id (required).</param>
+        /// <param name="varObject">The object name (required).</param>
+        /// <param name="parentId">The order id (required).</param>
+        public DiscountLinesResponseAllOf(string id = default(string), string varObject = default(string), string parentId = default(string))
         {
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for DiscountLinesResponseAllOf and cannot be null");
+            }
             this.Id = id;
-            this.Object = _object;
+            // to ensure "varObject" is required (not null)
+            if (varObject == null)
+            {
+                throw new ArgumentNullException("varObject is a required property for DiscountLinesResponseAllOf and cannot be null");
+            }
+            this.VarObject = varObject;
+            // to ensure "parentId" is required (not null)
+            if (parentId == null)
+            {
+                throw new ArgumentNullException("parentId is a required property for DiscountLinesResponseAllOf and cannot be null");
+            }
             this.ParentId = parentId;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// The discount line id
         /// </summary>
-        /// <example>&quot;dis_lin_2tQQ58HPgPw7StE8z&quot;</example>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        /// <value>The discount line id</value>
+        /// <example>dis_lin_2tQQ58HPgPw7StE8z</example>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// The object name
         /// </summary>
-        /// <example>&quot;discount_line&quot;</example>
-        [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        /// <value>The object name</value>
+        /// <example>discount_line</example>
+        [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
+        public string VarObject { get; set; }
 
         /// <summary>
-        /// Gets or Sets ParentId
+        /// The order id
         /// </summary>
-        /// <example>&quot;ord_2tPAmKCEJqh8RE6nY&quot;</example>
-        [DataMember(Name = "parent_id", EmitDefaultValue = false)]
+        /// <value>The order id</value>
+        /// <example>ord_2tPAmKCEJqh8RE6nY</example>
+        [DataMember(Name = "parent_id", IsRequired = true, EmitDefaultValue = true)]
         public string ParentId { get; set; }
 
         /// <summary>
@@ -75,7 +98,7 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class DiscountLinesResponseAllOf {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -118,9 +141,9 @@ namespace Conekta.net.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.ParentId == input.ParentId ||
@@ -142,9 +165,9 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.ParentId != null)
                 {

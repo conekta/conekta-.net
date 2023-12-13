@@ -27,26 +27,37 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// OrderResponseFiscalEntityAddressAllOf
+    /// balance common fields model
     /// </summary>
-    [DataContract(Name = "order_response_fiscal_entity_address_allOf")]
-    public partial class OrderResponseFiscalEntityAddressAllOf : IEquatable<OrderResponseFiscalEntityAddressAllOf>, IValidatableObject
+    [DataContract(Name = "balance_common_field")]
+    public partial class BalanceCommonField : IEquatable<BalanceCommonField>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrderResponseFiscalEntityAddressAllOf" /> class.
+        /// Initializes a new instance of the <see cref="BalanceCommonField" /> class.
         /// </summary>
-        /// <param name="_object">_object.</param>
-        public OrderResponseFiscalEntityAddressAllOf(string _object = default(string))
+        /// <param name="amount">The balance&#39;s amount.</param>
+        /// <param name="currency">The balance&#39;s currency.</param>
+        public BalanceCommonField(long amount = default(long), string currency = default(string))
         {
-            this.Object = _object;
+            this.Amount = amount;
+            this.Currency = currency;
         }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// The balance&#39;s amount
         /// </summary>
-        /// <example>&quot;fiscal_entity_address&quot;</example>
-        [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        /// <value>The balance&#39;s amount</value>
+        /// <example>100</example>
+        [DataMember(Name = "amount", EmitDefaultValue = false)]
+        public long Amount { get; set; }
+
+        /// <summary>
+        /// The balance&#39;s currency
+        /// </summary>
+        /// <value>The balance&#39;s currency</value>
+        /// <example>MXN</example>
+        [DataMember(Name = "currency", EmitDefaultValue = false)]
+        public string Currency { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -55,8 +66,9 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class OrderResponseFiscalEntityAddressAllOf {\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("class BalanceCommonField {\n");
+            sb.Append("  Amount: ").Append(Amount).Append("\n");
+            sb.Append("  Currency: ").Append(Currency).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -77,15 +89,15 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as OrderResponseFiscalEntityAddressAllOf);
+            return this.Equals(input as BalanceCommonField);
         }
 
         /// <summary>
-        /// Returns true if OrderResponseFiscalEntityAddressAllOf instances are equal
+        /// Returns true if BalanceCommonField instances are equal
         /// </summary>
-        /// <param name="input">Instance of OrderResponseFiscalEntityAddressAllOf to be compared</param>
+        /// <param name="input">Instance of BalanceCommonField to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(OrderResponseFiscalEntityAddressAllOf input)
+        public bool Equals(BalanceCommonField input)
         {
             if (input == null)
             {
@@ -93,9 +105,13 @@ namespace Conekta.net.Model
             }
             return 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.Amount == input.Amount ||
+                    this.Amount.Equals(input.Amount)
+                ) && 
+                (
+                    this.Currency == input.Currency ||
+                    (this.Currency != null &&
+                    this.Currency.Equals(input.Currency))
                 );
         }
 
@@ -108,9 +124,10 @@ namespace Conekta.net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Object != null)
+                hashCode = (hashCode * 59) + this.Amount.GetHashCode();
+                if (this.Currency != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Currency.GetHashCode();
                 }
                 return hashCode;
             }

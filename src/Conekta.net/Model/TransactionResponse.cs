@@ -48,10 +48,10 @@ namespace Conekta.net.Model
         /// <param name="id">Unique identifier of the transaction. (required).</param>
         /// <param name="livemode">Indicates whether the transaction was created in live mode or test mode. (required).</param>
         /// <param name="net">The net amount after deducting commissions and taxes. (required).</param>
-        /// <param name="_object">Object name, which is transaction. (required).</param>
+        /// <param name="varObject">Object name, which is transaction. (required).</param>
         /// <param name="status">Code indicating transaction status. (required).</param>
         /// <param name="type">Transaction Type (required).</param>
-        public TransactionResponse(long amount = default(long), string charge = default(string), long createdAt = default(long), string currency = default(string), long fee = default(long), string id = default(string), bool livemode = default(bool), long net = default(long), string _object = default(string), string status = default(string), string type = default(string))
+        public TransactionResponse(long amount = default(long), string charge = default(string), long createdAt = default(long), string currency = default(string), long fee = default(long), string id = default(string), bool livemode = default(bool), long net = default(long), string varObject = default(string), string status = default(string), string type = default(string))
         {
             this.Amount = amount;
             // to ensure "charge" is required (not null)
@@ -76,12 +76,12 @@ namespace Conekta.net.Model
             this.Id = id;
             this.Livemode = livemode;
             this.Net = net;
-            // to ensure "_object" is required (not null)
-            if (_object == null)
+            // to ensure "varObject" is required (not null)
+            if (varObject == null)
             {
-                throw new ArgumentNullException("_object is a required property for TransactionResponse and cannot be null");
+                throw new ArgumentNullException("varObject is a required property for TransactionResponse and cannot be null");
             }
-            this.Object = _object;
+            this.VarObject = varObject;
             // to ensure "status" is required (not null)
             if (status == null)
             {
@@ -108,7 +108,7 @@ namespace Conekta.net.Model
         /// Randomly assigned unique order identifier associated with the charge.
         /// </summary>
         /// <value>Randomly assigned unique order identifier associated with the charge.</value>
-        /// <example>&quot;5ee7ec58885a45585e6d9f8m&quot;</example>
+        /// <example>5ee7ec58885a45585e6d9f8m</example>
         [DataMember(Name = "charge", IsRequired = true, EmitDefaultValue = true)]
         public string Charge { get; set; }
 
@@ -124,7 +124,7 @@ namespace Conekta.net.Model
         /// The currency of the transaction. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)
         /// </summary>
         /// <value>The currency of the transaction. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)</value>
-        /// <example>&quot;MXN&quot;</example>
+        /// <example>MXN</example>
         [DataMember(Name = "currency", IsRequired = true, EmitDefaultValue = true)]
         public string Currency { get; set; }
 
@@ -140,7 +140,7 @@ namespace Conekta.net.Model
         /// Unique identifier of the transaction.
         /// </summary>
         /// <value>Unique identifier of the transaction.</value>
-        /// <example>&quot;5ee7ec5b8dea41085erb7f9e&quot;</example>
+        /// <example>5ee7ec5b8dea41085erb7f9e</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
@@ -164,15 +164,15 @@ namespace Conekta.net.Model
         /// Object name, which is transaction.
         /// </summary>
         /// <value>Object name, which is transaction.</value>
-        /// <example>&quot;transaction&quot;</example>
+        /// <example>transaction</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Code indicating transaction status.
         /// </summary>
         /// <value>Code indicating transaction status.</value>
-        /// <example>&quot;pending&quot;</example>
+        /// <example>pending</example>
         [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
         public string Status { get; set; }
 
@@ -180,7 +180,7 @@ namespace Conekta.net.Model
         /// Transaction Type
         /// </summary>
         /// <value>Transaction Type</value>
-        /// <example>&quot;capture&quot;</example>
+        /// <example>capture</example>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
@@ -200,7 +200,7 @@ namespace Conekta.net.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
             sb.Append("  Net: ").Append(Net).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
@@ -274,9 +274,9 @@ namespace Conekta.net.Model
                     this.Net.Equals(input.Net)
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.Status == input.Status ||
@@ -316,9 +316,9 @@ namespace Conekta.net.Model
                 }
                 hashCode = (hashCode * 59) + this.Livemode.GetHashCode();
                 hashCode = (hashCode * 59) + this.Net.GetHashCode();
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.Status != null)
                 {

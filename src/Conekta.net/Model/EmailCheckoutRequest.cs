@@ -54,7 +54,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
-        /// <example>&quot;example@conekta.com&quot;</example>
+        /// <example>example@conekta.com</example>
         [DataMember(Name = "email", IsRequired = true, EmitDefaultValue = true)]
         public string Email { get; set; }
 

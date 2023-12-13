@@ -41,15 +41,15 @@ namespace Conekta.net.Model
         /// Initializes a new instance of the <see cref="PaymentMethod" /> class.
         /// </summary>
         /// <param name="type">type.</param>
-        /// <param name="_object">_object (required).</param>
-        public PaymentMethod(string type = default(string), string _object = default(string))
+        /// <param name="varObject">varObject (required).</param>
+        public PaymentMethod(string type = default(string), string varObject = default(string))
         {
-            // to ensure "_object" is required (not null)
-            if (_object == null)
+            // to ensure "varObject" is required (not null)
+            if (varObject == null)
             {
-                throw new ArgumentNullException("_object is a required property for PaymentMethod and cannot be null");
+                throw new ArgumentNullException("varObject is a required property for PaymentMethod and cannot be null");
             }
-            this.Object = _object;
+            this.VarObject = varObject;
             this.Type = type;
         }
 
@@ -60,11 +60,11 @@ namespace Conekta.net.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;payment_source&quot;</example>
+        /// <example>payment_source</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -75,7 +75,7 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class PaymentMethod {\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -117,9 +117,9 @@ namespace Conekta.net.Model
                     this.Type.Equals(input.Type))
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 );
         }
 
@@ -136,9 +136,9 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 }
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 return hashCode;
             }

@@ -70,6 +70,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets AntifraudInfo
         /// </summary>
+        /// <example>{&quot;key&quot;:&quot;value&quot;}</example>
         [DataMember(Name = "antifraud_info", EmitDefaultValue = false)]
         public Dictionary<string, Object> AntifraudInfo { get; set; }
 
@@ -77,7 +78,7 @@ namespace Conekta.net.Model
         /// The brand of the item.
         /// </summary>
         /// <value>The brand of the item.</value>
-        /// <example>&quot;Cohiba&quot;</example>
+        /// <example>Cohiba</example>
         [DataMember(Name = "brand", EmitDefaultValue = false)]
         public string Brand { get; set; }
 
@@ -85,7 +86,7 @@ namespace Conekta.net.Model
         /// Short description of the item
         /// </summary>
         /// <value>Short description of the item</value>
-        /// <example>&quot;Imported From Mex.&quot;</example>
+        /// <example>Imported From Mex.</example>
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
@@ -93,6 +94,7 @@ namespace Conekta.net.Model
         /// It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.
         /// </summary>
         /// <value>It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.</value>
+        /// <example>{&quot;key&quot;:&quot;value&quot;}</example>
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, string> Metadata { get; set; }
 
@@ -100,7 +102,7 @@ namespace Conekta.net.Model
         /// The name of the item. It will be displayed in the order.
         /// </summary>
         /// <value>The name of the item. It will be displayed in the order.</value>
-        /// <example>&quot;Box of Cohiba S1s&quot;</example>
+        /// <example>Box of Cohiba S1s</example>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -116,7 +118,7 @@ namespace Conekta.net.Model
         /// The stock keeping unit for the item. It is used to identify the item in the order.
         /// </summary>
         /// <value>The stock keeping unit for the item. It is used to identify the item in the order.</value>
-        /// <example>&quot;XYZ12345&quot;</example>
+        /// <example>XYZ12345</example>
         [DataMember(Name = "sku", EmitDefaultValue = false)]
         public string Sku { get; set; }
 
@@ -124,6 +126,7 @@ namespace Conekta.net.Model
         /// List of tags for the item. It is used to identify the item in the order.
         /// </summary>
         /// <value>List of tags for the item. It is used to identify the item in the order.</value>
+        /// <example>[&quot;food&quot;,&quot;mexican food&quot;]</example>
         [DataMember(Name = "tags", EmitDefaultValue = false)]
         public List<string> Tags { get; set; }
 

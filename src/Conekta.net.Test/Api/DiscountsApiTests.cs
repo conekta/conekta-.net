@@ -32,7 +32,7 @@ namespace Conekta.net.Test.Api
             Configuration configuration = new()
             {
                 BasePath = BaseTest.BasePath,
-                AccessToken = "key_uMxL6X1txuxyzQzJEXt72Aaaa"
+                AccessToken = "xxxxx"
             };
             _instance = new DiscountsApi(configuration);
         }
@@ -86,5 +86,25 @@ namespace Conekta.net.Test.Api
             Assert.Equal(orderDiscountLinesRequest.Amount, response.Amount);
             Assert.Equal(id, response.ParentId);
         }
-    }
+
+        [Fact]
+        public void OrdersGetDiscountLineTest()
+        {
+            var response = _instance.OrdersGetDiscountLine("ord_2tkwrBmcvGnA9zdU9", "dis_lin_2tkwrBmcvGnA9zdU6");
+            
+            Assert.IsType<DiscountLinesResponse>(response);
+            Assert.Equal("ord_2tkwrBmcvGnA9zdU9", response.ParentId);
+            Assert.Equal(500, response.Amount);
+            Assert.Equal("dis_lin_2tkwrBmcvGnA9zdU6", response.Id);
+        }
+        [Fact]
+        public void OrderGetDiscountLinesTest()
+        {
+            var response = _instance.OrdersGetDiscountLines("ord_2tVyWPnCPWbrV37mW");
+            
+            Assert.IsType<GetOrderDiscountLinesResponse>(response);
+            Assert.Equal("ord_2tVyWPnCPWbrV37mW", response.Data[0].ParentId);
+            Assert.Equal("ord_2tVyWPnCPWbrV37mW", response.Data[1].ParentId);
+        }
+}
 }

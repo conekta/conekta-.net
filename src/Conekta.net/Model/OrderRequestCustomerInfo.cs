@@ -28,7 +28,7 @@ using System.Reflection;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// OrderRequestCustomerInfo
+    /// Customer information
     /// </summary>
     [JsonConverter(typeof(OrderRequestCustomerInfoJsonConverter))]
     [DataContract(Name = "order_request_customer_info")]
@@ -191,7 +191,7 @@ namespace Conekta.net.Model
             }
             else if (match > 1)
             {
-                throw new InvalidDataException("The JSON string `" + jsonString + "` incorrectly matches more than one schema (should be exactly one match): " + matchedTypes);
+                throw new InvalidDataException("The JSON string `" + jsonString + "` incorrectly matches more than one schema (should be exactly one match): " + String.Join(",", matchedTypes));
             }
 
             // deserialization is considered successful at this point if no exception has been thrown.

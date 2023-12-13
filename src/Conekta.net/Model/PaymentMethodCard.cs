@@ -41,10 +41,11 @@ namespace Conekta.net.Model
         /// Initializes a new instance of the <see cref="PaymentMethodCard" /> class.
         /// </summary>
         /// <param name="type">type.</param>
-        /// <param name="_object">_object (required).</param>
+        /// <param name="varObject">varObject (required).</param>
         /// <param name="accountType">accountType.</param>
         /// <param name="authCode">authCode.</param>
         /// <param name="brand">brand.</param>
+        /// <param name="contractId">Id sent for recurrent charges..</param>
         /// <param name="country">country.</param>
         /// <param name="expMonth">expMonth.</param>
         /// <param name="expYear">expYear.</param>
@@ -52,18 +53,19 @@ namespace Conekta.net.Model
         /// <param name="issuer">issuer.</param>
         /// <param name="last4">last4.</param>
         /// <param name="name">name.</param>
-        public PaymentMethodCard(string type = default(string), string _object = default(string), string accountType = default(string), string authCode = default(string), string brand = default(string), string country = default(string), string expMonth = default(string), string expYear = default(string), List<Object> fraudIndicators = default(List<Object>), string issuer = default(string), string last4 = default(string), string name = default(string))
+        public PaymentMethodCard(string type = default(string), string varObject = default(string), string accountType = default(string), string authCode = default(string), string brand = default(string), string contractId = default(string), string country = default(string), string expMonth = default(string), string expYear = default(string), List<Object> fraudIndicators = default(List<Object>), string issuer = default(string), string last4 = default(string), string name = default(string))
         {
-            // to ensure "_object" is required (not null)
-            if (_object == null)
+            // to ensure "varObject" is required (not null)
+            if (varObject == null)
             {
-                throw new ArgumentNullException("_object is a required property for PaymentMethodCard and cannot be null");
+                throw new ArgumentNullException("varObject is a required property for PaymentMethodCard and cannot be null");
             }
-            this.Object = _object;
+            this.VarObject = varObject;
             this.Type = type;
             this.AccountType = accountType;
             this.AuthCode = authCode;
             this.Brand = brand;
+            this.ContractId = contractId;
             this.Country = country;
             this.ExpMonth = expMonth;
             this.ExpYear = expYear;
@@ -80,51 +82,59 @@ namespace Conekta.net.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;payment_source&quot;</example>
+        /// <example>payment_source</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Gets or Sets AccountType
         /// </summary>
-        /// <example>&quot;Credit&quot;</example>
+        /// <example>Credit</example>
         [DataMember(Name = "account_type", EmitDefaultValue = false)]
         public string AccountType { get; set; }
 
         /// <summary>
         /// Gets or Sets AuthCode
         /// </summary>
-        /// <example>&quot;867372&quot;</example>
+        /// <example>867372</example>
         [DataMember(Name = "auth_code", EmitDefaultValue = false)]
         public string AuthCode { get; set; }
 
         /// <summary>
         /// Gets or Sets Brand
         /// </summary>
-        /// <example>&quot;visa&quot;</example>
+        /// <example>visa</example>
         [DataMember(Name = "brand", EmitDefaultValue = false)]
         public string Brand { get; set; }
 
         /// <summary>
+        /// Id sent for recurrent charges.
+        /// </summary>
+        /// <value>Id sent for recurrent charges.</value>
+        /// <example>S781317595</example>
+        [DataMember(Name = "contract_id", EmitDefaultValue = false)]
+        public string ContractId { get; set; }
+
+        /// <summary>
         /// Gets or Sets Country
         /// </summary>
-        /// <example>&quot;MX&quot;</example>
+        /// <example>MX</example>
         [DataMember(Name = "country", EmitDefaultValue = false)]
         public string Country { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpMonth
         /// </summary>
-        /// <example>&quot;02&quot;</example>
+        /// <example>02</example>
         [DataMember(Name = "exp_month", EmitDefaultValue = false)]
         public string ExpMonth { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpYear
         /// </summary>
-        /// <example>&quot;30&quot;</example>
+        /// <example>30</example>
         [DataMember(Name = "exp_year", EmitDefaultValue = false)]
         public string ExpYear { get; set; }
 
@@ -137,21 +147,21 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Issuer
         /// </summary>
-        /// <example>&quot;BANAMEX&quot;</example>
+        /// <example>BANAMEX</example>
         [DataMember(Name = "issuer", EmitDefaultValue = false)]
         public string Issuer { get; set; }
 
         /// <summary>
         /// Gets or Sets Last4
         /// </summary>
-        /// <example>&quot;4242&quot;</example>
+        /// <example>4242</example>
         [DataMember(Name = "last4", EmitDefaultValue = false)]
         public string Last4 { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /// <example>&quot;Fulanito Perez&quot;</example>
+        /// <example>Fulanito Perez</example>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
@@ -164,10 +174,11 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class PaymentMethodCard {\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  AccountType: ").Append(AccountType).Append("\n");
             sb.Append("  AuthCode: ").Append(AuthCode).Append("\n");
             sb.Append("  Brand: ").Append(Brand).Append("\n");
+            sb.Append("  ContractId: ").Append(ContractId).Append("\n");
             sb.Append("  Country: ").Append(Country).Append("\n");
             sb.Append("  ExpMonth: ").Append(ExpMonth).Append("\n");
             sb.Append("  ExpYear: ").Append(ExpYear).Append("\n");
@@ -216,9 +227,9 @@ namespace Conekta.net.Model
                     this.Type.Equals(input.Type))
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.AccountType == input.AccountType ||
@@ -234,6 +245,11 @@ namespace Conekta.net.Model
                     this.Brand == input.Brand ||
                     (this.Brand != null &&
                     this.Brand.Equals(input.Brand))
+                ) && 
+                (
+                    this.ContractId == input.ContractId ||
+                    (this.ContractId != null &&
+                    this.ContractId.Equals(input.ContractId))
                 ) && 
                 (
                     this.Country == input.Country ||
@@ -286,9 +302,9 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 }
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.AccountType != null)
                 {
@@ -301,6 +317,10 @@ namespace Conekta.net.Model
                 if (this.Brand != null)
                 {
                     hashCode = (hashCode * 59) + this.Brand.GetHashCode();
+                }
+                if (this.ContractId != null)
+                {
+                    hashCode = (hashCode * 59) + this.ContractId.GetHashCode();
                 }
                 if (this.Country != null)
                 {

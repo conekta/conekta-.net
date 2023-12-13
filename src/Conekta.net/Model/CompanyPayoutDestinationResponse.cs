@@ -44,7 +44,6 @@ namespace Conekta.net.Model
             /// </summary>
             [EnumMember(Value = "payout_destination")]
             PayoutDestination = 1
-
         }
 
 
@@ -53,7 +52,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>The resource&#39;s type</value>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public ObjectEnum? Object { get; set; }
+        public ObjectEnum? VarObject { get; set; }
         /// <summary>
         /// Type of the payout destination
         /// </summary>
@@ -66,7 +65,6 @@ namespace Conekta.net.Model
             /// </summary>
             [EnumMember(Value = "bank_account")]
             BankAccount = 1
-
         }
 
 
@@ -79,15 +77,15 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CompanyPayoutDestinationResponse" /> class.
         /// </summary>
-        /// <param name="_object">The resource&#39;s type.</param>
+        /// <param name="varObject">The resource&#39;s type.</param>
         /// <param name="currency">currency of the receiving account.</param>
         /// <param name="accountHolderName">Name of the account holder.</param>
         /// <param name="bank">Name of the bank.</param>
         /// <param name="type">Type of the payout destination.</param>
         /// <param name="accountNumber">Account number of the receiving account.</param>
-        public CompanyPayoutDestinationResponse(ObjectEnum? _object = default(ObjectEnum?), string currency = default(string), string accountHolderName = default(string), string bank = default(string), TypeEnum? type = default(TypeEnum?), string accountNumber = default(string))
+        public CompanyPayoutDestinationResponse(ObjectEnum? varObject = default(ObjectEnum?), string currency = default(string), string accountHolderName = default(string), string bank = default(string), TypeEnum? type = default(TypeEnum?), string accountNumber = default(string))
         {
-            this.Object = _object;
+            this.VarObject = varObject;
             this.Currency = currency;
             this.AccountHolderName = accountHolderName;
             this.Bank = bank;
@@ -99,7 +97,7 @@ namespace Conekta.net.Model
         /// currency of the receiving account
         /// </summary>
         /// <value>currency of the receiving account</value>
-        /// <example>&quot;MXN&quot;</example>
+        /// <example>MXN</example>
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 
@@ -107,7 +105,7 @@ namespace Conekta.net.Model
         /// Name of the account holder
         /// </summary>
         /// <value>Name of the account holder</value>
-        /// <example>&quot;Child Company A&quot;</example>
+        /// <example>Child Company A</example>
         [DataMember(Name = "account_holder_name", EmitDefaultValue = false)]
         public string AccountHolderName { get; set; }
 
@@ -115,7 +113,7 @@ namespace Conekta.net.Model
         /// Name of the bank
         /// </summary>
         /// <value>Name of the bank</value>
-        /// <example>&quot;BBVA&quot;</example>
+        /// <example>BBVA</example>
         [DataMember(Name = "bank", EmitDefaultValue = false)]
         public string Bank { get; set; }
 
@@ -123,7 +121,7 @@ namespace Conekta.net.Model
         /// Account number of the receiving account
         /// </summary>
         /// <value>Account number of the receiving account</value>
-        /// <example>&quot;123456789012345678&quot;</example>
+        /// <example>123456789012345678</example>
         [DataMember(Name = "account_number", EmitDefaultValue = false)]
         public string AccountNumber { get; set; }
 
@@ -135,7 +133,7 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class CompanyPayoutDestinationResponse {\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  Currency: ").Append(Currency).Append("\n");
             sb.Append("  AccountHolderName: ").Append(AccountHolderName).Append("\n");
             sb.Append("  Bank: ").Append(Bank).Append("\n");
@@ -177,8 +175,8 @@ namespace Conekta.net.Model
             }
             return 
                 (
-                    this.Object == input.Object ||
-                    this.Object.Equals(input.Object)
+                    this.VarObject == input.VarObject ||
+                    this.VarObject.Equals(input.VarObject)
                 ) && 
                 (
                     this.Currency == input.Currency ||
@@ -215,7 +213,7 @@ namespace Conekta.net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 if (this.Currency != null)
                 {
                     hashCode = (hashCode * 59) + this.Currency.GetHashCode();

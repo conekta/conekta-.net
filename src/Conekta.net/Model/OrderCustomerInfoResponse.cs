@@ -27,46 +27,56 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// CustomerInfoResponse
+    /// OrderCustomerInfoResponse
     /// </summary>
-    [DataContract(Name = "customer_info_response")]
-    public partial class CustomerInfoResponse : IEquatable<CustomerInfoResponse>, IValidatableObject
+    [DataContract(Name = "order_customer_info_response")]
+    public partial class OrderCustomerInfoResponse : IEquatable<OrderCustomerInfoResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomerInfoResponse" /> class.
+        /// Initializes a new instance of the <see cref="OrderCustomerInfoResponse" /> class.
         /// </summary>
+        /// <param name="customerCustomReference">Custom reference.</param>
         /// <param name="name">name.</param>
         /// <param name="email">email.</param>
         /// <param name="phone">phone.</param>
         /// <param name="corporate">corporate (default to false).</param>
-        /// <param name="_object">_object.</param>
-        public CustomerInfoResponse(string name = default(string), string email = default(string), string phone = default(string), bool corporate = false, string _object = default(string))
+        /// <param name="varObject">varObject.</param>
+        public OrderCustomerInfoResponse(string customerCustomReference = default(string), string name = default(string), string email = default(string), string phone = default(string), bool corporate = false, string varObject = default(string))
         {
+            this.CustomerCustomReference = customerCustomReference;
             this.Name = name;
             this.Email = email;
             this.Phone = phone;
             this.Corporate = corporate;
-            this.Object = _object;
+            this.VarObject = varObject;
         }
+
+        /// <summary>
+        /// Custom reference
+        /// </summary>
+        /// <value>Custom reference</value>
+        /// <example>custom_reference</example>
+        [DataMember(Name = "customer_custom_reference", EmitDefaultValue = true)]
+        public string CustomerCustomReference { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /// <example>&quot;DevTest&quot;</example>
+        /// <example>DevTest</example>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
-        /// <example>&quot;test@conekta.com&quot;</example>
+        /// <example>test@conekta.com</example>
         [DataMember(Name = "email", EmitDefaultValue = false)]
         public string Email { get; set; }
 
         /// <summary>
         /// Gets or Sets Phone
         /// </summary>
-        /// <example>&quot;5522997233&quot;</example>
+        /// <example>5522997233</example>
         [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
@@ -77,11 +87,11 @@ namespace Conekta.net.Model
         public bool Corporate { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;customer_info&quot;</example>
+        /// <example>customer_info</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -90,12 +100,13 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CustomerInfoResponse {\n");
+            sb.Append("class OrderCustomerInfoResponse {\n");
+            sb.Append("  CustomerCustomReference: ").Append(CustomerCustomReference).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  Phone: ").Append(Phone).Append("\n");
             sb.Append("  Corporate: ").Append(Corporate).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -116,21 +127,26 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CustomerInfoResponse);
+            return this.Equals(input as OrderCustomerInfoResponse);
         }
 
         /// <summary>
-        /// Returns true if CustomerInfoResponse instances are equal
+        /// Returns true if OrderCustomerInfoResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of CustomerInfoResponse to be compared</param>
+        /// <param name="input">Instance of OrderCustomerInfoResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CustomerInfoResponse input)
+        public bool Equals(OrderCustomerInfoResponse input)
         {
             if (input == null)
             {
                 return false;
             }
             return 
+                (
+                    this.CustomerCustomReference == input.CustomerCustomReference ||
+                    (this.CustomerCustomReference != null &&
+                    this.CustomerCustomReference.Equals(input.CustomerCustomReference))
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
@@ -151,9 +167,9 @@ namespace Conekta.net.Model
                     this.Corporate.Equals(input.Corporate)
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 );
         }
 
@@ -166,6 +182,10 @@ namespace Conekta.net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.CustomerCustomReference != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomerCustomReference.GetHashCode();
+                }
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
@@ -179,9 +199,9 @@ namespace Conekta.net.Model
                     hashCode = (hashCode * 59) + this.Phone.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Corporate.GetHashCode();
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 return hashCode;
             }

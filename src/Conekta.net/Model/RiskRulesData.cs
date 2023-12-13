@@ -57,7 +57,7 @@ namespace Conekta.net.Model
         /// rule id
         /// </summary>
         /// <value>rule id</value>
-        /// <example>&quot;618c3f2fdb8b8da9be376af9&quot;</example>
+        /// <example>618c3f2fdb8b8da9be376af9</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -65,7 +65,7 @@ namespace Conekta.net.Model
         /// field to be used for the rule
         /// </summary>
         /// <value>field to be used for the rule</value>
-        /// <example>&quot;email&quot;</example>
+        /// <example>email</example>
         [DataMember(Name = "field", EmitDefaultValue = false)]
         public string Field { get; set; }
 
@@ -73,7 +73,7 @@ namespace Conekta.net.Model
         /// rule creation date
         /// </summary>
         /// <value>rule creation date</value>
-        /// <example>&quot;2021-11-10T21:52:47.339Z&quot;</example>
+        /// <example>2021-11-10T21:52:47.339Z</example>
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public string CreatedAt { get; set; }
 
@@ -81,7 +81,7 @@ namespace Conekta.net.Model
         /// value to be used for the rule
         /// </summary>
         /// <value>value to be used for the rule</value>
-        /// <example>&quot;email@example.com&quot;</example>
+        /// <example>email@example.com</example>
         [DataMember(Name = "value", EmitDefaultValue = false)]
         public string Value { get; set; }
 
@@ -105,7 +105,7 @@ namespace Conekta.net.Model
         /// description of the rule
         /// </summary>
         /// <value>description of the rule</value>
-        /// <example>&quot;secure customer example@example.com&quot;</example>
+        /// <example>secure customer example@example.com</example>
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 

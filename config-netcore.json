@@ -1,0 +1,37 @@
+{
+  "targetFramework" : "netstandard2.0;net6.0",
+  "testTargetFramework" : "net6.0",
+  "files": {
+    "CODE_OF_CONDUCT.md" : {},
+    "AUTHORS.md" : {},
+    "LICENSE" : {},
+    "conekta.png" : {},
+    "CONTRIBUTING.md" : {},
+    "RuntimeInformation.mustache" : {
+      "templateType": "SupportingFiles",
+      "destinationFilename": "RuntimeInformation.cs",
+      "folder": "src/Conekta.net/Utils"
+    },
+    "VERSION.mustache" : {
+      "templateType": "SupportingFiles",
+      "destinationFilename": "VERSION"
+    }
+  },
+  "apiName" : "conekta",
+  "packageName" : "Conekta.net",
+  "netCoreProjectFile" : true,
+  "packageDescription" : "This is a .net library that allows interaction with https://api.conekta.io API.",
+  "packageTitle" : "Conekta Library",
+  "gitUserId": "conekta",
+  "gitRepoId": "conekta-.net",
+  "httpUserAgent": "Conekta/v2 .NetBindings/{Version}",
+  "packageAuthors" : "engineering@conekta.com",
+  "packageCompany" : "Conekta",
+  "useGenericHost" : false,
+  "templateDir": "templates/netcore",
+  "useOneOfDiscriminatorLookup" : true,
+  "packageCopyright" : "Conekta",
+  "PackageReleaseNotes" : "",
+  "releaseNote" : "support for resend event, api keys and webhook keys",
+  "packageVersion" : "6.0.6"
+}

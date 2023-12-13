@@ -36,25 +36,25 @@ namespace Conekta.net.Model
         /// Initializes a new instance of the <see cref="DeleteApiKeysResponse" /> class.
         /// </summary>
         /// <param name="active">Indicates if the api key is active.</param>
-        /// <param name="createdAt">Unix timestamp in seconds with the creation date of the api key.</param>
-        /// <param name="description">Detail of the use that will be given to the api key.</param>
-        /// <param name="id">Unique identifier of the api key.</param>
-        /// <param name="livemode">Indicates if the api key is in live mode.</param>
-        /// <param name="_object">Object name, value is api_key.</param>
+        /// <param name="createdAt">Unix timestamp in seconds of when the api key was created.</param>
+        /// <param name="description">A name or brief explanation of what this api key is used for.</param>
+        /// <param name="livemode">Indicates if the api key is in production.</param>
         /// <param name="prefix">The first few characters of the authentication_token.</param>
-        /// <param name="role">Indicates the user account private&#x3D;owner or public&#x3D;public.</param>
+        /// <param name="id">Unique identifier of the api key.</param>
+        /// <param name="varObject">Object name, value is &#39;api_key&#39;.</param>
         /// <param name="deleted">deleted.</param>
-        public DeleteApiKeysResponse(bool active = default(bool), long createdAt = default(long), string description = default(string), string id = default(string), bool livemode = default(bool), string _object = default(string), string prefix = default(string), string role = default(string), bool deleted = default(bool))
+        /// <param name="role">Indicates if the api key is private or public.</param>
+        public DeleteApiKeysResponse(bool active = default(bool), long createdAt = default(long), string description = default(string), bool livemode = default(bool), string prefix = default(string), string id = default(string), string varObject = default(string), bool deleted = default(bool), string role = default(string))
         {
             this.Active = active;
             this.CreatedAt = createdAt;
             this.Description = description;
-            this.Id = id;
             this.Livemode = livemode;
-            this.Object = _object;
             this.Prefix = prefix;
-            this.Role = role;
+            this.Id = id;
+            this.VarObject = varObject;
             this.Deleted = deleted;
+            this.Role = role;
         }
 
         /// <summary>
@@ -66,60 +66,52 @@ namespace Conekta.net.Model
         public bool Active { get; set; }
 
         /// <summary>
-        /// Unix timestamp in seconds with the creation date of the api key
+        /// Unix timestamp in seconds of when the api key was created
         /// </summary>
-        /// <value>Unix timestamp in seconds with the creation date of the api key</value>
+        /// <value>Unix timestamp in seconds of when the api key was created</value>
         /// <example>1684167881</example>
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public long CreatedAt { get; set; }
 
         /// <summary>
-        /// Detail of the use that will be given to the api key
+        /// A name or brief explanation of what this api key is used for
         /// </summary>
-        /// <value>Detail of the use that will be given to the api key</value>
-        /// <example>&quot;online store&quot;</example>
+        /// <value>A name or brief explanation of what this api key is used for</value>
+        /// <example>online store</example>
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
-        /// Unique identifier of the api key
+        /// Indicates if the api key is in production
         /// </summary>
-        /// <value>Unique identifier of the api key</value>
-        /// <example>&quot;64625cc9f3e02c00163f5e4d&quot;</example>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public string Id { get; set; }
-
-        /// <summary>
-        /// Indicates if the api key is in live mode
-        /// </summary>
-        /// <value>Indicates if the api key is in live mode</value>
+        /// <value>Indicates if the api key is in production</value>
         /// <example>false</example>
         [DataMember(Name = "livemode", EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
         /// <summary>
-        /// Object name, value is api_key
-        /// </summary>
-        /// <value>Object name, value is api_key</value>
-        /// <example>&quot;api_key&quot;</example>
-        [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
-
-        /// <summary>
         /// The first few characters of the authentication_token
         /// </summary>
         /// <value>The first few characters of the authentication_token</value>
-        /// <example>&quot;key_rp&quot;</example>
+        /// <example>key_rp</example>
         [DataMember(Name = "prefix", EmitDefaultValue = false)]
         public string Prefix { get; set; }
 
         /// <summary>
-        /// Indicates the user account private&#x3D;owner or public&#x3D;public
+        /// Unique identifier of the api key
         /// </summary>
-        /// <value>Indicates the user account private&#x3D;owner or public&#x3D;public</value>
-        /// <example>&quot;private&quot;</example>
-        [DataMember(Name = "role", EmitDefaultValue = false)]
-        public string Role { get; set; }
+        /// <value>Unique identifier of the api key</value>
+        /// <example>64625cc9f3e02c00163f5e4d</example>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Object name, value is &#39;api_key&#39;
+        /// </summary>
+        /// <value>Object name, value is &#39;api_key&#39;</value>
+        /// <example>api_key</example>
+        [DataMember(Name = "object", EmitDefaultValue = false)]
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Gets or Sets Deleted
@@ -127,6 +119,14 @@ namespace Conekta.net.Model
         /// <example>true</example>
         [DataMember(Name = "deleted", EmitDefaultValue = true)]
         public bool Deleted { get; set; }
+
+        /// <summary>
+        /// Indicates if the api key is private or public
+        /// </summary>
+        /// <value>Indicates if the api key is private or public</value>
+        /// <example>private</example>
+        [DataMember(Name = "role", EmitDefaultValue = false)]
+        public string Role { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -139,12 +139,12 @@ namespace Conekta.net.Model
             sb.Append("  Active: ").Append(Active).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  Prefix: ").Append(Prefix).Append("\n");
-            sb.Append("  Role: ").Append(Role).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  Deleted: ").Append(Deleted).Append("\n");
+            sb.Append("  Role: ").Append(Role).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -194,18 +194,8 @@ namespace Conekta.net.Model
                     this.Description.Equals(input.Description))
                 ) && 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
                     this.Livemode == input.Livemode ||
                     this.Livemode.Equals(input.Livemode)
-                ) && 
-                (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
                 ) && 
                 (
                     this.Prefix == input.Prefix ||
@@ -213,13 +203,23 @@ namespace Conekta.net.Model
                     this.Prefix.Equals(input.Prefix))
                 ) && 
                 (
-                    this.Role == input.Role ||
-                    (this.Role != null &&
-                    this.Role.Equals(input.Role))
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.Deleted == input.Deleted ||
                     this.Deleted.Equals(input.Deleted)
+                ) && 
+                (
+                    this.Role == input.Role ||
+                    (this.Role != null &&
+                    this.Role.Equals(input.Role))
                 );
         }
 
@@ -238,24 +238,24 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();
                 }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
                 hashCode = (hashCode * 59) + this.Livemode.GetHashCode();
-                if (this.Object != null)
-                {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
-                }
                 if (this.Prefix != null)
                 {
                     hashCode = (hashCode * 59) + this.Prefix.GetHashCode();
                 }
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
+                if (this.VarObject != null)
+                {
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.Deleted.GetHashCode();
                 if (this.Role != null)
                 {
                     hashCode = (hashCode * 59) + this.Role.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Deleted.GetHashCode();
                 return hashCode;
             }
         }

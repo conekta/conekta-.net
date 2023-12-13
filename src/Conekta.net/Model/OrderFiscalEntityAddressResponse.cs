@@ -27,88 +27,101 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// OrderResponseFiscalEntityAddress
+    /// Address of the fiscal entity
     /// </summary>
-    [DataContract(Name = "order_response_fiscal_entity_address")]
-    public partial class OrderResponseFiscalEntityAddress : IEquatable<OrderResponseFiscalEntityAddress>, IValidatableObject
+    [DataContract(Name = "order_fiscal_entity_address_response")]
+    public partial class OrderFiscalEntityAddressResponse : IEquatable<OrderFiscalEntityAddressResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrderResponseFiscalEntityAddress" /> class.
+        /// Initializes a new instance of the <see cref="OrderFiscalEntityAddressResponse" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected OrderResponseFiscalEntityAddress() { }
+        protected OrderFiscalEntityAddressResponse() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrderResponseFiscalEntityAddress" /> class.
+        /// Initializes a new instance of the <see cref="OrderFiscalEntityAddressResponse" /> class.
         /// </summary>
-        /// <param name="street1">street1 (required).</param>
-        /// <param name="street2">street2.</param>
-        /// <param name="postalCode">postalCode (required).</param>
-        /// <param name="city">city (required).</param>
-        /// <param name="state">state.</param>
-        /// <param name="country">this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).</param>
-        /// <param name="residential">residential.</param>
-        /// <param name="externalNumber">externalNumber.</param>
-        /// <param name="_object">_object.</param>
-        public OrderResponseFiscalEntityAddress(string street1 = default(string), string street2 = default(string), string postalCode = default(string), string city = default(string), string state = default(string), string country = default(string), bool residential = default(bool), string externalNumber = default(string), string _object = default(string))
+        /// <param name="street1">Street name and number (required).</param>
+        /// <param name="street2">Street name and number.</param>
+        /// <param name="postalCode">Postal code (required).</param>
+        /// <param name="city">City (required).</param>
+        /// <param name="state">State.</param>
+        /// <param name="country">this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) (required).</param>
+        /// <param name="externalNumber">External number (required).</param>
+        /// <param name="varObject">varObject.</param>
+        public OrderFiscalEntityAddressResponse(string street1 = default(string), string street2 = default(string), string postalCode = default(string), string city = default(string), string state = default(string), string country = default(string), string externalNumber = default(string), string varObject = default(string))
         {
             // to ensure "street1" is required (not null)
             if (street1 == null)
             {
-                throw new ArgumentNullException("street1 is a required property for OrderResponseFiscalEntityAddress and cannot be null");
+                throw new ArgumentNullException("street1 is a required property for OrderFiscalEntityAddressResponse and cannot be null");
             }
             this.Street1 = street1;
             // to ensure "postalCode" is required (not null)
             if (postalCode == null)
             {
-                throw new ArgumentNullException("postalCode is a required property for OrderResponseFiscalEntityAddress and cannot be null");
+                throw new ArgumentNullException("postalCode is a required property for OrderFiscalEntityAddressResponse and cannot be null");
             }
             this.PostalCode = postalCode;
             // to ensure "city" is required (not null)
             if (city == null)
             {
-                throw new ArgumentNullException("city is a required property for OrderResponseFiscalEntityAddress and cannot be null");
+                throw new ArgumentNullException("city is a required property for OrderFiscalEntityAddressResponse and cannot be null");
             }
             this.City = city;
+            // to ensure "country" is required (not null)
+            if (country == null)
+            {
+                throw new ArgumentNullException("country is a required property for OrderFiscalEntityAddressResponse and cannot be null");
+            }
+            this.Country = country;
+            // to ensure "externalNumber" is required (not null)
+            if (externalNumber == null)
+            {
+                throw new ArgumentNullException("externalNumber is a required property for OrderFiscalEntityAddressResponse and cannot be null");
+            }
+            this.ExternalNumber = externalNumber;
             this.Street2 = street2;
             this.State = state;
-            this.Country = country;
-            this.Residential = residential;
-            this.ExternalNumber = externalNumber;
-            this.Object = _object;
+            this.VarObject = varObject;
         }
 
         /// <summary>
-        /// Gets or Sets Street1
+        /// Street name and number
         /// </summary>
-        /// <example>&quot;avenida siempre viva&quot;</example>
+        /// <value>Street name and number</value>
+        /// <example>Nuevo Leon 254</example>
         [DataMember(Name = "street1", IsRequired = true, EmitDefaultValue = true)]
         public string Street1 { get; set; }
 
         /// <summary>
-        /// Gets or Sets Street2
+        /// Street name and number
         /// </summary>
-        /// <example>&quot;fake street&quot;</example>
-        [DataMember(Name = "street2", EmitDefaultValue = false)]
+        /// <value>Street name and number</value>
+        /// <example>Departamento 404</example>
+        [DataMember(Name = "street2", EmitDefaultValue = true)]
         public string Street2 { get; set; }
 
         /// <summary>
-        /// Gets or Sets PostalCode
+        /// Postal code
         /// </summary>
-        /// <example>&quot;06100&quot;</example>
+        /// <value>Postal code</value>
+        /// <example>06100</example>
         [DataMember(Name = "postal_code", IsRequired = true, EmitDefaultValue = true)]
         public string PostalCode { get; set; }
 
         /// <summary>
-        /// Gets or Sets City
+        /// City
         /// </summary>
-        /// <example>&quot;Ciudad de Mexico&quot;</example>
+        /// <value>City</value>
+        /// <example>Ciudad de Mexico</example>
         [DataMember(Name = "city", IsRequired = true, EmitDefaultValue = true)]
         public string City { get; set; }
 
         /// <summary>
-        /// Gets or Sets State
+        /// State
         /// </summary>
-        /// <example>&quot;Ciudad de Mexico&quot;</example>
+        /// <value>State</value>
+        /// <example>Ciudad de Mexico</example>
         [DataMember(Name = "state", EmitDefaultValue = false)]
         public string State { get; set; }
 
@@ -116,29 +129,24 @@ namespace Conekta.net.Model
         /// this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
         /// </summary>
         /// <value>this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)</value>
-        /// <example>&quot;MX&quot;</example>
-        [DataMember(Name = "country", EmitDefaultValue = false)]
+        /// <example>MX</example>
+        [DataMember(Name = "country", IsRequired = true, EmitDefaultValue = true)]
         public string Country { get; set; }
 
         /// <summary>
-        /// Gets or Sets Residential
+        /// External number
         /// </summary>
-        /// <example>true</example>
-        [DataMember(Name = "residential", EmitDefaultValue = true)]
-        public bool Residential { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ExternalNumber
-        /// </summary>
-        [DataMember(Name = "external_number", EmitDefaultValue = false)]
+        /// <value>External number</value>
+        /// <example>123</example>
+        [DataMember(Name = "external_number", IsRequired = true, EmitDefaultValue = true)]
         public string ExternalNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;fiscal_entity_address&quot;</example>
+        /// <example>fiscal_entity_address</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -147,16 +155,15 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class OrderResponseFiscalEntityAddress {\n");
+            sb.Append("class OrderFiscalEntityAddressResponse {\n");
             sb.Append("  Street1: ").Append(Street1).Append("\n");
             sb.Append("  Street2: ").Append(Street2).Append("\n");
             sb.Append("  PostalCode: ").Append(PostalCode).Append("\n");
             sb.Append("  City: ").Append(City).Append("\n");
             sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("  Country: ").Append(Country).Append("\n");
-            sb.Append("  Residential: ").Append(Residential).Append("\n");
             sb.Append("  ExternalNumber: ").Append(ExternalNumber).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -177,15 +184,15 @@ namespace Conekta.net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as OrderResponseFiscalEntityAddress);
+            return this.Equals(input as OrderFiscalEntityAddressResponse);
         }
 
         /// <summary>
-        /// Returns true if OrderResponseFiscalEntityAddress instances are equal
+        /// Returns true if OrderFiscalEntityAddressResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of OrderResponseFiscalEntityAddress to be compared</param>
+        /// <param name="input">Instance of OrderFiscalEntityAddressResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(OrderResponseFiscalEntityAddress input)
+        public bool Equals(OrderFiscalEntityAddressResponse input)
         {
             if (input == null)
             {
@@ -223,18 +230,14 @@ namespace Conekta.net.Model
                     this.Country.Equals(input.Country))
                 ) && 
                 (
-                    this.Residential == input.Residential ||
-                    this.Residential.Equals(input.Residential)
-                ) && 
-                (
                     this.ExternalNumber == input.ExternalNumber ||
                     (this.ExternalNumber != null &&
                     this.ExternalNumber.Equals(input.ExternalNumber))
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 );
         }
 
@@ -271,14 +274,13 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Country.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Residential.GetHashCode();
                 if (this.ExternalNumber != null)
                 {
                     hashCode = (hashCode * 59) + this.ExternalNumber.GetHashCode();
                 }
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 return hashCode;
             }

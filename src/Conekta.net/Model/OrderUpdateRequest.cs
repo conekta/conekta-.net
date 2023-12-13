@@ -40,19 +40,21 @@ namespace Conekta.net.Model
         /// <param name="currency">Currency with which the payment will be made. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217).</param>
         /// <param name="customerInfo">customerInfo.</param>
         /// <param name="discountLines">List of [discounts](https://developers.conekta.com/v2.1.0/reference/orderscreatediscountline) that are applied to the order. You must have at least one discount..</param>
+        /// <param name="fiscalEntity">fiscalEntity.</param>
         /// <param name="lineItems">List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product..</param>
         /// <param name="metadata">metadata.</param>
         /// <param name="preAuthorize">Indicates whether the order charges must be preauthorized (default to false).</param>
         /// <param name="shippingContact">shippingContact.</param>
         /// <param name="shippingLines">List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshipping). If the online store offers digital products..</param>
         /// <param name="taxLines">taxLines.</param>
-        public OrderUpdateRequest(List<ChargeRequest> charges = default(List<ChargeRequest>), CheckoutRequest checkout = default(CheckoutRequest), string currency = default(string), OrderRequestCustomerInfo customerInfo = default(OrderRequestCustomerInfo), List<OrderDiscountLinesRequest> discountLines = default(List<OrderDiscountLinesRequest>), List<Product> lineItems = default(List<Product>), Dictionary<string, string> metadata = default(Dictionary<string, string>), bool preAuthorize = false, CustomerShippingContacts shippingContact = default(CustomerShippingContacts), List<ShippingRequest> shippingLines = default(List<ShippingRequest>), List<OrderTaxRequest> taxLines = default(List<OrderTaxRequest>))
+        public OrderUpdateRequest(List<ChargeRequest> charges = default(List<ChargeRequest>), CheckoutRequest checkout = default(CheckoutRequest), string currency = default(string), OrderUpdateRequestCustomerInfo customerInfo = default(OrderUpdateRequestCustomerInfo), List<OrderDiscountLinesRequest> discountLines = default(List<OrderDiscountLinesRequest>), OrderUpdateFiscalEntityRequest fiscalEntity = default(OrderUpdateFiscalEntityRequest), List<Product> lineItems = default(List<Product>), Dictionary<string, string> metadata = default(Dictionary<string, string>), bool preAuthorize = false, CustomerShippingContacts shippingContact = default(CustomerShippingContacts), List<ShippingRequest> shippingLines = default(List<ShippingRequest>), List<OrderTaxRequest> taxLines = default(List<OrderTaxRequest>))
         {
             this.Charges = charges;
             this.Checkout = checkout;
             this.Currency = currency;
             this.CustomerInfo = customerInfo;
             this.DiscountLines = discountLines;
+            this.FiscalEntity = fiscalEntity;
             this.LineItems = lineItems;
             this.Metadata = metadata;
             this.PreAuthorize = preAuthorize;
@@ -77,7 +79,7 @@ namespace Conekta.net.Model
         /// Currency with which the payment will be made. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)
         /// </summary>
         /// <value>Currency with which the payment will be made. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)</value>
-        /// <example>&quot;MXN&quot;</example>
+        /// <example>MXN</example>
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 
@@ -85,7 +87,7 @@ namespace Conekta.net.Model
         /// Gets or Sets CustomerInfo
         /// </summary>
         [DataMember(Name = "customer_info", EmitDefaultValue = false)]
-        public OrderRequestCustomerInfo CustomerInfo { get; set; }
+        public OrderUpdateRequestCustomerInfo CustomerInfo { get; set; }
 
         /// <summary>
         /// List of [discounts](https://developers.conekta.com/v2.1.0/reference/orderscreatediscountline) that are applied to the order. You must have at least one discount.
@@ -93,6 +95,12 @@ namespace Conekta.net.Model
         /// <value>List of [discounts](https://developers.conekta.com/v2.1.0/reference/orderscreatediscountline) that are applied to the order. You must have at least one discount.</value>
         [DataMember(Name = "discount_lines", EmitDefaultValue = false)]
         public List<OrderDiscountLinesRequest> DiscountLines { get; set; }
+
+        /// <summary>
+        /// Gets or Sets FiscalEntity
+        /// </summary>
+        [DataMember(Name = "fiscal_entity", EmitDefaultValue = false)]
+        public OrderUpdateFiscalEntityRequest FiscalEntity { get; set; }
 
         /// <summary>
         /// List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product.
@@ -146,6 +154,7 @@ namespace Conekta.net.Model
             sb.Append("  Currency: ").Append(Currency).Append("\n");
             sb.Append("  CustomerInfo: ").Append(CustomerInfo).Append("\n");
             sb.Append("  DiscountLines: ").Append(DiscountLines).Append("\n");
+            sb.Append("  FiscalEntity: ").Append(FiscalEntity).Append("\n");
             sb.Append("  LineItems: ").Append(LineItems).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  PreAuthorize: ").Append(PreAuthorize).Append("\n");
@@ -215,6 +224,11 @@ namespace Conekta.net.Model
                     this.DiscountLines.SequenceEqual(input.DiscountLines)
                 ) && 
                 (
+                    this.FiscalEntity == input.FiscalEntity ||
+                    (this.FiscalEntity != null &&
+                    this.FiscalEntity.Equals(input.FiscalEntity))
+                ) && 
+                (
                     this.LineItems == input.LineItems ||
                     this.LineItems != null &&
                     input.LineItems != null &&
@@ -277,6 +291,10 @@ namespace Conekta.net.Model
                 if (this.DiscountLines != null)
                 {
                     hashCode = (hashCode * 59) + this.DiscountLines.GetHashCode();
+                }
+                if (this.FiscalEntity != null)
+                {
+                    hashCode = (hashCode * 59) + this.FiscalEntity.GetHashCode();
                 }
                 if (this.LineItems != null)
                 {

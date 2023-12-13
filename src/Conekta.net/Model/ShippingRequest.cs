@@ -66,7 +66,7 @@ namespace Conekta.net.Model
         /// Carrier name for the shipment
         /// </summary>
         /// <value>Carrier name for the shipment</value>
-        /// <example>&quot;FEDEX&quot;</example>
+        /// <example>FEDEX</example>
         [DataMember(Name = "carrier", EmitDefaultValue = false)]
         public string Carrier { get; set; }
 
@@ -74,7 +74,7 @@ namespace Conekta.net.Model
         /// Tracking number can be used to track the shipment
         /// </summary>
         /// <value>Tracking number can be used to track the shipment</value>
-        /// <example>&quot;TRACK123&quot;</example>
+        /// <example>TRACK123</example>
         [DataMember(Name = "tracking_number", EmitDefaultValue = false)]
         public string TrackingNumber { get; set; }
 
@@ -82,7 +82,7 @@ namespace Conekta.net.Model
         /// Method of shipment
         /// </summary>
         /// <value>Method of shipment</value>
-        /// <example>&quot;Same day&quot;</example>
+        /// <example>Same day</example>
         [DataMember(Name = "method", EmitDefaultValue = false)]
         public string Method { get; set; }
 
@@ -90,6 +90,7 @@ namespace Conekta.net.Model
         /// Hash where the user can send additional information for each &#39;shipping&#39;.
         /// </summary>
         /// <value>Hash where the user can send additional information for each &#39;shipping&#39;.</value>
+        /// <example>{&quot;key&quot;:&quot;value&quot;}</example>
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }
 

@@ -42,7 +42,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="type">type (required).</param>
         /// <param name="id">id (required).</param>
-        /// <param name="_object">_object (required).</param>
+        /// <param name="varObject">varObject (required).</param>
         /// <param name="createdAt">createdAt (required).</param>
         /// <param name="parentId">parentId.</param>
         /// <param name="last4">last4.</param>
@@ -52,10 +52,10 @@ namespace Conekta.net.Model
         /// <param name="expYear">expYear.</param>
         /// <param name="brand">brand.</param>
         /// <param name="name">name.</param>
-        /// <param name="_default">_default.</param>
+        /// <param name="varDefault">varDefault.</param>
         /// <param name="visibleOnCheckout">visibleOnCheckout.</param>
         /// <param name="paymentSourceStatus">paymentSourceStatus.</param>
-        public PaymentMethodCardResponse(string type = default(string), string id = default(string), string _object = default(string), long createdAt = default(long), string parentId = default(string), string last4 = default(string), string bin = default(string), string cardType = default(string), string expMonth = default(string), string expYear = default(string), string brand = default(string), string name = default(string), bool _default = default(bool), bool visibleOnCheckout = default(bool), string paymentSourceStatus = default(string))
+        public PaymentMethodCardResponse(string type = default(string), string id = default(string), string varObject = default(string), long createdAt = default(long), string parentId = default(string), string last4 = default(string), string bin = default(string), string cardType = default(string), string expMonth = default(string), string expYear = default(string), string brand = default(string), string name = default(string), bool varDefault = default(bool), bool visibleOnCheckout = default(bool), string paymentSourceStatus = default(string))
         {
             // to ensure "type" is required (not null)
             if (type == null)
@@ -69,12 +69,12 @@ namespace Conekta.net.Model
                 throw new ArgumentNullException("id is a required property for PaymentMethodCardResponse and cannot be null");
             }
             this.Id = id;
-            // to ensure "_object" is required (not null)
-            if (_object == null)
+            // to ensure "varObject" is required (not null)
+            if (varObject == null)
             {
-                throw new ArgumentNullException("_object is a required property for PaymentMethodCardResponse and cannot be null");
+                throw new ArgumentNullException("varObject is a required property for PaymentMethodCardResponse and cannot be null");
             }
-            this.Object = _object;
+            this.VarObject = varObject;
             this.CreatedAt = createdAt;
             this.ParentId = parentId;
             this.Last4 = last4;
@@ -84,7 +84,7 @@ namespace Conekta.net.Model
             this.ExpYear = expYear;
             this.Brand = brand;
             this.Name = name;
-            this.Default = _default;
+            this.VarDefault = varDefault;
             this.VisibleOnCheckout = visibleOnCheckout;
             this.PaymentSourceStatus = paymentSourceStatus;
         }
@@ -98,16 +98,16 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;src_2s8K1B3PBKDontpi9&quot;</example>
+        /// <example>src_2s8K1B3PBKDontpi9</example>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
-        /// <example>&quot;payment_source&quot;</example>
+        /// <example>payment_source</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt
@@ -119,64 +119,64 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets ParentId
         /// </summary>
-        /// <example>&quot;cus_2s8K1B3PBKDontpi8&quot;</example>
+        /// <example>cus_2s8K1B3PBKDontpi8</example>
         [DataMember(Name = "parent_id", EmitDefaultValue = false)]
         public string ParentId { get; set; }
 
         /// <summary>
         /// Gets or Sets Last4
         /// </summary>
-        /// <example>&quot;6410&quot;</example>
+        /// <example>6410</example>
         [DataMember(Name = "last4", EmitDefaultValue = false)]
         public string Last4 { get; set; }
 
         /// <summary>
         /// Gets or Sets Bin
         /// </summary>
-        /// <example>&quot;40276657&quot;</example>
+        /// <example>40276657</example>
         [DataMember(Name = "bin", EmitDefaultValue = false)]
         public string Bin { get; set; }
 
         /// <summary>
         /// Gets or Sets CardType
         /// </summary>
-        /// <example>&quot;debit&quot;</example>
+        /// <example>debit</example>
         [DataMember(Name = "card_type", EmitDefaultValue = false)]
         public string CardType { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpMonth
         /// </summary>
-        /// <example>&quot;10&quot;</example>
+        /// <example>10</example>
         [DataMember(Name = "exp_month", EmitDefaultValue = false)]
         public string ExpMonth { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpYear
         /// </summary>
-        /// <example>&quot;25&quot;</example>
+        /// <example>25</example>
         [DataMember(Name = "exp_year", EmitDefaultValue = false)]
         public string ExpYear { get; set; }
 
         /// <summary>
         /// Gets or Sets Brand
         /// </summary>
-        /// <example>&quot;visa&quot;</example>
+        /// <example>visa</example>
         [DataMember(Name = "brand", EmitDefaultValue = false)]
         public string Brand { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /// <example>&quot;Fulano Perez&quot;&quot;</example>
+        /// <example>Fulano Perez&quot;</example>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Default
+        /// Gets or Sets VarDefault
         /// </summary>
         [DataMember(Name = "default", EmitDefaultValue = true)]
-        public bool Default { get; set; }
+        public bool VarDefault { get; set; }
 
         /// <summary>
         /// Gets or Sets VisibleOnCheckout
@@ -187,7 +187,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets PaymentSourceStatus
         /// </summary>
-        /// <example>&quot;active&quot;</example>
+        /// <example>active</example>
         [DataMember(Name = "payment_source_status", EmitDefaultValue = false)]
         public string PaymentSourceStatus { get; set; }
 
@@ -201,7 +201,7 @@ namespace Conekta.net.Model
             sb.Append("class PaymentMethodCardResponse {\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("  Last4: ").Append(Last4).Append("\n");
@@ -211,7 +211,7 @@ namespace Conekta.net.Model
             sb.Append("  ExpYear: ").Append(ExpYear).Append("\n");
             sb.Append("  Brand: ").Append(Brand).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Default: ").Append(Default).Append("\n");
+            sb.Append("  VarDefault: ").Append(VarDefault).Append("\n");
             sb.Append("  VisibleOnCheckout: ").Append(VisibleOnCheckout).Append("\n");
             sb.Append("  PaymentSourceStatus: ").Append(PaymentSourceStatus).Append("\n");
             sb.Append("}\n");
@@ -260,9 +260,9 @@ namespace Conekta.net.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.CreatedAt == input.CreatedAt ||
@@ -309,8 +309,8 @@ namespace Conekta.net.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Default == input.Default ||
-                    this.Default.Equals(input.Default)
+                    this.VarDefault == input.VarDefault ||
+                    this.VarDefault.Equals(input.VarDefault)
                 ) && 
                 (
                     this.VisibleOnCheckout == input.VisibleOnCheckout ||
@@ -340,9 +340,9 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
                 if (this.ParentId != null)
@@ -377,7 +377,7 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Default.GetHashCode();
+                hashCode = (hashCode * 59) + this.VarDefault.GetHashCode();
                 hashCode = (hashCode * 59) + this.VisibleOnCheckout.GetHashCode();
                 if (this.PaymentSourceStatus != null)
                 {

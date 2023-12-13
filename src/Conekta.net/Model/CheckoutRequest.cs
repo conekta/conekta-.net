@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// [Checkout](https://developers.conekta.com/reference/checkout) details 
+    /// [Checkout](https://developers.conekta.com/v2.1.0/reference/payment-link) details 
     /// </summary>
     [DataContract(Name = "checkout_request")]
     public partial class CheckoutRequest : IEquatable<CheckoutRequest>, IValidatableObject
@@ -71,6 +71,7 @@ namespace Conekta.net.Model
         /// Are the payment methods available for this link
         /// </summary>
         /// <value>Are the payment methods available for this link</value>
+        /// <example>[&quot;cash&quot;,&quot;card&quot;,&quot;bank_transfer&quot;]</example>
         [DataMember(Name = "allowed_payment_methods", IsRequired = true, EmitDefaultValue = true)]
         public List<string> AllowedPaymentMethods { get; set; }
 
@@ -98,6 +99,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets MonthlyInstallmentsOptions
         /// </summary>
+        /// <example>[3,6,12]</example>
         [DataMember(Name = "monthly_installments_options", EmitDefaultValue = false)]
         public List<int> MonthlyInstallmentsOptions { get; set; }
 
@@ -126,7 +128,7 @@ namespace Conekta.net.Model
         /// This field represents the type of checkout
         /// </summary>
         /// <value>This field represents the type of checkout</value>
-        /// <example>&quot;Integration&quot;</example>
+        /// <example>Integration</example>
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 

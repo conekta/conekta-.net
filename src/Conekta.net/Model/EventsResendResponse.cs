@@ -61,7 +61,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>&quot;webhl_2svd2sh6GbqzyWBNZ&quot;</example>
+        /// <example>webhl_2svd2sh6GbqzyWBNZ</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -82,13 +82,14 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets ResponseData
         /// </summary>
+        /// <example>{}</example>
         [DataMember(Name = "response_data", EmitDefaultValue = false)]
         public Dictionary<string, Object> ResponseData { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
-        /// <example>&quot;https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval&quot;</example>
+        /// <example>https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval</example>
         [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 

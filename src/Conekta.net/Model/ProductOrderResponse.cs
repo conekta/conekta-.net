@@ -50,9 +50,9 @@ namespace Conekta.net.Model
         /// <param name="tags">List of tags for the item. It is used to identify the item in the order..</param>
         /// <param name="unitPrice">The price of the item in cents. (required).</param>
         /// <param name="id">id.</param>
-        /// <param name="_object">_object.</param>
+        /// <param name="varObject">varObject.</param>
         /// <param name="parentId">parentId.</param>
-        public ProductOrderResponse(Dictionary<string, Object> antifraudInfo = default(Dictionary<string, Object>), string brand = default(string), string description = default(string), Dictionary<string, string> metadata = default(Dictionary<string, string>), string name = default(string), int quantity = default(int), string sku = default(string), List<string> tags = default(List<string>), int unitPrice = default(int), string id = default(string), string _object = default(string), string parentId = default(string))
+        public ProductOrderResponse(Dictionary<string, Object> antifraudInfo = default(Dictionary<string, Object>), string brand = default(string), string description = default(string), Dictionary<string, string> metadata = default(Dictionary<string, string>), string name = default(string), int quantity = default(int), string sku = default(string), List<string> tags = default(List<string>), int unitPrice = default(int), string id = default(string), string varObject = default(string), string parentId = default(string))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -69,13 +69,14 @@ namespace Conekta.net.Model
             this.Sku = sku;
             this.Tags = tags;
             this.Id = id;
-            this.Object = _object;
+            this.VarObject = varObject;
             this.ParentId = parentId;
         }
 
         /// <summary>
         /// Gets or Sets AntifraudInfo
         /// </summary>
+        /// <example>{key&#x3D;value}</example>
         [DataMember(Name = "antifraud_info", EmitDefaultValue = false)]
         public Dictionary<string, Object> AntifraudInfo { get; set; }
 
@@ -83,7 +84,7 @@ namespace Conekta.net.Model
         /// The brand of the item.
         /// </summary>
         /// <value>The brand of the item.</value>
-        /// <example>&quot;Cohiba&quot;</example>
+        /// <example>Cohiba</example>
         [DataMember(Name = "brand", EmitDefaultValue = false)]
         public string Brand { get; set; }
 
@@ -91,7 +92,7 @@ namespace Conekta.net.Model
         /// Short description of the item
         /// </summary>
         /// <value>Short description of the item</value>
-        /// <example>&quot;Imported From Mex.&quot;</example>
+        /// <example>Imported From Mex.</example>
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
@@ -99,6 +100,7 @@ namespace Conekta.net.Model
         /// It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.
         /// </summary>
         /// <value>It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.</value>
+        /// <example>{key&#x3D;value}</example>
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, string> Metadata { get; set; }
 
@@ -106,7 +108,7 @@ namespace Conekta.net.Model
         /// The name of the item. It will be displayed in the order.
         /// </summary>
         /// <value>The name of the item. It will be displayed in the order.</value>
-        /// <example>&quot;Box of Cohiba S1s&quot;</example>
+        /// <example>Box of Cohiba S1s</example>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -122,7 +124,7 @@ namespace Conekta.net.Model
         /// The stock keeping unit for the item. It is used to identify the item in the order.
         /// </summary>
         /// <value>The stock keeping unit for the item. It is used to identify the item in the order.</value>
-        /// <example>&quot;XYZ12345&quot;</example>
+        /// <example>XYZ12345</example>
         [DataMember(Name = "sku", EmitDefaultValue = false)]
         public string Sku { get; set; }
 
@@ -130,6 +132,7 @@ namespace Conekta.net.Model
         /// List of tags for the item. It is used to identify the item in the order.
         /// </summary>
         /// <value>List of tags for the item. It is used to identify the item in the order.</value>
+        /// <example>[food, mexican food]</example>
         [DataMember(Name = "tags", EmitDefaultValue = false)]
         public List<string> Tags { get; set; }
 
@@ -148,10 +151,10 @@ namespace Conekta.net.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets VarObject
         /// </summary>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Gets or Sets ParentId
@@ -177,7 +180,7 @@ namespace Conekta.net.Model
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  UnitPrice: ").Append(UnitPrice).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -266,9 +269,9 @@ namespace Conekta.net.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.ParentId == input.ParentId ||
@@ -320,9 +323,9 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.ParentId != null)
                 {

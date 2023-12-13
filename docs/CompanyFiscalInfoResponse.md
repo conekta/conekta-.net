@@ -5,7 +5,7 @@ Company fiscal info model
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Object** | **string** | The resource&#39;s type | [optional] 
+**VarObject** | **string** | The resource&#39;s type | [optional] 
 **TaxId** | **string** | Tax ID of the company | [optional] 
 **LegalEntityName** | **string** | Legal name of the company | [optional] 
 **BusinessType** | **string** | Business type of the company | [optional] 

@@ -17,11 +17,12 @@ jobs:
       - uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '6.0.x'
-      - uses: actions/setup-node@v2
-      - name: start mockserver
-        run: |
-          npm install -g @mockoon/cli
-          npx mockoon-cli start --data https://raw.githubusercontent.com/conekta/openapi/main/mocks/conekta_api.json --port 3000
+      - name: Run Mockoon CLI
+        uses: mockoon/cli-action@v1
+        with:
+          version: 'latest'
+          data-file: 'https://raw.githubusercontent.com/conekta/openapi/main/mocks/conekta_api.json'
+          port: 3000
       - name: Execute dotnet
         run: dotnet build
       - name: Test
@@ -29,7 +30,7 @@ jobs:
         env:
           BASE_PATH: http://localhost:3000
       - name: publish code coverage
-        uses: paambaati/codeclimate-action@v4.0.0
+        uses: paambaati/codeclimate-action@v5.0.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:

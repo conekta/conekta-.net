@@ -51,7 +51,7 @@ namespace Conekta.net.Model
         /// Blacklist rule id
         /// </summary>
         /// <value>Blacklist rule id</value>
-        /// <example>&quot;2fw8EWJusiRrxdPzT&quot;</example>
+        /// <example>2fw8EWJusiRrxdPzT</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -59,7 +59,7 @@ namespace Conekta.net.Model
         /// field used for blacklists rule
         /// </summary>
         /// <value>field used for blacklists rule</value>
-        /// <example>&quot;email&quot;</example>
+        /// <example>email</example>
         [DataMember(Name = "field", EmitDefaultValue = false)]
         public string Field { get; set; }
 
@@ -67,7 +67,7 @@ namespace Conekta.net.Model
         /// value used for blacklists rule
         /// </summary>
         /// <value>value used for blacklists rule</value>
-        /// <example>&quot;email@example.com&quot;</example>
+        /// <example>email@example.com</example>
         [DataMember(Name = "value", EmitDefaultValue = false)]
         public string Value { get; set; }
 
@@ -75,7 +75,7 @@ namespace Conekta.net.Model
         /// use an description for blacklisted rule
         /// </summary>
         /// <value>use an description for blacklisted rule</value>
-        /// <example>&quot;secure customer example@example.com&quot;</example>
+        /// <example>secure customer example@example.com</example>
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 

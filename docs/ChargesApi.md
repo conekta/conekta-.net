@@ -6,6 +6,7 @@ All URIs are relative to *https://api.conekta.io*
 |--------|--------------|-------------|
 | [**GetCharges**](ChargesApi.md#getcharges) | **GET** /charges | Get A List of Charges |
 | [**OrdersCreateCharge**](ChargesApi.md#orderscreatecharge) | **POST** /orders/{id}/charges | Create charge |
+| [**UpdateCharge**](ChargesApi.md#updatecharge) | **PUT** /charges/{id} | Update a charge |
 
 <a id="getcharges"></a>
 # **GetCharges**
@@ -211,6 +212,107 @@ catch (ApiException e)
 | **401** | authentication error |  -  |
 | **404** | not found entity |  -  |
 | **428** | Precondition Required |  -  |
+| **500** | internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="updatecharge"></a>
+# **UpdateCharge**
+> ChargeResponse UpdateCharge (string id, ChargeUpdateRequest chargeUpdateRequest, string acceptLanguage = null, string xChildCompanyId = null)
+
+Update a charge
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Conekta.net.Api;
+using Conekta.net.Client;
+using Conekta.net.Model;
+
+namespace Example
+{
+    public class UpdateChargeExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.conekta.io";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new ChargesApi(config);
+            var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
+            var chargeUpdateRequest = new ChargeUpdateRequest(); // ChargeUpdateRequest | requested field for update a charge
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+            var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
+
+            try
+            {
+                // Update a charge
+                ChargeResponse result = apiInstance.UpdateCharge(id, chargeUpdateRequest, acceptLanguage, xChildCompanyId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ChargesApi.UpdateCharge: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UpdateChargeWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update a charge
+    ApiResponse<ChargeResponse> response = apiInstance.UpdateChargeWithHttpInfo(id, chargeUpdateRequest, acceptLanguage, xChildCompanyId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ChargesApi.UpdateChargeWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Identifier of the resource |  |
+| **chargeUpdateRequest** | [**ChargeUpdateRequest**](ChargeUpdateRequest.md) | requested field for update a charge |  |
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+| **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
+
+### Return type
+
+[**ChargeResponse**](ChargeResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/vnd.conekta-v2.1.0+json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | successful |  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  |
+| **422** | whitelist validation error |  -  |
+| **404** | not found entity |  -  |
 | **500** | internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

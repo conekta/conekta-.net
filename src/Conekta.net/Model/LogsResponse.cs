@@ -65,13 +65,13 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>The object type</value>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; private set; }
+        public string VarObject { get; private set; }
 
         /// <summary>
-        /// Returns false as Object should not be serialized given that it's read-only.
+        /// Returns false as VarObject should not be serialized given that it's read-only.
         /// </summary>
         /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeObject()
+        public bool ShouldSerializeVarObject()
         {
             return false;
         }
@@ -105,7 +105,7 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class LogsResponse {\n");
             sb.Append("  HasMore: ").Append(HasMore).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  NextPageUrl: ").Append(NextPageUrl).Append("\n");
             sb.Append("  PreviousPageUrl: ").Append(PreviousPageUrl).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
@@ -149,9 +149,9 @@ namespace Conekta.net.Model
                     this.HasMore.Equals(input.HasMore)
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 ) && 
                 (
                     this.NextPageUrl == input.NextPageUrl ||
@@ -181,9 +181,9 @@ namespace Conekta.net.Model
             {
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.HasMore.GetHashCode();
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 if (this.NextPageUrl != null)
                 {

@@ -40,15 +40,15 @@ namespace Conekta.net.Model
         /// <param name="deleted">Indicates if the webhook key is deleted.</param>
         /// <param name="id">Unique identifier of the webhook key.</param>
         /// <param name="livemode">Indicates if the webhook key is in live mode.</param>
-        /// <param name="_object">Object name, value is webhook_key.</param>
-        public WebhookKeyDeleteResponse(bool active = default(bool), long createdAt = default(long), bool deleted = default(bool), string id = default(string), bool livemode = default(bool), string _object = default(string))
+        /// <param name="varObject">Object name, value is webhook_key.</param>
+        public WebhookKeyDeleteResponse(bool active = default(bool), long createdAt = default(long), bool deleted = default(bool), string id = default(string), bool livemode = default(bool), string varObject = default(string))
         {
             this.Active = active;
             this.CreatedAt = createdAt;
             this.Deleted = deleted;
             this.Id = id;
             this.Livemode = livemode;
-            this.Object = _object;
+            this.VarObject = varObject;
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Conekta.net.Model
         /// Unique identifier of the webhook key
         /// </summary>
         /// <value>Unique identifier of the webhook key</value>
-        /// <example>&quot;62730ba6fb7dfd6a712f118e&quot;</example>
+        /// <example>62730ba6fb7dfd6a712f118e</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -95,9 +95,9 @@ namespace Conekta.net.Model
         /// Object name, value is webhook_key
         /// </summary>
         /// <value>Object name, value is webhook_key</value>
-        /// <example>&quot;webhook_key&quot;</example>
+        /// <example>webhook_key</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -112,7 +112,7 @@ namespace Conekta.net.Model
             sb.Append("  Deleted: ").Append(Deleted).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -170,9 +170,9 @@ namespace Conekta.net.Model
                     this.Livemode.Equals(input.Livemode)
                 ) && 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
+                    this.VarObject == input.VarObject ||
+                    (this.VarObject != null &&
+                    this.VarObject.Equals(input.VarObject))
                 );
         }
 
@@ -193,9 +193,9 @@ namespace Conekta.net.Model
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Livemode.GetHashCode();
-                if (this.Object != null)
+                if (this.VarObject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 }
                 return hashCode;
             }

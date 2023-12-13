@@ -44,7 +44,6 @@ namespace Conekta.net.Model
             /// </summary>
             [EnumMember(Value = "fiscal_info")]
             FiscalInfo = 1
-
         }
 
 
@@ -53,20 +52,20 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>The resource&#39;s type</value>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public ObjectEnum? Object { get; set; }
+        public ObjectEnum? VarObject { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CompanyFiscalInfoResponse" /> class.
         /// </summary>
-        /// <param name="_object">The resource&#39;s type.</param>
+        /// <param name="varObject">The resource&#39;s type.</param>
         /// <param name="taxId">Tax ID of the company.</param>
         /// <param name="legalEntityName">Legal name of the company.</param>
         /// <param name="businessType">Business type of the company.</param>
         /// <param name="phone">Phone number of the company.</param>
         /// <param name="physicalPersonBusinessType">Business type if &#39;persona_fisica&#39;.</param>
         /// <param name="address">address.</param>
-        public CompanyFiscalInfoResponse(ObjectEnum? _object = default(ObjectEnum?), string taxId = default(string), string legalEntityName = default(string), string businessType = default(string), string phone = default(string), string physicalPersonBusinessType = default(string), CompanyFiscalInfoAddressResponse address = default(CompanyFiscalInfoAddressResponse))
+        public CompanyFiscalInfoResponse(ObjectEnum? varObject = default(ObjectEnum?), string taxId = default(string), string legalEntityName = default(string), string businessType = default(string), string phone = default(string), string physicalPersonBusinessType = default(string), CompanyFiscalInfoAddressResponse address = default(CompanyFiscalInfoAddressResponse))
         {
-            this.Object = _object;
+            this.VarObject = varObject;
             this.TaxId = taxId;
             this.LegalEntityName = legalEntityName;
             this.BusinessType = businessType;
@@ -79,7 +78,7 @@ namespace Conekta.net.Model
         /// Tax ID of the company
         /// </summary>
         /// <value>Tax ID of the company</value>
-        /// <example>&quot;XAXX010101000&quot;</example>
+        /// <example>XAXX010101000</example>
         [DataMember(Name = "tax_id", EmitDefaultValue = false)]
         public string TaxId { get; set; }
 
@@ -87,7 +86,7 @@ namespace Conekta.net.Model
         /// Legal name of the company
         /// </summary>
         /// <value>Legal name of the company</value>
-        /// <example>&quot;Child Company A&quot;</example>
+        /// <example>Child Company A</example>
         [DataMember(Name = "legal_entity_name", EmitDefaultValue = false)]
         public string LegalEntityName { get; set; }
 
@@ -95,7 +94,7 @@ namespace Conekta.net.Model
         /// Business type of the company
         /// </summary>
         /// <value>Business type of the company</value>
-        /// <example>&quot;persona_moral&quot;</example>
+        /// <example>persona_moral</example>
         [DataMember(Name = "business_type", EmitDefaultValue = false)]
         public string BusinessType { get; set; }
 
@@ -103,7 +102,7 @@ namespace Conekta.net.Model
         /// Phone number of the company
         /// </summary>
         /// <value>Phone number of the company</value>
-        /// <example>&quot;5555555555&quot;</example>
+        /// <example>5555555555</example>
         [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
@@ -128,7 +127,7 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class CompanyFiscalInfoResponse {\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  TaxId: ").Append(TaxId).Append("\n");
             sb.Append("  LegalEntityName: ").Append(LegalEntityName).Append("\n");
             sb.Append("  BusinessType: ").Append(BusinessType).Append("\n");
@@ -171,8 +170,8 @@ namespace Conekta.net.Model
             }
             return 
                 (
-                    this.Object == input.Object ||
-                    this.Object.Equals(input.Object)
+                    this.VarObject == input.VarObject ||
+                    this.VarObject.Equals(input.VarObject)
                 ) && 
                 (
                     this.TaxId == input.TaxId ||
@@ -215,7 +214,7 @@ namespace Conekta.net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Object.GetHashCode();
+                hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
                 if (this.TaxId != null)
                 {
                     hashCode = (hashCode * 59) + this.TaxId.GetHashCode();

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Object** | **string** |  | [optional] 
+**VarObject** | **string** |  | [optional] 
 **Street1** | **string** |  | [optional] 
 **Street2** | **string** |  | [optional] 
 **PostalCode** | **string** |  | [optional] 
