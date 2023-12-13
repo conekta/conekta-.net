@@ -43,7 +43,7 @@ namespace Conekta.net.Model
         /// <param name="state">state.</param>
         /// <param name="country">country.</param>
         /// <param name="residential">residential.</param>
-        public CustomerShippingContactsResponseAddress(string varObject = default(string), string street1 = default(string), string street2 = default(string), string postalCode = default(string), string city = default(string), string state = default(string), string country = default(string), bool residential = default(bool))
+        public CustomerShippingContactsResponseAddress(string varObject = default(string), string street1 = default(string), string street2 = default(string), string postalCode = default(string), string city = default(string), string state = default(string), string country = default(string), bool? residential = default(bool?))
         {
             this.VarObject = varObject;
             this.Street1 = street1;
@@ -109,7 +109,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <example>true</example>
         [DataMember(Name = "residential", EmitDefaultValue = true)]
-        public bool Residential { get; set; }
+        public bool? Residential { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -199,7 +199,8 @@ namespace Conekta.net.Model
                 ) && 
                 (
                     this.Residential == input.Residential ||
-                    this.Residential.Equals(input.Residential)
+                    (this.Residential != null &&
+                    this.Residential.Equals(input.Residential))
                 );
         }
 
@@ -240,7 +241,10 @@ namespace Conekta.net.Model
                 {
                     hashCode = (hashCode * 59) + this.Country.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Residential.GetHashCode();
+                if (this.Residential != null)
+                {
+                    hashCode = (hashCode * 59) + this.Residential.GetHashCode();
+                }
                 return hashCode;
             }
         }

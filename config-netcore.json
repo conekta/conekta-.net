@@ -33,5 +33,5 @@
   "packageCopyright" : "Conekta",
   "PackageReleaseNotes" : "",
   "releaseNote" : "support for resend event, api keys and webhook keys",
-  "packageVersion" : "6.0.6"
+  "packageVersion" : "6.0.7"
 }
