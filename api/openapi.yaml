@@ -14967,6 +14967,7 @@ components:
           example: MX
           type: string
         residential:
+          default: false
           example: true
           type: boolean
         external_number:
@@ -16459,6 +16460,7 @@ components:
           type: string
         residential:
           example: true
+          nullable: true
           type: boolean
       type: object
     update_order_tax_response_allOf:

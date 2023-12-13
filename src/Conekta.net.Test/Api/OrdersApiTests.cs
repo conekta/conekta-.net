@@ -519,5 +519,6 @@ public class OrdersApiTests
         Assert.Equal(orderRequest.ReturnUrl, response.NextAction.RedirectToUrl.ReturnUrl);
         Assert.NotNull(response.NextAction.RedirectToUrl.Url);
         Assert.Equal("redirect_to_url", response.NextAction.Type);
+        Assert.Null(response.ShippingContact.Address.Residential);
     }
 }

@@ -46,9 +46,9 @@ namespace Conekta.net.Model
         /// <param name="city">city (required).</param>
         /// <param name="state">state.</param>
         /// <param name="country">this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).</param>
-        /// <param name="residential">residential.</param>
+        /// <param name="residential">residential (default to false).</param>
         /// <param name="externalNumber">externalNumber.</param>
-        public CustomerFiscalEntitiesRequestAddress(string street1 = default(string), string street2 = default(string), string postalCode = default(string), string city = default(string), string state = default(string), string country = default(string), bool residential = default(bool), string externalNumber = default(string))
+        public CustomerFiscalEntitiesRequestAddress(string street1 = default(string), string street2 = default(string), string postalCode = default(string), string city = default(string), string state = default(string), string country = default(string), bool residential = false, string externalNumber = default(string))
         {
             // to ensure "street1" is required (not null)
             if (street1 == null)

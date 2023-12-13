@@ -7,7 +7,6 @@ publish:
 clean:
 	dotnet clean
 csharp:
-	mkdir -p conekta-.net && \
 	rm -rf /docs && \
 	rm -rf src/Conekta.net/Model && \
 	npx @openapitools/openapi-generator-cli generate \
