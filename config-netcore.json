@@ -31,7 +31,7 @@
   "templateDir": "/local/templates/netcore",
   "useOneOfDiscriminatorLookup" : true,
   "packageCopyright" : "Conekta",
-  "PackageReleaseNotes" : "",
+  "PackageReleaseNotes" : "add support for payout orders",
   "releaseNote" : "support for resend event, api keys and webhook keys",
-  "packageVersion" : "6.0.7"
+  "packageVersion" : "6.0.8"
 }
