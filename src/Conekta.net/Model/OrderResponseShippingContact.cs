@@ -30,62 +30,41 @@ namespace Conekta.net.Model
     /// OrderResponseShippingContact
     /// </summary>
     [DataContract(Name = "order_response_shipping_contact")]
-    public partial class OrderResponseShippingContact : IEquatable<OrderResponseShippingContact>, IValidatableObject
+    public partial class OrderResponseShippingContact : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderResponseShippingContact" /> class.
         /// </summary>
-        /// <param name="createdAt">createdAt.</param>
-        /// <param name="id">id.</param>
-        /// <param name="varObject">varObject.</param>
         /// <param name="phone">phone.</param>
         /// <param name="receiver">receiver.</param>
         /// <param name="betweenStreets">betweenStreets.</param>
         /// <param name="address">address.</param>
         /// <param name="parentId">parentId.</param>
         /// <param name="varDefault">varDefault.</param>
+        /// <param name="id">id.</param>
+        /// <param name="createdAt">createdAt.</param>
         /// <param name="metadata">Metadata associated with the shipping contact.</param>
+        /// <param name="varObject">varObject.</param>
         /// <param name="deleted">deleted.</param>
-        public OrderResponseShippingContact(long createdAt = default(long), string id = default(string), string varObject = default(string), string phone = default(string), string receiver = default(string), string betweenStreets = default(string), CustomerShippingContactsResponseAddress address = default(CustomerShippingContactsResponseAddress), string parentId = default(string), bool varDefault = default(bool), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), bool deleted = default(bool))
+        public OrderResponseShippingContact(string phone = default(string), string receiver = default(string), string betweenStreets = default(string), CustomerShippingContactsResponseAddress address = default(CustomerShippingContactsResponseAddress), string parentId = default(string), bool varDefault = default(bool), string id = default(string), long createdAt = default(long), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string varObject = default(string), bool deleted = default(bool))
         {
-            this.CreatedAt = createdAt;
-            this.Id = id;
-            this.VarObject = varObject;
             this.Phone = phone;
             this.Receiver = receiver;
             this.BetweenStreets = betweenStreets;
             this.Address = address;
             this.ParentId = parentId;
             this.VarDefault = varDefault;
+            this.Id = id;
+            this.CreatedAt = createdAt;
             this.Metadata = metadata;
+            this.VarObject = varObject;
             this.Deleted = deleted;
         }
 
         /// <summary>
-        /// Gets or Sets CreatedAt
-        /// </summary>
-        /// <example>1675715413</example>
-        [DataMember(Name = "created_at", EmitDefaultValue = false)]
-        public long CreatedAt { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Id
-        /// </summary>
-        /// <example>adr_1234567890</example>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public string Id { get; set; }
-
-        /// <summary>
-        /// Gets or Sets VarObject
-        /// </summary>
-        /// <example>shipping_contact</example>
-        [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string VarObject { get; set; }
-
-        /// <summary>
         /// Gets or Sets Phone
         /// </summary>
-        /// <example>525511223344</example>
+        /// <example>+525511223344</example>
         [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
@@ -123,11 +102,29 @@ namespace Conekta.net.Model
         public bool VarDefault { get; set; }
 
         /// <summary>
+        /// Gets or Sets Id
+        /// </summary>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreatedAt
+        /// </summary>
+        [DataMember(Name = "created_at", EmitDefaultValue = false)]
+        public long CreatedAt { get; set; }
+
+        /// <summary>
         /// Metadata associated with the shipping contact
         /// </summary>
         /// <value>Metadata associated with the shipping contact</value>
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }
+
+        /// <summary>
+        /// Gets or Sets VarObject
+        /// </summary>
+        [DataMember(Name = "object", EmitDefaultValue = false)]
+        public string VarObject { get; set; }
 
         /// <summary>
         /// Gets or Sets Deleted
@@ -144,16 +141,16 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class OrderResponseShippingContact {\n");
-            sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  Phone: ").Append(Phone).Append("\n");
             sb.Append("  Receiver: ").Append(Receiver).Append("\n");
             sb.Append("  BetweenStreets: ").Append(BetweenStreets).Append("\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("  VarDefault: ").Append(VarDefault).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  Deleted: ").Append(Deleted).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -166,131 +163,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as OrderResponseShippingContact);
-        }
-
-        /// <summary>
-        /// Returns true if OrderResponseShippingContact instances are equal
-        /// </summary>
-        /// <param name="input">Instance of OrderResponseShippingContact to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(OrderResponseShippingContact input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    this.CreatedAt.Equals(input.CreatedAt)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                ) && 
-                (
-                    this.Phone == input.Phone ||
-                    (this.Phone != null &&
-                    this.Phone.Equals(input.Phone))
-                ) && 
-                (
-                    this.Receiver == input.Receiver ||
-                    (this.Receiver != null &&
-                    this.Receiver.Equals(input.Receiver))
-                ) && 
-                (
-                    this.BetweenStreets == input.BetweenStreets ||
-                    (this.BetweenStreets != null &&
-                    this.BetweenStreets.Equals(input.BetweenStreets))
-                ) && 
-                (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
-                ) && 
-                (
-                    this.ParentId == input.ParentId ||
-                    (this.ParentId != null &&
-                    this.ParentId.Equals(input.ParentId))
-                ) && 
-                (
-                    this.VarDefault == input.VarDefault ||
-                    this.VarDefault.Equals(input.VarDefault)
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    this.Metadata != null &&
-                    input.Metadata != null &&
-                    this.Metadata.SequenceEqual(input.Metadata)
-                ) && 
-                (
-                    this.Deleted == input.Deleted ||
-                    this.Deleted.Equals(input.Deleted)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                if (this.Phone != null)
-                {
-                    hashCode = (hashCode * 59) + this.Phone.GetHashCode();
-                }
-                if (this.Receiver != null)
-                {
-                    hashCode = (hashCode * 59) + this.Receiver.GetHashCode();
-                }
-                if (this.BetweenStreets != null)
-                {
-                    hashCode = (hashCode * 59) + this.BetweenStreets.GetHashCode();
-                }
-                if (this.Address != null)
-                {
-                    hashCode = (hashCode * 59) + this.Address.GetHashCode();
-                }
-                if (this.ParentId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParentId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.VarDefault.GetHashCode();
-                if (this.Metadata != null)
-                {
-                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Deleted.GetHashCode();
-                return hashCode;
-            }
         }
 
         /// <summary>

@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// TokenCard
     /// </summary>
     [DataContract(Name = "token_card")]
-    public partial class TokenCard : IEquatable<TokenCard>, IValidatableObject
+    public partial class TokenCard : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TokenCard" /> class.
@@ -154,97 +154,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TokenCard);
-        }
-
-        /// <summary>
-        /// Returns true if TokenCard instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TokenCard to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TokenCard input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Cvc == input.Cvc ||
-                    (this.Cvc != null &&
-                    this.Cvc.Equals(input.Cvc))
-                ) && 
-                (
-                    this.DeviceFingerprint == input.DeviceFingerprint ||
-                    (this.DeviceFingerprint != null &&
-                    this.DeviceFingerprint.Equals(input.DeviceFingerprint))
-                ) && 
-                (
-                    this.ExpMonth == input.ExpMonth ||
-                    (this.ExpMonth != null &&
-                    this.ExpMonth.Equals(input.ExpMonth))
-                ) && 
-                (
-                    this.ExpYear == input.ExpYear ||
-                    (this.ExpYear != null &&
-                    this.ExpYear.Equals(input.ExpYear))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Cvc != null)
-                {
-                    hashCode = (hashCode * 59) + this.Cvc.GetHashCode();
-                }
-                if (this.DeviceFingerprint != null)
-                {
-                    hashCode = (hashCode * 59) + this.DeviceFingerprint.GetHashCode();
-                }
-                if (this.ExpMonth != null)
-                {
-                    hashCode = (hashCode * 59) + this.ExpMonth.GetHashCode();
-                }
-                if (this.ExpYear != null)
-                {
-                    hashCode = (hashCode * 59) + this.ExpYear.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Number != null)
-                {
-                    hashCode = (hashCode * 59) + this.Number.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

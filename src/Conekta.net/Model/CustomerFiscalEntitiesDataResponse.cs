@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// CustomerFiscalEntitiesDataResponse
     /// </summary>
     [DataContract(Name = "customer_fiscal_entities_data_response")]
-    public partial class CustomerFiscalEntitiesDataResponse : IEquatable<CustomerFiscalEntitiesDataResponse>, IValidatableObject
+    public partial class CustomerFiscalEntitiesDataResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomerFiscalEntitiesDataResponse" /> class.
@@ -51,7 +51,7 @@ namespace Conekta.net.Model
         /// <param name="createdAt">createdAt (required).</param>
         /// <param name="parentId">parentId.</param>
         /// <param name="varDefault">varDefault.</param>
-        public CustomerFiscalEntitiesDataResponse(CustomerFiscalEntitiesRequestAddress address = default(CustomerFiscalEntitiesRequestAddress), string taxId = default(string), string email = default(string), string phone = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string companyName = default(string), string id = default(string), string varObject = default(string), long createdAt = default(long), string parentId = default(string), bool varDefault = default(bool))
+        public CustomerFiscalEntitiesDataResponse(CustomerAddress address = default(CustomerAddress), string taxId = default(string), string email = default(string), string phone = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string companyName = default(string), string id = default(string), string varObject = default(string), long createdAt = default(long), string parentId = default(string), bool varDefault = default(bool))
         {
             // to ensure "address" is required (not null)
             if (address == null)
@@ -85,7 +85,7 @@ namespace Conekta.net.Model
         /// Gets or Sets Address
         /// </summary>
         [DataMember(Name = "address", IsRequired = true, EmitDefaultValue = true)]
-        public CustomerFiscalEntitiesRequestAddress Address { get; set; }
+        public CustomerAddress Address { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxId
@@ -182,135 +182,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CustomerFiscalEntitiesDataResponse);
-        }
-
-        /// <summary>
-        /// Returns true if CustomerFiscalEntitiesDataResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CustomerFiscalEntitiesDataResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CustomerFiscalEntitiesDataResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
-                ) && 
-                (
-                    this.TaxId == input.TaxId ||
-                    (this.TaxId != null &&
-                    this.TaxId.Equals(input.TaxId))
-                ) && 
-                (
-                    this.Email == input.Email ||
-                    (this.Email != null &&
-                    this.Email.Equals(input.Email))
-                ) && 
-                (
-                    this.Phone == input.Phone ||
-                    (this.Phone != null &&
-                    this.Phone.Equals(input.Phone))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    this.Metadata != null &&
-                    input.Metadata != null &&
-                    this.Metadata.SequenceEqual(input.Metadata)
-                ) && 
-                (
-                    this.CompanyName == input.CompanyName ||
-                    (this.CompanyName != null &&
-                    this.CompanyName.Equals(input.CompanyName))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    this.CreatedAt.Equals(input.CreatedAt)
-                ) && 
-                (
-                    this.ParentId == input.ParentId ||
-                    (this.ParentId != null &&
-                    this.ParentId.Equals(input.ParentId))
-                ) && 
-                (
-                    this.VarDefault == input.VarDefault ||
-                    this.VarDefault.Equals(input.VarDefault)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Address != null)
-                {
-                    hashCode = (hashCode * 59) + this.Address.GetHashCode();
-                }
-                if (this.TaxId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TaxId.GetHashCode();
-                }
-                if (this.Email != null)
-                {
-                    hashCode = (hashCode * 59) + this.Email.GetHashCode();
-                }
-                if (this.Phone != null)
-                {
-                    hashCode = (hashCode * 59) + this.Phone.GetHashCode();
-                }
-                if (this.Metadata != null)
-                {
-                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
-                }
-                if (this.CompanyName != null)
-                {
-                    hashCode = (hashCode * 59) + this.CompanyName.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
-                if (this.ParentId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParentId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.VarDefault.GetHashCode();
-                return hashCode;
-            }
         }
 
         /// <summary>

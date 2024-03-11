@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// create new taxes for an existing order response
     /// </summary>
     [DataContract(Name = "update_order_tax_response")]
-    public partial class UpdateOrderTaxResponse : IEquatable<UpdateOrderTaxResponse>, IValidatableObject
+    public partial class UpdateOrderTaxResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateOrderTaxResponse" /> class.
@@ -135,94 +135,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as UpdateOrderTaxResponse);
-        }
-
-        /// <summary>
-        /// Returns true if UpdateOrderTaxResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of UpdateOrderTaxResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(UpdateOrderTaxResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Amount == input.Amount ||
-                    this.Amount.Equals(input.Amount)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    this.Metadata != null &&
-                    input.Metadata != null &&
-                    this.Metadata.SequenceEqual(input.Metadata)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                ) && 
-                (
-                    this.ParentId == input.ParentId ||
-                    (this.ParentId != null &&
-                    this.ParentId.Equals(input.ParentId))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Amount.GetHashCode();
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.Metadata != null)
-                {
-                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                if (this.ParentId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParentId.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

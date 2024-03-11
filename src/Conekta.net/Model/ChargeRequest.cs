@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// The charges to be made
     /// </summary>
     [DataContract(Name = "charge_request")]
-    public partial class ChargeRequest : IEquatable<ChargeRequest>, IValidatableObject
+    public partial class ChargeRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ChargeRequest" /> class.
@@ -97,66 +97,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ChargeRequest);
-        }
-
-        /// <summary>
-        /// Returns true if ChargeRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ChargeRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ChargeRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Amount == input.Amount ||
-                    this.Amount.Equals(input.Amount)
-                ) && 
-                (
-                    this.PaymentMethod == input.PaymentMethod ||
-                    (this.PaymentMethod != null &&
-                    this.PaymentMethod.Equals(input.PaymentMethod))
-                ) && 
-                (
-                    this.ReferenceId == input.ReferenceId ||
-                    (this.ReferenceId != null &&
-                    this.ReferenceId.Equals(input.ReferenceId))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Amount.GetHashCode();
-                if (this.PaymentMethod != null)
-                {
-                    hashCode = (hashCode * 59) + this.PaymentMethod.GetHashCode();
-                }
-                if (this.ReferenceId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ReferenceId.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

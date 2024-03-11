@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// requested field for update a charge
     /// </summary>
     [DataContract(Name = "charge_update_request")]
-    public partial class ChargeUpdateRequest : IEquatable<ChargeUpdateRequest>, IValidatableObject
+    public partial class ChargeUpdateRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ChargeUpdateRequest" /> class.
@@ -69,52 +69,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ChargeUpdateRequest);
-        }
-
-        /// <summary>
-        /// Returns true if ChargeUpdateRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ChargeUpdateRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ChargeUpdateRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.ReferenceId == input.ReferenceId ||
-                    (this.ReferenceId != null &&
-                    this.ReferenceId.Equals(input.ReferenceId))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.ReferenceId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ReferenceId.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// WebhookKeyRequest
     /// </summary>
     [DataContract(Name = "webhook_key_request")]
-    public partial class WebhookKeyRequest : IEquatable<WebhookKeyRequest>, IValidatableObject
+    public partial class WebhookKeyRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookKeyRequest" /> class.
@@ -69,48 +69,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as WebhookKeyRequest);
-        }
-
-        /// <summary>
-        /// Returns true if WebhookKeyRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of WebhookKeyRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(WebhookKeyRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Active == input.Active ||
-                    this.Active.Equals(input.Active)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Active.GetHashCode();
-                return hashCode;
-            }
         }
 
         /// <summary>

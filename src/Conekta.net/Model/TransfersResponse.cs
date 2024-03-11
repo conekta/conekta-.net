@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// A transfer represents the action of sending an amount to a business bank account including the status, amount and method used to make the transfer.
     /// </summary>
     [DataContract(Name = "transfers_response")]
-    public partial class TransfersResponse : IEquatable<TransfersResponse>, IValidatableObject
+    public partial class TransfersResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TransfersResponse" /> class.
@@ -166,121 +166,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TransfersResponse);
-        }
-
-        /// <summary>
-        /// Returns true if TransfersResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TransfersResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TransfersResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Amount == input.Amount ||
-                    this.Amount.Equals(input.Amount)
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    this.CreatedAt.Equals(input.CreatedAt)
-                ) && 
-                (
-                    this.Currency == input.Currency ||
-                    (this.Currency != null &&
-                    this.Currency.Equals(input.Currency))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Livemode == input.Livemode ||
-                    this.Livemode.Equals(input.Livemode)
-                ) && 
-                (
-                    this.Method == input.Method ||
-                    (this.Method != null &&
-                    this.Method.Equals(input.Method))
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                ) && 
-                (
-                    this.StatementDescription == input.StatementDescription ||
-                    (this.StatementDescription != null &&
-                    this.StatementDescription.Equals(input.StatementDescription))
-                ) && 
-                (
-                    this.StatementReference == input.StatementReference ||
-                    (this.StatementReference != null &&
-                    this.StatementReference.Equals(input.StatementReference))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Amount.GetHashCode();
-                hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
-                if (this.Currency != null)
-                {
-                    hashCode = (hashCode * 59) + this.Currency.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Livemode.GetHashCode();
-                if (this.Method != null)
-                {
-                    hashCode = (hashCode * 59) + this.Method.GetHashCode();
-                }
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                if (this.StatementDescription != null)
-                {
-                    hashCode = (hashCode * 59) + this.StatementDescription.GetHashCode();
-                }
-                if (this.StatementReference != null)
-                {
-                    hashCode = (hashCode * 59) + this.StatementReference.GetHashCode();
-                }
-                if (this.Status != null)
-                {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

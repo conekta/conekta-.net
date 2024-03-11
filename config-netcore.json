@@ -2,11 +2,11 @@
   "targetFramework" : "netstandard2.0;net6.0",
   "testTargetFramework" : "net6.0",
   "files": {
-    "CODE_OF_CONDUCT.md" : {},
-    "AUTHORS.md" : {},
-    "LICENSE" : {},
-    "conekta.png" : {},
-    "CONTRIBUTING.md" : {},
+    "/local/CODE_OF_CONDUCT.md" : {},
+    "/local/AUTHORS.md" : {},
+    "/local/LICENSE" : {},
+    "/local/conekta.png" : {},
+    "/local/CONTRIBUTING.md" : {},
     "RuntimeInformation.mustache" : {
       "templateType": "SupportingFiles",
       "destinationFilename": "RuntimeInformation.cs",
@@ -28,10 +28,10 @@
   "packageAuthors" : "engineering@conekta.com",
   "packageCompany" : "Conekta",
   "useGenericHost" : false,
-  "templateDir": "templates/netcore",
+  "templateDir": "/local/templates/netcore",
   "useOneOfDiscriminatorLookup" : true,
   "packageCopyright" : "Conekta",
-  "PackageReleaseNotes" : "",
+  "PackageReleaseNotes" : "add support for payout orders",
   "releaseNote" : "support for resend event, api keys and webhook keys",
-  "packageVersion" : "6.0.7"
+  "packageVersion" : "6.0.8"
 }

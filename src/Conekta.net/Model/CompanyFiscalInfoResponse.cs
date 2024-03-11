@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// Company fiscal info model
     /// </summary>
     [DataContract(Name = "company_fiscal_info_response")]
-    public partial class CompanyFiscalInfoResponse : IEquatable<CompanyFiscalInfoResponse>, IValidatableObject
+    public partial class CompanyFiscalInfoResponse : IValidatableObject
     {
         /// <summary>
         /// The resource&#39;s type
@@ -145,102 +145,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CompanyFiscalInfoResponse);
-        }
-
-        /// <summary>
-        /// Returns true if CompanyFiscalInfoResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CompanyFiscalInfoResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CompanyFiscalInfoResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.VarObject == input.VarObject ||
-                    this.VarObject.Equals(input.VarObject)
-                ) && 
-                (
-                    this.TaxId == input.TaxId ||
-                    (this.TaxId != null &&
-                    this.TaxId.Equals(input.TaxId))
-                ) && 
-                (
-                    this.LegalEntityName == input.LegalEntityName ||
-                    (this.LegalEntityName != null &&
-                    this.LegalEntityName.Equals(input.LegalEntityName))
-                ) && 
-                (
-                    this.BusinessType == input.BusinessType ||
-                    (this.BusinessType != null &&
-                    this.BusinessType.Equals(input.BusinessType))
-                ) && 
-                (
-                    this.Phone == input.Phone ||
-                    (this.Phone != null &&
-                    this.Phone.Equals(input.Phone))
-                ) && 
-                (
-                    this.PhysicalPersonBusinessType == input.PhysicalPersonBusinessType ||
-                    (this.PhysicalPersonBusinessType != null &&
-                    this.PhysicalPersonBusinessType.Equals(input.PhysicalPersonBusinessType))
-                ) && 
-                (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                if (this.TaxId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TaxId.GetHashCode();
-                }
-                if (this.LegalEntityName != null)
-                {
-                    hashCode = (hashCode * 59) + this.LegalEntityName.GetHashCode();
-                }
-                if (this.BusinessType != null)
-                {
-                    hashCode = (hashCode * 59) + this.BusinessType.GetHashCode();
-                }
-                if (this.Phone != null)
-                {
-                    hashCode = (hashCode * 59) + this.Phone.GetHashCode();
-                }
-                if (this.PhysicalPersonBusinessType != null)
-                {
-                    hashCode = (hashCode * 59) + this.PhysicalPersonBusinessType.GetHashCode();
-                }
-                if (this.Address != null)
-                {
-                    hashCode = (hashCode * 59) + this.Address.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

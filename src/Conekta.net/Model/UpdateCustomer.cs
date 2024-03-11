@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// update customer
     /// </summary>
     [DataContract(Name = "update_customer")]
-    public partial class UpdateCustomer : IEquatable<UpdateCustomer>, IValidatableObject
+    public partial class UpdateCustomer : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateCustomer" /> class.
@@ -101,7 +101,7 @@ namespace Conekta.net.Model
         /// Is the customer&#39;s phone number
         /// </summary>
         /// <value>Is the customer&#39;s phone number</value>
-        /// <example>5215555555555</example>
+        /// <example>+5215555555555</example>
         [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
@@ -201,169 +201,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as UpdateCustomer);
-        }
-
-        /// <summary>
-        /// Returns true if UpdateCustomer instances are equal
-        /// </summary>
-        /// <param name="input">Instance of UpdateCustomer to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(UpdateCustomer input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.AntifraudInfo == input.AntifraudInfo ||
-                    (this.AntifraudInfo != null &&
-                    this.AntifraudInfo.Equals(input.AntifraudInfo))
-                ) && 
-                (
-                    this.DefaultPaymentSourceId == input.DefaultPaymentSourceId ||
-                    (this.DefaultPaymentSourceId != null &&
-                    this.DefaultPaymentSourceId.Equals(input.DefaultPaymentSourceId))
-                ) && 
-                (
-                    this.Email == input.Email ||
-                    (this.Email != null &&
-                    this.Email.Equals(input.Email))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Phone == input.Phone ||
-                    (this.Phone != null &&
-                    this.Phone.Equals(input.Phone))
-                ) && 
-                (
-                    this.PlanId == input.PlanId ||
-                    (this.PlanId != null &&
-                    this.PlanId.Equals(input.PlanId))
-                ) && 
-                (
-                    this.DefaultShippingContactId == input.DefaultShippingContactId ||
-                    (this.DefaultShippingContactId != null &&
-                    this.DefaultShippingContactId.Equals(input.DefaultShippingContactId))
-                ) && 
-                (
-                    this.Corporate == input.Corporate ||
-                    this.Corporate.Equals(input.Corporate)
-                ) && 
-                (
-                    this.CustomReference == input.CustomReference ||
-                    (this.CustomReference != null &&
-                    this.CustomReference.Equals(input.CustomReference))
-                ) && 
-                (
-                    this.FiscalEntities == input.FiscalEntities ||
-                    this.FiscalEntities != null &&
-                    input.FiscalEntities != null &&
-                    this.FiscalEntities.SequenceEqual(input.FiscalEntities)
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    this.Metadata != null &&
-                    input.Metadata != null &&
-                    this.Metadata.SequenceEqual(input.Metadata)
-                ) && 
-                (
-                    this.PaymentSources == input.PaymentSources ||
-                    this.PaymentSources != null &&
-                    input.PaymentSources != null &&
-                    this.PaymentSources.SequenceEqual(input.PaymentSources)
-                ) && 
-                (
-                    this.ShippingContacts == input.ShippingContacts ||
-                    this.ShippingContacts != null &&
-                    input.ShippingContacts != null &&
-                    this.ShippingContacts.SequenceEqual(input.ShippingContacts)
-                ) && 
-                (
-                    this.Subscription == input.Subscription ||
-                    (this.Subscription != null &&
-                    this.Subscription.Equals(input.Subscription))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.AntifraudInfo != null)
-                {
-                    hashCode = (hashCode * 59) + this.AntifraudInfo.GetHashCode();
-                }
-                if (this.DefaultPaymentSourceId != null)
-                {
-                    hashCode = (hashCode * 59) + this.DefaultPaymentSourceId.GetHashCode();
-                }
-                if (this.Email != null)
-                {
-                    hashCode = (hashCode * 59) + this.Email.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Phone != null)
-                {
-                    hashCode = (hashCode * 59) + this.Phone.GetHashCode();
-                }
-                if (this.PlanId != null)
-                {
-                    hashCode = (hashCode * 59) + this.PlanId.GetHashCode();
-                }
-                if (this.DefaultShippingContactId != null)
-                {
-                    hashCode = (hashCode * 59) + this.DefaultShippingContactId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Corporate.GetHashCode();
-                if (this.CustomReference != null)
-                {
-                    hashCode = (hashCode * 59) + this.CustomReference.GetHashCode();
-                }
-                if (this.FiscalEntities != null)
-                {
-                    hashCode = (hashCode * 59) + this.FiscalEntities.GetHashCode();
-                }
-                if (this.Metadata != null)
-                {
-                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
-                }
-                if (this.PaymentSources != null)
-                {
-                    hashCode = (hashCode * 59) + this.PaymentSources.GetHashCode();
-                }
-                if (this.ShippingContacts != null)
-                {
-                    hashCode = (hashCode * 59) + this.ShippingContacts.GetHashCode();
-                }
-                if (this.Subscription != null)
-                {
-                    hashCode = (hashCode * 59) + this.Subscription.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// PaymentMethodCardRequest
     /// </summary>
     [DataContract(Name = "payment_method_card_request")]
-    public partial class PaymentMethodCardRequest : IEquatable<PaymentMethodCardRequest>, IValidatableObject
+    public partial class PaymentMethodCardRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentMethodCardRequest" /> class.
@@ -95,61 +95,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as PaymentMethodCardRequest);
-        }
-
-        /// <summary>
-        /// Returns true if PaymentMethodCardRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of PaymentMethodCardRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(PaymentMethodCardRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.TokenId == input.TokenId ||
-                    (this.TokenId != null &&
-                    this.TokenId.Equals(input.TokenId))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Type != null)
-                {
-                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                }
-                if (this.TokenId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TokenId.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

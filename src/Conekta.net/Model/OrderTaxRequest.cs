@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// create new taxes for an existing order
     /// </summary>
     [DataContract(Name = "order_tax_request")]
-    public partial class OrderTaxRequest : IEquatable<OrderTaxRequest>, IValidatableObject
+    public partial class OrderTaxRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderTaxRequest" /> class.
@@ -100,67 +100,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as OrderTaxRequest);
-        }
-
-        /// <summary>
-        /// Returns true if OrderTaxRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of OrderTaxRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(OrderTaxRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Amount == input.Amount ||
-                    this.Amount.Equals(input.Amount)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    this.Metadata != null &&
-                    input.Metadata != null &&
-                    this.Metadata.SequenceEqual(input.Metadata)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Amount.GetHashCode();
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.Metadata != null)
-                {
-                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

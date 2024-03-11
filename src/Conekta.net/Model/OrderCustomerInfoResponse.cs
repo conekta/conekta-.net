@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// OrderCustomerInfoResponse
     /// </summary>
     [DataContract(Name = "order_customer_info_response")]
-    public partial class OrderCustomerInfoResponse : IEquatable<OrderCustomerInfoResponse>, IValidatableObject
+    public partial class OrderCustomerInfoResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderCustomerInfoResponse" /> class.
@@ -118,93 +118,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as OrderCustomerInfoResponse);
-        }
-
-        /// <summary>
-        /// Returns true if OrderCustomerInfoResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of OrderCustomerInfoResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(OrderCustomerInfoResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.CustomerCustomReference == input.CustomerCustomReference ||
-                    (this.CustomerCustomReference != null &&
-                    this.CustomerCustomReference.Equals(input.CustomerCustomReference))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Email == input.Email ||
-                    (this.Email != null &&
-                    this.Email.Equals(input.Email))
-                ) && 
-                (
-                    this.Phone == input.Phone ||
-                    (this.Phone != null &&
-                    this.Phone.Equals(input.Phone))
-                ) && 
-                (
-                    this.Corporate == input.Corporate ||
-                    this.Corporate.Equals(input.Corporate)
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.CustomerCustomReference != null)
-                {
-                    hashCode = (hashCode * 59) + this.CustomerCustomReference.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Email != null)
-                {
-                    hashCode = (hashCode * 59) + this.Email.GetHashCode();
-                }
-                if (this.Phone != null)
-                {
-                    hashCode = (hashCode * 59) + this.Phone.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Corporate.GetHashCode();
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

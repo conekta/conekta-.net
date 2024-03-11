@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// err model
     /// </summary>
     [DataContract(Name = "error")]
-    public partial class Error : IEquatable<Error>, IValidatableObject
+    public partial class Error : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Error" /> class.
@@ -98,80 +98,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as Error);
-        }
-
-        /// <summary>
-        /// Returns true if Error instances are equal
-        /// </summary>
-        /// <param name="input">Instance of Error to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(Error input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Details == input.Details ||
-                    this.Details != null &&
-                    input.Details != null &&
-                    this.Details.SequenceEqual(input.Details)
-                ) && 
-                (
-                    this.LogId == input.LogId ||
-                    (this.LogId != null &&
-                    this.LogId.Equals(input.LogId))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Details != null)
-                {
-                    hashCode = (hashCode * 59) + this.Details.GetHashCode();
-                }
-                if (this.LogId != null)
-                {
-                    hashCode = (hashCode * 59) + this.LogId.GetHashCode();
-                }
-                if (this.Type != null)
-                {
-                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                }
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

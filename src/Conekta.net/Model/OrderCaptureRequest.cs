@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// OrderCaptureRequest
     /// </summary>
     [DataContract(Name = "order_capture_request")]
-    public partial class OrderCaptureRequest : IEquatable<OrderCaptureRequest>, IValidatableObject
+    public partial class OrderCaptureRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderCaptureRequest" /> class.
@@ -74,48 +74,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as OrderCaptureRequest);
-        }
-
-        /// <summary>
-        /// Returns true if OrderCaptureRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of OrderCaptureRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(OrderCaptureRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Amount == input.Amount ||
-                    this.Amount.Equals(input.Amount)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Amount.GetHashCode();
-                return hashCode;
-            }
         }
 
         /// <summary>

@@ -73,7 +73,7 @@ namespace Conekta.net.Test.Api
         {
             string id = "cus_2tXyF9BwPG14UMkkg";
             CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest = new(
-                address: new CustomerFiscalEntitiesRequestAddress(
+                address: new CustomerAddress(
                     street1: "av siem",
                     city: "mexico",
                     country: "MX",
@@ -257,7 +257,7 @@ namespace Conekta.net.Test.Api
             var fiscalEntities = new List<CustomerFiscalEntitiesRequest>()
             {
                 new CustomerFiscalEntitiesRequest(
-                    address: new CustomerFiscalEntitiesRequestAddress(
+                    address: new CustomerAddress(
                         street1: "av siempre viva",
                         street2: "condensa",
                         postalCode: "11011",

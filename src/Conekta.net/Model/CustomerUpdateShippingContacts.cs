@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// [Shipping](https://developers.conekta.com/v2.1.0/reference/createcustomershippingcontacts) details, required in case of sending a shipping. If we do not receive a shipping_contact on the order, the default shipping_contact of the customer will be used.
     /// </summary>
     [DataContract(Name = "customer_update_shipping_contacts")]
-    public partial class CustomerUpdateShippingContacts : IEquatable<CustomerUpdateShippingContacts>, IValidatableObject
+    public partial class CustomerUpdateShippingContacts : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomerUpdateShippingContacts" /> class.
@@ -57,7 +57,7 @@ namespace Conekta.net.Model
         /// Phone contact
         /// </summary>
         /// <value>Phone contact</value>
-        /// <example>525511223344</example>
+        /// <example>+525511223344</example>
         [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
@@ -127,106 +127,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CustomerUpdateShippingContacts);
-        }
-
-        /// <summary>
-        /// Returns true if CustomerUpdateShippingContacts instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CustomerUpdateShippingContacts to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CustomerUpdateShippingContacts input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Phone == input.Phone ||
-                    (this.Phone != null &&
-                    this.Phone.Equals(input.Phone))
-                ) && 
-                (
-                    this.Receiver == input.Receiver ||
-                    (this.Receiver != null &&
-                    this.Receiver.Equals(input.Receiver))
-                ) && 
-                (
-                    this.BetweenStreets == input.BetweenStreets ||
-                    (this.BetweenStreets != null &&
-                    this.BetweenStreets.Equals(input.BetweenStreets))
-                ) && 
-                (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
-                ) && 
-                (
-                    this.ParentId == input.ParentId ||
-                    (this.ParentId != null &&
-                    this.ParentId.Equals(input.ParentId))
-                ) && 
-                (
-                    this.VarDefault == input.VarDefault ||
-                    (this.VarDefault != null &&
-                    this.VarDefault.Equals(input.VarDefault))
-                ) && 
-                (
-                    this.Deleted == input.Deleted ||
-                    (this.Deleted != null &&
-                    this.Deleted.Equals(input.Deleted))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Phone != null)
-                {
-                    hashCode = (hashCode * 59) + this.Phone.GetHashCode();
-                }
-                if (this.Receiver != null)
-                {
-                    hashCode = (hashCode * 59) + this.Receiver.GetHashCode();
-                }
-                if (this.BetweenStreets != null)
-                {
-                    hashCode = (hashCode * 59) + this.BetweenStreets.GetHashCode();
-                }
-                if (this.Address != null)
-                {
-                    hashCode = (hashCode * 59) + this.Address.GetHashCode();
-                }
-                if (this.ParentId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParentId.GetHashCode();
-                }
-                if (this.VarDefault != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarDefault.GetHashCode();
-                }
-                if (this.Deleted != null)
-                {
-                    hashCode = (hashCode * 59) + this.Deleted.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

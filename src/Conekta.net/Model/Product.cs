@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// Product
     /// </summary>
     [DataContract(Name = "product")]
-    public partial class Product : IEquatable<Product>, IValidatableObject
+    public partial class Product : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Product" /> class.
@@ -166,119 +166,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as Product);
-        }
-
-        /// <summary>
-        /// Returns true if Product instances are equal
-        /// </summary>
-        /// <param name="input">Instance of Product to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(Product input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.AntifraudInfo == input.AntifraudInfo ||
-                    this.AntifraudInfo != null &&
-                    input.AntifraudInfo != null &&
-                    this.AntifraudInfo.SequenceEqual(input.AntifraudInfo)
-                ) && 
-                (
-                    this.Brand == input.Brand ||
-                    (this.Brand != null &&
-                    this.Brand.Equals(input.Brand))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    this.Metadata != null &&
-                    input.Metadata != null &&
-                    this.Metadata.SequenceEqual(input.Metadata)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Quantity == input.Quantity ||
-                    this.Quantity.Equals(input.Quantity)
-                ) && 
-                (
-                    this.Sku == input.Sku ||
-                    (this.Sku != null &&
-                    this.Sku.Equals(input.Sku))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.UnitPrice == input.UnitPrice ||
-                    this.UnitPrice.Equals(input.UnitPrice)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.AntifraudInfo != null)
-                {
-                    hashCode = (hashCode * 59) + this.AntifraudInfo.GetHashCode();
-                }
-                if (this.Brand != null)
-                {
-                    hashCode = (hashCode * 59) + this.Brand.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.Metadata != null)
-                {
-                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Quantity.GetHashCode();
-                if (this.Sku != null)
-                {
-                    hashCode = (hashCode * 59) + this.Sku.GetHashCode();
-                }
-                if (this.Tags != null)
-                {
-                    hashCode = (hashCode * 59) + this.Tags.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.UnitPrice.GetHashCode();
-                return hashCode;
-            }
         }
 
         /// <summary>

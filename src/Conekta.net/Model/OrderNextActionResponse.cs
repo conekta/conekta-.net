@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// contains the following attributes that will guide to continue the flow
     /// </summary>
     [DataContract(Name = "order_next_action_response")]
-    public partial class OrderNextActionResponse : IEquatable<OrderNextActionResponse>, IValidatableObject
+    public partial class OrderNextActionResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderNextActionResponse" /> class.
@@ -78,61 +78,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as OrderNextActionResponse);
-        }
-
-        /// <summary>
-        /// Returns true if OrderNextActionResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of OrderNextActionResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(OrderNextActionResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.RedirectToUrl == input.RedirectToUrl ||
-                    (this.RedirectToUrl != null &&
-                    this.RedirectToUrl.Equals(input.RedirectToUrl))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.RedirectToUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.RedirectToUrl.GetHashCode();
-                }
-                if (this.Type != null)
-                {
-                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

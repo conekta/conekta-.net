@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// Company model
     /// </summary>
     [DataContract(Name = "company_response")]
-    public partial class CompanyResponse : IEquatable<CompanyResponse>, IValidatableObject
+    public partial class CompanyResponse : IValidatableObject
     {
         /// <summary>
         /// The resource&#39;s type
@@ -155,103 +155,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CompanyResponse);
-        }
-
-        /// <summary>
-        /// Returns true if CompanyResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CompanyResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CompanyResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    this.CreatedAt.Equals(input.CreatedAt)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    this.VarObject.Equals(input.VarObject)
-                ) && 
-                (
-                    this.ParentCompanyId == input.ParentCompanyId ||
-                    (this.ParentCompanyId != null &&
-                    this.ParentCompanyId.Equals(input.ParentCompanyId))
-                ) && 
-                (
-                    this.UseParentFiscalData == input.UseParentFiscalData ||
-                    this.UseParentFiscalData.Equals(input.UseParentFiscalData)
-                ) && 
-                (
-                    this.PayoutDestination == input.PayoutDestination ||
-                    (this.PayoutDestination != null &&
-                    this.PayoutDestination.Equals(input.PayoutDestination))
-                ) && 
-                (
-                    this.FiscalInfo == input.FiscalInfo ||
-                    (this.FiscalInfo != null &&
-                    this.FiscalInfo.Equals(input.FiscalInfo))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                if (this.ParentCompanyId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParentCompanyId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.UseParentFiscalData.GetHashCode();
-                if (this.PayoutDestination != null)
-                {
-                    hashCode = (hashCode * 59) + this.PayoutDestination.GetHashCode();
-                }
-                if (this.FiscalInfo != null)
-                {
-                    hashCode = (hashCode * 59) + this.FiscalInfo.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

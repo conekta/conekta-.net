@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// The Transaction object represents the actions or steps of an order. Statuses can be: unprocessed, pending, available, owen, paid_out, voided, capture, capture_reversal, liquidation, liquidation_reversal, payout, payout_reversal, refund, refund_reversal, chargeback, chargeback_reversal, rounding_adjustment, won_chargeback, transferred, and transferred.
     /// </summary>
     [DataContract(Name = "transaction_response")]
-    public partial class TransactionResponse : IEquatable<TransactionResponse>, IValidatableObject
+    public partial class TransactionResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionResponse" /> class.
@@ -214,122 +214,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TransactionResponse);
-        }
-
-        /// <summary>
-        /// Returns true if TransactionResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TransactionResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TransactionResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Amount == input.Amount ||
-                    this.Amount.Equals(input.Amount)
-                ) && 
-                (
-                    this.Charge == input.Charge ||
-                    (this.Charge != null &&
-                    this.Charge.Equals(input.Charge))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    this.CreatedAt.Equals(input.CreatedAt)
-                ) && 
-                (
-                    this.Currency == input.Currency ||
-                    (this.Currency != null &&
-                    this.Currency.Equals(input.Currency))
-                ) && 
-                (
-                    this.Fee == input.Fee ||
-                    this.Fee.Equals(input.Fee)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Livemode == input.Livemode ||
-                    this.Livemode.Equals(input.Livemode)
-                ) && 
-                (
-                    this.Net == input.Net ||
-                    this.Net.Equals(input.Net)
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Amount.GetHashCode();
-                if (this.Charge != null)
-                {
-                    hashCode = (hashCode * 59) + this.Charge.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
-                if (this.Currency != null)
-                {
-                    hashCode = (hashCode * 59) + this.Currency.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Fee.GetHashCode();
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Livemode.GetHashCode();
-                hashCode = (hashCode * 59) + this.Net.GetHashCode();
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                if (this.Status != null)
-                {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                }
-                if (this.Type != null)
-                {
-                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

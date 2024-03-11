@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// DetailsError
     /// </summary>
     [DataContract(Name = "details_error")]
-    public partial class DetailsError : IEquatable<DetailsError>, IValidatableObject
+    public partial class DetailsError : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DetailsError" /> class.
@@ -97,79 +97,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as DetailsError);
-        }
-
-        /// <summary>
-        /// Returns true if DetailsError instances are equal
-        /// </summary>
-        /// <param name="input">Instance of DetailsError to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(DetailsError input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Code == input.Code ||
-                    (this.Code != null &&
-                    this.Code.Equals(input.Code))
-                ) && 
-                (
-                    this.Param == input.Param ||
-                    (this.Param != null &&
-                    this.Param.Equals(input.Param))
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.DebugMessage == input.DebugMessage ||
-                    (this.DebugMessage != null &&
-                    this.DebugMessage.Equals(input.DebugMessage))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Code != null)
-                {
-                    hashCode = (hashCode * 59) + this.Code.GetHashCode();
-                }
-                if (this.Param != null)
-                {
-                    hashCode = (hashCode * 59) + this.Param.GetHashCode();
-                }
-                if (this.Message != null)
-                {
-                    hashCode = (hashCode * 59) + this.Message.GetHashCode();
-                }
-                if (this.DebugMessage != null)
-                {
-                    hashCode = (hashCode * 59) + this.DebugMessage.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

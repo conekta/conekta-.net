@@ -30,12 +30,11 @@ namespace Conekta.net.Model
     /// ApiKeyCreateResponse
     /// </summary>
     [DataContract(Name = "api_key_create_response")]
-    public partial class ApiKeyCreateResponse : IEquatable<ApiKeyCreateResponse>, IValidatableObject
+    public partial class ApiKeyCreateResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiKeyCreateResponse" /> class.
         /// </summary>
-        /// <param name="authenticationToken">It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place..</param>
         /// <param name="active">Indicates if the api key is active.</param>
         /// <param name="createdAt">Unix timestamp in seconds of when the api key was created.</param>
         /// <param name="updatedAt">Unix timestamp in seconds of when the api key was last updated.</param>
@@ -47,9 +46,9 @@ namespace Conekta.net.Model
         /// <param name="varObject">Object name, value is &#39;api_key&#39;.</param>
         /// <param name="prefix">The first few characters of the authentication_token.</param>
         /// <param name="role">Indicates if the api key is private or public.</param>
-        public ApiKeyCreateResponse(string authenticationToken = default(string), bool active = default(bool), long createdAt = default(long), long updatedAt = default(long), long? deactivatedAt = default(long?), string description = default(string), string id = default(string), bool livemode = default(bool), bool deleted = default(bool), string varObject = default(string), string prefix = default(string), string role = default(string))
+        /// <param name="authenticationToken">It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place..</param>
+        public ApiKeyCreateResponse(bool active = default(bool), long createdAt = default(long), long updatedAt = default(long), long? deactivatedAt = default(long?), string description = default(string), string id = default(string), bool livemode = default(bool), bool deleted = default(bool), string varObject = default(string), string prefix = default(string), string role = default(string), string authenticationToken = default(string))
         {
-            this.AuthenticationToken = authenticationToken;
             this.Active = active;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
@@ -61,15 +60,8 @@ namespace Conekta.net.Model
             this.VarObject = varObject;
             this.Prefix = prefix;
             this.Role = role;
+            this.AuthenticationToken = authenticationToken;
         }
-
-        /// <summary>
-        /// It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place.
-        /// </summary>
-        /// <value>It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place.</value>
-        /// <example>key_rpHzxufNgjFCdprEEFZRTKi</example>
-        [DataMember(Name = "authentication_token", EmitDefaultValue = false)]
-        public string AuthenticationToken { get; set; }
 
         /// <summary>
         /// Indicates if the api key is active
@@ -159,6 +151,14 @@ namespace Conekta.net.Model
         public string Role { get; set; }
 
         /// <summary>
+        /// It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place.
+        /// </summary>
+        /// <value>It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place.</value>
+        /// <example>key_rpHzxufNgjFCdprEEFZRTKi</example>
+        [DataMember(Name = "authentication_token", EmitDefaultValue = false)]
+        public string AuthenticationToken { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -166,7 +166,6 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class ApiKeyCreateResponse {\n");
-            sb.Append("  AuthenticationToken: ").Append(AuthenticationToken).Append("\n");
             sb.Append("  Active: ").Append(Active).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
@@ -178,6 +177,7 @@ namespace Conekta.net.Model
             sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  Prefix: ").Append(Prefix).Append("\n");
             sb.Append("  Role: ").Append(Role).Append("\n");
+            sb.Append("  AuthenticationToken: ").Append(AuthenticationToken).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -189,131 +189,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ApiKeyCreateResponse);
-        }
-
-        /// <summary>
-        /// Returns true if ApiKeyCreateResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ApiKeyCreateResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ApiKeyCreateResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.AuthenticationToken == input.AuthenticationToken ||
-                    (this.AuthenticationToken != null &&
-                    this.AuthenticationToken.Equals(input.AuthenticationToken))
-                ) && 
-                (
-                    this.Active == input.Active ||
-                    this.Active.Equals(input.Active)
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    this.CreatedAt.Equals(input.CreatedAt)
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    this.UpdatedAt.Equals(input.UpdatedAt)
-                ) && 
-                (
-                    this.DeactivatedAt == input.DeactivatedAt ||
-                    (this.DeactivatedAt != null &&
-                    this.DeactivatedAt.Equals(input.DeactivatedAt))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Livemode == input.Livemode ||
-                    this.Livemode.Equals(input.Livemode)
-                ) && 
-                (
-                    this.Deleted == input.Deleted ||
-                    this.Deleted.Equals(input.Deleted)
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                ) && 
-                (
-                    this.Prefix == input.Prefix ||
-                    (this.Prefix != null &&
-                    this.Prefix.Equals(input.Prefix))
-                ) && 
-                (
-                    this.Role == input.Role ||
-                    (this.Role != null &&
-                    this.Role.Equals(input.Role))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.AuthenticationToken != null)
-                {
-                    hashCode = (hashCode * 59) + this.AuthenticationToken.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Active.GetHashCode();
-                hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
-                hashCode = (hashCode * 59) + this.UpdatedAt.GetHashCode();
-                if (this.DeactivatedAt != null)
-                {
-                    hashCode = (hashCode * 59) + this.DeactivatedAt.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Livemode.GetHashCode();
-                hashCode = (hashCode * 59) + this.Deleted.GetHashCode();
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                if (this.Prefix != null)
-                {
-                    hashCode = (hashCode * 59) + this.Prefix.GetHashCode();
-                }
-                if (this.Role != null)
-                {
-                    hashCode = (hashCode * 59) + this.Role.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

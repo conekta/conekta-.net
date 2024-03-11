@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// Payment method used in the charge. Go to the [payment methods](https://developers.conekta.com/reference/m%C3%A9todos-de-pago) section for more details 
     /// </summary>
     [DataContract(Name = "charge_request_payment_method")]
-    public partial class ChargeRequestPaymentMethod : IEquatable<ChargeRequestPaymentMethod>, IValidatableObject
+    public partial class ChargeRequestPaymentMethod : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ChargeRequestPaymentMethod" /> class.
@@ -130,89 +130,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ChargeRequestPaymentMethod);
-        }
-
-        /// <summary>
-        /// Returns true if ChargeRequestPaymentMethod instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ChargeRequestPaymentMethod to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ChargeRequestPaymentMethod input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.ExpiresAt == input.ExpiresAt ||
-                    this.ExpiresAt.Equals(input.ExpiresAt)
-                ) && 
-                (
-                    this.MonthlyInstallments == input.MonthlyInstallments ||
-                    this.MonthlyInstallments.Equals(input.MonthlyInstallments)
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.TokenId == input.TokenId ||
-                    (this.TokenId != null &&
-                    this.TokenId.Equals(input.TokenId))
-                ) && 
-                (
-                    this.PaymentSourceId == input.PaymentSourceId ||
-                    (this.PaymentSourceId != null &&
-                    this.PaymentSourceId.Equals(input.PaymentSourceId))
-                ) && 
-                (
-                    this.ContractId == input.ContractId ||
-                    (this.ContractId != null &&
-                    this.ContractId.Equals(input.ContractId))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.ExpiresAt.GetHashCode();
-                hashCode = (hashCode * 59) + this.MonthlyInstallments.GetHashCode();
-                if (this.Type != null)
-                {
-                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                }
-                if (this.TokenId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TokenId.GetHashCode();
-                }
-                if (this.PaymentSourceId != null)
-                {
-                    hashCode = (hashCode * 59) + this.PaymentSourceId.GetHashCode();
-                }
-                if (this.ContractId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ContractId.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

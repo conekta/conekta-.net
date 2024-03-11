@@ -177,7 +177,9 @@ public class OrdersApiTests
             expiresAt: (long)DateTime.UtcNow.AddSeconds(259200).Subtract(new DateTime(1970, 1, 1)).TotalSeconds,
             allowedPaymentMethods: new List<string> { "cash", "card", "bank_transfer" },
             monthlyInstallmentsEnabled: true,
-            monthlyInstallmentsOptions: new List<int> { 3, 6, 12 }
+            monthlyInstallmentsOptions: new List<int> { 3, 6, 12 },
+            redirectionTime: 8
+            
         );
         OrderRequestCustomerInfo customerInfo = new(new CustomerInfoJustCustomerId("cus_msi_2o8jK3TDtejmz1sYd"));
         OrderRequest orderRequest = new(
@@ -197,6 +199,7 @@ public class OrdersApiTests
         Assert.Equal("Integration", response.Checkout.Type);
         Assert.True(response.Checkout.MonthlyInstallmentsEnabled);
         Assert.Equal(new List<int> { 3, 6, 12 }, response.Checkout.MonthlyInstallmentsOptions);
+        Assert.Equal(checkout.RedirectionTime, response.Checkout.RedirectionTime);
     }
 
     /// <summary>

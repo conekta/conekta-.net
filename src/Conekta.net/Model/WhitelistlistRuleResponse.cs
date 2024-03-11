@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// WhitelistlistRuleResponse
     /// </summary>
     [DataContract(Name = "whitelistlist_rule_response")]
-    public partial class WhitelistlistRuleResponse : IEquatable<WhitelistlistRuleResponse>, IValidatableObject
+    public partial class WhitelistlistRuleResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="WhitelistlistRuleResponse" /> class.
@@ -102,79 +102,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as WhitelistlistRuleResponse);
-        }
-
-        /// <summary>
-        /// Returns true if WhitelistlistRuleResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of WhitelistlistRuleResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(WhitelistlistRuleResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Field == input.Field ||
-                    (this.Field != null &&
-                    this.Field.Equals(input.Field))
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.Field != null)
-                {
-                    hashCode = (hashCode * 59) + this.Field.GetHashCode();
-                }
-                if (this.Value != null)
-                {
-                    hashCode = (hashCode * 59) + this.Value.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

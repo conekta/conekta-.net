@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// an updated webhook
     /// </summary>
     [DataContract(Name = "webhook_update_request")]
-    public partial class WebhookUpdateRequest : IEquatable<WebhookUpdateRequest>, IValidatableObject
+    public partial class WebhookUpdateRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookUpdateRequest" /> class.
@@ -100,67 +100,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as WebhookUpdateRequest);
-        }
-
-        /// <summary>
-        /// Returns true if WebhookUpdateRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of WebhookUpdateRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(WebhookUpdateRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.Synchronous == input.Synchronous ||
-                    this.Synchronous.Equals(input.Synchronous)
-                ) && 
-                (
-                    this.Events == input.Events ||
-                    this.Events != null &&
-                    input.Events != null &&
-                    this.Events.SequenceEqual(input.Events)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Url != null)
-                {
-                    hashCode = (hashCode * 59) + this.Url.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Synchronous.GetHashCode();
-                if (this.Events != null)
-                {
-                    hashCode = (hashCode * 59) + this.Events.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

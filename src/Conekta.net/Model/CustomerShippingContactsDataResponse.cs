@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// CustomerShippingContactsDataResponse
     /// </summary>
     [DataContract(Name = "customer_shipping_contacts_data_response")]
-    public partial class CustomerShippingContactsDataResponse : IEquatable<CustomerShippingContactsDataResponse>, IValidatableObject
+    public partial class CustomerShippingContactsDataResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomerShippingContactsDataResponse" /> class.
@@ -85,7 +85,7 @@ namespace Conekta.net.Model
         /// Phone contact
         /// </summary>
         /// <value>Phone contact</value>
-        /// <example>525511223344</example>
+        /// <example>+525511223344</example>
         [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
@@ -187,139 +187,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CustomerShippingContactsDataResponse);
-        }
-
-        /// <summary>
-        /// Returns true if CustomerShippingContactsDataResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CustomerShippingContactsDataResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CustomerShippingContactsDataResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Phone == input.Phone ||
-                    (this.Phone != null &&
-                    this.Phone.Equals(input.Phone))
-                ) && 
-                (
-                    this.Receiver == input.Receiver ||
-                    (this.Receiver != null &&
-                    this.Receiver.Equals(input.Receiver))
-                ) && 
-                (
-                    this.BetweenStreets == input.BetweenStreets ||
-                    (this.BetweenStreets != null &&
-                    this.BetweenStreets.Equals(input.BetweenStreets))
-                ) && 
-                (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
-                ) && 
-                (
-                    this.ParentId == input.ParentId ||
-                    (this.ParentId != null &&
-                    this.ParentId.Equals(input.ParentId))
-                ) && 
-                (
-                    this.VarDefault == input.VarDefault ||
-                    (this.VarDefault != null &&
-                    this.VarDefault.Equals(input.VarDefault))
-                ) && 
-                (
-                    this.Deleted == input.Deleted ||
-                    (this.Deleted != null &&
-                    this.Deleted.Equals(input.Deleted))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    this.Metadata != null &&
-                    input.Metadata != null &&
-                    this.Metadata.SequenceEqual(input.Metadata)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    this.CreatedAt.Equals(input.CreatedAt)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Phone != null)
-                {
-                    hashCode = (hashCode * 59) + this.Phone.GetHashCode();
-                }
-                if (this.Receiver != null)
-                {
-                    hashCode = (hashCode * 59) + this.Receiver.GetHashCode();
-                }
-                if (this.BetweenStreets != null)
-                {
-                    hashCode = (hashCode * 59) + this.BetweenStreets.GetHashCode();
-                }
-                if (this.Address != null)
-                {
-                    hashCode = (hashCode * 59) + this.Address.GetHashCode();
-                }
-                if (this.ParentId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParentId.GetHashCode();
-                }
-                if (this.VarDefault != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarDefault.GetHashCode();
-                }
-                if (this.Deleted != null)
-                {
-                    hashCode = (hashCode * 59) + this.Deleted.GetHashCode();
-                }
-                if (this.Metadata != null)
-                {
-                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
-                return hashCode;
-            }
         }
 
         /// <summary>

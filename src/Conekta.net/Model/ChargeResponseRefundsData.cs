@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// ChargeResponseRefundsData
     /// </summary>
     [DataContract(Name = "charge_response_refunds_data")]
-    public partial class ChargeResponseRefundsData : IEquatable<ChargeResponseRefundsData>, IValidatableObject
+    public partial class ChargeResponseRefundsData : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ChargeResponseRefundsData" /> class.
@@ -145,94 +145,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ChargeResponseRefundsData);
-        }
-
-        /// <summary>
-        /// Returns true if ChargeResponseRefundsData instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ChargeResponseRefundsData to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ChargeResponseRefundsData input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Amount == input.Amount ||
-                    this.Amount.Equals(input.Amount)
-                ) && 
-                (
-                    this.AuthCode == input.AuthCode ||
-                    (this.AuthCode != null &&
-                    this.AuthCode.Equals(input.AuthCode))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    this.CreatedAt.Equals(input.CreatedAt)
-                ) && 
-                (
-                    this.ExpiresAt == input.ExpiresAt ||
-                    this.ExpiresAt.Equals(input.ExpiresAt)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Amount.GetHashCode();
-                if (this.AuthCode != null)
-                {
-                    hashCode = (hashCode * 59) + this.AuthCode.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
-                hashCode = (hashCode * 59) + this.ExpiresAt.GetHashCode();
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                if (this.Status != null)
-                {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

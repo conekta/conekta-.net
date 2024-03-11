@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// Fiscal entity of the order, Currently it is a purely informative field
     /// </summary>
     [DataContract(Name = "order_fiscal_entity_response")]
-    public partial class OrderFiscalEntityResponse : IEquatable<OrderFiscalEntityResponse>, IValidatableObject
+    public partial class OrderFiscalEntityResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderFiscalEntityResponse" /> class.
@@ -141,7 +141,7 @@ namespace Conekta.net.Model
         /// Phone of the fiscal entity
         /// </summary>
         /// <value>Phone of the fiscal entity</value>
-        /// <example>525511223344</example>
+        /// <example>+525511223344</example>
         [DataMember(Name = "phone", EmitDefaultValue = true)]
         public string Phone { get; set; }
 
@@ -173,121 +173,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as OrderFiscalEntityResponse);
-        }
-
-        /// <summary>
-        /// Returns true if OrderFiscalEntityResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of OrderFiscalEntityResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(OrderFiscalEntityResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
-                ) && 
-                (
-                    this.Email == input.Email ||
-                    (this.Email != null &&
-                    this.Email.Equals(input.Email))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    this.Metadata != null &&
-                    input.Metadata != null &&
-                    this.Metadata.SequenceEqual(input.Metadata)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.TaxId == input.TaxId ||
-                    (this.TaxId != null &&
-                    this.TaxId.Equals(input.TaxId))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    this.CreatedAt.Equals(input.CreatedAt)
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                ) && 
-                (
-                    this.Phone == input.Phone ||
-                    (this.Phone != null &&
-                    this.Phone.Equals(input.Phone))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Address != null)
-                {
-                    hashCode = (hashCode * 59) + this.Address.GetHashCode();
-                }
-                if (this.Email != null)
-                {
-                    hashCode = (hashCode * 59) + this.Email.GetHashCode();
-                }
-                if (this.Metadata != null)
-                {
-                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.TaxId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TaxId.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                if (this.Phone != null)
-                {
-                    hashCode = (hashCode * 59) + this.Phone.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>
