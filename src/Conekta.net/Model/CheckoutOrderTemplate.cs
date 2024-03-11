@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// It maintains the attributes with which the order will be created when receiving a new payment.
     /// </summary>
     [DataContract(Name = "checkout_order_template")]
-    public partial class CheckoutOrderTemplate : IEquatable<CheckoutOrderTemplate>, IValidatableObject
+    public partial class CheckoutOrderTemplate : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CheckoutOrderTemplate" /> class.
@@ -114,81 +114,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CheckoutOrderTemplate);
-        }
-
-        /// <summary>
-        /// Returns true if CheckoutOrderTemplate instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CheckoutOrderTemplate to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CheckoutOrderTemplate input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Currency == input.Currency ||
-                    (this.Currency != null &&
-                    this.Currency.Equals(input.Currency))
-                ) && 
-                (
-                    this.CustomerInfo == input.CustomerInfo ||
-                    (this.CustomerInfo != null &&
-                    this.CustomerInfo.Equals(input.CustomerInfo))
-                ) && 
-                (
-                    this.LineItems == input.LineItems ||
-                    this.LineItems != null &&
-                    input.LineItems != null &&
-                    this.LineItems.SequenceEqual(input.LineItems)
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    this.Metadata != null &&
-                    input.Metadata != null &&
-                    this.Metadata.SequenceEqual(input.Metadata)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Currency != null)
-                {
-                    hashCode = (hashCode * 59) + this.Currency.GetHashCode();
-                }
-                if (this.CustomerInfo != null)
-                {
-                    hashCode = (hashCode * 59) + this.CustomerInfo.GetHashCode();
-                }
-                if (this.LineItems != null)
-                {
-                    hashCode = (hashCode * 59) + this.LineItems.GetHashCode();
-                }
-                if (this.Metadata != null)
-                {
-                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

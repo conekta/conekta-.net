@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// It is a parameter that allows to identify in the response, the detailed content of the plans to which the client has subscribed
     /// </summary>
     [DataContract(Name = "subscription_request")]
-    public partial class SubscriptionRequest : IEquatable<SubscriptionRequest>, IValidatableObject
+    public partial class SubscriptionRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SubscriptionRequest" /> class.
@@ -98,66 +98,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as SubscriptionRequest);
-        }
-
-        /// <summary>
-        /// Returns true if SubscriptionRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of SubscriptionRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SubscriptionRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.PlanId == input.PlanId ||
-                    (this.PlanId != null &&
-                    this.PlanId.Equals(input.PlanId))
-                ) && 
-                (
-                    this.CardId == input.CardId ||
-                    (this.CardId != null &&
-                    this.CardId.Equals(input.CardId))
-                ) && 
-                (
-                    this.TrialEnd == input.TrialEnd ||
-                    this.TrialEnd.Equals(input.TrialEnd)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.PlanId != null)
-                {
-                    hashCode = (hashCode * 59) + this.PlanId.GetHashCode();
-                }
-                if (this.CardId != null)
-                {
-                    hashCode = (hashCode * 59) + this.CardId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.TrialEnd.GetHashCode();
-                return hashCode;
-            }
         }
 
         /// <summary>

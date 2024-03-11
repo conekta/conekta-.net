@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// Details
     /// </summary>
     [DataContract(Name = "details")]
-    public partial class Details : IEquatable<Details>, IValidatableObject
+    public partial class Details : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Details" /> class.
@@ -67,53 +67,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as Details);
-        }
-
-        /// <summary>
-        /// Returns true if Details instances are equal
-        /// </summary>
-        /// <param name="input">Instance of Details to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(Details input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.VarDetails == input.VarDetails ||
-                    this.VarDetails != null &&
-                    input.VarDetails != null &&
-                    this.VarDetails.SequenceEqual(input.VarDetails)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.VarDetails != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarDetails.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

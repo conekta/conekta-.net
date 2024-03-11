@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// CustomerFiscalEntitiesResponse
     /// </summary>
     [DataContract(Name = "customer_fiscal_entities_response")]
-    public partial class CustomerFiscalEntitiesResponse : IEquatable<CustomerFiscalEntitiesResponse>, IValidatableObject
+    public partial class CustomerFiscalEntitiesResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomerFiscalEntitiesResponse" /> class.
@@ -99,67 +99,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CustomerFiscalEntitiesResponse);
-        }
-
-        /// <summary>
-        /// Returns true if CustomerFiscalEntitiesResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CustomerFiscalEntitiesResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CustomerFiscalEntitiesResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.HasMore == input.HasMore ||
-                    this.HasMore.Equals(input.HasMore)
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                ) && 
-                (
-                    this.Data == input.Data ||
-                    this.Data != null &&
-                    input.Data != null &&
-                    this.Data.SequenceEqual(input.Data)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.HasMore.GetHashCode();
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                if (this.Data != null)
-                {
-                    hashCode = (hashCode * 59) + this.Data.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

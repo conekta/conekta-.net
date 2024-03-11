@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// TokenCheckout
     /// </summary>
     [DataContract(Name = "token_checkout")]
-    public partial class TokenCheckout : IEquatable<TokenCheckout>, IValidatableObject
+    public partial class TokenCheckout : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TokenCheckout" /> class.
@@ -69,52 +69,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TokenCheckout);
-        }
-
-        /// <summary>
-        /// Returns true if TokenCheckout instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TokenCheckout to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TokenCheckout input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.ReturnsControlOn == input.ReturnsControlOn ||
-                    (this.ReturnsControlOn != null &&
-                    this.ReturnsControlOn.Equals(input.ReturnsControlOn))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.ReturnsControlOn != null)
-                {
-                    hashCode = (hashCode * 59) + this.ReturnsControlOn.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

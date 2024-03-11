@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// ChargeResponseChannel
     /// </summary>
     [DataContract(Name = "charge_response_channel")]
-    public partial class ChargeResponseChannel : IEquatable<ChargeResponseChannel>, IValidatableObject
+    public partial class ChargeResponseChannel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ChargeResponseChannel" /> class.
@@ -98,79 +98,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ChargeResponseChannel);
-        }
-
-        /// <summary>
-        /// Returns true if ChargeResponseChannel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ChargeResponseChannel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ChargeResponseChannel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Segment == input.Segment ||
-                    (this.Segment != null &&
-                    this.Segment.Equals(input.Segment))
-                ) && 
-                (
-                    this.CheckoutRequestId == input.CheckoutRequestId ||
-                    (this.CheckoutRequestId != null &&
-                    this.CheckoutRequestId.Equals(input.CheckoutRequestId))
-                ) && 
-                (
-                    this.CheckoutRequestType == input.CheckoutRequestType ||
-                    (this.CheckoutRequestType != null &&
-                    this.CheckoutRequestType.Equals(input.CheckoutRequestType))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Segment != null)
-                {
-                    hashCode = (hashCode * 59) + this.Segment.GetHashCode();
-                }
-                if (this.CheckoutRequestId != null)
-                {
-                    hashCode = (hashCode * 59) + this.CheckoutRequestId.GetHashCode();
-                }
-                if (this.CheckoutRequestType != null)
-                {
-                    hashCode = (hashCode * 59) + this.CheckoutRequestType.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

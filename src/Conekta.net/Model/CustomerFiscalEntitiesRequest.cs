@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// CustomerFiscalEntitiesRequest
     /// </summary>
     [DataContract(Name = "customer_fiscal_entities_request")]
-    public partial class CustomerFiscalEntitiesRequest : IEquatable<CustomerFiscalEntitiesRequest>, IValidatableObject
+    public partial class CustomerFiscalEntitiesRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomerFiscalEntitiesRequest" /> class.
@@ -46,7 +46,7 @@ namespace Conekta.net.Model
         /// <param name="phone">phone.</param>
         /// <param name="metadata">metadata.</param>
         /// <param name="companyName">companyName.</param>
-        public CustomerFiscalEntitiesRequest(CustomerFiscalEntitiesRequestAddress address = default(CustomerFiscalEntitiesRequestAddress), string taxId = default(string), string email = default(string), string phone = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string companyName = default(string))
+        public CustomerFiscalEntitiesRequest(CustomerAddress address = default(CustomerAddress), string taxId = default(string), string email = default(string), string phone = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string companyName = default(string))
         {
             // to ensure "address" is required (not null)
             if (address == null)
@@ -65,7 +65,7 @@ namespace Conekta.net.Model
         /// Gets or Sets Address
         /// </summary>
         [DataMember(Name = "address", IsRequired = true, EmitDefaultValue = true)]
-        public CustomerFiscalEntitiesRequestAddress Address { get; set; }
+        public CustomerAddress Address { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxId
@@ -123,98 +123,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CustomerFiscalEntitiesRequest);
-        }
-
-        /// <summary>
-        /// Returns true if CustomerFiscalEntitiesRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CustomerFiscalEntitiesRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CustomerFiscalEntitiesRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
-                ) && 
-                (
-                    this.TaxId == input.TaxId ||
-                    (this.TaxId != null &&
-                    this.TaxId.Equals(input.TaxId))
-                ) && 
-                (
-                    this.Email == input.Email ||
-                    (this.Email != null &&
-                    this.Email.Equals(input.Email))
-                ) && 
-                (
-                    this.Phone == input.Phone ||
-                    (this.Phone != null &&
-                    this.Phone.Equals(input.Phone))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    this.Metadata != null &&
-                    input.Metadata != null &&
-                    this.Metadata.SequenceEqual(input.Metadata)
-                ) && 
-                (
-                    this.CompanyName == input.CompanyName ||
-                    (this.CompanyName != null &&
-                    this.CompanyName.Equals(input.CompanyName))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Address != null)
-                {
-                    hashCode = (hashCode * 59) + this.Address.GetHashCode();
-                }
-                if (this.TaxId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TaxId.GetHashCode();
-                }
-                if (this.Email != null)
-                {
-                    hashCode = (hashCode * 59) + this.Email.GetHashCode();
-                }
-                if (this.Phone != null)
-                {
-                    hashCode = (hashCode * 59) + this.Phone.GetHashCode();
-                }
-                if (this.Metadata != null)
-                {
-                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
-                }
-                if (this.CompanyName != null)
-                {
-                    hashCode = (hashCode * 59) + this.CompanyName.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

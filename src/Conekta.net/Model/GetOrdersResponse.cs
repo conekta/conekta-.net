@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// GetOrdersResponse
     /// </summary>
     [DataContract(Name = "get_orders_response")]
-    public partial class GetOrdersResponse : IEquatable<GetOrdersResponse>, IValidatableObject
+    public partial class GetOrdersResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetOrdersResponse" /> class.
@@ -126,85 +126,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as GetOrdersResponse);
-        }
-
-        /// <summary>
-        /// Returns true if GetOrdersResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of GetOrdersResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(GetOrdersResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Data == input.Data ||
-                    this.Data != null &&
-                    input.Data != null &&
-                    this.Data.SequenceEqual(input.Data)
-                ) && 
-                (
-                    this.HasMore == input.HasMore ||
-                    this.HasMore.Equals(input.HasMore)
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                ) && 
-                (
-                    this.NextPageUrl == input.NextPageUrl ||
-                    (this.NextPageUrl != null &&
-                    this.NextPageUrl.Equals(input.NextPageUrl))
-                ) && 
-                (
-                    this.PreviousPageUrl == input.PreviousPageUrl ||
-                    (this.PreviousPageUrl != null &&
-                    this.PreviousPageUrl.Equals(input.PreviousPageUrl))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Data != null)
-                {
-                    hashCode = (hashCode * 59) + this.Data.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.HasMore.GetHashCode();
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                if (this.NextPageUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.NextPageUrl.GetHashCode();
-                }
-                if (this.PreviousPageUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.PreviousPageUrl.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

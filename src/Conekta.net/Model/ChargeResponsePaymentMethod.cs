@@ -33,7 +33,7 @@ namespace Conekta.net.Model
     /// </summary>
     [JsonConverter(typeof(ChargeResponsePaymentMethodJsonConverter))]
     [DataContract(Name = "charge_response_payment_method")]
-    public partial class ChargeResponsePaymentMethod : AbstractOpenAPISchema, IEquatable<ChargeResponsePaymentMethod>, IValidatableObject
+    public partial class ChargeResponsePaymentMethod : AbstractOpenAPISchema, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ChargeResponsePaymentMethod" /> class
@@ -280,43 +280,6 @@ namespace Conekta.net.Model
             return newChargeResponsePaymentMethod;
         }
 
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ChargeResponsePaymentMethod);
-        }
-
-        /// <summary>
-        /// Returns true if ChargeResponsePaymentMethod instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ChargeResponsePaymentMethod to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ChargeResponsePaymentMethod input)
-        {
-            if (input == null)
-                return false;
-
-            return this.ActualInstance.Equals(input.ActualInstance);
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.ActualInstance != null)
-                    hashCode = hashCode * 59 + this.ActualInstance.GetHashCode();
-                return hashCode;
-            }
-        }
 
         /// <summary>
         /// To validate all properties of the instance
@@ -355,11 +318,15 @@ namespace Conekta.net.Model
         /// <returns>The object converted from the JSON string</returns>
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            if(reader.TokenType != JsonToken.Null)
+            switch(reader.TokenType) 
             {
-                return ChargeResponsePaymentMethod.FromJson(JObject.Load(reader).ToString(Formatting.None));
+                case JsonToken.StartObject:
+                    return ChargeResponsePaymentMethod.FromJson(JObject.Load(reader).ToString(Formatting.None));
+                case JsonToken.StartArray:
+                    return ChargeResponsePaymentMethod.FromJson(JArray.Load(reader).ToString(Formatting.None));
+                default:
+                    return null;
             }
-            return null;
         }
 
         /// <summary>

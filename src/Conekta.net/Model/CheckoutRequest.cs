@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// [Checkout](https://developers.conekta.com/v2.1.0/reference/payment-link) details 
     /// </summary>
     [DataContract(Name = "checkout_request")]
-    public partial class CheckoutRequest : IEquatable<CheckoutRequest>, IValidatableObject
+    public partial class CheckoutRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CheckoutRequest" /> class.
@@ -47,9 +47,10 @@ namespace Conekta.net.Model
         /// <param name="monthlyInstallmentsOptions">monthlyInstallmentsOptions.</param>
         /// <param name="name">Reason for payment.</param>
         /// <param name="onDemandEnabled">onDemandEnabled.</param>
+        /// <param name="redirectionTime">number of seconds to wait before redirecting to the success_url.</param>
         /// <param name="successUrl">Redirection url back to the site in case of successful payment, applies only to HostedPayment.</param>
         /// <param name="type">This field represents the type of checkout.</param>
-        public CheckoutRequest(List<string> allowedPaymentMethods = default(List<string>), long expiresAt = default(long), string failureUrl = default(string), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string name = default(string), bool onDemandEnabled = default(bool), string successUrl = default(string), string type = default(string))
+        public CheckoutRequest(List<string> allowedPaymentMethods = default(List<string>), long expiresAt = default(long), string failureUrl = default(string), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string name = default(string), bool onDemandEnabled = default(bool), int redirectionTime = default(int), string successUrl = default(string), string type = default(string))
         {
             // to ensure "allowedPaymentMethods" is required (not null)
             if (allowedPaymentMethods == null)
@@ -63,6 +64,7 @@ namespace Conekta.net.Model
             this.MonthlyInstallmentsOptions = monthlyInstallmentsOptions;
             this.Name = name;
             this.OnDemandEnabled = onDemandEnabled;
+            this.RedirectionTime = redirectionTime;
             this.SuccessUrl = successUrl;
             this.Type = type;
         }
@@ -118,6 +120,14 @@ namespace Conekta.net.Model
         public bool OnDemandEnabled { get; set; }
 
         /// <summary>
+        /// number of seconds to wait before redirecting to the success_url
+        /// </summary>
+        /// <value>number of seconds to wait before redirecting to the success_url</value>
+        /// <example>10</example>
+        [DataMember(Name = "redirection_time", EmitDefaultValue = false)]
+        public int RedirectionTime { get; set; }
+
+        /// <summary>
         /// Redirection url back to the site in case of successful payment, applies only to HostedPayment
         /// </summary>
         /// <value>Redirection url back to the site in case of successful payment, applies only to HostedPayment</value>
@@ -147,6 +157,7 @@ namespace Conekta.net.Model
             sb.Append("  MonthlyInstallmentsOptions: ").Append(MonthlyInstallmentsOptions).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  OnDemandEnabled: ").Append(OnDemandEnabled).Append("\n");
+            sb.Append("  RedirectionTime: ").Append(RedirectionTime).Append("\n");
             sb.Append("  SuccessUrl: ").Append(SuccessUrl).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
@@ -160,114 +171,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CheckoutRequest);
-        }
-
-        /// <summary>
-        /// Returns true if CheckoutRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CheckoutRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CheckoutRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.AllowedPaymentMethods == input.AllowedPaymentMethods ||
-                    this.AllowedPaymentMethods != null &&
-                    input.AllowedPaymentMethods != null &&
-                    this.AllowedPaymentMethods.SequenceEqual(input.AllowedPaymentMethods)
-                ) && 
-                (
-                    this.ExpiresAt == input.ExpiresAt ||
-                    this.ExpiresAt.Equals(input.ExpiresAt)
-                ) && 
-                (
-                    this.FailureUrl == input.FailureUrl ||
-                    (this.FailureUrl != null &&
-                    this.FailureUrl.Equals(input.FailureUrl))
-                ) && 
-                (
-                    this.MonthlyInstallmentsEnabled == input.MonthlyInstallmentsEnabled ||
-                    this.MonthlyInstallmentsEnabled.Equals(input.MonthlyInstallmentsEnabled)
-                ) && 
-                (
-                    this.MonthlyInstallmentsOptions == input.MonthlyInstallmentsOptions ||
-                    this.MonthlyInstallmentsOptions != null &&
-                    input.MonthlyInstallmentsOptions != null &&
-                    this.MonthlyInstallmentsOptions.SequenceEqual(input.MonthlyInstallmentsOptions)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.OnDemandEnabled == input.OnDemandEnabled ||
-                    this.OnDemandEnabled.Equals(input.OnDemandEnabled)
-                ) && 
-                (
-                    this.SuccessUrl == input.SuccessUrl ||
-                    (this.SuccessUrl != null &&
-                    this.SuccessUrl.Equals(input.SuccessUrl))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.AllowedPaymentMethods != null)
-                {
-                    hashCode = (hashCode * 59) + this.AllowedPaymentMethods.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.ExpiresAt.GetHashCode();
-                if (this.FailureUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.FailureUrl.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.MonthlyInstallmentsEnabled.GetHashCode();
-                if (this.MonthlyInstallmentsOptions != null)
-                {
-                    hashCode = (hashCode * 59) + this.MonthlyInstallmentsOptions.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.OnDemandEnabled.GetHashCode();
-                if (this.SuccessUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.SuccessUrl.GetHashCode();
-                }
-                if (this.Type != null)
-                {
-                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuthenticationToken** | **string** | It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place. | [optional] 
 **Active** | **bool** | Indicates if the api key is active | [optional] 
 **CreatedAt** | **long** | Unix timestamp in seconds of when the api key was created | [optional] 
 **UpdatedAt** | **long** | Unix timestamp in seconds of when the api key was last updated | [optional] 
@@ -16,6 +15,7 @@ Name | Type | Description | Notes
 **VarObject** | **string** | Object name, value is &#39;api_key&#39; | [optional] 
 **Prefix** | **string** | The first few characters of the authentication_token | [optional] 
 **Role** | **string** | Indicates if the api key is private or public | [optional] 
+**AuthenticationToken** | **string** | It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

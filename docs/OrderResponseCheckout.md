@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **OnDemandEnabled** | **bool?** |  | [optional] 
 **PaidPaymentsCount** | **int** |  | [optional] 
 **Recurrent** | **bool** |  | [optional] 
+**RedirectionTime** | **int?** | number of seconds to wait before redirecting to the success_url | [optional] 
 **Slug** | **string** |  | [optional] 
 **SmsSent** | **int** |  | [optional] 
 **SuccessUrl** | **string** |  | [optional] 

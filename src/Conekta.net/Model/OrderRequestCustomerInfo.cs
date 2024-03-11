@@ -32,7 +32,7 @@ namespace Conekta.net.Model
     /// </summary>
     [JsonConverter(typeof(OrderRequestCustomerInfoJsonConverter))]
     [DataContract(Name = "order_request_customer_info")]
-    public partial class OrderRequestCustomerInfo : AbstractOpenAPISchema, IEquatable<OrderRequestCustomerInfo>, IValidatableObject
+    public partial class OrderRequestCustomerInfo : AbstractOpenAPISchema, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderRequestCustomerInfo" /> class
@@ -198,43 +198,6 @@ namespace Conekta.net.Model
             return newOrderRequestCustomerInfo;
         }
 
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as OrderRequestCustomerInfo);
-        }
-
-        /// <summary>
-        /// Returns true if OrderRequestCustomerInfo instances are equal
-        /// </summary>
-        /// <param name="input">Instance of OrderRequestCustomerInfo to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(OrderRequestCustomerInfo input)
-        {
-            if (input == null)
-                return false;
-
-            return this.ActualInstance.Equals(input.ActualInstance);
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.ActualInstance != null)
-                    hashCode = hashCode * 59 + this.ActualInstance.GetHashCode();
-                return hashCode;
-            }
-        }
 
         /// <summary>
         /// To validate all properties of the instance
@@ -273,11 +236,15 @@ namespace Conekta.net.Model
         /// <returns>The object converted from the JSON string</returns>
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            if(reader.TokenType != JsonToken.Null)
+            switch(reader.TokenType) 
             {
-                return OrderRequestCustomerInfo.FromJson(JObject.Load(reader).ToString(Formatting.None));
+                case JsonToken.StartObject:
+                    return OrderRequestCustomerInfo.FromJson(JObject.Load(reader).ToString(Formatting.None));
+                case JsonToken.StartArray:
+                    return OrderRequestCustomerInfo.FromJson(JArray.Load(reader).ToString(Formatting.None));
+                default:
+                    return null;
             }
-            return null;
         }
 
         /// <summary>

@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// webhooks model
     /// </summary>
     [DataContract(Name = "webhook_response")]
-    public partial class WebhookResponse : IEquatable<WebhookResponse>, IValidatableObject
+    public partial class WebhookResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookResponse" /> class.
@@ -158,118 +158,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as WebhookResponse);
-        }
-
-        /// <summary>
-        /// Returns true if WebhookResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of WebhookResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(WebhookResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Deleted == input.Deleted ||
-                    (this.Deleted != null &&
-                    this.Deleted.Equals(input.Deleted))
-                ) && 
-                (
-                    this.DevelopmentEnabled == input.DevelopmentEnabled ||
-                    this.DevelopmentEnabled.Equals(input.DevelopmentEnabled)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Livemode == input.Livemode ||
-                    this.Livemode.Equals(input.Livemode)
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                ) && 
-                (
-                    this.ProductionEnabled == input.ProductionEnabled ||
-                    this.ProductionEnabled.Equals(input.ProductionEnabled)
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.SubscribedEvents == input.SubscribedEvents ||
-                    this.SubscribedEvents != null &&
-                    input.SubscribedEvents != null &&
-                    this.SubscribedEvents.SequenceEqual(input.SubscribedEvents)
-                ) && 
-                (
-                    this.Synchronous == input.Synchronous ||
-                    this.Synchronous.Equals(input.Synchronous)
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Deleted != null)
-                {
-                    hashCode = (hashCode * 59) + this.Deleted.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.DevelopmentEnabled.GetHashCode();
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Livemode.GetHashCode();
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.ProductionEnabled.GetHashCode();
-                if (this.Status != null)
-                {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                }
-                if (this.SubscribedEvents != null)
-                {
-                    hashCode = (hashCode * 59) + this.SubscribedEvents.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Synchronous.GetHashCode();
-                if (this.Url != null)
-                {
-                    hashCode = (hashCode * 59) + this.Url.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

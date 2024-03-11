@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// UpdateCustomerAntifraudInfo
     /// </summary>
     [DataContract(Name = "update_customer_antifraud_info")]
-    public partial class UpdateCustomerAntifraudInfo : IEquatable<UpdateCustomerAntifraudInfo>, IValidatableObject
+    public partial class UpdateCustomerAntifraudInfo : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateCustomerAntifraudInfo" /> class.
@@ -78,53 +78,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as UpdateCustomerAntifraudInfo);
-        }
-
-        /// <summary>
-        /// Returns true if UpdateCustomerAntifraudInfo instances are equal
-        /// </summary>
-        /// <param name="input">Instance of UpdateCustomerAntifraudInfo to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(UpdateCustomerAntifraudInfo input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.AccountCreatedAt == input.AccountCreatedAt ||
-                    this.AccountCreatedAt.Equals(input.AccountCreatedAt)
-                ) && 
-                (
-                    this.FirstPaidAt == input.FirstPaidAt ||
-                    this.FirstPaidAt.Equals(input.FirstPaidAt)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.AccountCreatedAt.GetHashCode();
-                hashCode = (hashCode * 59) + this.FirstPaidAt.GetHashCode();
-                return hashCode;
-            }
         }
 
         /// <summary>

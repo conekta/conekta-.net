@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// PaymentMethodCashResponse
     /// </summary>
     [DataContract(Name = "payment_method_cash_response")]
-    public partial class PaymentMethodCashResponse : IEquatable<PaymentMethodCashResponse>, IValidatableObject
+    public partial class PaymentMethodCashResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentMethodCashResponse" /> class.
@@ -177,125 +177,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as PaymentMethodCashResponse);
-        }
-
-        /// <summary>
-        /// Returns true if PaymentMethodCashResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of PaymentMethodCashResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(PaymentMethodCashResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    this.CreatedAt.Equals(input.CreatedAt)
-                ) && 
-                (
-                    this.ParentId == input.ParentId ||
-                    (this.ParentId != null &&
-                    this.ParentId.Equals(input.ParentId))
-                ) && 
-                (
-                    this.Reference == input.Reference ||
-                    (this.Reference != null &&
-                    this.Reference.Equals(input.Reference))
-                ) && 
-                (
-                    this.Barcode == input.Barcode ||
-                    (this.Barcode != null &&
-                    this.Barcode.Equals(input.Barcode))
-                ) && 
-                (
-                    this.BarcodeUrl == input.BarcodeUrl ||
-                    (this.BarcodeUrl != null &&
-                    this.BarcodeUrl.Equals(input.BarcodeUrl))
-                ) && 
-                (
-                    this.ExpiresAt == input.ExpiresAt ||
-                    this.ExpiresAt.Equals(input.ExpiresAt)
-                ) && 
-                (
-                    this.Provider == input.Provider ||
-                    (this.Provider != null &&
-                    this.Provider.Equals(input.Provider))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Type != null)
-                {
-                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
-                if (this.ParentId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParentId.GetHashCode();
-                }
-                if (this.Reference != null)
-                {
-                    hashCode = (hashCode * 59) + this.Reference.GetHashCode();
-                }
-                if (this.Barcode != null)
-                {
-                    hashCode = (hashCode * 59) + this.Barcode.GetHashCode();
-                }
-                if (this.BarcodeUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.BarcodeUrl.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.ExpiresAt.GetHashCode();
-                if (this.Provider != null)
-                {
-                    hashCode = (hashCode * 59) + this.Provider.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

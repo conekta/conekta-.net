@@ -30,35 +30,28 @@ namespace Conekta.net.Model
     /// OrderResponseCustomerInfo
     /// </summary>
     [DataContract(Name = "order_response_customer_info")]
-    public partial class OrderResponseCustomerInfo : IEquatable<OrderResponseCustomerInfo>, IValidatableObject
+    public partial class OrderResponseCustomerInfo : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderResponseCustomerInfo" /> class.
         /// </summary>
-        /// <param name="varObject">varObject.</param>
         /// <param name="customerCustomReference">Custom reference.</param>
         /// <param name="name">name.</param>
         /// <param name="email">email.</param>
         /// <param name="phone">phone.</param>
         /// <param name="corporate">corporate (default to false).</param>
+        /// <param name="varObject">varObject.</param>
         /// <param name="customerId">customerId.</param>
-        public OrderResponseCustomerInfo(string varObject = default(string), string customerCustomReference = default(string), string name = default(string), string email = default(string), string phone = default(string), bool corporate = false, string customerId = default(string))
+        public OrderResponseCustomerInfo(string customerCustomReference = default(string), string name = default(string), string email = default(string), string phone = default(string), bool corporate = false, string varObject = default(string), string customerId = default(string))
         {
-            this.VarObject = varObject;
             this.CustomerCustomReference = customerCustomReference;
             this.Name = name;
             this.Email = email;
             this.Phone = phone;
             this.Corporate = corporate;
+            this.VarObject = varObject;
             this.CustomerId = customerId;
         }
-
-        /// <summary>
-        /// Gets or Sets VarObject
-        /// </summary>
-        /// <example>customer_info</example>
-        [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string VarObject { get; set; }
 
         /// <summary>
         /// Custom reference
@@ -96,6 +89,13 @@ namespace Conekta.net.Model
         public bool Corporate { get; set; }
 
         /// <summary>
+        /// Gets or Sets VarObject
+        /// </summary>
+        /// <example>customer_info</example>
+        [DataMember(Name = "object", EmitDefaultValue = false)]
+        public string VarObject { get; set; }
+
+        /// <summary>
         /// Gets or Sets CustomerId
         /// </summary>
         /// <example>cus_23874283647</example>
@@ -110,12 +110,12 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class OrderResponseCustomerInfo {\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  CustomerCustomReference: ").Append(CustomerCustomReference).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  Phone: ").Append(Phone).Append("\n");
             sb.Append("  Corporate: ").Append(Corporate).Append("\n");
+            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  CustomerId: ").Append(CustomerId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -128,102 +128,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as OrderResponseCustomerInfo);
-        }
-
-        /// <summary>
-        /// Returns true if OrderResponseCustomerInfo instances are equal
-        /// </summary>
-        /// <param name="input">Instance of OrderResponseCustomerInfo to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(OrderResponseCustomerInfo input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                ) && 
-                (
-                    this.CustomerCustomReference == input.CustomerCustomReference ||
-                    (this.CustomerCustomReference != null &&
-                    this.CustomerCustomReference.Equals(input.CustomerCustomReference))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Email == input.Email ||
-                    (this.Email != null &&
-                    this.Email.Equals(input.Email))
-                ) && 
-                (
-                    this.Phone == input.Phone ||
-                    (this.Phone != null &&
-                    this.Phone.Equals(input.Phone))
-                ) && 
-                (
-                    this.Corporate == input.Corporate ||
-                    this.Corporate.Equals(input.Corporate)
-                ) && 
-                (
-                    this.CustomerId == input.CustomerId ||
-                    (this.CustomerId != null &&
-                    this.CustomerId.Equals(input.CustomerId))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                if (this.CustomerCustomReference != null)
-                {
-                    hashCode = (hashCode * 59) + this.CustomerCustomReference.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Email != null)
-                {
-                    hashCode = (hashCode * 59) + this.Email.GetHashCode();
-                }
-                if (this.Phone != null)
-                {
-                    hashCode = (hashCode * 59) + this.Phone.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Corporate.GetHashCode();
-                if (this.CustomerId != null)
-                {
-                    hashCode = (hashCode * 59) + this.CustomerId.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// Company payout destination model
     /// </summary>
     [DataContract(Name = "company_payout_destination_response")]
-    public partial class CompanyPayoutDestinationResponse : IEquatable<CompanyPayoutDestinationResponse>, IValidatableObject
+    public partial class CompanyPayoutDestinationResponse : IValidatableObject
     {
         /// <summary>
         /// The resource&#39;s type
@@ -150,89 +150,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CompanyPayoutDestinationResponse);
-        }
-
-        /// <summary>
-        /// Returns true if CompanyPayoutDestinationResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CompanyPayoutDestinationResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CompanyPayoutDestinationResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.VarObject == input.VarObject ||
-                    this.VarObject.Equals(input.VarObject)
-                ) && 
-                (
-                    this.Currency == input.Currency ||
-                    (this.Currency != null &&
-                    this.Currency.Equals(input.Currency))
-                ) && 
-                (
-                    this.AccountHolderName == input.AccountHolderName ||
-                    (this.AccountHolderName != null &&
-                    this.AccountHolderName.Equals(input.AccountHolderName))
-                ) && 
-                (
-                    this.Bank == input.Bank ||
-                    (this.Bank != null &&
-                    this.Bank.Equals(input.Bank))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    this.Type.Equals(input.Type)
-                ) && 
-                (
-                    this.AccountNumber == input.AccountNumber ||
-                    (this.AccountNumber != null &&
-                    this.AccountNumber.Equals(input.AccountNumber))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                if (this.Currency != null)
-                {
-                    hashCode = (hashCode * 59) + this.Currency.GetHashCode();
-                }
-                if (this.AccountHolderName != null)
-                {
-                    hashCode = (hashCode * 59) + this.AccountHolderName.GetHashCode();
-                }
-                if (this.Bank != null)
-                {
-                    hashCode = (hashCode * 59) + this.Bank.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                if (this.AccountNumber != null)
-                {
-                    hashCode = (hashCode * 59) + this.AccountNumber.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

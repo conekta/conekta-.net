@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// CustomersResponse
     /// </summary>
     [DataContract(Name = "customers_response")]
-    public partial class CustomersResponse : IEquatable<CustomersResponse>, IValidatableObject
+    public partial class CustomersResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomersResponse" /> class.
@@ -40,12 +40,12 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomersResponse" /> class.
         /// </summary>
-        /// <param name="data">data.</param>
         /// <param name="hasMore">Indicates if there are more pages to be requested (required).</param>
         /// <param name="varObject">Object type, in this case is list (required).</param>
         /// <param name="nextPageUrl">URL of the next page..</param>
         /// <param name="previousPageUrl">Url of the previous page..</param>
-        public CustomersResponse(List<CustomerResponse> data = default(List<CustomerResponse>), bool hasMore = default(bool), string varObject = default(string), string nextPageUrl = default(string), string previousPageUrl = default(string))
+        /// <param name="data">data.</param>
+        public CustomersResponse(bool hasMore = default(bool), string varObject = default(string), string nextPageUrl = default(string), string previousPageUrl = default(string), List<CustomerResponse> data = default(List<CustomerResponse>))
         {
             this.HasMore = hasMore;
             // to ensure "varObject" is required (not null)
@@ -54,16 +54,10 @@ namespace Conekta.net.Model
                 throw new ArgumentNullException("varObject is a required property for CustomersResponse and cannot be null");
             }
             this.VarObject = varObject;
-            this.Data = data;
             this.NextPageUrl = nextPageUrl;
             this.PreviousPageUrl = previousPageUrl;
+            this.Data = data;
         }
-
-        /// <summary>
-        /// Gets or Sets Data
-        /// </summary>
-        [DataMember(Name = "data", EmitDefaultValue = false)]
-        public List<CustomerResponse> Data { get; set; }
 
         /// <summary>
         /// Indicates if there are more pages to be requested
@@ -98,6 +92,12 @@ namespace Conekta.net.Model
         public string PreviousPageUrl { get; set; }
 
         /// <summary>
+        /// Gets or Sets Data
+        /// </summary>
+        [DataMember(Name = "data", EmitDefaultValue = false)]
+        public List<CustomerResponse> Data { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -105,11 +105,11 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class CustomersResponse {\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("  HasMore: ").Append(HasMore).Append("\n");
             sb.Append("  VarObject: ").Append(VarObject).Append("\n");
             sb.Append("  NextPageUrl: ").Append(NextPageUrl).Append("\n");
             sb.Append("  PreviousPageUrl: ").Append(PreviousPageUrl).Append("\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -121,85 +121,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CustomersResponse);
-        }
-
-        /// <summary>
-        /// Returns true if CustomersResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CustomersResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CustomersResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Data == input.Data ||
-                    this.Data != null &&
-                    input.Data != null &&
-                    this.Data.SequenceEqual(input.Data)
-                ) && 
-                (
-                    this.HasMore == input.HasMore ||
-                    this.HasMore.Equals(input.HasMore)
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                ) && 
-                (
-                    this.NextPageUrl == input.NextPageUrl ||
-                    (this.NextPageUrl != null &&
-                    this.NextPageUrl.Equals(input.NextPageUrl))
-                ) && 
-                (
-                    this.PreviousPageUrl == input.PreviousPageUrl ||
-                    (this.PreviousPageUrl != null &&
-                    this.PreviousPageUrl.Equals(input.PreviousPageUrl))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Data != null)
-                {
-                    hashCode = (hashCode * 59) + this.Data.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.HasMore.GetHashCode();
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                if (this.NextPageUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.NextPageUrl.GetHashCode();
-                }
-                if (this.PreviousPageUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.PreviousPageUrl.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

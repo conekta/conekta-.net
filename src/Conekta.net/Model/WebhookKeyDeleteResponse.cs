@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// webhook keys model
     /// </summary>
     [DataContract(Name = "webhook-key_delete_response")]
-    public partial class WebhookKeyDeleteResponse : IEquatable<WebhookKeyDeleteResponse>, IValidatableObject
+    public partial class WebhookKeyDeleteResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookKeyDeleteResponse" /> class.
@@ -124,81 +124,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as WebhookKeyDeleteResponse);
-        }
-
-        /// <summary>
-        /// Returns true if WebhookKeyDeleteResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of WebhookKeyDeleteResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(WebhookKeyDeleteResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Active == input.Active ||
-                    this.Active.Equals(input.Active)
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    this.CreatedAt.Equals(input.CreatedAt)
-                ) && 
-                (
-                    this.Deleted == input.Deleted ||
-                    this.Deleted.Equals(input.Deleted)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Livemode == input.Livemode ||
-                    this.Livemode.Equals(input.Livemode)
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Active.GetHashCode();
-                hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
-                hashCode = (hashCode * 59) + this.Deleted.GetHashCode();
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Livemode.GetHashCode();
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

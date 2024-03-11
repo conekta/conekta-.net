@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// WebhookLog
     /// </summary>
     [DataContract(Name = "WebhookLog")]
-    public partial class WebhookLog : IEquatable<WebhookLog>, IValidatableObject
+    public partial class WebhookLog : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookLog" /> class.
@@ -128,95 +128,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as WebhookLog);
-        }
-
-        /// <summary>
-        /// Returns true if WebhookLog instances are equal
-        /// </summary>
-        /// <param name="input">Instance of WebhookLog to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(WebhookLog input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.FailedAttempts == input.FailedAttempts ||
-                    this.FailedAttempts.Equals(input.FailedAttempts)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.LastAttemptedAt == input.LastAttemptedAt ||
-                    this.LastAttemptedAt.Equals(input.LastAttemptedAt)
-                ) && 
-                (
-                    this.LastHttpResponseStatus == input.LastHttpResponseStatus ||
-                    this.LastHttpResponseStatus.Equals(input.LastHttpResponseStatus)
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                ) && 
-                (
-                    this.ResponseData == input.ResponseData ||
-                    this.ResponseData != null &&
-                    input.ResponseData != null &&
-                    this.ResponseData.SequenceEqual(input.ResponseData)
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.FailedAttempts.GetHashCode();
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.LastAttemptedAt.GetHashCode();
-                hashCode = (hashCode * 59) + this.LastHttpResponseStatus.GetHashCode();
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                if (this.ResponseData != null)
-                {
-                    hashCode = (hashCode * 59) + this.ResponseData.GetHashCode();
-                }
-                if (this.Url != null)
-                {
-                    hashCode = (hashCode * 59) + this.Url.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

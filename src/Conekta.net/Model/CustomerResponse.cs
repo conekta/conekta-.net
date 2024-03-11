@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// customer response
     /// </summary>
     [DataContract(Name = "customer_response")]
-    public partial class CustomerResponse : IEquatable<CustomerResponse>, IValidatableObject
+    public partial class CustomerResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomerResponse" /> class.
@@ -205,7 +205,7 @@ namespace Conekta.net.Model
         /// Customer&#39;s phone number
         /// </summary>
         /// <value>Customer&#39;s phone number</value>
-        /// <example>5215555555555</example>
+        /// <example>+5215555555555</example>
         [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
@@ -258,194 +258,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CustomerResponse);
-        }
-
-        /// <summary>
-        /// Returns true if CustomerResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CustomerResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CustomerResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.AntifraudInfo == input.AntifraudInfo ||
-                    (this.AntifraudInfo != null &&
-                    this.AntifraudInfo.Equals(input.AntifraudInfo))
-                ) && 
-                (
-                    this.Corporate == input.Corporate ||
-                    this.Corporate.Equals(input.Corporate)
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    this.CreatedAt.Equals(input.CreatedAt)
-                ) && 
-                (
-                    this.CustomReference == input.CustomReference ||
-                    (this.CustomReference != null &&
-                    this.CustomReference.Equals(input.CustomReference))
-                ) && 
-                (
-                    this.DefaultFiscalEntityId == input.DefaultFiscalEntityId ||
-                    (this.DefaultFiscalEntityId != null &&
-                    this.DefaultFiscalEntityId.Equals(input.DefaultFiscalEntityId))
-                ) && 
-                (
-                    this.DefaultShippingContactId == input.DefaultShippingContactId ||
-                    (this.DefaultShippingContactId != null &&
-                    this.DefaultShippingContactId.Equals(input.DefaultShippingContactId))
-                ) && 
-                (
-                    this.DefaultPaymentSourceId == input.DefaultPaymentSourceId ||
-                    (this.DefaultPaymentSourceId != null &&
-                    this.DefaultPaymentSourceId.Equals(input.DefaultPaymentSourceId))
-                ) && 
-                (
-                    this.Email == input.Email ||
-                    (this.Email != null &&
-                    this.Email.Equals(input.Email))
-                ) && 
-                (
-                    this.FiscalEntities == input.FiscalEntities ||
-                    (this.FiscalEntities != null &&
-                    this.FiscalEntities.Equals(input.FiscalEntities))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Livemode == input.Livemode ||
-                    this.Livemode.Equals(input.Livemode)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    this.Metadata != null &&
-                    input.Metadata != null &&
-                    this.Metadata.SequenceEqual(input.Metadata)
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                ) && 
-                (
-                    this.PaymentSources == input.PaymentSources ||
-                    (this.PaymentSources != null &&
-                    this.PaymentSources.Equals(input.PaymentSources))
-                ) && 
-                (
-                    this.Phone == input.Phone ||
-                    (this.Phone != null &&
-                    this.Phone.Equals(input.Phone))
-                ) && 
-                (
-                    this.ShippingContacts == input.ShippingContacts ||
-                    (this.ShippingContacts != null &&
-                    this.ShippingContacts.Equals(input.ShippingContacts))
-                ) && 
-                (
-                    this.Subscription == input.Subscription ||
-                    (this.Subscription != null &&
-                    this.Subscription.Equals(input.Subscription))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.AntifraudInfo != null)
-                {
-                    hashCode = (hashCode * 59) + this.AntifraudInfo.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Corporate.GetHashCode();
-                hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
-                if (this.CustomReference != null)
-                {
-                    hashCode = (hashCode * 59) + this.CustomReference.GetHashCode();
-                }
-                if (this.DefaultFiscalEntityId != null)
-                {
-                    hashCode = (hashCode * 59) + this.DefaultFiscalEntityId.GetHashCode();
-                }
-                if (this.DefaultShippingContactId != null)
-                {
-                    hashCode = (hashCode * 59) + this.DefaultShippingContactId.GetHashCode();
-                }
-                if (this.DefaultPaymentSourceId != null)
-                {
-                    hashCode = (hashCode * 59) + this.DefaultPaymentSourceId.GetHashCode();
-                }
-                if (this.Email != null)
-                {
-                    hashCode = (hashCode * 59) + this.Email.GetHashCode();
-                }
-                if (this.FiscalEntities != null)
-                {
-                    hashCode = (hashCode * 59) + this.FiscalEntities.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Livemode.GetHashCode();
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Metadata != null)
-                {
-                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
-                }
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                if (this.PaymentSources != null)
-                {
-                    hashCode = (hashCode * 59) + this.PaymentSources.GetHashCode();
-                }
-                if (this.Phone != null)
-                {
-                    hashCode = (hashCode * 59) + this.Phone.GetHashCode();
-                }
-                if (this.ShippingContacts != null)
-                {
-                    hashCode = (hashCode * 59) + this.ShippingContacts.GetHashCode();
-                }
-                if (this.Subscription != null)
-                {
-                    hashCode = (hashCode * 59) + this.Subscription.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

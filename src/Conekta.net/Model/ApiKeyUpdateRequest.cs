@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// ApiKeyUpdateRequest
     /// </summary>
     [DataContract(Name = "api_key_update_request")]
-    public partial class ApiKeyUpdateRequest : IEquatable<ApiKeyUpdateRequest>, IValidatableObject
+    public partial class ApiKeyUpdateRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiKeyUpdateRequest" /> class.
@@ -80,57 +80,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ApiKeyUpdateRequest);
-        }
-
-        /// <summary>
-        /// Returns true if ApiKeyUpdateRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ApiKeyUpdateRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ApiKeyUpdateRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Active == input.Active ||
-                    this.Active.Equals(input.Active)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Active.GetHashCode();
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// a plan
     /// </summary>
     [DataContract(Name = "plan_request")]
-    public partial class PlanRequest : IEquatable<PlanRequest>, IValidatableObject
+    public partial class PlanRequest : IValidatableObject
     {
         /// <summary>
         /// The interval of time between each charge.
@@ -187,95 +187,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as PlanRequest);
-        }
-
-        /// <summary>
-        /// Returns true if PlanRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of PlanRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(PlanRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Amount == input.Amount ||
-                    this.Amount.Equals(input.Amount)
-                ) && 
-                (
-                    this.Currency == input.Currency ||
-                    (this.Currency != null &&
-                    this.Currency.Equals(input.Currency))
-                ) && 
-                (
-                    this.ExpiryCount == input.ExpiryCount ||
-                    this.ExpiryCount.Equals(input.ExpiryCount)
-                ) && 
-                (
-                    this.Frequency == input.Frequency ||
-                    this.Frequency.Equals(input.Frequency)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Interval == input.Interval ||
-                    this.Interval.Equals(input.Interval)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.TrialPeriodDays == input.TrialPeriodDays ||
-                    this.TrialPeriodDays.Equals(input.TrialPeriodDays)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Amount.GetHashCode();
-                if (this.Currency != null)
-                {
-                    hashCode = (hashCode * 59) + this.Currency.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.ExpiryCount.GetHashCode();
-                hashCode = (hashCode * 59) + this.Frequency.GetHashCode();
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Interval.GetHashCode();
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.TrialPeriodDays.GetHashCode();
-                return hashCode;
-            }
         }
 
         /// <summary>

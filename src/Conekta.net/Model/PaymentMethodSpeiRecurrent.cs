@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// PaymentMethodSpeiRecurrent
     /// </summary>
     [DataContract(Name = "payment_method_spei_recurrent")]
-    public partial class PaymentMethodSpeiRecurrent : IEquatable<PaymentMethodSpeiRecurrent>, IValidatableObject
+    public partial class PaymentMethodSpeiRecurrent : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentMethodSpeiRecurrent" /> class.
@@ -147,102 +147,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as PaymentMethodSpeiRecurrent);
-        }
-
-        /// <summary>
-        /// Returns true if PaymentMethodSpeiRecurrent instances are equal
-        /// </summary>
-        /// <param name="input">Instance of PaymentMethodSpeiRecurrent to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(PaymentMethodSpeiRecurrent input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    this.CreatedAt.Equals(input.CreatedAt)
-                ) && 
-                (
-                    this.ParentId == input.ParentId ||
-                    (this.ParentId != null &&
-                    this.ParentId.Equals(input.ParentId))
-                ) && 
-                (
-                    this.Reference == input.Reference ||
-                    (this.Reference != null &&
-                    this.Reference.Equals(input.Reference))
-                ) && 
-                (
-                    this.ExpiresAt == input.ExpiresAt ||
-                    (this.ExpiresAt != null &&
-                    this.ExpiresAt.Equals(input.ExpiresAt))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Type != null)
-                {
-                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
-                if (this.ParentId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParentId.GetHashCode();
-                }
-                if (this.Reference != null)
-                {
-                    hashCode = (hashCode * 59) + this.Reference.GetHashCode();
-                }
-                if (this.ExpiresAt != null)
-                {
-                    hashCode = (hashCode * 59) + this.ExpiresAt.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

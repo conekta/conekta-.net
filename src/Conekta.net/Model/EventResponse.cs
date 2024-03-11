@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// event model
     /// </summary>
     [DataContract(Name = "event_response")]
-    public partial class EventResponse : IEquatable<EventResponse>, IValidatableObject
+    public partial class EventResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EventResponse" /> class.
@@ -137,109 +137,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as EventResponse);
-        }
-
-        /// <summary>
-        /// Returns true if EventResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of EventResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(EventResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    this.CreatedAt.Equals(input.CreatedAt)
-                ) && 
-                (
-                    this.Data == input.Data ||
-                    this.Data != null &&
-                    input.Data != null &&
-                    this.Data.SequenceEqual(input.Data)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Livemode == input.Livemode ||
-                    this.Livemode.Equals(input.Livemode)
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.WebhookLogs == input.WebhookLogs ||
-                    this.WebhookLogs != null &&
-                    input.WebhookLogs != null &&
-                    this.WebhookLogs.SequenceEqual(input.WebhookLogs)
-                ) && 
-                (
-                    this.WebhookStatus == input.WebhookStatus ||
-                    (this.WebhookStatus != null &&
-                    this.WebhookStatus.Equals(input.WebhookStatus))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
-                if (this.Data != null)
-                {
-                    hashCode = (hashCode * 59) + this.Data.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Livemode.GetHashCode();
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                if (this.Type != null)
-                {
-                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                }
-                if (this.WebhookLogs != null)
-                {
-                    hashCode = (hashCode * 59) + this.WebhookLogs.GetHashCode();
-                }
-                if (this.WebhookStatus != null)
-                {
-                    hashCode = (hashCode * 59) + this.WebhookStatus.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

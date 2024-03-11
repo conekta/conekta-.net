@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// Address of the fiscal entity
     /// </summary>
     [DataContract(Name = "fiscal_entity_address")]
-    public partial class FiscalEntityAddress : IEquatable<FiscalEntityAddress>, IValidatableObject
+    public partial class FiscalEntityAddress : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FiscalEntityAddress" /> class.
@@ -165,106 +165,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as FiscalEntityAddress);
-        }
-
-        /// <summary>
-        /// Returns true if FiscalEntityAddress instances are equal
-        /// </summary>
-        /// <param name="input">Instance of FiscalEntityAddress to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(FiscalEntityAddress input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Street1 == input.Street1 ||
-                    (this.Street1 != null &&
-                    this.Street1.Equals(input.Street1))
-                ) && 
-                (
-                    this.Street2 == input.Street2 ||
-                    (this.Street2 != null &&
-                    this.Street2.Equals(input.Street2))
-                ) && 
-                (
-                    this.PostalCode == input.PostalCode ||
-                    (this.PostalCode != null &&
-                    this.PostalCode.Equals(input.PostalCode))
-                ) && 
-                (
-                    this.City == input.City ||
-                    (this.City != null &&
-                    this.City.Equals(input.City))
-                ) && 
-                (
-                    this.State == input.State ||
-                    (this.State != null &&
-                    this.State.Equals(input.State))
-                ) && 
-                (
-                    this.Country == input.Country ||
-                    (this.Country != null &&
-                    this.Country.Equals(input.Country))
-                ) && 
-                (
-                    this.ExternalNumber == input.ExternalNumber ||
-                    (this.ExternalNumber != null &&
-                    this.ExternalNumber.Equals(input.ExternalNumber))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Street1 != null)
-                {
-                    hashCode = (hashCode * 59) + this.Street1.GetHashCode();
-                }
-                if (this.Street2 != null)
-                {
-                    hashCode = (hashCode * 59) + this.Street2.GetHashCode();
-                }
-                if (this.PostalCode != null)
-                {
-                    hashCode = (hashCode * 59) + this.PostalCode.GetHashCode();
-                }
-                if (this.City != null)
-                {
-                    hashCode = (hashCode * 59) + this.City.GetHashCode();
-                }
-                if (this.State != null)
-                {
-                    hashCode = (hashCode * 59) + this.State.GetHashCode();
-                }
-                if (this.Country != null)
-                {
-                    hashCode = (hashCode * 59) + this.Country.GetHashCode();
-                }
-                if (this.ExternalNumber != null)
-                {
-                    hashCode = (hashCode * 59) + this.ExternalNumber.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

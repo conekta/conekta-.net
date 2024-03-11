@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// Method used to make the transfer.
     /// </summary>
     [DataContract(Name = "transfer_method_response")]
-    public partial class TransferMethodResponse : IEquatable<TransferMethodResponse>, IValidatableObject
+    public partial class TransferMethodResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TransferMethodResponse" /> class.
@@ -146,111 +146,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TransferMethodResponse);
-        }
-
-        /// <summary>
-        /// Returns true if TransferMethodResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TransferMethodResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TransferMethodResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.AccountHolder == input.AccountHolder ||
-                    (this.AccountHolder != null &&
-                    this.AccountHolder.Equals(input.AccountHolder))
-                ) && 
-                (
-                    this.AccountNumber == input.AccountNumber ||
-                    (this.AccountNumber != null &&
-                    this.AccountNumber.Equals(input.AccountNumber))
-                ) && 
-                (
-                    this.Bank == input.Bank ||
-                    (this.Bank != null &&
-                    this.Bank.Equals(input.Bank))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    this.CreatedAt.Equals(input.CreatedAt)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                ) && 
-                (
-                    this.PayeeId == input.PayeeId ||
-                    (this.PayeeId != null &&
-                    this.PayeeId.Equals(input.PayeeId))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.AccountHolder != null)
-                {
-                    hashCode = (hashCode * 59) + this.AccountHolder.GetHashCode();
-                }
-                if (this.AccountNumber != null)
-                {
-                    hashCode = (hashCode * 59) + this.AccountNumber.GetHashCode();
-                }
-                if (this.Bank != null)
-                {
-                    hashCode = (hashCode * 59) + this.Bank.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                if (this.PayeeId != null)
-                {
-                    hashCode = (hashCode * 59) + this.PayeeId.GetHashCode();
-                }
-                if (this.Type != null)
-                {
-                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

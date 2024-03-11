@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// It is a sub-resource of the Order model that can be stipulated in order to configure its corresponding checkout
     /// </summary>
     [DataContract(Name = "checkout")]
-    public partial class Checkout : IEquatable<Checkout>, IValidatableObject
+    public partial class Checkout : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Checkout" /> class.
@@ -202,124 +202,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as Checkout);
-        }
-
-        /// <summary>
-        /// Returns true if Checkout instances are equal
-        /// </summary>
-        /// <param name="input">Instance of Checkout to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(Checkout input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.AllowedPaymentMethods == input.AllowedPaymentMethods ||
-                    this.AllowedPaymentMethods != null &&
-                    input.AllowedPaymentMethods != null &&
-                    this.AllowedPaymentMethods.SequenceEqual(input.AllowedPaymentMethods)
-                ) && 
-                (
-                    this.ExpiresAt == input.ExpiresAt ||
-                    this.ExpiresAt.Equals(input.ExpiresAt)
-                ) && 
-                (
-                    this.MonthlyInstallmentsEnabled == input.MonthlyInstallmentsEnabled ||
-                    this.MonthlyInstallmentsEnabled.Equals(input.MonthlyInstallmentsEnabled)
-                ) && 
-                (
-                    this.MonthlyInstallmentsOptions == input.MonthlyInstallmentsOptions ||
-                    this.MonthlyInstallmentsOptions != null &&
-                    input.MonthlyInstallmentsOptions != null &&
-                    this.MonthlyInstallmentsOptions.SequenceEqual(input.MonthlyInstallmentsOptions)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.NeedsShippingContact == input.NeedsShippingContact ||
-                    this.NeedsShippingContact.Equals(input.NeedsShippingContact)
-                ) && 
-                (
-                    this.OnDemandEnabled == input.OnDemandEnabled ||
-                    (this.OnDemandEnabled != null &&
-                    this.OnDemandEnabled.Equals(input.OnDemandEnabled))
-                ) && 
-                (
-                    this.OrderTemplate == input.OrderTemplate ||
-                    (this.OrderTemplate != null &&
-                    this.OrderTemplate.Equals(input.OrderTemplate))
-                ) && 
-                (
-                    this.PaymentsLimitCount == input.PaymentsLimitCount ||
-                    this.PaymentsLimitCount.Equals(input.PaymentsLimitCount)
-                ) && 
-                (
-                    this.Recurrent == input.Recurrent ||
-                    this.Recurrent.Equals(input.Recurrent)
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.AllowedPaymentMethods != null)
-                {
-                    hashCode = (hashCode * 59) + this.AllowedPaymentMethods.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.ExpiresAt.GetHashCode();
-                hashCode = (hashCode * 59) + this.MonthlyInstallmentsEnabled.GetHashCode();
-                if (this.MonthlyInstallmentsOptions != null)
-                {
-                    hashCode = (hashCode * 59) + this.MonthlyInstallmentsOptions.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.NeedsShippingContact.GetHashCode();
-                if (this.OnDemandEnabled != null)
-                {
-                    hashCode = (hashCode * 59) + this.OnDemandEnabled.GetHashCode();
-                }
-                if (this.OrderTemplate != null)
-                {
-                    hashCode = (hashCode * 59) + this.OrderTemplate.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.PaymentsLimitCount.GetHashCode();
-                hashCode = (hashCode * 59) + this.Recurrent.GetHashCode();
-                if (this.Type != null)
-                {
-                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

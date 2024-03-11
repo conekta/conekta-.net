@@ -33,7 +33,7 @@ namespace Conekta.net.Model
     /// </summary>
     [JsonConverter(typeof(GetCustomerPaymentMethodDataResponseJsonConverter))]
     [DataContract(Name = "get_customer_payment_method_data_response")]
-    public partial class GetCustomerPaymentMethodDataResponse : AbstractOpenAPISchema, IEquatable<GetCustomerPaymentMethodDataResponse>, IValidatableObject
+    public partial class GetCustomerPaymentMethodDataResponse : AbstractOpenAPISchema, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetCustomerPaymentMethodDataResponse" /> class
@@ -283,43 +283,6 @@ namespace Conekta.net.Model
             return newGetCustomerPaymentMethodDataResponse;
         }
 
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as GetCustomerPaymentMethodDataResponse);
-        }
-
-        /// <summary>
-        /// Returns true if GetCustomerPaymentMethodDataResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of GetCustomerPaymentMethodDataResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(GetCustomerPaymentMethodDataResponse input)
-        {
-            if (input == null)
-                return false;
-
-            return this.ActualInstance.Equals(input.ActualInstance);
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.ActualInstance != null)
-                    hashCode = hashCode * 59 + this.ActualInstance.GetHashCode();
-                return hashCode;
-            }
-        }
 
         /// <summary>
         /// To validate all properties of the instance
@@ -358,11 +321,15 @@ namespace Conekta.net.Model
         /// <returns>The object converted from the JSON string</returns>
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            if(reader.TokenType != JsonToken.Null)
+            switch(reader.TokenType) 
             {
-                return GetCustomerPaymentMethodDataResponse.FromJson(JObject.Load(reader).ToString(Formatting.None));
+                case JsonToken.StartObject:
+                    return GetCustomerPaymentMethodDataResponse.FromJson(JObject.Load(reader).ToString(Formatting.None));
+                case JsonToken.StartArray:
+                    return GetCustomerPaymentMethodDataResponse.FromJson(JArray.Load(reader).ToString(Formatting.None));
+                default:
+                    return null;
             }
-            return null;
         }
 
         /// <summary>

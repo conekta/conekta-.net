@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// CreateRiskRulesData
     /// </summary>
     [DataContract(Name = "create_risk_rules_data")]
-    public partial class CreateRiskRulesData : IEquatable<CreateRiskRulesData>, IValidatableObject
+    public partial class CreateRiskRulesData : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateRiskRulesData" /> class.
@@ -111,70 +111,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CreateRiskRulesData);
-        }
-
-        /// <summary>
-        /// Returns true if CreateRiskRulesData instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CreateRiskRulesData to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CreateRiskRulesData input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Field == input.Field ||
-                    (this.Field != null &&
-                    this.Field.Equals(input.Field))
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.Field != null)
-                {
-                    hashCode = (hashCode * 59) + this.Field.GetHashCode();
-                }
-                if (this.Value != null)
-                {
-                    hashCode = (hashCode * 59) + this.Value.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// ShippingOrderResponse
     /// </summary>
     [DataContract(Name = "shipping_order_response")]
-    public partial class ShippingOrderResponse : IEquatable<ShippingOrderResponse>, IValidatableObject
+    public partial class ShippingOrderResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ShippingOrderResponse" /> class.
@@ -145,112 +145,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ShippingOrderResponse);
-        }
-
-        /// <summary>
-        /// Returns true if ShippingOrderResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ShippingOrderResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ShippingOrderResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Amount == input.Amount ||
-                    this.Amount.Equals(input.Amount)
-                ) && 
-                (
-                    this.Carrier == input.Carrier ||
-                    (this.Carrier != null &&
-                    this.Carrier.Equals(input.Carrier))
-                ) && 
-                (
-                    this.TrackingNumber == input.TrackingNumber ||
-                    (this.TrackingNumber != null &&
-                    this.TrackingNumber.Equals(input.TrackingNumber))
-                ) && 
-                (
-                    this.Method == input.Method ||
-                    (this.Method != null &&
-                    this.Method.Equals(input.Method))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    this.Metadata != null &&
-                    input.Metadata != null &&
-                    this.Metadata.SequenceEqual(input.Metadata)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                ) && 
-                (
-                    this.ParentId == input.ParentId ||
-                    (this.ParentId != null &&
-                    this.ParentId.Equals(input.ParentId))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Amount.GetHashCode();
-                if (this.Carrier != null)
-                {
-                    hashCode = (hashCode * 59) + this.Carrier.GetHashCode();
-                }
-                if (this.TrackingNumber != null)
-                {
-                    hashCode = (hashCode * 59) + this.TrackingNumber.GetHashCode();
-                }
-                if (this.Method != null)
-                {
-                    hashCode = (hashCode * 59) + this.Method.GetHashCode();
-                }
-                if (this.Metadata != null)
-                {
-                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                if (this.ParentId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParentId.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

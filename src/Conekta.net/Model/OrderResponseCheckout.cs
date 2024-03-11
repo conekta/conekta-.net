@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// OrderResponseCheckout
     /// </summary>
     [DataContract(Name = "order_response_checkout")]
-    public partial class OrderResponseCheckout : IEquatable<OrderResponseCheckout>, IValidatableObject
+    public partial class OrderResponseCheckout : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderResponseCheckout" /> class.
@@ -54,6 +54,7 @@ namespace Conekta.net.Model
         /// <param name="onDemandEnabled">onDemandEnabled.</param>
         /// <param name="paidPaymentsCount">paidPaymentsCount.</param>
         /// <param name="recurrent">recurrent.</param>
+        /// <param name="redirectionTime">number of seconds to wait before redirecting to the success_url.</param>
         /// <param name="slug">slug.</param>
         /// <param name="smsSent">smsSent.</param>
         /// <param name="successUrl">successUrl.</param>
@@ -61,7 +62,7 @@ namespace Conekta.net.Model
         /// <param name="status">status.</param>
         /// <param name="type">type.</param>
         /// <param name="url">url.</param>
-        public OrderResponseCheckout(List<string> allowedPaymentMethods = default(List<string>), bool canNotExpire = default(bool), int emailsSent = default(int), List<Object> excludeCardNetworks = default(List<Object>), long expiresAt = default(long), string failureUrl = default(string), bool force3dsFlow = default(bool), string id = default(string), bool isRedirectOnFailure = default(bool), bool livemode = default(bool), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string name = default(string), bool needsShippingContact = default(bool), string varObject = default(string), bool? onDemandEnabled = default(bool?), int paidPaymentsCount = default(int), bool recurrent = default(bool), string slug = default(string), int smsSent = default(int), string successUrl = default(string), int startsAt = default(int), string status = default(string), string type = default(string), string url = default(string))
+        public OrderResponseCheckout(List<string> allowedPaymentMethods = default(List<string>), bool canNotExpire = default(bool), int emailsSent = default(int), List<Object> excludeCardNetworks = default(List<Object>), long expiresAt = default(long), string failureUrl = default(string), bool force3dsFlow = default(bool), string id = default(string), bool isRedirectOnFailure = default(bool), bool livemode = default(bool), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string name = default(string), bool needsShippingContact = default(bool), string varObject = default(string), bool? onDemandEnabled = default(bool?), int paidPaymentsCount = default(int), bool recurrent = default(bool), int? redirectionTime = default(int?), string slug = default(string), int smsSent = default(int), string successUrl = default(string), int startsAt = default(int), string status = default(string), string type = default(string), string url = default(string))
         {
             this.AllowedPaymentMethods = allowedPaymentMethods;
             this.CanNotExpire = canNotExpire;
@@ -82,6 +83,7 @@ namespace Conekta.net.Model
             this.OnDemandEnabled = onDemandEnabled;
             this.PaidPaymentsCount = paidPaymentsCount;
             this.Recurrent = recurrent;
+            this.RedirectionTime = redirectionTime;
             this.Slug = slug;
             this.SmsSent = smsSent;
             this.SuccessUrl = successUrl;
@@ -221,6 +223,14 @@ namespace Conekta.net.Model
         public bool Recurrent { get; set; }
 
         /// <summary>
+        /// number of seconds to wait before redirecting to the success_url
+        /// </summary>
+        /// <value>number of seconds to wait before redirecting to the success_url</value>
+        /// <example>2</example>
+        [DataMember(Name = "redirection_time", EmitDefaultValue = true)]
+        public int? RedirectionTime { get; set; }
+
+        /// <summary>
         /// Gets or Sets Slug
         /// </summary>
         /// <example>6fca054a85194c43971ecea35cc519bb</example>
@@ -296,6 +306,7 @@ namespace Conekta.net.Model
             sb.Append("  OnDemandEnabled: ").Append(OnDemandEnabled).Append("\n");
             sb.Append("  PaidPaymentsCount: ").Append(PaidPaymentsCount).Append("\n");
             sb.Append("  Recurrent: ").Append(Recurrent).Append("\n");
+            sb.Append("  RedirectionTime: ").Append(RedirectionTime).Append("\n");
             sb.Append("  Slug: ").Append(Slug).Append("\n");
             sb.Append("  SmsSent: ").Append(SmsSent).Append("\n");
             sb.Append("  SuccessUrl: ").Append(SuccessUrl).Append("\n");
@@ -314,233 +325,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as OrderResponseCheckout);
-        }
-
-        /// <summary>
-        /// Returns true if OrderResponseCheckout instances are equal
-        /// </summary>
-        /// <param name="input">Instance of OrderResponseCheckout to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(OrderResponseCheckout input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.AllowedPaymentMethods == input.AllowedPaymentMethods ||
-                    this.AllowedPaymentMethods != null &&
-                    input.AllowedPaymentMethods != null &&
-                    this.AllowedPaymentMethods.SequenceEqual(input.AllowedPaymentMethods)
-                ) && 
-                (
-                    this.CanNotExpire == input.CanNotExpire ||
-                    this.CanNotExpire.Equals(input.CanNotExpire)
-                ) && 
-                (
-                    this.EmailsSent == input.EmailsSent ||
-                    this.EmailsSent.Equals(input.EmailsSent)
-                ) && 
-                (
-                    this.ExcludeCardNetworks == input.ExcludeCardNetworks ||
-                    this.ExcludeCardNetworks != null &&
-                    input.ExcludeCardNetworks != null &&
-                    this.ExcludeCardNetworks.SequenceEqual(input.ExcludeCardNetworks)
-                ) && 
-                (
-                    this.ExpiresAt == input.ExpiresAt ||
-                    this.ExpiresAt.Equals(input.ExpiresAt)
-                ) && 
-                (
-                    this.FailureUrl == input.FailureUrl ||
-                    (this.FailureUrl != null &&
-                    this.FailureUrl.Equals(input.FailureUrl))
-                ) && 
-                (
-                    this.Force3dsFlow == input.Force3dsFlow ||
-                    this.Force3dsFlow.Equals(input.Force3dsFlow)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.IsRedirectOnFailure == input.IsRedirectOnFailure ||
-                    this.IsRedirectOnFailure.Equals(input.IsRedirectOnFailure)
-                ) && 
-                (
-                    this.Livemode == input.Livemode ||
-                    this.Livemode.Equals(input.Livemode)
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    this.Metadata != null &&
-                    input.Metadata != null &&
-                    this.Metadata.SequenceEqual(input.Metadata)
-                ) && 
-                (
-                    this.MonthlyInstallmentsEnabled == input.MonthlyInstallmentsEnabled ||
-                    this.MonthlyInstallmentsEnabled.Equals(input.MonthlyInstallmentsEnabled)
-                ) && 
-                (
-                    this.MonthlyInstallmentsOptions == input.MonthlyInstallmentsOptions ||
-                    this.MonthlyInstallmentsOptions != null &&
-                    input.MonthlyInstallmentsOptions != null &&
-                    this.MonthlyInstallmentsOptions.SequenceEqual(input.MonthlyInstallmentsOptions)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.NeedsShippingContact == input.NeedsShippingContact ||
-                    this.NeedsShippingContact.Equals(input.NeedsShippingContact)
-                ) && 
-                (
-                    this.VarObject == input.VarObject ||
-                    (this.VarObject != null &&
-                    this.VarObject.Equals(input.VarObject))
-                ) && 
-                (
-                    this.OnDemandEnabled == input.OnDemandEnabled ||
-                    (this.OnDemandEnabled != null &&
-                    this.OnDemandEnabled.Equals(input.OnDemandEnabled))
-                ) && 
-                (
-                    this.PaidPaymentsCount == input.PaidPaymentsCount ||
-                    this.PaidPaymentsCount.Equals(input.PaidPaymentsCount)
-                ) && 
-                (
-                    this.Recurrent == input.Recurrent ||
-                    this.Recurrent.Equals(input.Recurrent)
-                ) && 
-                (
-                    this.Slug == input.Slug ||
-                    (this.Slug != null &&
-                    this.Slug.Equals(input.Slug))
-                ) && 
-                (
-                    this.SmsSent == input.SmsSent ||
-                    this.SmsSent.Equals(input.SmsSent)
-                ) && 
-                (
-                    this.SuccessUrl == input.SuccessUrl ||
-                    (this.SuccessUrl != null &&
-                    this.SuccessUrl.Equals(input.SuccessUrl))
-                ) && 
-                (
-                    this.StartsAt == input.StartsAt ||
-                    this.StartsAt.Equals(input.StartsAt)
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.AllowedPaymentMethods != null)
-                {
-                    hashCode = (hashCode * 59) + this.AllowedPaymentMethods.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.CanNotExpire.GetHashCode();
-                hashCode = (hashCode * 59) + this.EmailsSent.GetHashCode();
-                if (this.ExcludeCardNetworks != null)
-                {
-                    hashCode = (hashCode * 59) + this.ExcludeCardNetworks.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.ExpiresAt.GetHashCode();
-                if (this.FailureUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.FailureUrl.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Force3dsFlow.GetHashCode();
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsRedirectOnFailure.GetHashCode();
-                hashCode = (hashCode * 59) + this.Livemode.GetHashCode();
-                if (this.Metadata != null)
-                {
-                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.MonthlyInstallmentsEnabled.GetHashCode();
-                if (this.MonthlyInstallmentsOptions != null)
-                {
-                    hashCode = (hashCode * 59) + this.MonthlyInstallmentsOptions.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.NeedsShippingContact.GetHashCode();
-                if (this.VarObject != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarObject.GetHashCode();
-                }
-                if (this.OnDemandEnabled != null)
-                {
-                    hashCode = (hashCode * 59) + this.OnDemandEnabled.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.PaidPaymentsCount.GetHashCode();
-                hashCode = (hashCode * 59) + this.Recurrent.GetHashCode();
-                if (this.Slug != null)
-                {
-                    hashCode = (hashCode * 59) + this.Slug.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.SmsSent.GetHashCode();
-                if (this.SuccessUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.SuccessUrl.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.StartsAt.GetHashCode();
-                if (this.Status != null)
-                {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                }
-                if (this.Type != null)
-                {
-                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                }
-                if (this.Url != null)
-                {
-                    hashCode = (hashCode * 59) + this.Url.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

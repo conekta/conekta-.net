@@ -30,7 +30,7 @@ namespace Conekta.net.Model
     /// OrderRefundRequest
     /// </summary>
     [DataContract(Name = "orderRefund_request")]
-    public partial class OrderRefundRequest : IEquatable<OrderRefundRequest>, IValidatableObject
+    public partial class OrderRefundRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderRefundRequest" /> class.
@@ -98,66 +98,6 @@ namespace Conekta.net.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as OrderRefundRequest);
-        }
-
-        /// <summary>
-        /// Returns true if OrderRefundRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of OrderRefundRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(OrderRefundRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Amount == input.Amount ||
-                    this.Amount.Equals(input.Amount)
-                ) && 
-                (
-                    this.ExpiresAt == input.ExpiresAt ||
-                    (this.ExpiresAt != null &&
-                    this.ExpiresAt.Equals(input.ExpiresAt))
-                ) && 
-                (
-                    this.Reason == input.Reason ||
-                    (this.Reason != null &&
-                    this.Reason.Equals(input.Reason))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Amount.GetHashCode();
-                if (this.ExpiresAt != null)
-                {
-                    hashCode = (hashCode * 59) + this.ExpiresAt.GetHashCode();
-                }
-                if (this.Reason != null)
-                {
-                    hashCode = (hashCode * 59) + this.Reason.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>
