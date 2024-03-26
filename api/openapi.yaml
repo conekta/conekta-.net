@@ -11357,6 +11357,14 @@ paths:
         schema:
           type: string
         style: form
+      - description: url for webhook filter
+        explode: true
+        in: query
+        name: url
+        required: false
+        schema:
+          type: string
+        style: form
       - description: next page
         explode: true
         in: query
@@ -12520,6 +12528,15 @@ components:
       required: false
       schema:
         example: MXN
+        type: string
+      style: form
+    url:
+      description: url for webhook filter
+      explode: true
+      in: query
+      name: url
+      required: false
+      schema:
         type: string
       style: form
   requestBodies:

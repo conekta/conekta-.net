@@ -12,11 +12,11 @@
     <Description>This is a .net library that allows interaction with https://api.conekta.io API.</Description>
     <Copyright>Conekta</Copyright>
     <RootNamespace>Conekta.net</RootNamespace>
-    <Version>6.0.8</Version>
+    <Version>6.0.9</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Conekta.net.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/conekta/conekta-.net.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>support for resend event, api keys and webhook keys</PackageReleaseNotes>
+    <PackageReleaseNotes>update entity webhook, nuget config</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -40,9 +40,12 @@
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageProjectUrl>https://github.com/conekta/conekta-.net</PackageProjectUrl>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
   </PropertyGroup>
   <ItemGroup>
     <None Include="../../LICENSE" Pack="true" PackagePath="" />
     <None Include="../../conekta.png" Pack="true" Visible="false" PackagePath="" />
     <None Include="../../README.md" Pack="true" PackagePath="/"/>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All"/>
   </ItemGroup></Project>
