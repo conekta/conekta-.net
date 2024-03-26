@@ -307,7 +307,7 @@ catch (ApiException e)
 
 <a id="getwebhooks"></a>
 # **GetWebhooks**
-> GetWebhooksResponse GetWebhooks (string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string search = null, string next = null, string previous = null)
+> GetWebhooksResponse GetWebhooks (string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string search = null, string url = null, string next = null, string previous = null)
 
 Get List of Webhooks
 
@@ -337,13 +337,14 @@ namespace Example
             var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
             var limit = 20;  // int? | The numbers of items to return, the maximum value is 250 (optional)  (default to 20)
             var search = "search_example";  // string | General order search, e.g. by mail, reference etc. (optional) 
+            var url = "url_example";  // string | url for webhook filter (optional) 
             var next = "next_example";  // string | next page (optional) 
             var previous = "previous_example";  // string | previous page (optional) 
 
             try
             {
                 // Get List of Webhooks
-                GetWebhooksResponse result = apiInstance.GetWebhooks(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+                GetWebhooksResponse result = apiInstance.GetWebhooks(acceptLanguage, xChildCompanyId, limit, search, url, next, previous);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -364,7 +365,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get List of Webhooks
-    ApiResponse<GetWebhooksResponse> response = apiInstance.GetWebhooksWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+    ApiResponse<GetWebhooksResponse> response = apiInstance.GetWebhooksWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, url, next, previous);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -385,6 +386,7 @@ catch (ApiException e)
 | **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 | **limit** | **int?** | The numbers of items to return, the maximum value is 250 | [optional] [default to 20] |
 | **search** | **string** | General order search, e.g. by mail, reference etc. | [optional]  |
+| **url** | **string** | url for webhook filter | [optional]  |
 | **next** | **string** | next page | [optional]  |
 | **previous** | **string** | previous page | [optional]  |
 

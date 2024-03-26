@@ -22,7 +22,7 @@ jobs:
           fi
       - name: Build project
         run: |
-          dotnet build src/Conekta.net/Conekta.net.csproj
+          dotnet build src/Conekta.net/Conekta.net.csproj /p:ContinuousIntegrationBuild=true
           VERSION=$(grep -oP '<Version>\K[\d.]+(?=</Version>)' src/Conekta.net/Conekta.net.csproj)
           RELEASE_VERSION="v$VERSION"
           RELEASE_NAME=${{ github.event.release.name }}

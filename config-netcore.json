@@ -32,6 +32,6 @@
   "useOneOfDiscriminatorLookup" : true,
   "packageCopyright" : "Conekta",
   "PackageReleaseNotes" : "add support for payout orders",
-  "releaseNote" : "support for resend event, api keys and webhook keys",
-  "packageVersion" : "6.0.8"
+  "releaseNote" : "update entity webhook, nuget config",
+  "packageVersion" : "6.0.9"
 }
