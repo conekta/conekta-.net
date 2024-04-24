@@ -60,7 +60,7 @@ namespace Conekta.net.Model
             {
                 throw new ArgumentNullException("varObject is a required property for PaymentMethodCard and cannot be null");
             }
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.Type = type;
             this.AccountType = accountType;
             this.AuthCode = authCode;
@@ -82,11 +82,11 @@ namespace Conekta.net.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarObject
+        /// Gets or Sets Object
         /// </summary>
         /// <example>payment_source</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets AccountType
@@ -174,7 +174,7 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class PaymentMethodCard {\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  AccountType: ").Append(AccountType).Append("\n");
             sb.Append("  AuthCode: ").Append(AuthCode).Append("\n");
             sb.Append("  Brand: ").Append(Brand).Append("\n");

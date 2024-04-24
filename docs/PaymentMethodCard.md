@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** |  | [optional] 
-**VarObject** | **string** |  | 
+**Object** | **string** |  | 
 **AccountType** | **string** |  | [optional] 
 **AuthCode** | **string** |  | [optional] 
 **Brand** | **string** |  | [optional] 

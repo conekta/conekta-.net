@@ -49,7 +49,7 @@ namespace Conekta.net.Model
             this.BetweenStreets = betweenStreets;
             this.Address = address;
             this.ParentId = parentId;
-            this.VarDefault = varDefault;
+            this.Default = varDefault;
             this.Deleted = deleted;
         }
 
@@ -90,10 +90,10 @@ namespace Conekta.net.Model
         public string ParentId { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarDefault
+        /// Gets or Sets Default
         /// </summary>
         [DataMember(Name = "default", EmitDefaultValue = true)]
-        public bool? VarDefault { get; set; }
+        public bool? Default { get; set; }
 
         /// <summary>
         /// Gets or Sets Deleted
@@ -114,7 +114,7 @@ namespace Conekta.net.Model
             sb.Append("  BetweenStreets: ").Append(BetweenStreets).Append("\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
-            sb.Append("  VarDefault: ").Append(VarDefault).Append("\n");
+            sb.Append("  Default: ").Append(Default).Append("\n");
             sb.Append("  Deleted: ").Append(Deleted).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

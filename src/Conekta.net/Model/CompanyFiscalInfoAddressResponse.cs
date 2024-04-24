@@ -52,7 +52,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>The resource&#39;s type</value>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public ObjectEnum? VarObject { get; set; }
+        public ObjectEnum? Object { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CompanyFiscalInfoAddressResponse" /> class.
         /// </summary>
@@ -67,7 +67,7 @@ namespace Conekta.net.Model
         /// <param name="internalNumber">Unit / apartment number.</param>
         public CompanyFiscalInfoAddressResponse(ObjectEnum? varObject = default(ObjectEnum?), string street1 = default(string), string street2 = default(string), string city = default(string), string state = default(string), string country = default(string), string postalCode = default(string), string externalNumber = default(string), string internalNumber = default(string))
         {
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.Street1 = street1;
             this.Street2 = street2;
             this.City = city;
@@ -150,7 +150,7 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class CompanyFiscalInfoAddressResponse {\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  Street1: ").Append(Street1).Append("\n");
             sb.Append("  Street2: ").Append(Street2).Append("\n");
             sb.Append("  City: ").Append(City).Append("\n");

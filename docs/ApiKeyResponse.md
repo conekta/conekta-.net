@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Id** | **string** | Unique identifier of the api key | [optional] 
 **Livemode** | **bool** | Indicates if the api key is in production | [optional] 
 **Deleted** | **bool** | Indicates if the api key was deleted | [optional] 
-**VarObject** | **string** | Object name, value is &#39;api_key&#39; | [optional] 
+**Object** | **string** | Object name, value is &#39;api_key&#39; | [optional] 
 **Prefix** | **string** | The first few characters of the authentication_token | [optional] 
 **Role** | **string** | Indicates if the api key is private or public | [optional] 
 

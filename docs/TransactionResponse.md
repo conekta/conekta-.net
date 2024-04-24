@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Id** | **string** | Unique identifier of the transaction. | 
 **Livemode** | **bool** | Indicates whether the transaction was created in live mode or test mode. | 
 **Net** | **long** | The net amount after deducting commissions and taxes. | 
-**VarObject** | **string** | Object name, which is transaction. | 
+**Object** | **string** | Object name, which is transaction. | 
 **Status** | **string** | Code indicating transaction status. | 
 **Type** | **string** | Transaction Type | 
 

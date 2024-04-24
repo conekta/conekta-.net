@@ -48,7 +48,7 @@ namespace Conekta.net.Model
             this.Deleted = deleted;
             this.Id = id;
             this.Livemode = livemode;
-            this.VarObject = varObject;
+            this.Object = varObject;
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Conekta.net.Model
         /// <value>Object name, value is webhook_key</value>
         /// <example>webhook_key</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -112,7 +112,7 @@ namespace Conekta.net.Model
             sb.Append("  Deleted: ").Append(Deleted).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

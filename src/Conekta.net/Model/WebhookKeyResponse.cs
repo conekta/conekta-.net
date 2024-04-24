@@ -50,7 +50,7 @@ namespace Conekta.net.Model
             this.DeactivatedAt = deactivatedAt;
             this.PublicKey = publicKey;
             this.Livemode = livemode;
-            this.VarObject = varObject;
+            this.Object = varObject;
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Conekta.net.Model
         /// <value>Object name, value is webhook_key</value>
         /// <example>webhook_key</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -122,7 +122,7 @@ namespace Conekta.net.Model
             sb.Append("  DeactivatedAt: ").Append(DeactivatedAt).Append("\n");
             sb.Append("  PublicKey: ").Append(PublicKey).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

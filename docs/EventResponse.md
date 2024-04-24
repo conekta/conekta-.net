@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Data** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **Id** | **string** |  | [optional] 
 **Livemode** | **bool** |  | [optional] 
-**VarObject** | **string** |  | [optional] 
+**Object** | **string** |  | [optional] 
 **Type** | **string** |  | [optional] 
 **WebhookLogs** | [**List&lt;WebhookLog&gt;**](WebhookLog.md) |  | [optional] 
 **WebhookStatus** | **string** |  | [optional] 

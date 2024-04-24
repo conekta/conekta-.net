@@ -33,5 +33,5 @@
   "packageCopyright" : "Conekta",
   "PackageReleaseNotes" : "add support for payout orders",
   "releaseNote" : "update entity webhook, nuget config",
-  "packageVersion" : "6.0.9"
+  "packageVersion" : "6.0.10"
 }

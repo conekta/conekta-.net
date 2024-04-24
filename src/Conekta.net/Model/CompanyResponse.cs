@@ -52,7 +52,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>The resource&#39;s type</value>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public ObjectEnum? VarObject { get; set; }
+        public ObjectEnum? Object { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CompanyResponse" /> class.
         /// </summary>
@@ -69,7 +69,7 @@ namespace Conekta.net.Model
             this.Id = id;
             this.CreatedAt = createdAt;
             this.Name = name;
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.ParentCompanyId = parentCompanyId;
             this.UseParentFiscalData = useParentFiscalData;
             this.PayoutDestination = payoutDestination;
@@ -139,7 +139,7 @@ namespace Conekta.net.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  ParentCompanyId: ").Append(ParentCompanyId).Append("\n");
             sb.Append("  UseParentFiscalData: ").Append(UseParentFiscalData).Append("\n");
             sb.Append("  PayoutDestination: ").Append(PayoutDestination).Append("\n");

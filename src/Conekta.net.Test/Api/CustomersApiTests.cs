@@ -136,7 +136,7 @@ namespace Conekta.net.Test.Api
             Assert.IsType<PaymentMethodCashResponse>(response.PaymentSources.Data[0].ActualInstance);
             Assert.Equal("oxxo_recurrent", response.PaymentSources.Data[0].GetPaymentMethodCashResponse().Type);
             Assert.Equal("Oxxo", response.PaymentSources.Data[0].GetPaymentMethodCashResponse().Provider);
-            Assert.Equal("payment_source", response.PaymentSources.Data[0].GetPaymentMethodCashResponse().VarObject);
+            Assert.Equal("payment_source", response.PaymentSources.Data[0].GetPaymentMethodCashResponse().Object);
         }
         /// <summary>
         /// Test GetCustomerCardById
@@ -154,7 +154,7 @@ namespace Conekta.net.Test.Api
             Assert.IsType<PaymentMethodSpeiRecurrent>(response.PaymentSources.Data[0].ActualInstance);
             Assert.Equal("spei_recurrent", response.PaymentSources.Data[0].GetPaymentMethodSpeiRecurrent().Type);
             Assert.Equal("646180111805035870", response.PaymentSources.Data[0].GetPaymentMethodSpeiRecurrent().Reference);
-            Assert.Equal("payment_source", response.PaymentSources.Data[0].GetPaymentMethodSpeiRecurrent().VarObject);
+            Assert.Equal("payment_source", response.PaymentSources.Data[0].GetPaymentMethodSpeiRecurrent().Object);
             Assert.Equal("none", response.PaymentSources.Data[0].GetPaymentMethodSpeiRecurrent().ExpiresAt);
         }
 
@@ -173,7 +173,7 @@ namespace Conekta.net.Test.Api
             Assert.NotNull(response.NextPageUrl);
             Assert.Null(response.PreviousPageUrl);
             Assert.True(response.HasMore);
-            Assert.Equal("list", response.VarObject);
+            Assert.Equal("list", response.Object);
             Assert.Equal(limit, response.Data.Count);
         }
         /// <summary>
@@ -192,7 +192,7 @@ namespace Conekta.net.Test.Api
             Assert.NotNull(response.NextPageUrl);
             Assert.NotNull(response.PreviousPageUrl);
             Assert.True(response.HasMore);
-            Assert.Equal("list", response.VarObject);
+            Assert.Equal("list", response.Object);
             Assert.Equal(limit, response.Data.Count);
         }
         /// <summary>
@@ -211,7 +211,7 @@ namespace Conekta.net.Test.Api
             Assert.NotNull(response.NextPageUrl);
             Assert.Null(response.PreviousPageUrl);
             Assert.False(response.HasMore);
-            Assert.Equal("list", response.VarObject);
+            Assert.Equal("list", response.Object);
         }
 
         /// <summary>
@@ -249,8 +249,8 @@ namespace Conekta.net.Test.Api
             Assert.Equal(customerFiscalEntitiesRequest.TaxId, response.TaxId);
             Assert.Equal(id, response.ParentId);
             Assert.Equal(fiscalEntitiesId, response.Id);
-            Assert.True(response.VarDefault);
-            Assert.Equal("fiscal_entity", response.VarObject);
+            Assert.True(response.Default);
+            Assert.Equal("fiscal_entity", response.Object);
         }
         private static Customer GetFullCustomer()
         {

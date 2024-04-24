@@ -59,7 +59,7 @@ namespace Conekta.net.Test.Api
             Assert.IsType<ApiKeyCreateResponse>(response);
             Assert.Equal("64625cc9f3e02c00163f5e4d", response.Id);
             Assert.Equal("key_rpHzxufNgjFCdprEEFZRTKi", response.AuthenticationToken);
-            Assert.Equal("api_key", response.VarObject);
+            Assert.Equal("api_key", response.Object);
             Assert.Equal(apiKeyRequest.Role, response.Role);
         }
 
@@ -90,7 +90,7 @@ namespace Conekta.net.Test.Api
 
             Assert.IsType<ApiKeyResponse>(response);
             Assert.Equal(id, response.Id);
-            Assert.Equal("api_key", response.VarObject);
+            Assert.Equal("api_key", response.Object);
         }
 
         /// <summary>

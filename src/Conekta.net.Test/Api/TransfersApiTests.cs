@@ -60,7 +60,7 @@ namespace Conekta.net.Test.Api
             Assert.Equal(id, response.Id);
             Assert.NotNull(response.Destination);
             Assert.Equal("bank_transfer", response.Destination.Type);
-            Assert.Equal("transfer", response.VarObject);
+            Assert.Equal("transfer", response.Object);
             Assert.IsType<TransferDestinationResponse>(response.Destination);
         }
 

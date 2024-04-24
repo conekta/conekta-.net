@@ -50,7 +50,7 @@ namespace Conekta.net.Model
             {
                 throw new ArgumentNullException("varObject is a required property for Pagination and cannot be null");
             }
-            this.VarObject = varObject;
+            this.Object = varObject;
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Conekta.net.Model
         /// <value>Object type, in this case is list</value>
         /// <example>list</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -78,7 +78,7 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class Pagination {\n");
             sb.Append("  HasMore: ").Append(HasMore).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

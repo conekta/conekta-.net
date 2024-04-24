@@ -5,7 +5,7 @@ Company payout destination model
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**VarObject** | **string** | The resource&#39;s type | [optional] 
+**Object** | **string** | The resource&#39;s type | [optional] 
 **Currency** | **string** | currency of the receiving account | [optional] 
 **AccountHolderName** | **string** | Name of the account holder | [optional] 
 **Bank** | **string** | Name of the bank | [optional] 

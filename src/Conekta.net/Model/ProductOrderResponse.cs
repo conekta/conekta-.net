@@ -52,7 +52,7 @@ namespace Conekta.net.Model
         /// <param name="id">id.</param>
         /// <param name="varObject">varObject.</param>
         /// <param name="parentId">parentId.</param>
-        public ProductOrderResponse(Dictionary<string, Object> antifraudInfo = default(Dictionary<string, Object>), string brand = default(string), string description = default(string), Dictionary<string, string> metadata = default(Dictionary<string, string>), string name = default(string), int quantity = default(int), string sku = default(string), List<string> tags = default(List<string>), int unitPrice = default(int), string id = default(string), string varObject = default(string), string parentId = default(string))
+        public ProductOrderResponse(Dictionary<string, Object> antifraudInfo = default(Dictionary<string, Object>), string brand = default(string), string description = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string name = default(string), int quantity = default(int), string sku = default(string), List<string> tags = default(List<string>), int unitPrice = default(int), string id = default(string), string varObject = default(string), string parentId = default(string))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -69,7 +69,7 @@ namespace Conekta.net.Model
             this.Sku = sku;
             this.Tags = tags;
             this.Id = id;
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.ParentId = parentId;
         }
 
@@ -102,7 +102,7 @@ namespace Conekta.net.Model
         /// <value>It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.</value>
         /// <example>{key&#x3D;value}</example>
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
-        public Dictionary<string, string> Metadata { get; set; }
+        public Dictionary<string, Object> Metadata { get; set; }
 
         /// <summary>
         /// The name of the item. It will be displayed in the order.
@@ -151,10 +151,10 @@ namespace Conekta.net.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarObject
+        /// Gets or Sets Object
         /// </summary>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets ParentId
@@ -180,7 +180,7 @@ namespace Conekta.net.Model
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  UnitPrice: ").Append(UnitPrice).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

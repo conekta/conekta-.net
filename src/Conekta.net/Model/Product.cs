@@ -49,7 +49,7 @@ namespace Conekta.net.Model
         /// <param name="sku">The stock keeping unit for the item. It is used to identify the item in the order..</param>
         /// <param name="tags">List of tags for the item. It is used to identify the item in the order..</param>
         /// <param name="unitPrice">The price of the item in cents. (required).</param>
-        public Product(Dictionary<string, Object> antifraudInfo = default(Dictionary<string, Object>), string brand = default(string), string description = default(string), Dictionary<string, string> metadata = default(Dictionary<string, string>), string name = default(string), int quantity = default(int), string sku = default(string), List<string> tags = default(List<string>), int unitPrice = default(int))
+        public Product(Dictionary<string, Object> antifraudInfo = default(Dictionary<string, Object>), string brand = default(string), string description = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string name = default(string), int quantity = default(int), string sku = default(string), List<string> tags = default(List<string>), int unitPrice = default(int))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -96,7 +96,7 @@ namespace Conekta.net.Model
         /// <value>It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.</value>
         /// <example>{&quot;key&quot;:&quot;value&quot;}</example>
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
-        public Dictionary<string, string> Metadata { get; set; }
+        public Dictionary<string, Object> Metadata { get; set; }
 
         /// <summary>
         /// The name of the item. It will be displayed in the order.

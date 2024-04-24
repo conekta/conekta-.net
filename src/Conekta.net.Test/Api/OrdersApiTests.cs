@@ -296,7 +296,7 @@ public class OrdersApiTests
         Assert.Single(response.Charges.Data);
         Assert.IsType<PaymentMethodBankTransfer>(response.Charges.Data[0].PaymentMethod.ActualInstance);
         Assert.Equal(id, response.Id);
-        Assert.Equal("bank_transfer_payment", response.Charges.Data[0].PaymentMethod.GetPaymentMethodBankTransfer().VarObject);
+        Assert.Equal("bank_transfer_payment", response.Charges.Data[0].PaymentMethod.GetPaymentMethodBankTransfer().Object);
     }
     /// <summary>
     ///     Test GetOrderBankPaymentMethodBankTransferById
@@ -330,10 +330,10 @@ public class OrdersApiTests
         Assert.True(response.HasMore);
         Assert.Equal("https://api-core.stg.conekta.io/orders?next=ord_2tNDyQbJacvUZiyfp", response.NextPageUrl);
         Assert.Null(response.PreviousPageUrl);
-        Assert.Equal("list", response.VarObject);
+        Assert.Equal("list", response.Object);
         Assert.Equal(limit, response.Data.Count);
-        Assert.Equal("card_payment", response.Data[0].Charges.Data[0].PaymentMethod.GetPaymentMethodCard().VarObject);
-        Assert.Equal("cash_payment", response.Data[9].Charges.Data[0].PaymentMethod.GetPaymentMethodCash().VarObject);
+        Assert.Equal("card_payment", response.Data[0].Charges.Data[0].PaymentMethod.GetPaymentMethodCard().Object);
+        Assert.Equal("cash_payment", response.Data[9].Charges.Data[0].PaymentMethod.GetPaymentMethodCash().Object);
         Assert.IsType<PaymentMethodCard>(response.Data[0].Charges.Data[0].PaymentMethod.ActualInstance);
         Assert.IsType<PaymentMethodCash>(response.Data[9].Charges.Data[0].PaymentMethod.ActualInstance);
     }
@@ -351,7 +351,7 @@ public class OrdersApiTests
         Assert.True(response.HasMore);
         Assert.Equal("https://api-core.stg.conekta.io/orders?limit=19&next=ord_2tKZmA749BLsMRgBg", response.NextPageUrl);
         Assert.Equal("https://api-core.stg.conekta.io/orders?limit=19&previous=ord_2tNDwzeMnVSU9kKHR", response.PreviousPageUrl);
-        Assert.Equal("list", response.VarObject);
+        Assert.Equal("list", response.Object);
         Assert.Equal(limit, response.Data.Count);
         Assert.Equal("cus_2tKcHxhTz7xU5SymF", response.Data[0].CustomerInfo.CustomerId);
         Assert.Equal("mx", response.Data[0].ShippingContact.Address.Country);
@@ -370,7 +370,7 @@ public class OrdersApiTests
         Assert.True(response.HasMore);
         Assert.Equal("https://api-core.stg.conekta.io/orders?limit=21&next=ord_2tKZmA749BLsMRgBg", response.NextPageUrl);
         Assert.Equal("https://api-core.stg.conekta.io/orders?limit=21&previous=ord_2tNDzhA4Akmzj11AS", response.PreviousPageUrl);
-        Assert.Equal("list", response.VarObject);
+        Assert.Equal("list", response.Object);
         Assert.Equal(limit, response.Data.Count);
         Assert.Equal("cus_2tKcHxhTz7xU5SymF", response.Data[0].CustomerInfo.CustomerId);
         Assert.Equal("mx", response.Data[0].ShippingContact.Address.Country);
@@ -389,7 +389,7 @@ public class OrdersApiTests
         Assert.False(response.HasMore);
         Assert.Null(response.NextPageUrl);
         Assert.Null(response.PreviousPageUrl);
-        Assert.Equal("list", response.VarObject);
+        Assert.Equal("list", response.Object);
         Assert.Single(response.Data);
         Assert.Equal("cus_2tKcHxhTz7xU5SymF", response.Data[0].CustomerInfo.CustomerId);
         Assert.Equal("ord_2tNDzhA4Akmzj11AS", response.Data[0].Id);
@@ -418,7 +418,7 @@ public class OrdersApiTests
         Assert.Equal(id, response.Charges.Data[0].OrderId);
         Assert.Single(response.Charges.Data[0].Refunds.Data);
         Assert.Equal(-orderRefundRequest.Amount, response.Charges.Data[0].Refunds.Data[0].Amount);
-        Assert.Equal("refund", response.Charges.Data[0].Refunds.Data[0].VarObject);
+        Assert.Equal("refund", response.Charges.Data[0].Refunds.Data[0].Object);
         Assert.IsType<PaymentMethodCard>(response.Charges.Data[0].PaymentMethod.ActualInstance);
     }
     /// <summary>

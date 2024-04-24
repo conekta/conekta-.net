@@ -62,9 +62,9 @@ namespace Conekta.net.Test.Api
 
             Assert.IsType<ChargeOrderResponse>(response);
             Assert.Equal(chargeRequest.Amount, response.Amount);
-            Assert.Equal("charge", response.VarObject);
+            Assert.Equal("charge", response.Object);
             Assert.Equal("pre_authorized", response.Status);
-            Assert.Equal("card_payment", response.PaymentMethod.GetPaymentMethodCard().VarObject);
+            Assert.Equal("card_payment", response.PaymentMethod.GetPaymentMethodCard().Object);
             Assert.Equal("credit", response.PaymentMethod.GetPaymentMethodCard().Type);
         }
         /// <summary>
@@ -83,9 +83,9 @@ namespace Conekta.net.Test.Api
 
             Assert.IsType<ChargeOrderResponse>(response);
             Assert.Equal(chargeRequest.Amount, response.Amount);
-            Assert.Equal("charge", response.VarObject);
+            Assert.Equal("charge", response.Object);
             Assert.Equal("pending_payment", response.Status);
-            Assert.Equal("cash_payment", response.PaymentMethod.GetPaymentMethodCash().VarObject);
+            Assert.Equal("cash_payment", response.PaymentMethod.GetPaymentMethodCash().Object);
             Assert.Equal("oxxo", response.PaymentMethod.GetPaymentMethodCash().Type);
             Assert.False(string.IsNullOrEmpty(response.PaymentMethod.GetPaymentMethodCash().BarcodeUrl));
             Assert.True(string.IsNullOrEmpty(response.PaymentMethod.GetPaymentMethodCash().CashierId));
@@ -108,9 +108,9 @@ namespace Conekta.net.Test.Api
 
             Assert.IsType<ChargeOrderResponse>(response);
             Assert.Equal(chargeRequest.Amount, response.Amount);
-            Assert.Equal("charge", response.VarObject);
+            Assert.Equal("charge", response.Object);
             Assert.Equal("pending_payment", response.Status);
-            Assert.Equal("bank_transfer_payment", response.PaymentMethod.GetPaymentMethodBankTransfer().VarObject);
+            Assert.Equal("bank_transfer_payment", response.PaymentMethod.GetPaymentMethodBankTransfer().Object);
             Assert.Equal("spei", response.PaymentMethod.GetPaymentMethodBankTransfer().Type);
             Assert.Equal("6408c87bde4b8e00010744e3", response.Id);
             Assert.Equal(id, response.OrderId);
@@ -145,8 +145,8 @@ namespace Conekta.net.Test.Api
            
            Assert.IsType<ChargeResponse>(response);
            Assert.Equal("123456789", response.ReferenceId);
-           Assert.Equal("charge", response.VarObject);
-           Assert.Equal("cash_payment", response.PaymentMethod.GetPaymentMethodCash().VarObject);
+           Assert.Equal("charge", response.Object);
+           Assert.Equal("cash_payment", response.PaymentMethod.GetPaymentMethodCash().Object);
            Assert.Equal("6524722f28c7ba0016a5b17d", response.Id);
         }
     }

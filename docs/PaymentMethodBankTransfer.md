@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** |  | [optional] 
-**VarObject** | **string** |  | 
+**Object** | **string** |  | 
 **Bank** | **string** |  | [optional] 
 **Clabe** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 

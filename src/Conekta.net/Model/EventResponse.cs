@@ -49,7 +49,7 @@ namespace Conekta.net.Model
             this.Data = data;
             this.Id = id;
             this.Livemode = livemode;
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.Type = type;
             this.WebhookLogs = webhookLogs;
             this.WebhookStatus = webhookStatus;
@@ -84,11 +84,11 @@ namespace Conekta.net.Model
         public bool Livemode { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarObject
+        /// Gets or Sets Object
         /// </summary>
         /// <example>event</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
@@ -122,7 +122,7 @@ namespace Conekta.net.Model
             sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  WebhookLogs: ").Append(WebhookLogs).Append("\n");
             sb.Append("  WebhookStatus: ").Append(WebhookStatus).Append("\n");

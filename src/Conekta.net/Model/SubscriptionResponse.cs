@@ -64,7 +64,7 @@ namespace Conekta.net.Model
             this.CustomerId = customerId;
             this.Id = id;
             this.LastBillingCycleOrderId = lastBillingCycleOrderId;
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.PausedAt = pausedAt;
             this.PlanId = planId;
             this.Status = status;
@@ -144,11 +144,11 @@ namespace Conekta.net.Model
         public string LastBillingCycleOrderId { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarObject
+        /// Gets or Sets Object
         /// </summary>
         /// <example>subscription</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets PausedAt
@@ -210,7 +210,7 @@ namespace Conekta.net.Model
             sb.Append("  CustomerId: ").Append(CustomerId).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  LastBillingCycleOrderId: ").Append(LastBillingCycleOrderId).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  PausedAt: ").Append(PausedAt).Append("\n");
             sb.Append("  PlanId: ").Append(PlanId).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");

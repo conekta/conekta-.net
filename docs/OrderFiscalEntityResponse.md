@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **TaxId** | **string** | Tax ID of the fiscal entity | [optional] 
 **Id** | **string** | ID of the fiscal entity | 
 **CreatedAt** | **long** | The time at which the object was created in seconds since the Unix epoch | 
-**VarObject** | **string** |  | 
+**Object** | **string** |  | 
 **Phone** | **string** | Phone of the fiscal entity | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

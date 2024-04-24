@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Email** | **string** |  | [optional] 
 **Phone** | **string** |  | [optional] 
 **Corporate** | **bool** |  | [optional] [default to false]
-**VarObject** | **string** |  | [optional] 
+**Object** | **string** |  | [optional] 
 **CustomerId** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

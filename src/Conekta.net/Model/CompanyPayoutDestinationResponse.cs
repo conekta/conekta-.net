@@ -52,7 +52,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>The resource&#39;s type</value>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public ObjectEnum? VarObject { get; set; }
+        public ObjectEnum? Object { get; set; }
         /// <summary>
         /// Type of the payout destination
         /// </summary>
@@ -85,7 +85,7 @@ namespace Conekta.net.Model
         /// <param name="accountNumber">Account number of the receiving account.</param>
         public CompanyPayoutDestinationResponse(ObjectEnum? varObject = default(ObjectEnum?), string currency = default(string), string accountHolderName = default(string), string bank = default(string), TypeEnum? type = default(TypeEnum?), string accountNumber = default(string))
         {
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.Currency = currency;
             this.AccountHolderName = accountHolderName;
             this.Bank = bank;
@@ -133,7 +133,7 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class CompanyPayoutDestinationResponse {\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  Currency: ").Append(Currency).Append("\n");
             sb.Append("  AccountHolderName: ").Append(AccountHolderName).Append("\n");
             sb.Append("  Bank: ").Append(Bank).Append("\n");

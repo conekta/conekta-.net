@@ -48,7 +48,7 @@ namespace Conekta.net.Model
             this.Id = id;
             this.LastAttemptedAt = lastAttemptedAt;
             this.LastHttpResponseStatus = lastHttpResponseStatus;
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.ResponseData = responseData;
             this.Url = url;
         }
@@ -82,11 +82,11 @@ namespace Conekta.net.Model
         public int LastHttpResponseStatus { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarObject
+        /// Gets or Sets Object
         /// </summary>
         /// <example>webhook_log</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets ResponseData
@@ -114,7 +114,7 @@ namespace Conekta.net.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  LastAttemptedAt: ").Append(LastAttemptedAt).Append("\n");
             sb.Append("  LastHttpResponseStatus: ").Append(LastHttpResponseStatus).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  ResponseData: ").Append(ResponseData).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
             sb.Append("}\n");

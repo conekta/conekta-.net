@@ -4034,6 +4034,74 @@ paths:
         schema:
           type: string
         style: form
+      - description: Filters by order status
+        explode: true
+        in: query
+        name: payment_status
+        required: false
+        schema:
+          example: paid
+          type: string
+        style: form
+      - description: Filters by last payment info status
+        explode: true
+        in: query
+        name: last_payment_info.status
+        required: false
+        schema:
+          example: pending_payment
+          type: string
+        style: form
+      - description: created equal to
+        explode: true
+        in: query
+        name: created_at
+        required: false
+        schema:
+          example: 1612137600
+          format: int64
+          type: integer
+        style: form
+      - description: created at greater than or equal to
+        explode: true
+        in: query
+        name: created_at.gte
+        required: false
+        schema:
+          example: 1612137600
+          format: int64
+          type: integer
+        style: form
+      - description: created at less than or equal to
+        explode: true
+        in: query
+        name: created_at.lte
+        required: false
+        schema:
+          example: 1612137600
+          format: int64
+          type: integer
+        style: form
+      - description: updated at greater than or equal to
+        explode: true
+        in: query
+        name: updated_at.gte
+        required: false
+        schema:
+          example: 1612137600
+          format: int64
+          type: integer
+        style: form
+      - description: updated at less than or equal to
+        explode: true
+        in: query
+        name: updated_at.lte
+        required: false
+        schema:
+          example: 1612137600
+          format: int64
+          type: integer
+        style: form
       responses:
         "200":
           content:
@@ -12430,6 +12498,81 @@ components:
       schema:
         type: string
       style: simple
+    payment_status:
+      description: Filters by order status
+      explode: true
+      in: query
+      name: payment_status
+      required: false
+      schema:
+        example: paid
+        type: string
+      style: form
+    last_payment_infostatus:
+      description: Filters by last payment info status
+      explode: true
+      in: query
+      name: last_payment_info.status
+      required: false
+      schema:
+        example: pending_payment
+        type: string
+      style: form
+    created_at:
+      description: created equal to
+      explode: true
+      in: query
+      name: created_at
+      required: false
+      schema:
+        example: 1612137600
+        format: int64
+        type: integer
+      style: form
+    created_at_gte:
+      description: created at greater than or equal to
+      explode: true
+      in: query
+      name: created_at.gte
+      required: false
+      schema:
+        example: 1612137600
+        format: int64
+        type: integer
+      style: form
+    created_at_lte:
+      description: created at less than or equal to
+      explode: true
+      in: query
+      name: created_at.lte
+      required: false
+      schema:
+        example: 1612137600
+        format: int64
+        type: integer
+      style: form
+    updated_at_gte:
+      description: updated at greater than or equal to
+      explode: true
+      in: query
+      name: updated_at.gte
+      required: false
+      schema:
+        example: 1612137600
+        format: int64
+        type: integer
+      style: form
+    updated_at_lte:
+      description: updated at less than or equal to
+      explode: true
+      in: query
+      name: updated_at.lte
+      required: false
+      schema:
+        example: 1612137600
+        format: int64
+        type: integer
+      style: form
     line_items_id:
       description: identifier
       example: line_item_2tQ8HkkfbauaKP9Ho
@@ -14907,8 +15050,8 @@ components:
           maxLength: 250
           type: string
         metadata:
-          additionalProperties:
-            type: string
+          additionalProperties: true
+          default: {}
           description: It is a key/value hash that can hold custom fields. Maximum
             100 elements and allows special characters.
           example:

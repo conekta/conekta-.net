@@ -45,7 +45,7 @@ namespace Conekta.net.Model
         /// <param name="residential">residential.</param>
         public CustomerShippingContactsResponseAddress(string varObject = default(string), string street1 = default(string), string street2 = default(string), string postalCode = default(string), string city = default(string), string state = default(string), string country = default(string), bool? residential = default(bool?))
         {
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.Street1 = street1;
             this.Street2 = street2;
             this.PostalCode = postalCode;
@@ -56,11 +56,11 @@ namespace Conekta.net.Model
         }
 
         /// <summary>
-        /// Gets or Sets VarObject
+        /// Gets or Sets Object
         /// </summary>
         /// <example>shipping_address</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets Street1
@@ -119,7 +119,7 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class CustomerShippingContactsResponseAddress {\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  Street1: ").Append(Street1).Append("\n");
             sb.Append("  Street2: ").Append(Street2).Append("\n");
             sb.Append("  PostalCode: ").Append(PostalCode).Append("\n");

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Interval** | **string** |  | [optional] 
 **Livemode** | **bool** |  | [optional] 
 **Name** | **string** |  | [optional] 
-**VarObject** | **string** |  | [optional] 
+**Object** | **string** |  | [optional] 
 **TrialPeriodDays** | **int?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

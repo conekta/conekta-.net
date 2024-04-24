@@ -85,7 +85,7 @@ namespace Conekta.net.Model
             {
                 throw new ArgumentNullException("varObject is a required property for CheckoutResponse and cannot be null");
             }
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.AllowedPaymentMethods = allowedPaymentMethods;
             this.CanNotExpire = canNotExpire;
             this.EmailsSent = emailsSent;
@@ -208,11 +208,11 @@ namespace Conekta.net.Model
         public bool NeedsShippingContact { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarObject
+        /// Gets or Sets Object
         /// </summary>
         /// <example>checkout</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets PaidPaymentsCount
@@ -306,7 +306,7 @@ namespace Conekta.net.Model
             sb.Append("  MonthlyInstallmentsOptions: ").Append(MonthlyInstallmentsOptions).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  NeedsShippingContact: ").Append(NeedsShippingContact).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  PaidPaymentsCount: ").Append(PaidPaymentsCount).Append("\n");
             sb.Append("  PaymentsLimitCount: ").Append(PaymentsLimitCount).Append("\n");
             sb.Append("  Recurrent: ").Append(Recurrent).Append("\n");
