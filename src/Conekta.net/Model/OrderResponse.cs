@@ -74,7 +74,7 @@ namespace Conekta.net.Model
             this.Livemode = livemode;
             this.Metadata = metadata;
             this.NextAction = nextAction;
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.PaymentStatus = paymentStatus;
             this.ProcessingMode = processingMode;
             this.ShippingContact = shippingContact;
@@ -196,7 +196,7 @@ namespace Conekta.net.Model
         /// <value>String representing the object’s type. Objects of the same type share the same value.</value>
         /// <example>order</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// The payment status of the order.
@@ -252,7 +252,7 @@ namespace Conekta.net.Model
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  NextAction: ").Append(NextAction).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  PaymentStatus: ").Append(PaymentStatus).Append("\n");
             sb.Append("  ProcessingMode: ").Append(ProcessingMode).Append("\n");
             sb.Append("  ShippingContact: ").Append(ShippingContact).Append("\n");

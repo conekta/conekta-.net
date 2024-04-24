@@ -57,7 +57,7 @@ namespace Conekta.net.Model
             this.Id = id;
             this.Livemode = livemode;
             this.Deleted = deleted;
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.Prefix = prefix;
             this.Role = role;
             this.AuthenticationToken = authenticationToken;
@@ -132,7 +132,7 @@ namespace Conekta.net.Model
         /// <value>Object name, value is &#39;api_key&#39;</value>
         /// <example>api_key</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// The first few characters of the authentication_token
@@ -174,7 +174,7 @@ namespace Conekta.net.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
             sb.Append("  Deleted: ").Append(Deleted).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  Prefix: ").Append(Prefix).Append("\n");
             sb.Append("  Role: ").Append(Role).Append("\n");
             sb.Append("  AuthenticationToken: ").Append(AuthenticationToken).Append("\n");

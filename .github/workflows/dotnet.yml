@@ -25,14 +25,12 @@ jobs:
           port: 3000
       - name: Execute dotnet
         run: dotnet build
-      - name: Test
-        run: dotnet test ./src/Conekta.net.Test/Conekta.net.Test.csproj --no-build -p:CollectCoverage=true -p:CoverletOutputFormat=lcov -p:CoverletOutput=coverage/
-        env:
-          BASE_PATH: http://localhost:3000
-      - name: publish code coverage
+      - name: Test and publish code coverage
         uses: paambaati/codeclimate-action@v5.0.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+          BASE_PATH: http://localhost:3000
         with:
+          coverageCommand: dotnet test ./src/Conekta.net.Test/Conekta.net.Test.csproj --no-build -p:CollectCoverage=true -p:CoverletOutputFormat=lcov -p:CoverletOutput=coverage/
           coverageLocations: |
             ${{github.workspace}}/src/Conekta.net.Test/coverage/coverage.net6.0.info:lcov

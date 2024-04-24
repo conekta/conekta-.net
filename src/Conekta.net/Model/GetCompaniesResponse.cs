@@ -53,7 +53,7 @@ namespace Conekta.net.Model
             {
                 throw new ArgumentNullException("varObject is a required property for GetCompaniesResponse and cannot be null");
             }
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.NextPageUrl = nextPageUrl;
             this.PreviousPageUrl = previousPageUrl;
             this.Data = data;
@@ -73,7 +73,7 @@ namespace Conekta.net.Model
         /// <value>Object type, in this case is list</value>
         /// <example>list</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// URL of the next page.
@@ -106,7 +106,7 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class GetCompaniesResponse {\n");
             sb.Append("  HasMore: ").Append(HasMore).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  NextPageUrl: ").Append(NextPageUrl).Append("\n");
             sb.Append("  PreviousPageUrl: ").Append(PreviousPageUrl).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");

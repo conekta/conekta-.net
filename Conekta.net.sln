@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conekta.net", "src\Conekta.net\Conekta.net.csproj", "{9AD6031F-BA27-4EE7-995D-669E9497AE86}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conekta.net", "src\Conekta.net\Conekta.net.csproj", "{F7CF1CA4-FB32-4B79-929C-55DA32E75F20}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conekta.net.Test", "src\Conekta.net.Test\Conekta.net.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
 EndProject
@@ -12,10 +12,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9AD6031F-BA27-4EE7-995D-669E9497AE86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9AD6031F-BA27-4EE7-995D-669E9497AE86}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9AD6031F-BA27-4EE7-995D-669E9497AE86}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9AD6031F-BA27-4EE7-995D-669E9497AE86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7CF1CA4-FB32-4B79-929C-55DA32E75F20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7CF1CA4-FB32-4B79-929C-55DA32E75F20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7CF1CA4-FB32-4B79-929C-55DA32E75F20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7CF1CA4-FB32-4B79-929C-55DA32E75F20}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** |  | 
 **Id** | **string** |  | 
-**VarObject** | **string** |  | 
+**Object** | **string** |  | 
 **CreatedAt** | **long** |  | 
 **ParentId** | **string** |  | [optional] 
 **Reference** | **string** |  | [optional] 

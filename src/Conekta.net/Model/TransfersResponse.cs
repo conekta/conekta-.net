@@ -53,7 +53,7 @@ namespace Conekta.net.Model
             this.Id = id;
             this.Livemode = livemode;
             this.Method = method;
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.StatementDescription = statementDescription;
             this.StatementReference = statementReference;
             this.Status = status;
@@ -111,7 +111,7 @@ namespace Conekta.net.Model
         /// <value>Object name, which is transfer.</value>
         /// <example>transfer</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Description of the transfer.
@@ -151,7 +151,7 @@ namespace Conekta.net.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
             sb.Append("  Method: ").Append(Method).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  StatementDescription: ").Append(StatementDescription).Append("\n");
             sb.Append("  StatementReference: ").Append(StatementReference).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");

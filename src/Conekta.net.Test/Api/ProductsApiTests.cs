@@ -72,7 +72,7 @@ namespace Conekta.net.Test.Api
 
             Assert.IsType<ProductOrderResponse>(response);
             Assert.Equal(id, response.ParentId);
-            Assert.Equal("line_item", response.VarObject);
+            Assert.Equal("line_item", response.Object);
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Conekta.net.Test.Api
             Assert.IsType<ProductOrderResponse>(response);
             Assert.Equal(id, response.ParentId);
             Assert.Equal(productId, response.Id);
-            Assert.Equal("line_item", response.VarObject);
+            Assert.Equal("line_item", response.Object);
         }
     }
 }

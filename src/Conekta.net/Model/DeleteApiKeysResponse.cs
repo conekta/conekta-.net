@@ -52,7 +52,7 @@ namespace Conekta.net.Model
             this.Livemode = livemode;
             this.Prefix = prefix;
             this.Id = id;
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.Deleted = deleted;
             this.Role = role;
         }
@@ -111,7 +111,7 @@ namespace Conekta.net.Model
         /// <value>Object name, value is &#39;api_key&#39;</value>
         /// <example>api_key</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets Deleted
@@ -142,7 +142,7 @@ namespace Conekta.net.Model
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
             sb.Append("  Prefix: ").Append(Prefix).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  Deleted: ").Append(Deleted).Append("\n");
             sb.Append("  Role: ").Append(Role).Append("\n");
             sb.Append("}\n");

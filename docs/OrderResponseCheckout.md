@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **MonthlyInstallmentsOptions** | **List&lt;int&gt;** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **NeedsShippingContact** | **bool** |  | [optional] 
-**VarObject** | **string** |  | [optional] 
+**Object** | **string** |  | [optional] 
 **OnDemandEnabled** | **bool?** |  | [optional] 
 **PaidPaymentsCount** | **int** |  | [optional] 
 **Recurrent** | **bool** |  | [optional] 

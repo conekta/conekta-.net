@@ -62,7 +62,7 @@ namespace Conekta.net.Model
             {
                 throw new ArgumentNullException("varObject is a required property for ChargeResponseRefundsData and cannot be null");
             }
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.AuthCode = authCode;
             this.ExpiresAt = expiresAt;
             this.Status = status;
@@ -105,11 +105,11 @@ namespace Conekta.net.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarObject
+        /// Gets or Sets Object
         /// </summary>
         /// <example>refund</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// refund status
@@ -132,7 +132,7 @@ namespace Conekta.net.Model
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  ExpiresAt: ").Append(ExpiresAt).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

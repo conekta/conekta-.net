@@ -79,7 +79,7 @@ namespace Conekta.net.Test.Api
             Assert.IsType<SubscriptionResponse>(response);
             Assert.Equal(customerId, response.CustomerId);
             Assert.Equal("past_due", response.Status);
-            Assert.Equal("subscription", response.VarObject);
+            Assert.Equal("subscription", response.Object);
             Assert.Equal(subscriptionRequest.PlanId, response.PlanId);
             Assert.Equal(1679431660, response.CreatedAt);
         }
@@ -95,7 +95,7 @@ namespace Conekta.net.Test.Api
 
             Assert.IsType<SubscriptionResponse>(response);
             Assert.Equal(customerId, response.CustomerId);
-            Assert.Equal("subscription", response.VarObject);
+            Assert.Equal("subscription", response.Object);
         }
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace Conekta.net.Test.Api
             Assert.IsType<SubscriptionEventsResponse>(response);
             Assert.False(response.HasMore);
             Assert.Equal("620ea04f6d41e80466f611a6", response.Data[0].Id);
-            Assert.Equal("event", response.Data[0].VarObject);
+            Assert.Equal("event", response.Data[0].Object);
             Assert.Equal(2, response.Data.Count);
         }
     }

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **ExpiresAt** | **long** | The expiration date of the payout order. | [optional] 
 **Id** | **string** | The id of the payout order. | 
 **Livemode** | **bool** | The live mode of the payout order. | 
-**VarObject** | **string** | The object of the payout order. | 
+**Object** | **string** | The object of the payout order. | 
 **Metadata** | **Dictionary&lt;string, Object&gt;** | The metadata of the payout order. | [optional] 
 **Payouts** | [**List&lt;PayoutOrderPayoutsItem&gt;**](PayoutOrderPayoutsItem.md) | The payout information of the payout order. | 
 **Reason** | **string** | The reason for the payout order. | 

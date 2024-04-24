@@ -5,7 +5,7 @@ Company fiscal info address model
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**VarObject** | **string** | The resource&#39;s type | [optional] 
+**Object** | **string** | The resource&#39;s type | [optional] 
 **Street1** | **string** | Street Address | [optional] 
 **Street2** | **string** | Colonia | [optional] 
 **City** | **string** | City | [optional] 

@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **Livemode** | **bool** | Whether the object exists in live mode or test mode | [optional] 
 **Metadata** | **Dictionary&lt;string, Object&gt;** | Set of key-value pairs that you can attach to an object. This can be useful for storing additional information about the object in a structured format. | [optional] 
 **NextAction** | [**OrderNextActionResponse**](OrderNextActionResponse.md) |  | [optional] 
-**VarObject** | **string** | String representing the object’s type. Objects of the same type share the same value. | [optional] 
+**Object** | **string** | String representing the object’s type. Objects of the same type share the same value. | [optional] 
 **PaymentStatus** | **string** | The payment status of the order. | [optional] 
 **ProcessingMode** | **string** | Indicates the processing mode for the order, either ecommerce, recurrent or validation. | [optional] 
 **ShippingContact** | [**OrderResponseShippingContact**](OrderResponseShippingContact.md) |  | [optional] 

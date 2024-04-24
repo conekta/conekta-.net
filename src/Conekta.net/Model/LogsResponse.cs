@@ -65,13 +65,13 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>The object type</value>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string VarObject { get; private set; }
+        public string Object { get; private set; }
 
         /// <summary>
-        /// Returns false as VarObject should not be serialized given that it's read-only.
+        /// Returns false as Object should not be serialized given that it's read-only.
         /// </summary>
         /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeVarObject()
+        public bool ShouldSerializeObject()
         {
             return false;
         }
@@ -105,7 +105,7 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class LogsResponse {\n");
             sb.Append("  HasMore: ").Append(HasMore).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  NextPageUrl: ").Append(NextPageUrl).Append("\n");
             sb.Append("  PreviousPageUrl: ").Append(PreviousPageUrl).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");

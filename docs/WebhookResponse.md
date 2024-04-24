@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **DevelopmentEnabled** | **bool** |  | [optional] 
 **Id** | **string** |  | [optional] 
 **Livemode** | **bool** |  | [optional] 
-**VarObject** | **string** |  | [optional] 
+**Object** | **string** |  | [optional] 
 **ProductionEnabled** | **bool** |  | [optional] 
 **Status** | **string** |  | [optional] 
 **SubscribedEvents** | **List&lt;string&gt;** |  | [optional] 

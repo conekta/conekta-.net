@@ -74,7 +74,7 @@ namespace Conekta.net.Model
             this.MonthlyInstallmentsOptions = monthlyInstallmentsOptions;
             this.Name = name;
             this.NeedsShippingContact = needsShippingContact;
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.OnDemandEnabled = onDemandEnabled;
             this.PaidPaymentsCount = paidPaymentsCount;
             this.Recurrent = recurrent;
@@ -192,7 +192,7 @@ namespace Conekta.net.Model
         /// <value>Indicates the type of object, in this case checkout.</value>
         /// <example>checkout</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Indicates if the checkout allows on demand payments.
@@ -279,7 +279,7 @@ namespace Conekta.net.Model
             sb.Append("  MonthlyInstallmentsOptions: ").Append(MonthlyInstallmentsOptions).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  NeedsShippingContact: ").Append(NeedsShippingContact).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  OnDemandEnabled: ").Append(OnDemandEnabled).Append("\n");
             sb.Append("  PaidPaymentsCount: ").Append(PaidPaymentsCount).Append("\n");
             sb.Append("  Recurrent: ").Append(Recurrent).Append("\n");

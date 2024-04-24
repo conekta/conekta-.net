@@ -79,7 +79,7 @@ namespace Conekta.net.Model
             {
                 throw new ArgumentNullException("varObject is a required property for CustomerResponse and cannot be null");
             }
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.AntifraudInfo = antifraudInfo;
             this.Corporate = corporate;
             this.CustomReference = customReference;
@@ -189,11 +189,11 @@ namespace Conekta.net.Model
         public Dictionary<string, Object> Metadata { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarObject
+        /// Gets or Sets Object
         /// </summary>
         /// <example>customer</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentSources
@@ -242,7 +242,7 @@ namespace Conekta.net.Model
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  PaymentSources: ").Append(PaymentSources).Append("\n");
             sb.Append("  Phone: ").Append(Phone).Append("\n");
             sb.Append("  ShippingContacts: ").Append(ShippingContacts).Append("\n");

@@ -51,7 +51,7 @@ namespace Conekta.net.Model
             {
                 throw new ArgumentNullException("varObject is a required property for CustomerFiscalEntitiesResponse and cannot be null");
             }
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.Data = data;
         }
 
@@ -69,7 +69,7 @@ namespace Conekta.net.Model
         /// <value>Object type, in this case is list</value>
         /// <example>list</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets Data
@@ -86,7 +86,7 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class CustomerFiscalEntitiesResponse {\n");
             sb.Append("  HasMore: ").Append(HasMore).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

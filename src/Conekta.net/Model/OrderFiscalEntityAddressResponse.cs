@@ -82,7 +82,7 @@ namespace Conekta.net.Model
             this.ExternalNumber = externalNumber;
             this.Street2 = street2;
             this.State = state;
-            this.VarObject = varObject;
+            this.Object = varObject;
         }
 
         /// <summary>
@@ -142,11 +142,11 @@ namespace Conekta.net.Model
         public string ExternalNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarObject
+        /// Gets or Sets Object
         /// </summary>
         /// <example>fiscal_entity_address</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -163,7 +163,7 @@ namespace Conekta.net.Model
             sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("  Country: ").Append(Country).Append("\n");
             sb.Append("  ExternalNumber: ").Append(ExternalNumber).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -60,7 +60,7 @@ namespace Conekta.net.Model
             this.Email = email;
             this.Phone = phone;
             this.Corporate = corporate;
-            this.VarObject = varObject;
+            this.Object = varObject;
         }
 
         /// <summary>
@@ -99,11 +99,11 @@ namespace Conekta.net.Model
         public bool Corporate { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarObject
+        /// Gets or Sets Object
         /// </summary>
         /// <example>customer_info</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// The id of the customer.
@@ -126,7 +126,7 @@ namespace Conekta.net.Model
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  Phone: ").Append(Phone).Append("\n");
             sb.Append("  Corporate: ").Append(Corporate).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

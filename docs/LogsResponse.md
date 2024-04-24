@@ -6,7 +6,7 @@ logs model
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **HasMore** | **bool** | True, if there are more pages. | [optional] [readonly] 
-**VarObject** | **string** | The object type | [optional] [readonly] 
+**Object** | **string** | The object type | [optional] [readonly] 
 **NextPageUrl** | **string** | URL of the next page. | [optional] 
 **PreviousPageUrl** | **string** | Url of the previous page. | [optional] 
 **Data** | [**List&lt;LogsResponseData&gt;**](LogsResponseData.md) | set to page results. | [optional] 

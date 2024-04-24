@@ -56,7 +56,7 @@ namespace Conekta.net.Model
             this.Method = method;
             this.Metadata = metadata;
             this.Id = id;
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.ParentId = parentId;
         }
 
@@ -107,10 +107,10 @@ namespace Conekta.net.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarObject
+        /// Gets or Sets Object
         /// </summary>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets ParentId
@@ -132,7 +132,7 @@ namespace Conekta.net.Model
             sb.Append("  Method: ").Append(Method).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

@@ -57,7 +57,7 @@ namespace Conekta.net.Model
             this.Interval = interval;
             this.Livemode = livemode;
             this.Name = name;
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.TrialPeriodDays = trialPeriodDays;
         }
 
@@ -125,11 +125,11 @@ namespace Conekta.net.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarObject
+        /// Gets or Sets Object
         /// </summary>
         /// <example>plan</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets TrialPeriodDays
@@ -155,7 +155,7 @@ namespace Conekta.net.Model
             sb.Append("  Interval: ").Append(Interval).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  TrialPeriodDays: ").Append(TrialPeriodDays).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

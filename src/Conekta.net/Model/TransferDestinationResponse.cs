@@ -50,7 +50,7 @@ namespace Conekta.net.Model
             this.Bank = bank;
             this.CreatedAt = createdAt;
             this.Id = id;
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.PayeeId = payeeId;
             this.Type = type;
         }
@@ -101,7 +101,7 @@ namespace Conekta.net.Model
         /// <value>Object name, which is bank_transfer_payout_method.</value>
         /// <example>bank_transfer_payout_method</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Unique identifier of the payee.
@@ -132,7 +132,7 @@ namespace Conekta.net.Model
             sb.Append("  Bank: ").Append(Bank).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  PayeeId: ").Append(PayeeId).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");

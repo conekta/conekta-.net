@@ -69,7 +69,7 @@ namespace Conekta.net.Model
             {
                 throw new ArgumentNullException("varObject is a required property for OrderFiscalEntityResponse and cannot be null");
             }
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.Email = email;
             this.Metadata = metadata;
             this.Name = name;
@@ -131,11 +131,11 @@ namespace Conekta.net.Model
         public long CreatedAt { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarObject
+        /// Gets or Sets Object
         /// </summary>
         /// <example>fiscal_entity</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Phone of the fiscal entity
@@ -160,7 +160,7 @@ namespace Conekta.net.Model
             sb.Append("  TaxId: ").Append(TaxId).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  Phone: ").Append(Phone).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

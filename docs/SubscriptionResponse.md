@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **CustomerId** | **string** |  | [optional] 
 **Id** | **string** |  | [optional] 
 **LastBillingCycleOrderId** | **string** |  | [optional] 
-**VarObject** | **string** |  | [optional] 
+**Object** | **string** |  | [optional] 
 **PausedAt** | **long?** |  | [optional] 
 **PlanId** | **string** |  | [optional] 
 **Status** | **string** |  | [optional] 

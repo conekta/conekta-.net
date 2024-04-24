@@ -321,7 +321,7 @@ catch (ApiException e)
 
 <a id="getorders"></a>
 # **GetOrders**
-> GetOrdersResponse GetOrders (string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string search = null, string next = null, string previous = null)
+> GetOrdersResponse GetOrders (string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string search = null, string next = null, string previous = null, string paymentStatus = null, string lastPaymentInfoStatus = null, long? createdAt = null, long? createdAtGte = null, long? createdAtLte = null, long? updatedAtGte = null, long? updatedAtLte = null)
 
 Get a list of Orders
 
@@ -353,11 +353,18 @@ namespace Example
             var search = "search_example";  // string | General order search, e.g. by mail, reference etc. (optional) 
             var next = "next_example";  // string | next page (optional) 
             var previous = "previous_example";  // string | previous page (optional) 
+            var paymentStatus = paid;  // string | Filters by order status (optional) 
+            var lastPaymentInfoStatus = pending_payment;  // string | Filters by last payment info status (optional) 
+            var createdAt = 1612137600;  // long? | created equal to (optional) 
+            var createdAtGte = 1612137600;  // long? | created at greater than or equal to (optional) 
+            var createdAtLte = 1612137600;  // long? | created at less than or equal to (optional) 
+            var updatedAtGte = 1612137600;  // long? | updated at greater than or equal to (optional) 
+            var updatedAtLte = 1612137600;  // long? | updated at less than or equal to (optional) 
 
             try
             {
                 // Get a list of Orders
-                GetOrdersResponse result = apiInstance.GetOrders(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+                GetOrdersResponse result = apiInstance.GetOrders(acceptLanguage, xChildCompanyId, limit, search, next, previous, paymentStatus, lastPaymentInfoStatus, createdAt, createdAtGte, createdAtLte, updatedAtGte, updatedAtLte);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -378,7 +385,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get a list of Orders
-    ApiResponse<GetOrdersResponse> response = apiInstance.GetOrdersWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+    ApiResponse<GetOrdersResponse> response = apiInstance.GetOrdersWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous, paymentStatus, lastPaymentInfoStatus, createdAt, createdAtGte, createdAtLte, updatedAtGte, updatedAtLte);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -401,6 +408,13 @@ catch (ApiException e)
 | **search** | **string** | General order search, e.g. by mail, reference etc. | [optional]  |
 | **next** | **string** | next page | [optional]  |
 | **previous** | **string** | previous page | [optional]  |
+| **paymentStatus** | **string** | Filters by order status | [optional]  |
+| **lastPaymentInfoStatus** | **string** | Filters by last payment info status | [optional]  |
+| **createdAt** | **long?** | created equal to | [optional]  |
+| **createdAtGte** | **long?** | created at greater than or equal to | [optional]  |
+| **createdAtLte** | **long?** | created at less than or equal to | [optional]  |
+| **updatedAtGte** | **long?** | updated at greater than or equal to | [optional]  |
+| **updatedAtLte** | **long?** | updated at less than or equal to | [optional]  |
 
 ### Return type
 

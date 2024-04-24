@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **ExpiresAt** | **long** | The expiration date of the payout. | [optional] 
 **Id** | **string** | The id of the payout. | 
 **Livemode** | **bool** | The live mode of the payout. | 
-**VarObject** | **string** | The object of the payout. | 
+**Object** | **string** | The object of the payout. | 
 **PayoutOrderId** | **string** | The id of the payout order. | [optional] 
 **Status** | **string** | The status of the payout. | [optional] 
 

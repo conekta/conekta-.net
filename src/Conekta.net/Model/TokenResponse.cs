@@ -59,7 +59,7 @@ namespace Conekta.net.Model
             {
                 throw new ArgumentNullException("varObject is a required property for TokenResponse and cannot be null");
             }
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.Used = used;
             this.Checkout = checkout;
         }
@@ -93,7 +93,7 @@ namespace Conekta.net.Model
         /// <value>Indicates the type of object, in this case token</value>
         /// <example>token</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Indicates if the token has been used
@@ -114,7 +114,7 @@ namespace Conekta.net.Model
             sb.Append("  Checkout: ").Append(Checkout).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  Used: ").Append(Used).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

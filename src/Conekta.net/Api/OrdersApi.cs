@@ -121,9 +121,16 @@ namespace Conekta.net.Api
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
+        /// <param name="paymentStatus">Filters by order status (optional)</param>
+        /// <param name="lastPaymentInfoStatus">Filters by last payment info status (optional)</param>
+        /// <param name="createdAt">created equal to (optional)</param>
+        /// <param name="createdAtGte">created at greater than or equal to (optional)</param>
+        /// <param name="createdAtLte">created at less than or equal to (optional)</param>
+        /// <param name="updatedAtGte">updated at greater than or equal to (optional)</param>
+        /// <param name="updatedAtLte">updated at less than or equal to (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetOrdersResponse</returns>
-        GetOrdersResponse GetOrders(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
+        GetOrdersResponse GetOrders(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), string paymentStatus = default(string), string lastPaymentInfoStatus = default(string), long? createdAt = default(long?), long? createdAtGte = default(long?), long? createdAtLte = default(long?), long? updatedAtGte = default(long?), long? updatedAtLte = default(long?), int operationIndex = 0);
 
         /// <summary>
         /// Get a list of Orders
@@ -138,9 +145,16 @@ namespace Conekta.net.Api
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
+        /// <param name="paymentStatus">Filters by order status (optional)</param>
+        /// <param name="lastPaymentInfoStatus">Filters by last payment info status (optional)</param>
+        /// <param name="createdAt">created equal to (optional)</param>
+        /// <param name="createdAtGte">created at greater than or equal to (optional)</param>
+        /// <param name="createdAtLte">created at less than or equal to (optional)</param>
+        /// <param name="updatedAtGte">updated at greater than or equal to (optional)</param>
+        /// <param name="updatedAtLte">updated at less than or equal to (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetOrdersResponse</returns>
-        ApiResponse<GetOrdersResponse> GetOrdersWithHttpInfo(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
+        ApiResponse<GetOrdersResponse> GetOrdersWithHttpInfo(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), string paymentStatus = default(string), string lastPaymentInfoStatus = default(string), long? createdAt = default(long?), long? createdAtGte = default(long?), long? createdAtLte = default(long?), long? updatedAtGte = default(long?), long? updatedAtLte = default(long?), int operationIndex = 0);
         /// <summary>
         /// Cancel Refund
         /// </summary>
@@ -364,10 +378,17 @@ namespace Conekta.net.Api
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
+        /// <param name="paymentStatus">Filters by order status (optional)</param>
+        /// <param name="lastPaymentInfoStatus">Filters by last payment info status (optional)</param>
+        /// <param name="createdAt">created equal to (optional)</param>
+        /// <param name="createdAtGte">created at greater than or equal to (optional)</param>
+        /// <param name="createdAtLte">created at less than or equal to (optional)</param>
+        /// <param name="updatedAtGte">updated at greater than or equal to (optional)</param>
+        /// <param name="updatedAtLte">updated at less than or equal to (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetOrdersResponse</returns>
-        System.Threading.Tasks.Task<GetOrdersResponse> GetOrdersAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetOrdersResponse> GetOrdersAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), string paymentStatus = default(string), string lastPaymentInfoStatus = default(string), long? createdAt = default(long?), long? createdAtGte = default(long?), long? createdAtLte = default(long?), long? updatedAtGte = default(long?), long? updatedAtLte = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get a list of Orders
@@ -382,10 +403,17 @@ namespace Conekta.net.Api
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
+        /// <param name="paymentStatus">Filters by order status (optional)</param>
+        /// <param name="lastPaymentInfoStatus">Filters by last payment info status (optional)</param>
+        /// <param name="createdAt">created equal to (optional)</param>
+        /// <param name="createdAtGte">created at greater than or equal to (optional)</param>
+        /// <param name="createdAtLte">created at less than or equal to (optional)</param>
+        /// <param name="updatedAtGte">updated at greater than or equal to (optional)</param>
+        /// <param name="updatedAtLte">updated at less than or equal to (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetOrdersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetOrdersResponse>> GetOrdersWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetOrdersResponse>> GetOrdersWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), string paymentStatus = default(string), string lastPaymentInfoStatus = default(string), long? createdAt = default(long?), long? createdAtGte = default(long?), long? createdAtLte = default(long?), long? updatedAtGte = default(long?), long? updatedAtLte = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Cancel Refund
         /// </summary>
@@ -1180,11 +1208,18 @@ namespace Conekta.net.Api
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
+        /// <param name="paymentStatus">Filters by order status (optional)</param>
+        /// <param name="lastPaymentInfoStatus">Filters by last payment info status (optional)</param>
+        /// <param name="createdAt">created equal to (optional)</param>
+        /// <param name="createdAtGte">created at greater than or equal to (optional)</param>
+        /// <param name="createdAtLte">created at less than or equal to (optional)</param>
+        /// <param name="updatedAtGte">updated at greater than or equal to (optional)</param>
+        /// <param name="updatedAtLte">updated at less than or equal to (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetOrdersResponse</returns>
-        public GetOrdersResponse GetOrders(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0)
+        public GetOrdersResponse GetOrders(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), string paymentStatus = default(string), string lastPaymentInfoStatus = default(string), long? createdAt = default(long?), long? createdAtGte = default(long?), long? createdAtLte = default(long?), long? updatedAtGte = default(long?), long? updatedAtLte = default(long?), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<GetOrdersResponse> localVarResponse = GetOrdersWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+            Conekta.net.Client.ApiResponse<GetOrdersResponse> localVarResponse = GetOrdersWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous, paymentStatus, lastPaymentInfoStatus, createdAt, createdAtGte, createdAtLte, updatedAtGte, updatedAtLte);
             return localVarResponse.Data;
         }
 
@@ -1198,9 +1233,16 @@ namespace Conekta.net.Api
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
+        /// <param name="paymentStatus">Filters by order status (optional)</param>
+        /// <param name="lastPaymentInfoStatus">Filters by last payment info status (optional)</param>
+        /// <param name="createdAt">created equal to (optional)</param>
+        /// <param name="createdAtGte">created at greater than or equal to (optional)</param>
+        /// <param name="createdAtLte">created at less than or equal to (optional)</param>
+        /// <param name="updatedAtGte">updated at greater than or equal to (optional)</param>
+        /// <param name="updatedAtLte">updated at less than or equal to (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetOrdersResponse</returns>
-        public Conekta.net.Client.ApiResponse<GetOrdersResponse> GetOrdersWithHttpInfo(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<GetOrdersResponse> GetOrdersWithHttpInfo(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), string paymentStatus = default(string), string lastPaymentInfoStatus = default(string), long? createdAt = default(long?), long? createdAtGte = default(long?), long? createdAtLte = default(long?), long? updatedAtGte = default(long?), long? updatedAtLte = default(long?), int operationIndex = 0)
         {
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
 
@@ -1239,6 +1281,34 @@ namespace Conekta.net.Api
             if (previous != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "previous", previous));
+            }
+            if (paymentStatus != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "payment_status", paymentStatus));
+            }
+            if (lastPaymentInfoStatus != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "last_payment_info.status", lastPaymentInfoStatus));
+            }
+            if (createdAt != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "created_at", createdAt));
+            }
+            if (createdAtGte != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "created_at.gte", createdAtGte));
+            }
+            if (createdAtLte != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "created_at.lte", createdAtLte));
+            }
+            if (updatedAtGte != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "updated_at.gte", updatedAtGte));
+            }
+            if (updatedAtLte != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "updated_at.lte", updatedAtLte));
             }
             if (acceptLanguage != null)
             {
@@ -1283,12 +1353,19 @@ namespace Conekta.net.Api
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
+        /// <param name="paymentStatus">Filters by order status (optional)</param>
+        /// <param name="lastPaymentInfoStatus">Filters by last payment info status (optional)</param>
+        /// <param name="createdAt">created equal to (optional)</param>
+        /// <param name="createdAtGte">created at greater than or equal to (optional)</param>
+        /// <param name="createdAtLte">created at less than or equal to (optional)</param>
+        /// <param name="updatedAtGte">updated at greater than or equal to (optional)</param>
+        /// <param name="updatedAtLte">updated at less than or equal to (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetOrdersResponse</returns>
-        public async System.Threading.Tasks.Task<GetOrdersResponse> GetOrdersAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetOrdersResponse> GetOrdersAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), string paymentStatus = default(string), string lastPaymentInfoStatus = default(string), long? createdAt = default(long?), long? createdAtGte = default(long?), long? createdAtLte = default(long?), long? updatedAtGte = default(long?), long? updatedAtLte = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<GetOrdersResponse> localVarResponse = await GetOrdersWithHttpInfoAsync(acceptLanguage, xChildCompanyId, limit, search, next, previous, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<GetOrdersResponse> localVarResponse = await GetOrdersWithHttpInfoAsync(acceptLanguage, xChildCompanyId, limit, search, next, previous, paymentStatus, lastPaymentInfoStatus, createdAt, createdAtGte, createdAtLte, updatedAtGte, updatedAtLte, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1302,10 +1379,17 @@ namespace Conekta.net.Api
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
+        /// <param name="paymentStatus">Filters by order status (optional)</param>
+        /// <param name="lastPaymentInfoStatus">Filters by last payment info status (optional)</param>
+        /// <param name="createdAt">created equal to (optional)</param>
+        /// <param name="createdAtGte">created at greater than or equal to (optional)</param>
+        /// <param name="createdAtLte">created at less than or equal to (optional)</param>
+        /// <param name="updatedAtGte">updated at greater than or equal to (optional)</param>
+        /// <param name="updatedAtLte">updated at less than or equal to (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetOrdersResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<GetOrdersResponse>> GetOrdersWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<GetOrdersResponse>> GetOrdersWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), string paymentStatus = default(string), string lastPaymentInfoStatus = default(string), long? createdAt = default(long?), long? createdAtGte = default(long?), long? createdAtLte = default(long?), long? updatedAtGte = default(long?), long? updatedAtLte = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -1345,6 +1429,34 @@ namespace Conekta.net.Api
             if (previous != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "previous", previous));
+            }
+            if (paymentStatus != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "payment_status", paymentStatus));
+            }
+            if (lastPaymentInfoStatus != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "last_payment_info.status", lastPaymentInfoStatus));
+            }
+            if (createdAt != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "created_at", createdAt));
+            }
+            if (createdAtGte != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "created_at.gte", createdAtGte));
+            }
+            if (createdAtLte != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "created_at.lte", createdAtLte));
+            }
+            if (updatedAtGte != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "updated_at.gte", updatedAtGte));
+            }
+            if (updatedAtLte != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "updated_at.lte", updatedAtLte));
             }
             if (acceptLanguage != null)
             {

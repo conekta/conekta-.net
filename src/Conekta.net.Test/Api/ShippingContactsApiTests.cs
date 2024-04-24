@@ -101,7 +101,7 @@ namespace Conekta.net.Test.Api
             Assert.Equal(customerShippingContacts.Phone, response.Phone);
             Assert.Equal(id, response.ParentId);
             Assert.Equal(shippingContactsId, response.Id);
-            Assert.False(response.VarDefault);
+            Assert.False(response.Default);
         }
     }
 }

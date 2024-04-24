@@ -74,7 +74,7 @@ namespace Conekta.net.Model
             {
                 throw new ArgumentNullException("varObject is a required property for PaymentMethodCardResponse and cannot be null");
             }
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.CreatedAt = createdAt;
             this.ParentId = parentId;
             this.Last4 = last4;
@@ -84,7 +84,7 @@ namespace Conekta.net.Model
             this.ExpYear = expYear;
             this.Brand = brand;
             this.Name = name;
-            this.VarDefault = varDefault;
+            this.Default = varDefault;
             this.VisibleOnCheckout = visibleOnCheckout;
             this.PaymentSourceStatus = paymentSourceStatus;
         }
@@ -103,11 +103,11 @@ namespace Conekta.net.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarObject
+        /// Gets or Sets Object
         /// </summary>
         /// <example>payment_source</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt
@@ -173,10 +173,10 @@ namespace Conekta.net.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarDefault
+        /// Gets or Sets Default
         /// </summary>
         [DataMember(Name = "default", EmitDefaultValue = true)]
-        public bool VarDefault { get; set; }
+        public bool Default { get; set; }
 
         /// <summary>
         /// Gets or Sets VisibleOnCheckout
@@ -201,7 +201,7 @@ namespace Conekta.net.Model
             sb.Append("class PaymentMethodCardResponse {\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("  Last4: ").Append(Last4).Append("\n");
@@ -211,7 +211,7 @@ namespace Conekta.net.Model
             sb.Append("  ExpYear: ").Append(ExpYear).Append("\n");
             sb.Append("  Brand: ").Append(Brand).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  VarDefault: ").Append(VarDefault).Append("\n");
+            sb.Append("  Default: ").Append(Default).Append("\n");
             sb.Append("  VisibleOnCheckout: ").Append(VisibleOnCheckout).Append("\n");
             sb.Append("  PaymentSourceStatus: ").Append(PaymentSourceStatus).Append("\n");
             sb.Append("}\n");

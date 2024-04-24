@@ -70,13 +70,13 @@ namespace Conekta.net.Model
             {
                 throw new ArgumentNullException("varObject is a required property for CustomerShippingContactsDataResponse and cannot be null");
             }
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.CreatedAt = createdAt;
             this.Phone = phone;
             this.Receiver = receiver;
             this.BetweenStreets = betweenStreets;
             this.ParentId = parentId;
-            this.VarDefault = varDefault;
+            this.Default = varDefault;
             this.Deleted = deleted;
             this.Metadata = metadata;
         }
@@ -118,10 +118,10 @@ namespace Conekta.net.Model
         public string ParentId { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarDefault
+        /// Gets or Sets Default
         /// </summary>
         [DataMember(Name = "default", EmitDefaultValue = true)]
-        public bool? VarDefault { get; set; }
+        public bool? Default { get; set; }
 
         /// <summary>
         /// Gets or Sets Deleted
@@ -144,11 +144,11 @@ namespace Conekta.net.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarObject
+        /// Gets or Sets Object
         /// </summary>
         /// <example>shipping_contact</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt
@@ -170,11 +170,11 @@ namespace Conekta.net.Model
             sb.Append("  BetweenStreets: ").Append(BetweenStreets).Append("\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
-            sb.Append("  VarDefault: ").Append(VarDefault).Append("\n");
+            sb.Append("  Default: ").Append(Default).Append("\n");
             sb.Append("  Deleted: ").Append(Deleted).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

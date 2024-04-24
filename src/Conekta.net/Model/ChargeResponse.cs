@@ -66,7 +66,7 @@ namespace Conekta.net.Model
             this.FailureMessage = failureMessage;
             this.Id = id;
             this.Livemode = livemode;
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.OrderId = orderId;
             this.PaidAt = paidAt;
             this.PaymentMethod = paymentMethod;
@@ -150,10 +150,10 @@ namespace Conekta.net.Model
         public bool Livemode { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarObject
+        /// Gets or Sets Object
         /// </summary>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets OrderId
@@ -215,7 +215,7 @@ namespace Conekta.net.Model
             sb.Append("  FailureMessage: ").Append(FailureMessage).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  OrderId: ").Append(OrderId).Append("\n");
             sb.Append("  PaidAt: ").Append(PaidAt).Append("\n");
             sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");

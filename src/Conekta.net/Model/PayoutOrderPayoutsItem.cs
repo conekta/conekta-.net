@@ -69,7 +69,7 @@ namespace Conekta.net.Model
             {
                 throw new ArgumentNullException("varObject is a required property for PayoutOrderPayoutsItem and cannot be null");
             }
-            this.VarObject = varObject;
+            this.Object = varObject;
             this.ExpiresAt = expiresAt;
             this.PayoutOrderId = payoutOrderId;
             this.Status = status;
@@ -121,7 +121,7 @@ namespace Conekta.net.Model
         /// <value>The object of the payout.</value>
         /// <example>payout</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// The id of the payout order.
@@ -152,7 +152,7 @@ namespace Conekta.net.Model
             sb.Append("  ExpiresAt: ").Append(ExpiresAt).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  PayoutOrderId: ").Append(PayoutOrderId).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("}\n");

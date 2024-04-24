@@ -44,7 +44,7 @@ namespace Conekta.net.Model
             this.Details = details;
             this.LogId = logId;
             this.Type = type;
-            this.VarObject = varObject;
+            this.Object = varObject;
         }
 
         /// <summary>
@@ -69,11 +69,11 @@ namespace Conekta.net.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarObject
+        /// Gets or Sets Object
         /// </summary>
         /// <example>error</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -86,7 +86,7 @@ namespace Conekta.net.Model
             sb.Append("  Details: ").Append(Details).Append("\n");
             sb.Append("  LogId: ").Append(LogId).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

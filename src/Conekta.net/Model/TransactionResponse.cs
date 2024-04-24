@@ -81,7 +81,7 @@ namespace Conekta.net.Model
             {
                 throw new ArgumentNullException("varObject is a required property for TransactionResponse and cannot be null");
             }
-            this.VarObject = varObject;
+            this.Object = varObject;
             // to ensure "status" is required (not null)
             if (status == null)
             {
@@ -166,7 +166,7 @@ namespace Conekta.net.Model
         /// <value>Object name, which is transaction.</value>
         /// <example>transaction</example>
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string VarObject { get; set; }
+        public string Object { get; set; }
 
         /// <summary>
         /// Code indicating transaction status.
@@ -200,7 +200,7 @@ namespace Conekta.net.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");
             sb.Append("  Net: ").Append(Net).Append("\n");
-            sb.Append("  VarObject: ").Append(VarObject).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
