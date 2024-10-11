@@ -55,12 +55,12 @@ namespace Conekta.net.Test.Api
             string id = "ord_2tVKxbhNzfUnGjnXG";
 
             PaymentMethodCardRequest cardRequest = new PaymentMethodCardRequest(
-                type: "credit",    // Tipo de tarjeta
-                cvc: "123",        // Código de seguridad
-                expMonth: "12",    // Mes de expiración
-                expYear: "2025",   // Año de expiración
-                name: "John Doe",  // Nombre del titular
-                number: "4242424242424242" // Número de tarjeta
+                type: "credit",    
+                cvc: "123",        
+                expMonth: "12",    
+                expYear: "2025",   
+                name: "John Doe",  
+                number: "4242424242424242" 
             );
 
             ChargeRequest chargeRequest = new(
@@ -85,12 +85,12 @@ namespace Conekta.net.Test.Api
         {
             string id = "ord_2tVL8dT1Hm3y3YiaN";
             PaymentMethodCardRequest cardRequest = new PaymentMethodCardRequest(
-                type: "credit",    // Tipo de tarjeta
-                cvc: "123",        // Código de seguridad
-                expMonth: "12",    // Mes de expiración
-                expYear: "2025",   // Año de expiración
-                name: "John Doe",  // Nombre del titular
-                number: "4242424242424242" // Número de tarjeta
+                type: "credit",    
+                cvc: "123",        
+                expMonth: "12",    
+                expYear: "2025",  
+                name: "John Doe",  
+                number: "4242424242424242" 
             );
             ChargeRequest chargeRequest = new(
                 amount: 40000,
@@ -118,12 +118,12 @@ namespace Conekta.net.Test.Api
         {
             string id = "ord_2tVLUFrQBB4HKz1zj";
             PaymentMethodCardRequest cardRequest = new PaymentMethodCardRequest(
-                type: "credit",    // Tipo de tarjeta
-                cvc: "123",        // Código de seguridad
-                expMonth: "12",    // Mes de expiración
-                expYear: "2025",   // Año de expiración
-                name: "John Doe",  // Nombre del titular
-                number: "4242424242424242" // Número de tarjeta
+                type: "credit",    
+                cvc: "123",        
+                expMonth: "12",    
+                expYear: "2025",   
+                name: "John Doe",  
+                number: "4242424242424242" 
             );
             ChargeRequest chargeRequest = new(
                 amount: 40000,
