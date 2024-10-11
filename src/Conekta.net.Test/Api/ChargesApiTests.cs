@@ -53,9 +53,19 @@ namespace Conekta.net.Test.Api
         public void OrdersCreateChargeCardTest()
         {
             string id = "ord_2tVKxbhNzfUnGjnXG";
+
+            PaymentMethodCardRequest cardRequest = new PaymentMethodCardRequest(
+                type: "credit",    // Tipo de tarjeta
+                cvc: "123",        // Código de seguridad
+                expMonth: "12",    // Mes de expiración
+                expYear: "2025",   // Año de expiración
+                name: "John Doe",  // Nombre del titular
+                number: "4242424242424242" // Número de tarjeta
+            );
+
             ChargeRequest chargeRequest = new(
                 amount: 40000,
-                paymentMethod: new ChargeRequestPaymentMethod(type: "card", tokenId: "tok_2tVKyGpobEKAR3xVH")
+                paymentMethod: new ChargeRequestPaymentMethod(cardRequest)
             );
 
             var response = _instance.OrdersCreateCharge(id, chargeRequest);
@@ -74,9 +84,17 @@ namespace Conekta.net.Test.Api
         public void OrdersCreateChargeCashTest()
         {
             string id = "ord_2tVL8dT1Hm3y3YiaN";
+            PaymentMethodCardRequest cardRequest = new PaymentMethodCardRequest(
+                type: "credit",    // Tipo de tarjeta
+                cvc: "123",        // Código de seguridad
+                expMonth: "12",    // Mes de expiración
+                expYear: "2025",   // Año de expiración
+                name: "John Doe",  // Nombre del titular
+                number: "4242424242424242" // Número de tarjeta
+            );
             ChargeRequest chargeRequest = new(
                 amount: 40000,
-                paymentMethod: new ChargeRequestPaymentMethod(type: "cash")
+                paymentMethod: new ChargeRequestPaymentMethod(cardRequest)
             );
 
             var response = _instance.OrdersCreateCharge(id, chargeRequest);
@@ -99,9 +117,17 @@ namespace Conekta.net.Test.Api
         public void OrdersCreateChargeSpeiTest()
         {
             string id = "ord_2tVLUFrQBB4HKz1zj";
+            PaymentMethodCardRequest cardRequest = new PaymentMethodCardRequest(
+                type: "credit",    // Tipo de tarjeta
+                cvc: "123",        // Código de seguridad
+                expMonth: "12",    // Mes de expiración
+                expYear: "2025",   // Año de expiración
+                name: "John Doe",  // Nombre del titular
+                number: "4242424242424242" // Número de tarjeta
+            );
             ChargeRequest chargeRequest = new(
                 amount: 40000,
-                paymentMethod: new ChargeRequestPaymentMethod(type: "spei")
+                paymentMethod: new ChargeRequestPaymentMethod(cardRequest)
             );
 
             var response = _instance.OrdersCreateCharge(id, chargeRequest);
