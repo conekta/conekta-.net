@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **ReceivingAccountTaxId** | **string** |  | [optional] 
 **ReferenceNumber** | **string** |  | [optional] 
 **TrackingCode** | **string** |  | [optional] 
+**CustomerIpAddress** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

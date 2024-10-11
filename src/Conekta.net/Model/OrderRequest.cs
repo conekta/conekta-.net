@@ -51,7 +51,7 @@ namespace Conekta.net.Model
         /// <param name="needsShippingContact">Allows you to fill out the shipping information at checkout.</param>
         /// <param name="preAuthorize">Indicates whether the order charges must be preauthorized (default to false).</param>
         /// <param name="processingMode">Indicates the processing mode for the order, either ecommerce, recurrent or validation..</param>
-        /// <param name="returnUrl">Indicates the redirection callback upon completion of the 3DS2 flow..</param>
+        /// <param name="returnUrl">Indicates the redirection callback upon completion of the 3DS2 flow. Do not use this parameter if your order has a checkout parameter.</param>
         /// <param name="shippingContact">shippingContact.</param>
         /// <param name="shippingLines">List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshipping). If the online store offers digital products..</param>
         /// <param name="taxLines">List of [taxes](https://developers.conekta.com/v2.1.0/reference/orderscreatetaxes) that are applied to the order..</param>
@@ -169,9 +169,9 @@ namespace Conekta.net.Model
         public string ProcessingMode { get; set; }
 
         /// <summary>
-        /// Indicates the redirection callback upon completion of the 3DS2 flow.
+        /// Indicates the redirection callback upon completion of the 3DS2 flow. Do not use this parameter if your order has a checkout parameter
         /// </summary>
-        /// <value>Indicates the redirection callback upon completion of the 3DS2 flow.</value>
+        /// <value>Indicates the redirection callback upon completion of the 3DS2 flow. Do not use this parameter if your order has a checkout parameter</value>
         /// <example>https://my-website.com</example>
         [DataMember(Name = "return_url", EmitDefaultValue = false)]
         public string ReturnUrl { get; set; }

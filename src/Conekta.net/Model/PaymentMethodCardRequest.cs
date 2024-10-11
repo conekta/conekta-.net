@@ -41,8 +41,13 @@ namespace Conekta.net.Model
         /// Initializes a new instance of the <see cref="PaymentMethodCardRequest" /> class.
         /// </summary>
         /// <param name="type">Type of payment method (required).</param>
-        /// <param name="tokenId">Token id that will be used to create a \&quot;card\&quot; type payment method. See the (subscriptions)[https://developers.conekta.com/v2.1.0/reference/createsubscription] tutorial for more information on how to tokenize cards. (required).</param>
-        public PaymentMethodCardRequest(string type = default(string), string tokenId = default(string))
+        /// <param name="cvc">Card security code (required).</param>
+        /// <param name="expMonth">Card expiration month (required).</param>
+        /// <param name="expYear">Card expiration year (required).</param>
+        /// <param name="name">Cardholder name (required).</param>
+        /// <param name="number">Card number (required).</param>
+        /// <param name="customerIpAddress">Optional field used to capture the customer&#39;s IP address for fraud prevention and security monitoring purposes.</param>
+        public PaymentMethodCardRequest(string type = default(string), string cvc = default(string), string expMonth = default(string), string expYear = default(string), string name = default(string), string number = default(string), string customerIpAddress = default(string))
         {
             // to ensure "type" is required (not null)
             if (type == null)
@@ -50,12 +55,37 @@ namespace Conekta.net.Model
                 throw new ArgumentNullException("type is a required property for PaymentMethodCardRequest and cannot be null");
             }
             this.Type = type;
-            // to ensure "tokenId" is required (not null)
-            if (tokenId == null)
+            // to ensure "cvc" is required (not null)
+            if (cvc == null)
             {
-                throw new ArgumentNullException("tokenId is a required property for PaymentMethodCardRequest and cannot be null");
+                throw new ArgumentNullException("cvc is a required property for PaymentMethodCardRequest and cannot be null");
             }
-            this.TokenId = tokenId;
+            this.Cvc = cvc;
+            // to ensure "expMonth" is required (not null)
+            if (expMonth == null)
+            {
+                throw new ArgumentNullException("expMonth is a required property for PaymentMethodCardRequest and cannot be null");
+            }
+            this.ExpMonth = expMonth;
+            // to ensure "expYear" is required (not null)
+            if (expYear == null)
+            {
+                throw new ArgumentNullException("expYear is a required property for PaymentMethodCardRequest and cannot be null");
+            }
+            this.ExpYear = expYear;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for PaymentMethodCardRequest and cannot be null");
+            }
+            this.Name = name;
+            // to ensure "number" is required (not null)
+            if (number == null)
+            {
+                throw new ArgumentNullException("number is a required property for PaymentMethodCardRequest and cannot be null");
+            }
+            this.Number = number;
+            this.CustomerIpAddress = customerIpAddress;
         }
 
         /// <summary>
@@ -67,12 +97,52 @@ namespace Conekta.net.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// Token id that will be used to create a \&quot;card\&quot; type payment method. See the (subscriptions)[https://developers.conekta.com/v2.1.0/reference/createsubscription] tutorial for more information on how to tokenize cards.
+        /// Card security code
         /// </summary>
-        /// <value>Token id that will be used to create a \&quot;card\&quot; type payment method. See the (subscriptions)[https://developers.conekta.com/v2.1.0/reference/createsubscription] tutorial for more information on how to tokenize cards.</value>
-        /// <example>tok_32hj4g234as</example>
-        [DataMember(Name = "token_id", IsRequired = true, EmitDefaultValue = true)]
-        public string TokenId { get; set; }
+        /// <value>Card security code</value>
+        /// <example>198</example>
+        [DataMember(Name = "cvc", IsRequired = true, EmitDefaultValue = true)]
+        public string Cvc { get; set; }
+
+        /// <summary>
+        /// Card expiration month
+        /// </summary>
+        /// <value>Card expiration month</value>
+        /// <example>12</example>
+        [DataMember(Name = "exp_month", IsRequired = true, EmitDefaultValue = true)]
+        public string ExpMonth { get; set; }
+
+        /// <summary>
+        /// Card expiration year
+        /// </summary>
+        /// <value>Card expiration year</value>
+        /// <example>2025</example>
+        [DataMember(Name = "exp_year", IsRequired = true, EmitDefaultValue = true)]
+        public string ExpYear { get; set; }
+
+        /// <summary>
+        /// Cardholder name
+        /// </summary>
+        /// <value>Cardholder name</value>
+        /// <example>John Doe</example>
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Card number
+        /// </summary>
+        /// <value>Card number</value>
+        /// <example>4242424242424242</example>
+        [DataMember(Name = "number", IsRequired = true, EmitDefaultValue = true)]
+        public string Number { get; set; }
+
+        /// <summary>
+        /// Optional field used to capture the customer&#39;s IP address for fraud prevention and security monitoring purposes
+        /// </summary>
+        /// <value>Optional field used to capture the customer&#39;s IP address for fraud prevention and security monitoring purposes</value>
+        /// <example>0.0.0.0</example>
+        [DataMember(Name = "customer_ip_address", EmitDefaultValue = false)]
+        public string CustomerIpAddress { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -83,7 +153,12 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class PaymentMethodCardRequest {\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  TokenId: ").Append(TokenId).Append("\n");
+            sb.Append("  Cvc: ").Append(Cvc).Append("\n");
+            sb.Append("  ExpMonth: ").Append(ExpMonth).Append("\n");
+            sb.Append("  ExpYear: ").Append(ExpYear).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Number: ").Append(Number).Append("\n");
+            sb.Append("  CustomerIpAddress: ").Append(CustomerIpAddress).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -104,6 +179,42 @@ namespace Conekta.net.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Cvc (string) maxLength
+            if (this.Cvc != null && this.Cvc.Length > 4)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Cvc, length must be less than 4.", new [] { "Cvc" });
+            }
+
+            // Cvc (string) minLength
+            if (this.Cvc != null && this.Cvc.Length < 3)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Cvc, length must be greater than 3.", new [] { "Cvc" });
+            }
+
+            // ExpMonth (string) maxLength
+            if (this.ExpMonth != null && this.ExpMonth.Length > 2)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ExpMonth, length must be less than 2.", new [] { "ExpMonth" });
+            }
+
+            // ExpMonth (string) minLength
+            if (this.ExpMonth != null && this.ExpMonth.Length < 2)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ExpMonth, length must be greater than 2.", new [] { "ExpMonth" });
+            }
+
+            // ExpYear (string) maxLength
+            if (this.ExpYear != null && this.ExpYear.Length > 4)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ExpYear, length must be less than 4.", new [] { "ExpYear" });
+            }
+
+            // ExpYear (string) minLength
+            if (this.ExpYear != null && this.ExpYear.Length < 4)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ExpYear, length must be greater than 4.", new [] { "ExpYear" });
+            }
+
             yield break;
         }
     }

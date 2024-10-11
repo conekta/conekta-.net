@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **ServiceName** | **string** |  | [optional] 
 **Store** | **string** |  | [optional] 
 **StoreName** | **string** |  | [optional] 
+**CustomerIpAddress** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

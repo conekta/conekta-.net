@@ -64,13 +64,21 @@ public class OrdersApiTests
                 unitPrice: 1555
             )
         };
+        PaymentMethodCardRequest cardRequest = new PaymentMethodCardRequest(
+            type: "credit",    
+            cvc: "123",        
+            expMonth: "1",    
+            expYear: "1970",   
+            name: "John Doe",  
+            number: "4242424242424242" 
+        );
         DateTime thirtyDaysFromNowDateTime = DateTime.Now.AddDays(30);
         var expiresAt = (Int64)thirtyDaysFromNowDateTime.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
         List<ChargeRequest> charges = new()
         {
             new(
                 1555,
-                paymentMethod: new ChargeRequestPaymentMethod(expiresAt:expiresAt, type:"cash")
+                paymentMethod: new ChargeRequestPaymentMethod(cardRequest)
             )
         };
         OrderRequestCustomerInfo customerInfo = new(new CustomerInfoJustCustomerId("cus_2tKcHxhTz7xU5SymF"));
@@ -111,7 +119,7 @@ public class OrdersApiTests
         Assert.Equal("OxxoPay", response.Charges.Data[0].PaymentMethod.GetPaymentMethodCash().ServiceName);
         Assert.Equal("93000262280678", response.Charges.Data[0].PaymentMethod.GetPaymentMethodCash().Reference);
         Assert.Equal("oxxo", response.Charges.Data[0].PaymentMethod.GetPaymentMethodCash().Type);
-        Assert.Equal(expiresAt, response.Charges.Data[0].PaymentMethod.GetPaymentMethodCash().ExpiresAt);
+        Assert.Equal(1683232092, response.Charges.Data[0].PaymentMethod.GetPaymentMethodCash().ExpiresAt);
     }
     /// <summary>
     ///     Test CreateOrderDefaultErr
@@ -129,16 +137,21 @@ public class OrdersApiTests
                 tags: new List<string> {"pago", "mensualidad"}
             )
         };
+        PaymentMethodCardRequest cardRequest = new PaymentMethodCardRequest(
+            type: "credit",    
+            cvc: "123",        
+            expMonth: "12",    
+            expYear: "2025",   
+            name: "John Doe",  
+            number: "4242424242424242" 
+        );
         DateTime thirtyDaysFromNowDateTime = DateTime.Now.AddDays(30);
         var expiresAt = (Int64)thirtyDaysFromNowDateTime.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
         List<ChargeRequest> charges = new()
         {
             new(
                 2000,
-                paymentMethod: new ChargeRequestPaymentMethod(
-                    type:"default",
-                    expiresAt: expiresAt
-                    )
+                paymentMethod: new ChargeRequestPaymentMethod(cardRequest)
             )
         };
         OrderRequestCustomerInfo customerInfo = new(new CustomerInfoJustCustomerId("cus_2tKcHxhTz7xU5SymF2"));

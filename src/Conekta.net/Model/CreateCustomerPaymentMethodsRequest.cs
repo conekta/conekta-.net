@@ -36,10 +36,10 @@ namespace Conekta.net.Model
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateCustomerPaymentMethodsRequest" /> class
-        /// with the <see cref="PaymentMethodCardRequest" /> class
+        /// with the <see cref="PaymentMethodTokenRequest" /> class
         /// </summary>
-        /// <param name="actualInstance">An instance of PaymentMethodCardRequest.</param>
-        public CreateCustomerPaymentMethodsRequest(PaymentMethodCardRequest actualInstance)
+        /// <param name="actualInstance">An instance of PaymentMethodTokenRequest.</param>
+        public CreateCustomerPaymentMethodsRequest(PaymentMethodTokenRequest actualInstance)
         {
             this.IsNullable = false;
             this.SchemaType= "oneOf";
@@ -84,11 +84,7 @@ namespace Conekta.net.Model
             }
             set
             {
-                if (value.GetType() == typeof(PaymentMethodCardRequest))
-                {
-                    this._actualInstance = value;
-                }
-                else if (value.GetType() == typeof(PaymentMethodCashRequest))
+                if (value.GetType() == typeof(PaymentMethodCashRequest))
                 {
                     this._actualInstance = value;
                 }
@@ -96,21 +92,25 @@ namespace Conekta.net.Model
                 {
                     this._actualInstance = value;
                 }
+                else if (value.GetType() == typeof(PaymentMethodTokenRequest))
+                {
+                    this._actualInstance = value;
+                }
                 else
                 {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: PaymentMethodCardRequest, PaymentMethodCashRequest, PaymentMethodSpeiRequest");
+                    throw new ArgumentException("Invalid instance found. Must be the following types: PaymentMethodCashRequest, PaymentMethodSpeiRequest, PaymentMethodTokenRequest");
                 }
             }
         }
 
         /// <summary>
-        /// Get the actual instance of `PaymentMethodCardRequest`. If the actual instance is not `PaymentMethodCardRequest`,
+        /// Get the actual instance of `PaymentMethodTokenRequest`. If the actual instance is not `PaymentMethodTokenRequest`,
         /// the InvalidClassException will be thrown
         /// </summary>
-        /// <returns>An instance of PaymentMethodCardRequest</returns>
-        public PaymentMethodCardRequest GetPaymentMethodCardRequest()
+        /// <returns>An instance of PaymentMethodTokenRequest</returns>
+        public PaymentMethodTokenRequest GetPaymentMethodTokenRequest()
         {
-            return (PaymentMethodCardRequest)this.ActualInstance;
+            return (PaymentMethodTokenRequest)this.ActualInstance;
         }
 
         /// <summary>
@@ -174,26 +174,6 @@ namespace Conekta.net.Model
             try
             {
                 // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
-                if (typeof(PaymentMethodCardRequest).GetProperty("AdditionalProperties") == null)
-                {
-                    newCreateCustomerPaymentMethodsRequest = new CreateCustomerPaymentMethodsRequest(JsonConvert.DeserializeObject<PaymentMethodCardRequest>(jsonString, CreateCustomerPaymentMethodsRequest.SerializerSettings));
-                }
-                else
-                {
-                    newCreateCustomerPaymentMethodsRequest = new CreateCustomerPaymentMethodsRequest(JsonConvert.DeserializeObject<PaymentMethodCardRequest>(jsonString, CreateCustomerPaymentMethodsRequest.AdditionalPropertiesSerializerSettings));
-                }
-                matchedTypes.Add("PaymentMethodCardRequest");
-                match++;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into PaymentMethodCardRequest: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
                 if (typeof(PaymentMethodCashRequest).GetProperty("AdditionalProperties") == null)
                 {
                     newCreateCustomerPaymentMethodsRequest = new CreateCustomerPaymentMethodsRequest(JsonConvert.DeserializeObject<PaymentMethodCashRequest>(jsonString, CreateCustomerPaymentMethodsRequest.SerializerSettings));
@@ -229,6 +209,26 @@ namespace Conekta.net.Model
             {
                 // deserialization failed, try the next one
                 System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into PaymentMethodSpeiRequest: {1}", jsonString, exception.ToString()));
+            }
+
+            try
+            {
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(PaymentMethodTokenRequest).GetProperty("AdditionalProperties") == null)
+                {
+                    newCreateCustomerPaymentMethodsRequest = new CreateCustomerPaymentMethodsRequest(JsonConvert.DeserializeObject<PaymentMethodTokenRequest>(jsonString, CreateCustomerPaymentMethodsRequest.SerializerSettings));
+                }
+                else
+                {
+                    newCreateCustomerPaymentMethodsRequest = new CreateCustomerPaymentMethodsRequest(JsonConvert.DeserializeObject<PaymentMethodTokenRequest>(jsonString, CreateCustomerPaymentMethodsRequest.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("PaymentMethodTokenRequest");
+                match++;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into PaymentMethodTokenRequest: {1}", jsonString, exception.ToString()));
             }
 
             if (match == 0)

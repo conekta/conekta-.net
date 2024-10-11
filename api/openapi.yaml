@@ -12071,6 +12071,7 @@ components:
           expires_at: 1656634070
           store_name: OXXO
           reference: 98000013217610
+          customer_ip_address: 0.0.0.0
         object: charge
         description: Payment from order
         status: paid
@@ -12133,6 +12134,7 @@ components:
             type: card
             token_id: tok_2897348234
             payment_source_id: src_2tLkkyfMPh6v7pFry
+            customer_ip_address: 0.0.0.0
           reference_id: string
         currency: MXN
         customer_info:
@@ -13318,17 +13320,24 @@ components:
             es sospechoso.
           type: string
         id:
+          description: Charge ID
           example: 63efa757cf65380001aec040
           type: string
         livemode:
+          description: Whether the charge was made in live mode or not
+          example: false
           type: boolean
         object:
+          example: charge
           type: string
         order_id:
+          description: Order ID
           example: ord_2tN73UdUSNrYRPD9r
           type: string
         paid_at:
+          description: Payment date
           example: 1676390742
+          format: int64
           nullable: true
           type: integer
         payment_method:
@@ -14245,6 +14254,11 @@ components:
           format: int64
           nullable: true
           type: integer
+        canceled_reason:
+          description: Reason for cancellation. This field appears when the subscription
+            status is 'canceled'.
+          example: user_cancelation
+          type: string
         card_id:
           example: src_2tKcHxhTz7xU5SymL
           type: string
@@ -14689,6 +14703,7 @@ components:
       description: The charges to be made
       properties:
         amount:
+          description: Amount to be charged in cents
           example: 40000
           type: integer
         payment_method:
@@ -14953,7 +14968,7 @@ components:
           type: string
         return_url:
           description: Indicates the redirection callback upon completion of the 3DS2
-            flow.
+            flow. Do not use this parameter if your order has a checkout parameter
           example: https://my-website.com
           format: uri
           type: string
@@ -15210,6 +15225,9 @@ components:
             format: int8
             type: integer
           type: array
+        three_ds_mode:
+          description: "Indicates the 3DS2 mode for the order, either smart or strict."
+          type: string
         name:
           description: Reason for charge
           example: Payment Link Name 1594138857
@@ -15249,7 +15267,7 @@ components:
       - type
       title: checkout_request
       type: object
-    payment_method_card_request:
+    payment_method_token_request:
       allOf:
       - $ref: '#/components/schemas/customer_payment_method_request'
       - properties:
@@ -15262,7 +15280,7 @@ components:
         required:
         - token_id
         type: object
-      title: payment_method_card_request
+      title: payment_method_token_request
     payment_method_cash_request:
       allOf:
       - $ref: '#/components/schemas/customer_payment_method_request'
@@ -15652,6 +15670,9 @@ components:
           store_name:
             example: OXXO
             type: string
+          customer_ip_address:
+            example: 0.0.0.0
+            type: string
         title: charge_data_payment_method_cash_response
         type: object
     payment_method_card:
@@ -15660,12 +15681,14 @@ components:
       - description: use for card responses
         properties:
           account_type:
+            description: Account type of the card
             example: Credit
             type: string
           auth_code:
             example: "867372"
             type: string
           brand:
+            description: Brand of the card
             example: visa
             type: string
           contract_id:
@@ -15673,25 +15696,36 @@ components:
             example: S781317595
             type: string
           country:
+            description: Country of the card
             example: MX
             type: string
           exp_month:
+            description: Expiration month of the card
             example: "02"
             type: string
           exp_year:
-            example: "30"
+            description: Expiration year of the card
+            example: "2026"
             type: string
           fraud_indicators:
             items: {}
             type: array
           issuer:
+            description: Issuer of the card
             example: BANAMEX
             type: string
           last4:
+            description: Last 4 digits of the card
             example: "4242"
             type: string
           name:
+            description: Name of the cardholder
             example: Fulanito Perez
+            type: string
+          customer_ip_address:
+            description: Optional field used to capture the customer's IP address
+              for fraud prevention and security monitoring purposes
+            example: 0.0.0.0
             type: string
         title: charge_data_payment_method_card_response
         type: object
@@ -15748,6 +15782,9 @@ components:
             type: string
           tracking_code:
             nullable: true
+            type: string
+          customer_ip_address:
+            example: 0.0.0.0
             type: string
         title: charge_data_payment_method_bank_transfer_response
         type: object
@@ -15940,6 +15977,49 @@ components:
       - object
       - type
       type: object
+    payment_method_card_request:
+      allOf:
+      - $ref: '#/components/schemas/customer_payment_method_request'
+      - properties:
+          cvc:
+            description: Card security code
+            example: "198"
+            maxLength: 4
+            minLength: 3
+            type: string
+          exp_month:
+            description: Card expiration month
+            example: "12"
+            maxLength: 2
+            minLength: 2
+            type: string
+          exp_year:
+            description: Card expiration year
+            example: "2025"
+            maxLength: 4
+            minLength: 4
+            type: string
+          name:
+            description: Cardholder name
+            example: John Doe
+            type: string
+          number:
+            description: Card number
+            example: "4242424242424242"
+            type: string
+          customer_ip_address:
+            description: Optional field used to capture the customer's IP address
+              for fraud prevention and security monitoring purposes
+            example: 0.0.0.0
+            type: string
+        required:
+        - cvc
+        - exp_month
+        - exp_year
+        - name
+        - number
+        type: object
+      title: payment_method_card_request
     checkout_request:
       description: |
         [Checkout](https://developers.conekta.com/v2.1.0/reference/payment-link) details
@@ -16344,6 +16424,7 @@ components:
     orderRefund_request:
       properties:
         amount:
+          description: Amount to be refunded in cents
           example: 500
           type: integer
         expires_at:
@@ -16352,6 +16433,7 @@ components:
           nullable: true
           type: integer
         reason:
+          description: Reason for the refund
           example: suspected_fraud
           type: string
       required:
@@ -16426,7 +16508,7 @@ components:
       description: Contains details of the payment methods that the customer has active
         or has used in Conekta
       oneOf:
-      - $ref: '#/components/schemas/payment_method_card_request'
+      - $ref: '#/components/schemas/payment_method_token_request'
       - $ref: '#/components/schemas/payment_method_cash_request'
       - $ref: '#/components/schemas/payment_method_spei_request'
     create_customer_payment_methods_response:
@@ -17420,7 +17502,7 @@ components:
           type: string
       title: transfer_destination_response
       type: object
-    charge_request_payment_method:
+    payment_method_general_request:
       description: |
         Payment method used in the charge. Go to the [payment methods](https://developers.conekta.com/reference/m%C3%A9todos-de-pago) section for more details
       properties:
@@ -17435,6 +17517,7 @@ components:
           format: int8
           type: integer
         type:
+          description: Type of payment method
           example: card
           type: string
         token_id:
@@ -17443,14 +17526,30 @@ components:
         payment_source_id:
           example: src_2tLkkyfMPh6v7pFry
           type: string
+        cvc:
+          description: "Optional, It is a value that allows identifying the security\
+            \ code of the card. Only for PCI merchants"
+          example: "123"
+          type: string
         contract_id:
           description: Optional id sent to indicate the bank contract for recurrent
             card charges.
           example: S781317595
           type: string
+        customer_ip_address:
+          description: Optional field used to capture the customer's IP address for
+            fraud prevention and security monitoring purposes
+          example: 0.0.0.0
+          type: string
       required:
       - type
+      title: payment_method_general_request
       type: object
+    charge_request_payment_method:
+      oneOf:
+      - $ref: '#/components/schemas/payment_method_card_request'
+      - $ref: '#/components/schemas/payment_method_general_request'
+      title: charge_request_payment_method
     customer_antifraud_info:
       nullable: true
       properties:
@@ -17465,7 +17564,7 @@ components:
       type: object
     customer_payment_methods_request:
       oneOf:
-      - $ref: '#/components/schemas/payment_method_card_request'
+      - $ref: '#/components/schemas/payment_method_token_request'
       - $ref: '#/components/schemas/payment_method_cash_request'
       - $ref: '#/components/schemas/payment_method_spei_request'
       title: customer_payment_methods_request

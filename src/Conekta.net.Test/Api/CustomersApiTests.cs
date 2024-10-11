@@ -274,11 +274,13 @@ namespace Conekta.net.Test.Api
                     metadata: new Dictionary<string, object> { { "test", "true" } }
                 )
             };
+            PaymentMethodTokenRequest tokenRequest = new PaymentMethodTokenRequest(
+                type: "card", 
+                tokenId: "test_5478sdfwefw"
+            );
             var paymentSources = new List<CustomerPaymentMethodsRequest>()
             {
-                new CustomerPaymentMethodsRequest(
-                    new PaymentMethodCardRequest("card", "tok_2tXyExrU6U7yiaTto")
-                )
+                new CustomerPaymentMethodsRequest(tokenRequest)
             };
             List<CustomerShippingContacts> shippingContacts = new()
             {

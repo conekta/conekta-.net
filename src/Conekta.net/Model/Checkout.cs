@@ -44,6 +44,7 @@ namespace Conekta.net.Model
         /// <param name="expiresAt">It is the time when the link will expire. It is expressed in seconds since the Unix epoch. The valid range is from 2 to 365 days (the valid range will be taken from the next day of the creation date at 00:01 hrs)  (required).</param>
         /// <param name="monthlyInstallmentsEnabled">This flag allows you to specify if months without interest will be active..</param>
         /// <param name="monthlyInstallmentsOptions">This field allows you to specify the number of months without interest..</param>
+        /// <param name="threeDsMode">Indicates the 3DS2 mode for the order, either smart or strict..</param>
         /// <param name="name">Reason for charge (required).</param>
         /// <param name="needsShippingContact">This flag allows you to fill in the shipping information at checkout..</param>
         /// <param name="onDemandEnabled">This flag allows you to specify if the link will be on demand..</param>
@@ -51,7 +52,7 @@ namespace Conekta.net.Model
         /// <param name="paymentsLimitCount">It is the number of payments that can be made through the link..</param>
         /// <param name="recurrent">false: single use. true: multiple payments (required).</param>
         /// <param name="type">It is the type of link that will be created. It must be a valid type. (required).</param>
-        public Checkout(List<string> allowedPaymentMethods = default(List<string>), long expiresAt = default(long), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string name = default(string), bool needsShippingContact = default(bool), bool? onDemandEnabled = default(bool?), CheckoutOrderTemplate orderTemplate = default(CheckoutOrderTemplate), int paymentsLimitCount = default(int), bool recurrent = default(bool), string type = default(string))
+        public Checkout(List<string> allowedPaymentMethods = default(List<string>), long expiresAt = default(long), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string threeDsMode = default(string), string name = default(string), bool needsShippingContact = default(bool), bool? onDemandEnabled = default(bool?), CheckoutOrderTemplate orderTemplate = default(CheckoutOrderTemplate), int paymentsLimitCount = default(int), bool recurrent = default(bool), string type = default(string))
         {
             // to ensure "allowedPaymentMethods" is required (not null)
             if (allowedPaymentMethods == null)
@@ -81,6 +82,7 @@ namespace Conekta.net.Model
             this.Type = type;
             this.MonthlyInstallmentsEnabled = monthlyInstallmentsEnabled;
             this.MonthlyInstallmentsOptions = monthlyInstallmentsOptions;
+            this.ThreeDsMode = threeDsMode;
             this.NeedsShippingContact = needsShippingContact;
             this.OnDemandEnabled = onDemandEnabled;
             this.PaymentsLimitCount = paymentsLimitCount;
@@ -117,6 +119,13 @@ namespace Conekta.net.Model
         /// <example>[3,6,12]</example>
         [DataMember(Name = "monthly_installments_options", EmitDefaultValue = false)]
         public List<int> MonthlyInstallmentsOptions { get; set; }
+
+        /// <summary>
+        /// Indicates the 3DS2 mode for the order, either smart or strict.
+        /// </summary>
+        /// <value>Indicates the 3DS2 mode for the order, either smart or strict.</value>
+        [DataMember(Name = "three_ds_mode", EmitDefaultValue = false)]
+        public string ThreeDsMode { get; set; }
 
         /// <summary>
         /// Reason for charge
@@ -184,6 +193,7 @@ namespace Conekta.net.Model
             sb.Append("  ExpiresAt: ").Append(ExpiresAt).Append("\n");
             sb.Append("  MonthlyInstallmentsEnabled: ").Append(MonthlyInstallmentsEnabled).Append("\n");
             sb.Append("  MonthlyInstallmentsOptions: ").Append(MonthlyInstallmentsOptions).Append("\n");
+            sb.Append("  ThreeDsMode: ").Append(ThreeDsMode).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  NeedsShippingContact: ").Append(NeedsShippingContact).Append("\n");
             sb.Append("  OnDemandEnabled: ").Append(OnDemandEnabled).Append("\n");
