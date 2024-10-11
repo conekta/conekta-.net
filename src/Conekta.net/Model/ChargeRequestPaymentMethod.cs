@@ -23,87 +23,89 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
+using System.Reflection;
 
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// Payment method used in the charge. Go to the [payment methods](https://developers.conekta.com/reference/m%C3%A9todos-de-pago) section for more details 
+    /// ChargeRequestPaymentMethod
     /// </summary>
+    [JsonConverter(typeof(ChargeRequestPaymentMethodJsonConverter))]
     [DataContract(Name = "charge_request_payment_method")]
-    public partial class ChargeRequestPaymentMethod : IValidatableObject
+    public partial class ChargeRequestPaymentMethod : AbstractOpenAPISchema, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ChargeRequestPaymentMethod" /> class.
+        /// Initializes a new instance of the <see cref="ChargeRequestPaymentMethod" /> class
+        /// with the <see cref="PaymentMethodCardRequest" /> class
         /// </summary>
-        [JsonConstructorAttribute]
-        protected ChargeRequestPaymentMethod() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ChargeRequestPaymentMethod" /> class.
-        /// </summary>
-        /// <param name="expiresAt">Method expiration date as unix timestamp.</param>
-        /// <param name="monthlyInstallments">How many months without interest to apply, it can be 3, 6, 9, 12 or 18.</param>
-        /// <param name="type">type (required).</param>
-        /// <param name="tokenId">tokenId.</param>
-        /// <param name="paymentSourceId">paymentSourceId.</param>
-        /// <param name="contractId">Optional id sent to indicate the bank contract for recurrent card charges..</param>
-        public ChargeRequestPaymentMethod(long expiresAt = default(long), int monthlyInstallments = default(int), string type = default(string), string tokenId = default(string), string paymentSourceId = default(string), string contractId = default(string))
+        /// <param name="actualInstance">An instance of PaymentMethodCardRequest.</param>
+        public ChargeRequestPaymentMethod(PaymentMethodCardRequest actualInstance)
         {
-            // to ensure "type" is required (not null)
-            if (type == null)
-            {
-                throw new ArgumentNullException("type is a required property for ChargeRequestPaymentMethod and cannot be null");
-            }
-            this.Type = type;
-            this.ExpiresAt = expiresAt;
-            this.MonthlyInstallments = monthlyInstallments;
-            this.TokenId = tokenId;
-            this.PaymentSourceId = paymentSourceId;
-            this.ContractId = contractId;
+            this.IsNullable = false;
+            this.SchemaType= "oneOf";
+            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
         /// <summary>
-        /// Method expiration date as unix timestamp
+        /// Initializes a new instance of the <see cref="ChargeRequestPaymentMethod" /> class
+        /// with the <see cref="PaymentMethodGeneralRequest" /> class
         /// </summary>
-        /// <value>Method expiration date as unix timestamp</value>
-        /// <example>1677196303</example>
-        [DataMember(Name = "expires_at", EmitDefaultValue = false)]
-        public long ExpiresAt { get; set; }
+        /// <param name="actualInstance">An instance of PaymentMethodGeneralRequest.</param>
+        public ChargeRequestPaymentMethod(PaymentMethodGeneralRequest actualInstance)
+        {
+            this.IsNullable = false;
+            this.SchemaType= "oneOf";
+            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+        }
+
+
+        private Object _actualInstance;
 
         /// <summary>
-        /// How many months without interest to apply, it can be 3, 6, 9, 12 or 18
+        /// Gets or Sets ActualInstance
         /// </summary>
-        /// <value>How many months without interest to apply, it can be 3, 6, 9, 12 or 18</value>
-        [DataMember(Name = "monthly_installments", EmitDefaultValue = false)]
-        public int MonthlyInstallments { get; set; }
+        public override Object ActualInstance
+        {
+            get
+            {
+                return _actualInstance;
+            }
+            set
+            {
+                if (value.GetType() == typeof(PaymentMethodCardRequest))
+                {
+                    this._actualInstance = value;
+                }
+                else if (value.GetType() == typeof(PaymentMethodGeneralRequest))
+                {
+                    this._actualInstance = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Invalid instance found. Must be the following types: PaymentMethodCardRequest, PaymentMethodGeneralRequest");
+                }
+            }
+        }
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Get the actual instance of `PaymentMethodCardRequest`. If the actual instance is not `PaymentMethodCardRequest`,
+        /// the InvalidClassException will be thrown
         /// </summary>
-        /// <example>card</example>
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
-        public string Type { get; set; }
+        /// <returns>An instance of PaymentMethodCardRequest</returns>
+        public PaymentMethodCardRequest GetPaymentMethodCardRequest()
+        {
+            return (PaymentMethodCardRequest)this.ActualInstance;
+        }
 
         /// <summary>
-        /// Gets or Sets TokenId
+        /// Get the actual instance of `PaymentMethodGeneralRequest`. If the actual instance is not `PaymentMethodGeneralRequest`,
+        /// the InvalidClassException will be thrown
         /// </summary>
-        /// <example>tok_2897348234</example>
-        [DataMember(Name = "token_id", EmitDefaultValue = false)]
-        public string TokenId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets PaymentSourceId
-        /// </summary>
-        /// <example>src_2tLkkyfMPh6v7pFry</example>
-        [DataMember(Name = "payment_source_id", EmitDefaultValue = false)]
-        public string PaymentSourceId { get; set; }
-
-        /// <summary>
-        /// Optional id sent to indicate the bank contract for recurrent card charges.
-        /// </summary>
-        /// <value>Optional id sent to indicate the bank contract for recurrent card charges.</value>
-        /// <example>S781317595</example>
-        [DataMember(Name = "contract_id", EmitDefaultValue = false)]
-        public string ContractId { get; set; }
+        /// <returns>An instance of PaymentMethodGeneralRequest</returns>
+        public PaymentMethodGeneralRequest GetPaymentMethodGeneralRequest()
+        {
+            return (PaymentMethodGeneralRequest)this.ActualInstance;
+        }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -111,14 +113,9 @@ namespace Conekta.net.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             sb.Append("class ChargeRequestPaymentMethod {\n");
-            sb.Append("  ExpiresAt: ").Append(ExpiresAt).Append("\n");
-            sb.Append("  MonthlyInstallments: ").Append(MonthlyInstallments).Append("\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  TokenId: ").Append(TokenId).Append("\n");
-            sb.Append("  PaymentSourceId: ").Append(PaymentSourceId).Append("\n");
-            sb.Append("  ContractId: ").Append(ContractId).Append("\n");
+            sb.Append("  ActualInstance: ").Append(this.ActualInstance).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -127,10 +124,80 @@ namespace Conekta.net.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public virtual string ToJson()
+        public override string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return JsonConvert.SerializeObject(this.ActualInstance, ChargeRequestPaymentMethod.SerializerSettings);
         }
+
+        /// <summary>
+        /// Converts the JSON string into an instance of ChargeRequestPaymentMethod
+        /// </summary>
+        /// <param name="jsonString">JSON string</param>
+        /// <returns>An instance of ChargeRequestPaymentMethod</returns>
+        public static ChargeRequestPaymentMethod FromJson(string jsonString)
+        {
+            ChargeRequestPaymentMethod newChargeRequestPaymentMethod = null;
+
+            if (string.IsNullOrEmpty(jsonString))
+            {
+                return newChargeRequestPaymentMethod;
+            }
+            int match = 0;
+            List<string> matchedTypes = new List<string>();
+
+            try
+            {
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(PaymentMethodCardRequest).GetProperty("AdditionalProperties") == null)
+                {
+                    newChargeRequestPaymentMethod = new ChargeRequestPaymentMethod(JsonConvert.DeserializeObject<PaymentMethodCardRequest>(jsonString, ChargeRequestPaymentMethod.SerializerSettings));
+                }
+                else
+                {
+                    newChargeRequestPaymentMethod = new ChargeRequestPaymentMethod(JsonConvert.DeserializeObject<PaymentMethodCardRequest>(jsonString, ChargeRequestPaymentMethod.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("PaymentMethodCardRequest");
+                match++;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into PaymentMethodCardRequest: {1}", jsonString, exception.ToString()));
+            }
+
+            try
+            {
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(PaymentMethodGeneralRequest).GetProperty("AdditionalProperties") == null)
+                {
+                    newChargeRequestPaymentMethod = new ChargeRequestPaymentMethod(JsonConvert.DeserializeObject<PaymentMethodGeneralRequest>(jsonString, ChargeRequestPaymentMethod.SerializerSettings));
+                }
+                else
+                {
+                    newChargeRequestPaymentMethod = new ChargeRequestPaymentMethod(JsonConvert.DeserializeObject<PaymentMethodGeneralRequest>(jsonString, ChargeRequestPaymentMethod.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("PaymentMethodGeneralRequest");
+                match++;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into PaymentMethodGeneralRequest: {1}", jsonString, exception.ToString()));
+            }
+
+            if (match == 0)
+            {
+                throw new InvalidDataException("The JSON string `" + jsonString + "` cannot be deserialized into any schema defined.");
+            }
+            else if (match > 1)
+            {
+                throw new InvalidDataException("The JSON string `" + jsonString + "` incorrectly matches more than one schema (should be exactly one match): " + String.Join(",", matchedTypes));
+            }
+
+            // deserialization is considered successful at this point if no exception has been thrown.
+            return newChargeRequestPaymentMethod;
+        }
+
 
         /// <summary>
         /// To validate all properties of the instance
@@ -140,6 +207,54 @@ namespace Conekta.net.Model
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
+        }
+    }
+
+    /// <summary>
+    /// Custom JSON converter for ChargeRequestPaymentMethod
+    /// </summary>
+    public class ChargeRequestPaymentMethodJsonConverter : JsonConverter
+    {
+        /// <summary>
+        /// To write the JSON string
+        /// </summary>
+        /// <param name="writer">JSON writer</param>
+        /// <param name="value">Object to be converted into a JSON string</param>
+        /// <param name="serializer">JSON Serializer</param>
+        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        {
+            writer.WriteRawValue((string)(typeof(ChargeRequestPaymentMethod).GetMethod("ToJson").Invoke(value, null)));
+        }
+
+        /// <summary>
+        /// To convert a JSON string into an object
+        /// </summary>
+        /// <param name="reader">JSON reader</param>
+        /// <param name="objectType">Object type</param>
+        /// <param name="existingValue">Existing value</param>
+        /// <param name="serializer">JSON Serializer</param>
+        /// <returns>The object converted from the JSON string</returns>
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        {
+            switch(reader.TokenType) 
+            {
+                case JsonToken.StartObject:
+                    return ChargeRequestPaymentMethod.FromJson(JObject.Load(reader).ToString(Formatting.None));
+                case JsonToken.StartArray:
+                    return ChargeRequestPaymentMethod.FromJson(JArray.Load(reader).ToString(Formatting.None));
+                default:
+                    return null;
+            }
+        }
+
+        /// <summary>
+        /// Check if the object can be converted
+        /// </summary>
+        /// <param name="objectType">Object type</param>
+        /// <returns>True if the object can be converted</returns>
+        public override bool CanConvert(Type objectType)
+        {
+            return false;
         }
     }
 

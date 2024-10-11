@@ -50,7 +50,8 @@ namespace Conekta.net.Model
         /// <param name="serviceName">serviceName.</param>
         /// <param name="store">store.</param>
         /// <param name="storeName">storeName.</param>
-        public PaymentMethodCash(string type = default(string), string varObject = default(string), int? authCode = default(int?), string cashierId = default(string), string reference = default(string), string barcodeUrl = default(string), long expiresAt = default(long), string serviceName = default(string), string store = default(string), string storeName = default(string))
+        /// <param name="customerIpAddress">customerIpAddress.</param>
+        public PaymentMethodCash(string type = default(string), string varObject = default(string), int? authCode = default(int?), string cashierId = default(string), string reference = default(string), string barcodeUrl = default(string), long expiresAt = default(long), string serviceName = default(string), string store = default(string), string storeName = default(string), string customerIpAddress = default(string))
         {
             // to ensure "varObject" is required (not null)
             if (varObject == null)
@@ -67,6 +68,7 @@ namespace Conekta.net.Model
             this.ServiceName = serviceName;
             this.Store = store;
             this.StoreName = storeName;
+            this.CustomerIpAddress = customerIpAddress;
         }
 
         /// <summary>
@@ -139,6 +141,13 @@ namespace Conekta.net.Model
         public string StoreName { get; set; }
 
         /// <summary>
+        /// Gets or Sets CustomerIpAddress
+        /// </summary>
+        /// <example>0.0.0.0</example>
+        [DataMember(Name = "customer_ip_address", EmitDefaultValue = false)]
+        public string CustomerIpAddress { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -156,6 +165,7 @@ namespace Conekta.net.Model
             sb.Append("  ServiceName: ").Append(ServiceName).Append("\n");
             sb.Append("  Store: ").Append(Store).Append("\n");
             sb.Append("  StoreName: ").Append(StoreName).Append("\n");
+            sb.Append("  CustomerIpAddress: ").Append(CustomerIpAddress).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

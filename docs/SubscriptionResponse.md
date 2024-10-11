@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **BillingCycleStart** | **long?** |  | [optional] 
 **BillingCycleEnd** | **long?** |  | [optional] 
 **CanceledAt** | **long?** |  | [optional] 
+**CanceledReason** | **string** | Reason for cancellation. This field appears when the subscription status is &#39;canceled&#39;. | [optional] 
 **CardId** | **string** |  | [optional] 
 **ChargeId** | **string** |  | [optional] 
 **CreatedAt** | **long** |  | [optional] 

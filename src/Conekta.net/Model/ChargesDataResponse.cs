@@ -44,16 +44,16 @@ namespace Conekta.net.Model
         /// <param name="deviceFingerprint">deviceFingerprint.</param>
         /// <param name="failureCode">failureCode.</param>
         /// <param name="failureMessage">failureMessage.</param>
-        /// <param name="id">id.</param>
-        /// <param name="livemode">livemode.</param>
+        /// <param name="id">Charge ID.</param>
+        /// <param name="livemode">Whether the charge was made in live mode or not.</param>
         /// <param name="varObject">varObject.</param>
-        /// <param name="orderId">orderId.</param>
-        /// <param name="paidAt">paidAt.</param>
+        /// <param name="orderId">Order ID.</param>
+        /// <param name="paidAt">Payment date.</param>
         /// <param name="paymentMethod">paymentMethod.</param>
         /// <param name="referenceId">Reference ID of the charge.</param>
         /// <param name="refunds">refunds.</param>
         /// <param name="status">status.</param>
-        public ChargesDataResponse(int amount = default(int), ChargeResponseChannel channel = default(ChargeResponseChannel), long createdAt = default(long), string currency = default(string), string customerId = default(string), string description = default(string), string deviceFingerprint = default(string), string failureCode = default(string), string failureMessage = default(string), string id = default(string), bool livemode = default(bool), string varObject = default(string), string orderId = default(string), int? paidAt = default(int?), ChargeResponsePaymentMethod paymentMethod = default(ChargeResponsePaymentMethod), string referenceId = default(string), ChargeResponseRefunds refunds = default(ChargeResponseRefunds), string status = default(string))
+        public ChargesDataResponse(int amount = default(int), ChargeResponseChannel channel = default(ChargeResponseChannel), long createdAt = default(long), string currency = default(string), string customerId = default(string), string description = default(string), string deviceFingerprint = default(string), string failureCode = default(string), string failureMessage = default(string), string id = default(string), bool livemode = default(bool), string varObject = default(string), string orderId = default(string), long? paidAt = default(long?), ChargeResponsePaymentMethod paymentMethod = default(ChargeResponsePaymentMethod), string referenceId = default(string), ChargeResponseRefunds refunds = default(ChargeResponseRefunds), string status = default(string))
         {
             this.Amount = amount;
             this.Channel = channel;
@@ -137,37 +137,43 @@ namespace Conekta.net.Model
         public string FailureMessage { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Charge ID
         /// </summary>
+        /// <value>Charge ID</value>
         /// <example>63efa757cf65380001aec040</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Livemode
+        /// Whether the charge was made in live mode or not
         /// </summary>
+        /// <value>Whether the charge was made in live mode or not</value>
+        /// <example>false</example>
         [DataMember(Name = "livemode", EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
+        /// <example>charge</example>
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
         /// <summary>
-        /// Gets or Sets OrderId
+        /// Order ID
         /// </summary>
+        /// <value>Order ID</value>
         /// <example>ord_2tN73UdUSNrYRPD9r</example>
         [DataMember(Name = "order_id", EmitDefaultValue = false)]
         public string OrderId { get; set; }
 
         /// <summary>
-        /// Gets or Sets PaidAt
+        /// Payment date
         /// </summary>
+        /// <value>Payment date</value>
         /// <example>1676390742</example>
         [DataMember(Name = "paid_at", EmitDefaultValue = true)]
-        public int? PaidAt { get; set; }
+        public long? PaidAt { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentMethod

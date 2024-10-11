@@ -58,7 +58,8 @@ namespace Conekta.net.Model
         /// <param name="receivingAccountTaxId">receivingAccountTaxId.</param>
         /// <param name="referenceNumber">referenceNumber.</param>
         /// <param name="trackingCode">trackingCode.</param>
-        public PaymentMethodBankTransfer(string type = default(string), string varObject = default(string), string bank = default(string), string clabe = default(string), string description = default(string), int? executedAt = default(int?), long expiresAt = default(long), string issuingAccountBank = default(string), string issuingAccountNumber = default(string), string issuingAccountHolderName = default(string), string issuingAccountTaxId = default(string), List<Object> paymentAttempts = default(List<Object>), string receivingAccountHolderName = default(string), string receivingAccountNumber = default(string), string receivingAccountBank = default(string), string receivingAccountTaxId = default(string), string referenceNumber = default(string), string trackingCode = default(string))
+        /// <param name="customerIpAddress">customerIpAddress.</param>
+        public PaymentMethodBankTransfer(string type = default(string), string varObject = default(string), string bank = default(string), string clabe = default(string), string description = default(string), int? executedAt = default(int?), long expiresAt = default(long), string issuingAccountBank = default(string), string issuingAccountNumber = default(string), string issuingAccountHolderName = default(string), string issuingAccountTaxId = default(string), List<Object> paymentAttempts = default(List<Object>), string receivingAccountHolderName = default(string), string receivingAccountNumber = default(string), string receivingAccountBank = default(string), string receivingAccountTaxId = default(string), string referenceNumber = default(string), string trackingCode = default(string), string customerIpAddress = default(string))
         {
             // to ensure "varObject" is required (not null)
             if (varObject == null)
@@ -83,6 +84,7 @@ namespace Conekta.net.Model
             this.ReceivingAccountTaxId = receivingAccountTaxId;
             this.ReferenceNumber = referenceNumber;
             this.TrackingCode = trackingCode;
+            this.CustomerIpAddress = customerIpAddress;
         }
 
         /// <summary>
@@ -200,6 +202,13 @@ namespace Conekta.net.Model
         public string TrackingCode { get; set; }
 
         /// <summary>
+        /// Gets or Sets CustomerIpAddress
+        /// </summary>
+        /// <example>0.0.0.0</example>
+        [DataMember(Name = "customer_ip_address", EmitDefaultValue = false)]
+        public string CustomerIpAddress { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -225,6 +234,7 @@ namespace Conekta.net.Model
             sb.Append("  ReceivingAccountTaxId: ").Append(ReceivingAccountTaxId).Append("\n");
             sb.Append("  ReferenceNumber: ").Append(ReferenceNumber).Append("\n");
             sb.Append("  TrackingCode: ").Append(TrackingCode).Append("\n");
+            sb.Append("  CustomerIpAddress: ").Append(CustomerIpAddress).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -40,7 +40,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ChargeRequest" /> class.
         /// </summary>
-        /// <param name="amount">amount.</param>
+        /// <param name="amount">Amount to be charged in cents.</param>
         /// <param name="paymentMethod">paymentMethod (required).</param>
         /// <param name="referenceId">Custom reference to add to the charge.</param>
         public ChargeRequest(int amount = default(int), ChargeRequestPaymentMethod paymentMethod = default(ChargeRequestPaymentMethod), string referenceId = default(string))
@@ -56,8 +56,9 @@ namespace Conekta.net.Model
         }
 
         /// <summary>
-        /// Gets or Sets Amount
+        /// Amount to be charged in cents
         /// </summary>
+        /// <value>Amount to be charged in cents</value>
         /// <example>40000</example>
         [DataMember(Name = "amount", EmitDefaultValue = false)]
         public int Amount { get; set; }

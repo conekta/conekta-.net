@@ -42,18 +42,19 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="type">type.</param>
         /// <param name="varObject">varObject (required).</param>
-        /// <param name="accountType">accountType.</param>
+        /// <param name="accountType">Account type of the card.</param>
         /// <param name="authCode">authCode.</param>
-        /// <param name="brand">brand.</param>
+        /// <param name="brand">Brand of the card.</param>
         /// <param name="contractId">Id sent for recurrent charges..</param>
-        /// <param name="country">country.</param>
-        /// <param name="expMonth">expMonth.</param>
-        /// <param name="expYear">expYear.</param>
+        /// <param name="country">Country of the card.</param>
+        /// <param name="expMonth">Expiration month of the card.</param>
+        /// <param name="expYear">Expiration year of the card.</param>
         /// <param name="fraudIndicators">fraudIndicators.</param>
-        /// <param name="issuer">issuer.</param>
-        /// <param name="last4">last4.</param>
-        /// <param name="name">name.</param>
-        public PaymentMethodCard(string type = default(string), string varObject = default(string), string accountType = default(string), string authCode = default(string), string brand = default(string), string contractId = default(string), string country = default(string), string expMonth = default(string), string expYear = default(string), List<Object> fraudIndicators = default(List<Object>), string issuer = default(string), string last4 = default(string), string name = default(string))
+        /// <param name="issuer">Issuer of the card.</param>
+        /// <param name="last4">Last 4 digits of the card.</param>
+        /// <param name="name">Name of the cardholder.</param>
+        /// <param name="customerIpAddress">Optional field used to capture the customer&#39;s IP address for fraud prevention and security monitoring purposes.</param>
+        public PaymentMethodCard(string type = default(string), string varObject = default(string), string accountType = default(string), string authCode = default(string), string brand = default(string), string contractId = default(string), string country = default(string), string expMonth = default(string), string expYear = default(string), List<Object> fraudIndicators = default(List<Object>), string issuer = default(string), string last4 = default(string), string name = default(string), string customerIpAddress = default(string))
         {
             // to ensure "varObject" is required (not null)
             if (varObject == null)
@@ -73,6 +74,7 @@ namespace Conekta.net.Model
             this.Issuer = issuer;
             this.Last4 = last4;
             this.Name = name;
+            this.CustomerIpAddress = customerIpAddress;
         }
 
         /// <summary>
@@ -89,8 +91,9 @@ namespace Conekta.net.Model
         public string Object { get; set; }
 
         /// <summary>
-        /// Gets or Sets AccountType
+        /// Account type of the card
         /// </summary>
+        /// <value>Account type of the card</value>
         /// <example>Credit</example>
         [DataMember(Name = "account_type", EmitDefaultValue = false)]
         public string AccountType { get; set; }
@@ -103,8 +106,9 @@ namespace Conekta.net.Model
         public string AuthCode { get; set; }
 
         /// <summary>
-        /// Gets or Sets Brand
+        /// Brand of the card
         /// </summary>
+        /// <value>Brand of the card</value>
         /// <example>visa</example>
         [DataMember(Name = "brand", EmitDefaultValue = false)]
         public string Brand { get; set; }
@@ -118,23 +122,26 @@ namespace Conekta.net.Model
         public string ContractId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Country
+        /// Country of the card
         /// </summary>
+        /// <value>Country of the card</value>
         /// <example>MX</example>
         [DataMember(Name = "country", EmitDefaultValue = false)]
         public string Country { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExpMonth
+        /// Expiration month of the card
         /// </summary>
+        /// <value>Expiration month of the card</value>
         /// <example>02</example>
         [DataMember(Name = "exp_month", EmitDefaultValue = false)]
         public string ExpMonth { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExpYear
+        /// Expiration year of the card
         /// </summary>
-        /// <example>30</example>
+        /// <value>Expiration year of the card</value>
+        /// <example>2026</example>
         [DataMember(Name = "exp_year", EmitDefaultValue = false)]
         public string ExpYear { get; set; }
 
@@ -145,25 +152,36 @@ namespace Conekta.net.Model
         public List<Object> FraudIndicators { get; set; }
 
         /// <summary>
-        /// Gets or Sets Issuer
+        /// Issuer of the card
         /// </summary>
+        /// <value>Issuer of the card</value>
         /// <example>BANAMEX</example>
         [DataMember(Name = "issuer", EmitDefaultValue = false)]
         public string Issuer { get; set; }
 
         /// <summary>
-        /// Gets or Sets Last4
+        /// Last 4 digits of the card
         /// </summary>
+        /// <value>Last 4 digits of the card</value>
         /// <example>4242</example>
         [DataMember(Name = "last4", EmitDefaultValue = false)]
         public string Last4 { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name of the cardholder
         /// </summary>
+        /// <value>Name of the cardholder</value>
         /// <example>Fulanito Perez</example>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Optional field used to capture the customer&#39;s IP address for fraud prevention and security monitoring purposes
+        /// </summary>
+        /// <value>Optional field used to capture the customer&#39;s IP address for fraud prevention and security monitoring purposes</value>
+        /// <example>0.0.0.0</example>
+        [DataMember(Name = "customer_ip_address", EmitDefaultValue = false)]
+        public string CustomerIpAddress { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -186,6 +204,7 @@ namespace Conekta.net.Model
             sb.Append("  Issuer: ").Append(Issuer).Append("\n");
             sb.Append("  Last4: ").Append(Last4).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  CustomerIpAddress: ").Append(CustomerIpAddress).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

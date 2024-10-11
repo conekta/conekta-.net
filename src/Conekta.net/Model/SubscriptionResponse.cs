@@ -38,6 +38,7 @@ namespace Conekta.net.Model
         /// <param name="billingCycleStart">billingCycleStart.</param>
         /// <param name="billingCycleEnd">billingCycleEnd.</param>
         /// <param name="canceledAt">canceledAt.</param>
+        /// <param name="canceledReason">Reason for cancellation. This field appears when the subscription status is &#39;canceled&#39;..</param>
         /// <param name="cardId">cardId.</param>
         /// <param name="chargeId">chargeId.</param>
         /// <param name="createdAt">createdAt.</param>
@@ -52,11 +53,12 @@ namespace Conekta.net.Model
         /// <param name="subscriptionStart">subscriptionStart.</param>
         /// <param name="trialStart">trialStart.</param>
         /// <param name="trialEnd">trialEnd.</param>
-        public SubscriptionResponse(long? billingCycleStart = default(long?), long? billingCycleEnd = default(long?), long? canceledAt = default(long?), string cardId = default(string), string chargeId = default(string), long createdAt = default(long), string customerCustomReference = default(string), string customerId = default(string), string id = default(string), string lastBillingCycleOrderId = default(string), string varObject = default(string), long? pausedAt = default(long?), string planId = default(string), string status = default(string), int subscriptionStart = default(int), long? trialStart = default(long?), long? trialEnd = default(long?))
+        public SubscriptionResponse(long? billingCycleStart = default(long?), long? billingCycleEnd = default(long?), long? canceledAt = default(long?), string canceledReason = default(string), string cardId = default(string), string chargeId = default(string), long createdAt = default(long), string customerCustomReference = default(string), string customerId = default(string), string id = default(string), string lastBillingCycleOrderId = default(string), string varObject = default(string), long? pausedAt = default(long?), string planId = default(string), string status = default(string), int subscriptionStart = default(int), long? trialStart = default(long?), long? trialEnd = default(long?))
         {
             this.BillingCycleStart = billingCycleStart;
             this.BillingCycleEnd = billingCycleEnd;
             this.CanceledAt = canceledAt;
+            this.CanceledReason = canceledReason;
             this.CardId = cardId;
             this.ChargeId = chargeId;
             this.CreatedAt = createdAt;
@@ -93,6 +95,14 @@ namespace Conekta.net.Model
         /// <example>1678258162</example>
         [DataMember(Name = "canceled_at", EmitDefaultValue = true)]
         public long? CanceledAt { get; set; }
+
+        /// <summary>
+        /// Reason for cancellation. This field appears when the subscription status is &#39;canceled&#39;.
+        /// </summary>
+        /// <value>Reason for cancellation. This field appears when the subscription status is &#39;canceled&#39;.</value>
+        /// <example>user_cancelation</example>
+        [DataMember(Name = "canceled_reason", EmitDefaultValue = false)]
+        public string CanceledReason { get; set; }
 
         /// <summary>
         /// Gets or Sets CardId
@@ -203,6 +213,7 @@ namespace Conekta.net.Model
             sb.Append("  BillingCycleStart: ").Append(BillingCycleStart).Append("\n");
             sb.Append("  BillingCycleEnd: ").Append(BillingCycleEnd).Append("\n");
             sb.Append("  CanceledAt: ").Append(CanceledAt).Append("\n");
+            sb.Append("  CanceledReason: ").Append(CanceledReason).Append("\n");
             sb.Append("  CardId: ").Append(CardId).Append("\n");
             sb.Append("  ChargeId: ").Append(ChargeId).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");

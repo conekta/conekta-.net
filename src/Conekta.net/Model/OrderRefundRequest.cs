@@ -40,9 +40,9 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderRefundRequest" /> class.
         /// </summary>
-        /// <param name="amount">amount (required).</param>
+        /// <param name="amount">Amount to be refunded in cents (required).</param>
         /// <param name="expiresAt">expiresAt.</param>
-        /// <param name="reason">reason (required).</param>
+        /// <param name="reason">Reason for the refund (required).</param>
         public OrderRefundRequest(int amount = default(int), long? expiresAt = default(long?), string reason = default(string))
         {
             this.Amount = amount;
@@ -56,8 +56,9 @@ namespace Conekta.net.Model
         }
 
         /// <summary>
-        /// Gets or Sets Amount
+        /// Amount to be refunded in cents
         /// </summary>
+        /// <value>Amount to be refunded in cents</value>
         /// <example>500</example>
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
         public int Amount { get; set; }
@@ -70,8 +71,9 @@ namespace Conekta.net.Model
         public long? ExpiresAt { get; set; }
 
         /// <summary>
-        /// Gets or Sets Reason
+        /// Reason for the refund
         /// </summary>
+        /// <value>Reason for the refund</value>
         /// <example>suspected_fraud</example>
         [DataMember(Name = "reason", IsRequired = true, EmitDefaultValue = true)]
         public string Reason { get; set; }
