@@ -67,8 +67,8 @@ public class OrdersApiTests
         PaymentMethodCardRequest cardRequest = new PaymentMethodCardRequest(
             type: "credit",    
             cvc: "123",        
-            expMonth: "12",    
-            expYear: "2025",   
+            expMonth: "1",    
+            expYear: "1970",   
             name: "John Doe",  
             number: "4242424242424242" 
         );
