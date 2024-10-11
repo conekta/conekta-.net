@@ -119,7 +119,7 @@ public class OrdersApiTests
         Assert.Equal("OxxoPay", response.Charges.Data[0].PaymentMethod.GetPaymentMethodCash().ServiceName);
         Assert.Equal("93000262280678", response.Charges.Data[0].PaymentMethod.GetPaymentMethodCash().Reference);
         Assert.Equal("oxxo", response.Charges.Data[0].PaymentMethod.GetPaymentMethodCash().Type);
-        Assert.Equal("1683232092", response.Charges.Data[0].PaymentMethod.GetPaymentMethodCash().ExpiresAt);
+        Assert.Equal(1683232092, response.Charges.Data[0].PaymentMethod.GetPaymentMethodCash().ExpiresAt);
     }
     /// <summary>
     ///     Test CreateOrderDefaultErr
