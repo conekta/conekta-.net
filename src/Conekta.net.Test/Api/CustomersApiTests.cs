@@ -274,11 +274,17 @@ namespace Conekta.net.Test.Api
                     metadata: new Dictionary<string, object> { { "test", "true" } }
                 )
             };
+        PaymentMethodCardRequest cardRequest = new PaymentMethodCardRequest(
+            type: "credit",    
+            cvc: "123",        
+            expMonth: "12",    
+            expYear: "2025",   
+            name: "John Doe",  
+            number: "4242424242424242" 
+        );
             var paymentSources = new List<CustomerPaymentMethodsRequest>()
             {
-                new CustomerPaymentMethodsRequest(
-                    new PaymentMethodCardRequest("card", "tok_2tXyExrU6U7yiaTto")
-                )
+                new CustomerPaymentMethodsRequest(cardRequest)
             };
             List<CustomerShippingContacts> shippingContacts = new()
             {
