@@ -276,7 +276,7 @@ namespace Conekta.net.Test.Api
             };
             PaymentMethodTokenRequest tokenRequest = new PaymentMethodTokenRequest(
                 type: "card", 
-                tokenId: "test"
+                tokenId: "test_5478sdfwefw"
             );
             var paymentSources = new List<CustomerPaymentMethodsRequest>()
             {
