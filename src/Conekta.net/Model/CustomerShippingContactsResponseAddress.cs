@@ -58,56 +58,72 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
-        /// <example>shipping_address</example>
+        /*
+        <example>shipping_address</example>
+        */
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets Street1
         /// </summary>
-        /// <example>Nuevo Leon 254</example>
+        /*
+        <example>Nuevo Leon 254</example>
+        */
         [DataMember(Name = "street1", EmitDefaultValue = false)]
         public string Street1 { get; set; }
 
         /// <summary>
         /// Gets or Sets Street2
         /// </summary>
-        /// <example>Departamento 404</example>
+        /*
+        <example>Departamento 404</example>
+        */
         [DataMember(Name = "street2", EmitDefaultValue = false)]
         public string Street2 { get; set; }
 
         /// <summary>
         /// Gets or Sets PostalCode
         /// </summary>
-        /// <example>06100</example>
+        /*
+        <example>06100</example>
+        */
         [DataMember(Name = "postal_code", EmitDefaultValue = false)]
         public string PostalCode { get; set; }
 
         /// <summary>
         /// Gets or Sets City
         /// </summary>
-        /// <example>Ciudad de Mexico</example>
+        /*
+        <example>Ciudad de Mexico</example>
+        */
         [DataMember(Name = "city", EmitDefaultValue = false)]
         public string City { get; set; }
 
         /// <summary>
         /// Gets or Sets State
         /// </summary>
-        /// <example>Ciudad de Mexico</example>
+        /*
+        <example>Ciudad de Mexico</example>
+        */
         [DataMember(Name = "state", EmitDefaultValue = false)]
         public string State { get; set; }
 
         /// <summary>
         /// Gets or Sets Country
         /// </summary>
-        /// <example>MX</example>
+        /*
+        <example>MX</example>
+        */
         [DataMember(Name = "country", EmitDefaultValue = false)]
         public string Country { get; set; }
 
         /// <summary>
         /// Gets or Sets Residential
         /// </summary>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "residential", EmitDefaultValue = true)]
         public bool? Residential { get; set; }
 
@@ -145,7 +161,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

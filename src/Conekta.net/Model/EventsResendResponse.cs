@@ -54,42 +54,54 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets FailedAttempts
         /// </summary>
-        /// <example>6</example>
+        /*
+        <example>6</example>
+        */
         [DataMember(Name = "failed_attempts", EmitDefaultValue = false)]
         public int FailedAttempts { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>webhl_2svd2sh6GbqzyWBNZ</example>
+        /*
+        <example>webhl_2svd2sh6GbqzyWBNZ</example>
+        */
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets LastAttemptedAt
         /// </summary>
-        /// <example>1684265970</example>
+        /*
+        <example>1684265970</example>
+        */
         [DataMember(Name = "last_attempted_at", EmitDefaultValue = false)]
         public int LastAttemptedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets LastHttpResponseStatus
         /// </summary>
-        /// <example>405</example>
+        /*
+        <example>405</example>
+        */
         [DataMember(Name = "last_http_response_status", EmitDefaultValue = false)]
         public int LastHttpResponseStatus { get; set; }
 
         /// <summary>
         /// Gets or Sets ResponseData
         /// </summary>
-        /// <example>{}</example>
+        /*
+        <example>{}</example>
+        */
         [DataMember(Name = "response_data", EmitDefaultValue = false)]
         public Dictionary<string, Object> ResponseData { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
-        /// <example>https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval</example>
+        /*
+        <example>https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval</example>
+        */
         [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
@@ -125,7 +137,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

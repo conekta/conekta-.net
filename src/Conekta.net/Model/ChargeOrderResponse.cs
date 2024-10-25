@@ -80,7 +80,9 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Amount
         /// </summary>
-        /// <example>4321</example>
+        /*
+        <example>4321</example>
+        */
         [DataMember(Name = "amount", EmitDefaultValue = false)]
         public int Amount { get; set; }
 
@@ -93,14 +95,18 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
-        /// <example>1676386026</example>
+        /*
+        <example>1676386026</example>
+        */
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public long CreatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets Currency
         /// </summary>
-        /// <example>MXN</example>
+        /*
+        <example>MXN</example>
+        */
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 
@@ -113,42 +119,54 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        /// <example>Payment from order</example>
+        /*
+        <example>Payment from order</example>
+        */
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets DeviceFingerprint
         /// </summary>
-        /// <example>6FR3chaU4Y1nGAW5NAGd1rcjAKa142Ba</example>
+        /*
+        <example>6FR3chaU4Y1nGAW5NAGd1rcjAKa142Ba</example>
+        */
         [DataMember(Name = "device_fingerprint", EmitDefaultValue = true)]
         public string DeviceFingerprint { get; set; }
 
         /// <summary>
         /// Gets or Sets FailureCode
         /// </summary>
-        /// <example>suspected_fraud</example>
+        /*
+        <example>suspected_fraud</example>
+        */
         [DataMember(Name = "failure_code", EmitDefaultValue = false)]
         public string FailureCode { get; set; }
 
         /// <summary>
         /// Gets or Sets FailureMessage
         /// </summary>
-        /// <example>Este cargo ha sido declinado porque el comportamiento del comprador es sospechoso.</example>
+        /*
+        <example>Este cargo ha sido declinado porque el comportamiento del comprador es sospechoso.</example>
+        */
         [DataMember(Name = "failure_message", EmitDefaultValue = false)]
         public string FailureMessage { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>63efa757cf65380001aec040</example>
+        /*
+        <example>63efa757cf65380001aec040</example>
+        */
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Livemode
         /// </summary>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "livemode", EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
@@ -167,14 +185,18 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets OrderId
         /// </summary>
-        /// <example>ord_2tN73UdUSNrYRPD9r</example>
+        /*
+        <example>ord_2tN73UdUSNrYRPD9r</example>
+        */
         [DataMember(Name = "order_id", EmitDefaultValue = false)]
         public string OrderId { get; set; }
 
         /// <summary>
         /// Gets or Sets PaidAt
         /// </summary>
-        /// <example>1676390742</example>
+        /*
+        <example>1676390742</example>
+        */
         [DataMember(Name = "paid_at", EmitDefaultValue = true)]
         public int? PaidAt { get; set; }
 
@@ -188,7 +210,9 @@ namespace Conekta.net.Model
         /// Reference ID of the charge
         /// </summary>
         /// <value>Reference ID of the charge</value>
-        /// <example>ref_2tN73UdUSNrYRPD9r</example>
+        /*
+        <example>ref_2tN73UdUSNrYRPD9r</example>
+        */
         [DataMember(Name = "reference_id", EmitDefaultValue = true)]
         public string ReferenceId { get; set; }
 
@@ -201,7 +225,9 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        /// <example>pending_payment</example>
+        /*
+        <example>pending_payment</example>
+        */
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
@@ -250,7 +276,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

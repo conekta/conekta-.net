@@ -237,7 +237,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
-        System.Threading.Tasks.Task<SubscriptionResponse> CancelSubscriptionAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SubscriptionResponse> CancelSubscriptionAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Cancel Subscription
@@ -252,7 +252,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SubscriptionResponse>> CancelSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SubscriptionResponse>> CancelSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Create Subscription
         /// </summary>
@@ -267,7 +267,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
-        System.Threading.Tasks.Task<SubscriptionResponse> CreateSubscriptionAsync(string id, SubscriptionRequest subscriptionRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SubscriptionResponse> CreateSubscriptionAsync(string id, SubscriptionRequest subscriptionRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Subscription
@@ -283,7 +283,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SubscriptionResponse>> CreateSubscriptionWithHttpInfoAsync(string id, SubscriptionRequest subscriptionRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SubscriptionResponse>> CreateSubscriptionWithHttpInfoAsync(string id, SubscriptionRequest subscriptionRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get Events By Subscription
         /// </summary>
@@ -297,7 +297,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionEventsResponse</returns>
-        System.Threading.Tasks.Task<SubscriptionEventsResponse> GetAllEventsFromSubscriptionAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SubscriptionEventsResponse> GetAllEventsFromSubscriptionAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Events By Subscription
@@ -312,7 +312,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionEventsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SubscriptionEventsResponse>> GetAllEventsFromSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SubscriptionEventsResponse>> GetAllEventsFromSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get Subscription
         /// </summary>
@@ -325,7 +325,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
-        System.Threading.Tasks.Task<SubscriptionResponse> GetSubscriptionAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SubscriptionResponse> GetSubscriptionAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Subscription
@@ -339,7 +339,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SubscriptionResponse>> GetSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SubscriptionResponse>> GetSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Pause Subscription
         /// </summary>
@@ -353,7 +353,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
-        System.Threading.Tasks.Task<SubscriptionResponse> PauseSubscriptionAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SubscriptionResponse> PauseSubscriptionAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Pause Subscription
@@ -368,7 +368,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SubscriptionResponse>> PauseSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SubscriptionResponse>> PauseSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Resume Subscription
         /// </summary>
@@ -382,7 +382,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
-        System.Threading.Tasks.Task<SubscriptionResponse> ResumeSubscriptionAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SubscriptionResponse> ResumeSubscriptionAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Resume Subscription
@@ -397,7 +397,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SubscriptionResponse>> ResumeSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SubscriptionResponse>> ResumeSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Update Subscription
         /// </summary>
@@ -412,7 +412,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
-        System.Threading.Tasks.Task<SubscriptionResponse> UpdateSubscriptionAsync(string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SubscriptionResponse> UpdateSubscriptionAsync(string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Subscription
@@ -428,7 +428,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SubscriptionResponse>> UpdateSubscriptionWithHttpInfoAsync(string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SubscriptionResponse>> UpdateSubscriptionWithHttpInfoAsync(string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -647,7 +647,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
-        public async System.Threading.Tasks.Task<SubscriptionResponse> CancelSubscriptionAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SubscriptionResponse> CancelSubscriptionAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<SubscriptionResponse> localVarResponse = await CancelSubscriptionWithHttpInfoAsync(id, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -663,7 +663,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<SubscriptionResponse>> CancelSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<SubscriptionResponse>> CancelSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -838,7 +838,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
-        public async System.Threading.Tasks.Task<SubscriptionResponse> CreateSubscriptionAsync(string id, SubscriptionRequest subscriptionRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SubscriptionResponse> CreateSubscriptionAsync(string id, SubscriptionRequest subscriptionRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<SubscriptionResponse> localVarResponse = await CreateSubscriptionWithHttpInfoAsync(id, subscriptionRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -855,7 +855,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<SubscriptionResponse>> CreateSubscriptionWithHttpInfoAsync(string id, SubscriptionRequest subscriptionRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<SubscriptionResponse>> CreateSubscriptionWithHttpInfoAsync(string id, SubscriptionRequest subscriptionRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1027,7 +1027,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionEventsResponse</returns>
-        public async System.Threading.Tasks.Task<SubscriptionEventsResponse> GetAllEventsFromSubscriptionAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SubscriptionEventsResponse> GetAllEventsFromSubscriptionAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<SubscriptionEventsResponse> localVarResponse = await GetAllEventsFromSubscriptionWithHttpInfoAsync(id, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1043,7 +1043,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionEventsResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<SubscriptionEventsResponse>> GetAllEventsFromSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<SubscriptionEventsResponse>> GetAllEventsFromSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1200,7 +1200,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
-        public async System.Threading.Tasks.Task<SubscriptionResponse> GetSubscriptionAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SubscriptionResponse> GetSubscriptionAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<SubscriptionResponse> localVarResponse = await GetSubscriptionWithHttpInfoAsync(id, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1215,7 +1215,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<SubscriptionResponse>> GetSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<SubscriptionResponse>> GetSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1375,7 +1375,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
-        public async System.Threading.Tasks.Task<SubscriptionResponse> PauseSubscriptionAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SubscriptionResponse> PauseSubscriptionAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<SubscriptionResponse> localVarResponse = await PauseSubscriptionWithHttpInfoAsync(id, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1391,7 +1391,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<SubscriptionResponse>> PauseSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<SubscriptionResponse>> PauseSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1555,7 +1555,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
-        public async System.Threading.Tasks.Task<SubscriptionResponse> ResumeSubscriptionAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SubscriptionResponse> ResumeSubscriptionAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<SubscriptionResponse> localVarResponse = await ResumeSubscriptionWithHttpInfoAsync(id, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1571,7 +1571,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<SubscriptionResponse>> ResumeSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<SubscriptionResponse>> ResumeSubscriptionWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1746,7 +1746,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
-        public async System.Threading.Tasks.Task<SubscriptionResponse> UpdateSubscriptionAsync(string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SubscriptionResponse> UpdateSubscriptionAsync(string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<SubscriptionResponse> localVarResponse = await UpdateSubscriptionWithHttpInfoAsync(id, subscriptionUpdateRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1763,7 +1763,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<SubscriptionResponse>> UpdateSubscriptionWithHttpInfoAsync(string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<SubscriptionResponse>> UpdateSubscriptionWithHttpInfoAsync(string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)

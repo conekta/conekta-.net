@@ -27,13 +27,13 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// ChargesDataResponse
+    /// ChargesOrderResponseAllOfData
     /// </summary>
-    [DataContract(Name = "charges_data_response")]
-    public partial class ChargesDataResponse : IValidatableObject
+    [DataContract(Name = "charges_order_response_allOf_data")]
+    public partial class ChargesOrderResponseAllOfData : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ChargesDataResponse" /> class.
+        /// Initializes a new instance of the <see cref="ChargesOrderResponseAllOfData" /> class.
         /// </summary>
         /// <param name="agreement">Agreement ID.</param>
         /// <param name="amount">amount.</param>
@@ -55,7 +55,7 @@ namespace Conekta.net.Model
         /// <param name="referenceId">Reference ID of the charge.</param>
         /// <param name="refunds">refunds.</param>
         /// <param name="status">status.</param>
-        public ChargesDataResponse(string agreement = default(string), int amount = default(int), ChargeResponseChannel channel = default(ChargeResponseChannel), long createdAt = default(long), string currency = default(string), string customerId = default(string), string description = default(string), string deviceFingerprint = default(string), string failureCode = default(string), string failureMessage = default(string), string id = default(string), bool livemode = default(bool), string varObject = default(string), string orderId = default(string), long? paidAt = default(long?), ChargeResponsePaymentMethod paymentMethod = default(ChargeResponsePaymentMethod), string productType = default(string), string referenceId = default(string), ChargeResponseRefunds refunds = default(ChargeResponseRefunds), string status = default(string))
+        public ChargesOrderResponseAllOfData(string agreement = default(string), int amount = default(int), ChargeResponseChannel channel = default(ChargeResponseChannel), long createdAt = default(long), string currency = default(string), string customerId = default(string), string description = default(string), string deviceFingerprint = default(string), string failureCode = default(string), string failureMessage = default(string), string id = default(string), bool livemode = default(bool), string varObject = default(string), string orderId = default(string), long? paidAt = default(long?), ChargeResponsePaymentMethod paymentMethod = default(ChargeResponsePaymentMethod), string productType = default(string), string referenceId = default(string), ChargeResponseRefunds refunds = default(ChargeResponseRefunds), string status = default(string))
         {
             this.Agreement = agreement;
             this.Amount = amount;
@@ -261,7 +261,7 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ChargesDataResponse {\n");
+            sb.Append("class ChargesOrderResponseAllOfData {\n");
             sb.Append("  Agreement: ").Append(Agreement).Append("\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
             sb.Append("  Channel: ").Append(Channel).Append("\n");

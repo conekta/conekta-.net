@@ -55,7 +55,9 @@ namespace Conekta.net.Model
         /// Indicates if the webhook key is active
         /// </summary>
         /// <value>Indicates if the webhook key is active</value>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "active", EmitDefaultValue = true)]
         public bool Active { get; set; }
 
@@ -63,7 +65,9 @@ namespace Conekta.net.Model
         /// Unix timestamp in seconds with the creation date of the webhook key
         /// </summary>
         /// <value>Unix timestamp in seconds with the creation date of the webhook key</value>
-        /// <example>1577836800</example>
+        /*
+        <example>1577836800</example>
+        */
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public long CreatedAt { get; set; }
 
@@ -71,7 +75,9 @@ namespace Conekta.net.Model
         /// Indicates if the webhook key is deleted
         /// </summary>
         /// <value>Indicates if the webhook key is deleted</value>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "deleted", EmitDefaultValue = true)]
         public bool Deleted { get; set; }
 
@@ -79,7 +85,9 @@ namespace Conekta.net.Model
         /// Unique identifier of the webhook key
         /// </summary>
         /// <value>Unique identifier of the webhook key</value>
-        /// <example>62730ba6fb7dfd6a712f118e</example>
+        /*
+        <example>62730ba6fb7dfd6a712f118e</example>
+        */
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -87,7 +95,9 @@ namespace Conekta.net.Model
         /// Indicates if the webhook key is in live mode
         /// </summary>
         /// <value>Indicates if the webhook key is in live mode</value>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "livemode", EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
@@ -95,7 +105,9 @@ namespace Conekta.net.Model
         /// Object name, value is webhook_key
         /// </summary>
         /// <value>Object name, value is webhook_key</value>
-        /// <example>webhook_key</example>
+        /*
+        <example>webhook_key</example>
+        */
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
@@ -131,7 +143,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

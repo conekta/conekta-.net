@@ -67,28 +67,36 @@ namespace Conekta.net.Model
         /// Custom reference
         /// </summary>
         /// <value>Custom reference</value>
-        /// <example>custom_reference</example>
+        /*
+        <example>custom_reference</example>
+        */
         [DataMember(Name = "customer_custom_reference", EmitDefaultValue = true)]
         public string CustomerCustomReference { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /// <example>DevTest</example>
+        /*
+        <example>DevTest</example>
+        */
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
-        /// <example>test@conekta.com</example>
+        /*
+        <example>test@conekta.com</example>
+        */
         [DataMember(Name = "email", EmitDefaultValue = false)]
         public string Email { get; set; }
 
         /// <summary>
         /// Gets or Sets Phone
         /// </summary>
-        /// <example>5522997233</example>
+        /*
+        <example>5522997233</example>
+        */
         [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
@@ -101,7 +109,9 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
-        /// <example>customer_info</example>
+        /*
+        <example>customer_info</example>
+        */
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
@@ -109,7 +119,9 @@ namespace Conekta.net.Model
         /// The id of the customer.
         /// </summary>
         /// <value>The id of the customer.</value>
-        /// <example>cus_23874283647</example>
+        /*
+        <example>cus_23874283647</example>
+        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
@@ -146,7 +158,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

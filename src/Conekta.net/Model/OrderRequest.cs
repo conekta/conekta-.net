@@ -108,7 +108,9 @@ namespace Conekta.net.Model
         /// Currency with which the payment will be made. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)
         /// </summary>
         /// <value>Currency with which the payment will be made. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)</value>
-        /// <example>MXN</example>
+        /*
+        <example>MXN</example>
+        */
         [DataMember(Name = "currency", IsRequired = true, EmitDefaultValue = true)]
         public string Currency { get; set; }
 
@@ -149,7 +151,9 @@ namespace Conekta.net.Model
         /// Allows you to fill out the shipping information at checkout
         /// </summary>
         /// <value>Allows you to fill out the shipping information at checkout</value>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "needs_shipping_contact", EmitDefaultValue = true)]
         public bool NeedsShippingContact { get; set; }
 
@@ -164,7 +168,9 @@ namespace Conekta.net.Model
         /// Indicates the processing mode for the order, either ecommerce, recurrent or validation.
         /// </summary>
         /// <value>Indicates the processing mode for the order, either ecommerce, recurrent or validation.</value>
-        /// <example>ecommerce</example>
+        /*
+        <example>ecommerce</example>
+        */
         [DataMember(Name = "processing_mode", EmitDefaultValue = false)]
         public string ProcessingMode { get; set; }
 
@@ -172,7 +178,9 @@ namespace Conekta.net.Model
         /// Indicates the redirection callback upon completion of the 3DS2 flow. Do not use this parameter if your order has a checkout parameter
         /// </summary>
         /// <value>Indicates the redirection callback upon completion of the 3DS2 flow. Do not use this parameter if your order has a checkout parameter</value>
-        /// <example>https://my-website.com</example>
+        /*
+        <example>https://my-website.com</example>
+        */
         [DataMember(Name = "return_url", EmitDefaultValue = false)]
         public string ReturnUrl { get; set; }
 
@@ -245,12 +253,12 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Currency (string) maxLength
             if (this.Currency != null && this.Currency.Length > 3)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Currency, length must be less than 3.", new [] { "Currency" });
+                yield return new ValidationResult("Invalid value for Currency, length must be less than 3.", new [] { "Currency" });
             }
 
             yield break;

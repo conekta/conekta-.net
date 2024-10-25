@@ -45,7 +45,9 @@ namespace Conekta.net.Model
         /// custom reference id
         /// </summary>
         /// <value>custom reference id</value>
-        /// <example>278482642</example>
+        /*
+        <example>278482642</example>
+        */
         [DataMember(Name = "reference_id", EmitDefaultValue = false)]
         public string ReferenceId { get; set; }
 
@@ -76,7 +78,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

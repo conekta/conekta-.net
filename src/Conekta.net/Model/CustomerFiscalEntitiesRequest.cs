@@ -94,7 +94,9 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets CompanyName
         /// </summary>
-        /// <example>conekta</example>
+        /*
+        <example>conekta</example>
+        */
         [DataMember(Name = "company_name", EmitDefaultValue = false)]
         public string CompanyName { get; set; }
 
@@ -130,7 +132,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

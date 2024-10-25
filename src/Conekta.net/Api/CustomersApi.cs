@@ -252,7 +252,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerResponse</returns>
-        System.Threading.Tasks.Task<CustomerResponse> CreateCustomerAsync(Customer customer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CustomerResponse> CreateCustomerAsync(Customer customer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create customer
@@ -267,7 +267,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomerResponse>> CreateCustomerWithHttpInfoAsync(Customer customer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CustomerResponse>> CreateCustomerWithHttpInfoAsync(Customer customer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Create Fiscal Entity
         /// </summary>
@@ -282,7 +282,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreateCustomerFiscalEntitiesResponse</returns>
-        System.Threading.Tasks.Task<CreateCustomerFiscalEntitiesResponse> CreateCustomerFiscalEntitiesAsync(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CreateCustomerFiscalEntitiesResponse> CreateCustomerFiscalEntitiesAsync(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Fiscal Entity
@@ -298,7 +298,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreateCustomerFiscalEntitiesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateCustomerFiscalEntitiesResponse>> CreateCustomerFiscalEntitiesWithHttpInfoAsync(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CreateCustomerFiscalEntitiesResponse>> CreateCustomerFiscalEntitiesWithHttpInfoAsync(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete Customer
         /// </summary>
@@ -312,7 +312,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerResponse</returns>
-        System.Threading.Tasks.Task<CustomerResponse> DeleteCustomerByIdAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CustomerResponse> DeleteCustomerByIdAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete Customer
@@ -327,7 +327,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomerResponse>> DeleteCustomerByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CustomerResponse>> DeleteCustomerByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get Customer
         /// </summary>
@@ -341,7 +341,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerResponse</returns>
-        System.Threading.Tasks.Task<CustomerResponse> GetCustomerByIdAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CustomerResponse> GetCustomerByIdAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Customer
@@ -356,7 +356,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomerResponse>> GetCustomerByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CustomerResponse>> GetCustomerByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get a list of customers
         /// </summary>
@@ -373,7 +373,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomersResponse</returns>
-        System.Threading.Tasks.Task<CustomersResponse> GetCustomersAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CustomersResponse> GetCustomersAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get a list of customers
@@ -391,7 +391,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomersResponse>> GetCustomersWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CustomersResponse>> GetCustomersWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Update customer
         /// </summary>
@@ -406,7 +406,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerResponse</returns>
-        System.Threading.Tasks.Task<CustomerResponse> UpdateCustomerAsync(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CustomerResponse> UpdateCustomerAsync(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update customer
@@ -422,7 +422,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomerResponse>> UpdateCustomerWithHttpInfoAsync(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CustomerResponse>> UpdateCustomerWithHttpInfoAsync(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Update  Fiscal Entity
         /// </summary>
@@ -438,7 +438,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateCustomerFiscalEntitiesResponse</returns>
-        System.Threading.Tasks.Task<UpdateCustomerFiscalEntitiesResponse> UpdateCustomerFiscalEntitiesAsync(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<UpdateCustomerFiscalEntitiesResponse> UpdateCustomerFiscalEntitiesAsync(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update  Fiscal Entity
@@ -455,7 +455,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateCustomerFiscalEntitiesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateCustomerFiscalEntitiesResponse>> UpdateCustomerFiscalEntitiesWithHttpInfoAsync(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<UpdateCustomerFiscalEntitiesResponse>> UpdateCustomerFiscalEntitiesWithHttpInfoAsync(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -675,7 +675,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerResponse</returns>
-        public async System.Threading.Tasks.Task<CustomerResponse> CreateCustomerAsync(Customer customer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CustomerResponse> CreateCustomerAsync(Customer customer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<CustomerResponse> localVarResponse = await CreateCustomerWithHttpInfoAsync(customer, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -691,7 +691,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomerResponse>> CreateCustomerWithHttpInfoAsync(Customer customer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomerResponse>> CreateCustomerWithHttpInfoAsync(Customer customer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'customer' is set
             if (customer == null)
@@ -867,7 +867,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreateCustomerFiscalEntitiesResponse</returns>
-        public async System.Threading.Tasks.Task<CreateCustomerFiscalEntitiesResponse> CreateCustomerFiscalEntitiesAsync(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CreateCustomerFiscalEntitiesResponse> CreateCustomerFiscalEntitiesAsync(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<CreateCustomerFiscalEntitiesResponse> localVarResponse = await CreateCustomerFiscalEntitiesWithHttpInfoAsync(id, customerFiscalEntitiesRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -884,7 +884,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreateCustomerFiscalEntitiesResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CreateCustomerFiscalEntitiesResponse>> CreateCustomerFiscalEntitiesWithHttpInfoAsync(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CreateCustomerFiscalEntitiesResponse>> CreateCustomerFiscalEntitiesWithHttpInfoAsync(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1056,7 +1056,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerResponse</returns>
-        public async System.Threading.Tasks.Task<CustomerResponse> DeleteCustomerByIdAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CustomerResponse> DeleteCustomerByIdAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<CustomerResponse> localVarResponse = await DeleteCustomerByIdWithHttpInfoAsync(id, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1072,7 +1072,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomerResponse>> DeleteCustomerByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomerResponse>> DeleteCustomerByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1236,7 +1236,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerResponse</returns>
-        public async System.Threading.Tasks.Task<CustomerResponse> GetCustomerByIdAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CustomerResponse> GetCustomerByIdAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<CustomerResponse> localVarResponse = await GetCustomerByIdWithHttpInfoAsync(id, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1252,7 +1252,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomerResponse>> GetCustomerByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomerResponse>> GetCustomerByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1434,7 +1434,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomersResponse</returns>
-        public async System.Threading.Tasks.Task<CustomersResponse> GetCustomersAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CustomersResponse> GetCustomersAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<CustomersResponse> localVarResponse = await GetCustomersWithHttpInfoAsync(acceptLanguage, xChildCompanyId, limit, search, next, previous, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1453,7 +1453,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomersResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomersResponse>> GetCustomersWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomersResponse>> GetCustomersWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -1637,7 +1637,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerResponse</returns>
-        public async System.Threading.Tasks.Task<CustomerResponse> UpdateCustomerAsync(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CustomerResponse> UpdateCustomerAsync(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<CustomerResponse> localVarResponse = await UpdateCustomerWithHttpInfoAsync(id, updateCustomer, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1654,7 +1654,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomerResponse>> UpdateCustomerWithHttpInfoAsync(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomerResponse>> UpdateCustomerWithHttpInfoAsync(string id, UpdateCustomer updateCustomer, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1847,7 +1847,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateCustomerFiscalEntitiesResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateCustomerFiscalEntitiesResponse> UpdateCustomerFiscalEntitiesAsync(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<UpdateCustomerFiscalEntitiesResponse> UpdateCustomerFiscalEntitiesAsync(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<UpdateCustomerFiscalEntitiesResponse> localVarResponse = await UpdateCustomerFiscalEntitiesWithHttpInfoAsync(id, fiscalEntitiesId, customerUpdateFiscalEntitiesRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1865,7 +1865,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateCustomerFiscalEntitiesResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateCustomerFiscalEntitiesResponse>> UpdateCustomerFiscalEntitiesWithHttpInfoAsync(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateCustomerFiscalEntitiesResponse>> UpdateCustomerFiscalEntitiesWithHttpInfoAsync(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)

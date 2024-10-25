@@ -98,77 +98,99 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>src_2s8K1B3PBKDontpi9</example>
+        /*
+        <example>src_2s8K1B3PBKDontpi9</example>
+        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
-        /// <example>payment_source</example>
+        /*
+        <example>payment_source</example>
+        */
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
-        /// <example>1675715413</example>
+        /*
+        <example>1675715413</example>
+        */
         [DataMember(Name = "created_at", IsRequired = true, EmitDefaultValue = true)]
         public long CreatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets ParentId
         /// </summary>
-        /// <example>cus_2s8K1B3PBKDontpi8</example>
+        /*
+        <example>cus_2s8K1B3PBKDontpi8</example>
+        */
         [DataMember(Name = "parent_id", EmitDefaultValue = false)]
         public string ParentId { get; set; }
 
         /// <summary>
         /// Gets or Sets Last4
         /// </summary>
-        /// <example>6410</example>
+        /*
+        <example>6410</example>
+        */
         [DataMember(Name = "last4", EmitDefaultValue = false)]
         public string Last4 { get; set; }
 
         /// <summary>
         /// Gets or Sets Bin
         /// </summary>
-        /// <example>40276657</example>
+        /*
+        <example>40276657</example>
+        */
         [DataMember(Name = "bin", EmitDefaultValue = false)]
         public string Bin { get; set; }
 
         /// <summary>
         /// Gets or Sets CardType
         /// </summary>
-        /// <example>debit</example>
+        /*
+        <example>debit</example>
+        */
         [DataMember(Name = "card_type", EmitDefaultValue = false)]
         public string CardType { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpMonth
         /// </summary>
-        /// <example>10</example>
+        /*
+        <example>10</example>
+        */
         [DataMember(Name = "exp_month", EmitDefaultValue = false)]
         public string ExpMonth { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpYear
         /// </summary>
-        /// <example>25</example>
+        /*
+        <example>25</example>
+        */
         [DataMember(Name = "exp_year", EmitDefaultValue = false)]
         public string ExpYear { get; set; }
 
         /// <summary>
         /// Gets or Sets Brand
         /// </summary>
-        /// <example>visa</example>
+        /*
+        <example>visa</example>
+        */
         [DataMember(Name = "brand", EmitDefaultValue = false)]
         public string Brand { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /// <example>Fulano Perez&quot;</example>
+        /*
+        <example>Fulano Perez&quot;</example>
+        */
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
@@ -187,7 +209,9 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets PaymentSourceStatus
         /// </summary>
-        /// <example>active</example>
+        /*
+        <example>active</example>
+        */
         [DataMember(Name = "payment_source_status", EmitDefaultValue = false)]
         public string PaymentSourceStatus { get; set; }
 
@@ -232,7 +256,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -59,7 +59,9 @@ namespace Conekta.net.Model
         /// Amount to be charged in cents
         /// </summary>
         /// <value>Amount to be charged in cents</value>
-        /// <example>40000</example>
+        /*
+        <example>40000</example>
+        */
         [DataMember(Name = "amount", EmitDefaultValue = false)]
         public int Amount { get; set; }
 
@@ -105,7 +107,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

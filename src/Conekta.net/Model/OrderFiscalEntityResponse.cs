@@ -87,7 +87,9 @@ namespace Conekta.net.Model
         /// Email of the fiscal entity
         /// </summary>
         /// <value>Email of the fiscal entity</value>
-        /// <example>test@gmail.com</example>
+        /*
+        <example>test@gmail.com</example>
+        */
         [DataMember(Name = "email", EmitDefaultValue = true)]
         public string Email { get; set; }
 
@@ -102,7 +104,9 @@ namespace Conekta.net.Model
         /// Name of the fiscal entity
         /// </summary>
         /// <value>Name of the fiscal entity</value>
-        /// <example>Conekta Inc</example>
+        /*
+        <example>Conekta Inc</example>
+        */
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -110,7 +114,9 @@ namespace Conekta.net.Model
         /// Tax ID of the fiscal entity
         /// </summary>
         /// <value>Tax ID of the fiscal entity</value>
-        /// <example>324234234</example>
+        /*
+        <example>324234234</example>
+        */
         [DataMember(Name = "tax_id", EmitDefaultValue = true)]
         public string TaxId { get; set; }
 
@@ -118,7 +124,9 @@ namespace Conekta.net.Model
         /// ID of the fiscal entity
         /// </summary>
         /// <value>ID of the fiscal entity</value>
-        /// <example>fis_ent_2tN85VYaSMyDvjB3M</example>
+        /*
+        <example>fis_ent_2tN85VYaSMyDvjB3M</example>
+        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
@@ -126,14 +134,18 @@ namespace Conekta.net.Model
         /// The time at which the object was created in seconds since the Unix epoch
         /// </summary>
         /// <value>The time at which the object was created in seconds since the Unix epoch</value>
-        /// <example>1676328434</example>
+        /*
+        <example>1676328434</example>
+        */
         [DataMember(Name = "created_at", IsRequired = true, EmitDefaultValue = true)]
         public long CreatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
-        /// <example>fiscal_entity</example>
+        /*
+        <example>fiscal_entity</example>
+        */
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
@@ -141,7 +153,9 @@ namespace Conekta.net.Model
         /// Phone of the fiscal entity
         /// </summary>
         /// <value>Phone of the fiscal entity</value>
-        /// <example>+525511223344</example>
+        /*
+        <example>+525511223344</example>
+        */
         [DataMember(Name = "phone", EmitDefaultValue = true)]
         public string Phone { get; set; }
 
@@ -180,7 +194,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

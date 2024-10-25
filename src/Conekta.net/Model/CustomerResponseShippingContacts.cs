@@ -59,7 +59,9 @@ namespace Conekta.net.Model
         /// Indicates if there are more pages to be requested
         /// </summary>
         /// <value>Indicates if there are more pages to be requested</value>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "has_more", IsRequired = true, EmitDefaultValue = true)]
         public bool HasMore { get; set; }
 
@@ -67,7 +69,9 @@ namespace Conekta.net.Model
         /// Object type, in this case is list
         /// </summary>
         /// <value>Object type, in this case is list</value>
-        /// <example>list</example>
+        /*
+        <example>list</example>
+        */
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
@@ -106,7 +110,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

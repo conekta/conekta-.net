@@ -112,7 +112,9 @@ namespace Conekta.net.Model
         /// Creation date of the object
         /// </summary>
         /// <value>Creation date of the object</value>
-        /// <example>1485151007</example>
+        /*
+        <example>1485151007</example>
+        */
         [DataMember(Name = "created_at", IsRequired = true, EmitDefaultValue = true)]
         public long CreatedAt { get; set; }
 
@@ -120,35 +122,45 @@ namespace Conekta.net.Model
         /// Custom reference
         /// </summary>
         /// <value>Custom reference</value>
-        /// <example>custom_reference</example>
+        /*
+        <example>custom_reference</example>
+        */
         [DataMember(Name = "custom_reference", EmitDefaultValue = false)]
         public string CustomReference { get; set; }
 
         /// <summary>
         /// Gets or Sets DefaultFiscalEntityId
         /// </summary>
-        /// <example>fis_ent_2tKqqAfqPi21oCmEJ</example>
+        /*
+        <example>fis_ent_2tKqqAfqPi21oCmEJ</example>
+        */
         [DataMember(Name = "default_fiscal_entity_id", EmitDefaultValue = true)]
         public string DefaultFiscalEntityId { get; set; }
 
         /// <summary>
         /// Gets or Sets DefaultShippingContactId
         /// </summary>
-        /// <example>ship_cont_2tKZsTYcsryyu7Ah8</example>
+        /*
+        <example>ship_cont_2tKZsTYcsryyu7Ah8</example>
+        */
         [DataMember(Name = "default_shipping_contact_id", EmitDefaultValue = false)]
         public string DefaultShippingContactId { get; set; }
 
         /// <summary>
         /// Gets or Sets DefaultPaymentSourceId
         /// </summary>
-        /// <example>src_2tHJfJ79KyUwpxTio</example>
+        /*
+        <example>src_2tHJfJ79KyUwpxTio</example>
+        */
         [DataMember(Name = "default_payment_source_id", EmitDefaultValue = true)]
         public string DefaultPaymentSourceId { get; set; }
 
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
-        /// <example>Felipe@gmail.com</example>
+        /*
+        <example>Felipe@gmail.com</example>
+        */
         [DataMember(Name = "email", EmitDefaultValue = false)]
         public string Email { get; set; }
 
@@ -162,7 +174,9 @@ namespace Conekta.net.Model
         /// Customer&#39;s ID
         /// </summary>
         /// <value>Customer&#39;s ID</value>
-        /// <example>cus_2tHJfJ79KyUwpxTik</example>
+        /*
+        <example>cus_2tHJfJ79KyUwpxTik</example>
+        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
@@ -170,7 +184,9 @@ namespace Conekta.net.Model
         /// true if the object exists in live mode or the value false if the object exists in test mode
         /// </summary>
         /// <value>true if the object exists in live mode or the value false if the object exists in test mode</value>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "livemode", IsRequired = true, EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
@@ -178,7 +194,9 @@ namespace Conekta.net.Model
         /// Customer&#39;s name
         /// </summary>
         /// <value>Customer&#39;s name</value>
-        /// <example>Felipe</example>
+        /*
+        <example>Felipe</example>
+        */
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -191,7 +209,9 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
-        /// <example>customer</example>
+        /*
+        <example>customer</example>
+        */
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
@@ -205,7 +225,9 @@ namespace Conekta.net.Model
         /// Customer&#39;s phone number
         /// </summary>
         /// <value>Customer&#39;s phone number</value>
-        /// <example>+5215555555555</example>
+        /*
+        <example>+5215555555555</example>
+        */
         [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
@@ -265,7 +287,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

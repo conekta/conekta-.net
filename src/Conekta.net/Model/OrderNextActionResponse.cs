@@ -53,7 +53,9 @@ namespace Conekta.net.Model
         /// Indicates the type of action to be taken
         /// </summary>
         /// <value>Indicates the type of action to be taken</value>
-        /// <example>redirect_to_url</example>
+        /*
+        <example>redirect_to_url</example>
+        */
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
@@ -85,7 +87,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

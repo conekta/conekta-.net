@@ -85,7 +85,9 @@ namespace Conekta.net.Model
         /// It is a value that allows identifying the security code of the card.
         /// </summary>
         /// <value>It is a value that allows identifying the security code of the card.</value>
-        /// <example>123</example>
+        /*
+        <example>123</example>
+        */
         [DataMember(Name = "cvc", IsRequired = true, EmitDefaultValue = true)]
         public string Cvc { get; set; }
 
@@ -93,7 +95,9 @@ namespace Conekta.net.Model
         /// It is a value that allows identifying the device fingerprint.
         /// </summary>
         /// <value>It is a value that allows identifying the device fingerprint.</value>
-        /// <example>zptcxk4p6w1ijwz85snf1l3bqe5g09ie</example>
+        /*
+        <example>zptcxk4p6w1ijwz85snf1l3bqe5g09ie</example>
+        */
         [DataMember(Name = "device_fingerprint", EmitDefaultValue = false)]
         public string DeviceFingerprint { get; set; }
 
@@ -101,7 +105,9 @@ namespace Conekta.net.Model
         /// It is a value that allows identifying the expiration month of the card.
         /// </summary>
         /// <value>It is a value that allows identifying the expiration month of the card.</value>
-        /// <example>12</example>
+        /*
+        <example>12</example>
+        */
         [DataMember(Name = "exp_month", IsRequired = true, EmitDefaultValue = true)]
         public string ExpMonth { get; set; }
 
@@ -109,7 +115,9 @@ namespace Conekta.net.Model
         /// It is a value that allows identifying the expiration year of the card.
         /// </summary>
         /// <value>It is a value that allows identifying the expiration year of the card.</value>
-        /// <example>26</example>
+        /*
+        <example>26</example>
+        */
         [DataMember(Name = "exp_year", IsRequired = true, EmitDefaultValue = true)]
         public string ExpYear { get; set; }
 
@@ -117,7 +125,9 @@ namespace Conekta.net.Model
         /// It is a value that allows identifying the name of the cardholder.
         /// </summary>
         /// <value>It is a value that allows identifying the name of the cardholder.</value>
-        /// <example>Miguel</example>
+        /*
+        <example>Miguel</example>
+        */
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -125,7 +135,9 @@ namespace Conekta.net.Model
         /// It is a value that allows identifying the number of the card.
         /// </summary>
         /// <value>It is a value that allows identifying the number of the card.</value>
-        /// <example>4242424242424242</example>
+        /*
+        <example>4242424242424242</example>
+        */
         [DataMember(Name = "number", IsRequired = true, EmitDefaultValue = true)]
         public string Number { get; set; }
 
@@ -161,24 +173,24 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Cvc (string) maxLength
             if (this.Cvc != null && this.Cvc.Length > 4)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Cvc, length must be less than 4.", new [] { "Cvc" });
+                yield return new ValidationResult("Invalid value for Cvc, length must be less than 4.", new [] { "Cvc" });
             }
 
             // ExpMonth (string) maxLength
             if (this.ExpMonth != null && this.ExpMonth.Length > 2)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ExpMonth, length must be less than 2.", new [] { "ExpMonth" });
+                yield return new ValidationResult("Invalid value for ExpMonth, length must be less than 2.", new [] { "ExpMonth" });
             }
 
             // ExpYear (string) maxLength
             if (this.ExpYear != null && this.ExpYear.Length > 2)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ExpYear, length must be less than 2.", new [] { "ExpYear" });
+                yield return new ValidationResult("Invalid value for ExpYear, length must be less than 2.", new [] { "ExpYear" });
             }
 
             yield break;

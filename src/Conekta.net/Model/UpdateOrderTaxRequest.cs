@@ -49,7 +49,9 @@ namespace Conekta.net.Model
         /// The amount to be collected for tax in cents
         /// </summary>
         /// <value>The amount to be collected for tax in cents</value>
-        /// <example>100</example>
+        /*
+        <example>100</example>
+        */
         [DataMember(Name = "amount", EmitDefaultValue = false)]
         public long Amount { get; set; }
 
@@ -57,7 +59,9 @@ namespace Conekta.net.Model
         /// description or tax&#39;s name
         /// </summary>
         /// <value>description or tax&#39;s name</value>
-        /// <example>testing</example>
+        /*
+        <example>testing</example>
+        */
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
@@ -96,18 +100,18 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Amount (long) minimum
             if (this.Amount < (long)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Amount, must be a value greater than or equal to 0.", new [] { "Amount" });
+                yield return new ValidationResult("Invalid value for Amount, must be a value greater than or equal to 0.", new [] { "Amount" });
             }
 
             // Description (string) minLength
             if (this.Description != null && this.Description.Length < 2)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Description, length must be greater than 2.", new [] { "Description" });
+                yield return new ValidationResult("Invalid value for Description, length must be greater than 2.", new [] { "Description" });
             }
 
             yield break;

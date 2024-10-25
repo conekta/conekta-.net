@@ -45,7 +45,9 @@ namespace Conekta.net.Model
         /// It is a value that allows identifying the returns control on.
         /// </summary>
         /// <value>It is a value that allows identifying the returns control on.</value>
-        /// <example>Token</example>
+        /*
+        <example>Token</example>
+        */
         [DataMember(Name = "returns_control_on", EmitDefaultValue = false)]
         public string ReturnsControlOn { get; set; }
 
@@ -76,7 +78,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

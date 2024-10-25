@@ -55,7 +55,9 @@ namespace Conekta.net.Model
         /// Type of payment method
         /// </summary>
         /// <value>Type of payment method</value>
-        /// <example>card | cash | spei</example>
+        /*
+        <example>card | cash | spei</example>
+        */
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
@@ -86,7 +88,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

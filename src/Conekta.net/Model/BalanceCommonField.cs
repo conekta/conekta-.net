@@ -47,7 +47,9 @@ namespace Conekta.net.Model
         /// The balance&#39;s amount
         /// </summary>
         /// <value>The balance&#39;s amount</value>
-        /// <example>100</example>
+        /*
+        <example>100</example>
+        */
         [DataMember(Name = "amount", EmitDefaultValue = false)]
         public long Amount { get; set; }
 
@@ -55,7 +57,9 @@ namespace Conekta.net.Model
         /// The balance&#39;s currency
         /// </summary>
         /// <value>The balance&#39;s currency</value>
-        /// <example>MXN</example>
+        /*
+        <example>MXN</example>
+        */
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 
@@ -87,7 +91,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

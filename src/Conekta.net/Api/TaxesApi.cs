@@ -139,7 +139,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateOrderTaxResponse</returns>
-        System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersCreateTaxesAsync(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersCreateTaxesAsync(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Tax
@@ -155,7 +155,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateOrderTaxResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateOrderTaxResponse>> OrdersCreateTaxesWithHttpInfoAsync(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<UpdateOrderTaxResponse>> OrdersCreateTaxesWithHttpInfoAsync(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete Tax
         /// </summary>
@@ -170,7 +170,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateOrderTaxResponse</returns>
-        System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersDeleteTaxesAsync(string id, string taxId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersDeleteTaxesAsync(string id, string taxId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete Tax
@@ -186,7 +186,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateOrderTaxResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateOrderTaxResponse>> OrdersDeleteTaxesWithHttpInfoAsync(string id, string taxId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<UpdateOrderTaxResponse>> OrdersDeleteTaxesWithHttpInfoAsync(string id, string taxId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Update Tax
         /// </summary>
@@ -202,7 +202,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateOrderTaxResponse</returns>
-        System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersUpdateTaxesAsync(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersUpdateTaxesAsync(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Tax
@@ -219,7 +219,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateOrderTaxResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateOrderTaxResponse>> OrdersUpdateTaxesWithHttpInfoAsync(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<UpdateOrderTaxResponse>> OrdersUpdateTaxesWithHttpInfoAsync(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -449,7 +449,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateOrderTaxResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersCreateTaxesAsync(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersCreateTaxesAsync(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> localVarResponse = await OrdersCreateTaxesWithHttpInfoAsync(id, orderTaxRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -466,7 +466,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateOrderTaxResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse>> OrdersCreateTaxesWithHttpInfoAsync(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse>> OrdersCreateTaxesWithHttpInfoAsync(string id, OrderTaxRequest orderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -648,7 +648,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateOrderTaxResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersDeleteTaxesAsync(string id, string taxId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersDeleteTaxesAsync(string id, string taxId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> localVarResponse = await OrdersDeleteTaxesWithHttpInfoAsync(id, taxId, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -665,7 +665,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateOrderTaxResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse>> OrdersDeleteTaxesWithHttpInfoAsync(string id, string taxId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse>> OrdersDeleteTaxesWithHttpInfoAsync(string id, string taxId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -857,7 +857,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateOrderTaxResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersUpdateTaxesAsync(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<UpdateOrderTaxResponse> OrdersUpdateTaxesAsync(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse> localVarResponse = await OrdersUpdateTaxesWithHttpInfoAsync(id, taxId, updateOrderTaxRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -875,7 +875,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateOrderTaxResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse>> OrdersUpdateTaxesWithHttpInfoAsync(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateOrderTaxResponse>> OrdersUpdateTaxesWithHttpInfoAsync(string id, string taxId, UpdateOrderTaxRequest updateOrderTaxRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)

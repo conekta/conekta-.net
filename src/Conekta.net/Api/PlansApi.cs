@@ -178,7 +178,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanResponse</returns>
-        System.Threading.Tasks.Task<PlanResponse> CreatePlanAsync(PlanRequest planRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PlanResponse> CreatePlanAsync(PlanRequest planRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Plan
@@ -193,7 +193,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PlanResponse>> CreatePlanWithHttpInfoAsync(PlanRequest planRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PlanResponse>> CreatePlanWithHttpInfoAsync(PlanRequest planRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete Plan
         /// </summary>
@@ -206,7 +206,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanResponse</returns>
-        System.Threading.Tasks.Task<PlanResponse> DeletePlanAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PlanResponse> DeletePlanAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete Plan
@@ -220,7 +220,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PlanResponse>> DeletePlanWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PlanResponse>> DeletePlanWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get Plan
         /// </summary>
@@ -234,7 +234,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanResponse</returns>
-        System.Threading.Tasks.Task<PlanResponse> GetPlanAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PlanResponse> GetPlanAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Plan
@@ -249,7 +249,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PlanResponse>> GetPlanWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PlanResponse>> GetPlanWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get A List of Plans
         /// </summary>
@@ -266,7 +266,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetPlansResponse</returns>
-        System.Threading.Tasks.Task<GetPlansResponse> GetPlansAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetPlansResponse> GetPlansAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get A List of Plans
@@ -284,7 +284,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetPlansResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetPlansResponse>> GetPlansWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetPlansResponse>> GetPlansWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Update Plan
         /// </summary>
@@ -299,7 +299,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanResponse</returns>
-        System.Threading.Tasks.Task<PlanResponse> UpdatePlanAsync(string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PlanResponse> UpdatePlanAsync(string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Plan
@@ -315,7 +315,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PlanResponse>> UpdatePlanWithHttpInfoAsync(string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PlanResponse>> UpdatePlanWithHttpInfoAsync(string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -535,7 +535,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanResponse</returns>
-        public async System.Threading.Tasks.Task<PlanResponse> CreatePlanAsync(PlanRequest planRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PlanResponse> CreatePlanAsync(PlanRequest planRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<PlanResponse> localVarResponse = await CreatePlanWithHttpInfoAsync(planRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -551,7 +551,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<PlanResponse>> CreatePlanWithHttpInfoAsync(PlanRequest planRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<PlanResponse>> CreatePlanWithHttpInfoAsync(PlanRequest planRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'planRequest' is set
             if (planRequest == null)
@@ -709,7 +709,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanResponse</returns>
-        public async System.Threading.Tasks.Task<PlanResponse> DeletePlanAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PlanResponse> DeletePlanAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<PlanResponse> localVarResponse = await DeletePlanWithHttpInfoAsync(id, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -724,7 +724,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<PlanResponse>> DeletePlanWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<PlanResponse>> DeletePlanWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -884,7 +884,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanResponse</returns>
-        public async System.Threading.Tasks.Task<PlanResponse> GetPlanAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PlanResponse> GetPlanAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<PlanResponse> localVarResponse = await GetPlanWithHttpInfoAsync(id, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -900,7 +900,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<PlanResponse>> GetPlanWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<PlanResponse>> GetPlanWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1082,7 +1082,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetPlansResponse</returns>
-        public async System.Threading.Tasks.Task<GetPlansResponse> GetPlansAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetPlansResponse> GetPlansAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<GetPlansResponse> localVarResponse = await GetPlansWithHttpInfoAsync(acceptLanguage, xChildCompanyId, limit, search, next, previous, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1101,7 +1101,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetPlansResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<GetPlansResponse>> GetPlansWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<GetPlansResponse>> GetPlansWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -1285,7 +1285,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanResponse</returns>
-        public async System.Threading.Tasks.Task<PlanResponse> UpdatePlanAsync(string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PlanResponse> UpdatePlanAsync(string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<PlanResponse> localVarResponse = await UpdatePlanWithHttpInfoAsync(id, planUpdateRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1302,7 +1302,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<PlanResponse>> UpdatePlanWithHttpInfoAsync(string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<PlanResponse>> UpdatePlanWithHttpInfoAsync(string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)

@@ -79,7 +79,9 @@ namespace Conekta.net.Model
         /// The amount of the payout.
         /// </summary>
         /// <value>The amount of the payout.</value>
-        /// <example>3000</example>
+        /*
+        <example>3000</example>
+        */
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
         public int Amount { get; set; }
 
@@ -87,7 +89,9 @@ namespace Conekta.net.Model
         /// The currency in which the payout is made.
         /// </summary>
         /// <value>The currency in which the payout is made.</value>
-        /// <example>MXN</example>
+        /*
+        <example>MXN</example>
+        */
         [DataMember(Name = "currency", IsRequired = true, EmitDefaultValue = true)]
         public string Currency { get; set; }
 
@@ -95,7 +99,9 @@ namespace Conekta.net.Model
         /// The expiration date of the payout.
         /// </summary>
         /// <value>The expiration date of the payout.</value>
-        /// <example>1677626837</example>
+        /*
+        <example>1677626837</example>
+        */
         [DataMember(Name = "expires_at", EmitDefaultValue = false)]
         public long ExpiresAt { get; set; }
 
@@ -103,7 +109,9 @@ namespace Conekta.net.Model
         /// The id of the payout.
         /// </summary>
         /// <value>The id of the payout.</value>
-        /// <example>payout_2vZwsRAhhGp2dFDJx</example>
+        /*
+        <example>payout_2vZwsRAhhGp2dFDJx</example>
+        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
@@ -111,7 +119,9 @@ namespace Conekta.net.Model
         /// The live mode of the payout.
         /// </summary>
         /// <value>The live mode of the payout.</value>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "livemode", IsRequired = true, EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
@@ -119,7 +129,9 @@ namespace Conekta.net.Model
         /// The object of the payout.
         /// </summary>
         /// <value>The object of the payout.</value>
-        /// <example>payout</example>
+        /*
+        <example>payout</example>
+        */
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
@@ -127,7 +139,9 @@ namespace Conekta.net.Model
         /// The id of the payout order.
         /// </summary>
         /// <value>The id of the payout order.</value>
-        /// <example>f2654d66-d740-457a-9a8c-f96b5196f44e</example>
+        /*
+        <example>f2654d66-d740-457a-9a8c-f96b5196f44e</example>
+        */
         [DataMember(Name = "payout_order_id", EmitDefaultValue = false)]
         public string PayoutOrderId { get; set; }
 
@@ -135,7 +149,9 @@ namespace Conekta.net.Model
         /// The status of the payout.
         /// </summary>
         /// <value>The status of the payout.</value>
-        /// <example>open</example>
+        /*
+        <example>open</example>
+        */
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
@@ -173,7 +189,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

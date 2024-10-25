@@ -203,7 +203,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DiscountLinesResponse</returns>
-        System.Threading.Tasks.Task<DiscountLinesResponse> OrdersCreateDiscountLineAsync(string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DiscountLinesResponse> OrdersCreateDiscountLineAsync(string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Discount
@@ -219,7 +219,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DiscountLinesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DiscountLinesResponse>> OrdersCreateDiscountLineWithHttpInfoAsync(string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DiscountLinesResponse>> OrdersCreateDiscountLineWithHttpInfoAsync(string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete Discount
         /// </summary>
@@ -234,7 +234,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DiscountLinesResponse</returns>
-        System.Threading.Tasks.Task<DiscountLinesResponse> OrdersDeleteDiscountLinesAsync(string id, string discountLinesId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DiscountLinesResponse> OrdersDeleteDiscountLinesAsync(string id, string discountLinesId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete Discount
@@ -250,7 +250,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DiscountLinesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DiscountLinesResponse>> OrdersDeleteDiscountLinesWithHttpInfoAsync(string id, string discountLinesId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DiscountLinesResponse>> OrdersDeleteDiscountLinesWithHttpInfoAsync(string id, string discountLinesId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get Discount
         /// </summary>
@@ -265,7 +265,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DiscountLinesResponse</returns>
-        System.Threading.Tasks.Task<DiscountLinesResponse> OrdersGetDiscountLineAsync(string id, string discountLinesId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DiscountLinesResponse> OrdersGetDiscountLineAsync(string id, string discountLinesId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Discount
@@ -281,7 +281,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DiscountLinesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DiscountLinesResponse>> OrdersGetDiscountLineWithHttpInfoAsync(string id, string discountLinesId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DiscountLinesResponse>> OrdersGetDiscountLineWithHttpInfoAsync(string id, string discountLinesId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get a List of Discount
         /// </summary>
@@ -299,7 +299,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetOrderDiscountLinesResponse</returns>
-        System.Threading.Tasks.Task<GetOrderDiscountLinesResponse> OrdersGetDiscountLinesAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetOrderDiscountLinesResponse> OrdersGetDiscountLinesAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get a List of Discount
@@ -318,7 +318,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetOrderDiscountLinesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetOrderDiscountLinesResponse>> OrdersGetDiscountLinesWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetOrderDiscountLinesResponse>> OrdersGetDiscountLinesWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Update Discount
         /// </summary>
@@ -334,7 +334,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DiscountLinesResponse</returns>
-        System.Threading.Tasks.Task<DiscountLinesResponse> OrdersUpdateDiscountLinesAsync(string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DiscountLinesResponse> OrdersUpdateDiscountLinesAsync(string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Discount
@@ -351,7 +351,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DiscountLinesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DiscountLinesResponse>> OrdersUpdateDiscountLinesWithHttpInfoAsync(string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DiscountLinesResponse>> OrdersUpdateDiscountLinesWithHttpInfoAsync(string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -581,7 +581,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DiscountLinesResponse</returns>
-        public async System.Threading.Tasks.Task<DiscountLinesResponse> OrdersCreateDiscountLineAsync(string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DiscountLinesResponse> OrdersCreateDiscountLineAsync(string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<DiscountLinesResponse> localVarResponse = await OrdersCreateDiscountLineWithHttpInfoAsync(id, orderDiscountLinesRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -598,7 +598,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DiscountLinesResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<DiscountLinesResponse>> OrdersCreateDiscountLineWithHttpInfoAsync(string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<DiscountLinesResponse>> OrdersCreateDiscountLineWithHttpInfoAsync(string id, OrderDiscountLinesRequest orderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -780,7 +780,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DiscountLinesResponse</returns>
-        public async System.Threading.Tasks.Task<DiscountLinesResponse> OrdersDeleteDiscountLinesAsync(string id, string discountLinesId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DiscountLinesResponse> OrdersDeleteDiscountLinesAsync(string id, string discountLinesId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<DiscountLinesResponse> localVarResponse = await OrdersDeleteDiscountLinesWithHttpInfoAsync(id, discountLinesId, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -797,7 +797,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DiscountLinesResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<DiscountLinesResponse>> OrdersDeleteDiscountLinesWithHttpInfoAsync(string id, string discountLinesId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<DiscountLinesResponse>> OrdersDeleteDiscountLinesWithHttpInfoAsync(string id, string discountLinesId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -978,7 +978,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DiscountLinesResponse</returns>
-        public async System.Threading.Tasks.Task<DiscountLinesResponse> OrdersGetDiscountLineAsync(string id, string discountLinesId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DiscountLinesResponse> OrdersGetDiscountLineAsync(string id, string discountLinesId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<DiscountLinesResponse> localVarResponse = await OrdersGetDiscountLineWithHttpInfoAsync(id, discountLinesId, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -995,7 +995,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DiscountLinesResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<DiscountLinesResponse>> OrdersGetDiscountLineWithHttpInfoAsync(string id, string discountLinesId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<DiscountLinesResponse>> OrdersGetDiscountLineWithHttpInfoAsync(string id, string discountLinesId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1194,7 +1194,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetOrderDiscountLinesResponse</returns>
-        public async System.Threading.Tasks.Task<GetOrderDiscountLinesResponse> OrdersGetDiscountLinesAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetOrderDiscountLinesResponse> OrdersGetDiscountLinesAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<GetOrderDiscountLinesResponse> localVarResponse = await OrdersGetDiscountLinesWithHttpInfoAsync(id, acceptLanguage, xChildCompanyId, limit, search, next, previous, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1214,7 +1214,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetOrderDiscountLinesResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<GetOrderDiscountLinesResponse>> OrdersGetDiscountLinesWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<GetOrderDiscountLinesResponse>> OrdersGetDiscountLinesWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1415,7 +1415,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DiscountLinesResponse</returns>
-        public async System.Threading.Tasks.Task<DiscountLinesResponse> OrdersUpdateDiscountLinesAsync(string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DiscountLinesResponse> OrdersUpdateDiscountLinesAsync(string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<DiscountLinesResponse> localVarResponse = await OrdersUpdateDiscountLinesWithHttpInfoAsync(id, discountLinesId, updateOrderDiscountLinesRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1433,7 +1433,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DiscountLinesResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<DiscountLinesResponse>> OrdersUpdateDiscountLinesWithHttpInfoAsync(string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<DiscountLinesResponse>> OrdersUpdateDiscountLinesWithHttpInfoAsync(string id, string discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)

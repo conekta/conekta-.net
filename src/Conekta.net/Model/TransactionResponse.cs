@@ -100,7 +100,9 @@ namespace Conekta.net.Model
         /// The amount of the transaction.
         /// </summary>
         /// <value>The amount of the transaction.</value>
-        /// <example>1000</example>
+        /*
+        <example>1000</example>
+        */
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
         public long Amount { get; set; }
 
@@ -108,7 +110,9 @@ namespace Conekta.net.Model
         /// Randomly assigned unique order identifier associated with the charge.
         /// </summary>
         /// <value>Randomly assigned unique order identifier associated with the charge.</value>
-        /// <example>5ee7ec58885a45585e6d9f8m</example>
+        /*
+        <example>5ee7ec58885a45585e6d9f8m</example>
+        */
         [DataMember(Name = "charge", IsRequired = true, EmitDefaultValue = true)]
         public string Charge { get; set; }
 
@@ -116,7 +120,9 @@ namespace Conekta.net.Model
         /// Date and time of creation of the transaction in Unix format.
         /// </summary>
         /// <value>Date and time of creation of the transaction in Unix format.</value>
-        /// <example>1553273553</example>
+        /*
+        <example>1553273553</example>
+        */
         [DataMember(Name = "created_at", IsRequired = true, EmitDefaultValue = true)]
         public long CreatedAt { get; set; }
 
@@ -124,7 +130,9 @@ namespace Conekta.net.Model
         /// The currency of the transaction. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)
         /// </summary>
         /// <value>The currency of the transaction. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)</value>
-        /// <example>MXN</example>
+        /*
+        <example>MXN</example>
+        */
         [DataMember(Name = "currency", IsRequired = true, EmitDefaultValue = true)]
         public string Currency { get; set; }
 
@@ -132,7 +140,9 @@ namespace Conekta.net.Model
         /// The amount to be deducted for taxes and commissions.
         /// </summary>
         /// <value>The amount to be deducted for taxes and commissions.</value>
-        /// <example>560</example>
+        /*
+        <example>560</example>
+        */
         [DataMember(Name = "fee", IsRequired = true, EmitDefaultValue = true)]
         public long Fee { get; set; }
 
@@ -140,7 +150,9 @@ namespace Conekta.net.Model
         /// Unique identifier of the transaction.
         /// </summary>
         /// <value>Unique identifier of the transaction.</value>
-        /// <example>5ee7ec5b8dea41085erb7f9e</example>
+        /*
+        <example>5ee7ec5b8dea41085erb7f9e</example>
+        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
@@ -148,7 +160,9 @@ namespace Conekta.net.Model
         /// Indicates whether the transaction was created in live mode or test mode.
         /// </summary>
         /// <value>Indicates whether the transaction was created in live mode or test mode.</value>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "livemode", IsRequired = true, EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
@@ -156,7 +170,9 @@ namespace Conekta.net.Model
         /// The net amount after deducting commissions and taxes.
         /// </summary>
         /// <value>The net amount after deducting commissions and taxes.</value>
-        /// <example>440</example>
+        /*
+        <example>440</example>
+        */
         [DataMember(Name = "net", IsRequired = true, EmitDefaultValue = true)]
         public long Net { get; set; }
 
@@ -164,7 +180,9 @@ namespace Conekta.net.Model
         /// Object name, which is transaction.
         /// </summary>
         /// <value>Object name, which is transaction.</value>
-        /// <example>transaction</example>
+        /*
+        <example>transaction</example>
+        */
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
@@ -172,7 +190,9 @@ namespace Conekta.net.Model
         /// Code indicating transaction status.
         /// </summary>
         /// <value>Code indicating transaction status.</value>
-        /// <example>pending</example>
+        /*
+        <example>pending</example>
+        */
         [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
         public string Status { get; set; }
 
@@ -180,7 +200,9 @@ namespace Conekta.net.Model
         /// Transaction Type
         /// </summary>
         /// <value>Transaction Type</value>
-        /// <example>capture</example>
+        /*
+        <example>capture</example>
+        */
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
@@ -221,12 +243,12 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Currency (string) maxLength
             if (this.Currency != null && this.Currency.Length > 3)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Currency, length must be less than 3.", new [] { "Currency" });
+                yield return new ValidationResult("Invalid value for Currency, length must be less than 3.", new [] { "Currency" });
             }
 
             yield break;

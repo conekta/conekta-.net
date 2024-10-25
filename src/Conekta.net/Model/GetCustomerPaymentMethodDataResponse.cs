@@ -85,15 +85,15 @@ namespace Conekta.net.Model
             }
             set
             {
-                if (value.GetType() == typeof(PaymentMethodCardResponse))
+                if (value.GetType() == typeof(PaymentMethodCardResponse) || value is PaymentMethodCardResponse)
                 {
                     this._actualInstance = value;
                 }
-                else if (value.GetType() == typeof(PaymentMethodCashResponse))
+                else if (value.GetType() == typeof(PaymentMethodCashResponse) || value is PaymentMethodCashResponse)
                 {
                     this._actualInstance = value;
                 }
-                else if (value.GetType() == typeof(PaymentMethodSpeiRecurrent))
+                else if (value.GetType() == typeof(PaymentMethodSpeiRecurrent) || value is PaymentMethodSpeiRecurrent)
                 {
                     this._actualInstance = value;
                 }

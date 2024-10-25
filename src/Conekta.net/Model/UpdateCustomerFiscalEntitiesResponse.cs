@@ -114,35 +114,45 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets CompanyName
         /// </summary>
-        /// <example>conekta</example>
+        /*
+        <example>conekta</example>
+        */
         [DataMember(Name = "company_name", EmitDefaultValue = false)]
         public string CompanyName { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>fis_ent_2tKZsTYcsryyu7Ah8</example>
+        /*
+        <example>fis_ent_2tKZsTYcsryyu7Ah8</example>
+        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
-        /// <example>fiscal_entities</example>
+        /*
+        <example>fiscal_entities</example>
+        */
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
-        /// <example>1675715413</example>
+        /*
+        <example>1675715413</example>
+        */
         [DataMember(Name = "created_at", IsRequired = true, EmitDefaultValue = true)]
         public long CreatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets ParentId
         /// </summary>
-        /// <example>cus_2tKcHxhTz7xU5SymF</example>
+        /*
+        <example>cus_2tKcHxhTz7xU5SymF</example>
+        */
         [DataMember(Name = "parent_id", EmitDefaultValue = false)]
         public string ParentId { get; set; }
 
@@ -189,7 +199,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

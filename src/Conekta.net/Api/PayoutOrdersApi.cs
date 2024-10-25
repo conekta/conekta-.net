@@ -129,7 +129,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PayoutOrderResponse</returns>
-        System.Threading.Tasks.Task<PayoutOrderResponse> CreatePayoutOrderAsync(PayoutOrder payoutOrder, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PayoutOrderResponse> CreatePayoutOrderAsync(PayoutOrder payoutOrder, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create payout order
@@ -143,7 +143,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PayoutOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PayoutOrderResponse>> CreatePayoutOrderWithHttpInfoAsync(PayoutOrder payoutOrder, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PayoutOrderResponse>> CreatePayoutOrderWithHttpInfoAsync(PayoutOrder payoutOrder, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get Payout Order
         /// </summary>
@@ -156,7 +156,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PayoutOrderResponse</returns>
-        System.Threading.Tasks.Task<PayoutOrderResponse> GetPayoutOrderByIdAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PayoutOrderResponse> GetPayoutOrderByIdAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Payout Order
@@ -170,7 +170,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PayoutOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PayoutOrderResponse>> GetPayoutOrderByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PayoutOrderResponse>> GetPayoutOrderByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get a list of Payout Orders
         /// </summary>
@@ -186,7 +186,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PayoutOrdersResponse</returns>
-        System.Threading.Tasks.Task<PayoutOrdersResponse> GetPayoutOrdersAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PayoutOrdersResponse> GetPayoutOrdersAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get a list of Payout Orders
@@ -203,7 +203,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PayoutOrdersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PayoutOrdersResponse>> GetPayoutOrdersWithHttpInfoAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PayoutOrdersResponse>> GetPayoutOrdersWithHttpInfoAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -416,7 +416,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PayoutOrderResponse</returns>
-        public async System.Threading.Tasks.Task<PayoutOrderResponse> CreatePayoutOrderAsync(PayoutOrder payoutOrder, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PayoutOrderResponse> CreatePayoutOrderAsync(PayoutOrder payoutOrder, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<PayoutOrderResponse> localVarResponse = await CreatePayoutOrderWithHttpInfoAsync(payoutOrder, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -431,7 +431,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PayoutOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<PayoutOrderResponse>> CreatePayoutOrderWithHttpInfoAsync(PayoutOrder payoutOrder, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<PayoutOrderResponse>> CreatePayoutOrderWithHttpInfoAsync(PayoutOrder payoutOrder, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'payoutOrder' is set
             if (payoutOrder == null)
@@ -585,7 +585,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PayoutOrderResponse</returns>
-        public async System.Threading.Tasks.Task<PayoutOrderResponse> GetPayoutOrderByIdAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PayoutOrderResponse> GetPayoutOrderByIdAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<PayoutOrderResponse> localVarResponse = await GetPayoutOrderByIdWithHttpInfoAsync(id, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -600,7 +600,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PayoutOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<PayoutOrderResponse>> GetPayoutOrderByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<PayoutOrderResponse>> GetPayoutOrderByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -771,7 +771,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PayoutOrdersResponse</returns>
-        public async System.Threading.Tasks.Task<PayoutOrdersResponse> GetPayoutOrdersAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PayoutOrdersResponse> GetPayoutOrdersAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<PayoutOrdersResponse> localVarResponse = await GetPayoutOrdersWithHttpInfoAsync(acceptLanguage, limit, search, next, previous, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -789,7 +789,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PayoutOrdersResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<PayoutOrdersResponse>> GetPayoutOrdersWithHttpInfoAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<PayoutOrdersResponse>> GetPayoutOrdersWithHttpInfoAsync(string acceptLanguage = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();

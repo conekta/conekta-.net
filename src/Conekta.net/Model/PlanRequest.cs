@@ -108,7 +108,9 @@ namespace Conekta.net.Model
         /// The amount in cents that will be charged on the interval specified.
         /// </summary>
         /// <value>The amount in cents that will be charged on the interval specified.</value>
-        /// <example>10000</example>
+        /*
+        <example>10000</example>
+        */
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
         public int Amount { get; set; }
 
@@ -116,7 +118,9 @@ namespace Conekta.net.Model
         /// ISO 4217 for currencies, for the Mexican peso it is MXN/USD
         /// </summary>
         /// <value>ISO 4217 for currencies, for the Mexican peso it is MXN/USD</value>
-        /// <example>MXN</example>
+        /*
+        <example>MXN</example>
+        */
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 
@@ -124,7 +128,9 @@ namespace Conekta.net.Model
         /// Number of repetitions of the frequency NUMBER OF CHARGES TO BE MADE, considering the interval and frequency, this evolves over time, but is subject to the expiration count.
         /// </summary>
         /// <value>Number of repetitions of the frequency NUMBER OF CHARGES TO BE MADE, considering the interval and frequency, this evolves over time, but is subject to the expiration count.</value>
-        /// <example>12</example>
+        /*
+        <example>12</example>
+        */
         [DataMember(Name = "expiry_count", EmitDefaultValue = false)]
         public int ExpiryCount { get; set; }
 
@@ -132,7 +138,9 @@ namespace Conekta.net.Model
         /// Frequency of the charge, which together with the interval, can be every 3 weeks, every 4 months, every 2 years, every 5 fortnights
         /// </summary>
         /// <value>Frequency of the charge, which together with the interval, can be every 3 weeks, every 4 months, every 2 years, every 5 fortnights</value>
-        /// <example>1</example>
+        /*
+        <example>1</example>
+        */
         [DataMember(Name = "frequency", IsRequired = true, EmitDefaultValue = true)]
         public int Frequency { get; set; }
 
@@ -140,7 +148,9 @@ namespace Conekta.net.Model
         /// internal reference id
         /// </summary>
         /// <value>internal reference id</value>
-        /// <example>plan_24234</example>
+        /*
+        <example>plan_24234</example>
+        */
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -148,7 +158,9 @@ namespace Conekta.net.Model
         /// The name of the plan.
         /// </summary>
         /// <value>The name of the plan.</value>
-        /// <example>Extra Plan3</example>
+        /*
+        <example>Extra Plan3</example>
+        */
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -156,7 +168,9 @@ namespace Conekta.net.Model
         /// The number of days the customer will have a free trial.
         /// </summary>
         /// <value>The number of days the customer will have a free trial.</value>
-        /// <example>0</example>
+        /*
+        <example>0</example>
+        */
         [DataMember(Name = "trial_period_days", EmitDefaultValue = false)]
         public int TrialPeriodDays { get; set; }
 
@@ -194,24 +208,24 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Amount (int) minimum
             if (this.Amount < (int)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Amount, must be a value greater than or equal to 1.", new [] { "Amount" });
+                yield return new ValidationResult("Invalid value for Amount, must be a value greater than or equal to 1.", new [] { "Amount" });
             }
 
             // Currency (string) maxLength
             if (this.Currency != null && this.Currency.Length > 3)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Currency, length must be less than 3.", new [] { "Currency" });
+                yield return new ValidationResult("Invalid value for Currency, length must be less than 3.", new [] { "Currency" });
             }
 
             // Frequency (int) minimum
             if (this.Frequency < (int)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Frequency, must be a value greater than or equal to 1.", new [] { "Frequency" });
+                yield return new ValidationResult("Invalid value for Frequency, must be a value greater than or equal to 1.", new [] { "Frequency" });
             }
 
             yield break;

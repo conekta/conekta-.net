@@ -87,7 +87,9 @@ namespace Conekta.net.Model
         /// Street name and number
         /// </summary>
         /// <value>Street name and number</value>
-        /// <example>Nuevo Leon 254</example>
+        /*
+        <example>Nuevo Leon 254</example>
+        */
         [DataMember(Name = "street1", IsRequired = true, EmitDefaultValue = true)]
         public string Street1 { get; set; }
 
@@ -95,7 +97,9 @@ namespace Conekta.net.Model
         /// Street name and number
         /// </summary>
         /// <value>Street name and number</value>
-        /// <example>Departamento 404</example>
+        /*
+        <example>Departamento 404</example>
+        */
         [DataMember(Name = "street2", EmitDefaultValue = true)]
         public string Street2 { get; set; }
 
@@ -103,7 +107,9 @@ namespace Conekta.net.Model
         /// Postal code
         /// </summary>
         /// <value>Postal code</value>
-        /// <example>06100</example>
+        /*
+        <example>06100</example>
+        */
         [DataMember(Name = "postal_code", IsRequired = true, EmitDefaultValue = true)]
         public string PostalCode { get; set; }
 
@@ -111,7 +117,9 @@ namespace Conekta.net.Model
         /// City
         /// </summary>
         /// <value>City</value>
-        /// <example>Ciudad de Mexico</example>
+        /*
+        <example>Ciudad de Mexico</example>
+        */
         [DataMember(Name = "city", IsRequired = true, EmitDefaultValue = true)]
         public string City { get; set; }
 
@@ -119,7 +127,9 @@ namespace Conekta.net.Model
         /// State
         /// </summary>
         /// <value>State</value>
-        /// <example>Ciudad de Mexico</example>
+        /*
+        <example>Ciudad de Mexico</example>
+        */
         [DataMember(Name = "state", EmitDefaultValue = false)]
         public string State { get; set; }
 
@@ -127,7 +137,9 @@ namespace Conekta.net.Model
         /// this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
         /// </summary>
         /// <value>this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)</value>
-        /// <example>MX</example>
+        /*
+        <example>MX</example>
+        */
         [DataMember(Name = "country", IsRequired = true, EmitDefaultValue = true)]
         public string Country { get; set; }
 
@@ -135,7 +147,9 @@ namespace Conekta.net.Model
         /// External number
         /// </summary>
         /// <value>External number</value>
-        /// <example>123</example>
+        /*
+        <example>123</example>
+        */
         [DataMember(Name = "external_number", IsRequired = true, EmitDefaultValue = true)]
         public string ExternalNumber { get; set; }
 
@@ -172,7 +186,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

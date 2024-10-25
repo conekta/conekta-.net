@@ -51,7 +51,9 @@ namespace Conekta.net.Model
         /// The amount in cents that will be charged on the interval specified.
         /// </summary>
         /// <value>The amount in cents that will be charged on the interval specified.</value>
-        /// <example>10000</example>
+        /*
+        <example>10000</example>
+        */
         [DataMember(Name = "amount", EmitDefaultValue = false)]
         public int Amount { get; set; }
 
@@ -59,7 +61,9 @@ namespace Conekta.net.Model
         /// ISO 4217 for currencies, for the Mexican peso it is MXN/USD
         /// </summary>
         /// <value>ISO 4217 for currencies, for the Mexican peso it is MXN/USD</value>
-        /// <example>MXN</example>
+        /*
+        <example>MXN</example>
+        */
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 
@@ -67,7 +71,9 @@ namespace Conekta.net.Model
         /// Number of repetitions of the frequency NUMBER OF CHARGES TO BE MADE, considering the interval and frequency, this evolves over time, but is subject to the expiration count.
         /// </summary>
         /// <value>Number of repetitions of the frequency NUMBER OF CHARGES TO BE MADE, considering the interval and frequency, this evolves over time, but is subject to the expiration count.</value>
-        /// <example>12</example>
+        /*
+        <example>12</example>
+        */
         [DataMember(Name = "expiry_count", EmitDefaultValue = false)]
         public int ExpiryCount { get; set; }
 
@@ -75,7 +81,9 @@ namespace Conekta.net.Model
         /// The name of the plan.
         /// </summary>
         /// <value>The name of the plan.</value>
-        /// <example>Extra Plan3</example>
+        /*
+        <example>Extra Plan3</example>
+        */
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
@@ -109,18 +117,18 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Amount (int) minimum
             if (this.Amount < (int)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Amount, must be a value greater than or equal to 1.", new [] { "Amount" });
+                yield return new ValidationResult("Invalid value for Amount, must be a value greater than or equal to 1.", new [] { "Amount" });
             }
 
             // Currency (string) maxLength
             if (this.Currency != null && this.Currency.Length > 3)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Currency, length must be less than 3.", new [] { "Currency" });
+                yield return new ValidationResult("Invalid value for Currency, length must be less than 3.", new [] { "Currency" });
             }
 
             yield break;

@@ -92,7 +92,9 @@ namespace Conekta.net.Model
         /// Type of payment method
         /// </summary>
         /// <value>Type of payment method</value>
-        /// <example>card | cash | spei</example>
+        /*
+        <example>card | cash | spei</example>
+        */
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
@@ -100,7 +102,9 @@ namespace Conekta.net.Model
         /// Card security code
         /// </summary>
         /// <value>Card security code</value>
-        /// <example>198</example>
+        /*
+        <example>198</example>
+        */
         [DataMember(Name = "cvc", IsRequired = true, EmitDefaultValue = true)]
         public string Cvc { get; set; }
 
@@ -108,7 +112,9 @@ namespace Conekta.net.Model
         /// Card expiration month
         /// </summary>
         /// <value>Card expiration month</value>
-        /// <example>12</example>
+        /*
+        <example>12</example>
+        */
         [DataMember(Name = "exp_month", IsRequired = true, EmitDefaultValue = true)]
         public string ExpMonth { get; set; }
 
@@ -116,7 +122,9 @@ namespace Conekta.net.Model
         /// Card expiration year
         /// </summary>
         /// <value>Card expiration year</value>
-        /// <example>2025</example>
+        /*
+        <example>2025</example>
+        */
         [DataMember(Name = "exp_year", IsRequired = true, EmitDefaultValue = true)]
         public string ExpYear { get; set; }
 
@@ -124,7 +132,9 @@ namespace Conekta.net.Model
         /// Cardholder name
         /// </summary>
         /// <value>Cardholder name</value>
-        /// <example>John Doe</example>
+        /*
+        <example>John Doe</example>
+        */
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -132,7 +142,9 @@ namespace Conekta.net.Model
         /// Card number
         /// </summary>
         /// <value>Card number</value>
-        /// <example>4242424242424242</example>
+        /*
+        <example>4242424242424242</example>
+        */
         [DataMember(Name = "number", IsRequired = true, EmitDefaultValue = true)]
         public string Number { get; set; }
 
@@ -140,7 +152,9 @@ namespace Conekta.net.Model
         /// Optional field used to capture the customer&#39;s IP address for fraud prevention and security monitoring purposes
         /// </summary>
         /// <value>Optional field used to capture the customer&#39;s IP address for fraud prevention and security monitoring purposes</value>
-        /// <example>0.0.0.0</example>
+        /*
+        <example>0.0.0.0</example>
+        */
         [DataMember(Name = "customer_ip_address", EmitDefaultValue = false)]
         public string CustomerIpAddress { get; set; }
 
@@ -177,42 +191,42 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Cvc (string) maxLength
             if (this.Cvc != null && this.Cvc.Length > 4)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Cvc, length must be less than 4.", new [] { "Cvc" });
+                yield return new ValidationResult("Invalid value for Cvc, length must be less than 4.", new [] { "Cvc" });
             }
 
             // Cvc (string) minLength
             if (this.Cvc != null && this.Cvc.Length < 3)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Cvc, length must be greater than 3.", new [] { "Cvc" });
+                yield return new ValidationResult("Invalid value for Cvc, length must be greater than 3.", new [] { "Cvc" });
             }
 
             // ExpMonth (string) maxLength
             if (this.ExpMonth != null && this.ExpMonth.Length > 2)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ExpMonth, length must be less than 2.", new [] { "ExpMonth" });
+                yield return new ValidationResult("Invalid value for ExpMonth, length must be less than 2.", new [] { "ExpMonth" });
             }
 
             // ExpMonth (string) minLength
             if (this.ExpMonth != null && this.ExpMonth.Length < 2)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ExpMonth, length must be greater than 2.", new [] { "ExpMonth" });
+                yield return new ValidationResult("Invalid value for ExpMonth, length must be greater than 2.", new [] { "ExpMonth" });
             }
 
             // ExpYear (string) maxLength
             if (this.ExpYear != null && this.ExpYear.Length > 4)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ExpYear, length must be less than 4.", new [] { "ExpYear" });
+                yield return new ValidationResult("Invalid value for ExpYear, length must be less than 4.", new [] { "ExpYear" });
             }
 
             // ExpYear (string) minLength
             if (this.ExpYear != null && this.ExpYear.Length < 4)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ExpYear, length must be greater than 4.", new [] { "ExpYear" });
+                yield return new ValidationResult("Invalid value for ExpYear, length must be greater than 4.", new [] { "ExpYear" });
             }
 
             yield break;

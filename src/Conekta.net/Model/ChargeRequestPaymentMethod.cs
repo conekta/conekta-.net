@@ -72,11 +72,11 @@ namespace Conekta.net.Model
             }
             set
             {
-                if (value.GetType() == typeof(PaymentMethodCardRequest))
+                if (value.GetType() == typeof(PaymentMethodCardRequest) || value is PaymentMethodCardRequest)
                 {
                     this._actualInstance = value;
                 }
-                else if (value.GetType() == typeof(PaymentMethodGeneralRequest))
+                else if (value.GetType() == typeof(PaymentMethodGeneralRequest) || value is PaymentMethodGeneralRequest)
                 {
                     this._actualInstance = value;
                 }

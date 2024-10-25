@@ -85,7 +85,9 @@ namespace Conekta.net.Model
         /// The total amount to be collected in cents
         /// </summary>
         /// <value>The total amount to be collected in cents</value>
-        /// <example>21605</example>
+        /*
+        <example>21605</example>
+        */
         [DataMember(Name = "amount", EmitDefaultValue = false)]
         public int Amount { get; set; }
 
@@ -93,7 +95,9 @@ namespace Conekta.net.Model
         /// The total amount refunded in cents
         /// </summary>
         /// <value>The total amount refunded in cents</value>
-        /// <example>0</example>
+        /*
+        <example>0</example>
+        */
         [DataMember(Name = "amount_refunded", EmitDefaultValue = false)]
         public int AmountRefunded { get; set; }
 
@@ -119,7 +123,9 @@ namespace Conekta.net.Model
         /// The time at which the object was created in seconds since the Unix epoch
         /// </summary>
         /// <value>The time at which the object was created in seconds since the Unix epoch</value>
-        /// <example>1676328434</example>
+        /*
+        <example>1676328434</example>
+        */
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public long CreatedAt { get; set; }
 
@@ -127,7 +133,9 @@ namespace Conekta.net.Model
         /// The three-letter ISO 4217 currency code. The currency of the order.
         /// </summary>
         /// <value>The three-letter ISO 4217 currency code. The currency of the order.</value>
-        /// <example>MXN</example>
+        /*
+        <example>MXN</example>
+        */
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 
@@ -152,14 +160,18 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>ord_2tMtQQpDvfnNjiuFG</example>
+        /*
+        <example>ord_2tMtQQpDvfnNjiuFG</example>
+        */
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets IsRefundable
         /// </summary>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "is_refundable", EmitDefaultValue = true)]
         public bool IsRefundable { get; set; }
 
@@ -173,7 +185,9 @@ namespace Conekta.net.Model
         /// Whether the object exists in live mode or test mode
         /// </summary>
         /// <value>Whether the object exists in live mode or test mode</value>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "livemode", EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
@@ -194,7 +208,9 @@ namespace Conekta.net.Model
         /// String representing the object’s type. Objects of the same type share the same value.
         /// </summary>
         /// <value>String representing the object’s type. Objects of the same type share the same value.</value>
-        /// <example>order</example>
+        /*
+        <example>order</example>
+        */
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
@@ -202,7 +218,9 @@ namespace Conekta.net.Model
         /// The payment status of the order.
         /// </summary>
         /// <value>The payment status of the order.</value>
-        /// <example>paid</example>
+        /*
+        <example>paid</example>
+        */
         [DataMember(Name = "payment_status", EmitDefaultValue = false)]
         public string PaymentStatus { get; set; }
 
@@ -210,7 +228,9 @@ namespace Conekta.net.Model
         /// Indicates the processing mode for the order, either ecommerce, recurrent or validation.
         /// </summary>
         /// <value>Indicates the processing mode for the order, either ecommerce, recurrent or validation.</value>
-        /// <example>ecommerce</example>
+        /*
+        <example>ecommerce</example>
+        */
         [DataMember(Name = "processing_mode", EmitDefaultValue = false)]
         public string ProcessingMode { get; set; }
 
@@ -224,7 +244,9 @@ namespace Conekta.net.Model
         /// The time at which the object was last updated in seconds since the Unix epoch
         /// </summary>
         /// <value>The time at which the object was last updated in seconds since the Unix epoch</value>
-        /// <example>1676328434</example>
+        /*
+        <example>1676328434</example>
+        */
         [DataMember(Name = "updated_at", EmitDefaultValue = false)]
         public long UpdatedAt { get; set; }
 
@@ -275,7 +297,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

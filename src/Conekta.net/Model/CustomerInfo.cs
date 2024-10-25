@@ -72,21 +72,27 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /// <example>DevTest</example>
+        /*
+        <example>DevTest</example>
+        */
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
-        /// <example>test@conekta.com</example>
+        /*
+        <example>test@conekta.com</example>
+        */
         [DataMember(Name = "email", IsRequired = true, EmitDefaultValue = true)]
         public string Email { get; set; }
 
         /// <summary>
         /// Gets or Sets Phone
         /// </summary>
-        /// <example>5522997233</example>
+        /*
+        <example>5522997233</example>
+        */
         [DataMember(Name = "phone", IsRequired = true, EmitDefaultValue = true)]
         public string Phone { get; set; }
 
@@ -99,7 +105,9 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
-        /// <example>customer_info</example>
+        /*
+        <example>customer_info</example>
+        */
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
@@ -134,7 +142,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

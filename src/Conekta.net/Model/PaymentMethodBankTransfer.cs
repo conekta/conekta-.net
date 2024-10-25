@@ -96,21 +96,27 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
-        /// <example>payment_source</example>
+        /*
+        <example>payment_source</example>
+        */
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets Bank
         /// </summary>
-        /// <example>STP</example>
+        /*
+        <example>STP</example>
+        */
         [DataMember(Name = "bank", EmitDefaultValue = false)]
         public string Bank { get; set; }
 
         /// <summary>
         /// Gets or Sets Clabe
         /// </summary>
-        /// <example>646180111805034237</example>
+        /*
+        <example>646180111805034237</example>
+        */
         [DataMember(Name = "clabe", EmitDefaultValue = false)]
         public string Clabe { get; set; }
 
@@ -129,7 +135,9 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets ExpiresAt
         /// </summary>
-        /// <example>1683053729</example>
+        /*
+        <example>1683053729</example>
+        */
         [DataMember(Name = "expires_at", EmitDefaultValue = false)]
         public long ExpiresAt { get; set; }
 
@@ -172,14 +180,18 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets ReceivingAccountNumber
         /// </summary>
-        /// <example>646180111805034237</example>
+        /*
+        <example>646180111805034237</example>
+        */
         [DataMember(Name = "receiving_account_number", EmitDefaultValue = false)]
         public string ReceivingAccountNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets ReceivingAccountBank
         /// </summary>
-        /// <example>STP</example>
+        /*
+        <example>STP</example>
+        */
         [DataMember(Name = "receiving_account_bank", EmitDefaultValue = false)]
         public string ReceivingAccountBank { get; set; }
 
@@ -204,7 +216,9 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets CustomerIpAddress
         /// </summary>
-        /// <example>0.0.0.0</example>
+        /*
+        <example>0.0.0.0</example>
+        */
         [DataMember(Name = "customer_ip_address", EmitDefaultValue = false)]
         public string CustomerIpAddress { get; set; }
 
@@ -253,7 +267,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

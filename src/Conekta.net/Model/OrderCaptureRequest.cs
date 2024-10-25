@@ -50,7 +50,9 @@ namespace Conekta.net.Model
         /// Amount to capture
         /// </summary>
         /// <value>Amount to capture</value>
-        /// <example>500</example>
+        /*
+        <example>500</example>
+        */
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
         public long Amount { get; set; }
 
@@ -81,12 +83,12 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Amount (long) minimum
             if (this.Amount < (long)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Amount, must be a value greater than or equal to 1.", new [] { "Amount" });
+                yield return new ValidationResult("Invalid value for Amount, must be a value greater than or equal to 1.", new [] { "Amount" });
             }
 
             yield break;

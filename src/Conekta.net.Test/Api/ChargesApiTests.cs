@@ -110,6 +110,22 @@ namespace Conekta.net.Test.Api
             Assert.Null(response.PaymentMethod.GetPaymentMethodCash().AuthCode);
             Assert.True(string.IsNullOrEmpty(response.PaymentMethod.GetPaymentMethodCash().Store));
         }
+
+        [Fact]
+        public void OrdersCreateChargesCashTest()
+        {
+            string id = "ord_2wrW9arie9fUG4MfD";
+            ChargeRequest chargeRequest = new(
+                paymentMethod: new ChargeRequestPaymentMethod(new PaymentMethodGeneralRequest(type:"cash"))
+            );
+            var response = _instance.OrdersCreateCharges(id, chargeRequest);
+            
+            Assert.IsType<ChargesOrderResponse>(response);
+            Assert.Equal(2, response.Data.Count);
+            Assert.Equal("2409992", response.Data[0].Agreement);
+            Assert.Equal("bbva_cash_in", response.Data[0].ProductType);
+        }
+
         /// <summary>
         ///     Test OrdersCreateChargeSpei
         /// </summary>

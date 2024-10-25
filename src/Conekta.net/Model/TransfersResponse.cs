@@ -63,7 +63,9 @@ namespace Conekta.net.Model
         /// Amount in cents of the transfer.
         /// </summary>
         /// <value>Amount in cents of the transfer.</value>
-        /// <example>10000</example>
+        /*
+        <example>10000</example>
+        */
         [DataMember(Name = "amount", EmitDefaultValue = false)]
         public long Amount { get; set; }
 
@@ -71,7 +73,9 @@ namespace Conekta.net.Model
         /// Date and time of creation of the transfer.
         /// </summary>
         /// <value>Date and time of creation of the transfer.</value>
-        /// <example>1553273553</example>
+        /*
+        <example>1553273553</example>
+        */
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public long CreatedAt { get; set; }
 
@@ -79,7 +83,9 @@ namespace Conekta.net.Model
         /// The currency of the transfer. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)
         /// </summary>
         /// <value>The currency of the transfer. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)</value>
-        /// <example>MXN</example>
+        /*
+        <example>MXN</example>
+        */
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 
@@ -87,7 +93,9 @@ namespace Conekta.net.Model
         /// Unique identifier of the transfer.
         /// </summary>
         /// <value>Unique identifier of the transfer.</value>
-        /// <example>5b0337d4dD344ef954fe1X4b6</example>
+        /*
+        <example>5b0337d4dD344ef954fe1X4b6</example>
+        */
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -95,7 +103,9 @@ namespace Conekta.net.Model
         /// Indicates whether the transfer was created in live mode or test mode.
         /// </summary>
         /// <value>Indicates whether the transfer was created in live mode or test mode.</value>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "livemode", EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
@@ -109,7 +119,9 @@ namespace Conekta.net.Model
         /// Object name, which is transfer.
         /// </summary>
         /// <value>Object name, which is transfer.</value>
-        /// <example>transfer</example>
+        /*
+        <example>transfer</example>
+        */
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
@@ -117,7 +129,9 @@ namespace Conekta.net.Model
         /// Description of the transfer.
         /// </summary>
         /// <value>Description of the transfer.</value>
-        /// <example>Conekta 4401234</example>
+        /*
+        <example>Conekta 4401234</example>
+        */
         [DataMember(Name = "statement_description", EmitDefaultValue = false)]
         public string StatementDescription { get; set; }
 
@@ -125,7 +139,9 @@ namespace Conekta.net.Model
         /// Reference number of the transfer.
         /// </summary>
         /// <value>Reference number of the transfer.</value>
-        /// <example>4401234</example>
+        /*
+        <example>4401234</example>
+        */
         [DataMember(Name = "statement_reference", EmitDefaultValue = false)]
         public string StatementReference { get; set; }
 
@@ -133,7 +149,9 @@ namespace Conekta.net.Model
         /// Code indicating transfer status.
         /// </summary>
         /// <value>Code indicating transfer status.</value>
-        /// <example>pending</example>
+        /*
+        <example>pending</example>
+        */
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
@@ -173,12 +191,12 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Currency (string) maxLength
             if (this.Currency != null && this.Currency.Length > 3)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Currency, length must be less than 3.", new [] { "Currency" });
+                yield return new ValidationResult("Invalid value for Currency, length must be less than 3.", new [] { "Currency" });
             }
 
             yield break;

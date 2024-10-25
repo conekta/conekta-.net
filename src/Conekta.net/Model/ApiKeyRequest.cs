@@ -57,14 +57,18 @@ namespace Conekta.net.Model
         /// A name or brief explanation of what this api key is used for
         /// </summary>
         /// <value>A name or brief explanation of what this api key is used for</value>
-        /// <example>online store</example>
+        /*
+        <example>online store</example>
+        */
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets Role
         /// </summary>
-        /// <example>private</example>
+        /*
+        <example>private</example>
+        */
         [DataMember(Name = "role", IsRequired = true, EmitDefaultValue = true)]
         public string Role { get; set; }
 
@@ -96,7 +100,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

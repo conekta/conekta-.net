@@ -10,8 +10,8 @@ csharp:
 	rm -rf /docs && \
 	rm -rf src/Conekta.net/Model && \
 	docker run --rm \
-	-v ${PWD}:/local openapitools/openapi-generator-cli:v7.5.0 generate \
-    -i https://raw.githubusercontent.com/conekta/openapi/main/_build/api.yaml \
+	-v ${PWD}:/local openapitools/openapi-generator-cli:v7.9.0 generate \
+    -i https://raw.githubusercontent.com/conekta/openapi/AL-252-sdk-devcenter-add-endpoint-add-charges/_build/api.yaml \
     -g csharp \
     -o /local \
     -c /local/config-netcore.json \

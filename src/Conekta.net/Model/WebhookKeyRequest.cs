@@ -45,7 +45,9 @@ namespace Conekta.net.Model
         /// Indicates if the webhook key is active
         /// </summary>
         /// <value>Indicates if the webhook key is active</value>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "active", EmitDefaultValue = true)]
         public bool Active { get; set; }
 
@@ -76,7 +78,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

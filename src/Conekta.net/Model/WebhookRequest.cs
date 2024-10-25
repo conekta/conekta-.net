@@ -57,7 +57,9 @@ namespace Conekta.net.Model
         /// Here you must place the URL of your Webhook remember that you must program what you will do with the events received. Also do not forget to handle the HTTPS protocol for greater security.
         /// </summary>
         /// <value>Here you must place the URL of your Webhook remember that you must program what you will do with the events received. Also do not forget to handle the HTTPS protocol for greater security.</value>
-        /// <example>https://webhook.site/89277eaa-a8e4-4306-8dc5-f55c80703dc8</example>
+        /*
+        <example>https://webhook.site/89277eaa-a8e4-4306-8dc5-f55c80703dc8</example>
+        */
         [DataMember(Name = "url", IsRequired = true, EmitDefaultValue = true)]
         public string Url { get; set; }
 
@@ -65,7 +67,9 @@ namespace Conekta.net.Model
         /// It is a value that allows to decide if the events will be synchronous or asynchronous. We recommend asynchronous &#x3D; false
         /// </summary>
         /// <value>It is a value that allows to decide if the events will be synchronous or asynchronous. We recommend asynchronous &#x3D; false</value>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "synchronous", IsRequired = true, EmitDefaultValue = true)]
         public bool Synchronous { get; set; }
 
@@ -97,7 +101,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             if (this.Url != null) {
                 // Url (string) pattern

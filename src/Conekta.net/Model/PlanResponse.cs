@@ -64,77 +64,99 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Amount
         /// </summary>
-        /// <example>10000</example>
+        /*
+        <example>10000</example>
+        */
         [DataMember(Name = "amount", EmitDefaultValue = false)]
         public int Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
-        /// <example>1666900846</example>
+        /*
+        <example>1666900846</example>
+        */
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public long CreatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets Currency
         /// </summary>
-        /// <example>MXN</example>
+        /*
+        <example>MXN</example>
+        */
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpiryCount
         /// </summary>
-        /// <example>12</example>
+        /*
+        <example>12</example>
+        */
         [DataMember(Name = "expiry_count", EmitDefaultValue = true)]
         public int? ExpiryCount { get; set; }
 
         /// <summary>
         /// Gets or Sets Frequency
         /// </summary>
-        /// <example>1</example>
+        /*
+        <example>1</example>
+        */
         [DataMember(Name = "frequency", EmitDefaultValue = false)]
         public int Frequency { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>gold-plan</example>
+        /*
+        <example>gold-plan</example>
+        */
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Interval
         /// </summary>
-        /// <example>month</example>
+        /*
+        <example>month</example>
+        */
         [DataMember(Name = "interval", EmitDefaultValue = false)]
         public string Interval { get; set; }
 
         /// <summary>
         /// Gets or Sets Livemode
         /// </summary>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "livemode", EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /// <example>Extra Plan3</example>
+        /*
+        <example>Extra Plan3</example>
+        */
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
-        /// <example>plan</example>
+        /*
+        <example>plan</example>
+        */
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets TrialPeriodDays
         /// </summary>
-        /// <example>0</example>
+        /*
+        <example>0</example>
+        */
         [DataMember(Name = "trial_period_days", EmitDefaultValue = true)]
         public int? TrialPeriodDays { get; set; }
 
@@ -175,12 +197,12 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Currency (string) maxLength
             if (this.Currency != null && this.Currency.Length > 3)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Currency, length must be less than 3.", new [] { "Currency" });
+                yield return new ValidationResult("Invalid value for Currency, length must be less than 3.", new [] { "Currency" });
             }
 
             yield break;

@@ -44,7 +44,9 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets CustomerId
         /// </summary>
-        /// <example>cus_23874283647</example>
+        /*
+        <example>cus_23874283647</example>
+        */
         [DataMember(Name = "customer_id", EmitDefaultValue = false)]
         public string CustomerId { get; set; }
 
@@ -75,7 +77,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

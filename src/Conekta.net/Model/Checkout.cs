@@ -92,7 +92,9 @@ namespace Conekta.net.Model
         /// Those are the payment methods that will be available for the link
         /// </summary>
         /// <value>Those are the payment methods that will be available for the link</value>
-        /// <example>[&quot;cash&quot;,&quot;card&quot;,&quot;bank_transfer&quot;]</example>
+        /*
+        <example>[&quot;cash&quot;,&quot;card&quot;,&quot;bank_transfer&quot;]</example>
+        */
         [DataMember(Name = "allowed_payment_methods", IsRequired = true, EmitDefaultValue = true)]
         public List<string> AllowedPaymentMethods { get; set; }
 
@@ -100,7 +102,9 @@ namespace Conekta.net.Model
         /// It is the time when the link will expire. It is expressed in seconds since the Unix epoch. The valid range is from 2 to 365 days (the valid range will be taken from the next day of the creation date at 00:01 hrs) 
         /// </summary>
         /// <value>It is the time when the link will expire. It is expressed in seconds since the Unix epoch. The valid range is from 2 to 365 days (the valid range will be taken from the next day of the creation date at 00:01 hrs) </value>
-        /// <example>1680397724</example>
+        /*
+        <example>1680397724</example>
+        */
         [DataMember(Name = "expires_at", IsRequired = true, EmitDefaultValue = true)]
         public long ExpiresAt { get; set; }
 
@@ -108,7 +112,9 @@ namespace Conekta.net.Model
         /// This flag allows you to specify if months without interest will be active.
         /// </summary>
         /// <value>This flag allows you to specify if months without interest will be active.</value>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "monthly_installments_enabled", EmitDefaultValue = true)]
         public bool MonthlyInstallmentsEnabled { get; set; }
 
@@ -116,7 +122,9 @@ namespace Conekta.net.Model
         /// This field allows you to specify the number of months without interest.
         /// </summary>
         /// <value>This field allows you to specify the number of months without interest.</value>
-        /// <example>[3,6,12]</example>
+        /*
+        <example>[3,6,12]</example>
+        */
         [DataMember(Name = "monthly_installments_options", EmitDefaultValue = false)]
         public List<int> MonthlyInstallmentsOptions { get; set; }
 
@@ -131,7 +139,9 @@ namespace Conekta.net.Model
         /// Reason for charge
         /// </summary>
         /// <value>Reason for charge</value>
-        /// <example>Payment Link Name 1594138857</example>
+        /*
+        <example>Payment Link Name 1594138857</example>
+        */
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -139,7 +149,9 @@ namespace Conekta.net.Model
         /// This flag allows you to fill in the shipping information at checkout.
         /// </summary>
         /// <value>This flag allows you to fill in the shipping information at checkout.</value>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "needs_shipping_contact", EmitDefaultValue = true)]
         public bool NeedsShippingContact { get; set; }
 
@@ -147,7 +159,9 @@ namespace Conekta.net.Model
         /// This flag allows you to specify if the link will be on demand.
         /// </summary>
         /// <value>This flag allows you to specify if the link will be on demand.</value>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "on_demand_enabled", EmitDefaultValue = true)]
         public bool? OnDemandEnabled { get; set; }
 
@@ -161,7 +175,9 @@ namespace Conekta.net.Model
         /// It is the number of payments that can be made through the link.
         /// </summary>
         /// <value>It is the number of payments that can be made through the link.</value>
-        /// <example>5</example>
+        /*
+        <example>5</example>
+        */
         [DataMember(Name = "payments_limit_count", EmitDefaultValue = false)]
         public int PaymentsLimitCount { get; set; }
 
@@ -169,7 +185,9 @@ namespace Conekta.net.Model
         /// false: single use. true: multiple payments
         /// </summary>
         /// <value>false: single use. true: multiple payments</value>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "recurrent", IsRequired = true, EmitDefaultValue = true)]
         public bool Recurrent { get; set; }
 
@@ -177,7 +195,9 @@ namespace Conekta.net.Model
         /// It is the type of link that will be created. It must be a valid type.
         /// </summary>
         /// <value>It is the type of link that will be created. It must be a valid type.</value>
-        /// <example>PaymentLink</example>
+        /*
+        <example>PaymentLink</example>
+        */
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
@@ -219,7 +239,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

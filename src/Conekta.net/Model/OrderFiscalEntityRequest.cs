@@ -71,7 +71,9 @@ namespace Conekta.net.Model
         /// Email of the fiscal entity
         /// </summary>
         /// <value>Email of the fiscal entity</value>
-        /// <example>test@gmail.com</example>
+        /*
+        <example>test@gmail.com</example>
+        */
         [DataMember(Name = "email", EmitDefaultValue = false)]
         public string Email { get; set; }
 
@@ -86,7 +88,9 @@ namespace Conekta.net.Model
         /// Name of the fiscal entity
         /// </summary>
         /// <value>Name of the fiscal entity</value>
-        /// <example>Conekta Inc</example>
+        /*
+        <example>Conekta Inc</example>
+        */
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -94,7 +98,9 @@ namespace Conekta.net.Model
         /// Phone of the fiscal entity
         /// </summary>
         /// <value>Phone of the fiscal entity</value>
-        /// <example>+525511223344</example>
+        /*
+        <example>+525511223344</example>
+        */
         [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
@@ -102,7 +108,9 @@ namespace Conekta.net.Model
         /// Tax ID of the fiscal entity
         /// </summary>
         /// <value>Tax ID of the fiscal entity</value>
-        /// <example>AAA010101AAA</example>
+        /*
+        <example>AAA010101AAA</example>
+        */
         [DataMember(Name = "tax_id", EmitDefaultValue = true)]
         public string TaxId { get; set; }
 
@@ -138,7 +146,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

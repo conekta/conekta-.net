@@ -97,7 +97,9 @@ namespace Conekta.net.Model
         /// It is a value that allows identifying if the email is corporate or not.
         /// </summary>
         /// <value>It is a value that allows identifying if the email is corporate or not.</value>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "corporate", EmitDefaultValue = true)]
         public bool Corporate { get; set; }
 
@@ -112,7 +114,9 @@ namespace Conekta.net.Model
         /// An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc).
         /// </summary>
         /// <value>An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc).</value>
-        /// <example>miguel@gmail.com</example>
+        /*
+        <example>miguel@gmail.com</example>
+        */
         [DataMember(Name = "email", IsRequired = true, EmitDefaultValue = true)]
         public string Email { get; set; }
 
@@ -120,7 +124,9 @@ namespace Conekta.net.Model
         /// It is a parameter that allows to identify in the response, the Conekta ID of a payment method (payment_id)
         /// </summary>
         /// <value>It is a parameter that allows to identify in the response, the Conekta ID of a payment method (payment_id)</value>
-        /// <example>src_1a2b3c4d5e6f7g8h</example>
+        /*
+        <example>src_1a2b3c4d5e6f7g8h</example>
+        */
         [DataMember(Name = "default_payment_source_id", EmitDefaultValue = false)]
         public string DefaultPaymentSourceId { get; set; }
 
@@ -128,7 +134,9 @@ namespace Conekta.net.Model
         /// It is a parameter that allows to identify in the response, the Conekta ID of the shipping address (shipping_contact)
         /// </summary>
         /// <value>It is a parameter that allows to identify in the response, the Conekta ID of the shipping address (shipping_contact)</value>
-        /// <example>ship_cont_1a2b3c4d5e6f7g8h</example>
+        /*
+        <example>ship_cont_1a2b3c4d5e6f7g8h</example>
+        */
         [DataMember(Name = "default_shipping_contact_id", EmitDefaultValue = false)]
         public string DefaultShippingContactId { get; set; }
 
@@ -148,7 +156,9 @@ namespace Conekta.net.Model
         /// Client&#39;s name
         /// </summary>
         /// <value>Client&#39;s name</value>
-        /// <example>miguel</example>
+        /*
+        <example>miguel</example>
+        */
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -163,7 +173,9 @@ namespace Conekta.net.Model
         /// Is the customer&#39;s phone number
         /// </summary>
         /// <value>Is the customer&#39;s phone number</value>
-        /// <example>+5215555555555</example>
+        /*
+        <example>+5215555555555</example>
+        */
         [DataMember(Name = "phone", IsRequired = true, EmitDefaultValue = true)]
         public string Phone { get; set; }
 
@@ -171,7 +183,9 @@ namespace Conekta.net.Model
         /// Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription
         /// </summary>
         /// <value>Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription</value>
-        /// <example>plan_987234823</example>
+        /*
+        <example>plan_987234823</example>
+        */
         [DataMember(Name = "plan_id", EmitDefaultValue = false)]
         public string PlanId { get; set; }
 
@@ -228,7 +242,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

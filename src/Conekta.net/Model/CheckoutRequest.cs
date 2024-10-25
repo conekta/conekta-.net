@@ -45,12 +45,13 @@ namespace Conekta.net.Model
         /// <param name="failureUrl">Redirection url back to the site in case of failed payment, applies only to HostedPayment..</param>
         /// <param name="monthlyInstallmentsEnabled">monthlyInstallmentsEnabled.</param>
         /// <param name="monthlyInstallmentsOptions">monthlyInstallmentsOptions.</param>
+        /// <param name="maxFailedRetries">Number of retries allowed before the checkout is marked as failed.</param>
         /// <param name="name">Reason for payment.</param>
         /// <param name="onDemandEnabled">onDemandEnabled.</param>
         /// <param name="redirectionTime">number of seconds to wait before redirecting to the success_url.</param>
         /// <param name="successUrl">Redirection url back to the site in case of successful payment, applies only to HostedPayment.</param>
         /// <param name="type">This field represents the type of checkout.</param>
-        public CheckoutRequest(List<string> allowedPaymentMethods = default(List<string>), long expiresAt = default(long), string failureUrl = default(string), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string name = default(string), bool onDemandEnabled = default(bool), int redirectionTime = default(int), string successUrl = default(string), string type = default(string))
+        public CheckoutRequest(List<string> allowedPaymentMethods = default(List<string>), long expiresAt = default(long), string failureUrl = default(string), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), int maxFailedRetries = default(int), string name = default(string), bool onDemandEnabled = default(bool), int redirectionTime = default(int), string successUrl = default(string), string type = default(string))
         {
             // to ensure "allowedPaymentMethods" is required (not null)
             if (allowedPaymentMethods == null)
@@ -62,6 +63,7 @@ namespace Conekta.net.Model
             this.FailureUrl = failureUrl;
             this.MonthlyInstallmentsEnabled = monthlyInstallmentsEnabled;
             this.MonthlyInstallmentsOptions = monthlyInstallmentsOptions;
+            this.MaxFailedRetries = maxFailedRetries;
             this.Name = name;
             this.OnDemandEnabled = onDemandEnabled;
             this.RedirectionTime = redirectionTime;
@@ -73,7 +75,9 @@ namespace Conekta.net.Model
         /// Are the payment methods available for this link
         /// </summary>
         /// <value>Are the payment methods available for this link</value>
-        /// <example>[&quot;cash&quot;,&quot;card&quot;,&quot;bank_transfer&quot;]</example>
+        /*
+        <example>[&quot;cash&quot;,&quot;card&quot;,&quot;bank_transfer&quot;]</example>
+        */
         [DataMember(Name = "allowed_payment_methods", IsRequired = true, EmitDefaultValue = true)]
         public List<string> AllowedPaymentMethods { get; set; }
 
@@ -94,16 +98,30 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets MonthlyInstallmentsEnabled
         /// </summary>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "monthly_installments_enabled", EmitDefaultValue = true)]
         public bool MonthlyInstallmentsEnabled { get; set; }
 
         /// <summary>
         /// Gets or Sets MonthlyInstallmentsOptions
         /// </summary>
-        /// <example>[3,6,12]</example>
+        /*
+        <example>[3,6,12]</example>
+        */
         [DataMember(Name = "monthly_installments_options", EmitDefaultValue = false)]
         public List<int> MonthlyInstallmentsOptions { get; set; }
+
+        /// <summary>
+        /// Number of retries allowed before the checkout is marked as failed
+        /// </summary>
+        /// <value>Number of retries allowed before the checkout is marked as failed</value>
+        /*
+        <example>3</example>
+        */
+        [DataMember(Name = "max_failed_retries", EmitDefaultValue = false)]
+        public int MaxFailedRetries { get; set; }
 
         /// <summary>
         /// Reason for payment
@@ -115,7 +133,9 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets OnDemandEnabled
         /// </summary>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "on_demand_enabled", EmitDefaultValue = true)]
         public bool OnDemandEnabled { get; set; }
 
@@ -123,7 +143,9 @@ namespace Conekta.net.Model
         /// number of seconds to wait before redirecting to the success_url
         /// </summary>
         /// <value>number of seconds to wait before redirecting to the success_url</value>
-        /// <example>10</example>
+        /*
+        <example>10</example>
+        */
         [DataMember(Name = "redirection_time", EmitDefaultValue = false)]
         public int RedirectionTime { get; set; }
 
@@ -138,7 +160,9 @@ namespace Conekta.net.Model
         /// This field represents the type of checkout
         /// </summary>
         /// <value>This field represents the type of checkout</value>
-        /// <example>Integration</example>
+        /*
+        <example>Integration</example>
+        */
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
@@ -155,6 +179,7 @@ namespace Conekta.net.Model
             sb.Append("  FailureUrl: ").Append(FailureUrl).Append("\n");
             sb.Append("  MonthlyInstallmentsEnabled: ").Append(MonthlyInstallmentsEnabled).Append("\n");
             sb.Append("  MonthlyInstallmentsOptions: ").Append(MonthlyInstallmentsOptions).Append("\n");
+            sb.Append("  MaxFailedRetries: ").Append(MaxFailedRetries).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  OnDemandEnabled: ").Append(OnDemandEnabled).Append("\n");
             sb.Append("  RedirectionTime: ").Append(RedirectionTime).Append("\n");
@@ -178,7 +203,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }
