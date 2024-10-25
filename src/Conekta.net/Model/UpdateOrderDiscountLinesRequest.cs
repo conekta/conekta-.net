@@ -48,7 +48,9 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Amount
         /// </summary>
-        /// <example>500</example>
+        /*
+        <example>500</example>
+        */
         [DataMember(Name = "amount", EmitDefaultValue = false)]
         public long Amount { get; set; }
 
@@ -56,14 +58,18 @@ namespace Conekta.net.Model
         /// Discount code.
         /// </summary>
         /// <value>Discount code.</value>
-        /// <example>123</example>
+        /*
+        <example>123</example>
+        */
         [DataMember(Name = "code", EmitDefaultValue = false)]
         public string Code { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        /// <example>loyalty</example>
+        /*
+        <example>loyalty</example>
+        */
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
@@ -96,12 +102,12 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Amount (long) minimum
             if (this.Amount < (long)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Amount, must be a value greater than or equal to 0.", new [] { "Amount" });
+                yield return new ValidationResult("Invalid value for Amount, must be a value greater than or equal to 0.", new [] { "Amount" });
             }
 
             yield break;

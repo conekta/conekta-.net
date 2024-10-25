@@ -70,7 +70,9 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets AntifraudInfo
         /// </summary>
-        /// <example>{&quot;key&quot;:&quot;value&quot;}</example>
+        /*
+        <example>{&quot;key&quot;:&quot;value&quot;}</example>
+        */
         [DataMember(Name = "antifraud_info", EmitDefaultValue = false)]
         public Dictionary<string, Object> AntifraudInfo { get; set; }
 
@@ -78,7 +80,9 @@ namespace Conekta.net.Model
         /// The brand of the item.
         /// </summary>
         /// <value>The brand of the item.</value>
-        /// <example>Cohiba</example>
+        /*
+        <example>Cohiba</example>
+        */
         [DataMember(Name = "brand", EmitDefaultValue = false)]
         public string Brand { get; set; }
 
@@ -86,7 +90,9 @@ namespace Conekta.net.Model
         /// Short description of the item
         /// </summary>
         /// <value>Short description of the item</value>
-        /// <example>Imported From Mex.</example>
+        /*
+        <example>Imported From Mex.</example>
+        */
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
@@ -94,7 +100,9 @@ namespace Conekta.net.Model
         /// It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.
         /// </summary>
         /// <value>It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.</value>
-        /// <example>{&quot;key&quot;:&quot;value&quot;}</example>
+        /*
+        <example>{&quot;key&quot;:&quot;value&quot;}</example>
+        */
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }
 
@@ -102,7 +110,9 @@ namespace Conekta.net.Model
         /// The name of the item. It will be displayed in the order.
         /// </summary>
         /// <value>The name of the item. It will be displayed in the order.</value>
-        /// <example>Box of Cohiba S1s</example>
+        /*
+        <example>Box of Cohiba S1s</example>
+        */
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -110,7 +120,9 @@ namespace Conekta.net.Model
         /// The quantity of the item in the order.
         /// </summary>
         /// <value>The quantity of the item in the order.</value>
-        /// <example>1</example>
+        /*
+        <example>1</example>
+        */
         [DataMember(Name = "quantity", IsRequired = true, EmitDefaultValue = true)]
         public int Quantity { get; set; }
 
@@ -118,7 +130,9 @@ namespace Conekta.net.Model
         /// The stock keeping unit for the item. It is used to identify the item in the order.
         /// </summary>
         /// <value>The stock keeping unit for the item. It is used to identify the item in the order.</value>
-        /// <example>XYZ12345</example>
+        /*
+        <example>XYZ12345</example>
+        */
         [DataMember(Name = "sku", EmitDefaultValue = false)]
         public string Sku { get; set; }
 
@@ -126,7 +140,9 @@ namespace Conekta.net.Model
         /// List of tags for the item. It is used to identify the item in the order.
         /// </summary>
         /// <value>List of tags for the item. It is used to identify the item in the order.</value>
-        /// <example>[&quot;food&quot;,&quot;mexican food&quot;]</example>
+        /*
+        <example>[&quot;food&quot;,&quot;mexican food&quot;]</example>
+        */
         [DataMember(Name = "tags", EmitDefaultValue = false)]
         public List<string> Tags { get; set; }
 
@@ -134,7 +150,9 @@ namespace Conekta.net.Model
         /// The price of the item in cents.
         /// </summary>
         /// <value>The price of the item in cents.</value>
-        /// <example>20000</example>
+        /*
+        <example>20000</example>
+        */
         [DataMember(Name = "unit_price", IsRequired = true, EmitDefaultValue = true)]
         public int UnitPrice { get; set; }
 
@@ -173,24 +191,24 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Description (string) maxLength
             if (this.Description != null && this.Description.Length > 250)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Description, length must be less than 250.", new [] { "Description" });
+                yield return new ValidationResult("Invalid value for Description, length must be less than 250.", new [] { "Description" });
             }
 
             // Quantity (int) minimum
             if (this.Quantity < (int)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new [] { "Quantity" });
             }
 
             // UnitPrice (int) minimum
             if (this.UnitPrice < (int)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for UnitPrice, must be a value greater than or equal to 0.", new [] { "UnitPrice" });
+                yield return new ValidationResult("Invalid value for UnitPrice, must be a value greater than or equal to 0.", new [] { "UnitPrice" });
             }
 
             yield break;

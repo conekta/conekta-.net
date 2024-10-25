@@ -86,7 +86,9 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
-        /// <example>payment_source</example>
+        /*
+        <example>payment_source</example>
+        */
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
@@ -94,14 +96,18 @@ namespace Conekta.net.Model
         /// Account type of the card
         /// </summary>
         /// <value>Account type of the card</value>
-        /// <example>Credit</example>
+        /*
+        <example>Credit</example>
+        */
         [DataMember(Name = "account_type", EmitDefaultValue = false)]
         public string AccountType { get; set; }
 
         /// <summary>
         /// Gets or Sets AuthCode
         /// </summary>
-        /// <example>867372</example>
+        /*
+        <example>867372</example>
+        */
         [DataMember(Name = "auth_code", EmitDefaultValue = false)]
         public string AuthCode { get; set; }
 
@@ -109,7 +115,9 @@ namespace Conekta.net.Model
         /// Brand of the card
         /// </summary>
         /// <value>Brand of the card</value>
-        /// <example>visa</example>
+        /*
+        <example>visa</example>
+        */
         [DataMember(Name = "brand", EmitDefaultValue = false)]
         public string Brand { get; set; }
 
@@ -117,7 +125,9 @@ namespace Conekta.net.Model
         /// Id sent for recurrent charges.
         /// </summary>
         /// <value>Id sent for recurrent charges.</value>
-        /// <example>S781317595</example>
+        /*
+        <example>S781317595</example>
+        */
         [DataMember(Name = "contract_id", EmitDefaultValue = false)]
         public string ContractId { get; set; }
 
@@ -125,7 +135,9 @@ namespace Conekta.net.Model
         /// Country of the card
         /// </summary>
         /// <value>Country of the card</value>
-        /// <example>MX</example>
+        /*
+        <example>MX</example>
+        */
         [DataMember(Name = "country", EmitDefaultValue = false)]
         public string Country { get; set; }
 
@@ -133,7 +145,9 @@ namespace Conekta.net.Model
         /// Expiration month of the card
         /// </summary>
         /// <value>Expiration month of the card</value>
-        /// <example>02</example>
+        /*
+        <example>02</example>
+        */
         [DataMember(Name = "exp_month", EmitDefaultValue = false)]
         public string ExpMonth { get; set; }
 
@@ -141,7 +155,9 @@ namespace Conekta.net.Model
         /// Expiration year of the card
         /// </summary>
         /// <value>Expiration year of the card</value>
-        /// <example>2026</example>
+        /*
+        <example>2026</example>
+        */
         [DataMember(Name = "exp_year", EmitDefaultValue = false)]
         public string ExpYear { get; set; }
 
@@ -155,7 +171,9 @@ namespace Conekta.net.Model
         /// Issuer of the card
         /// </summary>
         /// <value>Issuer of the card</value>
-        /// <example>BANAMEX</example>
+        /*
+        <example>BANAMEX</example>
+        */
         [DataMember(Name = "issuer", EmitDefaultValue = false)]
         public string Issuer { get; set; }
 
@@ -163,7 +181,9 @@ namespace Conekta.net.Model
         /// Last 4 digits of the card
         /// </summary>
         /// <value>Last 4 digits of the card</value>
-        /// <example>4242</example>
+        /*
+        <example>4242</example>
+        */
         [DataMember(Name = "last4", EmitDefaultValue = false)]
         public string Last4 { get; set; }
 
@@ -171,7 +191,9 @@ namespace Conekta.net.Model
         /// Name of the cardholder
         /// </summary>
         /// <value>Name of the cardholder</value>
-        /// <example>Fulanito Perez</example>
+        /*
+        <example>Fulanito Perez</example>
+        */
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
@@ -179,7 +201,9 @@ namespace Conekta.net.Model
         /// Optional field used to capture the customer&#39;s IP address for fraud prevention and security monitoring purposes
         /// </summary>
         /// <value>Optional field used to capture the customer&#39;s IP address for fraud prevention and security monitoring purposes</value>
-        /// <example>0.0.0.0</example>
+        /*
+        <example>0.0.0.0</example>
+        */
         [DataMember(Name = "customer_ip_address", EmitDefaultValue = false)]
         public string CustomerIpAddress { get; set; }
 
@@ -223,7 +247,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

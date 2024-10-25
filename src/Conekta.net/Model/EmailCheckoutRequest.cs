@@ -54,7 +54,9 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
-        /// <example>example@conekta.com</example>
+        /*
+        <example>example@conekta.com</example>
+        */
         [DataMember(Name = "email", IsRequired = true, EmitDefaultValue = true)]
         public string Email { get; set; }
 
@@ -85,7 +87,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -174,7 +174,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreateCustomerPaymentMethodsResponse</returns>
-        System.Threading.Tasks.Task<CreateCustomerPaymentMethodsResponse> CreateCustomerPaymentMethodsAsync(string id, CreateCustomerPaymentMethodsRequest createCustomerPaymentMethodsRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CreateCustomerPaymentMethodsResponse> CreateCustomerPaymentMethodsAsync(string id, CreateCustomerPaymentMethodsRequest createCustomerPaymentMethodsRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Payment Method
@@ -190,7 +190,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreateCustomerPaymentMethodsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateCustomerPaymentMethodsResponse>> CreateCustomerPaymentMethodsWithHttpInfoAsync(string id, CreateCustomerPaymentMethodsRequest createCustomerPaymentMethodsRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CreateCustomerPaymentMethodsResponse>> CreateCustomerPaymentMethodsWithHttpInfoAsync(string id, CreateCustomerPaymentMethodsRequest createCustomerPaymentMethodsRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete Payment Method
         /// </summary>
@@ -205,7 +205,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateCustomerPaymentMethodsResponse</returns>
-        System.Threading.Tasks.Task<UpdateCustomerPaymentMethodsResponse> DeleteCustomerPaymentMethodsAsync(string id, string paymentMethodId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<UpdateCustomerPaymentMethodsResponse> DeleteCustomerPaymentMethodsAsync(string id, string paymentMethodId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete Payment Method
@@ -221,7 +221,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateCustomerPaymentMethodsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateCustomerPaymentMethodsResponse>> DeleteCustomerPaymentMethodsWithHttpInfoAsync(string id, string paymentMethodId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<UpdateCustomerPaymentMethodsResponse>> DeleteCustomerPaymentMethodsWithHttpInfoAsync(string id, string paymentMethodId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get Payment Methods
         /// </summary>
@@ -239,7 +239,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetPaymentMethodResponse</returns>
-        System.Threading.Tasks.Task<GetPaymentMethodResponse> GetCustomerPaymentMethodsAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string search = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetPaymentMethodResponse> GetCustomerPaymentMethodsAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string search = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Payment Methods
@@ -258,7 +258,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetPaymentMethodResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetPaymentMethodResponse>> GetCustomerPaymentMethodsWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string search = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetPaymentMethodResponse>> GetCustomerPaymentMethodsWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string search = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Update Payment Method
         /// </summary>
@@ -274,7 +274,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateCustomerPaymentMethodsResponse</returns>
-        System.Threading.Tasks.Task<UpdateCustomerPaymentMethodsResponse> UpdateCustomerPaymentMethodsAsync(string id, string paymentMethodId, UpdatePaymentMethods updatePaymentMethods, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<UpdateCustomerPaymentMethodsResponse> UpdateCustomerPaymentMethodsAsync(string id, string paymentMethodId, UpdatePaymentMethods updatePaymentMethods, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Payment Method
@@ -291,7 +291,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateCustomerPaymentMethodsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateCustomerPaymentMethodsResponse>> UpdateCustomerPaymentMethodsWithHttpInfoAsync(string id, string paymentMethodId, UpdatePaymentMethods updatePaymentMethods, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<UpdateCustomerPaymentMethodsResponse>> UpdateCustomerPaymentMethodsWithHttpInfoAsync(string id, string paymentMethodId, UpdatePaymentMethods updatePaymentMethods, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -521,7 +521,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreateCustomerPaymentMethodsResponse</returns>
-        public async System.Threading.Tasks.Task<CreateCustomerPaymentMethodsResponse> CreateCustomerPaymentMethodsAsync(string id, CreateCustomerPaymentMethodsRequest createCustomerPaymentMethodsRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CreateCustomerPaymentMethodsResponse> CreateCustomerPaymentMethodsAsync(string id, CreateCustomerPaymentMethodsRequest createCustomerPaymentMethodsRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<CreateCustomerPaymentMethodsResponse> localVarResponse = await CreateCustomerPaymentMethodsWithHttpInfoAsync(id, createCustomerPaymentMethodsRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -538,7 +538,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreateCustomerPaymentMethodsResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CreateCustomerPaymentMethodsResponse>> CreateCustomerPaymentMethodsWithHttpInfoAsync(string id, CreateCustomerPaymentMethodsRequest createCustomerPaymentMethodsRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CreateCustomerPaymentMethodsResponse>> CreateCustomerPaymentMethodsWithHttpInfoAsync(string id, CreateCustomerPaymentMethodsRequest createCustomerPaymentMethodsRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -720,7 +720,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateCustomerPaymentMethodsResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateCustomerPaymentMethodsResponse> DeleteCustomerPaymentMethodsAsync(string id, string paymentMethodId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<UpdateCustomerPaymentMethodsResponse> DeleteCustomerPaymentMethodsAsync(string id, string paymentMethodId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<UpdateCustomerPaymentMethodsResponse> localVarResponse = await DeleteCustomerPaymentMethodsWithHttpInfoAsync(id, paymentMethodId, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -737,7 +737,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateCustomerPaymentMethodsResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateCustomerPaymentMethodsResponse>> DeleteCustomerPaymentMethodsWithHttpInfoAsync(string id, string paymentMethodId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateCustomerPaymentMethodsResponse>> DeleteCustomerPaymentMethodsWithHttpInfoAsync(string id, string paymentMethodId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -936,7 +936,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetPaymentMethodResponse</returns>
-        public async System.Threading.Tasks.Task<GetPaymentMethodResponse> GetCustomerPaymentMethodsAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string search = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetPaymentMethodResponse> GetCustomerPaymentMethodsAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string search = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<GetPaymentMethodResponse> localVarResponse = await GetCustomerPaymentMethodsWithHttpInfoAsync(id, acceptLanguage, xChildCompanyId, limit, next, previous, search, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -956,7 +956,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetPaymentMethodResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<GetPaymentMethodResponse>> GetCustomerPaymentMethodsWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string search = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<GetPaymentMethodResponse>> GetCustomerPaymentMethodsWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string search = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1157,7 +1157,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateCustomerPaymentMethodsResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateCustomerPaymentMethodsResponse> UpdateCustomerPaymentMethodsAsync(string id, string paymentMethodId, UpdatePaymentMethods updatePaymentMethods, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<UpdateCustomerPaymentMethodsResponse> UpdateCustomerPaymentMethodsAsync(string id, string paymentMethodId, UpdatePaymentMethods updatePaymentMethods, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<UpdateCustomerPaymentMethodsResponse> localVarResponse = await UpdateCustomerPaymentMethodsWithHttpInfoAsync(id, paymentMethodId, updatePaymentMethods, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1175,7 +1175,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateCustomerPaymentMethodsResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateCustomerPaymentMethodsResponse>> UpdateCustomerPaymentMethodsWithHttpInfoAsync(string id, string paymentMethodId, UpdatePaymentMethods updatePaymentMethods, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateCustomerPaymentMethodsResponse>> UpdateCustomerPaymentMethodsWithHttpInfoAsync(string id, string paymentMethodId, UpdatePaymentMethods updatePaymentMethods, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)

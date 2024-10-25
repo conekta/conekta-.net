@@ -78,21 +78,27 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets BillingCycleStart
         /// </summary>
-        /// <example>1677626827</example>
+        /*
+        <example>1677626827</example>
+        */
         [DataMember(Name = "billing_cycle_start", EmitDefaultValue = true)]
         public long? BillingCycleStart { get; set; }
 
         /// <summary>
         /// Gets or Sets BillingCycleEnd
         /// </summary>
-        /// <example>1677626827</example>
+        /*
+        <example>1677626827</example>
+        */
         [DataMember(Name = "billing_cycle_end", EmitDefaultValue = true)]
         public long? BillingCycleEnd { get; set; }
 
         /// <summary>
         /// Gets or Sets CanceledAt
         /// </summary>
-        /// <example>1678258162</example>
+        /*
+        <example>1678258162</example>
+        */
         [DataMember(Name = "canceled_at", EmitDefaultValue = true)]
         public long? CanceledAt { get; set; }
 
@@ -100,105 +106,135 @@ namespace Conekta.net.Model
         /// Reason for cancellation. This field appears when the subscription status is &#39;canceled&#39;.
         /// </summary>
         /// <value>Reason for cancellation. This field appears when the subscription status is &#39;canceled&#39;.</value>
-        /// <example>user_cancelation</example>
+        /*
+        <example>user_cancelation</example>
+        */
         [DataMember(Name = "canceled_reason", EmitDefaultValue = false)]
         public string CanceledReason { get; set; }
 
         /// <summary>
         /// Gets or Sets CardId
         /// </summary>
-        /// <example>src_2tKcHxhTz7xU5SymL</example>
+        /*
+        <example>src_2tKcHxhTz7xU5SymL</example>
+        */
         [DataMember(Name = "card_id", EmitDefaultValue = false)]
         public string CardId { get; set; }
 
         /// <summary>
         /// Gets or Sets ChargeId
         /// </summary>
-        /// <example>2tKcHxhTz7xU5SymL</example>
+        /*
+        <example>2tKcHxhTz7xU5SymL</example>
+        */
         [DataMember(Name = "charge_id", EmitDefaultValue = true)]
         public string ChargeId { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
-        /// <example>1677626837</example>
+        /*
+        <example>1677626837</example>
+        */
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public long CreatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets CustomerCustomReference
         /// </summary>
-        /// <example>dotnet_123456</example>
+        /*
+        <example>dotnet_123456</example>
+        */
         [DataMember(Name = "customer_custom_reference", EmitDefaultValue = false)]
         public string CustomerCustomReference { get; set; }
 
         /// <summary>
         /// Gets or Sets CustomerId
         /// </summary>
-        /// <example>cus_2tKcHxhTz7xU5SymF</example>
+        /*
+        <example>cus_2tKcHxhTz7xU5SymF</example>
+        */
         [DataMember(Name = "customer_id", EmitDefaultValue = false)]
         public string CustomerId { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>gold-plan</example>
+        /*
+        <example>gold-plan</example>
+        */
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets LastBillingCycleOrderId
         /// </summary>
-        /// <example>ord_2tSoMP7bZJbLiq4z8</example>
+        /*
+        <example>ord_2tSoMP7bZJbLiq4z8</example>
+        */
         [DataMember(Name = "last_billing_cycle_order_id", EmitDefaultValue = false)]
         public string LastBillingCycleOrderId { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
-        /// <example>subscription</example>
+        /*
+        <example>subscription</example>
+        */
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets PausedAt
         /// </summary>
-        /// <example>1678258162</example>
+        /*
+        <example>1678258162</example>
+        */
         [DataMember(Name = "paused_at", EmitDefaultValue = true)]
         public long? PausedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets PlanId
         /// </summary>
-        /// <example>plan_2tXx672QLQ68CkmMn</example>
+        /*
+        <example>plan_2tXx672QLQ68CkmMn</example>
+        */
         [DataMember(Name = "plan_id", EmitDefaultValue = false)]
         public string PlanId { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        /// <example>past_due</example>
+        /*
+        <example>past_due</example>
+        */
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
         /// <summary>
         /// Gets or Sets SubscriptionStart
         /// </summary>
-        /// <example>1677626837</example>
+        /*
+        <example>1677626837</example>
+        */
         [DataMember(Name = "subscription_start", EmitDefaultValue = false)]
         public int SubscriptionStart { get; set; }
 
         /// <summary>
         /// Gets or Sets TrialStart
         /// </summary>
-        /// <example>1677626837</example>
+        /*
+        <example>1677626837</example>
+        */
         [DataMember(Name = "trial_start", EmitDefaultValue = true)]
         public long? TrialStart { get; set; }
 
         /// <summary>
         /// Gets or Sets TrialEnd
         /// </summary>
-        /// <example>1677626837</example>
+        /*
+        <example>1677626837</example>
+        */
         [DataMember(Name = "trial_end", EmitDefaultValue = true)]
         public long? TrialEnd { get; set; }
 
@@ -246,7 +282,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

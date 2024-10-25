@@ -97,7 +97,9 @@ namespace Conekta.net.Model
         /// currency of the receiving account
         /// </summary>
         /// <value>currency of the receiving account</value>
-        /// <example>MXN</example>
+        /*
+        <example>MXN</example>
+        */
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 
@@ -105,7 +107,9 @@ namespace Conekta.net.Model
         /// Name of the account holder
         /// </summary>
         /// <value>Name of the account holder</value>
-        /// <example>Child Company A</example>
+        /*
+        <example>Child Company A</example>
+        */
         [DataMember(Name = "account_holder_name", EmitDefaultValue = false)]
         public string AccountHolderName { get; set; }
 
@@ -113,7 +117,9 @@ namespace Conekta.net.Model
         /// Name of the bank
         /// </summary>
         /// <value>Name of the bank</value>
-        /// <example>BBVA</example>
+        /*
+        <example>BBVA</example>
+        */
         [DataMember(Name = "bank", EmitDefaultValue = false)]
         public string Bank { get; set; }
 
@@ -121,7 +127,9 @@ namespace Conekta.net.Model
         /// Account number of the receiving account
         /// </summary>
         /// <value>Account number of the receiving account</value>
-        /// <example>123456789012345678</example>
+        /*
+        <example>123456789012345678</example>
+        */
         [DataMember(Name = "account_number", EmitDefaultValue = false)]
         public string AccountNumber { get; set; }
 
@@ -157,7 +165,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

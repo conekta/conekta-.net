@@ -139,7 +139,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShippingOrderResponse</returns>
-        System.Threading.Tasks.Task<ShippingOrderResponse> OrdersCreateShippingAsync(string id, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ShippingOrderResponse> OrdersCreateShippingAsync(string id, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Shipping
@@ -155,7 +155,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShippingOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ShippingOrderResponse>> OrdersCreateShippingWithHttpInfoAsync(string id, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ShippingOrderResponse>> OrdersCreateShippingWithHttpInfoAsync(string id, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete Shipping
         /// </summary>
@@ -170,7 +170,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShippingOrderResponse</returns>
-        System.Threading.Tasks.Task<ShippingOrderResponse> OrdersDeleteShippingAsync(string id, string shippingId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ShippingOrderResponse> OrdersDeleteShippingAsync(string id, string shippingId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete Shipping
@@ -186,7 +186,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShippingOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ShippingOrderResponse>> OrdersDeleteShippingWithHttpInfoAsync(string id, string shippingId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ShippingOrderResponse>> OrdersDeleteShippingWithHttpInfoAsync(string id, string shippingId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Update Shipping
         /// </summary>
@@ -202,7 +202,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShippingOrderResponse</returns>
-        System.Threading.Tasks.Task<ShippingOrderResponse> OrdersUpdateShippingAsync(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ShippingOrderResponse> OrdersUpdateShippingAsync(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Shipping
@@ -219,7 +219,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShippingOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ShippingOrderResponse>> OrdersUpdateShippingWithHttpInfoAsync(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ShippingOrderResponse>> OrdersUpdateShippingWithHttpInfoAsync(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -449,7 +449,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShippingOrderResponse</returns>
-        public async System.Threading.Tasks.Task<ShippingOrderResponse> OrdersCreateShippingAsync(string id, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ShippingOrderResponse> OrdersCreateShippingAsync(string id, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<ShippingOrderResponse> localVarResponse = await OrdersCreateShippingWithHttpInfoAsync(id, shippingRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -466,7 +466,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShippingOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ShippingOrderResponse>> OrdersCreateShippingWithHttpInfoAsync(string id, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ShippingOrderResponse>> OrdersCreateShippingWithHttpInfoAsync(string id, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -648,7 +648,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShippingOrderResponse</returns>
-        public async System.Threading.Tasks.Task<ShippingOrderResponse> OrdersDeleteShippingAsync(string id, string shippingId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ShippingOrderResponse> OrdersDeleteShippingAsync(string id, string shippingId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<ShippingOrderResponse> localVarResponse = await OrdersDeleteShippingWithHttpInfoAsync(id, shippingId, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -665,7 +665,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShippingOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ShippingOrderResponse>> OrdersDeleteShippingWithHttpInfoAsync(string id, string shippingId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ShippingOrderResponse>> OrdersDeleteShippingWithHttpInfoAsync(string id, string shippingId, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -857,7 +857,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShippingOrderResponse</returns>
-        public async System.Threading.Tasks.Task<ShippingOrderResponse> OrdersUpdateShippingAsync(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ShippingOrderResponse> OrdersUpdateShippingAsync(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<ShippingOrderResponse> localVarResponse = await OrdersUpdateShippingWithHttpInfoAsync(id, shippingId, shippingRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -875,7 +875,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShippingOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ShippingOrderResponse>> OrdersUpdateShippingWithHttpInfoAsync(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ShippingOrderResponse>> OrdersUpdateShippingWithHttpInfoAsync(string id, string shippingId, ShippingRequest shippingRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)

@@ -62,7 +62,9 @@ namespace Conekta.net.Model
         /// Type of payment method
         /// </summary>
         /// <value>Type of payment method</value>
-        /// <example>card | cash | spei</example>
+        /*
+        <example>card | cash | spei</example>
+        */
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
@@ -70,7 +72,9 @@ namespace Conekta.net.Model
         /// Token id that will be used to create a \&quot;card\&quot; type payment method. See the (subscriptions)[https://developers.conekta.com/v2.1.0/reference/createsubscription] tutorial for more information on how to tokenize cards.
         /// </summary>
         /// <value>Token id that will be used to create a \&quot;card\&quot; type payment method. See the (subscriptions)[https://developers.conekta.com/v2.1.0/reference/createsubscription] tutorial for more information on how to tokenize cards.</value>
-        /// <example>tok_32hj4g234as</example>
+        /*
+        <example>tok_32hj4g234as</example>
+        */
         [DataMember(Name = "token_id", IsRequired = true, EmitDefaultValue = true)]
         public string TokenId { get; set; }
 
@@ -102,7 +106,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

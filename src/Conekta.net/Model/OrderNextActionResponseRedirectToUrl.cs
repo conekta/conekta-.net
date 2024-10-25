@@ -47,7 +47,9 @@ namespace Conekta.net.Model
         /// pay.conekta.com/{id} Indicates the url of the Conekta component to authenticate the flow through 3DS2.
         /// </summary>
         /// <value>pay.conekta.com/{id} Indicates the url of the Conekta component to authenticate the flow through 3DS2.</value>
-        /// <example>https://pay.conekta.com/6fca054a85194c43971ecea35cc519bb</example>
+        /*
+        <example>https://pay.conekta.com/6fca054a85194c43971ecea35cc519bb</example>
+        */
         [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
@@ -55,7 +57,9 @@ namespace Conekta.net.Model
         /// Indicates the url to which the 3DS2 flow returns at the end, when the integration is redirected.
         /// </summary>
         /// <value>Indicates the url to which the 3DS2 flow returns at the end, when the integration is redirected.</value>
-        /// <example>https://my-website.com&quot;</example>
+        /*
+        <example>https://my-website.com&quot;</example>
+        */
         [DataMember(Name = "return_url", EmitDefaultValue = false)]
         public string ReturnUrl { get; set; }
 
@@ -87,7 +91,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

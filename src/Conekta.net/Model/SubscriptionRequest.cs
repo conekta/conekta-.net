@@ -58,21 +58,27 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets PlanId
         /// </summary>
-        /// <example>f84gdgf5g48r15fd21g8w424fd1</example>
+        /*
+        <example>f84gdgf5g48r15fd21g8w424fd1</example>
+        */
         [DataMember(Name = "plan_id", IsRequired = true, EmitDefaultValue = true)]
         public string PlanId { get; set; }
 
         /// <summary>
         /// Gets or Sets CardId
         /// </summary>
-        /// <example>src_2qUCNd5AyQqfPMBuV</example>
+        /*
+        <example>src_2qUCNd5AyQqfPMBuV</example>
+        */
         [DataMember(Name = "card_id", EmitDefaultValue = false)]
         public string CardId { get; set; }
 
         /// <summary>
         /// Gets or Sets TrialEnd
         /// </summary>
-        /// <example>1484040996</example>
+        /*
+        <example>1484040996</example>
+        */
         [DataMember(Name = "trial_end", EmitDefaultValue = false)]
         public int TrialEnd { get; set; }
 
@@ -105,7 +111,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -69,7 +69,9 @@ namespace Conekta.net.Model
         /// Method expiration date as unix timestamp
         /// </summary>
         /// <value>Method expiration date as unix timestamp</value>
-        /// <example>1677196303</example>
+        /*
+        <example>1677196303</example>
+        */
         [DataMember(Name = "expires_at", EmitDefaultValue = false)]
         public long ExpiresAt { get; set; }
 
@@ -84,21 +86,27 @@ namespace Conekta.net.Model
         /// Type of payment method
         /// </summary>
         /// <value>Type of payment method</value>
-        /// <example>card</example>
+        /*
+        <example>card</example>
+        */
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets TokenId
         /// </summary>
-        /// <example>tok_2897348234</example>
+        /*
+        <example>tok_2897348234</example>
+        */
         [DataMember(Name = "token_id", EmitDefaultValue = false)]
         public string TokenId { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentSourceId
         /// </summary>
-        /// <example>src_2tLkkyfMPh6v7pFry</example>
+        /*
+        <example>src_2tLkkyfMPh6v7pFry</example>
+        */
         [DataMember(Name = "payment_source_id", EmitDefaultValue = false)]
         public string PaymentSourceId { get; set; }
 
@@ -106,7 +114,9 @@ namespace Conekta.net.Model
         /// Optional, It is a value that allows identifying the security code of the card. Only for PCI merchants
         /// </summary>
         /// <value>Optional, It is a value that allows identifying the security code of the card. Only for PCI merchants</value>
-        /// <example>123</example>
+        /*
+        <example>123</example>
+        */
         [DataMember(Name = "cvc", EmitDefaultValue = false)]
         public string Cvc { get; set; }
 
@@ -114,7 +124,9 @@ namespace Conekta.net.Model
         /// Optional id sent to indicate the bank contract for recurrent card charges.
         /// </summary>
         /// <value>Optional id sent to indicate the bank contract for recurrent card charges.</value>
-        /// <example>S781317595</example>
+        /*
+        <example>S781317595</example>
+        */
         [DataMember(Name = "contract_id", EmitDefaultValue = false)]
         public string ContractId { get; set; }
 
@@ -122,7 +134,9 @@ namespace Conekta.net.Model
         /// Optional field used to capture the customer&#39;s IP address for fraud prevention and security monitoring purposes
         /// </summary>
         /// <value>Optional field used to capture the customer&#39;s IP address for fraud prevention and security monitoring purposes</value>
-        /// <example>0.0.0.0</example>
+        /*
+        <example>0.0.0.0</example>
+        */
         [DataMember(Name = "customer_ip_address", EmitDefaultValue = false)]
         public string CustomerIpAddress { get; set; }
 
@@ -160,7 +174,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

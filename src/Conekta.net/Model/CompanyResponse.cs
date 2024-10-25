@@ -80,7 +80,9 @@ namespace Conekta.net.Model
         /// The child company&#39;s unique identifier
         /// </summary>
         /// <value>The child company&#39;s unique identifier</value>
-        /// <example>6441bb27659a060465da7335</example>
+        /*
+        <example>6441bb27659a060465da7335</example>
+        */
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -88,7 +90,9 @@ namespace Conekta.net.Model
         /// The resource&#39;s creation date (unix timestamp)
         /// </summary>
         /// <value>The resource&#39;s creation date (unix timestamp)</value>
-        /// <example>1680397724</example>
+        /*
+        <example>1680397724</example>
+        */
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public long CreatedAt { get; set; }
 
@@ -96,7 +100,9 @@ namespace Conekta.net.Model
         /// The child company&#39;s name
         /// </summary>
         /// <value>The child company&#39;s name</value>
-        /// <example>Child Company A</example>
+        /*
+        <example>Child Company A</example>
+        */
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
@@ -104,7 +110,9 @@ namespace Conekta.net.Model
         /// Id of the parent company
         /// </summary>
         /// <value>Id of the parent company</value>
-        /// <example>6441bb3c62db5812e7920c31</example>
+        /*
+        <example>6441bb3c62db5812e7920c31</example>
+        */
         [DataMember(Name = "parent_company_id", EmitDefaultValue = false)]
         public string ParentCompanyId { get; set; }
 
@@ -112,7 +120,9 @@ namespace Conekta.net.Model
         /// Whether the parent company&#39;s fiscal data is to be used for liquidation and tax purposes
         /// </summary>
         /// <value>Whether the parent company&#39;s fiscal data is to be used for liquidation and tax purposes</value>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "use_parent_fiscal_data", EmitDefaultValue = true)]
         public bool UseParentFiscalData { get; set; }
 
@@ -162,7 +172,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

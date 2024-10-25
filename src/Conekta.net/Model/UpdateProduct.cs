@@ -78,21 +78,27 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /// <example>Box of Cohiba S1s</example>
+        /*
+        <example>Box of Cohiba S1s</example>
+        */
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets UnitPrice
         /// </summary>
-        /// <example>20000</example>
+        /*
+        <example>20000</example>
+        */
         [DataMember(Name = "unit_price", EmitDefaultValue = false)]
         public long UnitPrice { get; set; }
 
         /// <summary>
         /// Gets or Sets Quantity
         /// </summary>
-        /// <example>1</example>
+        /*
+        <example>1</example>
+        */
         [DataMember(Name = "quantity", EmitDefaultValue = false)]
         public int Quantity { get; set; }
 
@@ -149,24 +155,24 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Description (string) maxLength
             if (this.Description != null && this.Description.Length > 250)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Description, length must be less than 250.", new [] { "Description" });
+                yield return new ValidationResult("Invalid value for Description, length must be less than 250.", new [] { "Description" });
             }
 
             // UnitPrice (long) minimum
             if (this.UnitPrice < (long)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for UnitPrice, must be a value greater than or equal to 0.", new [] { "UnitPrice" });
+                yield return new ValidationResult("Invalid value for UnitPrice, must be a value greater than or equal to 0.", new [] { "UnitPrice" });
             }
 
             // Quantity (int) minimum
             if (this.Quantity < (int)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new [] { "Quantity" });
             }
 
             yield break;

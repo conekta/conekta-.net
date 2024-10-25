@@ -57,7 +57,9 @@ namespace Conekta.net.Model
         /// rule id
         /// </summary>
         /// <value>rule id</value>
-        /// <example>618c3f2fdb8b8da9be376af9</example>
+        /*
+        <example>618c3f2fdb8b8da9be376af9</example>
+        */
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -65,7 +67,9 @@ namespace Conekta.net.Model
         /// field to be used for the rule
         /// </summary>
         /// <value>field to be used for the rule</value>
-        /// <example>email</example>
+        /*
+        <example>email</example>
+        */
         [DataMember(Name = "field", EmitDefaultValue = false)]
         public string Field { get; set; }
 
@@ -73,7 +77,9 @@ namespace Conekta.net.Model
         /// rule creation date
         /// </summary>
         /// <value>rule creation date</value>
-        /// <example>2021-11-10T21:52:47.339Z</example>
+        /*
+        <example>2021-11-10T21:52:47.339Z</example>
+        */
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public string CreatedAt { get; set; }
 
@@ -81,7 +87,9 @@ namespace Conekta.net.Model
         /// value to be used for the rule
         /// </summary>
         /// <value>value to be used for the rule</value>
-        /// <example>email@example.com</example>
+        /*
+        <example>email@example.com</example>
+        */
         [DataMember(Name = "value", EmitDefaultValue = false)]
         public string Value { get; set; }
 
@@ -89,7 +97,9 @@ namespace Conekta.net.Model
         /// if the rule is global
         /// </summary>
         /// <value>if the rule is global</value>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "is_global", EmitDefaultValue = true)]
         public bool IsGlobal { get; set; }
 
@@ -97,7 +107,9 @@ namespace Conekta.net.Model
         /// if the rule is test
         /// </summary>
         /// <value>if the rule is test</value>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "is_test", EmitDefaultValue = true)]
         public bool IsTest { get; set; }
 
@@ -105,7 +117,9 @@ namespace Conekta.net.Model
         /// description of the rule
         /// </summary>
         /// <value>description of the rule</value>
-        /// <example>secure customer example@example.com</example>
+        /*
+        <example>secure customer example@example.com</example>
+        */
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
@@ -142,7 +156,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -59,7 +59,9 @@ namespace Conekta.net.Model
         /// Name of the account holder.
         /// </summary>
         /// <value>Name of the account holder.</value>
-        /// <example>John Doe</example>
+        /*
+        <example>John Doe</example>
+        */
         [DataMember(Name = "account_holder", EmitDefaultValue = false)]
         public string AccountHolder { get; set; }
 
@@ -67,7 +69,9 @@ namespace Conekta.net.Model
         /// Account number of the bank account.
         /// </summary>
         /// <value>Account number of the bank account.</value>
-        /// <example>012180023547896764</example>
+        /*
+        <example>012180023547896764</example>
+        */
         [DataMember(Name = "account_number", EmitDefaultValue = false)]
         public string AccountNumber { get; set; }
 
@@ -75,7 +79,9 @@ namespace Conekta.net.Model
         /// Name of the bank.
         /// </summary>
         /// <value>Name of the bank.</value>
-        /// <example>BBVA Bancomer</example>
+        /*
+        <example>BBVA Bancomer</example>
+        */
         [DataMember(Name = "bank", EmitDefaultValue = false)]
         public string Bank { get; set; }
 
@@ -83,7 +89,9 @@ namespace Conekta.net.Model
         /// Date and time of creation of the transfer.
         /// </summary>
         /// <value>Date and time of creation of the transfer.</value>
-        /// <example>1553273553</example>
+        /*
+        <example>1553273553</example>
+        */
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public long CreatedAt { get; set; }
 
@@ -91,7 +99,9 @@ namespace Conekta.net.Model
         /// Unique identifier of the transfer.
         /// </summary>
         /// <value>Unique identifier of the transfer.</value>
-        /// <example>pytmtd_2ide3qwTdDvNBosEC</example>
+        /*
+        <example>pytmtd_2ide3qwTdDvNBosEC</example>
+        */
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -99,7 +109,9 @@ namespace Conekta.net.Model
         /// Object name, which is bank_transfer_payout_method.
         /// </summary>
         /// <value>Object name, which is bank_transfer_payout_method.</value>
-        /// <example>bank_transfer_payout_method</example>
+        /*
+        <example>bank_transfer_payout_method</example>
+        */
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
@@ -107,7 +119,9 @@ namespace Conekta.net.Model
         /// Unique identifier of the payee.
         /// </summary>
         /// <value>Unique identifier of the payee.</value>
-        /// <example>payee_2icdDewRxDENBos85</example>
+        /*
+        <example>payee_2icdDewRxDENBos85</example>
+        */
         [DataMember(Name = "payee_id", EmitDefaultValue = false)]
         public string PayeeId { get; set; }
 
@@ -115,7 +129,9 @@ namespace Conekta.net.Model
         /// Type of the payee.
         /// </summary>
         /// <value>Type of the payee.</value>
-        /// <example>BankTransferPayoutMethod</example>
+        /*
+        <example>BankTransferPayoutMethod</example>
+        */
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
@@ -153,7 +169,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

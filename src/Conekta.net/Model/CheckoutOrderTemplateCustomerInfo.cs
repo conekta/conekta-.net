@@ -72,11 +72,11 @@ namespace Conekta.net.Model
             }
             set
             {
-                if (value.GetType() == typeof(CustomerInfo))
+                if (value.GetType() == typeof(CustomerInfo) || value is CustomerInfo)
                 {
                     this._actualInstance = value;
                 }
-                else if (value.GetType() == typeof(CustomerInfoJustCustomerId))
+                else if (value.GetType() == typeof(CustomerInfoJustCustomerId) || value is CustomerInfoJustCustomerId)
                 {
                     this._actualInstance = value;
                 }

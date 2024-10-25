@@ -179,7 +179,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebhookKeyCreateResponse</returns>
-        System.Threading.Tasks.Task<WebhookKeyCreateResponse> CreateWebhookKeyAsync(string acceptLanguage = default(string), WebhookKeyRequest webhookKeyRequest = default(WebhookKeyRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WebhookKeyCreateResponse> CreateWebhookKeyAsync(string acceptLanguage = default(string), WebhookKeyRequest webhookKeyRequest = default(WebhookKeyRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Webhook Key
@@ -193,7 +193,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebhookKeyCreateResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WebhookKeyCreateResponse>> CreateWebhookKeyWithHttpInfoAsync(string acceptLanguage = default(string), WebhookKeyRequest webhookKeyRequest = default(WebhookKeyRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WebhookKeyCreateResponse>> CreateWebhookKeyWithHttpInfoAsync(string acceptLanguage = default(string), WebhookKeyRequest webhookKeyRequest = default(WebhookKeyRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete Webhook key
         /// </summary>
@@ -206,7 +206,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebhookKeyDeleteResponse</returns>
-        System.Threading.Tasks.Task<WebhookKeyDeleteResponse> DeleteWebhookKeyAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WebhookKeyDeleteResponse> DeleteWebhookKeyAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete Webhook key
@@ -220,7 +220,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebhookKeyDeleteResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WebhookKeyDeleteResponse>> DeleteWebhookKeyWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WebhookKeyDeleteResponse>> DeleteWebhookKeyWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get Webhook Key
         /// </summary>
@@ -234,7 +234,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebhookKeyResponse</returns>
-        System.Threading.Tasks.Task<WebhookKeyResponse> GetWebhookKeyAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WebhookKeyResponse> GetWebhookKeyAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Webhook Key
@@ -249,7 +249,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebhookKeyResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WebhookKeyResponse>> GetWebhookKeyWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WebhookKeyResponse>> GetWebhookKeyWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get List of Webhook Keys
         /// </summary>
@@ -266,7 +266,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetWebhookKeysResponse</returns>
-        System.Threading.Tasks.Task<GetWebhookKeysResponse> GetWebhookKeysAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetWebhookKeysResponse> GetWebhookKeysAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get List of Webhook Keys
@@ -284,7 +284,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetWebhookKeysResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetWebhookKeysResponse>> GetWebhookKeysWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetWebhookKeysResponse>> GetWebhookKeysWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Update Webhook Key
         /// </summary>
@@ -298,7 +298,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebhookKeyResponse</returns>
-        System.Threading.Tasks.Task<WebhookKeyResponse> UpdateWebhookKeyAsync(string id, string acceptLanguage = default(string), WebhookKeyUpdateRequest webhookKeyUpdateRequest = default(WebhookKeyUpdateRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WebhookKeyResponse> UpdateWebhookKeyAsync(string id, string acceptLanguage = default(string), WebhookKeyUpdateRequest webhookKeyUpdateRequest = default(WebhookKeyUpdateRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Webhook Key
@@ -313,7 +313,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebhookKeyResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WebhookKeyResponse>> UpdateWebhookKeyWithHttpInfoAsync(string id, string acceptLanguage = default(string), WebhookKeyUpdateRequest webhookKeyUpdateRequest = default(WebhookKeyUpdateRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WebhookKeyResponse>> UpdateWebhookKeyWithHttpInfoAsync(string id, string acceptLanguage = default(string), WebhookKeyUpdateRequest webhookKeyUpdateRequest = default(WebhookKeyUpdateRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -520,7 +520,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebhookKeyCreateResponse</returns>
-        public async System.Threading.Tasks.Task<WebhookKeyCreateResponse> CreateWebhookKeyAsync(string acceptLanguage = default(string), WebhookKeyRequest webhookKeyRequest = default(WebhookKeyRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WebhookKeyCreateResponse> CreateWebhookKeyAsync(string acceptLanguage = default(string), WebhookKeyRequest webhookKeyRequest = default(WebhookKeyRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<WebhookKeyCreateResponse> localVarResponse = await CreateWebhookKeyWithHttpInfoAsync(acceptLanguage, webhookKeyRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -535,7 +535,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebhookKeyCreateResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<WebhookKeyCreateResponse>> CreateWebhookKeyWithHttpInfoAsync(string acceptLanguage = default(string), WebhookKeyRequest webhookKeyRequest = default(WebhookKeyRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<WebhookKeyCreateResponse>> CreateWebhookKeyWithHttpInfoAsync(string acceptLanguage = default(string), WebhookKeyRequest webhookKeyRequest = default(WebhookKeyRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -683,7 +683,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebhookKeyDeleteResponse</returns>
-        public async System.Threading.Tasks.Task<WebhookKeyDeleteResponse> DeleteWebhookKeyAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WebhookKeyDeleteResponse> DeleteWebhookKeyAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<WebhookKeyDeleteResponse> localVarResponse = await DeleteWebhookKeyWithHttpInfoAsync(id, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -698,7 +698,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebhookKeyDeleteResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<WebhookKeyDeleteResponse>> DeleteWebhookKeyWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<WebhookKeyDeleteResponse>> DeleteWebhookKeyWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -858,7 +858,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebhookKeyResponse</returns>
-        public async System.Threading.Tasks.Task<WebhookKeyResponse> GetWebhookKeyAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WebhookKeyResponse> GetWebhookKeyAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<WebhookKeyResponse> localVarResponse = await GetWebhookKeyWithHttpInfoAsync(id, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -874,7 +874,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebhookKeyResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<WebhookKeyResponse>> GetWebhookKeyWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<WebhookKeyResponse>> GetWebhookKeyWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1056,7 +1056,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetWebhookKeysResponse</returns>
-        public async System.Threading.Tasks.Task<GetWebhookKeysResponse> GetWebhookKeysAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetWebhookKeysResponse> GetWebhookKeysAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<GetWebhookKeysResponse> localVarResponse = await GetWebhookKeysWithHttpInfoAsync(acceptLanguage, xChildCompanyId, limit, search, next, previous, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1075,7 +1075,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetWebhookKeysResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<GetWebhookKeysResponse>> GetWebhookKeysWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<GetWebhookKeysResponse>> GetWebhookKeysWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -1246,7 +1246,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebhookKeyResponse</returns>
-        public async System.Threading.Tasks.Task<WebhookKeyResponse> UpdateWebhookKeyAsync(string id, string acceptLanguage = default(string), WebhookKeyUpdateRequest webhookKeyUpdateRequest = default(WebhookKeyUpdateRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WebhookKeyResponse> UpdateWebhookKeyAsync(string id, string acceptLanguage = default(string), WebhookKeyUpdateRequest webhookKeyUpdateRequest = default(WebhookKeyUpdateRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<WebhookKeyResponse> localVarResponse = await UpdateWebhookKeyWithHttpInfoAsync(id, acceptLanguage, webhookKeyUpdateRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1262,7 +1262,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebhookKeyResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<WebhookKeyResponse>> UpdateWebhookKeyWithHttpInfoAsync(string id, string acceptLanguage = default(string), WebhookKeyUpdateRequest webhookKeyUpdateRequest = default(WebhookKeyUpdateRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<WebhookKeyResponse>> UpdateWebhookKeyWithHttpInfoAsync(string id, string acceptLanguage = default(string), WebhookKeyUpdateRequest webhookKeyUpdateRequest = default(WebhookKeyUpdateRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)

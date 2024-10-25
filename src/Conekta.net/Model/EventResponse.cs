@@ -58,42 +58,54 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
-        /// <example>1661445644</example>
+        /*
+        <example>1661445644</example>
+        */
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public long CreatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
-        /// <example>{&quot;action&quot;:&quot;ping&quot;,&quot;livemode&quot;:true}</example>
+        /*
+        <example>{&quot;action&quot;:&quot;ping&quot;,&quot;livemode&quot;:true}</example>
+        */
         [DataMember(Name = "data", EmitDefaultValue = false)]
         public Dictionary<string, Object> Data { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>6307a60c41de27127515a575</example>
+        /*
+        <example>6307a60c41de27127515a575</example>
+        */
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Livemode
         /// </summary>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "livemode", EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
-        /// <example>event</example>
+        /*
+        <example>event</example>
+        */
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        /// <example>webhook_ping</example>
+        /*
+        <example>webhook_ping</example>
+        */
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
@@ -106,7 +118,9 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets WebhookStatus
         /// </summary>
-        /// <example>successful</example>
+        /*
+        <example>successful</example>
+        */
         [DataMember(Name = "webhook_status", EmitDefaultValue = false)]
         public string WebhookStatus { get; set; }
 
@@ -144,7 +158,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

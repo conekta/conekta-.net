@@ -10,7 +10,7 @@ csharp:
 	rm -rf /docs && \
 	rm -rf src/Conekta.net/Model && \
 	docker run --rm \
-	-v ${PWD}:/local openapitools/openapi-generator-cli:v7.5.0 generate \
+	-v ${PWD}:/local openapitools/openapi-generator-cli:v7.9.0 generate \
     -i https://raw.githubusercontent.com/conekta/openapi/main/_build/api.yaml \
     -g csharp \
     -o /local \

@@ -71,21 +71,27 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Amount
         /// </summary>
-        /// <example>-15000</example>
+        /*
+        <example>-15000</example>
+        */
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
         public long Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets AuthCode
         /// </summary>
-        /// <example>867372</example>
+        /*
+        <example>867372</example>
+        */
         [DataMember(Name = "auth_code", EmitDefaultValue = false)]
         public string AuthCode { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
-        /// <example>1678226878</example>
+        /*
+        <example>1678226878</example>
+        */
         [DataMember(Name = "created_at", IsRequired = true, EmitDefaultValue = true)]
         public long CreatedAt { get; set; }
 
@@ -93,21 +99,27 @@ namespace Conekta.net.Model
         /// refund expiration date
         /// </summary>
         /// <value>refund expiration date</value>
-        /// <example>1678226878</example>
+        /*
+        <example>1678226878</example>
+        */
         [DataMember(Name = "expires_at", EmitDefaultValue = false)]
         public long ExpiresAt { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>6407b5bee1329a000175ba11</example>
+        /*
+        <example>6407b5bee1329a000175ba11</example>
+        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
-        /// <example>refund</example>
+        /*
+        <example>refund</example>
+        */
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
@@ -115,7 +127,9 @@ namespace Conekta.net.Model
         /// refund status
         /// </summary>
         /// <value>refund status</value>
-        /// <example>pending</example>
+        /*
+        <example>pending</example>
+        */
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
@@ -152,7 +166,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

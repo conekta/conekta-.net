@@ -46,14 +46,18 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets AccountCreatedAt
         /// </summary>
-        /// <example>1484040996</example>
+        /*
+        <example>1484040996</example>
+        */
         [DataMember(Name = "account_created_at", EmitDefaultValue = false)]
         public long AccountCreatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets FirstPaidAt
         /// </summary>
-        /// <example>1485151007</example>
+        /*
+        <example>1485151007</example>
+        */
         [DataMember(Name = "first_paid_at", EmitDefaultValue = false)]
         public int FirstPaidAt { get; set; }
 
@@ -85,7 +89,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

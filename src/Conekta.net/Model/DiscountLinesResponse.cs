@@ -85,7 +85,9 @@ namespace Conekta.net.Model
         /// The amount to be deducted from the total sum of all payments, in cents.
         /// </summary>
         /// <value>The amount to be deducted from the total sum of all payments, in cents.</value>
-        /// <example>500</example>
+        /*
+        <example>500</example>
+        */
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
         public long Amount { get; set; }
 
@@ -93,7 +95,9 @@ namespace Conekta.net.Model
         /// Discount code.
         /// </summary>
         /// <value>Discount code.</value>
-        /// <example>123</example>
+        /*
+        <example>123</example>
+        */
         [DataMember(Name = "code", IsRequired = true, EmitDefaultValue = true)]
         public string Code { get; set; }
 
@@ -101,7 +105,9 @@ namespace Conekta.net.Model
         /// It can be &#39;loyalty&#39;, &#39;campaign&#39;, &#39;coupon&#39; o &#39;sign&#39;
         /// </summary>
         /// <value>It can be &#39;loyalty&#39;, &#39;campaign&#39;, &#39;coupon&#39; o &#39;sign&#39;</value>
-        /// <example>loyalty</example>
+        /*
+        <example>loyalty</example>
+        */
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
@@ -109,7 +115,9 @@ namespace Conekta.net.Model
         /// The discount line id
         /// </summary>
         /// <value>The discount line id</value>
-        /// <example>dis_lin_2tQQ58HPgPw7StE8z</example>
+        /*
+        <example>dis_lin_2tQQ58HPgPw7StE8z</example>
+        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
@@ -117,7 +125,9 @@ namespace Conekta.net.Model
         /// The object name
         /// </summary>
         /// <value>The object name</value>
-        /// <example>discount_line</example>
+        /*
+        <example>discount_line</example>
+        */
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
@@ -125,7 +135,9 @@ namespace Conekta.net.Model
         /// The order id
         /// </summary>
         /// <value>The order id</value>
-        /// <example>ord_2tPAmKCEJqh8RE6nY</example>
+        /*
+        <example>ord_2tPAmKCEJqh8RE6nY</example>
+        */
         [DataMember(Name = "parent_id", IsRequired = true, EmitDefaultValue = true)]
         public string ParentId { get; set; }
 
@@ -161,12 +173,12 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Amount (long) minimum
             if (this.Amount < (long)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Amount, must be a value greater than or equal to 0.", new [] { "Amount" });
+                yield return new ValidationResult("Invalid value for Amount, must be a value greater than or equal to 0.", new [] { "Amount" });
             }
 
             yield break;

@@ -30,6 +30,8 @@ docs/ChargeResponseRefundsData.md
 docs/ChargeUpdateRequest.md
 docs/ChargesApi.md
 docs/ChargesDataResponse.md
+docs/ChargesOrderResponse.md
+docs/ChargesOrderResponseAllOfData.md
 docs/Checkout.md
 docs/CheckoutOrderTemplate.md
 docs/CheckoutOrderTemplateCustomerInfo.md
@@ -268,6 +270,8 @@ src/Conekta.net/Model/ChargeResponseRefunds.cs
 src/Conekta.net/Model/ChargeResponseRefundsData.cs
 src/Conekta.net/Model/ChargeUpdateRequest.cs
 src/Conekta.net/Model/ChargesDataResponse.cs
+src/Conekta.net/Model/ChargesOrderResponse.cs
+src/Conekta.net/Model/ChargesOrderResponseAllOfData.cs
 src/Conekta.net/Model/Checkout.cs
 src/Conekta.net/Model/CheckoutOrderTemplate.cs
 src/Conekta.net/Model/CheckoutOrderTemplateCustomerInfo.cs

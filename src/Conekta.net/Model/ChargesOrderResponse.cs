@@ -27,35 +27,31 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// ChargeResponseRefunds
+    /// The charges associated with the order
     /// </summary>
-    [DataContract(Name = "charge_response_refunds")]
-    public partial class ChargeResponseRefunds : IValidatableObject
+    [DataContract(Name = "charges_order_response")]
+    public partial class ChargesOrderResponse : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ChargeResponseRefunds" /> class.
+        /// Initializes a new instance of the <see cref="ChargesOrderResponse" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ChargeResponseRefunds() { }
+        protected ChargesOrderResponse() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ChargeResponseRefunds" /> class.
+        /// Initializes a new instance of the <see cref="ChargesOrderResponse" /> class.
         /// </summary>
         /// <param name="hasMore">Indicates if there are more pages to be requested (required).</param>
         /// <param name="varObject">Object type, in this case is list (required).</param>
-        /// <param name="nextPageUrl">URL of the next page..</param>
-        /// <param name="previousPageUrl">Url of the previous page..</param>
-        /// <param name="data">refunds.</param>
-        public ChargeResponseRefunds(bool hasMore = default(bool), string varObject = default(string), string nextPageUrl = default(string), string previousPageUrl = default(string), List<ChargeResponseRefundsData> data = default(List<ChargeResponseRefundsData>))
+        /// <param name="data">data.</param>
+        public ChargesOrderResponse(bool hasMore = default(bool), string varObject = default(string), List<ChargesOrderResponseAllOfData> data = default(List<ChargesOrderResponseAllOfData>))
         {
             this.HasMore = hasMore;
             // to ensure "varObject" is required (not null)
             if (varObject == null)
             {
-                throw new ArgumentNullException("varObject is a required property for ChargeResponseRefunds and cannot be null");
+                throw new ArgumentNullException("varObject is a required property for ChargesOrderResponse and cannot be null");
             }
             this.Object = varObject;
-            this.NextPageUrl = nextPageUrl;
-            this.PreviousPageUrl = previousPageUrl;
             this.Data = data;
         }
 
@@ -80,31 +76,10 @@ namespace Conekta.net.Model
         public string Object { get; set; }
 
         /// <summary>
-        /// URL of the next page.
+        /// Gets or Sets Data
         /// </summary>
-        /// <value>URL of the next page.</value>
-        /*
-        <example>https://api.conekta.io/resources?limit&#x3D;10&amp;next&#x3D;chrg_1</example>
-        */
-        [DataMember(Name = "next_page_url", EmitDefaultValue = true)]
-        public string NextPageUrl { get; set; }
-
-        /// <summary>
-        /// Url of the previous page.
-        /// </summary>
-        /// <value>Url of the previous page.</value>
-        /*
-        <example>https://api.conekta.io/resources?limit&#x3D;10&amp;previous&#x3D;chrg_1</example>
-        */
-        [DataMember(Name = "previous_page_url", EmitDefaultValue = true)]
-        public string PreviousPageUrl { get; set; }
-
-        /// <summary>
-        /// refunds
-        /// </summary>
-        /// <value>refunds</value>
         [DataMember(Name = "data", EmitDefaultValue = false)]
-        public List<ChargeResponseRefundsData> Data { get; set; }
+        public List<ChargesOrderResponseAllOfData> Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -113,11 +88,9 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ChargeResponseRefunds {\n");
+            sb.Append("class ChargesOrderResponse {\n");
             sb.Append("  HasMore: ").Append(HasMore).Append("\n");
             sb.Append("  Object: ").Append(Object).Append("\n");
-            sb.Append("  NextPageUrl: ").Append(NextPageUrl).Append("\n");
-            sb.Append("  PreviousPageUrl: ").Append(PreviousPageUrl).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

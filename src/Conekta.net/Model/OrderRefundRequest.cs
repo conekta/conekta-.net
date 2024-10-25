@@ -59,14 +59,18 @@ namespace Conekta.net.Model
         /// Amount to be refunded in cents
         /// </summary>
         /// <value>Amount to be refunded in cents</value>
-        /// <example>500</example>
+        /*
+        <example>500</example>
+        */
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
         public int Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpiresAt
         /// </summary>
-        /// <example>1553273553</example>
+        /*
+        <example>1553273553</example>
+        */
         [DataMember(Name = "expires_at", EmitDefaultValue = true)]
         public long? ExpiresAt { get; set; }
 
@@ -74,7 +78,9 @@ namespace Conekta.net.Model
         /// Reason for the refund
         /// </summary>
         /// <value>Reason for the refund</value>
-        /// <example>suspected_fraud</example>
+        /*
+        <example>suspected_fraud</example>
+        */
         [DataMember(Name = "reason", IsRequired = true, EmitDefaultValue = true)]
         public string Reason { get; set; }
 
@@ -107,7 +113,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

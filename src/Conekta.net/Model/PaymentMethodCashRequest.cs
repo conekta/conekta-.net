@@ -57,14 +57,18 @@ namespace Conekta.net.Model
         /// Type of payment method
         /// </summary>
         /// <value>Type of payment method</value>
-        /// <example>card | cash | spei</example>
+        /*
+        <example>card | cash | spei</example>
+        */
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpiresAt
         /// </summary>
-        /// <example>1553273553</example>
+        /*
+        <example>1553273553</example>
+        */
         [DataMember(Name = "expires_at", EmitDefaultValue = false)]
         public long ExpiresAt { get; set; }
 
@@ -96,7 +100,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

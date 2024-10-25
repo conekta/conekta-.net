@@ -63,7 +63,9 @@ namespace Conekta.net.Model
         /// Indicates if there are more pages to be requested
         /// </summary>
         /// <value>Indicates if there are more pages to be requested</value>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "has_more", IsRequired = true, EmitDefaultValue = true)]
         public bool HasMore { get; set; }
 
@@ -71,7 +73,9 @@ namespace Conekta.net.Model
         /// Object type, in this case is list
         /// </summary>
         /// <value>Object type, in this case is list</value>
-        /// <example>list</example>
+        /*
+        <example>list</example>
+        */
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
@@ -79,7 +83,9 @@ namespace Conekta.net.Model
         /// URL of the next page.
         /// </summary>
         /// <value>URL of the next page.</value>
-        /// <example>https://api.conekta.io/resources?limit&#x3D;10&amp;next&#x3D;chrg_1</example>
+        /*
+        <example>https://api.conekta.io/resources?limit&#x3D;10&amp;next&#x3D;chrg_1</example>
+        */
         [DataMember(Name = "next_page_url", EmitDefaultValue = true)]
         public string NextPageUrl { get; set; }
 
@@ -87,7 +93,9 @@ namespace Conekta.net.Model
         /// Url of the previous page.
         /// </summary>
         /// <value>Url of the previous page.</value>
-        /// <example>https://api.conekta.io/resources?limit&#x3D;10&amp;previous&#x3D;chrg_1</example>
+        /*
+        <example>https://api.conekta.io/resources?limit&#x3D;10&amp;previous&#x3D;chrg_1</example>
+        */
         [DataMember(Name = "previous_page_url", EmitDefaultValue = true)]
         public string PreviousPageUrl { get; set; }
 
@@ -129,7 +137,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

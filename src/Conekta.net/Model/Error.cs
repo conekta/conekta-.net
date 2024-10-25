@@ -57,21 +57,27 @@ namespace Conekta.net.Model
         /// log id
         /// </summary>
         /// <value>log id</value>
-        /// <example>507f1f77bcf86cd799439011</example>
+        /*
+        <example>507f1f77bcf86cd799439011</example>
+        */
         [DataMember(Name = "log_id", EmitDefaultValue = true)]
         public string LogId { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        /// <example>authentication_error</example>
+        /*
+        <example>authentication_error</example>
+        */
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
-        /// <example>error</example>
+        /*
+        <example>error</example>
+        */
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
@@ -105,7 +111,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

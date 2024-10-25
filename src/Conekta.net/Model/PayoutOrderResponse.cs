@@ -111,7 +111,9 @@ namespace Conekta.net.Model
         /// The payout methods that are allowed for the payout order.
         /// </summary>
         /// <value>The payout methods that are allowed for the payout order.</value>
-        /// <example>[&quot;cashout&quot;]</example>
+        /*
+        <example>[&quot;cashout&quot;]</example>
+        */
         [DataMember(Name = "allowed_payout_methods", IsRequired = true, EmitDefaultValue = true)]
         public List<string> AllowedPayoutMethods { get; set; }
 
@@ -119,7 +121,9 @@ namespace Conekta.net.Model
         /// The amount of the payout order.
         /// </summary>
         /// <value>The amount of the payout order.</value>
-        /// <example>100</example>
+        /*
+        <example>100</example>
+        */
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
         public int Amount { get; set; }
 
@@ -127,7 +131,9 @@ namespace Conekta.net.Model
         /// The creation date of the payout order.
         /// </summary>
         /// <value>The creation date of the payout order.</value>
-        /// <example>1677626837</example>
+        /*
+        <example>1677626837</example>
+        */
         [DataMember(Name = "created_at", IsRequired = true, EmitDefaultValue = true)]
         public long CreatedAt { get; set; }
 
@@ -135,7 +141,9 @@ namespace Conekta.net.Model
         /// The currency in which the payout order is made.
         /// </summary>
         /// <value>The currency in which the payout order is made.</value>
-        /// <example>MXN</example>
+        /*
+        <example>MXN</example>
+        */
         [DataMember(Name = "currency", IsRequired = true, EmitDefaultValue = true)]
         public string Currency { get; set; }
 
@@ -149,7 +157,9 @@ namespace Conekta.net.Model
         /// The expiration date of the payout order.
         /// </summary>
         /// <value>The expiration date of the payout order.</value>
-        /// <example>1677626837</example>
+        /*
+        <example>1677626837</example>
+        */
         [DataMember(Name = "expires_at", EmitDefaultValue = false)]
         public long ExpiresAt { get; set; }
 
@@ -157,7 +167,9 @@ namespace Conekta.net.Model
         /// The id of the payout order.
         /// </summary>
         /// <value>The id of the payout order.</value>
-        /// <example>f2654d66-d740-457a-9a8c-f96b5196f44e</example>
+        /*
+        <example>f2654d66-d740-457a-9a8c-f96b5196f44e</example>
+        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
@@ -165,7 +177,9 @@ namespace Conekta.net.Model
         /// The live mode of the payout order.
         /// </summary>
         /// <value>The live mode of the payout order.</value>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "livemode", IsRequired = true, EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
@@ -173,7 +187,9 @@ namespace Conekta.net.Model
         /// The object of the payout order.
         /// </summary>
         /// <value>The object of the payout order.</value>
-        /// <example>payout_order</example>
+        /*
+        <example>payout_order</example>
+        */
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
@@ -181,7 +197,9 @@ namespace Conekta.net.Model
         /// The metadata of the payout order.
         /// </summary>
         /// <value>The metadata of the payout order.</value>
-        /// <example>{&quot;custom_client_id&quot;:&quot;12345&quot;}</example>
+        /*
+        <example>{&quot;custom_client_id&quot;:&quot;12345&quot;}</example>
+        */
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }
 
@@ -196,7 +214,9 @@ namespace Conekta.net.Model
         /// The reason for the payout order.
         /// </summary>
         /// <value>The reason for the payout order.</value>
-        /// <example>Payout order for the customer</example>
+        /*
+        <example>Payout order for the customer</example>
+        */
         [DataMember(Name = "reason", IsRequired = true, EmitDefaultValue = true)]
         public string Reason { get; set; }
 
@@ -204,7 +224,9 @@ namespace Conekta.net.Model
         /// The status of the payout order.
         /// </summary>
         /// <value>The status of the payout order.</value>
-        /// <example>open</example>
+        /*
+        <example>open</example>
+        */
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
@@ -212,7 +234,9 @@ namespace Conekta.net.Model
         /// The update date of the payout order.
         /// </summary>
         /// <value>The update date of the payout order.</value>
-        /// <example>1677626837</example>
+        /*
+        <example>1677626837</example>
+        */
         [DataMember(Name = "updated_at", IsRequired = true, EmitDefaultValue = true)]
         public long UpdatedAt { get; set; }
 
@@ -256,7 +280,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

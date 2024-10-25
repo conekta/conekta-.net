@@ -66,7 +66,9 @@ namespace Conekta.net.Model
         /// It is the currency in which the order will be created. It must be a valid ISO 4217 currency code.
         /// </summary>
         /// <value>It is the currency in which the order will be created. It must be a valid ISO 4217 currency code.</value>
-        /// <example>MXN</example>
+        /*
+        <example>MXN</example>
+        */
         [DataMember(Name = "currency", IsRequired = true, EmitDefaultValue = true)]
         public string Currency { get; set; }
 
@@ -87,7 +89,9 @@ namespace Conekta.net.Model
         /// It is a set of key-value pairs that you can attach to the order. It can be used to store additional information about the order in a structured format.
         /// </summary>
         /// <value>It is a set of key-value pairs that you can attach to the order. It can be used to store additional information about the order in a structured format.</value>
-        /// <example>{&quot;key&quot;:&quot;value&quot;}</example>
+        /*
+        <example>{&quot;key&quot;:&quot;value&quot;}</example>
+        */
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }
 
@@ -121,12 +125,12 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Currency (string) maxLength
             if (this.Currency != null && this.Currency.Length > 3)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Currency, length must be less than 3.", new [] { "Currency" });
+                yield return new ValidationResult("Invalid value for Currency, length must be less than 3.", new [] { "Currency" });
             }
 
             yield break;

@@ -64,21 +64,27 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Phone
         /// </summary>
-        /// <example>+525511223344</example>
+        /*
+        <example>+525511223344</example>
+        */
         [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
         /// <summary>
         /// Gets or Sets Receiver
         /// </summary>
-        /// <example>Marvin Fuller</example>
+        /*
+        <example>Marvin Fuller</example>
+        */
         [DataMember(Name = "receiver", EmitDefaultValue = false)]
         public string Receiver { get; set; }
 
         /// <summary>
         /// Gets or Sets BetweenStreets
         /// </summary>
-        /// <example>Ackerman Crescent</example>
+        /*
+        <example>Ackerman Crescent</example>
+        */
         [DataMember(Name = "between_streets", EmitDefaultValue = true)]
         public string BetweenStreets { get; set; }
 
@@ -97,21 +103,27 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Default
         /// </summary>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "default", EmitDefaultValue = true)]
         public bool Default { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>adr_1234567890</example>
+        /*
+        <example>adr_1234567890</example>
+        */
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
-        /// <example>1675715413</example>
+        /*
+        <example>1675715413</example>
+        */
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public long CreatedAt { get; set; }
 
@@ -125,14 +137,18 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
-        /// <example>shipping_contact</example>
+        /*
+        <example>shipping_contact</example>
+        */
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets Deleted
         /// </summary>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "deleted", EmitDefaultValue = true)]
         public bool Deleted { get; set; }
 
@@ -173,7 +189,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

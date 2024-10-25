@@ -78,7 +78,9 @@ namespace Conekta.net.Model
         /// Tax ID of the company
         /// </summary>
         /// <value>Tax ID of the company</value>
-        /// <example>XAXX010101000</example>
+        /*
+        <example>XAXX010101000</example>
+        */
         [DataMember(Name = "tax_id", EmitDefaultValue = false)]
         public string TaxId { get; set; }
 
@@ -86,7 +88,9 @@ namespace Conekta.net.Model
         /// Legal name of the company
         /// </summary>
         /// <value>Legal name of the company</value>
-        /// <example>Child Company A</example>
+        /*
+        <example>Child Company A</example>
+        */
         [DataMember(Name = "legal_entity_name", EmitDefaultValue = false)]
         public string LegalEntityName { get; set; }
 
@@ -94,7 +98,9 @@ namespace Conekta.net.Model
         /// Business type of the company
         /// </summary>
         /// <value>Business type of the company</value>
-        /// <example>persona_moral</example>
+        /*
+        <example>persona_moral</example>
+        */
         [DataMember(Name = "business_type", EmitDefaultValue = false)]
         public string BusinessType { get; set; }
 
@@ -102,7 +108,9 @@ namespace Conekta.net.Model
         /// Phone number of the company
         /// </summary>
         /// <value>Phone number of the company</value>
-        /// <example>5555555555</example>
+        /*
+        <example>5555555555</example>
+        */
         [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
@@ -152,7 +160,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

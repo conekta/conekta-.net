@@ -95,14 +95,18 @@ namespace Conekta.net.Model
         /// Indicates if the checkout can not expire.
         /// </summary>
         /// <value>Indicates if the checkout can not expire.</value>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "can_not_expire", EmitDefaultValue = true)]
         public bool CanNotExpire { get; set; }
 
         /// <summary>
         /// Gets or Sets EmailsSent
         /// </summary>
-        /// <example>0</example>
+        /*
+        <example>0</example>
+        */
         [DataMember(Name = "emails_sent", EmitDefaultValue = false)]
         public int EmailsSent { get; set; }
 
@@ -116,7 +120,9 @@ namespace Conekta.net.Model
         /// Date and time when the checkout expires.
         /// </summary>
         /// <value>Date and time when the checkout expires.</value>
-        /// <example>1675715413</example>
+        /*
+        <example>1675715413</example>
+        */
         [DataMember(Name = "expires_at", EmitDefaultValue = false)]
         public long ExpiresAt { get; set; }
 
@@ -124,7 +130,9 @@ namespace Conekta.net.Model
         /// URL to redirect the customer to if the payment process fails.
         /// </summary>
         /// <value>URL to redirect the customer to if the payment process fails.</value>
-        /// <example>https://example.com/failure</example>
+        /*
+        <example>https://example.com/failure</example>
+        */
         [DataMember(Name = "failure_url", EmitDefaultValue = false)]
         public string FailureUrl { get; set; }
 
@@ -132,28 +140,36 @@ namespace Conekta.net.Model
         /// Indicates if the checkout forces the 3DS flow.
         /// </summary>
         /// <value>Indicates if the checkout forces the 3DS flow.</value>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "force_3ds_flow", EmitDefaultValue = true)]
         public bool Force3dsFlow { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>524f9d2f-8c2e-4e64-a33d-6006711a91bd</example>
+        /*
+        <example>524f9d2f-8c2e-4e64-a33d-6006711a91bd</example>
+        */
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Livemode
         /// </summary>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "livemode", EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
         /// <summary>
         /// Gets or Sets Metadata
         /// </summary>
-        /// <example>{&quot;key&quot;:&quot;value&quot;}</example>
+        /*
+        <example>{&quot;key&quot;:&quot;value&quot;}</example>
+        */
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }
 
@@ -161,7 +177,9 @@ namespace Conekta.net.Model
         /// Indicates if the checkout allows monthly installments.
         /// </summary>
         /// <value>Indicates if the checkout allows monthly installments.</value>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "monthly_installments_enabled", EmitDefaultValue = true)]
         public bool MonthlyInstallmentsEnabled { get; set; }
 
@@ -175,14 +193,18 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /// <example>tok-2toNoPZpJgRU4PvgZ</example>
+        /*
+        <example>tok-2toNoPZpJgRU4PvgZ</example>
+        */
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets NeedsShippingContact
         /// </summary>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "needs_shipping_contact", EmitDefaultValue = true)]
         public bool NeedsShippingContact { get; set; }
 
@@ -190,7 +212,9 @@ namespace Conekta.net.Model
         /// Indicates the type of object, in this case checkout.
         /// </summary>
         /// <value>Indicates the type of object, in this case checkout.</value>
-        /// <example>checkout</example>
+        /*
+        <example>checkout</example>
+        */
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
@@ -198,7 +222,9 @@ namespace Conekta.net.Model
         /// Indicates if the checkout allows on demand payments.
         /// </summary>
         /// <value>Indicates if the checkout allows on demand payments.</value>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "on_demand_enabled", EmitDefaultValue = true)]
         public bool OnDemandEnabled { get; set; }
 
@@ -206,7 +232,9 @@ namespace Conekta.net.Model
         /// Number of payments that have been paid.
         /// </summary>
         /// <value>Number of payments that have been paid.</value>
-        /// <example>0</example>
+        /*
+        <example>0</example>
+        */
         [DataMember(Name = "paid_payments_count", EmitDefaultValue = false)]
         public int PaidPaymentsCount { get; set; }
 
@@ -214,14 +242,18 @@ namespace Conekta.net.Model
         /// Indicates if the checkout is recurrent.
         /// </summary>
         /// <value>Indicates if the checkout is recurrent.</value>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "recurrent", EmitDefaultValue = true)]
         public bool Recurrent { get; set; }
 
         /// <summary>
         /// Gets or Sets SmsSent
         /// </summary>
-        /// <example>0</example>
+        /*
+        <example>0</example>
+        */
         [DataMember(Name = "sms_sent", EmitDefaultValue = false)]
         public int SmsSent { get; set; }
 
@@ -229,7 +261,9 @@ namespace Conekta.net.Model
         /// Date and time when the checkout starts.
         /// </summary>
         /// <value>Date and time when the checkout starts.</value>
-        /// <example>1675715413</example>
+        /*
+        <example>1675715413</example>
+        */
         [DataMember(Name = "starts_at", EmitDefaultValue = false)]
         public long StartsAt { get; set; }
 
@@ -237,7 +271,9 @@ namespace Conekta.net.Model
         /// Status of the checkout.
         /// </summary>
         /// <value>Status of the checkout.</value>
-        /// <example>Issued</example>
+        /*
+        <example>Issued</example>
+        */
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
@@ -245,7 +281,9 @@ namespace Conekta.net.Model
         /// URL to redirect the customer to after the payment process is completed.
         /// </summary>
         /// <value>URL to redirect the customer to after the payment process is completed.</value>
-        /// <example>https://example.com/success</example>
+        /*
+        <example>https://example.com/success</example>
+        */
         [DataMember(Name = "success_url", EmitDefaultValue = false)]
         public string SuccessUrl { get; set; }
 
@@ -253,7 +291,9 @@ namespace Conekta.net.Model
         /// Type of checkout.
         /// </summary>
         /// <value>Type of checkout.</value>
-        /// <example>Integration</example>
+        /*
+        <example>Integration</example>
+        */
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
@@ -306,7 +346,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

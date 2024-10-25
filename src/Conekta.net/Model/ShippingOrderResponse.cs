@@ -64,7 +64,9 @@ namespace Conekta.net.Model
         /// Shipping amount in cents
         /// </summary>
         /// <value>Shipping amount in cents</value>
-        /// <example>100</example>
+        /*
+        <example>100</example>
+        */
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
         public long Amount { get; set; }
 
@@ -72,7 +74,9 @@ namespace Conekta.net.Model
         /// Carrier name for the shipment
         /// </summary>
         /// <value>Carrier name for the shipment</value>
-        /// <example>FEDEX</example>
+        /*
+        <example>FEDEX</example>
+        */
         [DataMember(Name = "carrier", EmitDefaultValue = false)]
         public string Carrier { get; set; }
 
@@ -80,7 +84,9 @@ namespace Conekta.net.Model
         /// Tracking number can be used to track the shipment
         /// </summary>
         /// <value>Tracking number can be used to track the shipment</value>
-        /// <example>TRACK123</example>
+        /*
+        <example>TRACK123</example>
+        */
         [DataMember(Name = "tracking_number", EmitDefaultValue = false)]
         public string TrackingNumber { get; set; }
 
@@ -88,7 +94,9 @@ namespace Conekta.net.Model
         /// Method of shipment
         /// </summary>
         /// <value>Method of shipment</value>
-        /// <example>Same day</example>
+        /*
+        <example>Same day</example>
+        */
         [DataMember(Name = "method", EmitDefaultValue = false)]
         public string Method { get; set; }
 
@@ -96,7 +104,9 @@ namespace Conekta.net.Model
         /// Hash where the user can send additional information for each &#39;shipping&#39;.
         /// </summary>
         /// <value>Hash where the user can send additional information for each &#39;shipping&#39;.</value>
-        /// <example>{key&#x3D;value}</example>
+        /*
+        <example>{key&#x3D;value}</example>
+        */
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }
 
@@ -152,12 +162,12 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Amount (long) minimum
             if (this.Amount < (long)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Amount, must be a value greater than or equal to 0.", new [] { "Amount" });
+                yield return new ValidationResult("Invalid value for Amount, must be a value greater than or equal to 0.", new [] { "Amount" });
             }
 
             yield break;

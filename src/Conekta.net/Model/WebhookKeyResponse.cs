@@ -57,7 +57,9 @@ namespace Conekta.net.Model
         /// Unique identifier of the webhook key
         /// </summary>
         /// <value>Unique identifier of the webhook key</value>
-        /// <example>62730ba6fb7dfd6a712f118e</example>
+        /*
+        <example>62730ba6fb7dfd6a712f118e</example>
+        */
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -65,7 +67,9 @@ namespace Conekta.net.Model
         /// Indicates if the webhook key is active
         /// </summary>
         /// <value>Indicates if the webhook key is active</value>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "active", EmitDefaultValue = true)]
         public bool Active { get; set; }
 
@@ -73,7 +77,9 @@ namespace Conekta.net.Model
         /// Unix timestamp in seconds with the creation date of the webhook key
         /// </summary>
         /// <value>Unix timestamp in seconds with the creation date of the webhook key</value>
-        /// <example>1577836800</example>
+        /*
+        <example>1577836800</example>
+        */
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public long CreatedAt { get; set; }
 
@@ -88,7 +94,9 @@ namespace Conekta.net.Model
         /// Public key to be used in the webhook
         /// </summary>
         /// <value>Public key to be used in the webhook</value>
-        /// <example>-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqULpUc6D6mSAq5a0yLY/\noOjd1mWm6q+QI8y/FI4STr2F+XgKeNnMxSqnyFrHtKQ/ut4Zi45WFnJLfEQL7aW5\n67yE2dWyo6GaL7yZUfLC0Y3sHPGzaGtvDF36ISW7LliYNoMiA3Bx5/1Sr0G23pGW\n0Mp8IO1Nlz0sJWuU/d7zCz/UN6cl9g/BP4eaQ7deS56YuWcj5sTlwqFTlwN12kpA\nIzMZ7gnvYQnZTpPny5lben6QEuxTvZcPApcyOweiESjMnXfkfWOyuYtgMrbsU6oL\nA6sWa6j0pePW7AYeBqB4tyAlenkCSqzHg8bMk5Bm7hiT6I9Pls774lJbnOYmmuNE\n8QIDAQAB\n-----END PUBLIC KEY-----\n</example>
+        /*
+        <example>-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqULpUc6D6mSAq5a0yLY/\noOjd1mWm6q+QI8y/FI4STr2F+XgKeNnMxSqnyFrHtKQ/ut4Zi45WFnJLfEQL7aW5\n67yE2dWyo6GaL7yZUfLC0Y3sHPGzaGtvDF36ISW7LliYNoMiA3Bx5/1Sr0G23pGW\n0Mp8IO1Nlz0sJWuU/d7zCz/UN6cl9g/BP4eaQ7deS56YuWcj5sTlwqFTlwN12kpA\nIzMZ7gnvYQnZTpPny5lben6QEuxTvZcPApcyOweiESjMnXfkfWOyuYtgMrbsU6oL\nA6sWa6j0pePW7AYeBqB4tyAlenkCSqzHg8bMk5Bm7hiT6I9Pls774lJbnOYmmuNE\n8QIDAQAB\n-----END PUBLIC KEY-----\n</example>
+        */
         [DataMember(Name = "public_key", EmitDefaultValue = false)]
         public string PublicKey { get; set; }
 
@@ -96,7 +104,9 @@ namespace Conekta.net.Model
         /// Indicates if the webhook key is in live mode
         /// </summary>
         /// <value>Indicates if the webhook key is in live mode</value>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "livemode", EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
@@ -104,7 +114,9 @@ namespace Conekta.net.Model
         /// Object name, value is webhook_key
         /// </summary>
         /// <value>Object name, value is webhook_key</value>
-        /// <example>webhook_key</example>
+        /*
+        <example>webhook_key</example>
+        */
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
@@ -141,7 +153,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

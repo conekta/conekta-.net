@@ -50,7 +50,9 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Code
         /// </summary>
-        /// <example>conekta.errors.authentication.missing_key</example>
+        /*
+        <example>conekta.errors.authentication.missing_key</example>
+        */
         [DataMember(Name = "code", EmitDefaultValue = false)]
         public string Code { get; set; }
 
@@ -63,14 +65,18 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Message
         /// </summary>
-        /// <example>Acceso no autorizado.</example>
+        /*
+        <example>Acceso no autorizado.</example>
+        */
         [DataMember(Name = "message", EmitDefaultValue = false)]
         public string Message { get; set; }
 
         /// <summary>
         /// Gets or Sets DebugMessage
         /// </summary>
-        /// <example>Please include your access key in your request.</example>
+        /*
+        <example>Please include your access key in your request.</example>
+        */
         [DataMember(Name = "debug_message", EmitDefaultValue = false)]
         public string DebugMessage { get; set; }
 
@@ -104,7 +110,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

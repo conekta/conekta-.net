@@ -188,7 +188,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiKeyCreateResponse</returns>
-        System.Threading.Tasks.Task<ApiKeyCreateResponse> CreateApiKeyAsync(ApiKeyRequest apiKeyRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiKeyCreateResponse> CreateApiKeyAsync(ApiKeyRequest apiKeyRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Api Key
@@ -203,7 +203,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApiKeyCreateResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ApiKeyCreateResponse>> CreateApiKeyWithHttpInfoAsync(ApiKeyRequest apiKeyRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ApiKeyCreateResponse>> CreateApiKeyWithHttpInfoAsync(ApiKeyRequest apiKeyRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete Api Key
         /// </summary>
@@ -216,7 +216,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeleteApiKeysResponse</returns>
-        System.Threading.Tasks.Task<DeleteApiKeysResponse> DeleteApiKeyAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DeleteApiKeysResponse> DeleteApiKeyAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete Api Key
@@ -230,7 +230,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeleteApiKeysResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeleteApiKeysResponse>> DeleteApiKeyWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DeleteApiKeysResponse>> DeleteApiKeyWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get Api Key
         /// </summary>
@@ -244,7 +244,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiKeyResponse</returns>
-        System.Threading.Tasks.Task<ApiKeyResponse> GetApiKeyAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiKeyResponse> GetApiKeyAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Api Key
@@ -259,7 +259,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApiKeyResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ApiKeyResponse>> GetApiKeyWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ApiKeyResponse>> GetApiKeyWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get list of Api Keys
         /// </summary>
@@ -276,7 +276,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetApiKeysResponse</returns>
-        System.Threading.Tasks.Task<GetApiKeysResponse> GetApiKeysAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string search = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetApiKeysResponse> GetApiKeysAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string search = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get list of Api Keys
@@ -294,7 +294,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetApiKeysResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetApiKeysResponse>> GetApiKeysWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string search = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetApiKeysResponse>> GetApiKeysWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string search = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Update Api Key
         /// </summary>
@@ -308,7 +308,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiKeyResponse</returns>
-        System.Threading.Tasks.Task<ApiKeyResponse> UpdateApiKeyAsync(string id, string acceptLanguage = default(string), ApiKeyUpdateRequest apiKeyUpdateRequest = default(ApiKeyUpdateRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiKeyResponse> UpdateApiKeyAsync(string id, string acceptLanguage = default(string), ApiKeyUpdateRequest apiKeyUpdateRequest = default(ApiKeyUpdateRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Api Key
@@ -323,7 +323,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApiKeyResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ApiKeyResponse>> UpdateApiKeyWithHttpInfoAsync(string id, string acceptLanguage = default(string), ApiKeyUpdateRequest apiKeyUpdateRequest = default(ApiKeyUpdateRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ApiKeyResponse>> UpdateApiKeyWithHttpInfoAsync(string id, string acceptLanguage = default(string), ApiKeyUpdateRequest apiKeyUpdateRequest = default(ApiKeyUpdateRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -543,7 +543,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiKeyCreateResponse</returns>
-        public async System.Threading.Tasks.Task<ApiKeyCreateResponse> CreateApiKeyAsync(ApiKeyRequest apiKeyRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ApiKeyCreateResponse> CreateApiKeyAsync(ApiKeyRequest apiKeyRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<ApiKeyCreateResponse> localVarResponse = await CreateApiKeyWithHttpInfoAsync(apiKeyRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -559,7 +559,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApiKeyCreateResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ApiKeyCreateResponse>> CreateApiKeyWithHttpInfoAsync(ApiKeyRequest apiKeyRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ApiKeyCreateResponse>> CreateApiKeyWithHttpInfoAsync(ApiKeyRequest apiKeyRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'apiKeyRequest' is set
             if (apiKeyRequest == null)
@@ -717,7 +717,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeleteApiKeysResponse</returns>
-        public async System.Threading.Tasks.Task<DeleteApiKeysResponse> DeleteApiKeyAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DeleteApiKeysResponse> DeleteApiKeyAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<DeleteApiKeysResponse> localVarResponse = await DeleteApiKeyWithHttpInfoAsync(id, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -732,7 +732,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeleteApiKeysResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<DeleteApiKeysResponse>> DeleteApiKeyWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<DeleteApiKeysResponse>> DeleteApiKeyWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -892,7 +892,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiKeyResponse</returns>
-        public async System.Threading.Tasks.Task<ApiKeyResponse> GetApiKeyAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ApiKeyResponse> GetApiKeyAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<ApiKeyResponse> localVarResponse = await GetApiKeyWithHttpInfoAsync(id, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -908,7 +908,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApiKeyResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ApiKeyResponse>> GetApiKeyWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ApiKeyResponse>> GetApiKeyWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1090,7 +1090,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetApiKeysResponse</returns>
-        public async System.Threading.Tasks.Task<GetApiKeysResponse> GetApiKeysAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string search = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetApiKeysResponse> GetApiKeysAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string search = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<GetApiKeysResponse> localVarResponse = await GetApiKeysWithHttpInfoAsync(acceptLanguage, xChildCompanyId, limit, next, previous, search, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1109,7 +1109,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetApiKeysResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<GetApiKeysResponse>> GetApiKeysWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string search = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<GetApiKeysResponse>> GetApiKeysWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string search = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -1280,7 +1280,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiKeyResponse</returns>
-        public async System.Threading.Tasks.Task<ApiKeyResponse> UpdateApiKeyAsync(string id, string acceptLanguage = default(string), ApiKeyUpdateRequest apiKeyUpdateRequest = default(ApiKeyUpdateRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ApiKeyResponse> UpdateApiKeyAsync(string id, string acceptLanguage = default(string), ApiKeyUpdateRequest apiKeyUpdateRequest = default(ApiKeyUpdateRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<ApiKeyResponse> localVarResponse = await UpdateApiKeyWithHttpInfoAsync(id, acceptLanguage, apiKeyUpdateRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1296,7 +1296,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApiKeyResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ApiKeyResponse>> UpdateApiKeyWithHttpInfoAsync(string id, string acceptLanguage = default(string), ApiKeyUpdateRequest apiKeyUpdateRequest = default(ApiKeyUpdateRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<ApiKeyResponse>> UpdateApiKeyWithHttpInfoAsync(string id, string acceptLanguage = default(string), ApiKeyUpdateRequest apiKeyUpdateRequest = default(ApiKeyUpdateRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)

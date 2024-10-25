@@ -70,7 +70,9 @@ namespace Conekta.net.Model
         /// The amount to be collected for tax in cents
         /// </summary>
         /// <value>The amount to be collected for tax in cents</value>
-        /// <example>100</example>
+        /*
+        <example>100</example>
+        */
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
         public long Amount { get; set; }
 
@@ -78,35 +80,45 @@ namespace Conekta.net.Model
         /// description or tax&#39;s name
         /// </summary>
         /// <value>description or tax&#39;s name</value>
-        /// <example>testing</example>
+        /*
+        <example>testing</example>
+        */
         [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets Metadata
         /// </summary>
-        /// <example>{key&#x3D;value}</example>
+        /*
+        <example>{key&#x3D;value}</example>
+        */
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>tax_lin_2tQ8dC5mg1UADmVPo</example>
+        /*
+        <example>tax_lin_2tQ8dC5mg1UADmVPo</example>
+        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
-        /// <example>tax_line</example>
+        /*
+        <example>tax_line</example>
+        */
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets ParentId
         /// </summary>
-        /// <example>ord_2tPAmKCEJqh8RE6nY</example>
+        /*
+        <example>ord_2tPAmKCEJqh8RE6nY</example>
+        */
         [DataMember(Name = "parent_id", EmitDefaultValue = false)]
         public string ParentId { get; set; }
 
@@ -142,18 +154,18 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Amount (long) minimum
             if (this.Amount < (long)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Amount, must be a value greater than or equal to 0.", new [] { "Amount" });
+                yield return new ValidationResult("Invalid value for Amount, must be a value greater than or equal to 0.", new [] { "Amount" });
             }
 
             // Description (string) minLength
             if (this.Description != null && this.Description.Length < 2)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Description, length must be greater than 2.", new [] { "Description" });
+                yield return new ValidationResult("Invalid value for Description, length must be greater than 2.", new [] { "Description" });
             }
 
             yield break;

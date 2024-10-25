@@ -62,70 +62,90 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Deleted
         /// </summary>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "deleted", EmitDefaultValue = true)]
         public bool? Deleted { get; set; }
 
         /// <summary>
         /// Gets or Sets DevelopmentEnabled
         /// </summary>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "development_enabled", EmitDefaultValue = true)]
         public bool DevelopmentEnabled { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>6307a60c41de27127515a575</example>
+        /*
+        <example>6307a60c41de27127515a575</example>
+        */
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Livemode
         /// </summary>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "livemode", EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
-        /// <example>event</example>
+        /*
+        <example>event</example>
+        */
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets ProductionEnabled
         /// </summary>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "production_enabled", EmitDefaultValue = true)]
         public bool ProductionEnabled { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        /// <example>listening</example>
+        /*
+        <example>listening</example>
+        */
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
         /// <summary>
         /// Gets or Sets SubscribedEvents
         /// </summary>
-        /// <example>[&quot;charge.created&quot;,&quot;charge.paid&quot;,&quot;charge.under_fraud_review&quot;,&quot;charge.fraudulent&quot;,&quot;charge.refunded&quot;,&quot;charge.preauthorized&quot;,&quot;charge.declined&quot;,&quot;charge.canceled&quot;,&quot;charge.reversed&quot;,&quot;charge.pending_confirmation&quot;]</example>
+        /*
+        <example>[&quot;charge.created&quot;,&quot;charge.paid&quot;,&quot;charge.under_fraud_review&quot;,&quot;charge.fraudulent&quot;,&quot;charge.refunded&quot;,&quot;charge.preauthorized&quot;,&quot;charge.declined&quot;,&quot;charge.canceled&quot;,&quot;charge.reversed&quot;,&quot;charge.pending_confirmation&quot;]</example>
+        */
         [DataMember(Name = "subscribed_events", EmitDefaultValue = false)]
         public List<string> SubscribedEvents { get; set; }
 
         /// <summary>
         /// Gets or Sets Synchronous
         /// </summary>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "synchronous", EmitDefaultValue = true)]
         public bool Synchronous { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
-        /// <example>https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval</example>
+        /*
+        <example>https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval</example>
+        */
         [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
@@ -165,7 +185,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

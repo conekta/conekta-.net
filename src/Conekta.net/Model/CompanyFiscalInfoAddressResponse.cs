@@ -82,7 +82,9 @@ namespace Conekta.net.Model
         /// Street Address
         /// </summary>
         /// <value>Street Address</value>
-        /// <example>Calle 13</example>
+        /*
+        <example>Calle 13</example>
+        */
         [DataMember(Name = "street1", EmitDefaultValue = false)]
         public string Street1 { get; set; }
 
@@ -90,7 +92,9 @@ namespace Conekta.net.Model
         /// Colonia
         /// </summary>
         /// <value>Colonia</value>
-        /// <example>Navarte</example>
+        /*
+        <example>Navarte</example>
+        */
         [DataMember(Name = "street2", EmitDefaultValue = false)]
         public string Street2 { get; set; }
 
@@ -98,7 +102,9 @@ namespace Conekta.net.Model
         /// City
         /// </summary>
         /// <value>City</value>
-        /// <example>Cuauhtémoc</example>
+        /*
+        <example>Cuauhtémoc</example>
+        */
         [DataMember(Name = "city", EmitDefaultValue = false)]
         public string City { get; set; }
 
@@ -106,7 +112,9 @@ namespace Conekta.net.Model
         /// State
         /// </summary>
         /// <value>State</value>
-        /// <example>Ciudad de México</example>
+        /*
+        <example>Ciudad de México</example>
+        */
         [DataMember(Name = "state", EmitDefaultValue = false)]
         public string State { get; set; }
 
@@ -114,7 +122,9 @@ namespace Conekta.net.Model
         /// Country
         /// </summary>
         /// <value>Country</value>
-        /// <example>MX</example>
+        /*
+        <example>MX</example>
+        */
         [DataMember(Name = "country", EmitDefaultValue = false)]
         public string Country { get; set; }
 
@@ -122,7 +132,9 @@ namespace Conekta.net.Model
         /// Postal code
         /// </summary>
         /// <value>Postal code</value>
-        /// <example>3072</example>
+        /*
+        <example>3072</example>
+        */
         [DataMember(Name = "postal_code", EmitDefaultValue = false)]
         public string PostalCode { get; set; }
 
@@ -130,7 +142,9 @@ namespace Conekta.net.Model
         /// Street number
         /// </summary>
         /// <value>Street number</value>
-        /// <example>123</example>
+        /*
+        <example>123</example>
+        */
         [DataMember(Name = "external_number", EmitDefaultValue = false)]
         public string ExternalNumber { get; set; }
 
@@ -138,7 +152,9 @@ namespace Conekta.net.Model
         /// Unit / apartment number
         /// </summary>
         /// <value>Unit / apartment number</value>
-        /// <example>123</example>
+        /*
+        <example>123</example>
+        */
         [DataMember(Name = "internal_number", EmitDefaultValue = false)]
         public string InternalNumber { get; set; }
 
@@ -177,7 +193,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

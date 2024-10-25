@@ -51,7 +51,9 @@ namespace Conekta.net.Model
         /// Blacklist rule id
         /// </summary>
         /// <value>Blacklist rule id</value>
-        /// <example>2fw8EWJusiRrxdPzT</example>
+        /*
+        <example>2fw8EWJusiRrxdPzT</example>
+        */
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -59,7 +61,9 @@ namespace Conekta.net.Model
         /// field used for blacklists rule
         /// </summary>
         /// <value>field used for blacklists rule</value>
-        /// <example>email</example>
+        /*
+        <example>email</example>
+        */
         [DataMember(Name = "field", EmitDefaultValue = false)]
         public string Field { get; set; }
 
@@ -67,7 +71,9 @@ namespace Conekta.net.Model
         /// value used for blacklists rule
         /// </summary>
         /// <value>value used for blacklists rule</value>
-        /// <example>email@example.com</example>
+        /*
+        <example>email@example.com</example>
+        */
         [DataMember(Name = "value", EmitDefaultValue = false)]
         public string Value { get; set; }
 
@@ -75,7 +81,9 @@ namespace Conekta.net.Model
         /// use an description for blacklisted rule
         /// </summary>
         /// <value>use an description for blacklisted rule</value>
-        /// <example>secure customer example@example.com</example>
+        /*
+        <example>secure customer example@example.com</example>
+        */
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
@@ -109,7 +117,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

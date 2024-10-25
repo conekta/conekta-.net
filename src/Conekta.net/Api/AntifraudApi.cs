@@ -186,7 +186,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BlacklistRuleResponse</returns>
-        System.Threading.Tasks.Task<BlacklistRuleResponse> CreateRuleBlacklistAsync(CreateRiskRulesData createRiskRulesData, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<BlacklistRuleResponse> CreateRuleBlacklistAsync(CreateRiskRulesData createRiskRulesData, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create blacklisted rule
@@ -200,7 +200,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BlacklistRuleResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BlacklistRuleResponse>> CreateRuleBlacklistWithHttpInfoAsync(CreateRiskRulesData createRiskRulesData, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<BlacklistRuleResponse>> CreateRuleBlacklistWithHttpInfoAsync(CreateRiskRulesData createRiskRulesData, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Create whitelisted rule
         /// </summary>
@@ -213,7 +213,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WhitelistlistRuleResponse</returns>
-        System.Threading.Tasks.Task<WhitelistlistRuleResponse> CreateRuleWhitelistAsync(string acceptLanguage = default(string), CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WhitelistlistRuleResponse> CreateRuleWhitelistAsync(string acceptLanguage = default(string), CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create whitelisted rule
@@ -227,7 +227,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WhitelistlistRuleResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WhitelistlistRuleResponse>> CreateRuleWhitelistWithHttpInfoAsync(string acceptLanguage = default(string), CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WhitelistlistRuleResponse>> CreateRuleWhitelistWithHttpInfoAsync(string acceptLanguage = default(string), CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete blacklisted rule
         /// </summary>
@@ -241,7 +241,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeletedBlacklistRuleResponse</returns>
-        System.Threading.Tasks.Task<DeletedBlacklistRuleResponse> DeleteRuleBlacklistAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DeletedBlacklistRuleResponse> DeleteRuleBlacklistAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete blacklisted rule
@@ -256,7 +256,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeletedBlacklistRuleResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeletedBlacklistRuleResponse>> DeleteRuleBlacklistWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DeletedBlacklistRuleResponse>> DeleteRuleBlacklistWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete whitelisted rule
         /// </summary>
@@ -270,7 +270,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeletedWhitelistRuleResponse</returns>
-        System.Threading.Tasks.Task<DeletedWhitelistRuleResponse> DeleteRuleWhitelistAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DeletedWhitelistRuleResponse> DeleteRuleWhitelistAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete whitelisted rule
@@ -285,7 +285,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeletedWhitelistRuleResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeletedWhitelistRuleResponse>> DeleteRuleWhitelistWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DeletedWhitelistRuleResponse>> DeleteRuleWhitelistWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get list of blacklisted rules
         /// </summary>
@@ -297,7 +297,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RiskRulesList</returns>
-        System.Threading.Tasks.Task<RiskRulesList> GetRuleBlacklistAsync(string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<RiskRulesList> GetRuleBlacklistAsync(string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get list of blacklisted rules
@@ -310,7 +310,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RiskRulesList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RiskRulesList>> GetRuleBlacklistWithHttpInfoAsync(string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<RiskRulesList>> GetRuleBlacklistWithHttpInfoAsync(string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get a list of whitelisted rules
         /// </summary>
@@ -322,7 +322,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RiskRulesList</returns>
-        System.Threading.Tasks.Task<RiskRulesList> GetRuleWhitelistAsync(string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<RiskRulesList> GetRuleWhitelistAsync(string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get a list of whitelisted rules
@@ -335,7 +335,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RiskRulesList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RiskRulesList>> GetRuleWhitelistWithHttpInfoAsync(string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<RiskRulesList>> GetRuleWhitelistWithHttpInfoAsync(string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -548,7 +548,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BlacklistRuleResponse</returns>
-        public async System.Threading.Tasks.Task<BlacklistRuleResponse> CreateRuleBlacklistAsync(CreateRiskRulesData createRiskRulesData, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<BlacklistRuleResponse> CreateRuleBlacklistAsync(CreateRiskRulesData createRiskRulesData, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<BlacklistRuleResponse> localVarResponse = await CreateRuleBlacklistWithHttpInfoAsync(createRiskRulesData, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -563,7 +563,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BlacklistRuleResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<BlacklistRuleResponse>> CreateRuleBlacklistWithHttpInfoAsync(CreateRiskRulesData createRiskRulesData, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<BlacklistRuleResponse>> CreateRuleBlacklistWithHttpInfoAsync(CreateRiskRulesData createRiskRulesData, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'createRiskRulesData' is set
             if (createRiskRulesData == null)
@@ -712,7 +712,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WhitelistlistRuleResponse</returns>
-        public async System.Threading.Tasks.Task<WhitelistlistRuleResponse> CreateRuleWhitelistAsync(string acceptLanguage = default(string), CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WhitelistlistRuleResponse> CreateRuleWhitelistAsync(string acceptLanguage = default(string), CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<WhitelistlistRuleResponse> localVarResponse = await CreateRuleWhitelistWithHttpInfoAsync(acceptLanguage, createRiskRulesData, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -727,7 +727,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WhitelistlistRuleResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<WhitelistlistRuleResponse>> CreateRuleWhitelistWithHttpInfoAsync(string acceptLanguage = default(string), CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<WhitelistlistRuleResponse>> CreateRuleWhitelistWithHttpInfoAsync(string acceptLanguage = default(string), CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -882,7 +882,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeletedBlacklistRuleResponse</returns>
-        public async System.Threading.Tasks.Task<DeletedBlacklistRuleResponse> DeleteRuleBlacklistAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DeletedBlacklistRuleResponse> DeleteRuleBlacklistAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<DeletedBlacklistRuleResponse> localVarResponse = await DeleteRuleBlacklistWithHttpInfoAsync(id, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -898,7 +898,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeletedBlacklistRuleResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<DeletedBlacklistRuleResponse>> DeleteRuleBlacklistWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<DeletedBlacklistRuleResponse>> DeleteRuleBlacklistWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1062,7 +1062,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeletedWhitelistRuleResponse</returns>
-        public async System.Threading.Tasks.Task<DeletedWhitelistRuleResponse> DeleteRuleWhitelistAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DeletedWhitelistRuleResponse> DeleteRuleWhitelistAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<DeletedWhitelistRuleResponse> localVarResponse = await DeleteRuleWhitelistWithHttpInfoAsync(id, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1078,7 +1078,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeletedWhitelistRuleResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<DeletedWhitelistRuleResponse>> DeleteRuleWhitelistWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<DeletedWhitelistRuleResponse>> DeleteRuleWhitelistWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1225,7 +1225,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RiskRulesList</returns>
-        public async System.Threading.Tasks.Task<RiskRulesList> GetRuleBlacklistAsync(string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<RiskRulesList> GetRuleBlacklistAsync(string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<RiskRulesList> localVarResponse = await GetRuleBlacklistWithHttpInfoAsync(acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1239,7 +1239,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RiskRulesList)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<RiskRulesList>> GetRuleBlacklistWithHttpInfoAsync(string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<RiskRulesList>> GetRuleBlacklistWithHttpInfoAsync(string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -1375,7 +1375,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RiskRulesList</returns>
-        public async System.Threading.Tasks.Task<RiskRulesList> GetRuleWhitelistAsync(string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<RiskRulesList> GetRuleWhitelistAsync(string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<RiskRulesList> localVarResponse = await GetRuleWhitelistWithHttpInfoAsync(acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1389,7 +1389,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RiskRulesList)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<RiskRulesList>> GetRuleWhitelistWithHttpInfoAsync(string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<RiskRulesList>> GetRuleWhitelistWithHttpInfoAsync(string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();

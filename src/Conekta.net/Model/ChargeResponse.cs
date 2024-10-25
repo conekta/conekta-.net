@@ -35,6 +35,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ChargeResponse" /> class.
         /// </summary>
+        /// <param name="agreement">Agreement ID.</param>
         /// <param name="amount">amount.</param>
         /// <param name="channel">channel.</param>
         /// <param name="createdAt">createdAt.</param>
@@ -50,11 +51,13 @@ namespace Conekta.net.Model
         /// <param name="orderId">Order ID.</param>
         /// <param name="paidAt">Payment date.</param>
         /// <param name="paymentMethod">paymentMethod.</param>
+        /// <param name="productType">Product type, e.g. bbva_cash_in, cash_in, pespay_cash_in, etc..</param>
         /// <param name="referenceId">Reference ID of the charge.</param>
         /// <param name="refunds">refunds.</param>
         /// <param name="status">status.</param>
-        public ChargeResponse(int amount = default(int), ChargeResponseChannel channel = default(ChargeResponseChannel), long createdAt = default(long), string currency = default(string), string customerId = default(string), string description = default(string), string deviceFingerprint = default(string), string failureCode = default(string), string failureMessage = default(string), string id = default(string), bool livemode = default(bool), string varObject = default(string), string orderId = default(string), long? paidAt = default(long?), ChargeResponsePaymentMethod paymentMethod = default(ChargeResponsePaymentMethod), string referenceId = default(string), ChargeResponseRefunds refunds = default(ChargeResponseRefunds), string status = default(string))
+        public ChargeResponse(string agreement = default(string), int amount = default(int), ChargeResponseChannel channel = default(ChargeResponseChannel), long createdAt = default(long), string currency = default(string), string customerId = default(string), string description = default(string), string deviceFingerprint = default(string), string failureCode = default(string), string failureMessage = default(string), string id = default(string), bool livemode = default(bool), string varObject = default(string), string orderId = default(string), long? paidAt = default(long?), ChargeResponsePaymentMethod paymentMethod = default(ChargeResponsePaymentMethod), string productType = default(string), string referenceId = default(string), ChargeResponseRefunds refunds = default(ChargeResponseRefunds), string status = default(string))
         {
+            this.Agreement = agreement;
             this.Amount = amount;
             this.Channel = channel;
             this.CreatedAt = createdAt;
@@ -70,15 +73,28 @@ namespace Conekta.net.Model
             this.OrderId = orderId;
             this.PaidAt = paidAt;
             this.PaymentMethod = paymentMethod;
+            this.ProductType = productType;
             this.ReferenceId = referenceId;
             this.Refunds = refunds;
             this.Status = status;
         }
 
         /// <summary>
+        /// Agreement ID
+        /// </summary>
+        /// <value>Agreement ID</value>
+        /*
+        <example>agreement_2tN73UdUSNrYRPD9r</example>
+        */
+        [DataMember(Name = "agreement", EmitDefaultValue = false)]
+        public string Agreement { get; set; }
+
+        /// <summary>
         /// Gets or Sets Amount
         /// </summary>
-        /// <example>4321</example>
+        /*
+        <example>4321</example>
+        */
         [DataMember(Name = "amount", EmitDefaultValue = false)]
         public int Amount { get; set; }
 
@@ -91,14 +107,18 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
-        /// <example>1676386026</example>
+        /*
+        <example>1676386026</example>
+        */
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public long CreatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets Currency
         /// </summary>
-        /// <example>MXN</example>
+        /*
+        <example>MXN</example>
+        */
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 
@@ -111,28 +131,36 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        /// <example>Payment from order</example>
+        /*
+        <example>Payment from order</example>
+        */
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets DeviceFingerprint
         /// </summary>
-        /// <example>6FR3chaU4Y1nGAW5NAGd1rcjAKa142Ba</example>
+        /*
+        <example>6FR3chaU4Y1nGAW5NAGd1rcjAKa142Ba</example>
+        */
         [DataMember(Name = "device_fingerprint", EmitDefaultValue = false)]
         public string DeviceFingerprint { get; set; }
 
         /// <summary>
         /// Gets or Sets FailureCode
         /// </summary>
-        /// <example>suspected_fraud</example>
+        /*
+        <example>suspected_fraud</example>
+        */
         [DataMember(Name = "failure_code", EmitDefaultValue = false)]
         public string FailureCode { get; set; }
 
         /// <summary>
         /// Gets or Sets FailureMessage
         /// </summary>
-        /// <example>Este cargo ha sido declinado porque el comportamiento del comprador es sospechoso.</example>
+        /*
+        <example>Este cargo ha sido declinado porque el comportamiento del comprador es sospechoso.</example>
+        */
         [DataMember(Name = "failure_message", EmitDefaultValue = false)]
         public string FailureMessage { get; set; }
 
@@ -140,7 +168,9 @@ namespace Conekta.net.Model
         /// Charge ID
         /// </summary>
         /// <value>Charge ID</value>
-        /// <example>63efa757cf65380001aec040</example>
+        /*
+        <example>63efa757cf65380001aec040</example>
+        */
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -148,14 +178,18 @@ namespace Conekta.net.Model
         /// Whether the charge was made in live mode or not
         /// </summary>
         /// <value>Whether the charge was made in live mode or not</value>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "livemode", EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
-        /// <example>charge</example>
+        /*
+        <example>charge</example>
+        */
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
@@ -163,7 +197,9 @@ namespace Conekta.net.Model
         /// Order ID
         /// </summary>
         /// <value>Order ID</value>
-        /// <example>ord_2tN73UdUSNrYRPD9r</example>
+        /*
+        <example>ord_2tN73UdUSNrYRPD9r</example>
+        */
         [DataMember(Name = "order_id", EmitDefaultValue = false)]
         public string OrderId { get; set; }
 
@@ -171,7 +207,9 @@ namespace Conekta.net.Model
         /// Payment date
         /// </summary>
         /// <value>Payment date</value>
-        /// <example>1676390742</example>
+        /*
+        <example>1676390742</example>
+        */
         [DataMember(Name = "paid_at", EmitDefaultValue = true)]
         public long? PaidAt { get; set; }
 
@@ -182,10 +220,22 @@ namespace Conekta.net.Model
         public ChargeResponsePaymentMethod PaymentMethod { get; set; }
 
         /// <summary>
+        /// Product type, e.g. bbva_cash_in, cash_in, pespay_cash_in, etc.
+        /// </summary>
+        /// <value>Product type, e.g. bbva_cash_in, cash_in, pespay_cash_in, etc.</value>
+        /*
+        <example>bbva_cash_in</example>
+        */
+        [DataMember(Name = "product_type", EmitDefaultValue = false)]
+        public string ProductType { get; set; }
+
+        /// <summary>
         /// Reference ID of the charge
         /// </summary>
         /// <value>Reference ID of the charge</value>
-        /// <example>ref_2tN73UdUSNrYRPD9r</example>
+        /*
+        <example>ref_2tN73UdUSNrYRPD9r</example>
+        */
         [DataMember(Name = "reference_id", EmitDefaultValue = true)]
         public string ReferenceId { get; set; }
 
@@ -198,7 +248,9 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        /// <example>pending_payment</example>
+        /*
+        <example>pending_payment</example>
+        */
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
@@ -210,6 +262,7 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class ChargeResponse {\n");
+            sb.Append("  Agreement: ").Append(Agreement).Append("\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
             sb.Append("  Channel: ").Append(Channel).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
@@ -225,6 +278,7 @@ namespace Conekta.net.Model
             sb.Append("  OrderId: ").Append(OrderId).Append("\n");
             sb.Append("  PaidAt: ").Append(PaidAt).Append("\n");
             sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
+            sb.Append("  ProductType: ").Append(ProductType).Append("\n");
             sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
             sb.Append("  Refunds: ").Append(Refunds).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
@@ -246,7 +300,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

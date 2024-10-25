@@ -1,4 +1,4 @@
-# Conekta.net.Model.ChargeResponse
+# Conekta.net.Model.ChargesOrderResponseAllOfData
 
 ## Properties
 

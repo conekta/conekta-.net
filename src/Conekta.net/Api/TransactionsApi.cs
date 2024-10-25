@@ -115,7 +115,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransactionResponse</returns>
-        System.Threading.Tasks.Task<TransactionResponse> GetTransactionAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TransactionResponse> GetTransactionAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get transaction
@@ -130,7 +130,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransactionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransactionResponse>> GetTransactionWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TransactionResponse>> GetTransactionWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get List transactions
         /// </summary>
@@ -150,7 +150,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetTransactionsResponse</returns>
-        System.Threading.Tasks.Task<GetTransactionsResponse> GetTransactionsAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string id = default(string), string chargeId = default(string), string type = default(string), string currency = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetTransactionsResponse> GetTransactionsAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string id = default(string), string chargeId = default(string), string type = default(string), string currency = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get List transactions
@@ -171,7 +171,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetTransactionsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetTransactionsResponse>> GetTransactionsWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string id = default(string), string chargeId = default(string), string type = default(string), string currency = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetTransactionsResponse>> GetTransactionsWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string id = default(string), string chargeId = default(string), string type = default(string), string currency = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -390,7 +390,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransactionResponse</returns>
-        public async System.Threading.Tasks.Task<TransactionResponse> GetTransactionAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TransactionResponse> GetTransactionAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<TransactionResponse> localVarResponse = await GetTransactionWithHttpInfoAsync(id, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -406,7 +406,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransactionResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<TransactionResponse>> GetTransactionWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<TransactionResponse>> GetTransactionWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -609,7 +609,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetTransactionsResponse</returns>
-        public async System.Threading.Tasks.Task<GetTransactionsResponse> GetTransactionsAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string id = default(string), string chargeId = default(string), string type = default(string), string currency = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetTransactionsResponse> GetTransactionsAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string id = default(string), string chargeId = default(string), string type = default(string), string currency = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Conekta.net.Client.ApiResponse<GetTransactionsResponse> localVarResponse = await GetTransactionsWithHttpInfoAsync(acceptLanguage, xChildCompanyId, limit, next, previous, id, chargeId, type, currency, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -631,7 +631,7 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetTransactionsResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<GetTransactionsResponse>> GetTransactionsWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string id = default(string), string chargeId = default(string), string type = default(string), string currency = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<GetTransactionsResponse>> GetTransactionsWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string next = default(string), string previous = default(string), string id = default(string), string chargeId = default(string), string type = default(string), string currency = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();

@@ -67,7 +67,9 @@ namespace Conekta.net.Model
         /// Indicates if the api key is active
         /// </summary>
         /// <value>Indicates if the api key is active</value>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "active", EmitDefaultValue = true)]
         public bool Active { get; set; }
 
@@ -75,7 +77,9 @@ namespace Conekta.net.Model
         /// Unix timestamp in seconds of when the api key was created
         /// </summary>
         /// <value>Unix timestamp in seconds of when the api key was created</value>
-        /// <example>1684167881</example>
+        /*
+        <example>1684167881</example>
+        */
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public long CreatedAt { get; set; }
 
@@ -83,7 +87,9 @@ namespace Conekta.net.Model
         /// Unix timestamp in seconds of when the api key was last updated
         /// </summary>
         /// <value>Unix timestamp in seconds of when the api key was last updated</value>
-        /// <example>1684167923</example>
+        /*
+        <example>1684167923</example>
+        */
         [DataMember(Name = "updated_at", EmitDefaultValue = false)]
         public long UpdatedAt { get; set; }
 
@@ -98,7 +104,9 @@ namespace Conekta.net.Model
         /// A name or brief explanation of what this api key is used for
         /// </summary>
         /// <value>A name or brief explanation of what this api key is used for</value>
-        /// <example>online store</example>
+        /*
+        <example>online store</example>
+        */
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
@@ -106,7 +114,9 @@ namespace Conekta.net.Model
         /// Unique identifier of the api key
         /// </summary>
         /// <value>Unique identifier of the api key</value>
-        /// <example>64625cc9f3e02c00163f5e4d</example>
+        /*
+        <example>64625cc9f3e02c00163f5e4d</example>
+        */
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
@@ -114,7 +124,9 @@ namespace Conekta.net.Model
         /// Indicates if the api key is in production
         /// </summary>
         /// <value>Indicates if the api key is in production</value>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "livemode", EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
@@ -122,7 +134,9 @@ namespace Conekta.net.Model
         /// Indicates if the api key was deleted
         /// </summary>
         /// <value>Indicates if the api key was deleted</value>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "deleted", EmitDefaultValue = true)]
         public bool Deleted { get; set; }
 
@@ -130,7 +144,9 @@ namespace Conekta.net.Model
         /// Object name, value is &#39;api_key&#39;
         /// </summary>
         /// <value>Object name, value is &#39;api_key&#39;</value>
-        /// <example>api_key</example>
+        /*
+        <example>api_key</example>
+        */
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
@@ -138,7 +154,9 @@ namespace Conekta.net.Model
         /// The first few characters of the authentication_token
         /// </summary>
         /// <value>The first few characters of the authentication_token</value>
-        /// <example>key_rp</example>
+        /*
+        <example>key_rp</example>
+        */
         [DataMember(Name = "prefix", EmitDefaultValue = false)]
         public string Prefix { get; set; }
 
@@ -146,7 +164,9 @@ namespace Conekta.net.Model
         /// Indicates if the api key is private or public
         /// </summary>
         /// <value>Indicates if the api key is private or public</value>
-        /// <example>private</example>
+        /*
+        <example>private</example>
+        */
         [DataMember(Name = "role", EmitDefaultValue = false)]
         public string Role { get; set; }
 
@@ -154,7 +174,9 @@ namespace Conekta.net.Model
         /// It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place.
         /// </summary>
         /// <value>It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place.</value>
-        /// <example>key_rpHzxufNgjFCdprEEFZRTKi</example>
+        /*
+        <example>key_rpHzxufNgjFCdprEEFZRTKi</example>
+        */
         [DataMember(Name = "authentication_token", EmitDefaultValue = false)]
         public string AuthenticationToken { get; set; }
 
@@ -196,7 +218,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

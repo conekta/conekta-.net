@@ -112,21 +112,27 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets AllowedPaymentMethods
         /// </summary>
-        /// <example>[&quot;cash&quot;,&quot;card&quot;,&quot;bank_transfer&quot;]</example>
+        /*
+        <example>[&quot;cash&quot;,&quot;card&quot;,&quot;bank_transfer&quot;]</example>
+        */
         [DataMember(Name = "allowed_payment_methods", EmitDefaultValue = false)]
         public List<string> AllowedPaymentMethods { get; set; }
 
         /// <summary>
         /// Gets or Sets CanNotExpire
         /// </summary>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "can_not_expire", EmitDefaultValue = true)]
         public bool CanNotExpire { get; set; }
 
         /// <summary>
         /// Gets or Sets EmailsSent
         /// </summary>
-        /// <example>0</example>
+        /*
+        <example>0</example>
+        */
         [DataMember(Name = "emails_sent", EmitDefaultValue = false)]
         public int EmailsSent { get; set; }
 
@@ -139,56 +145,72 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets ExpiresAt
         /// </summary>
-        /// <example>1680397724</example>
+        /*
+        <example>1680397724</example>
+        */
         [DataMember(Name = "expires_at", EmitDefaultValue = false)]
         public long ExpiresAt { get; set; }
 
         /// <summary>
         /// Gets or Sets FailureUrl
         /// </summary>
-        /// <example>https://pay.conekta.com/failure</example>
+        /*
+        <example>https://pay.conekta.com/failure</example>
+        */
         [DataMember(Name = "failure_url", EmitDefaultValue = false)]
         public string FailureUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets Force3dsFlow
         /// </summary>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "force_3ds_flow", EmitDefaultValue = true)]
         public bool Force3dsFlow { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>b0bf16c4-18b9-445e-ba24-01604f329dbf</example>
+        /*
+        <example>b0bf16c4-18b9-445e-ba24-01604f329dbf</example>
+        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Livemode
         /// </summary>
-        /// <example>true</example>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "livemode", IsRequired = true, EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
         /// <summary>
         /// Gets or Sets Metadata
         /// </summary>
-        /// <example>{&quot;key&quot;:&quot;value&quot;}</example>
+        /*
+        <example>{&quot;key&quot;:&quot;value&quot;}</example>
+        */
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }
 
         /// <summary>
         /// Gets or Sets MonthlyInstallmentsEnabled
         /// </summary>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "monthly_installments_enabled", EmitDefaultValue = true)]
         public bool MonthlyInstallmentsEnabled { get; set; }
 
         /// <summary>
         /// Gets or Sets MonthlyInstallmentsOptions
         /// </summary>
-        /// <example>[3,6,12]</example>
+        /*
+        <example>[3,6,12]</example>
+        */
         [DataMember(Name = "monthly_installments_options", EmitDefaultValue = false)]
         public List<int> MonthlyInstallmentsOptions { get; set; }
 
@@ -196,91 +218,117 @@ namespace Conekta.net.Model
         /// Reason for charge
         /// </summary>
         /// <value>Reason for charge</value>
-        /// <example>Payment Link Name 1594138857</example>
+        /*
+        <example>Payment Link Name 1594138857</example>
+        */
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets NeedsShippingContact
         /// </summary>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "needs_shipping_contact", EmitDefaultValue = true)]
         public bool NeedsShippingContact { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
-        /// <example>checkout</example>
+        /*
+        <example>checkout</example>
+        */
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets PaidPaymentsCount
         /// </summary>
-        /// <example>0</example>
+        /*
+        <example>0</example>
+        */
         [DataMember(Name = "paid_payments_count", EmitDefaultValue = false)]
         public int PaidPaymentsCount { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentsLimitCount
         /// </summary>
-        /// <example>5</example>
+        /*
+        <example>5</example>
+        */
         [DataMember(Name = "payments_limit_count", EmitDefaultValue = true)]
         public int? PaymentsLimitCount { get; set; }
 
         /// <summary>
         /// Gets or Sets Recurrent
         /// </summary>
-        /// <example>false</example>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "recurrent", EmitDefaultValue = true)]
         public bool Recurrent { get; set; }
 
         /// <summary>
         /// Gets or Sets Slug
         /// </summary>
-        /// <example>b0bf16c418b9445eba2401604f329dbf</example>
+        /*
+        <example>b0bf16c418b9445eba2401604f329dbf</example>
+        */
         [DataMember(Name = "slug", EmitDefaultValue = false)]
         public string Slug { get; set; }
 
         /// <summary>
         /// Gets or Sets SmsSent
         /// </summary>
-        /// <example>0</example>
+        /*
+        <example>0</example>
+        */
         [DataMember(Name = "sms_sent", EmitDefaultValue = false)]
         public int SmsSent { get; set; }
 
         /// <summary>
         /// Gets or Sets StartsAt
         /// </summary>
-        /// <example>1677650400</example>
+        /*
+        <example>1677650400</example>
+        */
         [DataMember(Name = "starts_at", EmitDefaultValue = false)]
         public int StartsAt { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        /// <example>Issued</example>
+        /*
+        <example>Issued</example>
+        */
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
         /// <summary>
         /// Gets or Sets SuccessUrl
         /// </summary>
-        /// <example>https://pay.conekta.com/success</example>
+        /*
+        <example>https://pay.conekta.com/success</example>
+        */
         [DataMember(Name = "success_url", EmitDefaultValue = false)]
         public string SuccessUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        /// <example>PaymentLink</example>
+        /*
+        <example>PaymentLink</example>
+        */
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
-        /// <example>https://pay.conekta.com/link/b0bf16c418b9445eba2401604f329dbf</example>
+        /*
+        <example>https://pay.conekta.com/link/b0bf16c418b9445eba2401604f329dbf</example>
+        */
         [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
@@ -335,7 +383,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

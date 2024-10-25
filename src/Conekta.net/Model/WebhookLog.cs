@@ -56,49 +56,63 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets FailedAttempts
         /// </summary>
-        /// <example>10</example>
+        /*
+        <example>10</example>
+        */
         [DataMember(Name = "failed_attempts", EmitDefaultValue = false)]
         public int FailedAttempts { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>webhl_2svd2sh6GbqzyWBNZ</example>
+        /*
+        <example>webhl_2svd2sh6GbqzyWBNZ</example>
+        */
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets LastAttemptedAt
         /// </summary>
-        /// <example>1669651274</example>
+        /*
+        <example>1669651274</example>
+        */
         [DataMember(Name = "last_attempted_at", EmitDefaultValue = false)]
         public int LastAttemptedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets LastHttpResponseStatus
         /// </summary>
-        /// <example>200</example>
+        /*
+        <example>200</example>
+        */
         [DataMember(Name = "last_http_response_status", EmitDefaultValue = false)]
         public int LastHttpResponseStatus { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
-        /// <example>webhook_log</example>
+        /*
+        <example>webhook_log</example>
+        */
         [DataMember(Name = "object", EmitDefaultValue = false)]
         public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets ResponseData
         /// </summary>
-        /// <example>{&quot;amount&quot;:3000,&quot;payable&quot;:true}</example>
+        /*
+        <example>{&quot;amount&quot;:3000,&quot;payable&quot;:true}</example>
+        */
         [DataMember(Name = "response_data", EmitDefaultValue = false)]
         public Dictionary<string, Object> ResponseData { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
-        /// <example>https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval</example>
+        /*
+        <example>https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval</example>
+        */
         [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
@@ -135,7 +149,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }
