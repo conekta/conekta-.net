@@ -87,7 +87,7 @@ namespace Conekta.net.Api
         /// <returns>ApiResponse of ChargeOrderResponse</returns>
         ApiResponse<ChargeOrderResponse> OrdersCreateChargeWithHttpInfo(string id, ChargeRequest chargeRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Create charges
         /// </summary>
         /// <remarks>
         /// Create charges for an existing orden
@@ -102,7 +102,7 @@ namespace Conekta.net.Api
         ChargesOrderResponse OrdersCreateCharges(string id, ChargeRequest chargeRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Create charges
         /// </summary>
         /// <remarks>
         /// Create charges for an existing orden
@@ -217,7 +217,7 @@ namespace Conekta.net.Api
         /// <returns>Task of ApiResponse (ChargeOrderResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<ChargeOrderResponse>> OrdersCreateChargeWithHttpInfoAsync(string id, ChargeRequest chargeRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Create charges
         /// </summary>
         /// <remarks>
         /// Create charges for an existing orden
@@ -233,7 +233,7 @@ namespace Conekta.net.Api
         System.Threading.Tasks.Task<ChargesOrderResponse> OrdersCreateChargesAsync(string id, ChargeRequest chargeRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Create charges
         /// </summary>
         /// <remarks>
         /// Create charges for an existing orden
@@ -809,7 +809,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        ///  Create charges for an existing orden
+        /// Create charges Create charges for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -825,7 +825,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        ///  Create charges for an existing orden
+        /// Create charges Create charges for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -907,7 +907,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        ///  Create charges for an existing orden
+        /// Create charges Create charges for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
@@ -924,7 +924,7 @@ namespace Conekta.net.Api
         }
 
         /// <summary>
-        ///  Create charges for an existing orden
+        /// Create charges Create charges for an existing orden
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>

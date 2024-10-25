@@ -42,16 +42,18 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="type">type.</param>
         /// <param name="varObject">varObject (required).</param>
+        /// <param name="agreement">Agreement ID.</param>
         /// <param name="authCode">authCode.</param>
         /// <param name="cashierId">cashierId.</param>
         /// <param name="reference">reference.</param>
         /// <param name="barcodeUrl">barcodeUrl.</param>
         /// <param name="expiresAt">expiresAt.</param>
+        /// <param name="productType">Product type, e.g. bbva_cash_in, cash_in, pespay_cash_in, etc..</param>
         /// <param name="serviceName">serviceName.</param>
         /// <param name="store">store.</param>
         /// <param name="storeName">storeName.</param>
         /// <param name="customerIpAddress">customerIpAddress.</param>
-        public PaymentMethodCash(string type = default(string), string varObject = default(string), int? authCode = default(int?), string cashierId = default(string), string reference = default(string), string barcodeUrl = default(string), long expiresAt = default(long), string serviceName = default(string), string store = default(string), string storeName = default(string), string customerIpAddress = default(string))
+        public PaymentMethodCash(string type = default(string), string varObject = default(string), string agreement = default(string), int? authCode = default(int?), string cashierId = default(string), string reference = default(string), string barcodeUrl = default(string), long expiresAt = default(long), string productType = default(string), string serviceName = default(string), string store = default(string), string storeName = default(string), string customerIpAddress = default(string))
         {
             // to ensure "varObject" is required (not null)
             if (varObject == null)
@@ -60,11 +62,13 @@ namespace Conekta.net.Model
             }
             this.Object = varObject;
             this.Type = type;
+            this.Agreement = agreement;
             this.AuthCode = authCode;
             this.CashierId = cashierId;
             this.Reference = reference;
             this.BarcodeUrl = barcodeUrl;
             this.ExpiresAt = expiresAt;
+            this.ProductType = productType;
             this.ServiceName = serviceName;
             this.Store = store;
             this.StoreName = storeName;
@@ -85,6 +89,16 @@ namespace Conekta.net.Model
         */
         [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
+
+        /// <summary>
+        /// Agreement ID
+        /// </summary>
+        /// <value>Agreement ID</value>
+        /*
+        <example>agreement_2tN73UdUSNrYRPD9r</example>
+        */
+        [DataMember(Name = "agreement", EmitDefaultValue = false)]
+        public string Agreement { get; set; }
 
         /// <summary>
         /// Gets or Sets AuthCode
@@ -132,6 +146,16 @@ namespace Conekta.net.Model
         public long ExpiresAt { get; set; }
 
         /// <summary>
+        /// Product type, e.g. bbva_cash_in, cash_in, pespay_cash_in, etc.
+        /// </summary>
+        /// <value>Product type, e.g. bbva_cash_in, cash_in, pespay_cash_in, etc.</value>
+        /*
+        <example>bbva_cash_in</example>
+        */
+        [DataMember(Name = "product_type", EmitDefaultValue = false)]
+        public string ProductType { get; set; }
+
+        /// <summary>
         /// Gets or Sets ServiceName
         /// </summary>
         /*
@@ -177,11 +201,13 @@ namespace Conekta.net.Model
             sb.Append("class PaymentMethodCash {\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  Agreement: ").Append(Agreement).Append("\n");
             sb.Append("  AuthCode: ").Append(AuthCode).Append("\n");
             sb.Append("  CashierId: ").Append(CashierId).Append("\n");
             sb.Append("  Reference: ").Append(Reference).Append("\n");
             sb.Append("  BarcodeUrl: ").Append(BarcodeUrl).Append("\n");
             sb.Append("  ExpiresAt: ").Append(ExpiresAt).Append("\n");
+            sb.Append("  ProductType: ").Append(ProductType).Append("\n");
             sb.Append("  ServiceName: ").Append(ServiceName).Append("\n");
             sb.Append("  Store: ").Append(Store).Append("\n");
             sb.Append("  StoreName: ").Append(StoreName).Append("\n");

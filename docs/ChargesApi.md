@@ -6,7 +6,7 @@ All URIs are relative to *https://api.conekta.io*
 |--------|--------------|-------------|
 | [**GetCharges**](ChargesApi.md#getcharges) | **GET** /charges | Get A List of Charges |
 | [**OrdersCreateCharge**](ChargesApi.md#orderscreatecharge) | **POST** /orders/{id}/charges | Create charge |
-| [**OrdersCreateCharges**](ChargesApi.md#orderscreatecharges) | **POST** /orders/{id}/add_charges |  |
+| [**OrdersCreateCharges**](ChargesApi.md#orderscreatecharges) | **POST** /orders/{id}/add_charges | Create charges |
 | [**UpdateCharge**](ChargesApi.md#updatecharge) | **PUT** /charges/{id} | Update a charge |
 
 <a id="getcharges"></a>
@@ -221,7 +221,7 @@ catch (ApiException e)
 # **OrdersCreateCharges**
 > ChargesOrderResponse OrdersCreateCharges (string id, ChargeRequest chargeRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
-
+Create charges
 
 Create charges for an existing orden
 
@@ -252,6 +252,7 @@ namespace Example
 
             try
             {
+                // Create charges
                 ChargesOrderResponse result = apiInstance.OrdersCreateCharges(id, chargeRequest, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
@@ -272,6 +273,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Create charges
     ApiResponse<ChargesOrderResponse> response = apiInstance.OrdersCreateChargesWithHttpInfo(id, chargeRequest, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

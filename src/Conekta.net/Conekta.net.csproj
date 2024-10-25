@@ -12,7 +12,7 @@
     <Description>This is a .net library that allows interaction with https://api.conekta.io API.</Description>
     <Copyright>Conekta</Copyright>
     <RootNamespace>Conekta.net</RootNamespace>
-    <Version>6.0.12</Version>
+    <Version>6.0.13</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Conekta.net.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/conekta/conekta-.net.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
