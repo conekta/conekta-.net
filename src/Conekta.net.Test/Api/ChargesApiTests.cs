@@ -122,6 +122,7 @@ namespace Conekta.net.Test.Api
             
             Assert.IsType<ChargesOrderResponse>(response);
             Assert.Equal(2, response.Data.Count);
+            Assert.Equal("2409992", response.Data[0].PaymentMethod.GetPaymentMethodCash().Agreement);
         }
 
         /// <summary>

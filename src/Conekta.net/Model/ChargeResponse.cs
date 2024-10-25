@@ -35,7 +35,6 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ChargeResponse" /> class.
         /// </summary>
-        /// <param name="agreement">Agreement ID.</param>
         /// <param name="amount">amount.</param>
         /// <param name="channel">channel.</param>
         /// <param name="createdAt">createdAt.</param>
@@ -51,13 +50,11 @@ namespace Conekta.net.Model
         /// <param name="orderId">Order ID.</param>
         /// <param name="paidAt">Payment date.</param>
         /// <param name="paymentMethod">paymentMethod.</param>
-        /// <param name="productType">Product type, e.g. bbva_cash_in, cash_in, pespay_cash_in, etc..</param>
         /// <param name="referenceId">Reference ID of the charge.</param>
         /// <param name="refunds">refunds.</param>
         /// <param name="status">status.</param>
-        public ChargeResponse(string agreement = default(string), int amount = default(int), ChargeResponseChannel channel = default(ChargeResponseChannel), long createdAt = default(long), string currency = default(string), string customerId = default(string), string description = default(string), string deviceFingerprint = default(string), string failureCode = default(string), string failureMessage = default(string), string id = default(string), bool livemode = default(bool), string varObject = default(string), string orderId = default(string), long? paidAt = default(long?), ChargeResponsePaymentMethod paymentMethod = default(ChargeResponsePaymentMethod), string productType = default(string), string referenceId = default(string), ChargeResponseRefunds refunds = default(ChargeResponseRefunds), string status = default(string))
+        public ChargeResponse(int amount = default(int), ChargeResponseChannel channel = default(ChargeResponseChannel), long createdAt = default(long), string currency = default(string), string customerId = default(string), string description = default(string), string deviceFingerprint = default(string), string failureCode = default(string), string failureMessage = default(string), string id = default(string), bool livemode = default(bool), string varObject = default(string), string orderId = default(string), long? paidAt = default(long?), ChargeResponsePaymentMethod paymentMethod = default(ChargeResponsePaymentMethod), string referenceId = default(string), ChargeResponseRefunds refunds = default(ChargeResponseRefunds), string status = default(string))
         {
-            this.Agreement = agreement;
             this.Amount = amount;
             this.Channel = channel;
             this.CreatedAt = createdAt;
@@ -73,21 +70,10 @@ namespace Conekta.net.Model
             this.OrderId = orderId;
             this.PaidAt = paidAt;
             this.PaymentMethod = paymentMethod;
-            this.ProductType = productType;
             this.ReferenceId = referenceId;
             this.Refunds = refunds;
             this.Status = status;
         }
-
-        /// <summary>
-        /// Agreement ID
-        /// </summary>
-        /// <value>Agreement ID</value>
-        /*
-        <example>agreement_2tN73UdUSNrYRPD9r</example>
-        */
-        [DataMember(Name = "agreement", EmitDefaultValue = false)]
-        public string Agreement { get; set; }
 
         /// <summary>
         /// Gets or Sets Amount
@@ -220,16 +206,6 @@ namespace Conekta.net.Model
         public ChargeResponsePaymentMethod PaymentMethod { get; set; }
 
         /// <summary>
-        /// Product type, e.g. bbva_cash_in, cash_in, pespay_cash_in, etc.
-        /// </summary>
-        /// <value>Product type, e.g. bbva_cash_in, cash_in, pespay_cash_in, etc.</value>
-        /*
-        <example>bbva_cash_in</example>
-        */
-        [DataMember(Name = "product_type", EmitDefaultValue = false)]
-        public string ProductType { get; set; }
-
-        /// <summary>
         /// Reference ID of the charge
         /// </summary>
         /// <value>Reference ID of the charge</value>
@@ -262,7 +238,6 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class ChargeResponse {\n");
-            sb.Append("  Agreement: ").Append(Agreement).Append("\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
             sb.Append("  Channel: ").Append(Channel).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
@@ -278,7 +253,6 @@ namespace Conekta.net.Model
             sb.Append("  OrderId: ").Append(OrderId).Append("\n");
             sb.Append("  PaidAt: ").Append(PaidAt).Append("\n");
             sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
-            sb.Append("  ProductType: ").Append(ProductType).Append("\n");
             sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
             sb.Append("  Refunds: ").Append(Refunds).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");

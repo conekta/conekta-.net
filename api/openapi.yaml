@@ -1704,6 +1704,7 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
+      summary: Create charges
       tags:
       - Charges
   /companies:
@@ -13412,10 +13413,6 @@ components:
       type: object
     charge_response:
       properties:
-        agreement:
-          description: Agreement ID
-          example: agreement_2tN73UdUSNrYRPD9r
-          type: string
         amount:
           example: 4321
           type: integer
@@ -13466,11 +13463,6 @@ components:
           type: integer
         payment_method:
           $ref: '#/components/schemas/charge_response_payment_method'
-        product_type:
-          description: "Product type, e.g. bbva_cash_in, cash_in, pespay_cash_in,\
-            \ etc."
-          example: bbva_cash_in
-          type: string
         reference_id:
           description: Reference ID of the charge
           example: ref_2tN73UdUSNrYRPD9r
@@ -15781,6 +15773,10 @@ components:
       - $ref: '#/components/schemas/payment_method'
       - description: use for cash responses
         properties:
+          agreement:
+            description: Agreement ID
+            example: agreement_2tN73UdUSNrYRPD9r
+            type: string
           auth_code:
             example: 542563
             nullable: true
@@ -15799,6 +15795,11 @@ components:
             example: 0
             format: int64
             type: integer
+          product_type:
+            description: "Product type, e.g. bbva_cash_in, cash_in, pespay_cash_in,\
+              \ etc."
+            example: bbva_cash_in
+            type: string
           service_name:
             example: OxxoPay
             type: string
