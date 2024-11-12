@@ -63,7 +63,7 @@ namespace Conekta.net.Model
         /// <param name="status">status.</param>
         /// <param name="type">type.</param>
         /// <param name="url">url.</param>
-        public OrderResponseCheckout(List<string> allowedPaymentMethods = default(List<string>), bool canNotExpire = default(bool), int emailsSent = default(int), List<Object> excludeCardNetworks = default(List<Object>), long expiresAt = default(long), string failureUrl = default(string), bool force3dsFlow = default(bool), string id = default(string), bool isRedirectOnFailure = default(bool), bool livemode = default(bool), int maxFailedRetries = default(int), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string name = default(string), bool needsShippingContact = default(bool), string varObject = default(string), bool? onDemandEnabled = default(bool?), int paidPaymentsCount = default(int), bool recurrent = default(bool), int? redirectionTime = default(int?), string slug = default(string), int smsSent = default(int), string successUrl = default(string), int startsAt = default(int), string status = default(string), string type = default(string), string url = default(string))
+        public OrderResponseCheckout(List<string> allowedPaymentMethods = default(List<string>), bool canNotExpire = default(bool), int emailsSent = default(int), List<Object> excludeCardNetworks = default(List<Object>), long expiresAt = default(long), string failureUrl = default(string), bool force3dsFlow = default(bool), string id = default(string), bool isRedirectOnFailure = default(bool), bool livemode = default(bool), int? maxFailedRetries = default(int?), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string name = default(string), bool needsShippingContact = default(bool), string varObject = default(string), bool? onDemandEnabled = default(bool?), int paidPaymentsCount = default(int), bool recurrent = default(bool), int? redirectionTime = default(int?), string slug = default(string), int smsSent = default(int), string successUrl = default(string), int startsAt = default(int), string status = default(string), string type = default(string), string url = default(string))
         {
             this.AllowedPaymentMethods = allowedPaymentMethods;
             this.CanNotExpire = canNotExpire;
@@ -186,8 +186,8 @@ namespace Conekta.net.Model
         /*
         <example>3</example>
         */
-        [DataMember(Name = "max_failed_retries", EmitDefaultValue = false)]
-        public int MaxFailedRetries { get; set; }
+        [DataMember(Name = "max_failed_retries", EmitDefaultValue = true)]
+        public int? MaxFailedRetries { get; set; }
 
         /// <summary>
         /// Gets or Sets Metadata

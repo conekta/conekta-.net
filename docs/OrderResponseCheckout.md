@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Id** | **string** |  | [optional] 
 **IsRedirectOnFailure** | **bool** |  | [optional] 
 **Livemode** | **bool** |  | [optional] 
-**MaxFailedRetries** | **int** | Number of retries allowed before the checkout is marked as failed | [optional] 
+**MaxFailedRetries** | **int?** | Number of retries allowed before the checkout is marked as failed | [optional] 
 **Metadata** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **MonthlyInstallmentsEnabled** | **bool** |  | [optional] 
 **MonthlyInstallmentsOptions** | **List&lt;int&gt;** |  | [optional] 
