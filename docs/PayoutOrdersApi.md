@@ -4,9 +4,109 @@ All URIs are relative to *https://api.conekta.io*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
+| [**CancelPayoutOrderById**](PayoutOrdersApi.md#cancelpayoutorderbyid) | **PUT** /payout_orders/{id}/cancel | Cancel Payout Order |
 | [**CreatePayoutOrder**](PayoutOrdersApi.md#createpayoutorder) | **POST** /payout_orders | Create payout order |
 | [**GetPayoutOrderById**](PayoutOrdersApi.md#getpayoutorderbyid) | **GET** /payout_orders/{id} | Get Payout Order |
 | [**GetPayoutOrders**](PayoutOrdersApi.md#getpayoutorders) | **GET** /payout_orders | Get a list of Payout Orders |
+
+<a id="cancelpayoutorderbyid"></a>
+# **CancelPayoutOrderById**
+> PayoutOrderResponse CancelPayoutOrderById (string id, string acceptLanguage = null)
+
+Cancel Payout Order
+
+Cancel a payout Order resource that corresponds to a payout order ID.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Conekta.net.Api;
+using Conekta.net.Client;
+using Conekta.net.Model;
+
+namespace Example
+{
+    public class CancelPayoutOrderByIdExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.conekta.io";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new PayoutOrdersApi(config);
+            var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+
+            try
+            {
+                // Cancel Payout Order
+                PayoutOrderResponse result = apiInstance.CancelPayoutOrderById(id, acceptLanguage);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PayoutOrdersApi.CancelPayoutOrderById: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the CancelPayoutOrderByIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Cancel Payout Order
+    ApiResponse<PayoutOrderResponse> response = apiInstance.CancelPayoutOrderByIdWithHttpInfo(id, acceptLanguage);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PayoutOrdersApi.CancelPayoutOrderByIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Identifier of the resource |  |
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+
+### Return type
+
+[**PayoutOrderResponse**](PayoutOrderResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.conekta-v2.1.0+json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | successful operation |  -  |
+| **401** | authentication error |  -  |
+| **404** | not found entity |  -  |
+| **500** | internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="createpayoutorder"></a>
 # **CreatePayoutOrder**
