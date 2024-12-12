@@ -13695,6 +13695,11 @@ components:
           description: Custom reference
           example: custom_reference
           type: string
+        date_of_birth:
+          description: It is a parameter that allows to identify the date of birth
+            of the client.
+          example: 24/07/1992
+          type: string
         default_fiscal_entity_id:
           example: fis_ent_2tKqqAfqPi21oCmEJ
           nullable: true
@@ -13724,6 +13729,11 @@ components:
         name:
           description: Customer's name
           example: Felipe
+          type: string
+        national_id:
+          description: It is a parameter that allows to identify the national identification
+            number of the client.
+          example: HEGG560427MVZRRL04
           type: string
         metadata:
           additionalProperties: true
@@ -14953,6 +14963,11 @@ components:
         custom_reference:
           description: It is an undefined value.
           type: string
+        date_of_birth:
+          description: It is a parameter that allows to identify the date of birth
+            of the client.
+          example: 24/07/1992
+          type: string
         email:
           description: "An email address is a series of customizable characters followed\
             \ by a universal Internet symbol, the at symbol (@), the name of a host\
@@ -14981,6 +14996,11 @@ components:
         name:
           description: Client's name
           example: miguel
+          type: string
+        national_id:
+          description: It is a parameter that allows to identify the national identification
+            number of the client.
+          example: HEGG560427MVZRRL04
           type: string
         payment_sources:
           description: Contains details of the payment methods that the customer has
@@ -15016,6 +15036,11 @@ components:
       properties:
         antifraud_info:
           $ref: '#/components/schemas/update_customer_antifraud_info'
+        date_of_birth:
+          description: It is a parameter that allows to identify the date of birth
+            of the client.
+          example: 24/07/1992
+          type: string
         default_payment_source_id:
           description: "It is a parameter that allows to identify in the response,\
             \ the Conekta ID of a payment method (payment_id)"
@@ -15062,6 +15087,11 @@ components:
           additionalProperties: true
           maxProperties: 100
           type: object
+        national_id:
+          description: It is a parameter that allows to identify the national identification
+            number of the client.
+          example: HEGG560427MVZRRL04
+          type: string
         payment_sources:
           description: Contains details of the payment methods that the customer has
             active or has used in Conekta
@@ -16669,7 +16699,6 @@ components:
         expires_at:
           example: 1553273553
           format: int64
-          nullable: true
           type: integer
         reason:
           description: Reason for the refund

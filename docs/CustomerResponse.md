@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Corporate** | **bool** | true if the customer is a company | [optional] 
 **CreatedAt** | **long** | Creation date of the object | 
 **CustomReference** | **string** | Custom reference | [optional] 
+**DateOfBirth** | **string** | It is a parameter that allows to identify the date of birth of the client. | [optional] 
 **DefaultFiscalEntityId** | **string** |  | [optional] 
 **DefaultShippingContactId** | **string** |  | [optional] 
 **DefaultPaymentSourceId** | **string** |  | [optional] 
@@ -17,6 +18,7 @@ Name | Type | Description | Notes
 **Id** | **string** | Customer&#39;s ID | 
 **Livemode** | **bool** | true if the object exists in live mode or the value false if the object exists in test mode | 
 **Name** | **string** | Customer&#39;s name | 
+**NationalId** | **string** | It is a parameter that allows to identify the national identification number of the client. | [optional] 
 **Metadata** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **Object** | **string** |  | 
 **PaymentSources** | [**CustomerPaymentMethodsResponse**](CustomerPaymentMethodsResponse.md) |  | [optional] 
