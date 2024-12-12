@@ -43,18 +43,20 @@ namespace Conekta.net.Model
         /// <param name="antifraudInfo">antifraudInfo.</param>
         /// <param name="corporate">It is a value that allows identifying if the email is corporate or not. (default to false).</param>
         /// <param name="customReference">It is an undefined value..</param>
+        /// <param name="dateOfBirth">It is a parameter that allows to identify the date of birth of the client..</param>
         /// <param name="email">An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc). (required).</param>
         /// <param name="defaultPaymentSourceId">It is a parameter that allows to identify in the response, the Conekta ID of a payment method (payment_id).</param>
         /// <param name="defaultShippingContactId">It is a parameter that allows to identify in the response, the Conekta ID of the shipping address (shipping_contact).</param>
         /// <param name="fiscalEntities">fiscalEntities.</param>
         /// <param name="metadata">metadata.</param>
         /// <param name="name">Client&#39;s name (required).</param>
+        /// <param name="nationalId">It is a parameter that allows to identify the national identification number of the client..</param>
         /// <param name="paymentSources">Contains details of the payment methods that the customer has active or has used in Conekta.</param>
         /// <param name="phone">Is the customer&#39;s phone number (required).</param>
         /// <param name="planId">Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription.</param>
         /// <param name="shippingContacts">Contains the detail of the shipping addresses that the client has active or has used in Conekta.</param>
         /// <param name="subscription">subscription.</param>
-        public Customer(CustomerAntifraudInfo antifraudInfo = default(CustomerAntifraudInfo), bool corporate = false, string customReference = default(string), string email = default(string), string defaultPaymentSourceId = default(string), string defaultShippingContactId = default(string), List<CustomerFiscalEntitiesRequest> fiscalEntities = default(List<CustomerFiscalEntitiesRequest>), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string name = default(string), List<CustomerPaymentMethodsRequest> paymentSources = default(List<CustomerPaymentMethodsRequest>), string phone = default(string), string planId = default(string), List<CustomerShippingContacts> shippingContacts = default(List<CustomerShippingContacts>), SubscriptionRequest subscription = default(SubscriptionRequest))
+        public Customer(CustomerAntifraudInfo antifraudInfo = default(CustomerAntifraudInfo), bool corporate = false, string customReference = default(string), string dateOfBirth = default(string), string email = default(string), string defaultPaymentSourceId = default(string), string defaultShippingContactId = default(string), List<CustomerFiscalEntitiesRequest> fiscalEntities = default(List<CustomerFiscalEntitiesRequest>), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string name = default(string), string nationalId = default(string), List<CustomerPaymentMethodsRequest> paymentSources = default(List<CustomerPaymentMethodsRequest>), string phone = default(string), string planId = default(string), List<CustomerShippingContacts> shippingContacts = default(List<CustomerShippingContacts>), SubscriptionRequest subscription = default(SubscriptionRequest))
         {
             // to ensure "email" is required (not null)
             if (email == null)
@@ -77,10 +79,12 @@ namespace Conekta.net.Model
             this.AntifraudInfo = antifraudInfo;
             this.Corporate = corporate;
             this.CustomReference = customReference;
+            this.DateOfBirth = dateOfBirth;
             this.DefaultPaymentSourceId = defaultPaymentSourceId;
             this.DefaultShippingContactId = defaultShippingContactId;
             this.FiscalEntities = fiscalEntities;
             this.Metadata = metadata;
+            this.NationalId = nationalId;
             this.PaymentSources = paymentSources;
             this.PlanId = planId;
             this.ShippingContacts = shippingContacts;
@@ -109,6 +113,16 @@ namespace Conekta.net.Model
         /// <value>It is an undefined value.</value>
         [DataMember(Name = "custom_reference", EmitDefaultValue = false)]
         public string CustomReference { get; set; }
+
+        /// <summary>
+        /// It is a parameter that allows to identify the date of birth of the client.
+        /// </summary>
+        /// <value>It is a parameter that allows to identify the date of birth of the client.</value>
+        /*
+        <example>24/07/1992</example>
+        */
+        [DataMember(Name = "date_of_birth", EmitDefaultValue = false)]
+        public string DateOfBirth { get; set; }
 
         /// <summary>
         /// An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc).
@@ -163,6 +177,16 @@ namespace Conekta.net.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// It is a parameter that allows to identify the national identification number of the client.
+        /// </summary>
+        /// <value>It is a parameter that allows to identify the national identification number of the client.</value>
+        /*
+        <example>HEGG560427MVZRRL04</example>
+        */
+        [DataMember(Name = "national_id", EmitDefaultValue = false)]
+        public string NationalId { get; set; }
+
+        /// <summary>
         /// Contains details of the payment methods that the customer has active or has used in Conekta
         /// </summary>
         /// <value>Contains details of the payment methods that the customer has active or has used in Conekta</value>
@@ -213,12 +237,14 @@ namespace Conekta.net.Model
             sb.Append("  AntifraudInfo: ").Append(AntifraudInfo).Append("\n");
             sb.Append("  Corporate: ").Append(Corporate).Append("\n");
             sb.Append("  CustomReference: ").Append(CustomReference).Append("\n");
+            sb.Append("  DateOfBirth: ").Append(DateOfBirth).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  DefaultPaymentSourceId: ").Append(DefaultPaymentSourceId).Append("\n");
             sb.Append("  DefaultShippingContactId: ").Append(DefaultShippingContactId).Append("\n");
             sb.Append("  FiscalEntities: ").Append(FiscalEntities).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  NationalId: ").Append(NationalId).Append("\n");
             sb.Append("  PaymentSources: ").Append(PaymentSources).Append("\n");
             sb.Append("  Phone: ").Append(Phone).Append("\n");
             sb.Append("  PlanId: ").Append(PlanId).Append("\n");

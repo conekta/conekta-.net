@@ -43,7 +43,7 @@ namespace Conekta.net.Model
         /// <param name="amount">Amount to be refunded in cents (required).</param>
         /// <param name="expiresAt">expiresAt.</param>
         /// <param name="reason">Reason for the refund (required).</param>
-        public OrderRefundRequest(int amount = default(int), long? expiresAt = default(long?), string reason = default(string))
+        public OrderRefundRequest(int amount = default(int), long expiresAt = default(long), string reason = default(string))
         {
             this.Amount = amount;
             // to ensure "reason" is required (not null)
@@ -71,8 +71,8 @@ namespace Conekta.net.Model
         /*
         <example>1553273553</example>
         */
-        [DataMember(Name = "expires_at", EmitDefaultValue = true)]
-        public long? ExpiresAt { get; set; }
+        [DataMember(Name = "expires_at", EmitDefaultValue = false)]
+        public long ExpiresAt { get; set; }
 
         /// <summary>
         /// Reason for the refund
