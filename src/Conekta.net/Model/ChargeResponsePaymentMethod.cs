@@ -71,6 +71,18 @@ namespace Conekta.net.Model
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChargeResponsePaymentMethod" /> class
+        /// with the <see cref="PaymentMethodBnplPayment" /> class
+        /// </summary>
+        /// <param name="actualInstance">An instance of PaymentMethodBnplPayment.</param>
+        public ChargeResponsePaymentMethod(PaymentMethodBnplPayment actualInstance)
+        {
+            this.IsNullable = false;
+            this.SchemaType= "oneOf";
+            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+        }
+
 
         private Object _actualInstance;
 
@@ -89,6 +101,10 @@ namespace Conekta.net.Model
                 {
                     this._actualInstance = value;
                 }
+                else if (value.GetType() == typeof(PaymentMethodBnplPayment) || value is PaymentMethodBnplPayment)
+                {
+                    this._actualInstance = value;
+                }
                 else if (value.GetType() == typeof(PaymentMethodCard) || value is PaymentMethodCard)
                 {
                     this._actualInstance = value;
@@ -99,7 +115,7 @@ namespace Conekta.net.Model
                 }
                 else
                 {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: PaymentMethodBankTransfer, PaymentMethodCard, PaymentMethodCash");
+                    throw new ArgumentException("Invalid instance found. Must be the following types: PaymentMethodBankTransfer, PaymentMethodBnplPayment, PaymentMethodCard, PaymentMethodCash");
                 }
             }
         }
@@ -132,6 +148,16 @@ namespace Conekta.net.Model
         public PaymentMethodBankTransfer GetPaymentMethodBankTransfer()
         {
             return (PaymentMethodBankTransfer)this.ActualInstance;
+        }
+
+        /// <summary>
+        /// Get the actual instance of `PaymentMethodBnplPayment`. If the actual instance is not `PaymentMethodBnplPayment`,
+        /// the InvalidClassException will be thrown
+        /// </summary>
+        /// <returns>An instance of PaymentMethodBnplPayment</returns>
+        public PaymentMethodBnplPayment GetPaymentMethodBnplPayment()
+        {
+            return (PaymentMethodBnplPayment)this.ActualInstance;
         }
 
         /// <summary>
@@ -179,6 +205,9 @@ namespace Conekta.net.Model
                     case "bank_transfer_payment":
                         newChargeResponsePaymentMethod = new ChargeResponsePaymentMethod(JsonConvert.DeserializeObject<PaymentMethodBankTransfer>(jsonString, ChargeResponsePaymentMethod.AdditionalPropertiesSerializerSettings));
                         return newChargeResponsePaymentMethod;
+                    case "bnpl_payment":
+                        newChargeResponsePaymentMethod = new ChargeResponsePaymentMethod(JsonConvert.DeserializeObject<PaymentMethodBnplPayment>(jsonString, ChargeResponsePaymentMethod.AdditionalPropertiesSerializerSettings));
+                        return newChargeResponsePaymentMethod;
                     case "card_payment":
                         newChargeResponsePaymentMethod = new ChargeResponsePaymentMethod(JsonConvert.DeserializeObject<PaymentMethodCard>(jsonString, ChargeResponsePaymentMethod.AdditionalPropertiesSerializerSettings));
                         return newChargeResponsePaymentMethod;
@@ -188,6 +217,9 @@ namespace Conekta.net.Model
                     case "payment_method_bank_transfer":
                         newChargeResponsePaymentMethod = new ChargeResponsePaymentMethod(JsonConvert.DeserializeObject<PaymentMethodBankTransfer>(jsonString, ChargeResponsePaymentMethod.AdditionalPropertiesSerializerSettings));
                         return newChargeResponsePaymentMethod;
+                    case "payment_method_bnpl_payment":
+                        newChargeResponsePaymentMethod = new ChargeResponsePaymentMethod(JsonConvert.DeserializeObject<PaymentMethodBnplPayment>(jsonString, ChargeResponsePaymentMethod.AdditionalPropertiesSerializerSettings));
+                        return newChargeResponsePaymentMethod;
                     case "payment_method_card":
                         newChargeResponsePaymentMethod = new ChargeResponsePaymentMethod(JsonConvert.DeserializeObject<PaymentMethodCard>(jsonString, ChargeResponsePaymentMethod.AdditionalPropertiesSerializerSettings));
                         return newChargeResponsePaymentMethod;
@@ -195,7 +227,7 @@ namespace Conekta.net.Model
                         newChargeResponsePaymentMethod = new ChargeResponsePaymentMethod(JsonConvert.DeserializeObject<PaymentMethodCash>(jsonString, ChargeResponsePaymentMethod.AdditionalPropertiesSerializerSettings));
                         return newChargeResponsePaymentMethod;
                     default:
-                        System.Diagnostics.Debug.WriteLine(string.Format("Failed to lookup discriminator value `{0}` for ChargeResponsePaymentMethod. Possible values: bank_transfer_payment card_payment cash_payment payment_method_bank_transfer payment_method_card payment_method_cash", discriminatorValue));
+                        System.Diagnostics.Debug.WriteLine(string.Format("Failed to lookup discriminator value `{0}` for ChargeResponsePaymentMethod. Possible values: bank_transfer_payment bnpl_payment card_payment cash_payment payment_method_bank_transfer payment_method_bnpl_payment payment_method_card payment_method_cash", discriminatorValue));
                         break;
                 }
             }
@@ -225,6 +257,26 @@ namespace Conekta.net.Model
             {
                 // deserialization failed, try the next one
                 System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into PaymentMethodBankTransfer: {1}", jsonString, exception.ToString()));
+            }
+
+            try
+            {
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(PaymentMethodBnplPayment).GetProperty("AdditionalProperties") == null)
+                {
+                    newChargeResponsePaymentMethod = new ChargeResponsePaymentMethod(JsonConvert.DeserializeObject<PaymentMethodBnplPayment>(jsonString, ChargeResponsePaymentMethod.SerializerSettings));
+                }
+                else
+                {
+                    newChargeResponsePaymentMethod = new ChargeResponsePaymentMethod(JsonConvert.DeserializeObject<PaymentMethodBnplPayment>(jsonString, ChargeResponsePaymentMethod.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("PaymentMethodBnplPayment");
+                match++;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into PaymentMethodBnplPayment: {1}", jsonString, exception.ToString()));
             }
 
             try

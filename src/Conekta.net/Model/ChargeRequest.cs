@@ -43,7 +43,7 @@ namespace Conekta.net.Model
         /// <param name="amount">Amount to be charged in cents.</param>
         /// <param name="paymentMethod">paymentMethod (required).</param>
         /// <param name="referenceId">Custom reference to add to the charge.</param>
-        public ChargeRequest(int amount = default(int), ChargeRequestPaymentMethod paymentMethod = default(ChargeRequestPaymentMethod), string referenceId = default(string))
+        public ChargeRequest(long amount = default(long), ChargeRequestPaymentMethod paymentMethod = default(ChargeRequestPaymentMethod), string referenceId = default(string))
         {
             // to ensure "paymentMethod" is required (not null)
             if (paymentMethod == null)
@@ -63,7 +63,7 @@ namespace Conekta.net.Model
         <example>40000</example>
         */
         [DataMember(Name = "amount", EmitDefaultValue = false)]
-        public int Amount { get; set; }
+        public long Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentMethod

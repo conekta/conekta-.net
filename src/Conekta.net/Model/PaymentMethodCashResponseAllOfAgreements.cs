@@ -27,39 +27,41 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// Contains details of the payment methods that the customer has active or has used in Conekta
+    /// PaymentMethodCashResponseAllOfAgreements
     /// </summary>
-    [DataContract(Name = "customer_payment_method_request")]
-    public partial class CustomerPaymentMethodRequest : IValidatableObject
+    [DataContract(Name = "payment_method_cash_response_allOf_agreements")]
+    public partial class PaymentMethodCashResponseAllOfAgreements : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomerPaymentMethodRequest" /> class.
+        /// Initializes a new instance of the <see cref="PaymentMethodCashResponseAllOfAgreements" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected CustomerPaymentMethodRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CustomerPaymentMethodRequest" /> class.
-        /// </summary>
-        /// <param name="type">Type of payment method (required).</param>
-        public CustomerPaymentMethodRequest(string type = default(string))
+        /// <param name="agreement">Agreement number, you can use this number to pay in the store/bbva.</param>
+        /// <param name="provider">Provider name, you can use this to know where to pay.</param>
+        public PaymentMethodCashResponseAllOfAgreements(string agreement = default(string), string provider = default(string))
         {
-            // to ensure "type" is required (not null)
-            if (type == null)
-            {
-                throw new ArgumentNullException("type is a required property for CustomerPaymentMethodRequest and cannot be null");
-            }
-            this.Type = type;
+            this.Agreement = agreement;
+            this.Provider = provider;
         }
 
         /// <summary>
-        /// Type of payment method
+        /// Agreement number, you can use this number to pay in the store/bbva
         /// </summary>
-        /// <value>Type of payment method</value>
+        /// <value>Agreement number, you can use this number to pay in the store/bbva</value>
         /*
-        <example>card | cash | spei | bnpl</example>
+        <example>2409526</example>
         */
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
-        public string Type { get; set; }
+        [DataMember(Name = "agreement", EmitDefaultValue = false)]
+        public string Agreement { get; set; }
+
+        /// <summary>
+        /// Provider name, you can use this to know where to pay
+        /// </summary>
+        /// <value>Provider name, you can use this to know where to pay</value>
+        /*
+        <example>bbva_cash_in</example>
+        */
+        [DataMember(Name = "provider", EmitDefaultValue = false)]
+        public string Provider { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -68,8 +70,9 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CustomerPaymentMethodRequest {\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("class PaymentMethodCashResponseAllOfAgreements {\n");
+            sb.Append("  Agreement: ").Append(Agreement).Append("\n");
+            sb.Append("  Provider: ").Append(Provider).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

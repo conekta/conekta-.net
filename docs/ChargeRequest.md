@@ -5,7 +5,7 @@ The charges to be made
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **int** | Amount to be charged in cents | [optional] 
+**Amount** | **long** | Amount to be charged in cents | [optional] 
 **PaymentMethod** | [**ChargeRequestPaymentMethod**](ChargeRequestPaymentMethod.md) |  | 
 **ReferenceId** | **string** | Custom reference to add to the charge | [optional] 
 

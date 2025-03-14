@@ -59,7 +59,7 @@ namespace Conekta.net.Model
         /// <param name="referenceNumber">referenceNumber.</param>
         /// <param name="trackingCode">trackingCode.</param>
         /// <param name="customerIpAddress">customerIpAddress.</param>
-        public PaymentMethodBankTransfer(string type = default(string), string varObject = default(string), string bank = default(string), string clabe = default(string), string description = default(string), int? executedAt = default(int?), long expiresAt = default(long), string issuingAccountBank = default(string), string issuingAccountNumber = default(string), string issuingAccountHolderName = default(string), string issuingAccountTaxId = default(string), List<Object> paymentAttempts = default(List<Object>), string receivingAccountHolderName = default(string), string receivingAccountNumber = default(string), string receivingAccountBank = default(string), string receivingAccountTaxId = default(string), string referenceNumber = default(string), string trackingCode = default(string), string customerIpAddress = default(string))
+        public PaymentMethodBankTransfer(string type = default(string), string varObject = default(string), string bank = default(string), string clabe = default(string), string description = default(string), string executedAt = default(string), long expiresAt = default(long), string issuingAccountBank = default(string), string issuingAccountNumber = default(string), string issuingAccountHolderName = default(string), string issuingAccountTaxId = default(string), List<Object> paymentAttempts = default(List<Object>), string receivingAccountHolderName = default(string), string receivingAccountNumber = default(string), string receivingAccountBank = default(string), string receivingAccountTaxId = default(string), string referenceNumber = default(string), string trackingCode = default(string), string customerIpAddress = default(string))
         {
             // to ensure "varObject" is required (not null)
             if (varObject == null)
@@ -130,7 +130,7 @@ namespace Conekta.net.Model
         /// Gets or Sets ExecutedAt
         /// </summary>
         [DataMember(Name = "executed_at", EmitDefaultValue = true)]
-        public int? ExecutedAt { get; set; }
+        public string ExecutedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpiresAt

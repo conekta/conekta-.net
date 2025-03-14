@@ -27,29 +27,29 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// The charges associated with the order
+    /// OrderDiscountLinesResponse
     /// </summary>
-    [DataContract(Name = "order_response_charges")]
-    public partial class OrderResponseCharges : IValidatableObject
+    [DataContract(Name = "order_discount_lines_response")]
+    public partial class OrderDiscountLinesResponse : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrderResponseCharges" /> class.
+        /// Initializes a new instance of the <see cref="OrderDiscountLinesResponse" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected OrderResponseCharges() { }
+        protected OrderDiscountLinesResponse() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrderResponseCharges" /> class.
+        /// Initializes a new instance of the <see cref="OrderDiscountLinesResponse" /> class.
         /// </summary>
         /// <param name="hasMore">Indicates if there are more pages to be requested (required).</param>
         /// <param name="varObject">Object type, in this case is list (required).</param>
         /// <param name="data">data.</param>
-        public OrderResponseCharges(bool hasMore = default(bool), string varObject = default(string), List<ChargesDataResponse> data = default(List<ChargesDataResponse>))
+        public OrderDiscountLinesResponse(bool hasMore = default(bool), string varObject = default(string), List<DiscountLinesDataResponse> data = default(List<DiscountLinesDataResponse>))
         {
             this.HasMore = hasMore;
             // to ensure "varObject" is required (not null)
             if (varObject == null)
             {
-                throw new ArgumentNullException("varObject is a required property for OrderResponseCharges and cannot be null");
+                throw new ArgumentNullException("varObject is a required property for OrderDiscountLinesResponse and cannot be null");
             }
             this.Object = varObject;
             this.Data = data;
@@ -79,7 +79,7 @@ namespace Conekta.net.Model
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name = "data", EmitDefaultValue = false)]
-        public List<ChargesDataResponse> Data { get; set; }
+        public List<DiscountLinesDataResponse> Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -88,7 +88,7 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class OrderResponseCharges {\n");
+            sb.Append("class OrderDiscountLinesResponse {\n");
             sb.Append("  HasMore: ").Append(HasMore).Append("\n");
             sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");

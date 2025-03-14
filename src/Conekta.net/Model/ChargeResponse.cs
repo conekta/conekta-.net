@@ -35,44 +35,74 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ChargeResponse" /> class.
         /// </summary>
-        /// <param name="amount">amount.</param>
+        [JsonConstructorAttribute]
+        protected ChargeResponse() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChargeResponse" /> class.
+        /// </summary>
+        /// <param name="amount">amount (required).</param>
         /// <param name="channel">channel.</param>
-        /// <param name="createdAt">createdAt.</param>
-        /// <param name="currency">currency.</param>
+        /// <param name="createdAt">createdAt (required).</param>
+        /// <param name="currency">currency (required).</param>
         /// <param name="customerId">customerId.</param>
         /// <param name="description">description.</param>
         /// <param name="deviceFingerprint">deviceFingerprint.</param>
         /// <param name="failureCode">failureCode.</param>
         /// <param name="failureMessage">failureMessage.</param>
-        /// <param name="id">Charge ID.</param>
-        /// <param name="livemode">Whether the charge was made in live mode or not.</param>
-        /// <param name="varObject">varObject.</param>
-        /// <param name="orderId">Order ID.</param>
+        /// <param name="id">Charge ID (required).</param>
+        /// <param name="livemode">Whether the charge was made in live mode or not (required).</param>
+        /// <param name="varObject">varObject (required).</param>
+        /// <param name="orderId">Order ID (required).</param>
         /// <param name="paidAt">Payment date.</param>
         /// <param name="paymentMethod">paymentMethod.</param>
         /// <param name="referenceId">Reference ID of the charge.</param>
         /// <param name="refunds">refunds.</param>
-        /// <param name="status">status.</param>
+        /// <param name="status">Charge status (required).</param>
         public ChargeResponse(int amount = default(int), ChargeResponseChannel channel = default(ChargeResponseChannel), long createdAt = default(long), string currency = default(string), string customerId = default(string), string description = default(string), string deviceFingerprint = default(string), string failureCode = default(string), string failureMessage = default(string), string id = default(string), bool livemode = default(bool), string varObject = default(string), string orderId = default(string), long? paidAt = default(long?), ChargeResponsePaymentMethod paymentMethod = default(ChargeResponsePaymentMethod), string referenceId = default(string), ChargeResponseRefunds refunds = default(ChargeResponseRefunds), string status = default(string))
         {
             this.Amount = amount;
-            this.Channel = channel;
             this.CreatedAt = createdAt;
+            // to ensure "currency" is required (not null)
+            if (currency == null)
+            {
+                throw new ArgumentNullException("currency is a required property for ChargeResponse and cannot be null");
+            }
             this.Currency = currency;
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for ChargeResponse and cannot be null");
+            }
+            this.Id = id;
+            this.Livemode = livemode;
+            // to ensure "varObject" is required (not null)
+            if (varObject == null)
+            {
+                throw new ArgumentNullException("varObject is a required property for ChargeResponse and cannot be null");
+            }
+            this.Object = varObject;
+            // to ensure "orderId" is required (not null)
+            if (orderId == null)
+            {
+                throw new ArgumentNullException("orderId is a required property for ChargeResponse and cannot be null");
+            }
+            this.OrderId = orderId;
+            // to ensure "status" is required (not null)
+            if (status == null)
+            {
+                throw new ArgumentNullException("status is a required property for ChargeResponse and cannot be null");
+            }
+            this.Status = status;
+            this.Channel = channel;
             this.CustomerId = customerId;
             this.Description = description;
             this.DeviceFingerprint = deviceFingerprint;
             this.FailureCode = failureCode;
             this.FailureMessage = failureMessage;
-            this.Id = id;
-            this.Livemode = livemode;
-            this.Object = varObject;
-            this.OrderId = orderId;
             this.PaidAt = paidAt;
             this.PaymentMethod = paymentMethod;
             this.ReferenceId = referenceId;
             this.Refunds = refunds;
-            this.Status = status;
         }
 
         /// <summary>
@@ -81,7 +111,7 @@ namespace Conekta.net.Model
         /*
         <example>4321</example>
         */
-        [DataMember(Name = "amount", EmitDefaultValue = false)]
+        [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
         public int Amount { get; set; }
 
         /// <summary>
@@ -96,7 +126,7 @@ namespace Conekta.net.Model
         /*
         <example>1676386026</example>
         */
-        [DataMember(Name = "created_at", EmitDefaultValue = false)]
+        [DataMember(Name = "created_at", IsRequired = true, EmitDefaultValue = true)]
         public long CreatedAt { get; set; }
 
         /// <summary>
@@ -105,7 +135,7 @@ namespace Conekta.net.Model
         /*
         <example>MXN</example>
         */
-        [DataMember(Name = "currency", EmitDefaultValue = false)]
+        [DataMember(Name = "currency", IsRequired = true, EmitDefaultValue = true)]
         public string Currency { get; set; }
 
         /// <summary>
@@ -157,7 +187,7 @@ namespace Conekta.net.Model
         /*
         <example>63efa757cf65380001aec040</example>
         */
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
@@ -167,7 +197,7 @@ namespace Conekta.net.Model
         /*
         <example>false</example>
         */
-        [DataMember(Name = "livemode", EmitDefaultValue = true)]
+        [DataMember(Name = "livemode", IsRequired = true, EmitDefaultValue = true)]
         public bool Livemode { get; set; }
 
         /// <summary>
@@ -176,7 +206,7 @@ namespace Conekta.net.Model
         /*
         <example>charge</example>
         */
-        [DataMember(Name = "object", EmitDefaultValue = false)]
+        [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
         /// <summary>
@@ -186,7 +216,7 @@ namespace Conekta.net.Model
         /*
         <example>ord_2tN73UdUSNrYRPD9r</example>
         */
-        [DataMember(Name = "order_id", EmitDefaultValue = false)]
+        [DataMember(Name = "order_id", IsRequired = true, EmitDefaultValue = true)]
         public string OrderId { get; set; }
 
         /// <summary>
@@ -222,12 +252,13 @@ namespace Conekta.net.Model
         public ChargeResponseRefunds Refunds { get; set; }
 
         /// <summary>
-        /// Gets or Sets Status
+        /// Charge status
         /// </summary>
+        /// <value>Charge status</value>
         /*
         <example>pending_payment</example>
         */
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
         public string Status { get; set; }
 
         /// <summary>

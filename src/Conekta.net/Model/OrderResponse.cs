@@ -56,7 +56,7 @@ namespace Conekta.net.Model
         /// <param name="processingMode">Indicates the processing mode for the order, either ecommerce, recurrent or validation..</param>
         /// <param name="shippingContact">shippingContact.</param>
         /// <param name="updatedAt">The time at which the object was last updated in seconds since the Unix epoch.</param>
-        public OrderResponse(int amount = default(int), int amountRefunded = default(int), ChargeResponseChannel channel = default(ChargeResponseChannel), OrderResponseCharges charges = default(OrderResponseCharges), OrderResponseCheckout checkout = default(OrderResponseCheckout), long createdAt = default(long), string currency = default(string), OrderResponseCustomerInfo customerInfo = default(OrderResponseCustomerInfo), OrderResponseDiscountLines discountLines = default(OrderResponseDiscountLines), OrderFiscalEntityResponse fiscalEntity = default(OrderFiscalEntityResponse), string id = default(string), bool isRefundable = default(bool), OrderResponseProducts lineItems = default(OrderResponseProducts), bool livemode = default(bool), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), OrderNextActionResponse nextAction = default(OrderNextActionResponse), string varObject = default(string), string paymentStatus = default(string), string processingMode = default(string), OrderResponseShippingContact shippingContact = default(OrderResponseShippingContact), long updatedAt = default(long))
+        public OrderResponse(int amount = default(int), int amountRefunded = default(int), OrderChannelResponse channel = default(OrderChannelResponse), OrderChargesResponse charges = default(OrderChargesResponse), OrderResponseCheckout checkout = default(OrderResponseCheckout), long createdAt = default(long), string currency = default(string), OrderResponseCustomerInfo customerInfo = default(OrderResponseCustomerInfo), OrderDiscountLinesResponse discountLines = default(OrderDiscountLinesResponse), OrderFiscalEntityResponse fiscalEntity = default(OrderFiscalEntityResponse), string id = default(string), bool isRefundable = default(bool), OrderResponseProducts lineItems = default(OrderResponseProducts), bool livemode = default(bool), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), OrderNextActionResponse nextAction = default(OrderNextActionResponse), string varObject = default(string), string paymentStatus = default(string), string processingMode = default(string), OrderResponseShippingContact shippingContact = default(OrderResponseShippingContact), long updatedAt = default(long))
         {
             this.Amount = amount;
             this.AmountRefunded = amountRefunded;
@@ -105,13 +105,13 @@ namespace Conekta.net.Model
         /// Gets or Sets Channel
         /// </summary>
         [DataMember(Name = "channel", EmitDefaultValue = false)]
-        public ChargeResponseChannel Channel { get; set; }
+        public OrderChannelResponse Channel { get; set; }
 
         /// <summary>
         /// Gets or Sets Charges
         /// </summary>
         [DataMember(Name = "charges", EmitDefaultValue = false)]
-        public OrderResponseCharges Charges { get; set; }
+        public OrderChargesResponse Charges { get; set; }
 
         /// <summary>
         /// Gets or Sets Checkout
@@ -149,7 +149,7 @@ namespace Conekta.net.Model
         /// Gets or Sets DiscountLines
         /// </summary>
         [DataMember(Name = "discount_lines", EmitDefaultValue = false)]
-        public OrderResponseDiscountLines DiscountLines { get; set; }
+        public OrderDiscountLinesResponse DiscountLines { get; set; }
 
         /// <summary>
         /// Gets or Sets FiscalEntity
