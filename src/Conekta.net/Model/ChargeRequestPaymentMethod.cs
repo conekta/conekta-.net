@@ -36,6 +36,18 @@ namespace Conekta.net.Model
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ChargeRequestPaymentMethod" /> class
+        /// with the <see cref="PaymentMethodBnplRequest" /> class
+        /// </summary>
+        /// <param name="actualInstance">An instance of PaymentMethodBnplRequest.</param>
+        public ChargeRequestPaymentMethod(PaymentMethodBnplRequest actualInstance)
+        {
+            this.IsNullable = false;
+            this.SchemaType= "oneOf";
+            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChargeRequestPaymentMethod" /> class
         /// with the <see cref="PaymentMethodCardRequest" /> class
         /// </summary>
         /// <param name="actualInstance">An instance of PaymentMethodCardRequest.</param>
@@ -72,7 +84,11 @@ namespace Conekta.net.Model
             }
             set
             {
-                if (value.GetType() == typeof(PaymentMethodCardRequest) || value is PaymentMethodCardRequest)
+                if (value.GetType() == typeof(PaymentMethodBnplRequest) || value is PaymentMethodBnplRequest)
+                {
+                    this._actualInstance = value;
+                }
+                else if (value.GetType() == typeof(PaymentMethodCardRequest) || value is PaymentMethodCardRequest)
                 {
                     this._actualInstance = value;
                 }
@@ -82,9 +98,19 @@ namespace Conekta.net.Model
                 }
                 else
                 {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: PaymentMethodCardRequest, PaymentMethodGeneralRequest");
+                    throw new ArgumentException("Invalid instance found. Must be the following types: PaymentMethodBnplRequest, PaymentMethodCardRequest, PaymentMethodGeneralRequest");
                 }
             }
+        }
+
+        /// <summary>
+        /// Get the actual instance of `PaymentMethodBnplRequest`. If the actual instance is not `PaymentMethodBnplRequest`,
+        /// the InvalidClassException will be thrown
+        /// </summary>
+        /// <returns>An instance of PaymentMethodBnplRequest</returns>
+        public PaymentMethodBnplRequest GetPaymentMethodBnplRequest()
+        {
+            return (PaymentMethodBnplRequest)this.ActualInstance;
         }
 
         /// <summary>
@@ -144,6 +170,26 @@ namespace Conekta.net.Model
             }
             int match = 0;
             List<string> matchedTypes = new List<string>();
+
+            try
+            {
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(PaymentMethodBnplRequest).GetProperty("AdditionalProperties") == null)
+                {
+                    newChargeRequestPaymentMethod = new ChargeRequestPaymentMethod(JsonConvert.DeserializeObject<PaymentMethodBnplRequest>(jsonString, ChargeRequestPaymentMethod.SerializerSettings));
+                }
+                else
+                {
+                    newChargeRequestPaymentMethod = new ChargeRequestPaymentMethod(JsonConvert.DeserializeObject<PaymentMethodBnplRequest>(jsonString, ChargeRequestPaymentMethod.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("PaymentMethodBnplRequest");
+                match++;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into PaymentMethodBnplRequest: {1}", jsonString, exception.ToString()));
+            }
 
             try
             {

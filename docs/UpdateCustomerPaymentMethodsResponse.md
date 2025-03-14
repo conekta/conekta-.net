@@ -9,9 +9,10 @@ Name | Type | Description | Notes
 **Object** | **string** |  | 
 **CreatedAt** | **long** |  | 
 **ParentId** | **string** |  | [optional] 
+**Agreements** | [**List&lt;PaymentMethodCashResponseAllOfAgreements&gt;**](PaymentMethodCashResponseAllOfAgreements.md) |  | [optional] 
 **Reference** | **string** |  | [optional] 
 **Barcode** | **string** |  | [optional] 
-**BarcodeUrl** | **string** |  | [optional] 
+**BarcodeUrl** | **string** | URL to the barcode image, reference is the same as barcode | [optional] 
 **ExpiresAt** | **string** |  | [optional] 
 **Provider** | **string** |  | [optional] 
 **Last4** | **string** |  | [optional] 

@@ -4308,8 +4308,12 @@ paths:
               examples:
                 cash:
                   $ref: '#/components/examples/order_cash'
+                multiples_cash_charges:
+                  $ref: '#/components/examples/order_cash_multiple'
                 card:
                   $ref: '#/components/examples/order_card'
+                bnpl:
+                  $ref: '#/components/examples/order_bnpl'
               schema:
                 $ref: '#/components/schemas/order_response'
           description: successful operation
@@ -6948,6 +6952,8 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               examples:
+                cash:
+                  $ref: '#/components/examples/customer_payment_source_cash_example'
                 card:
                   summary: Card
                   value:
@@ -12273,27 +12279,249 @@ components:
   examples:
     order_cash:
       value:
-        id: 62bce95741de276186407e41
-        livemode: false
-        created_at: 1656547671
+        livemode: true
+        amount: 1560
         currency: MXN
-        payment_method:
-          service_name: OxxoPay
-          barcode_url: https://s3.amazonaws.com/cash_payment_barcodes/sandbox_reference.png
-          object: cash_payment
-          type: oxxo
-          expires_at: 1656634070
-          store_name: OXXO
-          reference: 98000013217610
-          customer_ip_address: 0.0.0.0
-        object: charge
-        description: Payment from order
-        status: paid
-        amount: 13500
-        paid_at: 1656547702
-        fee: 537
-        customer_id: null
-        order_id: ord_2s53K99C8GXVmCfPm
+        payment_status: pending_payment
+        amount_refunded: 0
+        split_payment: false
+        customer_info:
+          email: franco.longhi@conekta.com
+          phone: 539-933-3810
+          name: franco golden
+          corporate: null
+          customer_id: null
+          object: customer_info
+        shipping_contact: null
+        channel: null
+        fiscal_entity: null
+        object: order
+        id: ord_2xayxSvfWzQ2TLz7r
+        metadata: {}
+        is_refundable: false
+        processing_mode: null
+        created_at: 1741103510
+        updated_at: 1741103510
+        line_items:
+          object: list
+          has_more: false
+          total: 1
+          data:
+          - name: APOYO URGENTE REFERENCIA
+            description: null
+            unit_price: 1560
+            quantity: 1
+            sku: COL094
+            tags: null
+            brand: CHEDRAUI
+            type: null
+            object: line_item
+            id: line_item_2xayxSvfWzQ2TLz7p
+            parent_id: ord_2xayxSvfWzQ2TLz7r
+            metadata: {}
+            antifraud_info: {}
+        shipping_lines: null
+        tax_lines: null
+        discount_lines: null
+        charges:
+          object: list
+          has_more: false
+          total: 1
+          data:
+          - id: 67c72196e777ac0001f2140c
+            livemode: true
+            created_at: 1741103510
+            currency: MXN
+            failure_code: null
+            failure_message: null
+            monthly_installments: null
+            device_fingerprint: null
+            channel: null
+            payment_method:
+              service_name: Cash
+              barcode_url: https://barcodes.conekta.com/cash/cashin/datalogic/10001140326893401915.png
+              store: null
+              auth_code: null
+              agreement: null
+              object: cash_payment
+              type: cash
+              expires_at: 1743724800
+              store_names:
+              - 7 Eleven
+              - Farmacias del Ahorro
+              - CIRCLE K
+              - Tiendas Extra
+              - Farmacia Benavides
+              - Soriana
+              - WALDO'S
+              - ELECZION
+              - Super Kiosko
+              - Farmacias Bazar
+              - Wolworth
+              - Del Sol
+              - Yepas
+              - Farmacias De Dios
+              - Farmacias Nosarco
+              - Farmacias Santa Cruz
+              - Farmacentro
+              - Farmacias GyM
+              - Farmacias San Francisco de Asis
+              - Farmacias Union
+              - Farmacias Zapotlan
+              - Farmatodo
+              - Al Super
+              reference: 10001140326893401915
+              cashier_id: null
+              product_type: cash_in
+            object: charge
+            description: Payment from order
+            is_refundable: false
+            reference_id: null
+            status: pending_payment
+            amount: 1560
+            paid_at: null
+            customer_id: ""
+            order_id: ord_2xayxSvfWzQ2TLz7r
+            refunds: null
+    order_cash_multiple:
+      value:
+        livemode: true
+        amount: 156000
+        currency: MXN
+        payment_status: pending_payment
+        amount_refunded: 0
+        split_payment: false
+        customer_info:
+          email: franco.longhi@conekta.com
+          phone: 884-712-6894
+          name: franco golden
+          corporate: null
+          customer_id: null
+          object: customer_info
+        shipping_contact: null
+        channel: null
+        fiscal_entity: null
+        object: order
+        id: ord_2xazGvtKYTjxTUZU3
+        metadata: {}
+        is_refundable: false
+        processing_mode: null
+        created_at: 1741104962
+        updated_at: 1741104963
+        line_items:
+          object: list
+          has_more: false
+          total: 1
+          data:
+          - name: APOYO URGENTE REFERENCIA
+            description: null
+            unit_price: 156000
+            quantity: 1
+            sku: COL094
+            tags: null
+            brand: CHEDRAUI
+            type: null
+            object: line_item
+            id: line_item_2xazGvtKYTjxTUZU1
+            parent_id: ord_2xazGvtKYTjxTUZU3
+            metadata: {}
+            antifraud_info: {}
+        shipping_lines: null
+        tax_lines: null
+        discount_lines: null
+        charges:
+          object: list
+          has_more: false
+          total: 2
+          data:
+          - id: 67c72742e777ac0001f21463
+            livemode: true
+            created_at: 1741104962
+            currency: MXN
+            failure_code: null
+            failure_message: null
+            monthly_installments: null
+            device_fingerprint: null
+            channel: null
+            payment_method:
+              service_name: Cash
+              barcode_url: https://barcodes.conekta.com/cash/cashin/bbva/10830309851141878231.png
+              store: null
+              auth_code: null
+              agreement: "2409992"
+              object: cash_payment
+              type: cash
+              expires_at: 1743724800
+              store_names:
+              - BBVA ATM
+              reference: 10830309851141878231
+              cashier_id: null
+              product_type: bbva_cash_in
+            object: charge
+            description: Payment from order
+            is_refundable: false
+            reference_id: null
+            status: pending_payment
+            amount: 156000
+            paid_at: null
+            customer_id: ""
+            order_id: ord_2xazGvtKYTjxTUZU3
+            refunds: null
+          - id: 67c72742e777ac0001f2145b
+            livemode: true
+            created_at: 1741104962
+            currency: MXN
+            failure_code: null
+            failure_message: null
+            monthly_installments: null
+            device_fingerprint: null
+            channel: null
+            payment_method:
+              service_name: Cash
+              barcode_url: https://barcodes.conekta.com/cash/cashin/datalogic/10001244873740402013.png
+              store: null
+              auth_code: null
+              agreement: null
+              object: cash_payment
+              type: cash
+              expires_at: 1743724800
+              store_names:
+              - 7 Eleven
+              - Farmacias del Ahorro
+              - CIRCLE K
+              - Tiendas Extra
+              - Farmacia Benavides
+              - Soriana
+              - WALDO'S
+              - ELECZION
+              - Super Kiosko
+              - Farmacias Bazar
+              - Wolworth
+              - Del Sol
+              - Yepas
+              - Farmacias De Dios
+              - Farmacias Nosarco
+              - Farmacias Santa Cruz
+              - Farmacentro
+              - Farmacias GyM
+              - Farmacias San Francisco de Asis
+              - Farmacias Union
+              - Farmacias Zapotlan
+              - Farmatodo
+              - Al Super
+              reference: 10001244873740402013
+              cashier_id: null
+              product_type: cash_in
+            object: charge
+            description: Payment from order
+            is_refundable: false
+            reference_id: null
+            status: pending_payment
+            amount: 156000
+            paid_at: null
+            customer_id: ""
+            order_id: ord_2xazGvtKYTjxTUZU3
+            refunds: null
     order_card:
       value:
         id: 63dab7d00558720001bb3c7d
@@ -12327,6 +12555,140 @@ components:
         fee: "116,"
         customer_id: null
         order_id: ord_2tHuwPhgSwq6Gt7Rg
+    order_bnpl:
+      value:
+        amount: 300000
+        amount_refunded: 0
+        channel:
+          checkout_request_id: fdcb06d6-c9e1-44ee-921f-17723b63852f
+          checkout_request_type: PaymentLink
+          id: channel_2xaegxs5s69VP4pWw
+          segment: Checkout
+        charges:
+          data:
+          - amount: 300000
+            channel:
+              checkout_request_id: fdcb06d6-c9e1-44ee-921f-17723b63852f
+              checkout_request_type: PaymentLink
+              id: channel_2xaegxs5s69VP4pXA
+              segment: Checkout
+            created_at: 1741015718
+            currency: MXN
+            customer_id: ""
+            description: Payment from order
+            device_fingerprint: null
+            failure_code: null
+            failure_message: null
+            id: 67c5caa665f9b400015dec40
+            is_refundable: false
+            livemode: true
+            monthly_installments: null
+            object: charge
+            order_id: ord_2xaegxs5s69VP4pWy
+            paid_at: null
+            payment_method:
+              cancel_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/cancel?order_id=ord_2xaegxs5s69VP4pWy&charge_id=67c5caa665f9b400015dec40
+              expires_at: 1743694118
+              failure_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/failure?order_id=ord_2xaegxs5s69VP4pWy&charge_id=67c5caa665f9b400015dec40
+              object: bnpl_payment
+              product_type: klarna_bnpl
+              redirect_url: https://pay.playground.klarna.com/na/hpp/payments/20sJ2LZ
+              success_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/success?order_id=ord_2xaegxs5s69VP4pWy&charge_id=67c5caa665f9b400015dec40
+              type: bnpl
+            reference_id: null
+            refunds: null
+            status: pending_payment
+          has_more: false
+          object: list
+          total: 1
+        checkout: null
+        created_at: 1741015718
+        currency: MXN
+        customer_info:
+          corporate: false
+          customer_custom_reference: null
+          customer_id: cus_2xZfwfjXxX9tZhVey
+          email: alexis.ruiz@google.com
+          name: Pedro Ruiz
+          object: customer_info
+          phone: "+5215555555555"
+        discount_lines: null
+        fiscal_entity: null
+        id: ord_2xaegxs5s69VP4pWy
+        is_refundable: false
+        line_items:
+          data:
+          - antifraud_info: {}
+            brand: null
+            description: null
+            id: line_item_2xaegxs5s69VP4pWv
+            metadata: {}
+            name: Test creditea
+            object: line_item
+            parent_id: ord_2xaegxs5s69VP4pWy
+            quantity: 1
+            sku: null
+            tags: null
+            type: null
+            unit_price: 300000
+          has_more: false
+          object: list
+          total: 1
+        livemode: true
+        metadata: {}
+        object: order
+        payment_status: pending_payment
+        processing_mode: null
+        shipping_contact: null
+        shipping_lines: null
+        split_payment: false
+        tax_lines: null
+        updated_at: 1741015718
+    customer_payment_source_cash_example:
+      value:
+        next_page_url: "null,"
+        previous_page_url: "null,"
+        has_more: "false,"
+        object: "list,"
+        data:
+        - id: off_ref_2xayPUpcxeTrotDHr
+          object: payment_source
+          provider: Cash
+          store_names:
+          - 7 Eleven
+          - Farmacias del Ahorro
+          - CIRCLE K
+          - Tiendas Extra
+          - Farmacia Benavides
+          - Soriana
+          - WALDO'S
+          - ELECZION
+          - Super Kiosko
+          - Farmacias Bazar
+          - Wolworth
+          - Del Sol
+          - Yepas
+          - Farmacias De Dios
+          - Farmacias Nosarco
+          - Farmacias Santa Cruz
+          - Farmacentro
+          - Farmacias GyM
+          - Farmacias San Francisco de Asis
+          - Farmacias Union
+          - Farmacias Zapotlan
+          - Farmatodo
+          - Al Super
+          - BBVA ATM
+          type: cash_recurrent
+          reference: 10001189383263801812_caca
+          barcode: 10001189383263801812
+          barcode_url: https://barcode.conekta.com/cash/cashin/10001189383263801812.png
+          expires_at: 0
+          created_at: 1741100921
+          parent_id: cus_2xayPFXsb4LBZ2GUL
+          agreements:
+          - provider: bbva_cash_in
+            agreement: 2409526
     shipping:
       value:
         amount: 0
@@ -12337,6 +12699,19 @@ components:
         id: ship_lin_2sLxi45ZFs1GHJmzx
         parent_id: ord_2sLxi3MqYFJ1QfTmP
         deleted: true
+    charge_bnpl:
+      value:
+        payment_method:
+          can_not_expire: true
+          cancel_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/cancel
+          failure_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/failure
+          product_type: klarna_bnpl
+          success_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/success
+          type: bnpl
+    charge_cash:
+      value:
+        payment_method:
+          type: cash
     order_with_charges:
       summary: Create an order with charges
       value:
@@ -12430,12 +12805,37 @@ components:
             additionalProp1: {}
             additionalProp2: {}
             additionalProp3: {}
+    order_with_charges_bnpl:
+      summary: Create an order with a bnpl charge
+      value:
+        channel:
+          checkout_request_id: fdcb06d6-c9e1-44ee-921f-17723b63852f
+          checkout_request_name: Test creditea
+          checkout_request_type: PaymentLink
+        charges:
+        - payment_method:
+            can_not_expire: true
+            cancel_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/cancel
+            failure_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/failure
+            product_type: klarna_bnpl
+            success_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/success
+            type: bnpl
+        currency: MXN
+        customer_info:
+          customer_id: cus_2xZfwfjXxX9tZhVey
+        line_items:
+        - name: Test creditea
+          quantity: 1
+          unit_price: 300000
     order_with_checkout:
       summary: Create an order with checkout
       value:
         checkout:
           allowed_payment_methods:
-          - "[cash, card, bank_transfer]"
+          - cash
+          - card
+          - bank_transfer
+          - bnpl
           expires_at: 0
           failure_url: string
           monthly_installments_enabled: false
@@ -12916,6 +13316,11 @@ components:
     charge_create:
       content:
         application/json:
+          examples:
+            bnpl:
+              $ref: '#/components/examples/charge_bnpl'
+            cash:
+              $ref: '#/components/examples/charge_cash'
           schema:
             $ref: '#/components/schemas/charge_request'
       description: requested field for a charge
@@ -12968,6 +13373,8 @@ components:
           examples:
             order_with_charges:
               $ref: '#/components/examples/order_with_charges'
+            order_with_bnpl_charges:
+              $ref: '#/components/examples/order_with_charges_bnpl'
             order_with_checkout:
               $ref: '#/components/examples/order_with_checkout'
             split_payment_with_2_card_charges:
@@ -13564,8 +13971,18 @@ components:
         refunds:
           $ref: '#/components/schemas/charge_response_refunds'
         status:
+          description: Charge status
           example: pending_payment
           type: string
+      required:
+      - amount
+      - created_at
+      - currency
+      - id
+      - livemode
+      - object
+      - order_id
+      - status
       title: charges_data_response
       type: object
     charge_order_response:
@@ -14041,9 +14458,9 @@ components:
           example: 0
           type: integer
         channel:
-          $ref: '#/components/schemas/charge_response_channel'
+          $ref: '#/components/schemas/order_channel_response'
         charges:
-          $ref: '#/components/schemas/order_response_charges'
+          $ref: '#/components/schemas/order_charges_response'
         checkout:
           $ref: '#/components/schemas/order_response_checkout'
         created_at:
@@ -14060,7 +14477,7 @@ components:
         customer_info:
           $ref: '#/components/schemas/order_response_customer_info'
         discount_lines:
-          $ref: '#/components/schemas/order_response_discount_lines'
+          $ref: '#/components/schemas/order_discount_lines_response'
         fiscal_entity:
           $ref: '#/components/schemas/order_fiscal_entity_response'
         id:
@@ -14208,10 +14625,12 @@ components:
       description: checkout response
       properties:
         allowed_payment_methods:
+          description: Are the payment methods available for this link
           example:
           - cash
           - card
           - bank_transfer
+          - bnpl
           items:
             type: string
           type: array
@@ -14313,6 +14732,10 @@ components:
       - $ref: '#/components/schemas/payment_method_response'
       - description: use for cash responses
         properties:
+          agreements:
+            items:
+              $ref: '#/components/schemas/payment_method_cash_response_allOf_agreements'
+            type: array
           reference:
             example: "93000262276908"
             type: string
@@ -14320,14 +14743,15 @@ components:
             example: "93000262276908"
             type: string
           barcode_url:
-            example: https://pt-common-s3-stg.s3.amazonaws.com/644ebf80f2243197aad6cd8810375b905b613dbe.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3UN6375MP4SLLCWV%2F20230203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230203T215750Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEH4aCXVzLWVhc3QtMSJGMEQCICd79cu7DYu%2F4%2B3HnVVswydgU9yHcE9kmQIIk2TLoZJrAiBVZ0HxVSeboK5lhdQSqADjwQF62XX35jhC%2F2riB0M8uCqQBAj2%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAIaDDc5OTgwMTA4MTY4OCIMXWZds9ZI5hzUdbeGKuQDFreMyeWnWWPqDuGZ2%2BHk6usCr%2Fl096%2FNJh9xtf8htLu56K%2FhWUTx%2BjiqFWM2O%2FF5zTS%2BIV6TqkLDZ%2BQ5Jo1miQrRmR57YDz6uP2Yd1mNZ1ouq5ipnNjUuu5UWCCBAmqyZQsrVmeMQpSV2IB%2BTERCCcW2SukFEYU%2F20%2Fzy5orsoZ8DxOW460IymR3cWBk5u3Xh2cV6Y1RdPEwDEThhqYEF5w%2ByKbLENloMsI%2FUm6sG5PPrO3yQOAP9aK2muLJs9lXQRU%2FL%2FSsmS4FKSUFOqlN6YU%2Bi2Y%2FyGIKAJT2VDkngvz5Sl%2Fadj0j%2BPKftVRV5FcEhySB6Rl%2BSkPN7kVQMJp6pS8hMJ6JCyEA%2BA3eWYdIfKgQhWVXAR4oCBfJ62DH8FU3a7WfSjjpTwfVkiReWen3GGCYfUWETTVKp46MKnJ9PG0CD3KzxKV8VfmEGc5krK%2FI%2F%2BDV2wtSa%2F9qf1%2BK1YYJIK9qZGb25ljUiGhTB4T%2BMUOSQFjetiWUoOJc5Q3Jz%2FXJbiTAMTST39MhdbCgiMgfrc8OGKN5DOVbex33Z7dn0xf%2FOCkSqurhLaG08efKQBdhLNS0RlE9hbg9yZ2ywwtQIF39fI6A7eeH0T11a5HMlvm51u4rAffPHRuEJfwJoIuj%2F2s3QzDg7%2FWeBjqmAbnPOlGfysjrDdvHyG7HVnaX02kdG%2BI3Q4PFOO4Mjaa3ocpjcfPT70%2BZ5a%2FSv5vP0jDLGrLToeM9%2BAUlNepptICRu23a1tLGW4ri0twPA%2FZ4JDTtUUUgdblyG8bKpcUTNp4oOsdmLLBz3FVyr4c2xQbDZSu2zYOtoOxB18W0AC6kIbsMWVU55Bf0mBhPeBWxGrtM4Kw1SgHHlt%2F8vetQi2OwtUcg08c%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d06dfa41550003359f2aabc8006063a80dfd806a13a54d244024946a76aa9abc
+            description: "URL to the barcode image, reference is the same as barcode"
+            example: https://barcodes.conekta.com/644ebf80f2243197aad6cd8810375b905b613dbe.png
             type: string
           expires_at:
-            example: 0
+            example: 1742483424
             format: int64
             type: integer
           provider:
-            example: Oxxo
+            example: Cash
             type: string
         type: object
     payment_method_card_response:
@@ -14939,6 +15363,7 @@ components:
         amount:
           description: Amount to be charged in cents
           example: 40000
+          format: int64
           type: integer
         payment_method:
           $ref: '#/components/schemas/charge_request_payment_method'
@@ -15453,6 +15878,7 @@ components:
           - cash
           - card
           - bank_transfer
+          - bnpl
           items:
             type: string
           type: array
@@ -15912,7 +16338,7 @@ components:
             example: "93000262276908"
             type: string
           barcode_url:
-            example: https://pt-common-s3-stg.s3.amazonaws.com/644ebf80f2243197aad6cd8810375b905b613dbe.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3UN6375MP4SLLCWV%2F20230203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230203T215750Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEH4aCXVzLWVhc3QtMSJGMEQCICd79cu7DYu%2F4%2B3HnVVswydgU9yHcE9kmQIIk2TLoZJrAiBVZ0HxVSeboK5lhdQSqADjwQF62XX35jhC%2F2riB0M8uCqQBAj2%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAIaDDc5OTgwMTA4MTY4OCIMXWZds9ZI5hzUdbeGKuQDFreMyeWnWWPqDuGZ2%2BHk6usCr%2Fl096%2FNJh9xtf8htLu56K%2FhWUTx%2BjiqFWM2O%2FF5zTS%2BIV6TqkLDZ%2BQ5Jo1miQrRmR57YDz6uP2Yd1mNZ1ouq5ipnNjUuu5UWCCBAmqyZQsrVmeMQpSV2IB%2BTERCCcW2SukFEYU%2F20%2Fzy5orsoZ8DxOW460IymR3cWBk5u3Xh2cV6Y1RdPEwDEThhqYEF5w%2ByKbLENloMsI%2FUm6sG5PPrO3yQOAP9aK2muLJs9lXQRU%2FL%2FSsmS4FKSUFOqlN6YU%2Bi2Y%2FyGIKAJT2VDkngvz5Sl%2Fadj0j%2BPKftVRV5FcEhySB6Rl%2BSkPN7kVQMJp6pS8hMJ6JCyEA%2BA3eWYdIfKgQhWVXAR4oCBfJ62DH8FU3a7WfSjjpTwfVkiReWen3GGCYfUWETTVKp46MKnJ9PG0CD3KzxKV8VfmEGc5krK%2FI%2F%2BDV2wtSa%2F9qf1%2BK1YYJIK9qZGb25ljUiGhTB4T%2BMUOSQFjetiWUoOJc5Q3Jz%2FXJbiTAMTST39MhdbCgiMgfrc8OGKN5DOVbex33Z7dn0xf%2FOCkSqurhLaG08efKQBdhLNS0RlE9hbg9yZ2ywwtQIF39fI6A7eeH0T11a5HMlvm51u4rAffPHRuEJfwJoIuj%2F2s3QzDg7%2FWeBjqmAbnPOlGfysjrDdvHyG7HVnaX02kdG%2BI3Q4PFOO4Mjaa3ocpjcfPT70%2BZ5a%2FSv5vP0jDLGrLToeM9%2BAUlNepptICRu23a1tLGW4ri0twPA%2FZ4JDTtUUUgdblyG8bKpcUTNp4oOsdmLLBz3FVyr4c2xQbDZSu2zYOtoOxB18W0AC6kIbsMWVU55Bf0mBhPeBWxGrtM4Kw1SgHHlt%2F8vetQi2OwtUcg08c%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d06dfa41550003359f2aabc8006063a80dfd806a13a54d244024946a76aa9abc
+            example: https://barcodes.conekta.com/644ebf80f2243197aad6cd8810375b905b613dbe.png
             type: string
           expires_at:
             example: 0
@@ -15924,14 +16350,14 @@ components:
             example: bbva_cash_in
             type: string
           service_name:
-            example: OxxoPay
+            example: store
             type: string
           store:
             example: 10MON50EDI
             nullable: true
             type: string
           store_name:
-            example: OXXO
+            example: wallmart
             type: string
           customer_ip_address:
             example: 0.0.0.0
@@ -16008,7 +16434,7 @@ components:
             type: string
           executed_at:
             nullable: true
-            type: integer
+            type: string
           expires_at:
             example: 1683053729
             format: int64
@@ -16050,6 +16476,40 @@ components:
             example: 0.0.0.0
             type: string
         title: charge_data_payment_method_bank_transfer_response
+        type: object
+    payment_method_bnpl_payment:
+      allOf:
+      - $ref: '#/components/schemas/payment_method'
+      - description: use for bnpl payment responses
+        properties:
+          cancel_url:
+            description: URL to redirect the customer after a canceled payment
+            example: https://example.com/cancel
+            type: string
+          expires_at:
+            description: Expiration date of the charge
+            example: 1683053729
+            format: int64
+            type: integer
+          failure_url:
+            description: URL to redirect the customer after a failed payment
+            example: https://example.com/failure
+            type: string
+          product_type:
+            description: Product type of the charge
+            type: string
+          redirect_url:
+            description: URL to redirect the customer to complete the payment
+            example: https://example.com/redirect
+            type: string
+          success_url:
+            description: URL to redirect the customer after a successful payment
+            example: https://example.com/success
+            type: string
+        required:
+        - expires_at
+        - product_type
+        title: charge_data_payment_method_bnpl_payment_response
         type: object
     company_payout_destination_response:
       description: Company payout destination model
@@ -16240,6 +16700,47 @@ components:
       - object
       - type
       type: object
+    payment_method_bnpl_request:
+      allOf:
+      - $ref: '#/components/schemas/customer_payment_method_request'
+      - properties:
+          cancel_url:
+            description: URL to redirect the customer after a canceled payment
+            example: https://example.com/cancel
+            type: string
+          can_not_expire:
+            description: Indicates if the payment method can not expire
+            example: true
+            type: boolean
+          failure_url:
+            description: URL to redirect the customer after a failed payment
+            example: https://example.com/failure
+            type: string
+          product_type:
+            description: "Product type of the payment method, use for the payment\
+              \ method to know the product type"
+            enum:
+            - klarna_bnpl
+            - creditea_bnpl
+            example: klarna_bnpl
+            type: string
+          success_url:
+            description: URL to redirect the customer after a successful payment
+            example: https://example.com/success
+            type: string
+          type:
+            description: Type of the payment method
+            example: bnpl
+            type: string
+        required:
+        - can_not_expire
+        - cancel_url
+        - failure_url
+        - product_type
+        - success_url
+        - type
+        type: object
+      title: payment_method_bnpl_request
     payment_method_card_request:
       allOf:
       - $ref: '#/components/schemas/customer_payment_method_request'
@@ -16293,6 +16794,7 @@ components:
           - cash
           - card
           - bank_transfer
+          - bnpl
           items:
             type: string
           type: array
@@ -16383,7 +16885,7 @@ components:
       properties:
         type:
           description: Type of payment method
-          example: card | cash | spei
+          example: card | cash | spei | bnpl
           type: string
       required:
       - type
@@ -16754,6 +17256,7 @@ components:
           cash: payment_method_cash_response
           card: payment_method_card_response
           oxxo_recurrent: payment_method_cash_response
+          cash_recurrent: payment_method_cash_response
           spei_recurrent: payment_method_spei_recurrent
         propertyName: type
       oneOf:
@@ -16784,6 +17287,7 @@ components:
         mapping:
           cash: payment_method_cash_response
           card: payment_method_card_response
+          cash_recurrent: payment_method_cash_response
           oxxo_recurrent: payment_method_cash_response
           spei_recurrent: payment_method_spei_recurrent
         propertyName: type
@@ -16798,6 +17302,7 @@ components:
           cash: payment_method_cash_response
           card: payment_method_card_response
           oxxo_recurrent: payment_method_cash_response
+          cash_recurrent: payment_method_cash_response
           spei_recurrent: payment_method_spei_recurrent
         propertyName: type
       oneOf:
@@ -16943,11 +17448,13 @@ components:
           cash_payment: payment_method_cash
           card_payment: payment_method_card
           bank_transfer_payment: payment_method_bank_transfer
+          bnpl_payment: payment_method_bnpl_payment
         propertyName: object
       oneOf:
       - $ref: '#/components/schemas/payment_method_cash'
       - $ref: '#/components/schemas/payment_method_card'
       - $ref: '#/components/schemas/payment_method_bank_transfer'
+      - $ref: '#/components/schemas/payment_method_bnpl_payment'
       title: charge_response_payment_method
     charge_response_refunds_data:
       properties:
@@ -17004,11 +17511,13 @@ components:
           cash_payment: payment_method_cash
           card_payment: payment_method_card
           bank_transfer_payment: payment_method_bank_transfer
+          bnpl_payment: payment_method_bnpl_payment
         propertyName: object
       oneOf:
       - $ref: '#/components/schemas/payment_method_cash'
       - $ref: '#/components/schemas/payment_method_card'
       - $ref: '#/components/schemas/payment_method_bank_transfer'
+      - $ref: '#/components/schemas/payment_method_bnpl_payment'
       title: charge_order_response_payment_method
     charges_order_response_allOf_data:
       allOf:
@@ -17066,6 +17575,7 @@ components:
           cash: payment_method_cash_response
           card: payment_method_card_response
           oxxo_recurrent: payment_method_cash_response
+          cash_recurrent: payment_method_cash_response
           spei_recurrent: payment_method_spei_recurrent
         propertyName: type
       oneOf:
@@ -17267,7 +17777,23 @@ components:
           type: string
       title: logs_response_data
       type: object
-    order_response_charges:
+    order_channel_response:
+      properties:
+        segment:
+          example: Checkout
+          type: string
+        checkout_request_id:
+          example: 6fca054a-8519-4c43-971e-cea35cc519bb
+          type: string
+        checkout_request_type:
+          example: HostedPayment
+          type: string
+        id:
+          example: channel_2tNDzhA4Akmzj11AU
+          type: string
+      title: order_channel_response
+      type: object
+    order_charges_response:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - properties:
@@ -17277,9 +17803,16 @@ components:
             type: array
         type: object
       description: The charges associated with the order
+      title: order_charges_response
     order_response_checkout:
       properties:
         allowed_payment_methods:
+          description: Are the payment methods available for this link
+          example:
+          - cash
+          - card
+          - bank_transfer
+          - bnpl
           items:
             type: string
           type: array
@@ -17387,7 +17920,7 @@ components:
         type: object
       - $ref: '#/components/schemas/order_customer_info_response'
       - $ref: '#/components/schemas/customer_info_just_customer_id_response'
-    order_response_discount_lines:
+    order_discount_lines_response:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - properties:
@@ -17396,6 +17929,7 @@ components:
               $ref: '#/components/schemas/discount_lines_data_response'
             type: array
         type: object
+      title: order_discount_lines_response
     order_fiscal_entity_address_response:
       allOf:
       - $ref: '#/components/schemas/fiscal_entity_address'
@@ -17576,6 +18110,17 @@ components:
       - livemode
       - object
       title: payout_order_payouts_item
+      type: object
+    payment_method_cash_response_allOf_agreements:
+      properties:
+        agreement:
+          description: "Agreement number, you can use this number to pay in the store/bbva"
+          example: "2409526"
+          type: string
+        provider:
+          description: "Provider name, you can use this to know where to pay"
+          example: bbva_cash_in
+          type: string
       type: object
     customer_shipping_contacts_response_address:
       properties:
@@ -17825,6 +18370,7 @@ components:
       type: object
     charge_request_payment_method:
       oneOf:
+      - $ref: '#/components/schemas/payment_method_bnpl_request'
       - $ref: '#/components/schemas/payment_method_card_request'
       - $ref: '#/components/schemas/payment_method_general_request'
       title: charge_request_payment_method

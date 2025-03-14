@@ -182,6 +182,9 @@ namespace Conekta.net.Model
                     case "cash":
                         newCustomerPaymentMethodsData = new CustomerPaymentMethodsData(JsonConvert.DeserializeObject<PaymentMethodCashResponse>(jsonString, CustomerPaymentMethodsData.AdditionalPropertiesSerializerSettings));
                         return newCustomerPaymentMethodsData;
+                    case "cash_recurrent":
+                        newCustomerPaymentMethodsData = new CustomerPaymentMethodsData(JsonConvert.DeserializeObject<PaymentMethodCashResponse>(jsonString, CustomerPaymentMethodsData.AdditionalPropertiesSerializerSettings));
+                        return newCustomerPaymentMethodsData;
                     case "oxxo_recurrent":
                         newCustomerPaymentMethodsData = new CustomerPaymentMethodsData(JsonConvert.DeserializeObject<PaymentMethodCashResponse>(jsonString, CustomerPaymentMethodsData.AdditionalPropertiesSerializerSettings));
                         return newCustomerPaymentMethodsData;
@@ -198,7 +201,7 @@ namespace Conekta.net.Model
                         newCustomerPaymentMethodsData = new CustomerPaymentMethodsData(JsonConvert.DeserializeObject<PaymentMethodSpeiRecurrent>(jsonString, CustomerPaymentMethodsData.AdditionalPropertiesSerializerSettings));
                         return newCustomerPaymentMethodsData;
                     default:
-                        System.Diagnostics.Debug.WriteLine(string.Format("Failed to lookup discriminator value `{0}` for CustomerPaymentMethodsData. Possible values: card cash oxxo_recurrent spei_recurrent payment_method_card_response payment_method_cash_response payment_method_spei_recurrent", discriminatorValue));
+                        System.Diagnostics.Debug.WriteLine(string.Format("Failed to lookup discriminator value `{0}` for CustomerPaymentMethodsData. Possible values: card cash cash_recurrent oxxo_recurrent spei_recurrent payment_method_card_response payment_method_cash_response payment_method_spei_recurrent", discriminatorValue));
                         break;
                 }
             }

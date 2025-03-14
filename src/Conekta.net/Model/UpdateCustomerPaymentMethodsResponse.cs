@@ -182,6 +182,9 @@ namespace Conekta.net.Model
                     case "cash":
                         newUpdateCustomerPaymentMethodsResponse = new UpdateCustomerPaymentMethodsResponse(JsonConvert.DeserializeObject<PaymentMethodCashResponse>(jsonString, UpdateCustomerPaymentMethodsResponse.AdditionalPropertiesSerializerSettings));
                         return newUpdateCustomerPaymentMethodsResponse;
+                    case "cash_recurrent":
+                        newUpdateCustomerPaymentMethodsResponse = new UpdateCustomerPaymentMethodsResponse(JsonConvert.DeserializeObject<PaymentMethodCashResponse>(jsonString, UpdateCustomerPaymentMethodsResponse.AdditionalPropertiesSerializerSettings));
+                        return newUpdateCustomerPaymentMethodsResponse;
                     case "oxxo_recurrent":
                         newUpdateCustomerPaymentMethodsResponse = new UpdateCustomerPaymentMethodsResponse(JsonConvert.DeserializeObject<PaymentMethodCashResponse>(jsonString, UpdateCustomerPaymentMethodsResponse.AdditionalPropertiesSerializerSettings));
                         return newUpdateCustomerPaymentMethodsResponse;
@@ -198,7 +201,7 @@ namespace Conekta.net.Model
                         newUpdateCustomerPaymentMethodsResponse = new UpdateCustomerPaymentMethodsResponse(JsonConvert.DeserializeObject<PaymentMethodSpeiRecurrent>(jsonString, UpdateCustomerPaymentMethodsResponse.AdditionalPropertiesSerializerSettings));
                         return newUpdateCustomerPaymentMethodsResponse;
                     default:
-                        System.Diagnostics.Debug.WriteLine(string.Format("Failed to lookup discriminator value `{0}` for UpdateCustomerPaymentMethodsResponse. Possible values: card cash oxxo_recurrent spei_recurrent payment_method_card_response payment_method_cash_response payment_method_spei_recurrent", discriminatorValue));
+                        System.Diagnostics.Debug.WriteLine(string.Format("Failed to lookup discriminator value `{0}` for UpdateCustomerPaymentMethodsResponse. Possible values: card cash cash_recurrent oxxo_recurrent spei_recurrent payment_method_card_response payment_method_cash_response payment_method_spei_recurrent", discriminatorValue));
                         break;
                 }
             }

@@ -5,7 +5,7 @@ checkout response
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AllowedPaymentMethods** | **List&lt;string&gt;** |  | [optional] 
+**AllowedPaymentMethods** | **List&lt;string&gt;** | Are the payment methods available for this link | [optional] 
 **CanNotExpire** | **bool** |  | [optional] 
 **EmailsSent** | **int** |  | [optional] 
 **ExcludeCardNetworks** | **List&lt;Object&gt;** |  | [optional] 

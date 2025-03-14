@@ -35,7 +35,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderResponseCheckout" /> class.
         /// </summary>
-        /// <param name="allowedPaymentMethods">allowedPaymentMethods.</param>
+        /// <param name="allowedPaymentMethods">Are the payment methods available for this link.</param>
         /// <param name="canNotExpire">canNotExpire.</param>
         /// <param name="emailsSent">emailsSent.</param>
         /// <param name="excludeCardNetworks">excludeCardNetworks.</param>
@@ -96,8 +96,12 @@ namespace Conekta.net.Model
         }
 
         /// <summary>
-        /// Gets or Sets AllowedPaymentMethods
+        /// Are the payment methods available for this link
         /// </summary>
+        /// <value>Are the payment methods available for this link</value>
+        /*
+        <example>[&quot;cash&quot;,&quot;card&quot;,&quot;bank_transfer&quot;,&quot;bnpl&quot;]</example>
+        */
         [DataMember(Name = "allowed_payment_methods", EmitDefaultValue = false)]
         public List<string> AllowedPaymentMethods { get; set; }
 
