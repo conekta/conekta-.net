@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AllowedPaymentMethods** | **List&lt;CheckoutRequest.AllowedPaymentMethodsEnum&gt;** | Are the payment methods available for this link. For subscriptions, only &#39;card&#39; is allowed due to the recurring nature of the payments. | 
-**plan_ids** | **string[]** | List of plan IDs that will be available for subscription. This field is required for subscription payments but optional for other types of payments. |
+**PlanIds** | **List&lt;string&gt;** | List of plan IDs that will be available for subscription. This field is required for subscription payments but optional for other types of payments. |
 **ExpiresAt** | **long** | Unix timestamp of checkout expiration | [optional] 
 **FailureUrl** | **string** | Redirection url back to the site in case of failed payment, applies only to HostedPayment. | [optional] 
 **MonthlyInstallmentsEnabled** | **bool** |  | [optional] 
