@@ -322,7 +322,7 @@ namespace Conekta.net.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/vnd.conekta-v2.1.0+json"
+                "application/vnd.conekta-v2.2.0+json"
             };
 
             var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -402,7 +402,7 @@ namespace Conekta.net.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/vnd.conekta-v2.1.0+json"
+                "application/vnd.conekta-v2.2.0+json"
             };
 
             var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -471,7 +471,7 @@ namespace Conekta.net.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/vnd.conekta-v2.1.0+json"
+                "application/vnd.conekta-v2.2.0+json"
             };
 
             var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -541,7 +541,7 @@ namespace Conekta.net.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/vnd.conekta-v2.1.0+json"
+                "application/vnd.conekta-v2.2.0+json"
             };
 
             var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -609,7 +609,7 @@ namespace Conekta.net.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/vnd.conekta-v2.1.0+json"
+                "application/vnd.conekta-v2.2.0+json"
             };
 
             var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -679,7 +679,7 @@ namespace Conekta.net.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/vnd.conekta-v2.1.0+json"
+                "application/vnd.conekta-v2.2.0+json"
             };
 
             var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
