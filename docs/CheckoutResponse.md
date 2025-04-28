@@ -6,6 +6,7 @@ checkout response
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AllowedPaymentMethods** | **List&lt;string&gt;** | Are the payment methods available for this link | [optional] 
+**PlanIds** | **List&lt;string&gt;** | List of plan IDs that are available for subscription | [optional] 
 **CanNotExpire** | **bool** |  | [optional] 
 **EmailsSent** | **int** |  | [optional] 
 **ExcludeCardNetworks** | **List&lt;Object&gt;** |  | [optional] 
