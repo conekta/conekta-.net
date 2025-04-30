@@ -14327,6 +14327,34 @@ components:
             additionalProp1: {}
             additionalProp2: {}
             additionalProp3: {}
+    order_with_subscription:
+      summary: Create an order with subscription plans
+      value:
+        checkout:
+          allowed_payment_methods:
+          - card
+          plan_ids:
+          - nuevo-plan
+          expires_at: 1746015865
+          failure_url: string
+          monthly_installments_enabled: false
+          name: Embebido Prueba
+          on_demand_enabled: true
+          success_url: string
+          type: Integration
+          max_failed_retries: 3
+          is_redirect_on_failure: true
+        currency: MXN
+        customer_info:
+          name: Prueba
+          email: prueba@prueba.com
+          phone: "+5218181818181"
+          corporate: false
+          object: customer_info
+        shipping_lines:
+        - amount: 0
+          metadata:
+            key: value
     split_payment_with_2_cards:
       summary: Create an order with 2 card charges
       value:
@@ -14807,6 +14835,8 @@ components:
               $ref: '#/components/examples/order_with_charges_bnpl'
             order_with_checkout:
               $ref: '#/components/examples/order_with_checkout'
+            order_with_subscription:
+              $ref: '#/components/examples/order_with_subscription'
             split_payment_with_2_card_charges:
               $ref: '#/components/examples/split_payment_with_2_cards'
             split_payment_with_3_cash_charges:
@@ -16078,6 +16108,14 @@ components:
           - card
           - bank_transfer
           - bnpl
+          items:
+            type: string
+          type: array
+        plan_ids:
+          description: List of plan IDs that are available for subscription
+          example:
+          - plan_123
+          - plan_456
           items:
             type: string
           type: array
@@ -18251,12 +18289,27 @@ components:
         [Checkout](https://developers.conekta.com/v2.2.0/reference/payment-link) details
       properties:
         allowed_payment_methods:
-          description: Are the payment methods available for this link
+          description: "Are the payment methods available for this link. For subscriptions,\
+            \ only 'card' is allowed due to the recurring nature of the payments."
           example:
           - cash
           - card
           - bank_transfer
           - bnpl
+          items:
+            enum:
+            - cash
+            - card
+            - bank_transfer
+            - bnpl
+            type: string
+          type: array
+        plan_ids:
+          description: List of plan IDs that will be available for subscription. This
+            field is required for subscription payments.
+          example:
+          - plan_123
+          - plan_456
           items:
             type: string
           type: array
@@ -19984,6 +20037,14 @@ components:
             of the order.
           items:
             $ref: '#/components/schemas/product'
+          type: array
+        plan_ids:
+          description: It is a list of plan IDs that will be associated with the order.
+          example:
+          - plan_123
+          - plan_456
+          items:
+            type: string
           type: array
         metadata:
           additionalProperties: true
