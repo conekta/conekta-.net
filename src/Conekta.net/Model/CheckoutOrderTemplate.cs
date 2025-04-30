@@ -43,8 +43,9 @@ namespace Conekta.net.Model
         /// <param name="currency">It is the currency in which the order will be created. It must be a valid ISO 4217 currency code. (required).</param>
         /// <param name="customerInfo">customerInfo.</param>
         /// <param name="lineItems">They are the products to buy. Each contains the \&quot;unit price\&quot; and \&quot;quantity\&quot; parameters that are used to calculate the total amount of the order. (required).</param>
+        /// <param name="planIds">It is a list of plan IDs that will be associated with the order..</param>
         /// <param name="metadata">It is a set of key-value pairs that you can attach to the order. It can be used to store additional information about the order in a structured format..</param>
-        public CheckoutOrderTemplate(string currency = default(string), CheckoutOrderTemplateCustomerInfo customerInfo = default(CheckoutOrderTemplateCustomerInfo), List<Product> lineItems = default(List<Product>), Dictionary<string, Object> metadata = default(Dictionary<string, Object>))
+        public CheckoutOrderTemplate(string currency = default(string), CheckoutOrderTemplateCustomerInfo customerInfo = default(CheckoutOrderTemplateCustomerInfo), List<Product> lineItems = default(List<Product>), List<string> planIds = default(List<string>), Dictionary<string, Object> metadata = default(Dictionary<string, Object>))
         {
             // to ensure "currency" is required (not null)
             if (currency == null)
@@ -59,6 +60,7 @@ namespace Conekta.net.Model
             }
             this.LineItems = lineItems;
             this.CustomerInfo = customerInfo;
+            this.PlanIds = planIds;
             this.Metadata = metadata;
         }
 
@@ -86,6 +88,16 @@ namespace Conekta.net.Model
         public List<Product> LineItems { get; set; }
 
         /// <summary>
+        /// It is a list of plan IDs that will be associated with the order.
+        /// </summary>
+        /// <value>It is a list of plan IDs that will be associated with the order.</value>
+        /*
+        <example>[&quot;plan_123&quot;,&quot;plan_456&quot;]</example>
+        */
+        [DataMember(Name = "plan_ids", EmitDefaultValue = false)]
+        public List<string> PlanIds { get; set; }
+
+        /// <summary>
         /// It is a set of key-value pairs that you can attach to the order. It can be used to store additional information about the order in a structured format.
         /// </summary>
         /// <value>It is a set of key-value pairs that you can attach to the order. It can be used to store additional information about the order in a structured format.</value>
@@ -106,6 +118,7 @@ namespace Conekta.net.Model
             sb.Append("  Currency: ").Append(Currency).Append("\n");
             sb.Append("  CustomerInfo: ").Append(CustomerInfo).Append("\n");
             sb.Append("  LineItems: ").Append(LineItems).Append("\n");
+            sb.Append("  PlanIds: ").Append(PlanIds).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
