@@ -6,7 +6,7 @@ All URIs are relative to *https://api.conekta.io*
 |--------|--------------|-------------|
 | [**GetEvent**](EventsApi.md#getevent) | **GET** /events/{id} | Get Event |
 | [**GetEvents**](EventsApi.md#getevents) | **GET** /events | Get list of Events |
-| [**ResendEvent**](EventsApi.md#resendevent) | **POST** /events/{event_id}/webhook_logs/{webhook_log_id}/resend | Resend Event |
+| [**ResendEvent**](EventsApi.md#resendevent) | **POST** /events/{event_id}/resend | Resend Event |
 
 <a id="getevent"></a>
 # **GetEvent**
@@ -96,7 +96,7 @@ catch (ApiException e)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Accept**: application/vnd.conekta-v2.2.0+json
 
 
 ### HTTP response details
@@ -201,7 +201,7 @@ catch (ApiException e)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Accept**: application/vnd.conekta-v2.2.0+json
 
 
 ### HTTP response details
@@ -215,11 +215,11 @@ catch (ApiException e)
 
 <a id="resendevent"></a>
 # **ResendEvent**
-> EventsResendResponse ResendEvent (string eventId, string webhookLogId, string acceptLanguage = null)
+> EventsResendResponse ResendEvent (string eventId, ResendRequest resendRequest, string acceptLanguage = null)
 
 Resend Event
 
-Try to send an event
+Resend event to selected webhooks
 
 ### Example
 ```csharp
@@ -242,13 +242,13 @@ namespace Example
 
             var apiInstance = new EventsApi(config);
             var eventId = 6463d6e35a4c3e001819e760;  // string | event identifier
-            var webhookLogId = webhl_2tsv6NzWJHBWCkqGt;  // string | webhook log identifier
+            var resendRequest = new ResendRequest(); // ResendRequest | requested fields for resend an event
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
                 // Resend Event
-                EventsResendResponse result = apiInstance.ResendEvent(eventId, webhookLogId, acceptLanguage);
+                EventsResendResponse result = apiInstance.ResendEvent(eventId, resendRequest, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -269,7 +269,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Resend Event
-    ApiResponse<EventsResendResponse> response = apiInstance.ResendEventWithHttpInfo(eventId, webhookLogId, acceptLanguage);
+    ApiResponse<EventsResendResponse> response = apiInstance.ResendEventWithHttpInfo(eventId, resendRequest, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -287,7 +287,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **eventId** | **string** | event identifier |  |
-| **webhookLogId** | **string** | webhook log identifier |  |
+| **resendRequest** | [**ResendRequest**](ResendRequest.md) | requested fields for resend an event |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
@@ -300,8 +300,8 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: application/json
+ - **Accept**: application/vnd.conekta-v2.2.0+json
 
 
 ### HTTP response details

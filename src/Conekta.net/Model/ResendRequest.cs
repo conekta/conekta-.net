@@ -27,34 +27,39 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// OrderCaptureRequest
+    /// ResendRequest
     /// </summary>
-    [DataContract(Name = "order_capture_request")]
-    public partial class OrderCaptureRequest : IValidatableObject
+    [DataContract(Name = "resend_request")]
+    public partial class ResendRequest : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrderCaptureRequest" /> class.
+        /// Initializes a new instance of the <see cref="ResendRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected OrderCaptureRequest() { }
+        protected ResendRequest() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrderCaptureRequest" /> class.
+        /// Initializes a new instance of the <see cref="ResendRequest" /> class.
         /// </summary>
-        /// <param name="amount">Amount to capture (required).</param>
-        public OrderCaptureRequest(long amount = default(long))
+        /// <param name="webhooksIds">webhooks ids to resend event (required).</param>
+        public ResendRequest(List<string> webhooksIds = default(List<string>))
         {
-            this.Amount = amount;
+            // to ensure "webhooksIds" is required (not null)
+            if (webhooksIds == null)
+            {
+                throw new ArgumentNullException("webhooksIds is a required property for ResendRequest and cannot be null");
+            }
+            this.WebhooksIds = webhooksIds;
         }
 
         /// <summary>
-        /// Amount to capture
+        /// webhooks ids to resend event
         /// </summary>
-        /// <value>Amount to capture</value>
+        /// <value>webhooks ids to resend event</value>
         /*
-        <example>500</example>
+        <example>[&quot;6307a60c41de27127515a575&quot;,&quot;6307a60c41de27127515a571&quot;]</example>
         */
-        [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
-        public long Amount { get; set; }
+        [DataMember(Name = "webhooks_ids", IsRequired = true, EmitDefaultValue = true)]
+        public List<string> WebhooksIds { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -63,8 +68,8 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class OrderCaptureRequest {\n");
-            sb.Append("  Amount: ").Append(Amount).Append("\n");
+            sb.Append("class ResendRequest {\n");
+            sb.Append("  WebhooksIds: ").Append(WebhooksIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -85,12 +90,6 @@ namespace Conekta.net.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // Amount (long) minimum
-            if (this.Amount < (long)1)
-            {
-                yield return new ValidationResult("Invalid value for Amount, must be a value greater than or equal to 1.", new [] { "Amount" });
-            }
-
             yield break;
         }
     }
