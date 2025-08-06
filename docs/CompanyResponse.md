@@ -1,18 +1,18 @@
 # Conekta.net.Model.CompanyResponse
-Company model
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | The child company&#39;s unique identifier | [optional] 
-**CreatedAt** | **long** | The resource&#39;s creation date (unix timestamp) | [optional] 
-**Name** | **string** | The child company&#39;s name | [optional] 
-**Object** | **string** | The resource&#39;s type | [optional] 
-**ParentCompanyId** | **string** | Id of the parent company | [optional] 
-**UseParentFiscalData** | **bool** | Whether the parent company&#39;s fiscal data is to be used for liquidation and tax purposes | [optional] 
-**PayoutDestination** | [**CompanyPayoutDestinationResponse**](CompanyPayoutDestinationResponse.md) |  | [optional] 
-**FiscalInfo** | [**CompanyFiscalInfoResponse**](CompanyFiscalInfoResponse.md) |  | [optional] 
+**Id** | **string** | The unique identifier for the company. | 
+**Name** | **string** | The name of the company. | 
+**Active** | **bool** | Indicates if the company is active. | 
+**AccountStatus** | **string** | The current status of the company&#39;s account. | 
+**ParentCompanyId** | **string** | The identifier of the parent company, if any. | [optional] 
+**OnboardingStatus** | **string** | The current status of the company&#39;s onboarding process. | 
+**Documents** | [**List&lt;CompanyResponseDocumentsInner&gt;**](CompanyResponseDocumentsInner.md) | A list of documents related to the company. | 
+**CreatedAt** | **long** | Timestamp of when the company was created. | 
+**Object** | **string** | The type of object, typically \&quot;company\&quot;. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

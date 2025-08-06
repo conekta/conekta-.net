@@ -40,10 +40,10 @@ namespace Conekta.net.Model
         public enum ProductTypeEnum
         {
             /// <summary>
-            /// Enum KlarnaBnpl for value: klarna_bnpl
+            /// Enum AplazoBnpl for value: aplazo_bnpl
             /// </summary>
-            [EnumMember(Value = "klarna_bnpl")]
-            KlarnaBnpl = 1,
+            [EnumMember(Value = "aplazo_bnpl")]
+            AplazoBnpl = 1,
 
             /// <summary>
             /// Enum CrediteaBnpl for value: creditea_bnpl
@@ -58,7 +58,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>Product type of the payment method, use for the payment method to know the product type</value>
         /*
-        <example>klarna_bnpl</example>
+        <example>aplazo_bnpl</example>
         */
         [DataMember(Name = "product_type", IsRequired = true, EmitDefaultValue = true)]
         public ProductTypeEnum ProductType { get; set; }
