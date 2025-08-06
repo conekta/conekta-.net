@@ -1846,6 +1846,89 @@ paths:
       summary: Get List of Companies
       tags:
       - Companies
+    post:
+      description: Create a new company.
+      operationId: createCompany
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/create_company_request'
+        description: Company data
+        required: true
+      responses:
+        "201":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              schema:
+                $ref: '#/components/schemas/company_response'
+          description: Company created successfully
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Content-Type:
+              description: The format of the response body
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Content-Length:
+              description: The length of the response body in bytes
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Connection:
+              description: The type of connection used to transfer the response
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Conekta-Media-Type:
+              explode: false
+              schema:
+                type: string
+              style: simple
+        "401":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "500":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Create Company
+      tags:
+      - Companies
   /companies/{id}:
     get:
       operationId: getCompany
@@ -1970,6 +2053,387 @@ paths:
       security:
       - bearerAuth: []
       summary: Get Company
+      tags:
+      - Companies
+  /companies/{company_id}/document:
+    patch:
+      description: Updates an existing document associated with a specific company.
+      operationId: updateCompanyDocument
+      parameters:
+      - description: The unique identifier of the company.
+        explode: false
+        in: path
+        name: company_id
+        required: true
+        schema:
+          example: 6827206b1ec60400015eb09a
+          type: string
+        style: simple
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/company_document_request'
+        description: Document information to update.
+        required: true
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              schema:
+                $ref: '#/components/schemas/company_document_response'
+          description: Document updated successfully.
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Content-Type:
+              description: The format of the response body
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Content-Length:
+              description: The length of the response body in bytes
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Connection:
+              description: The type of connection used to transfer the response
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Conekta-Media-Type:
+              explode: false
+              schema:
+                type: string
+              style: simple
+        "401":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
+        "500":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Update Company Document
+      tags:
+      - Companies
+    post:
+      description: Uploads a document associated with a specific company.
+      operationId: uploadCompanyDocument
+      parameters:
+      - description: The unique identifier of the company.
+        explode: false
+        in: path
+        name: company_id
+        required: true
+        schema:
+          example: 6827206b1ec60400015eb09a
+          type: string
+        style: simple
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/company_document_request'
+        description: Document information to upload.
+        required: true
+      responses:
+        "201":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              schema:
+                $ref: '#/components/schemas/company_document_response'
+          description: Document uploaded successfully.
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Content-Type:
+              description: The format of the response body
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Content-Length:
+              description: The length of the response body in bytes
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Connection:
+              description: The type of connection used to transfer the response
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Conekta-Media-Type:
+              explode: false
+              schema:
+                type: string
+              style: simple
+        "401":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
+        "500":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Upload Company Document
+      tags:
+      - Companies
+  /companies/{company_id}/documents:
+    get:
+      description: Retrieve a list of documents associated with a specific company.
+      operationId: getCompanyDocuments
+      parameters:
+      - description: The unique identifier of the company.
+        explode: false
+        in: path
+        name: company_id
+        required: true
+        schema:
+          example: 6307a60c41de27127515a575
+          type: string
+        style: simple
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/company_document_response'
+                type: array
+          description: A list of documents for the company.
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Content-Type:
+              description: The format of the response body
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Content-Length:
+              description: The length of the response body in bytes
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Connection:
+              description: The type of connection used to transfer the response
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Conekta-Media-Type:
+              explode: false
+              schema:
+                type: string
+              style: simple
+        "401":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
+        "500":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get Company Documents
       tags:
       - Companies
   /customers:
@@ -14011,8 +14475,8 @@ components:
               expires_at: 1743694118
               failure_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/failure?order_id=ord_2xaegxs5s69VP4pWy&charge_id=67c5caa665f9b400015dec40
               object: bnpl_payment
-              product_type: klarna_bnpl
-              redirect_url: https://pay.playground.klarna.com/na/hpp/payments/20sJ2LZ
+              product_type: aplazo_bnpl
+              redirect_url: https://pay.playground.com/na/hpp/payments/20sJ2LZ
               success_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/success?order_id=ord_2xaegxs5s69VP4pWy&charge_id=67c5caa665f9b400015dec40
               type: bnpl
             reference_id: null
@@ -14125,7 +14589,7 @@ components:
           can_not_expire: true
           cancel_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/cancel
           failure_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/failure
-          product_type: klarna_bnpl
+          product_type: aplazo_bnpl
           success_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/success
           type: bnpl
     charge_cash:
@@ -14237,7 +14701,7 @@ components:
             can_not_expire: true
             cancel_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/cancel
             failure_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/failure
-            product_type: klarna_bnpl
+            product_type: aplazo_bnpl
             success_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/success
             type: bnpl
         currency: MXN
@@ -15524,40 +15988,181 @@ components:
         type: object
       description: The charges associated with the order
     company_response:
-      description: Company model
       properties:
         id:
-          description: The child company's unique identifier
-          example: 6441bb27659a060465da7335
+          description: The unique identifier for the company.
+          example: 6827305a1ec60400015eb116
           type: string
-        created_at:
-          description: The resource's creation date (unix timestamp)
-          example: 1680397724
-          format: int64
-          type: integer
         name:
-          description: The child company's name
-          example: Child Company A
+          description: The name of the company.
+          example: test
           type: string
-        object:
-          description: The resource's type
-          enum:
-          - company
-          type: string
-        parent_company_id:
-          description: Id of the parent company
-          example: 6441bb3c62db5812e7920c31
-          type: string
-        use_parent_fiscal_data:
-          description: Whether the parent company's fiscal data is to be used for
-            liquidation and tax purposes
+        active:
+          description: Indicates if the company is active.
           example: false
           type: boolean
-        payout_destination:
-          $ref: '#/components/schemas/company_payout_destination_response'
-        fiscal_info:
-          $ref: '#/components/schemas/company_fiscal_info_response'
+        account_status:
+          description: The current status of the company's account.
+          example: signed_up
+          type: string
+        parent_company_id:
+          description: "The identifier of the parent company, if any."
+          example: 680bf1da38716d00013543bc
+          nullable: true
+          type: string
+        onboarding_status:
+          description: The current status of the company's onboarding process.
+          example: pending
+          type: string
+        documents:
+          description: A list of documents related to the company.
+          items:
+            $ref: '#/components/schemas/company_response_documents_inner'
+          type: array
+        created_at:
+          description: Timestamp of when the company was created.
+          example: 1748968241
+          format: int64
+          type: integer
+        object:
+          description: "The type of object, typically \"company\"."
+          example: company
+          type: string
+      required:
+      - account_status
+      - active
+      - created_at
+      - documents
+      - id
+      - name
+      - object
+      - onboarding_status
       title: company_response
+      type: object
+    create_company_request:
+      properties:
+        name:
+          description: The name of the company.
+          example: test
+          type: string
+        type_company:
+          description: "The type of company, 'owner'"
+          example: owner
+          type: string
+        comercial_info:
+          $ref: '#/components/schemas/create_company_request_comercial_info'
+        fiscal_info:
+          $ref: '#/components/schemas/create_company_request_fiscal_info'
+        bank_account_info:
+          $ref: '#/components/schemas/create_company_request_bank_account_info'
+      title: Create Company Request
+      type: object
+    company_document_request:
+      description: Request body for uploading a company document.
+      properties:
+        file_classification:
+          description: |
+            Classification of the document.
+
+            | Tipo de archivo              | Descripción                                               |
+            | :--------------------------- | :-------------------------------------------------------- |
+            | `id_legal_representative`      | identificación oficial frente                             |
+            | `id_legal_representative_back` | identificación oficial atrás                              |
+            | `cfdi`                         | Prueba de situación fiscal                                |
+            | `constitutive_act_basic`       | Acta constitutiva                                         |
+            | `proof_of_address`             | Comprobante de domicilio del negocio                      |
+            | `power_of_attonery`            | Poderes de representación                                 |
+            | `deposit_account_cover`        | Carátula de la cuenta de depósito                         |
+            | `permit_casino`                | Permiso ante SEGOB                                        |
+            | `license_sanitation`           | Licencia sanitaria de COFEPRIS                            |
+            | `registration_tourism`         | Inscripción ante el Registro Nacional de Turismo (SECTUR) |
+          enum:
+          - id_legal_representative
+          - id_legal_representative_back
+          - cfdi
+          - constitutive_act_basic
+          - proof_of_address
+          - power_of_attonery
+          - deposit_account_cover
+          - permit_casino
+          - license_sanitation
+          - registration_tourism
+          example: id_legal_representative
+          type: string
+        content_type:
+          description: |
+            MIME type of the file. Allowed values depend on the `file_classification`.
+            - `image/jpeg`
+            - `image/png`
+            - `application/pdf`
+          example: application/pdf
+          type: string
+        international:
+          description: Indicates if the document is international. Defaults to false.
+          example: false
+          type: boolean
+        file_name:
+          description: Name of the file being uploaded.
+          example: example_document.pdf
+          type: string
+        file_data:
+          description: Base64 encoded content of the file.
+          example: !!binary |-
+            VkdocGN5QnBjeUJoSUhSbGMzUWdabWxzWlNCa1lYUmhJR2x1SUdKaGMyVWdOalF1
+          format: byte
+          type: string
+      required:
+      - content_type
+      - file_classification
+      - file_data
+      - file_name
+      title: CompanyDocumentRequest
+      type: object
+    company_document_response:
+      description: Response body after uploading a company document.
+      properties:
+        file_classification:
+          description: |
+            Classification of the document.
+
+            | Tipo de archivo              | Descripción                                               |
+            | :--------------------------- | :-------------------------------------------------------- |
+            | `id_legal_representative`      | identificación oficial frente                             |
+            | `id_legal_representative_back` | identificación oficial atrás                              |
+            | `cfdi`                         | Prueba de situación fiscal                                |
+            | `constitutive_act_basic`       | Acta constitutiva                                         |
+            | `proof_of_address`             | Comprobante de domicilio del negocio                      |
+            | `power_of_attonery`            | Poderes de representación                                 |
+            | `deposit_account_cover`        | Carátula de la cuenta de depósito                         |
+            | `permit_casino`                | Permiso ante SEGOB                                        |
+            | `license_sanitation`           | Licencia sanitaria de COFEPRIS                            |
+            | `registration_tourism`         | Inscripción ante el Registro Nacional de Turismo (SECTUR) |
+          enum:
+          - id_legal_representative
+          - id_legal_representative_back
+          - cfdi
+          - constitutive_act_basic
+          - proof_of_address
+          - power_of_attonery
+          - deposit_account_cover
+          - permit_casino
+          - license_sanitation
+          - registration_tourism
+          example: id_legal_representative
+          type: string
+        file_name:
+          description: Name of the file as stored or processed.
+          example: prueba3.pdf
+          type: string
+        status:
+          description: Current status of the document.
+          example: uploaded
+          type: string
+      required:
+      - file_classification
+      - file_name
+      - status
+      title: CompanyDocumentResponse
       type: object
     customer_response:
       description: customer response
@@ -16278,6 +16883,10 @@ components:
       - $ref: '#/components/schemas/payment_method_response'
       - description: use for spei responses
         properties:
+          bank:
+            description: Bank name for the SPEI payment method
+            example: STP
+            type: string
           reference:
             example: "93000262276908"
             type: string
@@ -18011,68 +18620,6 @@ components:
         - product_type
         title: charge_data_payment_method_bnpl_payment_response
         type: object
-    company_payout_destination_response:
-      description: Company payout destination model
-      properties:
-        object:
-          description: The resource's type
-          enum:
-          - payout_destination
-          type: string
-        currency:
-          description: currency of the receiving account
-          example: MXN
-          type: string
-        account_holder_name:
-          description: Name of the account holder
-          example: Child Company A
-          type: string
-        bank:
-          description: Name of the bank
-          example: BBVA
-          type: string
-        type:
-          description: Type of the payout destination
-          enum:
-          - bank_account
-          type: string
-        account_number:
-          description: Account number of the receiving account
-          example: "123456789012345678"
-          type: string
-      title: company_payout_destination_response
-      type: object
-    company_fiscal_info_response:
-      description: Company fiscal info model
-      properties:
-        object:
-          description: The resource's type
-          enum:
-          - fiscal_info
-          type: string
-        tax_id:
-          description: Tax ID of the company
-          example: XAXX010101000
-          type: string
-        legal_entity_name:
-          description: Legal name of the company
-          example: Child Company A
-          type: string
-        business_type:
-          description: Business type of the company
-          example: persona_moral
-          type: string
-        phone:
-          description: Phone number of the company
-          example: "5555555555"
-          type: string
-        physical_person_business_type:
-          description: Business type if 'persona_fisica'
-          type: string
-        address:
-          $ref: '#/components/schemas/company_fiscal_info_address_response'
-      title: company_fiscal_info_response
-      type: object
     customer_address:
       properties:
         street1:
@@ -18220,9 +18767,9 @@ components:
             description: "Product type of the payment method, use for the payment\
               \ method to know the product type"
             enum:
-            - klarna_bnpl
+            - aplazo_bnpl
             - creditea_bnpl
-            example: klarna_bnpl
+            example: aplazo_bnpl
             type: string
           success_url:
             description: URL to redirect the customer after a successful payment
@@ -18415,48 +18962,6 @@ components:
           type: string
       required:
       - object
-      type: object
-    company_fiscal_info_address_response:
-      description: Company fiscal info address model
-      properties:
-        object:
-          description: The resource's type
-          enum:
-          - address
-          type: string
-        street1:
-          description: Street Address
-          example: Calle 13
-          type: string
-        street2:
-          description: Colonia
-          example: Navarte
-          type: string
-        city:
-          description: City
-          example: Cuauhtémoc
-          type: string
-        state:
-          description: State
-          example: Ciudad de México
-          type: string
-        country:
-          description: Country
-          example: MX
-          type: string
-        postal_code:
-          description: Postal code
-          example: "3072"
-          type: string
-        external_number:
-          description: Street number
-          example: "123"
-          type: string
-        internal_number:
-          description: Unit / apartment number
-          example: "123"
-          type: string
-      title: company_fiscal_info_address_response
       type: object
     whitelistlist_rule_response:
       properties:
@@ -19037,6 +19542,89 @@ components:
     charges_order_response_allOf_data:
       allOf:
       - $ref: '#/components/schemas/charge_response'
+    company_response_documents_inner:
+      properties:
+        file_classification:
+          description: |
+            Classification of the document.
+
+            | Tipo de archivo              | Descripción                                               |
+            | :--------------------------- | :-------------------------------------------------------- |
+            | `id_legal_representative`      | identificación oficial frente                             |
+            | `id_legal_representative_back` | identificación oficial atrás                              |
+            | `cfdi`                         | Prueba de situación fiscal                                |
+            | `constitutive_act_basic`       | Acta constitutiva                                         |
+            | `proof_of_address`             | Comprobante de domicilio del negocio                      |
+            | `power_of_attonery`            | Poderes de representación                                 |
+            | `deposit_account_cover`        | Carátula de la cuenta de depósito                         |
+            | `permit_casino`                | Permiso ante SEGOB                                        |
+            | `license_sanitation`           | Licencia sanitaria de COFEPRIS                            |
+            | `registration_tourism`         | Inscripción ante el Registro Nacional de Turismo (SECTUR) |
+          enum:
+          - id_legal_representative
+          - id_legal_representative_back
+          - cfdi
+          - constitutive_act_basic
+          - proof_of_address
+          - power_of_attonery
+          - deposit_account_cover
+          - permit_casino
+          - license_sanitation
+          - registration_tourism
+          example: deposit_account_cover
+          type: string
+        status:
+          description: The status of the document.
+          example: pending
+          type: string
+        file_name:
+          description: The name of the file.
+          nullable: true
+          type: string
+          example: null
+      type: object
+    create_company_request_comercial_info:
+      description: Commercial information for the company.
+      properties:
+        website:
+          description: The company's website URL.
+          example: http://www.test.com
+          format: url
+          type: string
+        mcc:
+          description: The Merchant Category Code (MCC) for the company.
+          example: "5812"
+          type: string
+        merchant_support_email:
+          description: Email address for merchant support.
+          example: test@test.com
+          format: email
+          type: string
+        merchant_support_phone:
+          description: Phone number for merchant support.
+          example: "5300000000"
+          type: string
+      type: object
+    create_company_request_fiscal_info:
+      description: Fiscal information for the company.
+      properties:
+        business_phone:
+          description: The business phone number for fiscal purposes.
+          example: "5300000000"
+          type: string
+        fiscal_type:
+          description: "The fiscal type of the company (e.g., 'moral', 'persona_fisica')."
+          example: moral
+          type: string
+      type: object
+    create_company_request_bank_account_info:
+      description: Bank account information for the company.
+      properties:
+        clabe:
+          description: The 18-digit CLABE for the bank account.
+          example: "002010077777777771"
+          type: string
+      type: object
     customer_antifraud_info_response:
       nullable: true
       properties:

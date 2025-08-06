@@ -45,9 +45,10 @@ namespace Conekta.net.Model
         /// <param name="varObject">varObject (required).</param>
         /// <param name="createdAt">createdAt (required).</param>
         /// <param name="parentId">parentId.</param>
+        /// <param name="bank">Bank name for the SPEI payment method.</param>
         /// <param name="reference">reference.</param>
         /// <param name="expiresAt">expiresAt.</param>
-        public PaymentMethodSpeiRecurrent(string type = default(string), string id = default(string), string varObject = default(string), long createdAt = default(long), string parentId = default(string), string reference = default(string), string expiresAt = default(string))
+        public PaymentMethodSpeiRecurrent(string type = default(string), string id = default(string), string varObject = default(string), long createdAt = default(long), string parentId = default(string), string bank = default(string), string reference = default(string), string expiresAt = default(string))
         {
             // to ensure "type" is required (not null)
             if (type == null)
@@ -69,6 +70,7 @@ namespace Conekta.net.Model
             this.Object = varObject;
             this.CreatedAt = createdAt;
             this.ParentId = parentId;
+            this.Bank = bank;
             this.Reference = reference;
             this.ExpiresAt = expiresAt;
         }
@@ -116,6 +118,16 @@ namespace Conekta.net.Model
         public string ParentId { get; set; }
 
         /// <summary>
+        /// Bank name for the SPEI payment method
+        /// </summary>
+        /// <value>Bank name for the SPEI payment method</value>
+        /*
+        <example>STP</example>
+        */
+        [DataMember(Name = "bank", EmitDefaultValue = false)]
+        public string Bank { get; set; }
+
+        /// <summary>
         /// Gets or Sets Reference
         /// </summary>
         /*
@@ -146,6 +158,7 @@ namespace Conekta.net.Model
             sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
+            sb.Append("  Bank: ").Append(Bank).Append("\n");
             sb.Append("  Reference: ").Append(Reference).Append("\n");
             sb.Append("  ExpiresAt: ").Append(ExpiresAt).Append("\n");
             sb.Append("}\n");

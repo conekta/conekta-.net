@@ -28,6 +28,29 @@ namespace Conekta.net.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// Create Company
+        /// </summary>
+        /// <remarks>
+        /// Create a new company.
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createCompanyRequest">Company data</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>CompanyResponse</returns>
+        CompanyResponse CreateCompany(CreateCompanyRequest createCompanyRequest, int operationIndex = 0);
+
+        /// <summary>
+        /// Create Company
+        /// </summary>
+        /// <remarks>
+        /// Create a new company.
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createCompanyRequest">Company data</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of CompanyResponse</returns>
+        ApiResponse<CompanyResponse> CreateCompanyWithHttpInfo(CreateCompanyRequest createCompanyRequest, int operationIndex = 0);
+        /// <summary>
         /// Get List of Companies
         /// </summary>
         /// <remarks>
@@ -80,6 +103,85 @@ namespace Conekta.net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CompanyResponse</returns>
         ApiResponse<CompanyResponse> GetCompanyWithHttpInfo(string id, string acceptLanguage = default(string), int operationIndex = 0);
+        /// <summary>
+        /// Get Company Documents
+        /// </summary>
+        /// <remarks>
+        /// Retrieve a list of documents associated with a specific company.
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">The unique identifier of the company.</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;CompanyDocumentResponse&gt;</returns>
+        List<CompanyDocumentResponse> GetCompanyDocuments(string companyId, string acceptLanguage = default(string), int operationIndex = 0);
+
+        /// <summary>
+        /// Get Company Documents
+        /// </summary>
+        /// <remarks>
+        /// Retrieve a list of documents associated with a specific company.
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">The unique identifier of the company.</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;CompanyDocumentResponse&gt;</returns>
+        ApiResponse<List<CompanyDocumentResponse>> GetCompanyDocumentsWithHttpInfo(string companyId, string acceptLanguage = default(string), int operationIndex = 0);
+        /// <summary>
+        /// Update Company Document
+        /// </summary>
+        /// <remarks>
+        /// Updates an existing document associated with a specific company.
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">The unique identifier of the company.</param>
+        /// <param name="companyDocumentRequest">Document information to update.</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>CompanyDocumentResponse</returns>
+        CompanyDocumentResponse UpdateCompanyDocument(string companyId, CompanyDocumentRequest companyDocumentRequest, string acceptLanguage = default(string), int operationIndex = 0);
+
+        /// <summary>
+        /// Update Company Document
+        /// </summary>
+        /// <remarks>
+        /// Updates an existing document associated with a specific company.
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">The unique identifier of the company.</param>
+        /// <param name="companyDocumentRequest">Document information to update.</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of CompanyDocumentResponse</returns>
+        ApiResponse<CompanyDocumentResponse> UpdateCompanyDocumentWithHttpInfo(string companyId, CompanyDocumentRequest companyDocumentRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        /// <summary>
+        /// Upload Company Document
+        /// </summary>
+        /// <remarks>
+        /// Uploads a document associated with a specific company.
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">The unique identifier of the company.</param>
+        /// <param name="companyDocumentRequest">Document information to upload.</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>CompanyDocumentResponse</returns>
+        CompanyDocumentResponse UploadCompanyDocument(string companyId, CompanyDocumentRequest companyDocumentRequest, string acceptLanguage = default(string), int operationIndex = 0);
+
+        /// <summary>
+        /// Upload Company Document
+        /// </summary>
+        /// <remarks>
+        /// Uploads a document associated with a specific company.
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">The unique identifier of the company.</param>
+        /// <param name="companyDocumentRequest">Document information to upload.</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of CompanyDocumentResponse</returns>
+        ApiResponse<CompanyDocumentResponse> UploadCompanyDocumentWithHttpInfo(string companyId, CompanyDocumentRequest companyDocumentRequest, string acceptLanguage = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -89,6 +191,31 @@ namespace Conekta.net.Api
     public interface ICompaniesApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// Create Company
+        /// </summary>
+        /// <remarks>
+        /// Create a new company.
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createCompanyRequest">Company data</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CompanyResponse</returns>
+        System.Threading.Tasks.Task<CompanyResponse> CreateCompanyAsync(CreateCompanyRequest createCompanyRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Create Company
+        /// </summary>
+        /// <remarks>
+        /// Create a new company.
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createCompanyRequest">Company data</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CompanyResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CompanyResponse>> CreateCompanyWithHttpInfoAsync(CreateCompanyRequest createCompanyRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get List of Companies
         /// </summary>
@@ -149,6 +276,91 @@ namespace Conekta.net.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CompanyResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<CompanyResponse>> GetCompanyWithHttpInfoAsync(string id, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// Get Company Documents
+        /// </summary>
+        /// <remarks>
+        /// Retrieve a list of documents associated with a specific company.
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">The unique identifier of the company.</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;CompanyDocumentResponse&gt;</returns>
+        System.Threading.Tasks.Task<List<CompanyDocumentResponse>> GetCompanyDocumentsAsync(string companyId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get Company Documents
+        /// </summary>
+        /// <remarks>
+        /// Retrieve a list of documents associated with a specific company.
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">The unique identifier of the company.</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;CompanyDocumentResponse&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<CompanyDocumentResponse>>> GetCompanyDocumentsWithHttpInfoAsync(string companyId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// Update Company Document
+        /// </summary>
+        /// <remarks>
+        /// Updates an existing document associated with a specific company.
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">The unique identifier of the company.</param>
+        /// <param name="companyDocumentRequest">Document information to update.</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CompanyDocumentResponse</returns>
+        System.Threading.Tasks.Task<CompanyDocumentResponse> UpdateCompanyDocumentAsync(string companyId, CompanyDocumentRequest companyDocumentRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Update Company Document
+        /// </summary>
+        /// <remarks>
+        /// Updates an existing document associated with a specific company.
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">The unique identifier of the company.</param>
+        /// <param name="companyDocumentRequest">Document information to update.</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CompanyDocumentResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CompanyDocumentResponse>> UpdateCompanyDocumentWithHttpInfoAsync(string companyId, CompanyDocumentRequest companyDocumentRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// Upload Company Document
+        /// </summary>
+        /// <remarks>
+        /// Uploads a document associated with a specific company.
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">The unique identifier of the company.</param>
+        /// <param name="companyDocumentRequest">Document information to upload.</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CompanyDocumentResponse</returns>
+        System.Threading.Tasks.Task<CompanyDocumentResponse> UploadCompanyDocumentAsync(string companyId, CompanyDocumentRequest companyDocumentRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Upload Company Document
+        /// </summary>
+        /// <remarks>
+        /// Uploads a document associated with a specific company.
+        /// </remarks>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">The unique identifier of the company.</param>
+        /// <param name="companyDocumentRequest">Document information to upload.</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CompanyDocumentResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CompanyDocumentResponse>> UploadCompanyDocumentWithHttpInfoAsync(string companyId, CompanyDocumentRequest companyDocumentRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -267,6 +479,164 @@ namespace Conekta.net.Api
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        /// Create Company Create a new company.
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createCompanyRequest">Company data</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>CompanyResponse</returns>
+        public CompanyResponse CreateCompany(CreateCompanyRequest createCompanyRequest, int operationIndex = 0)
+        {
+            Conekta.net.Client.ApiResponse<CompanyResponse> localVarResponse = CreateCompanyWithHttpInfo(createCompanyRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create Company Create a new company.
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createCompanyRequest">Company data</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of CompanyResponse</returns>
+        public Conekta.net.Client.ApiResponse<CompanyResponse> CreateCompanyWithHttpInfo(CreateCompanyRequest createCompanyRequest, int operationIndex = 0)
+        {
+            // verify the required parameter 'createCompanyRequest' is set
+            if (createCompanyRequest == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'createCompanyRequest' when calling CompaniesApi->CreateCompany");
+            }
+
+            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.conekta-v2.2.0+json"
+            };
+
+            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = createCompanyRequest;
+
+            localVarRequestOptions.Operation = "CompaniesApi.CreateCompany";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<CompanyResponse>("/companies", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateCompany", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create Company Create a new company.
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createCompanyRequest">Company data</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CompanyResponse</returns>
+        public async System.Threading.Tasks.Task<CompanyResponse> CreateCompanyAsync(CreateCompanyRequest createCompanyRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            Conekta.net.Client.ApiResponse<CompanyResponse> localVarResponse = await CreateCompanyWithHttpInfoAsync(createCompanyRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create Company Create a new company.
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createCompanyRequest">Company data</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CompanyResponse)</returns>
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CompanyResponse>> CreateCompanyWithHttpInfoAsync(CreateCompanyRequest createCompanyRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'createCompanyRequest' is set
+            if (createCompanyRequest == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'createCompanyRequest' when calling CompaniesApi->CreateCompany");
+            }
+
+
+            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.conekta-v2.2.0+json"
+            };
+
+            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = createCompanyRequest;
+
+            localVarRequestOptions.Operation = "CompaniesApi.CreateCompany";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CompanyResponse>("/companies", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateCompany", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>
@@ -626,6 +996,550 @@ namespace Conekta.net.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetCompany", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get Company Documents Retrieve a list of documents associated with a specific company.
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">The unique identifier of the company.</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;CompanyDocumentResponse&gt;</returns>
+        public List<CompanyDocumentResponse> GetCompanyDocuments(string companyId, string acceptLanguage = default(string), int operationIndex = 0)
+        {
+            Conekta.net.Client.ApiResponse<List<CompanyDocumentResponse>> localVarResponse = GetCompanyDocumentsWithHttpInfo(companyId, acceptLanguage);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Company Documents Retrieve a list of documents associated with a specific company.
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">The unique identifier of the company.</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;CompanyDocumentResponse&gt;</returns>
+        public Conekta.net.Client.ApiResponse<List<CompanyDocumentResponse>> GetCompanyDocumentsWithHttpInfo(string companyId, string acceptLanguage = default(string), int operationIndex = 0)
+        {
+            // verify the required parameter 'companyId' is set
+            if (companyId == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'companyId' when calling CompaniesApi->GetCompanyDocuments");
+            }
+
+            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.conekta-v2.2.0+json"
+            };
+
+            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("company_id", Conekta.net.Client.ClientUtils.ParameterToString(companyId)); // path parameter
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+
+            localVarRequestOptions.Operation = "CompaniesApi.GetCompanyDocuments";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<CompanyDocumentResponse>>("/companies/{company_id}/documents", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetCompanyDocuments", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get Company Documents Retrieve a list of documents associated with a specific company.
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">The unique identifier of the company.</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;CompanyDocumentResponse&gt;</returns>
+        public async System.Threading.Tasks.Task<List<CompanyDocumentResponse>> GetCompanyDocumentsAsync(string companyId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            Conekta.net.Client.ApiResponse<List<CompanyDocumentResponse>> localVarResponse = await GetCompanyDocumentsWithHttpInfoAsync(companyId, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Company Documents Retrieve a list of documents associated with a specific company.
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">The unique identifier of the company.</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;CompanyDocumentResponse&gt;)</returns>
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<List<CompanyDocumentResponse>>> GetCompanyDocumentsWithHttpInfoAsync(string companyId, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'companyId' is set
+            if (companyId == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'companyId' when calling CompaniesApi->GetCompanyDocuments");
+            }
+
+
+            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.conekta-v2.2.0+json"
+            };
+
+            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("company_id", Conekta.net.Client.ClientUtils.ParameterToString(companyId)); // path parameter
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+
+            localVarRequestOptions.Operation = "CompaniesApi.GetCompanyDocuments";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<CompanyDocumentResponse>>("/companies/{company_id}/documents", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetCompanyDocuments", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update Company Document Updates an existing document associated with a specific company.
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">The unique identifier of the company.</param>
+        /// <param name="companyDocumentRequest">Document information to update.</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>CompanyDocumentResponse</returns>
+        public CompanyDocumentResponse UpdateCompanyDocument(string companyId, CompanyDocumentRequest companyDocumentRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        {
+            Conekta.net.Client.ApiResponse<CompanyDocumentResponse> localVarResponse = UpdateCompanyDocumentWithHttpInfo(companyId, companyDocumentRequest, acceptLanguage);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update Company Document Updates an existing document associated with a specific company.
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">The unique identifier of the company.</param>
+        /// <param name="companyDocumentRequest">Document information to update.</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of CompanyDocumentResponse</returns>
+        public Conekta.net.Client.ApiResponse<CompanyDocumentResponse> UpdateCompanyDocumentWithHttpInfo(string companyId, CompanyDocumentRequest companyDocumentRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        {
+            // verify the required parameter 'companyId' is set
+            if (companyId == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'companyId' when calling CompaniesApi->UpdateCompanyDocument");
+            }
+
+            // verify the required parameter 'companyDocumentRequest' is set
+            if (companyDocumentRequest == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'companyDocumentRequest' when calling CompaniesApi->UpdateCompanyDocument");
+            }
+
+            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.conekta-v2.2.0+json"
+            };
+
+            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("company_id", Conekta.net.Client.ClientUtils.ParameterToString(companyId)); // path parameter
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            localVarRequestOptions.Data = companyDocumentRequest;
+
+            localVarRequestOptions.Operation = "CompaniesApi.UpdateCompanyDocument";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Patch<CompanyDocumentResponse>("/companies/{company_id}/document", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateCompanyDocument", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update Company Document Updates an existing document associated with a specific company.
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">The unique identifier of the company.</param>
+        /// <param name="companyDocumentRequest">Document information to update.</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CompanyDocumentResponse</returns>
+        public async System.Threading.Tasks.Task<CompanyDocumentResponse> UpdateCompanyDocumentAsync(string companyId, CompanyDocumentRequest companyDocumentRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            Conekta.net.Client.ApiResponse<CompanyDocumentResponse> localVarResponse = await UpdateCompanyDocumentWithHttpInfoAsync(companyId, companyDocumentRequest, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update Company Document Updates an existing document associated with a specific company.
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">The unique identifier of the company.</param>
+        /// <param name="companyDocumentRequest">Document information to update.</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CompanyDocumentResponse)</returns>
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CompanyDocumentResponse>> UpdateCompanyDocumentWithHttpInfoAsync(string companyId, CompanyDocumentRequest companyDocumentRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'companyId' is set
+            if (companyId == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'companyId' when calling CompaniesApi->UpdateCompanyDocument");
+            }
+
+            // verify the required parameter 'companyDocumentRequest' is set
+            if (companyDocumentRequest == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'companyDocumentRequest' when calling CompaniesApi->UpdateCompanyDocument");
+            }
+
+
+            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.conekta-v2.2.0+json"
+            };
+
+            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("company_id", Conekta.net.Client.ClientUtils.ParameterToString(companyId)); // path parameter
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            localVarRequestOptions.Data = companyDocumentRequest;
+
+            localVarRequestOptions.Operation = "CompaniesApi.UpdateCompanyDocument";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<CompanyDocumentResponse>("/companies/{company_id}/document", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateCompanyDocument", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Upload Company Document Uploads a document associated with a specific company.
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">The unique identifier of the company.</param>
+        /// <param name="companyDocumentRequest">Document information to upload.</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>CompanyDocumentResponse</returns>
+        public CompanyDocumentResponse UploadCompanyDocument(string companyId, CompanyDocumentRequest companyDocumentRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        {
+            Conekta.net.Client.ApiResponse<CompanyDocumentResponse> localVarResponse = UploadCompanyDocumentWithHttpInfo(companyId, companyDocumentRequest, acceptLanguage);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Upload Company Document Uploads a document associated with a specific company.
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">The unique identifier of the company.</param>
+        /// <param name="companyDocumentRequest">Document information to upload.</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of CompanyDocumentResponse</returns>
+        public Conekta.net.Client.ApiResponse<CompanyDocumentResponse> UploadCompanyDocumentWithHttpInfo(string companyId, CompanyDocumentRequest companyDocumentRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        {
+            // verify the required parameter 'companyId' is set
+            if (companyId == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'companyId' when calling CompaniesApi->UploadCompanyDocument");
+            }
+
+            // verify the required parameter 'companyDocumentRequest' is set
+            if (companyDocumentRequest == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'companyDocumentRequest' when calling CompaniesApi->UploadCompanyDocument");
+            }
+
+            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.conekta-v2.2.0+json"
+            };
+
+            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("company_id", Conekta.net.Client.ClientUtils.ParameterToString(companyId)); // path parameter
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            localVarRequestOptions.Data = companyDocumentRequest;
+
+            localVarRequestOptions.Operation = "CompaniesApi.UploadCompanyDocument";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<CompanyDocumentResponse>("/companies/{company_id}/document", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UploadCompanyDocument", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Upload Company Document Uploads a document associated with a specific company.
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">The unique identifier of the company.</param>
+        /// <param name="companyDocumentRequest">Document information to upload.</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CompanyDocumentResponse</returns>
+        public async System.Threading.Tasks.Task<CompanyDocumentResponse> UploadCompanyDocumentAsync(string companyId, CompanyDocumentRequest companyDocumentRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            Conekta.net.Client.ApiResponse<CompanyDocumentResponse> localVarResponse = await UploadCompanyDocumentWithHttpInfoAsync(companyId, companyDocumentRequest, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Upload Company Document Uploads a document associated with a specific company.
+        /// </summary>
+        /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">The unique identifier of the company.</param>
+        /// <param name="companyDocumentRequest">Document information to upload.</param>
+        /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CompanyDocumentResponse)</returns>
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CompanyDocumentResponse>> UploadCompanyDocumentWithHttpInfoAsync(string companyId, CompanyDocumentRequest companyDocumentRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'companyId' is set
+            if (companyId == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'companyId' when calling CompaniesApi->UploadCompanyDocument");
+            }
+
+            // verify the required parameter 'companyDocumentRequest' is set
+            if (companyDocumentRequest == null)
+            {
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'companyDocumentRequest' when calling CompaniesApi->UploadCompanyDocument");
+            }
+
+
+            Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.conekta-v2.2.0+json"
+            };
+
+            var localVarContentType = Conekta.net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Conekta.net.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("company_id", Conekta.net.Client.ClientUtils.ParameterToString(companyId)); // path parameter
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            localVarRequestOptions.Data = companyDocumentRequest;
+
+            localVarRequestOptions.Operation = "CompaniesApi.UploadCompanyDocument";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CompanyDocumentResponse>("/companies/{company_id}/document", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UploadCompanyDocument", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

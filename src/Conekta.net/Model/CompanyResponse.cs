@@ -27,116 +27,157 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// Company model
+    /// CompanyResponse
     /// </summary>
     [DataContract(Name = "company_response")]
     public partial class CompanyResponse : IValidatableObject
     {
         /// <summary>
-        /// The resource&#39;s type
+        /// Initializes a new instance of the <see cref="CompanyResponse" /> class.
         /// </summary>
-        /// <value>The resource&#39;s type</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ObjectEnum
-        {
-            /// <summary>
-            /// Enum Company for value: company
-            /// </summary>
-            [EnumMember(Value = "company")]
-            Company = 1
-        }
-
-
-        /// <summary>
-        /// The resource&#39;s type
-        /// </summary>
-        /// <value>The resource&#39;s type</value>
-        [DataMember(Name = "object", EmitDefaultValue = false)]
-        public ObjectEnum? Object { get; set; }
+        [JsonConstructorAttribute]
+        protected CompanyResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CompanyResponse" /> class.
         /// </summary>
-        /// <param name="id">The child company&#39;s unique identifier.</param>
-        /// <param name="createdAt">The resource&#39;s creation date (unix timestamp).</param>
-        /// <param name="name">The child company&#39;s name.</param>
-        /// <param name="varObject">The resource&#39;s type.</param>
-        /// <param name="parentCompanyId">Id of the parent company.</param>
-        /// <param name="useParentFiscalData">Whether the parent company&#39;s fiscal data is to be used for liquidation and tax purposes.</param>
-        /// <param name="payoutDestination">payoutDestination.</param>
-        /// <param name="fiscalInfo">fiscalInfo.</param>
-        public CompanyResponse(string id = default(string), long createdAt = default(long), string name = default(string), ObjectEnum? varObject = default(ObjectEnum?), string parentCompanyId = default(string), bool useParentFiscalData = default(bool), CompanyPayoutDestinationResponse payoutDestination = default(CompanyPayoutDestinationResponse), CompanyFiscalInfoResponse fiscalInfo = default(CompanyFiscalInfoResponse))
+        /// <param name="id">The unique identifier for the company. (required).</param>
+        /// <param name="name">The name of the company. (required).</param>
+        /// <param name="active">Indicates if the company is active. (required).</param>
+        /// <param name="accountStatus">The current status of the company&#39;s account. (required).</param>
+        /// <param name="parentCompanyId">The identifier of the parent company, if any..</param>
+        /// <param name="onboardingStatus">The current status of the company&#39;s onboarding process. (required).</param>
+        /// <param name="documents">A list of documents related to the company. (required).</param>
+        /// <param name="createdAt">Timestamp of when the company was created. (required).</param>
+        /// <param name="varObject">The type of object, typically \&quot;company\&quot;. (required).</param>
+        public CompanyResponse(string id = default(string), string name = default(string), bool active = default(bool), string accountStatus = default(string), string parentCompanyId = default(string), string onboardingStatus = default(string), List<CompanyResponseDocumentsInner> documents = default(List<CompanyResponseDocumentsInner>), long createdAt = default(long), string varObject = default(string))
         {
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for CompanyResponse and cannot be null");
+            }
             this.Id = id;
-            this.CreatedAt = createdAt;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for CompanyResponse and cannot be null");
+            }
             this.Name = name;
+            this.Active = active;
+            // to ensure "accountStatus" is required (not null)
+            if (accountStatus == null)
+            {
+                throw new ArgumentNullException("accountStatus is a required property for CompanyResponse and cannot be null");
+            }
+            this.AccountStatus = accountStatus;
+            // to ensure "onboardingStatus" is required (not null)
+            if (onboardingStatus == null)
+            {
+                throw new ArgumentNullException("onboardingStatus is a required property for CompanyResponse and cannot be null");
+            }
+            this.OnboardingStatus = onboardingStatus;
+            // to ensure "documents" is required (not null)
+            if (documents == null)
+            {
+                throw new ArgumentNullException("documents is a required property for CompanyResponse and cannot be null");
+            }
+            this.Documents = documents;
+            this.CreatedAt = createdAt;
+            // to ensure "varObject" is required (not null)
+            if (varObject == null)
+            {
+                throw new ArgumentNullException("varObject is a required property for CompanyResponse and cannot be null");
+            }
             this.Object = varObject;
             this.ParentCompanyId = parentCompanyId;
-            this.UseParentFiscalData = useParentFiscalData;
-            this.PayoutDestination = payoutDestination;
-            this.FiscalInfo = fiscalInfo;
         }
 
         /// <summary>
-        /// The child company&#39;s unique identifier
+        /// The unique identifier for the company.
         /// </summary>
-        /// <value>The child company&#39;s unique identifier</value>
+        /// <value>The unique identifier for the company.</value>
         /*
-        <example>6441bb27659a060465da7335</example>
+        <example>6827305a1ec60400015eb116</example>
         */
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
-        /// The resource&#39;s creation date (unix timestamp)
+        /// The name of the company.
         /// </summary>
-        /// <value>The resource&#39;s creation date (unix timestamp)</value>
+        /// <value>The name of the company.</value>
         /*
-        <example>1680397724</example>
+        <example>test</example>
         */
-        [DataMember(Name = "created_at", EmitDefaultValue = false)]
-        public long CreatedAt { get; set; }
-
-        /// <summary>
-        /// The child company&#39;s name
-        /// </summary>
-        /// <value>The child company&#39;s name</value>
-        /*
-        <example>Child Company A</example>
-        */
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Id of the parent company
+        /// Indicates if the company is active.
         /// </summary>
-        /// <value>Id of the parent company</value>
-        /*
-        <example>6441bb3c62db5812e7920c31</example>
-        */
-        [DataMember(Name = "parent_company_id", EmitDefaultValue = false)]
-        public string ParentCompanyId { get; set; }
-
-        /// <summary>
-        /// Whether the parent company&#39;s fiscal data is to be used for liquidation and tax purposes
-        /// </summary>
-        /// <value>Whether the parent company&#39;s fiscal data is to be used for liquidation and tax purposes</value>
+        /// <value>Indicates if the company is active.</value>
         /*
         <example>false</example>
         */
-        [DataMember(Name = "use_parent_fiscal_data", EmitDefaultValue = true)]
-        public bool UseParentFiscalData { get; set; }
+        [DataMember(Name = "active", IsRequired = true, EmitDefaultValue = true)]
+        public bool Active { get; set; }
 
         /// <summary>
-        /// Gets or Sets PayoutDestination
+        /// The current status of the company&#39;s account.
         /// </summary>
-        [DataMember(Name = "payout_destination", EmitDefaultValue = false)]
-        public CompanyPayoutDestinationResponse PayoutDestination { get; set; }
+        /// <value>The current status of the company&#39;s account.</value>
+        /*
+        <example>signed_up</example>
+        */
+        [DataMember(Name = "account_status", IsRequired = true, EmitDefaultValue = true)]
+        public string AccountStatus { get; set; }
 
         /// <summary>
-        /// Gets or Sets FiscalInfo
+        /// The identifier of the parent company, if any.
         /// </summary>
-        [DataMember(Name = "fiscal_info", EmitDefaultValue = false)]
-        public CompanyFiscalInfoResponse FiscalInfo { get; set; }
+        /// <value>The identifier of the parent company, if any.</value>
+        /*
+        <example>680bf1da38716d00013543bc</example>
+        */
+        [DataMember(Name = "parent_company_id", EmitDefaultValue = true)]
+        public string ParentCompanyId { get; set; }
+
+        /// <summary>
+        /// The current status of the company&#39;s onboarding process.
+        /// </summary>
+        /// <value>The current status of the company&#39;s onboarding process.</value>
+        /*
+        <example>pending</example>
+        */
+        [DataMember(Name = "onboarding_status", IsRequired = true, EmitDefaultValue = true)]
+        public string OnboardingStatus { get; set; }
+
+        /// <summary>
+        /// A list of documents related to the company.
+        /// </summary>
+        /// <value>A list of documents related to the company.</value>
+        [DataMember(Name = "documents", IsRequired = true, EmitDefaultValue = true)]
+        public List<CompanyResponseDocumentsInner> Documents { get; set; }
+
+        /// <summary>
+        /// Timestamp of when the company was created.
+        /// </summary>
+        /// <value>Timestamp of when the company was created.</value>
+        /*
+        <example>1748968241</example>
+        */
+        [DataMember(Name = "created_at", IsRequired = true, EmitDefaultValue = true)]
+        public long CreatedAt { get; set; }
+
+        /// <summary>
+        /// The type of object, typically \&quot;company\&quot;.
+        /// </summary>
+        /// <value>The type of object, typically \&quot;company\&quot;.</value>
+        /*
+        <example>company</example>
+        */
+        [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
+        public string Object { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -147,13 +188,14 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class CompanyResponse {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  Active: ").Append(Active).Append("\n");
+            sb.Append("  AccountStatus: ").Append(AccountStatus).Append("\n");
             sb.Append("  ParentCompanyId: ").Append(ParentCompanyId).Append("\n");
-            sb.Append("  UseParentFiscalData: ").Append(UseParentFiscalData).Append("\n");
-            sb.Append("  PayoutDestination: ").Append(PayoutDestination).Append("\n");
-            sb.Append("  FiscalInfo: ").Append(FiscalInfo).Append("\n");
+            sb.Append("  OnboardingStatus: ").Append(OnboardingStatus).Append("\n");
+            sb.Append("  Documents: ").Append(Documents).Append("\n");
+            sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

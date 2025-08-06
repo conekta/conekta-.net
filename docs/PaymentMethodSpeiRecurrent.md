@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Object** | **string** |  | 
 **CreatedAt** | **long** |  | 
 **ParentId** | **string** |  | [optional] 
+**Bank** | **string** | Bank name for the SPEI payment method | [optional] 
 **Reference** | **string** |  | [optional] 
 **ExpiresAt** | **string** |  | [optional] 
 
