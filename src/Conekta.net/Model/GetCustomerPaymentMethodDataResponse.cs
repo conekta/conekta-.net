@@ -37,6 +37,18 @@ namespace Conekta.net.Model
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetCustomerPaymentMethodDataResponse" /> class
+        /// with the <see cref="PaymentMethodCashRecurrentResponse" /> class
+        /// </summary>
+        /// <param name="actualInstance">An instance of PaymentMethodCashRecurrentResponse.</param>
+        public GetCustomerPaymentMethodDataResponse(PaymentMethodCashRecurrentResponse actualInstance)
+        {
+            this.IsNullable = false;
+            this.SchemaType= "oneOf";
+            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetCustomerPaymentMethodDataResponse" /> class
         /// with the <see cref="PaymentMethodCashResponse" /> class
         /// </summary>
         /// <param name="actualInstance">An instance of PaymentMethodCashResponse.</param>
@@ -89,6 +101,10 @@ namespace Conekta.net.Model
                 {
                     this._actualInstance = value;
                 }
+                else if (value.GetType() == typeof(PaymentMethodCashRecurrentResponse) || value is PaymentMethodCashRecurrentResponse)
+                {
+                    this._actualInstance = value;
+                }
                 else if (value.GetType() == typeof(PaymentMethodCashResponse) || value is PaymentMethodCashResponse)
                 {
                     this._actualInstance = value;
@@ -99,9 +115,19 @@ namespace Conekta.net.Model
                 }
                 else
                 {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: PaymentMethodCardResponse, PaymentMethodCashResponse, PaymentMethodSpeiRecurrent");
+                    throw new ArgumentException("Invalid instance found. Must be the following types: PaymentMethodCardResponse, PaymentMethodCashRecurrentResponse, PaymentMethodCashResponse, PaymentMethodSpeiRecurrent");
                 }
             }
+        }
+
+        /// <summary>
+        /// Get the actual instance of `PaymentMethodCashRecurrentResponse`. If the actual instance is not `PaymentMethodCashRecurrentResponse`,
+        /// the InvalidClassException will be thrown
+        /// </summary>
+        /// <returns>An instance of PaymentMethodCashRecurrentResponse</returns>
+        public PaymentMethodCashRecurrentResponse GetPaymentMethodCashRecurrentResponse()
+        {
+            return (PaymentMethodCashRecurrentResponse)this.ActualInstance;
         }
 
         /// <summary>
@@ -183,16 +209,16 @@ namespace Conekta.net.Model
                         newGetCustomerPaymentMethodDataResponse = new GetCustomerPaymentMethodDataResponse(JsonConvert.DeserializeObject<PaymentMethodCashResponse>(jsonString, GetCustomerPaymentMethodDataResponse.AdditionalPropertiesSerializerSettings));
                         return newGetCustomerPaymentMethodDataResponse;
                     case "cash_recurrent":
-                        newGetCustomerPaymentMethodDataResponse = new GetCustomerPaymentMethodDataResponse(JsonConvert.DeserializeObject<PaymentMethodCashResponse>(jsonString, GetCustomerPaymentMethodDataResponse.AdditionalPropertiesSerializerSettings));
-                        return newGetCustomerPaymentMethodDataResponse;
-                    case "oxxo_recurrent":
-                        newGetCustomerPaymentMethodDataResponse = new GetCustomerPaymentMethodDataResponse(JsonConvert.DeserializeObject<PaymentMethodCashResponse>(jsonString, GetCustomerPaymentMethodDataResponse.AdditionalPropertiesSerializerSettings));
+                        newGetCustomerPaymentMethodDataResponse = new GetCustomerPaymentMethodDataResponse(JsonConvert.DeserializeObject<PaymentMethodCashRecurrentResponse>(jsonString, GetCustomerPaymentMethodDataResponse.AdditionalPropertiesSerializerSettings));
                         return newGetCustomerPaymentMethodDataResponse;
                     case "spei_recurrent":
                         newGetCustomerPaymentMethodDataResponse = new GetCustomerPaymentMethodDataResponse(JsonConvert.DeserializeObject<PaymentMethodSpeiRecurrent>(jsonString, GetCustomerPaymentMethodDataResponse.AdditionalPropertiesSerializerSettings));
                         return newGetCustomerPaymentMethodDataResponse;
                     case "payment_method_card_response":
                         newGetCustomerPaymentMethodDataResponse = new GetCustomerPaymentMethodDataResponse(JsonConvert.DeserializeObject<PaymentMethodCardResponse>(jsonString, GetCustomerPaymentMethodDataResponse.AdditionalPropertiesSerializerSettings));
+                        return newGetCustomerPaymentMethodDataResponse;
+                    case "payment_method_cash_recurrent_response":
+                        newGetCustomerPaymentMethodDataResponse = new GetCustomerPaymentMethodDataResponse(JsonConvert.DeserializeObject<PaymentMethodCashRecurrentResponse>(jsonString, GetCustomerPaymentMethodDataResponse.AdditionalPropertiesSerializerSettings));
                         return newGetCustomerPaymentMethodDataResponse;
                     case "payment_method_cash_response":
                         newGetCustomerPaymentMethodDataResponse = new GetCustomerPaymentMethodDataResponse(JsonConvert.DeserializeObject<PaymentMethodCashResponse>(jsonString, GetCustomerPaymentMethodDataResponse.AdditionalPropertiesSerializerSettings));
@@ -201,7 +227,7 @@ namespace Conekta.net.Model
                         newGetCustomerPaymentMethodDataResponse = new GetCustomerPaymentMethodDataResponse(JsonConvert.DeserializeObject<PaymentMethodSpeiRecurrent>(jsonString, GetCustomerPaymentMethodDataResponse.AdditionalPropertiesSerializerSettings));
                         return newGetCustomerPaymentMethodDataResponse;
                     default:
-                        System.Diagnostics.Debug.WriteLine(string.Format("Failed to lookup discriminator value `{0}` for GetCustomerPaymentMethodDataResponse. Possible values: card cash cash_recurrent oxxo_recurrent spei_recurrent payment_method_card_response payment_method_cash_response payment_method_spei_recurrent", discriminatorValue));
+                        System.Diagnostics.Debug.WriteLine(string.Format("Failed to lookup discriminator value `{0}` for GetCustomerPaymentMethodDataResponse. Possible values: card cash cash_recurrent spei_recurrent payment_method_card_response payment_method_cash_recurrent_response payment_method_cash_response payment_method_spei_recurrent", discriminatorValue));
                         break;
                 }
             }
@@ -231,6 +257,26 @@ namespace Conekta.net.Model
             {
                 // deserialization failed, try the next one
                 System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into PaymentMethodCardResponse: {1}", jsonString, exception.ToString()));
+            }
+
+            try
+            {
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(PaymentMethodCashRecurrentResponse).GetProperty("AdditionalProperties") == null)
+                {
+                    newGetCustomerPaymentMethodDataResponse = new GetCustomerPaymentMethodDataResponse(JsonConvert.DeserializeObject<PaymentMethodCashRecurrentResponse>(jsonString, GetCustomerPaymentMethodDataResponse.SerializerSettings));
+                }
+                else
+                {
+                    newGetCustomerPaymentMethodDataResponse = new GetCustomerPaymentMethodDataResponse(JsonConvert.DeserializeObject<PaymentMethodCashRecurrentResponse>(jsonString, GetCustomerPaymentMethodDataResponse.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("PaymentMethodCashRecurrentResponse");
+                match++;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into PaymentMethodCashRecurrentResponse: {1}", jsonString, exception.ToString()));
             }
 
             try

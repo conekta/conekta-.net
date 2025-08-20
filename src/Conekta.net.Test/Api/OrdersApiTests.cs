@@ -19,6 +19,8 @@ using Xunit;
 
 using Conekta.net.Client;
 using Conekta.net.Api;
+using Conekta.net.Model;
+
 // uncomment below to import models
 //using Conekta.net.Model;
 
@@ -68,6 +70,48 @@ namespace Conekta.net.Test.Api
             //var response = instance.CancelOrder(id, acceptLanguage, xChildCompanyId);
             //Assert.IsType<OrderResponse>(response);
         }
+        [Fact(Skip = "Skipping BNPL test as it requires a valid API key and environment setup.")]
+        
+        public void CreateOrderBnplTest()
+    {
+        List<Product> products = new()
+        {
+            new(
+                name: "toshiba",
+                quantity: 1,
+                unitPrice: 15555
+            )
+        };
+        PaymentMethodBnplRequest request = new(
+            type: "bnpl",
+            productType: PaymentMethodBnplRequest.ProductTypeEnum.AplazoBnpl,
+            successUrl: "https://www.tu-sitio.com/success",
+            cancelUrl: "https://www.tu-sitio.com/cancel",
+            failureUrl: "https://www.tu-sitio.com/failure"
+            
+        );
+        List<ChargeRequest> charges = new()
+        {
+            new(
+                paymentMethod: new ChargeRequestPaymentMethod(request)
+            )
+        };
+        OrderRequestCustomerInfo customerInfo = new(new CustomerInfoJustCustomerId("cus_2tKcHxhTz7xU5SymF"));
+        OrderRequest orderRequest = new(
+            currency: "MXN",
+            customerInfo: customerInfo,
+            lineItems: products,
+            charges: charges,
+            preAuthorize: false
+        );
+        instance = new OrdersApi();
+        OrderResponse response = instance.CreateOrder(orderRequest, "es");
+
+        Assert.IsType<OrderResponse>(response);
+        Console.WriteLine($"Order ID: {response.Id}");
+        Console.WriteLine($"redirect url: {response.Charges.Data[0].PaymentMethod.GetPaymentMethodBnplPayment().RedirectUrl}");
+        Console.WriteLine($"type: {response.Charges.Data[0].PaymentMethod.GetPaymentMethodBnplPayment().Type}");
+    }
 
         /// <summary>
         /// Test CreateOrder

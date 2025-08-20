@@ -93,7 +93,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>Type of payment method</value>
         /*
-        <example>card | cash | spei | bnpl</example>
+        <example>card | cash | spei | bnpl | pay_by_bank</example>
         */
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }

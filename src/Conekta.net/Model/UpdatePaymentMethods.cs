@@ -35,20 +35,33 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdatePaymentMethods" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        public UpdatePaymentMethods(string name = default(string))
+        /// <param name="name">The name of the payment method holder.</param>
+        /// <param name="expiresAt">The expiration date of the payment method in Unix timestamp format.</param>
+        public UpdatePaymentMethods(string name = default(string), long expiresAt = default(long))
         {
             this.Name = name;
+            this.ExpiresAt = expiresAt;
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// The name of the payment method holder
         /// </summary>
+        /// <value>The name of the payment method holder</value>
         /*
-        <example>name of person</example>
+        <example>Payment recurrent</example>
         */
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// The expiration date of the payment method in Unix timestamp format
+        /// </summary>
+        /// <value>The expiration date of the payment method in Unix timestamp format</value>
+        /*
+        <example>1760457350</example>
+        */
+        [DataMember(Name = "expires_at", EmitDefaultValue = false)]
+        public long ExpiresAt { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -59,6 +72,7 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class UpdatePaymentMethods {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  ExpiresAt: ").Append(ExpiresAt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,6 +93,12 @@ namespace Conekta.net.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // ExpiresAt (long) minimum
+            if (this.ExpiresAt < (long)1)
+            {
+                yield return new ValidationResult("Invalid value for ExpiresAt, must be a value greater than or equal to 1.", new [] { "ExpiresAt" });
+            }
+
             yield break;
         }
     }

@@ -336,7 +336,7 @@ namespace Conekta.net.Model
         /// Gets or Sets Url
         /// </summary>
         /*
-        <example>https://pay.stg.conekta.io/checkout/6fca054a85194c43971ecea35cc519bb</example>
+        <example>https://pay.conekta.io/checkout/6fca054a85194c43971ecea35cc519bb</example>
         */
         [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }

@@ -27,47 +27,74 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// PaymentMethodSpeiRequest
+    /// PaymentMethodPbbRequest
     /// </summary>
-    [DataContract(Name = "payment_method_spei_request")]
-    public partial class PaymentMethodSpeiRequest : IValidatableObject
+    [DataContract(Name = "payment_method_pbb_request")]
+    public partial class PaymentMethodPbbRequest : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PaymentMethodSpeiRequest" /> class.
+        /// Product type of the payment method, use for the payment method to know the product type
+        /// </summary>
+        /// <value>Product type of the payment method, use for the payment method to know the product type</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ProductTypeEnum
+        {
+            /// <summary>
+            /// Enum BbvaPayByBank for value: bbva_pay_by_bank
+            /// </summary>
+            [EnumMember(Value = "bbva_pay_by_bank")]
+            BbvaPayByBank = 1
+        }
+
+
+        /// <summary>
+        /// Product type of the payment method, use for the payment method to know the product type
+        /// </summary>
+        /// <value>Product type of the payment method, use for the payment method to know the product type</value>
+        /*
+        <example>bbva_pay_by_bank</example>
+        */
+        [DataMember(Name = "product_type", IsRequired = true, EmitDefaultValue = true)]
+        public ProductTypeEnum ProductType { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PaymentMethodPbbRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected PaymentMethodSpeiRequest() { }
+        protected PaymentMethodPbbRequest() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="PaymentMethodSpeiRequest" /> class.
+        /// Initializes a new instance of the <see cref="PaymentMethodPbbRequest" /> class.
         /// </summary>
-        /// <param name="type">Type of payment method (required).</param>
-        /// <param name="expiresAt">expiresAt.</param>
-        public PaymentMethodSpeiRequest(string type = default(string), long expiresAt = default(long))
+        /// <param name="type">Type of the payment method (required).</param>
+        /// <param name="expiresAt">Expiration date of the payment method, in Unix timestamp format.</param>
+        /// <param name="productType">Product type of the payment method, use for the payment method to know the product type (required).</param>
+        public PaymentMethodPbbRequest(string type = default(string), long expiresAt = default(long), ProductTypeEnum productType = default(ProductTypeEnum))
         {
             // to ensure "type" is required (not null)
             if (type == null)
             {
-                throw new ArgumentNullException("type is a required property for PaymentMethodSpeiRequest and cannot be null");
+                throw new ArgumentNullException("type is a required property for PaymentMethodPbbRequest and cannot be null");
             }
             this.Type = type;
+            this.ProductType = productType;
             this.ExpiresAt = expiresAt;
         }
 
         /// <summary>
-        /// Type of payment method
+        /// Type of the payment method
         /// </summary>
-        /// <value>Type of payment method</value>
+        /// <value>Type of the payment method</value>
         /*
-        <example>card | cash | spei | bnpl | pay_by_bank</example>
+        <example>pay_by_bank</example>
         */
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExpiresAt
+        /// Expiration date of the payment method, in Unix timestamp format
         /// </summary>
+        /// <value>Expiration date of the payment method, in Unix timestamp format</value>
         /*
-        <example>1553273553</example>
+        <example>1680397724</example>
         */
         [DataMember(Name = "expires_at", EmitDefaultValue = false)]
         public long ExpiresAt { get; set; }
@@ -79,9 +106,10 @@ namespace Conekta.net.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class PaymentMethodSpeiRequest {\n");
+            sb.Append("class PaymentMethodPbbRequest {\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  ExpiresAt: ").Append(ExpiresAt).Append("\n");
+            sb.Append("  ProductType: ").Append(ProductType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
