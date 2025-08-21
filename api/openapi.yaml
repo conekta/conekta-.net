@@ -18755,6 +18755,7 @@ components:
           expires_at:
             description: Expiration date of the charge
             example: 1683053729
+            exclusiveMinimum: true
             format: int64
             minimum: 0
             type: integer
