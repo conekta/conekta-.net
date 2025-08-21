@@ -130,6 +130,12 @@ namespace Conekta.net.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // ExpiresAt (long) minimum
+            if (this.ExpiresAt < (long)0)
+            {
+                yield return new ValidationResult("Invalid value for ExpiresAt, must be a value greater than or equal to 0.", new [] { "ExpiresAt" });
+            }
+
             yield break;
         }
     }

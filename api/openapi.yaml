@@ -18749,7 +18749,7 @@ components:
       - description: use for pbb payment responses
         properties:
           deep_link:
-            description: Deep link for the payment
+            description: "Deep link for the payment, use for mobile apps/flows"
             example: https://mgm.bbva.mx/WA3b/pbb?AGREEMENT=002484374&AMOUNT=1&CONCEPT=PagoDirecto&CURRENCY=MXN&REFERENCE=22277523174328893295
             type: string
           expires_at:
@@ -18913,6 +18913,7 @@ components:
               \ format"
             example: 1680397724
             format: int64
+            minimum: 0
             type: integer
           product_type:
             description: "Product type of the payment method, use for the payment\
@@ -19652,12 +19653,14 @@ components:
           card_payment: payment_method_card
           bank_transfer_payment: payment_method_bank_transfer
           bnpl_payment: payment_method_bnpl_payment
+          pay_by_bank_payment: payment_method_pbb_payment
         propertyName: object
       oneOf:
       - $ref: '#/components/schemas/payment_method_cash'
       - $ref: '#/components/schemas/payment_method_card'
       - $ref: '#/components/schemas/payment_method_bank_transfer'
       - $ref: '#/components/schemas/payment_method_bnpl_payment'
+      - $ref: '#/components/schemas/payment_method_pbb_payment'
       title: charge_response_payment_method
     charge_response_refunds_data:
       properties:

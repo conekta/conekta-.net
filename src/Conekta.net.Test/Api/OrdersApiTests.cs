@@ -71,7 +71,6 @@ namespace Conekta.net.Test.Api
             //Assert.IsType<OrderResponse>(response);
         }
         [Fact(Skip = "Skipping BNPL test as it requires a valid API key and environment setup.")]
-        
         public void CreateOrderBnplTest()
     {
         List<Product> products = new()
@@ -112,6 +111,51 @@ namespace Conekta.net.Test.Api
         Console.WriteLine($"redirect url: {response.Charges.Data[0].PaymentMethod.GetPaymentMethodBnplPayment().RedirectUrl}");
         Console.WriteLine($"type: {response.Charges.Data[0].PaymentMethod.GetPaymentMethodBnplPayment().Type}");
     }
+        [Fact(Skip = "Skipping PBB test as it requires a valid API key and environment setup.")]
+        public void CreateOrderPbbTest()
+        {
+            Configuration configuration = new()
+            {
+                AccessToken =  Environment.GetEnvironmentVariable("CONEKTA_PRIVATE_KEY")
+            };
+            List<Product> products = new()
+            {
+                new(
+                    name: "toshiba",
+                    quantity: 1,
+                    unitPrice: 15555
+                )
+            };
+            PaymentMethodPbbRequest request = new(
+                type: "pay_by_bank",
+                productType:  PaymentMethodPbbRequest.ProductTypeEnum.BbvaPayByBank
+            );
+            List<ChargeRequest> charges = new()
+            {
+                new(
+                    paymentMethod: new ChargeRequestPaymentMethod(request)
+                )
+            };
+            OrderRequestCustomerInfo customerInfo = new(new CustomerInfo("Fran carrero", email:"fcarrero@gmail.com", phone:"5555555555"));
+            OrderRequest orderRequest = new(
+                currency: "MXN",
+                customerInfo: customerInfo,
+                lineItems: products,
+                charges: charges,
+                preAuthorize: false,
+                shippingLines:  new List<ShippingRequest> { new (amount: 0, carrier: "estafeta", method: "tienda a tienda") },
+                shippingContact: new CustomerShippingContacts("3143159054", receiver:"emili gonza",
+                                    address: new CustomerShippingContactsAddress(state: "CDMX", country: "MX", city: "Benito Juarez", street1: "Av. Insurgentes Sur 1602", postalCode: "03100"))
+            );
+            instance = new OrdersApi(configuration);
+            OrderResponse response = instance.CreateOrder(orderRequest, "es");
+
+            Assert.IsType<OrderResponse>(response);
+            Console.WriteLine($"Order ID: {response.Id}");
+            Console.WriteLine($"redirect url: {response.Charges.Data[0].PaymentMethod.GetPaymentMethodPbbPayment().RedirectUrl}");
+            Console.WriteLine($"deep link: {response.Charges.Data[0].PaymentMethod.GetPaymentMethodPbbPayment().DeepLink}");
+            Console.WriteLine($"type: {response.Charges.Data[0].PaymentMethod.GetPaymentMethodPbbPayment().Type}");
+        }
 
         /// <summary>
         /// Test CreateOrder

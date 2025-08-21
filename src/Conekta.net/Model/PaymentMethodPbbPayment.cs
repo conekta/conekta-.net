@@ -42,7 +42,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="type">type.</param>
         /// <param name="varObject">varObject (required).</param>
-        /// <param name="deepLink">Deep link for the payment (required).</param>
+        /// <param name="deepLink">Deep link for the payment, use for mobile apps/flows (required).</param>
         /// <param name="expiresAt">Expiration date of the charge (required).</param>
         /// <param name="productType">Product type of the charge (required).</param>
         /// <param name="redirectUrl">URL to redirect the customer to complete the payment (required).</param>
@@ -99,9 +99,9 @@ namespace Conekta.net.Model
         public string Object { get; set; }
 
         /// <summary>
-        /// Deep link for the payment
+        /// Deep link for the payment, use for mobile apps/flows
         /// </summary>
-        /// <value>Deep link for the payment</value>
+        /// <value>Deep link for the payment, use for mobile apps/flows</value>
         /*
         <example>https://mgm.bbva.mx/WA3b/pbb?AGREEMENT&#x3D;002484374&amp;AMOUNT&#x3D;1&amp;CONCEPT&#x3D;PagoDirecto&amp;CURRENCY&#x3D;MXN&amp;REFERENCE&#x3D;22277523174328893295</example>
         */
