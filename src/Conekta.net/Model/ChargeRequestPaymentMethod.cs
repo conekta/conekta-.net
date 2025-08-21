@@ -36,6 +36,18 @@ namespace Conekta.net.Model
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ChargeRequestPaymentMethod" /> class
+        /// with the <see cref="PaymentMethodPbbRequest" /> class
+        /// </summary>
+        /// <param name="actualInstance">An instance of PaymentMethodPbbRequest.</param>
+        public ChargeRequestPaymentMethod(PaymentMethodPbbRequest actualInstance)
+        {
+            this.IsNullable = false;
+            this.SchemaType= "oneOf";
+            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChargeRequestPaymentMethod" /> class
         /// with the <see cref="PaymentMethodBnplRequest" /> class
         /// </summary>
         /// <param name="actualInstance">An instance of PaymentMethodBnplRequest.</param>
@@ -96,11 +108,25 @@ namespace Conekta.net.Model
                 {
                     this._actualInstance = value;
                 }
+                else if (value.GetType() == typeof(PaymentMethodPbbRequest) || value is PaymentMethodPbbRequest)
+                {
+                    this._actualInstance = value;
+                }
                 else
                 {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: PaymentMethodBnplRequest, PaymentMethodCardRequest, PaymentMethodGeneralRequest");
+                    throw new ArgumentException("Invalid instance found. Must be the following types: PaymentMethodBnplRequest, PaymentMethodCardRequest, PaymentMethodGeneralRequest, PaymentMethodPbbRequest");
                 }
             }
+        }
+
+        /// <summary>
+        /// Get the actual instance of `PaymentMethodPbbRequest`. If the actual instance is not `PaymentMethodPbbRequest`,
+        /// the InvalidClassException will be thrown
+        /// </summary>
+        /// <returns>An instance of PaymentMethodPbbRequest</returns>
+        public PaymentMethodPbbRequest GetPaymentMethodPbbRequest()
+        {
+            return (PaymentMethodPbbRequest)this.ActualInstance;
         }
 
         /// <summary>
@@ -229,6 +255,26 @@ namespace Conekta.net.Model
             {
                 // deserialization failed, try the next one
                 System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into PaymentMethodGeneralRequest: {1}", jsonString, exception.ToString()));
+            }
+
+            try
+            {
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(PaymentMethodPbbRequest).GetProperty("AdditionalProperties") == null)
+                {
+                    newChargeRequestPaymentMethod = new ChargeRequestPaymentMethod(JsonConvert.DeserializeObject<PaymentMethodPbbRequest>(jsonString, ChargeRequestPaymentMethod.SerializerSettings));
+                }
+                else
+                {
+                    newChargeRequestPaymentMethod = new ChargeRequestPaymentMethod(JsonConvert.DeserializeObject<PaymentMethodPbbRequest>(jsonString, ChargeRequestPaymentMethod.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("PaymentMethodPbbRequest");
+                match++;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into PaymentMethodPbbRequest: {1}", jsonString, exception.ToString()));
             }
 
             if (match == 0)

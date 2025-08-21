@@ -4776,6 +4776,8 @@ paths:
                   $ref: '#/components/examples/order_card'
                 bnpl:
                   $ref: '#/components/examples/order_bnpl'
+                pay_by_bank:
+                  $ref: '#/components/examples/order_pbb'
               schema:
                 $ref: '#/components/schemas/order_response'
           description: successful operation
@@ -14471,13 +14473,13 @@ components:
             order_id: ord_2xaegxs5s69VP4pWy
             paid_at: null
             payment_method:
-              cancel_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/cancel?order_id=ord_2xaegxs5s69VP4pWy&charge_id=67c5caa665f9b400015dec40
+              cancel_url: https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/cancel?order_id=ord_2xaegxs5s69VP4pWy&charge_id=67c5caa665f9b400015dec40
               expires_at: 1743694118
-              failure_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/failure?order_id=ord_2xaegxs5s69VP4pWy&charge_id=67c5caa665f9b400015dec40
+              failure_url: https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/failure?order_id=ord_2xaegxs5s69VP4pWy&charge_id=67c5caa665f9b400015dec40
               object: bnpl_payment
               product_type: aplazo_bnpl
               redirect_url: https://pay.playground.com/na/hpp/payments/20sJ2LZ
-              success_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/success?order_id=ord_2xaegxs5s69VP4pWy&charge_id=67c5caa665f9b400015dec40
+              success_url: https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/success?order_id=ord_2xaegxs5s69VP4pWy&charge_id=67c5caa665f9b400015dec40
               type: bnpl
             reference_id: null
             refunds: null
@@ -14508,6 +14510,89 @@ components:
             id: line_item_2xaegxs5s69VP4pWv
             metadata: {}
             name: Test creditea
+            object: line_item
+            parent_id: ord_2xaegxs5s69VP4pWy
+            quantity: 1
+            sku: null
+            tags: null
+            type: null
+            unit_price: 300000
+          has_more: false
+          object: list
+          total: 1
+        livemode: true
+        metadata: {}
+        object: order
+        payment_status: pending_payment
+        processing_mode: null
+        shipping_contact: null
+        shipping_lines: null
+        split_payment: false
+        tax_lines: null
+        updated_at: 1741015718
+    order_pbb:
+      value:
+        amount: 300000
+        amount_refunded: 0
+        charges:
+          data:
+          - amount: 300000
+            channel:
+              checkout_request_id: fdcb06d6-c9e1-44ee-921f-17723b63852f
+              checkout_request_type: PaymentLink
+              id: channel_2xaegxs5s69VP4pXA
+              segment: Checkout
+            created_at: 1741015718
+            currency: MXN
+            customer_id: ""
+            description: Payment from order
+            device_fingerprint: null
+            failure_code: null
+            failure_message: null
+            id: 67c5caa665f9b400015dec40
+            is_refundable: false
+            livemode: true
+            monthly_installments: null
+            object: charge
+            order_id: ord_2xaegxs5s69VP4pWy
+            paid_at: null
+            payment_method:
+              expires_at: 1743694118
+              object: pay_by_bank_payment
+              product_type: bbva_pay_by_bank
+              redirect_url: https://pay.playground.com/na/hpp/payments/20sJ2LZ
+              deep_link: https://mgm.bbva.mx/WA3b/pbb?AGREEMENT=002484374&AMOUNT=1&CONCEPT=PagoDirecto&CURRENCY=MXN&REFERENCE=22277523174328893295
+              type: pay_by_bank
+              reference: "22277523174328893295"
+            reference_id: null
+            refunds: null
+            status: pending_payment
+          has_more: false
+          object: list
+          total: 1
+        checkout: null
+        created_at: 1741015718
+        currency: MXN
+        customer_info:
+          corporate: false
+          customer_custom_reference: null
+          customer_id: cus_2xZfwfjXxX9tZhVey
+          email: alexis.ruiz@google.com
+          name: Pedro Ruiz
+          object: customer_info
+          phone: "+5215555555555"
+        discount_lines: null
+        fiscal_entity: null
+        id: ord_2xaegxs5s69VP4pWy
+        is_refundable: false
+        line_items:
+          data:
+          - antifraud_info: {}
+            brand: null
+            description: null
+            id: line_item_2xaegxs5s69VP4pWv
+            metadata: {}
+            name: Test pay by bank
             object: line_item
             parent_id: ord_2xaegxs5s69VP4pWy
             quantity: 1
@@ -14587,15 +14672,21 @@ components:
       value:
         payment_method:
           can_not_expire: true
-          cancel_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/cancel
-          failure_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/failure
+          cancel_url: https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/cancel
+          failure_url: https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/failure
           product_type: aplazo_bnpl
-          success_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/success
+          success_url: https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/success
           type: bnpl
     charge_cash:
       value:
         payment_method:
           type: cash
+    charge_pbb:
+      value:
+        payment_method:
+          expires_at: 1680397724
+          product_type: bbva_pay_by_bank
+          type: pay_by_bank
     order_with_charges:
       summary: Create an order with charges
       value:
@@ -14699,16 +14790,30 @@ components:
         charges:
         - payment_method:
             can_not_expire: true
-            cancel_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/cancel
-            failure_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/failure
+            cancel_url: https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/cancel
+            failure_url: https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/failure
             product_type: aplazo_bnpl
-            success_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/success
+            success_url: https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/success
             type: bnpl
         currency: MXN
         customer_info:
           customer_id: cus_2xZfwfjXxX9tZhVey
         line_items:
         - name: Test creditea
+          quantity: 1
+          unit_price: 300000
+    order_with_charges_pbb:
+      summary: Create an order with a pay by bank charge
+      value:
+        charges:
+        - payment_method:
+            product_type: bbva_pay_by_bank
+            type: pay_by_bank
+        currency: MXN
+        customer_info:
+          customer_id: cus_2xZfwfjXxX9tZhVey
+        line_items:
+        - name: Test pay by bank
           quantity: 1
           unit_price: 300000
     order_with_checkout:
@@ -15243,6 +15348,8 @@ components:
               $ref: '#/components/examples/charge_bnpl'
             cash:
               $ref: '#/components/examples/charge_cash'
+            pay_by_bank:
+              $ref: '#/components/examples/charge_pbb'
           schema:
             $ref: '#/components/schemas/charge_request'
       description: requested field for a charge
@@ -15297,6 +15404,8 @@ components:
               $ref: '#/components/examples/order_with_charges'
             order_with_bnpl_charges:
               $ref: '#/components/examples/order_with_charges_bnpl'
+            order_with_pbb_charges:
+              $ref: '#/components/examples/order_with_charges_pbb'
             order_with_checkout:
               $ref: '#/components/examples/order_with_checkout'
             order_with_subscription:
@@ -16360,7 +16469,7 @@ components:
           maxProperties: 100
           type: object
         url:
-          example: https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval
+          example: https://username:password@mockoon.conekta.io/payments-api/cash/merchant_approval
           format: uri
           type: string
       title: event_webhook_resend_response
@@ -16817,6 +16926,12 @@ components:
       - object
       title: checkout_response
       type: object
+    payment_method_cash_recurrent_response:
+      allOf:
+      - $ref: '#/components/schemas/payment_method_cash_response'
+      description: Alias of cash response used when type=cash_recurrent
+      title: payment_method_cash_recurrent_response
+      x-discriminator-value: cash_recurrent
     payment_method_cash_response:
       allOf:
       - $ref: '#/components/schemas/payment_method_response'
@@ -17432,7 +17547,7 @@ components:
           type: array
         url:
           description: url or endpoint of the webhook
-          example: https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval
+          example: https://username:password@mockoon.conekta.io/payments-api/cash/merchant_approval
           type: string
       title: webhook_response
       type: object
@@ -18085,8 +18200,16 @@ components:
     update_payment_methods:
       properties:
         name:
-          example: name of person
+          description: The name of the payment method holder
+          example: Payment recurrent
           type: string
+        expires_at:
+          description: The expiration date of the payment method in Unix timestamp
+            format
+          example: 1760457350
+          format: int64
+          minimum: 1
+          type: integer
       title: update_payment_methods_card
       type: object
     plan_request:
@@ -18620,6 +18743,41 @@ components:
         - product_type
         title: charge_data_payment_method_bnpl_payment_response
         type: object
+    payment_method_pbb_payment:
+      allOf:
+      - $ref: '#/components/schemas/payment_method'
+      - description: use for pbb payment responses
+        properties:
+          deep_link:
+            description: "Deep link for the payment, use for mobile apps/flows"
+            example: https://mgm.bbva.mx/WA3b/pbb?AGREEMENT=002484374&AMOUNT=1&CONCEPT=PagoDirecto&CURRENCY=MXN&REFERENCE=22277523174328893295
+            type: string
+          expires_at:
+            description: Expiration date of the charge
+            example: 1683053729
+            exclusiveMinimum: true
+            format: int64
+            minimum: 0
+            type: integer
+          product_type:
+            description: Product type of the charge
+            type: string
+          redirect_url:
+            description: URL to redirect the customer to complete the payment
+            example: https://example.com/redirect
+            type: string
+          reference:
+            description: Reference for the payment
+            example: "22277523174328893295"
+            type: string
+        required:
+        - deep_link
+        - expires_at
+        - product_type
+        - redirect_url
+        - reference
+        title: charge_data_payment_method_pbb_payment_response
+        type: object
     customer_address:
       properties:
         street1:
@@ -18747,6 +18905,33 @@ components:
       - object
       - type
       type: object
+    payment_method_pbb_request:
+      allOf:
+      - $ref: '#/components/schemas/customer_payment_method_request'
+      - properties:
+          expires_at:
+            description: "Expiration date of the payment method, in Unix timestamp\
+              \ format"
+            example: 1680397724
+            format: int64
+            minimum: 0
+            type: integer
+          product_type:
+            description: "Product type of the payment method, use for the payment\
+              \ method to know the product type"
+            enum:
+            - bbva_pay_by_bank
+            example: bbva_pay_by_bank
+            type: string
+          type:
+            description: Type of the payment method
+            example: pay_by_bank
+            type: string
+        required:
+        - product_type
+        - type
+        type: object
+      title: payment_method_pbb_request
     payment_method_bnpl_request:
       allOf:
       - $ref: '#/components/schemas/customer_payment_method_request'
@@ -18947,7 +19132,7 @@ components:
       properties:
         type:
           description: Type of payment method
-          example: card | cash | spei | bnpl
+          example: card | cash | spei | bnpl | pay_by_bank
           type: string
       required:
       - type
@@ -19275,11 +19460,11 @@ components:
         mapping:
           cash: payment_method_cash_response
           card: payment_method_card_response
-          oxxo_recurrent: payment_method_cash_response
-          cash_recurrent: payment_method_cash_response
+          cash_recurrent: payment_method_cash_recurrent_response
           spei_recurrent: payment_method_spei_recurrent
         propertyName: type
       oneOf:
+      - $ref: '#/components/schemas/payment_method_cash_recurrent_response'
       - $ref: '#/components/schemas/payment_method_cash_response'
       - $ref: '#/components/schemas/payment_method_card_response'
       - $ref: '#/components/schemas/payment_method_spei_recurrent'
@@ -19307,12 +19492,12 @@ components:
         mapping:
           cash: payment_method_cash_response
           card: payment_method_card_response
-          cash_recurrent: payment_method_cash_response
-          oxxo_recurrent: payment_method_cash_response
+          cash_recurrent: payment_method_cash_recurrent_response
           spei_recurrent: payment_method_spei_recurrent
         propertyName: type
       oneOf:
       - $ref: '#/components/schemas/payment_method_cash_response'
+      - $ref: '#/components/schemas/payment_method_cash_recurrent_response'
       - $ref: '#/components/schemas/payment_method_card_response'
       - $ref: '#/components/schemas/payment_method_spei_recurrent'
       title: create_customer_payment_methods_response
@@ -19321,12 +19506,12 @@ components:
         mapping:
           cash: payment_method_cash_response
           card: payment_method_card_response
-          oxxo_recurrent: payment_method_cash_response
-          cash_recurrent: payment_method_cash_response
+          cash_recurrent: payment_method_cash_recurrent_response
           spei_recurrent: payment_method_spei_recurrent
         propertyName: type
       oneOf:
       - $ref: '#/components/schemas/payment_method_cash_response'
+      - $ref: '#/components/schemas/payment_method_cash_recurrent_response'
       - $ref: '#/components/schemas/payment_method_card_response'
       - $ref: '#/components/schemas/payment_method_spei_recurrent'
       title: update_customer_payment_methods_response
@@ -19469,12 +19654,14 @@ components:
           card_payment: payment_method_card
           bank_transfer_payment: payment_method_bank_transfer
           bnpl_payment: payment_method_bnpl_payment
+          pay_by_bank_payment: payment_method_pbb_payment
         propertyName: object
       oneOf:
       - $ref: '#/components/schemas/payment_method_cash'
       - $ref: '#/components/schemas/payment_method_card'
       - $ref: '#/components/schemas/payment_method_bank_transfer'
       - $ref: '#/components/schemas/payment_method_bnpl_payment'
+      - $ref: '#/components/schemas/payment_method_pbb_payment'
       title: charge_response_payment_method
     charge_response_refunds_data:
       properties:
@@ -19532,12 +19719,14 @@ components:
           card_payment: payment_method_card
           bank_transfer_payment: payment_method_bank_transfer
           bnpl_payment: payment_method_bnpl_payment
+          pbb_payment: payment_method_pbb_payment
         propertyName: object
       oneOf:
       - $ref: '#/components/schemas/payment_method_cash'
       - $ref: '#/components/schemas/payment_method_card'
       - $ref: '#/components/schemas/payment_method_bank_transfer'
       - $ref: '#/components/schemas/payment_method_bnpl_payment'
+      - $ref: '#/components/schemas/payment_method_pbb_payment'
       title: charge_order_response_payment_method
     charges_order_response_allOf_data:
       allOf:
@@ -19677,12 +19866,12 @@ components:
         mapping:
           cash: payment_method_cash_response
           card: payment_method_card_response
-          oxxo_recurrent: payment_method_cash_response
-          cash_recurrent: payment_method_cash_response
+          cash_recurrent: payment_method_cash_recurrent_response
           spei_recurrent: payment_method_spei_recurrent
         propertyName: type
       oneOf:
       - $ref: '#/components/schemas/payment_method_cash_response'
+      - $ref: '#/components/schemas/payment_method_cash_recurrent_response'
       - $ref: '#/components/schemas/payment_method_card_response'
       - $ref: '#/components/schemas/payment_method_spei_recurrent'
       title: customer_payment_methods_data
@@ -19754,7 +19943,7 @@ components:
           maxProperties: 100
           type: object
         url:
-          example: https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval
+          example: https://username:password@mockoon.conekta.io/payments-api/cash/merchant_approval
           format: uri
           type: string
       title: WebhookLog
@@ -20011,7 +20200,7 @@ components:
           example: HostedPayment
           type: string
         url:
-          example: https://pay.stg.conekta.io/checkout/6fca054a85194c43971ecea35cc519bb
+          example: https://pay.conekta.io/checkout/6fca054a85194c43971ecea35cc519bb
           type: string
       type: object
     order_response_customer_info:
@@ -20473,6 +20662,7 @@ components:
       type: object
     charge_request_payment_method:
       oneOf:
+      - $ref: '#/components/schemas/payment_method_pbb_request'
       - $ref: '#/components/schemas/payment_method_bnpl_request'
       - $ref: '#/components/schemas/payment_method_card_request'
       - $ref: '#/components/schemas/payment_method_general_request'

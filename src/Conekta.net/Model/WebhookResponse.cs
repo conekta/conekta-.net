@@ -130,7 +130,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>url or endpoint of the webhook</value>
         /*
-        <example>https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval</example>
+        <example>https://username:password@mockoon.conekta.io/payments-api/cash/merchant_approval</example>
         */
         [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }

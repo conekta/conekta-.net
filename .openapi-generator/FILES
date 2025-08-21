@@ -144,10 +144,13 @@ docs/PaymentMethodCard.md
 docs/PaymentMethodCardRequest.md
 docs/PaymentMethodCardResponse.md
 docs/PaymentMethodCash.md
+docs/PaymentMethodCashRecurrentResponse.md
 docs/PaymentMethodCashRequest.md
 docs/PaymentMethodCashResponse.md
 docs/PaymentMethodCashResponseAllOfAgreements.md
 docs/PaymentMethodGeneralRequest.md
+docs/PaymentMethodPbbPayment.md
+docs/PaymentMethodPbbRequest.md
 docs/PaymentMethodResponse.md
 docs/PaymentMethodSpeiRecurrent.md
 docs/PaymentMethodSpeiRequest.md
@@ -386,10 +389,13 @@ src/Conekta.net/Model/PaymentMethodCard.cs
 src/Conekta.net/Model/PaymentMethodCardRequest.cs
 src/Conekta.net/Model/PaymentMethodCardResponse.cs
 src/Conekta.net/Model/PaymentMethodCash.cs
+src/Conekta.net/Model/PaymentMethodCashRecurrentResponse.cs
 src/Conekta.net/Model/PaymentMethodCashRequest.cs
 src/Conekta.net/Model/PaymentMethodCashResponse.cs
 src/Conekta.net/Model/PaymentMethodCashResponseAllOfAgreements.cs
 src/Conekta.net/Model/PaymentMethodGeneralRequest.cs
+src/Conekta.net/Model/PaymentMethodPbbPayment.cs
+src/Conekta.net/Model/PaymentMethodPbbRequest.cs
 src/Conekta.net/Model/PaymentMethodResponse.cs
 src/Conekta.net/Model/PaymentMethodSpeiRecurrent.cs
 src/Conekta.net/Model/PaymentMethodSpeiRequest.cs
