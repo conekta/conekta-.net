@@ -8,6 +8,7 @@ All URIs are relative to *https://api.conekta.io*
 | [**GetCompanies**](CompaniesApi.md#getcompanies) | **GET** /companies | Get List of Companies |
 | [**GetCompany**](CompaniesApi.md#getcompany) | **GET** /companies/{id} | Get Company |
 | [**GetCompanyDocuments**](CompaniesApi.md#getcompanydocuments) | **GET** /companies/{company_id}/documents | Get Company Documents |
+| [**GetCurrentCompany**](CompaniesApi.md#getcurrentcompany) | **GET** /companies/current | Get Current Company |
 | [**UpdateCompanyDocument**](CompaniesApi.md#updatecompanydocument) | **PATCH** /companies/{company_id}/document | Update Company Document |
 | [**UploadCompanyDocument**](CompaniesApi.md#uploadcompanydocument) | **POST** /companies/{company_id}/document | Upload Company Document |
 
@@ -403,6 +404,102 @@ catch (ApiException e)
 | **200** | A list of documents for the company. |  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  |
 | **401** | authentication error |  -  |
 | **404** | not found entity |  -  |
+| **500** | internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="getcurrentcompany"></a>
+# **GetCurrentCompany**
+> CompanyResponse GetCurrentCompany (string acceptLanguage = null)
+
+Get Current Company
+
+Retrieves information about the currently authenticated company. This endpoint returns the same data as the standard company endpoint but automatically uses the current company's context.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Conekta.net.Api;
+using Conekta.net.Client;
+using Conekta.net.Model;
+
+namespace Example
+{
+    public class GetCurrentCompanyExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.conekta.io";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new CompaniesApi(config);
+            var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
+
+            try
+            {
+                // Get Current Company
+                CompanyResponse result = apiInstance.GetCurrentCompany(acceptLanguage);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling CompaniesApi.GetCurrentCompany: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetCurrentCompanyWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get Current Company
+    ApiResponse<CompanyResponse> response = apiInstance.GetCurrentCompanyWithHttpInfo(acceptLanguage);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CompaniesApi.GetCurrentCompanyWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
+
+### Return type
+
+[**CompanyResponse**](CompanyResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.conekta-v2.2.0+json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | successful |  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  |
+| **401** | authentication error |  -  |
 | **500** | internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

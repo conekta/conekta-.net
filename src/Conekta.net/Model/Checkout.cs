@@ -44,7 +44,7 @@ namespace Conekta.net.Model
         /// <param name="expiresAt">It is the time when the link will expire. It is expressed in seconds since the Unix epoch. The valid range is from 2 to 365 days (the valid range will be taken from the next day of the creation date at 00:01 hrs)  (required).</param>
         /// <param name="monthlyInstallmentsEnabled">This flag allows you to specify if months without interest will be active..</param>
         /// <param name="monthlyInstallmentsOptions">This field allows you to specify the number of months without interest..</param>
-        /// <param name="threeDsMode">Indicates the 3DS2 mode for the order, either smart or strict..</param>
+        /// <param name="threeDsMode">Indicates the 3DS2 mode for the order, either smart or strict. This property is only applicable when 3DS is enabled. When 3DS is disabled, this field should be null..</param>
         /// <param name="name">Reason for charge (required).</param>
         /// <param name="needsShippingContact">This flag allows you to fill in the shipping information at checkout..</param>
         /// <param name="onDemandEnabled">This flag allows you to specify if the link will be on demand..</param>
@@ -93,7 +93,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>Those are the payment methods that will be available for the link</value>
         /*
-        <example>[&quot;cash&quot;,&quot;card&quot;,&quot;bank_transfer&quot;,&quot;bnpl&quot;]</example>
+        <example>[&quot;cash&quot;,&quot;card&quot;,&quot;bank_transfer&quot;,&quot;bnpl&quot;,&quot;pay_by_bank&quot;]</example>
         */
         [DataMember(Name = "allowed_payment_methods", IsRequired = true, EmitDefaultValue = true)]
         public List<string> AllowedPaymentMethods { get; set; }
@@ -129,10 +129,10 @@ namespace Conekta.net.Model
         public List<int> MonthlyInstallmentsOptions { get; set; }
 
         /// <summary>
-        /// Indicates the 3DS2 mode for the order, either smart or strict.
+        /// Indicates the 3DS2 mode for the order, either smart or strict. This property is only applicable when 3DS is enabled. When 3DS is disabled, this field should be null.
         /// </summary>
-        /// <value>Indicates the 3DS2 mode for the order, either smart or strict.</value>
-        [DataMember(Name = "three_ds_mode", EmitDefaultValue = false)]
+        /// <value>Indicates the 3DS2 mode for the order, either smart or strict. This property is only applicable when 3DS is enabled. When 3DS is disabled, this field should be null.</value>
+        [DataMember(Name = "three_ds_mode", EmitDefaultValue = true)]
         public string ThreeDsMode { get; set; }
 
         /// <summary>

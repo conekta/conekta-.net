@@ -55,7 +55,7 @@ namespace Conekta.net.Model
         /// <param name="shippingContact">shippingContact.</param>
         /// <param name="shippingLines">List of [shipping costs](https://developers.conekta.com/v2.2.0/reference/orderscreateshipping). If the online store offers digital products..</param>
         /// <param name="taxLines">List of [taxes](https://developers.conekta.com/v2.2.0/reference/orderscreatetaxes) that are applied to the order..</param>
-        /// <param name="threeDsMode">Indicates the 3DS2 mode for the order, either smart or strict..</param>
+        /// <param name="threeDsMode">Indicates the 3DS2 mode for the order, either smart or strict. This property is only applicable when 3DS is enabled. When 3DS is disabled, this field should be null..</param>
         public OrderRequest(List<ChargeRequest> charges = default(List<ChargeRequest>), CheckoutRequest checkout = default(CheckoutRequest), string currency = default(string), OrderRequestCustomerInfo customerInfo = default(OrderRequestCustomerInfo), List<OrderDiscountLinesRequest> discountLines = default(List<OrderDiscountLinesRequest>), OrderFiscalEntityRequest fiscalEntity = default(OrderFiscalEntityRequest), List<Product> lineItems = default(List<Product>), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), bool needsShippingContact = default(bool), bool preAuthorize = false, string processingMode = default(string), string returnUrl = default(string), CustomerShippingContacts shippingContact = default(CustomerShippingContacts), List<ShippingRequest> shippingLines = default(List<ShippingRequest>), List<OrderTaxRequest> taxLines = default(List<OrderTaxRequest>), string threeDsMode = default(string))
         {
             // to ensure "currency" is required (not null)
@@ -205,10 +205,10 @@ namespace Conekta.net.Model
         public List<OrderTaxRequest> TaxLines { get; set; }
 
         /// <summary>
-        /// Indicates the 3DS2 mode for the order, either smart or strict.
+        /// Indicates the 3DS2 mode for the order, either smart or strict. This property is only applicable when 3DS is enabled. When 3DS is disabled, this field should be null.
         /// </summary>
-        /// <value>Indicates the 3DS2 mode for the order, either smart or strict.</value>
-        [DataMember(Name = "three_ds_mode", EmitDefaultValue = false)]
+        /// <value>Indicates the 3DS2 mode for the order, either smart or strict. This property is only applicable when 3DS is enabled. When 3DS is disabled, this field should be null.</value>
+        [DataMember(Name = "three_ds_mode", EmitDefaultValue = true)]
         public string ThreeDsMode { get; set; }
 
         /// <summary>

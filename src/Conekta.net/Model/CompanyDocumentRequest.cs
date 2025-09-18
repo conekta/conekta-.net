@@ -182,7 +182,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>Base64 encoded content of the file.</value>
         /*
-        <example>[B@578fb678</example>
+        <example>[B@35db3ea2</example>
         */
         [DataMember(Name = "file_data", IsRequired = true, EmitDefaultValue = true)]
         public byte[] FileData { get; set; }

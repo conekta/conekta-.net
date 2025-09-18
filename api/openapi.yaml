@@ -2055,6 +2055,220 @@ paths:
       summary: Get Company
       tags:
       - Companies
+  /companies/current:
+    get:
+      description: Retrieves information about the currently authenticated company.
+        This endpoint returns the same data as the standard company endpoint but automatically
+        uses the current company's context.
+      operationId: getCurrentCompany
+      parameters:
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                id: 2a1b3c4d5e6f7g8h9i0j1k2l
+                name: Mi Empresa S.A. de C.V.
+                mcc: "5311"
+                active: true
+                account_status: activated
+                antifraud_vertical: physical_goods
+                created_at: 1510699009
+                payment_link_enabled: true
+                commercial_info:
+                  web_page: https://miempresa.mx
+                  facebook: ""
+                  category: Venta al menudeo
+                  average_sale: Range10KPlus
+                  monthly_sales: Range0To100K
+                  shipping: false
+                  physical: false
+                  already_selling: true
+                  tos_page: https://miempresa.com/terminos
+                  website_instructions: ""
+                  object: commercial_info
+                legal_info:
+                  name: MARIA GONZALEZ
+                  email: maria.gonzalez@miempresa.com
+                  identification_type: ife
+                  signed_contract_uploaded: false
+                  curp: GOMA930207MSLNZR00
+                  object: legal_info
+                fiscal_info:
+                  tax_id: EMP121008MU7
+                  legal_entity_name: Mi Empresa S.A. de C.V.
+                  business_type: Persona moral
+                  phone: "5563794965"
+                  address:
+                    street1: AVENIDA INSURGENTES
+                    street2: ROMA NORTE
+                    street3: Cuauhtémoc
+                    city: México
+                    state: CIUDAD DE MEXICO
+                    country: MEX
+                    zip: "06700"
+                    external_number: "123"
+                    internal_number: "201"
+                    object: address
+                  bank_account:
+                    account_number: "123456789012345678"
+                    account_holder_name: Mi Empresa S.A. de C.V.
+                    bank: "Sistema de Transferencias y Pagos STP, S.A. de C.V., SOFOM\
+                      \ E.N.R."
+                    object: fiscal_info_bank_account
+                  files:
+                  - id: 1239z8y7x6w5v4u3t2s1r0q9p8o
+                    file_name: constancia_fiscal.pdf
+                    file_type: fiscal_id
+                    url: https://example.com/documents/constancia-fiscal.pdf
+                    object: file
+                  object: fiscal_info
+                user_accounts:
+                - role: owner
+                  token: "1234567890"
+                  livemode: true
+                  object: user_account
+                capture_fees:
+                  oxxo_commission: 0.035
+                  banorte_commission: 0.01
+                  spei_commission: 0.01
+                  amex_commission: 0.029
+                  credit_commission: 0.029
+                  debit_commission: 0.029
+                  oxxo_fixed_cost: 0
+                  banorte_fixed_cost: 1200
+                  spei_fixed_cost: 800
+                  amex_fixed_cost: 250
+                  credit_fixed_cost: 250
+                  debit_fixed_cost: 250
+                  credit_three_month_installments_commission: 0.049
+                  credit_six_month_installments_commission: 0.079
+                  credit_nine_month_installments_commission: 0.109
+                  credit_twelve_month_installments_commission: 0.139
+                  amex_three_month_installments_commission: 0.039
+                  amex_six_month_installments_commission: 0.059
+                  amex_nine_month_installments_commission: 0.079
+                  amex_twelve_month_installments_commission: 0.099
+                webhooks:
+                - id: "1234567890"
+                  url: https://miempresa.com/api/webhook
+                  subscribed_events:
+                  - charge.created
+                  - charge.paid
+                  - order.paid
+                  status: listening
+                  object: webhook
+                  production_enabled: true
+                  development_enabled: false
+                object: company
+                oxxo_payments_enabled: true
+                spei_payments_enabled: true
+                card_payments_enabled: true
+                bnpl_payments_enabled: true
+                direct_debit_payments_enabled: true
+                voucher_card_enabled: false
+                card_max_limit: 10000000
+                voucher_card_categories: []
+                internal_scopes:
+                - orders
+                retention: true
+                three_ds_enabled: true
+                three_ds_mode: strict
+              schema:
+                $ref: '#/components/schemas/company_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              explode: false
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+              style: simple
+            Content-Type:
+              description: The format of the response body
+              explode: false
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+              style: simple
+            Content-Length:
+              description: The length of the response body in bytes
+              explode: false
+              schema:
+                example: "2737"
+                type: string
+              style: simple
+            Connection:
+              description: The type of connection used to transfer the response
+              explode: false
+              schema:
+                example: keep-alive
+                type: string
+              style: simple
+            Conekta-Media-Type:
+              description: The version of the API used to process the request and
+                the format of the response body
+              explode: false
+              schema:
+                example: conekta-v2.2.0; format=application/json
+                type: string
+              style: simple
+        "401":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "500":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get Current Company
+      tags:
+      - Companies
   /companies/{company_id}/document:
     patch:
       description: Updates an existing document associated with a specific company.
@@ -14825,6 +15039,7 @@ components:
           - card
           - bank_transfer
           - bnpl
+          - pay_by_bank
           expires_at: 0
           failure_url: string
           monthly_installments_enabled: false
@@ -16137,6 +16352,20 @@ components:
           description: "The type of object, typically \"company\"."
           example: company
           type: string
+        three_ds_enabled:
+          description: Indicates if 3DS authentication is enabled for the company.
+          example: true
+          type: boolean
+        three_ds_mode:
+          description: "The 3DS mode for the company, either 'smart' or 'strict'.\
+            \ This property is only applicable when three_ds_enabled is true. When\
+            \ three_ds_enabled is false, this field will be null."
+          enum:
+          - smart
+          - strict
+          example: strict
+          nullable: true
+          type: string
       required:
       - account_status
       - active
@@ -16822,6 +17051,7 @@ components:
           - card
           - bank_transfer
           - bnpl
+          - pay_by_bank
           items:
             type: string
           type: array
@@ -17882,7 +18112,10 @@ components:
             $ref: '#/components/schemas/order_tax_request'
           type: array
         three_ds_mode:
-          description: "Indicates the 3DS2 mode for the order, either smart or strict."
+          description: "Indicates the 3DS2 mode for the order, either smart or strict.\
+            \ This property is only applicable when 3DS is enabled. When 3DS is disabled,\
+            \ this field should be null."
+          nullable: true
           type: string
       required:
       - currency
@@ -18095,6 +18328,7 @@ components:
           - card
           - bank_transfer
           - bnpl
+          - pay_by_bank
           items:
             type: string
           type: array
@@ -18122,7 +18356,10 @@ components:
             type: integer
           type: array
         three_ds_mode:
-          description: "Indicates the 3DS2 mode for the order, either smart or strict."
+          description: "Indicates the 3DS2 mode for the order, either smart or strict.\
+            \ This property is only applicable when 3DS is enabled. When 3DS is disabled,\
+            \ this field should be null."
+          nullable: true
           type: string
         name:
           description: Reason for charge
@@ -19028,12 +19265,14 @@ components:
           - card
           - bank_transfer
           - bnpl
+          - pay_by_bank
           items:
             enum:
             - cash
             - card
             - bank_transfer
             - bnpl
+            - pay_by_bank
             type: string
           type: array
         plan_ids:
@@ -20105,6 +20344,7 @@ components:
           - card
           - bank_transfer
           - bnpl
+          - pay_by_bank
           items:
             type: string
           type: array
