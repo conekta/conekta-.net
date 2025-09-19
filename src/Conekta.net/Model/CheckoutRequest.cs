@@ -60,7 +60,13 @@ namespace Conekta.net.Model
             /// Enum Bnpl for value: bnpl
             /// </summary>
             [EnumMember(Value = "bnpl")]
-            Bnpl = 4
+            Bnpl = 4,
+
+            /// <summary>
+            /// Enum PayByBank for value: pay_by_bank
+            /// </summary>
+            [EnumMember(Value = "pay_by_bank")]
+            PayByBank = 5
         }
 
         /// <summary>
@@ -109,7 +115,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>Are the payment methods available for this link. For subscriptions, only &#39;card&#39; is allowed due to the recurring nature of the payments.</value>
         /*
-        <example>[&quot;cash&quot;,&quot;card&quot;,&quot;bank_transfer&quot;,&quot;bnpl&quot;]</example>
+        <example>[&quot;cash&quot;,&quot;card&quot;,&quot;bank_transfer&quot;,&quot;bnpl&quot;,&quot;pay_by_bank&quot;]</example>
         */
         [DataMember(Name = "allowed_payment_methods", IsRequired = true, EmitDefaultValue = true)]
         public List<CheckoutRequest.AllowedPaymentMethodsEnum> AllowedPaymentMethods { get; set; }

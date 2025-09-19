@@ -116,7 +116,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>Are the payment methods available for this link</value>
         /*
-        <example>[&quot;cash&quot;,&quot;card&quot;,&quot;bank_transfer&quot;,&quot;bnpl&quot;]</example>
+        <example>[&quot;cash&quot;,&quot;card&quot;,&quot;bank_transfer&quot;,&quot;bnpl&quot;,&quot;pay_by_bank&quot;]</example>
         */
         [DataMember(Name = "allowed_payment_methods", EmitDefaultValue = false)]
         public List<string> AllowedPaymentMethods { get; set; }

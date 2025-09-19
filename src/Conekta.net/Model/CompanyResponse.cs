@@ -33,6 +33,36 @@ namespace Conekta.net.Model
     public partial class CompanyResponse : IValidatableObject
     {
         /// <summary>
+        /// The 3DS mode for the company, either &#39;smart&#39; or &#39;strict&#39;. This property is only applicable when three_ds_enabled is true. When three_ds_enabled is false, this field will be null.
+        /// </summary>
+        /// <value>The 3DS mode for the company, either &#39;smart&#39; or &#39;strict&#39;. This property is only applicable when three_ds_enabled is true. When three_ds_enabled is false, this field will be null.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ThreeDsModeEnum
+        {
+            /// <summary>
+            /// Enum Smart for value: smart
+            /// </summary>
+            [EnumMember(Value = "smart")]
+            Smart = 1,
+
+            /// <summary>
+            /// Enum Strict for value: strict
+            /// </summary>
+            [EnumMember(Value = "strict")]
+            Strict = 2
+        }
+
+
+        /// <summary>
+        /// The 3DS mode for the company, either &#39;smart&#39; or &#39;strict&#39;. This property is only applicable when three_ds_enabled is true. When three_ds_enabled is false, this field will be null.
+        /// </summary>
+        /// <value>The 3DS mode for the company, either &#39;smart&#39; or &#39;strict&#39;. This property is only applicable when three_ds_enabled is true. When three_ds_enabled is false, this field will be null.</value>
+        /*
+        <example>strict</example>
+        */
+        [DataMember(Name = "three_ds_mode", EmitDefaultValue = true)]
+        public ThreeDsModeEnum? ThreeDsMode { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="CompanyResponse" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -49,7 +79,9 @@ namespace Conekta.net.Model
         /// <param name="documents">A list of documents related to the company. (required).</param>
         /// <param name="createdAt">Timestamp of when the company was created. (required).</param>
         /// <param name="varObject">The type of object, typically \&quot;company\&quot;. (required).</param>
-        public CompanyResponse(string id = default(string), string name = default(string), bool active = default(bool), string accountStatus = default(string), string parentCompanyId = default(string), string onboardingStatus = default(string), List<CompanyResponseDocumentsInner> documents = default(List<CompanyResponseDocumentsInner>), long createdAt = default(long), string varObject = default(string))
+        /// <param name="threeDsEnabled">Indicates if 3DS authentication is enabled for the company..</param>
+        /// <param name="threeDsMode">The 3DS mode for the company, either &#39;smart&#39; or &#39;strict&#39;. This property is only applicable when three_ds_enabled is true. When three_ds_enabled is false, this field will be null..</param>
+        public CompanyResponse(string id = default(string), string name = default(string), bool active = default(bool), string accountStatus = default(string), string parentCompanyId = default(string), string onboardingStatus = default(string), List<CompanyResponseDocumentsInner> documents = default(List<CompanyResponseDocumentsInner>), long createdAt = default(long), string varObject = default(string), bool threeDsEnabled = default(bool), ThreeDsModeEnum? threeDsMode = default(ThreeDsModeEnum?))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -90,6 +122,8 @@ namespace Conekta.net.Model
             }
             this.Object = varObject;
             this.ParentCompanyId = parentCompanyId;
+            this.ThreeDsEnabled = threeDsEnabled;
+            this.ThreeDsMode = threeDsMode;
         }
 
         /// <summary>
@@ -180,6 +214,16 @@ namespace Conekta.net.Model
         public string Object { get; set; }
 
         /// <summary>
+        /// Indicates if 3DS authentication is enabled for the company.
+        /// </summary>
+        /// <value>Indicates if 3DS authentication is enabled for the company.</value>
+        /*
+        <example>true</example>
+        */
+        [DataMember(Name = "three_ds_enabled", EmitDefaultValue = true)]
+        public bool ThreeDsEnabled { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -196,6 +240,8 @@ namespace Conekta.net.Model
             sb.Append("  Documents: ").Append(Documents).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  ThreeDsEnabled: ").Append(ThreeDsEnabled).Append("\n");
+            sb.Append("  ThreeDsMode: ").Append(ThreeDsMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
