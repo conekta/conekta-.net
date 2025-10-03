@@ -48,11 +48,12 @@ namespace Conekta.net.Model
         /// <param name="name">Reason for charge (required).</param>
         /// <param name="needsShippingContact">This flag allows you to fill in the shipping information at checkout..</param>
         /// <param name="onDemandEnabled">This flag allows you to specify if the link will be on demand..</param>
+        /// <param name="planIds">It is a list of plan IDs that will be associated with the order..</param>
         /// <param name="orderTemplate">orderTemplate (required).</param>
         /// <param name="paymentsLimitCount">It is the number of payments that can be made through the link..</param>
         /// <param name="recurrent">false: single use. true: multiple payments (required).</param>
         /// <param name="type">It is the type of link that will be created. It must be a valid type. (required).</param>
-        public Checkout(List<string> allowedPaymentMethods = default(List<string>), long expiresAt = default(long), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string threeDsMode = default(string), string name = default(string), bool needsShippingContact = default(bool), bool? onDemandEnabled = default(bool?), CheckoutOrderTemplate orderTemplate = default(CheckoutOrderTemplate), int paymentsLimitCount = default(int), bool recurrent = default(bool), string type = default(string))
+        public Checkout(List<string> allowedPaymentMethods = default(List<string>), long expiresAt = default(long), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string threeDsMode = default(string), string name = default(string), bool needsShippingContact = default(bool), bool? onDemandEnabled = default(bool?), List<string> planIds = default(List<string>), CheckoutOrderTemplate orderTemplate = default(CheckoutOrderTemplate), int paymentsLimitCount = default(int), bool recurrent = default(bool), string type = default(string))
         {
             // to ensure "allowedPaymentMethods" is required (not null)
             if (allowedPaymentMethods == null)
@@ -85,6 +86,7 @@ namespace Conekta.net.Model
             this.ThreeDsMode = threeDsMode;
             this.NeedsShippingContact = needsShippingContact;
             this.OnDemandEnabled = onDemandEnabled;
+            this.PlanIds = planIds;
             this.PaymentsLimitCount = paymentsLimitCount;
         }
 
@@ -166,6 +168,16 @@ namespace Conekta.net.Model
         public bool? OnDemandEnabled { get; set; }
 
         /// <summary>
+        /// It is a list of plan IDs that will be associated with the order.
+        /// </summary>
+        /// <value>It is a list of plan IDs that will be associated with the order.</value>
+        /*
+        <example>[&quot;plan_123&quot;,&quot;plan_456&quot;]</example>
+        */
+        [DataMember(Name = "plan_ids", EmitDefaultValue = false)]
+        public List<string> PlanIds { get; set; }
+
+        /// <summary>
         /// Gets or Sets OrderTemplate
         /// </summary>
         [DataMember(Name = "order_template", IsRequired = true, EmitDefaultValue = true)]
@@ -217,6 +229,7 @@ namespace Conekta.net.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  NeedsShippingContact: ").Append(NeedsShippingContact).Append("\n");
             sb.Append("  OnDemandEnabled: ").Append(OnDemandEnabled).Append("\n");
+            sb.Append("  PlanIds: ").Append(PlanIds).Append("\n");
             sb.Append("  OrderTemplate: ").Append(OrderTemplate).Append("\n");
             sb.Append("  PaymentsLimitCount: ").Append(PaymentsLimitCount).Append("\n");
             sb.Append("  Recurrent: ").Append(Recurrent).Append("\n");
