@@ -18375,6 +18375,14 @@ components:
           example: true
           nullable: true
           type: boolean
+        plan_ids:
+          description: It is a list of plan IDs that will be associated with the order.
+          example:
+          - plan_123
+          - plan_456
+          items:
+            type: string
+          type: array
         order_template:
           $ref: '#/components/schemas/checkout_order_template'
         payments_limit_count:
@@ -21055,14 +21063,6 @@ components:
             of the order.
           items:
             $ref: '#/components/schemas/product'
-          type: array
-        plan_ids:
-          description: It is a list of plan IDs that will be associated with the order.
-          example:
-          - plan_123
-          - plan_456
-          items:
-            type: string
           type: array
         metadata:
           additionalProperties: true

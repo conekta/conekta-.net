@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Name** | **string** | Reason for charge | 
 **NeedsShippingContact** | **bool** | This flag allows you to fill in the shipping information at checkout. | [optional] 
 **OnDemandEnabled** | **bool?** | This flag allows you to specify if the link will be on demand. | [optional] 
+**PlanIds** | **List&lt;string&gt;** | It is a list of plan IDs that will be associated with the order. | [optional] 
 **OrderTemplate** | [**CheckoutOrderTemplate**](CheckoutOrderTemplate.md) |  | 
 **PaymentsLimitCount** | **int** | It is the number of payments that can be made through the link. | [optional] 
 **Recurrent** | **bool** | false: single use. true: multiple payments | 
