@@ -39,10 +39,17 @@ namespace Conekta.net.Test.Api
             var customerInfo = new OrderRequestCustomerInfo(
                 new CustomerInfo("test user", email: "test@test.com", phone: "+5215555555555")
             );
+            var shippingContact = new CustomerShippingContactsRequest(
+                metadata: new Dictionary<string, Object>
+                {
+                    { "test", "true" }
+                }
+            );
             var orderRequest = new OrderRequest(
                 currency: "MXN",
                 customerInfo: customerInfo,
-                lineItems: products
+                lineItems: products,
+                shippingContact: shippingContact
             );
             var response = instance.CreateOrder(orderRequest, "es");
             Assert.IsType<OrderResponse>(response);
@@ -78,7 +85,7 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void CancelOrderTest()
         {
-            string id = "ord_2tNDyQbJacvUZiyfp";
+            string id = "ord_2tqaGQYZyvBsMKEgs";
             var response = instance.CancelOrder(id, "es");
             Assert.IsType<OrderResponse>(response);
         }
