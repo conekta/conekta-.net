@@ -1,5 +1,39 @@
 # Changelog
 
+## 8.0.0 - 2026-03-04
+* Update SDK to version 8.0.0, regenerate project files and enhance API documentation
+* Add support for new payment method: Pay By Bank (PBB) and update related models
+* Add bank information to SPEI payment method and company creation models
+* Add support for .NET 7.0 and .NET 8.0 target framework detection
+* Update RestSharp to 112.0.0
+* Update test cases to align with Mockoon mock data for improved CI reliability
+* Remove obsolete `IReadableConfiguration.mustache` custom template (identical to default)
+* Add support for *SubscriptionsApi* new endpoints (`/customers/{customer_id}/subscriptions`)
+* Add support for *PayoutOrdersApi* | **POST** /payout_orders | Create Payout Order
+* Add support for *PayoutOrdersApi* | **GET** /payout_orders | Get Payout Orders
+* Add support for *PayoutOrdersApi* | **GET** /payout_orders/{id} | Get Payout Order By Id
+* Add support for *ApiKeysApi* | **POST** /api_keys | Create Api Key
+* Add support for *ApiKeysApi* | **GET** /api_keys | Get Api Keys
+* Add support for *ApiKeysApi* | **GET** /api_keys/{id} | Get Api Key
+* Add support for *ApiKeysApi* | **PUT** /api_keys/{id} | Update Api Key
+* Add support for *ApiKeysApi* | **DELETE** /api_keys/{id} | Delete Api Key
+* Add support for *BalancesApi* | **GET** /balance | Get Balance
+* Add support for *ChargesApi* | **GET** /charges | Get Charges
+* Add support for *ChargesApi* | **PUT** /charges/{id} | Update Charge
+* Add support for *DiscountsApi* | **GET** /orders/{id}/discount_lines | Get Discount Lines
+* Add support for *DiscountsApi* | **GET** /orders/{id}/discount_lines/{discount_lines_id} | Get Discount Line
+
+## 7.0.0 - 2024-01-15
+* Regenerated the SDK
+* Add support for new subscriptions customer portal endpoints
+* Add refund updates
+
+## 6.0.2 - 2023-05-12
+* [#58](https://github.com/conekta/conekta-.net/pull/58) Add customer info field in post checkout.
+
+## 6.0.1 - 2023-05-09
+* [#57](https://github.com/conekta/conekta-.net/pull/57) Add new functionalities.
+
 ## 6.0.0 - 2023-05-04
 * [#55](https://github.com/conekta/conekta-.net/pull/55) Generate sdk based on Openapi.
   * Add support for *AntifraudApi* | [**create_rule_blacklist**](docs/AntifraudApi.md#create_rule_blacklist) | **POST** /antifraud/blacklists | Create blacklisted rule
@@ -72,19 +106,3 @@
   * Add support for *WebhooksApi* | [**get_webhooks**](docs/WebhooksApi.md#get_webhooks) | **GET** /webhooks | Get List of Webhooks
   * Add support for *WebhooksApi* | [**update_webhook**](docs/WebhooksApi.md#update_webhook) | **PUT** /webhooks/{id} | Update Webhook
 
-## 6.0.1 - 2023-05-09
-* [#57](https://github.com/conekta/conekta-.net/pull/57) Add new functionalities.
-  * Add support for *OrdersApi* | [**cancel order**](docs/OrdersApi.md#cancelorder) | **POST** /orders/{id}/cancel | Cancel Order
-  * Add support for *OrdersApi* | [**OrderCancelRefund**](docs/OrdersApi.md#ordercancelrefund) | **DELETE** /orders/{id}/refunds/{refund_id} | Cancel Refund 
-  * Add support for *TransferApi* | [**GetTransfer**](docs/TransfersApi.md#gettransfer) | **GET** /transfers/{id} | Get Transfer |
-  * Add support for *TransferApi* | [**GetTransfers**](docs/TransfersApi.md#gettransfers) | **GET** /transfers | Get a list of transfers |
-  * Add support for *TransactionsApi* | [**GetTransaction**](docs/TransactionsApi.md#gettransaction) | **GET** /transactions/{id} | Get transaction |
-  * Add support for *TransactionsApi* | [**GetTransactions**](docs/TransactionsApi.md#gettransactions) | **GET** /transactions | Get List transactions |
-  * Add support for *WebhookKeysApi* | [**CreateWebhookKey**](docs/WebhookKeysApi.md#createwebhookkey) | **POST** /webhook_keys | Create Webhook Key |
-  * Add support for *WebhookKeysApi* | [**DeleteWebhookKey**](docs/WebhookKeysApi.md#deletewebhookkey) | **DELETE** /webhook_keys/{id} | Delete Webhook key |
-  * Add support for *WebhookKeysApi* | [**GetWebhookKey**](docs/WebhookKeysApi.md#getwebhookkey) | **GET** /webhook_keys/{id} | Get Webhook Key |
-  * Add support for *WebhookKeysApi* | [**GetWebhookKeys**](docs/WebhookKeysApi.md#getwebhookkeys) | **GET** /webhook_keys | Get List of Webhook Keys |
-  * Add support for *WebhookKeysApi* | [**UpdateWebhookKey**](docs/WebhookKeysApi.md#updatewebhookkey) | **PUT** /webhook_keys/{id} | Update Webhook Key |
-
-## 6.0.2 - 2023-05-12
-* [#58](https://github.com/conekta/conekta-.net/pull/58) Add customer info field in post checkout.

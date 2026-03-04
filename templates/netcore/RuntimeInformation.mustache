@@ -16,7 +16,11 @@ namespace {{packageName}}.Utils
     internal static class RuntimeInformation
     {
         public const string ConektaNetTargetFramework =
-        #if NET6_0
+        #if NET8_0
+                    "net8.0"
+        #elif NET7_0
+                    "net7.0"
+        #elif NET6_0
                     "net6.0"
         #elif NETSTANDARD2_0
                     "netstandard2.0"

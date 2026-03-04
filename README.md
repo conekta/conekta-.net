@@ -1,6 +1,6 @@
 ![NET api](https://github.com/conekta/conekta-.net/blob/master/readme_cover.png?raw=true)
 # Conekta .NET API Library
-[![nuget](https://img.shields.io/nuget/v/Conekta.net.svg)](https://www.nuget.org/packages/Conekta.net/) [![nuget](https://img.shields.io/nuget/dt/Conekta.net.svg)](https://www.nuget.org/packages/Conekta.net/)[![dotnet CI](https://github.com/conekta/conekta-.net/actions/workflows/dotnet.yml/badge.svg)](https://github.com/conekta/conekta-.net/actions/workflows/dotnet.yml) 
+[![nuget](https://img.shields.io/nuget/v/Conekta.net.svg)](https://www.nuget.org/packages/Conekta.net/) [![nuget](https://img.shields.io/nuget/dt/Conekta.net.svg)](https://www.nuget.org/packages/Conekta.net/)[![dotnet CI](https://github.com/conekta/conekta-.net/actions/workflows/dotnet.yml/badge.svg)](https://github.com/conekta/conekta-.net/actions/workflows/dotnet.yml)
 
 This is the officially supported .NET library for using Conekta's APIs.
 ## Supported API versions
@@ -15,13 +15,13 @@ For more information, refer to our [documentation](https://developers.conekta.co
 ## Prerequisites
 - [Conekta account](https://panel.conekta.com/)
 - [API key](https://developers.conekta.com/v2.1.0/docs/como-obtener-tus-api-keys).  your API credential .
-- Conekta dotnet API Library supports .net standard 2.0 and above
+- Conekta .NET API Library supports .NET Standard 2.0 and .NET 6.0+
 
 ## Installation
 Simply download and restore nuget packages https://www.nuget.org/packages/Conekta.net/
 or install it from package manager
 ```
-PM> Install-Package Conekta.net -Version x.x.x
+PM> Install-Package Conekta.net -Version 8.0.0
 ```
 ## Using the library
 
@@ -43,7 +43,7 @@ Configuration configuration = new()
     AccessToken = "Your merchant XAPI key"
 };
 var ordersApi = new OrdersApi(configuration);
-var customerApi = new CustomersApi(config);
+var customerApi = new CustomersApi(configuration);
 
 // create customer
 var customer = new Customer(
@@ -54,23 +54,24 @@ var customer = new Customer(
 CustomerResponse customerResponse = customerApi.CreateCustomer(customer);
 // Create OrderRequest
 
-var lineItems = new List<LineItems>{new (
+var lineItems = new List<Product>{new (
         name: "toshiba",
         quantity: 1,
         unitPrice: 1555
     )};
 var charges = new List<ChargeRequest>{new (
-    amount: 1555,
-    paymentMethod: new ChargeRequestPaymentMethod("cash")
+    paymentMethod: new ChargeRequestPaymentMethod(
+        new PaymentMethodGeneralRequest(type: "cash")
+    )
 )};
-var customerInfo = new OrderRequestCustomerInfo(new CustomerInfoJustCustomerId(customerResponse.Id));
+var customerInfo = new OrderRequestCustomerInfo(new CustomerInfoCustomerId(customerResponse.Id));
 OrderRequest orderRequest = new OrderRequest(
     currency: "MXN",
     customerInfo: customerInfo,
     lineItems: lineItems,
     charges: charges
 );
-            
+
 //Make the call to the service. This example code makes a call to /orders
 OrderResponse response = ordersApi.CreateOrder(orderRequest, acceptLanguage);
 ```
@@ -91,7 +92,7 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration( AccessToken = "Your merchant XAPI key");
+            Configuration config = new Configuration{ AccessToken = "Your merchant XAPI key" };
 
             var apiInstance = new PlansApi(config);
             var planRequest = new PlanRequest(); // PlanRequest | requested field for plan
