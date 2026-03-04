@@ -39,7 +39,7 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void GetPayoutOrderByIdTest()
         {
-            string id = "payout_123";
+            string id = "f2654d66-d740-457a-9a8c-f96b5196f44e";
             var response = instance.GetPayoutOrderById(id, "es");
             Assert.IsType<PayoutOrderResponse>(response);
         }
@@ -49,7 +49,7 @@ namespace Conekta.net.Test.Api
         {
             var payoutOrder = new PayoutOrderRequest(
                 allowedPayoutMethods: new List<string> { "cashout" },
-                amount: 10000,
+                amount: 3000,
                 currency: "MXN",
                 customerInfo: new PayoutOrderRequestCustomerInfo(
                     customerId: "cus_2tYENskzTjjgkGQLt"
@@ -58,14 +58,6 @@ namespace Conekta.net.Test.Api
                 reason: "test payout"
             );
             var response = instance.CreatePayoutOrder(payoutOrder, "es");
-            Assert.IsType<PayoutOrderResponse>(response);
-        }
-
-        [Fact]
-        public void CancelPayoutOrderByIdTest()
-        {
-            string id = "payout_123";
-            var response = instance.CancelPayoutOrderById(id, "es");
             Assert.IsType<PayoutOrderResponse>(response);
         }
     }

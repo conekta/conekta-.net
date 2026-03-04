@@ -31,14 +31,14 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void GetApiKeysTest()
         {
-            var response = instance.GetApiKeys("es");
+            var response = instance.GetApiKeys("es", limit: 20);
             Assert.IsType<GetApiKeysResponse>(response);
         }
 
         [Fact]
         public void GetApiKeyTest()
         {
-            string id = "key_123";
+            string id = "64625cc9f3e02c00163f5e4d";
             var response = instance.GetApiKey(id, "es");
             Assert.IsType<ApiKeyResponse>(response);
         }
@@ -57,7 +57,7 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void UpdateApiKeyTest()
         {
-            string id = "key_123";
+            string id = "64625cc9f3e02c00163f5e4d";
             var apiKeyUpdateRequest = new ApiKeyUpdateRequest(
                 description: "updated key"
             );
@@ -68,7 +68,7 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void DeleteApiKeyTest()
         {
-            string id = "key_123";
+            string id = "64625cc9f3e02c00163f5e4d";
             var response = instance.DeleteApiKey(id, "es");
             Assert.IsType<DeleteApiKeysResponse>(response);
         }

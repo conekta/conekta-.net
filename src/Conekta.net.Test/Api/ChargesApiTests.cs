@@ -31,14 +31,14 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void GetChargesTest()
         {
-            var response = instance.GetCharges("es");
+            var response = instance.GetCharges("es", limit: 20);
             Assert.IsType<GetChargesResponse>(response);
         }
 
         [Fact]
         public void OrdersCreateChargeTest()
         {
-            string id = "ord_2tNDyQbJacvUZiyfp";
+            string id = "ord_2tVKxbhNzfUnGjnXG";
             var chargeRequest = new ChargeRequest(
                 paymentMethod: new ChargeRequestPaymentMethod(
                     new PaymentMethodGeneralRequest(type: "oxxo")
@@ -51,7 +51,7 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void OrdersCreateChargesTest()
         {
-            string id = "ord_2tNDyQbJacvUZiyfp";
+            string id = "ord_2wrW9arie9fUG4MfD";
             var chargeRequest = new ChargeRequest(
                 paymentMethod: new ChargeRequestPaymentMethod(
                     new PaymentMethodGeneralRequest(type: "oxxo")
@@ -64,7 +64,7 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void UpdateChargeTest()
         {
-            string id = "6524722f2b4a4101c1027a4b";
+            string id = "6524722f28c7ba0016a5b17d";
             var chargeUpdateRequest = new ChargeUpdateRequest();
             var response = instance.UpdateCharge(id, chargeUpdateRequest, "es");
             Assert.IsType<ChargeResponse>(response);

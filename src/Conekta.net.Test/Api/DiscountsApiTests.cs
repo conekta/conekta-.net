@@ -31,7 +31,7 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void OrdersGetDiscountLinesTest()
         {
-            string id = "ord_2tNDyQbJacvUZiyfp";
+            string id = "ord_2tVyWPnCPWbrV37mW";
             var response = instance.OrdersGetDiscountLines(id, "es");
             Assert.IsType<GetOrderDiscountLinesResponse>(response);
         }
@@ -39,7 +39,7 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void OrdersCreateDiscountLineTest()
         {
-            string id = "ord_2tNDyQbJacvUZiyfp";
+            string id = "ord_2tVyWPnCPWbrV37mW";
             var request = new OrderDiscountLinesRequest(
                 code: "PROMO10",
                 type: "coupon",
@@ -52,8 +52,8 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void OrdersGetDiscountLineTest()
         {
-            string id = "ord_2tNDyQbJacvUZiyfp";
-            string discountLinesId = "disc_123";
+            string id = "ord_2tkwrBmcvGnA9zdU9";
+            string discountLinesId = "dis_lin_2tkwrBmcvGnA9zdU6";
             var response = instance.OrdersGetDiscountLine(id, discountLinesId, "es");
             Assert.IsType<DiscountLinesResponse>(response);
         }
@@ -61,8 +61,8 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void OrdersDeleteDiscountLinesTest()
         {
-            string id = "ord_2tNDyQbJacvUZiyfp";
-            string discountLinesId = "disc_123";
+            string id = "ord_2tVyWPnCPWbrV37mW";
+            string discountLinesId = "dis_lin_2tVyahK8Nts7rKRMZ";
             var response = instance.OrdersDeleteDiscountLines(id, discountLinesId, "es");
             Assert.IsType<DiscountLinesResponse>(response);
         }
@@ -70,8 +70,8 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void OrdersUpdateDiscountLinesTest()
         {
-            string id = "ord_2tNDyQbJacvUZiyfp";
-            string discountLinesId = "disc_123";
+            string id = "ord_2tVyWPnCPWbrV37mW";
+            string discountLinesId = "dis_lin_2tVyahK8Nts7rKRMZ";
             var updateRequest = new UpdateOrderDiscountLinesRequest(
                 code: "PROMO20",
                 amount: 2000

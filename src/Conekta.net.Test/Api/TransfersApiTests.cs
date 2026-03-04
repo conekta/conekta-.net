@@ -31,14 +31,14 @@ namespace Conekta.net.Test.Api
         [Fact]
         public void GetTransfersTest()
         {
-            var response = instance.GetTransfers("es");
+            var response = instance.GetTransfers("es", limit: 5);
             Assert.IsType<GetTransfersResponse>(response);
         }
 
         [Fact]
         public void GetTransferTest()
         {
-            string id = "transfer_123";
+            string id = "64462930651b2600017b6d43";
             var response = instance.GetTransfer(id, "es");
             Assert.IsType<TransferResponse>(response);
         }

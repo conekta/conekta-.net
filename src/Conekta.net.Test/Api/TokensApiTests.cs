@@ -34,7 +34,7 @@ namespace Conekta.net.Test.Api
             var tokenRequest = new TokenRequest(
                 card: new TokenRequestCard(
                     name: "test user",
-                    number: "4242424242424242",
+                    number: "5475040095304607",
                     expMonth: "12",
                     expYear: "25",
                     cvc: "123"
