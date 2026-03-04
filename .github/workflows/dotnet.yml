@@ -16,7 +16,9 @@ jobs:
       - uses: actions/checkout@v6
       - uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '6.0.x'
+          dotnet-version: |
+            6.0.x
+            8.0.x
       - name: Run Mockoon CLI
         uses: mockoon/cli-action@v3
         with:

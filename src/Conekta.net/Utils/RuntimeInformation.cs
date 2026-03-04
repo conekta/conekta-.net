@@ -129,7 +129,7 @@ namespace Conekta.net.Utils
 
         private static string MapToReleaseVersion(string servicingVersion)
         {
-            // the following code assumes that .NET netstandard2.0;net6.0 is the oldest supported version
+            // the following code assumes that .NET netstandard2.0;net6.0;net7.0;net8.0 is the oldest supported version
             if (string.Compare(servicingVersion, "4.7.1") < 0)
             {
                 return "4.7";
