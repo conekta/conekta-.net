@@ -39,7 +39,30 @@ namespace Conekta.net.Test.Api
             var customerInfo = new OrderRequestCustomerInfo(
                 new CustomerInfo("test user", email: "test@test.com", phone: "+5215555555555")
             );
+            var address = new CustomerShippingContactsRequestAddress(
+                street1: "Calle 123",
+                postalCode: "06100",
+                city: "Ciudad de Mexico",
+                state: "Ciudad de Mexico",
+                country: "MX"
+            );
             var shippingContact = new CustomerShippingContactsRequest(
+                address: address,
+                metadata: new Dictionary<string, Object>
+                {
+                    { "test", "true" }
+                }
+            );
+            var fiscalEntityAddress = new FiscalEntityAddress(
+                street1: "Calle 123",
+                postalCode: "06100",
+                city: "Ciudad de Mexico",
+                state: "Ciudad de Mexico",
+                country: "MX",
+                externalNumber: "123"
+            );
+            var fiscalEntity = new OrderFiscalEntityRequest(
+                address: fiscalEntityAddress,
                 metadata: new Dictionary<string, Object>
                 {
                     { "test", "true" }
@@ -49,7 +72,8 @@ namespace Conekta.net.Test.Api
                 currency: "MXN",
                 customerInfo: customerInfo,
                 lineItems: products,
-                shippingContact: shippingContact
+                shippingContact: shippingContact,
+                fiscalEntity: fiscalEntity
             );
             var response = instance.CreateOrder(orderRequest, "es");
             Assert.IsType<OrderResponse>(response);
