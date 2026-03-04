@@ -49,14 +49,14 @@ namespace Conekta.net.Model
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateCustomerPaymentMethodsResponse" /> class
-        /// with the <see cref="PaymentMethodCashRecurrentResponse" /> class
+        /// with the <see cref="Object" /> class
         /// </summary>
-        /// <param name="actualInstance">An instance of PaymentMethodCashRecurrentResponse.</param>
-        public UpdateCustomerPaymentMethodsResponse(PaymentMethodCashRecurrentResponse actualInstance)
+        /// <param name="actualInstance">An instance of Object.</param>
+        public UpdateCustomerPaymentMethodsResponse(Object actualInstance)
         {
             this.IsNullable = false;
             this.SchemaType= "oneOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+            this.ActualInstance = actualInstance;
         }
 
         /// <summary>
@@ -73,10 +73,10 @@ namespace Conekta.net.Model
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateCustomerPaymentMethodsResponse" /> class
-        /// with the <see cref="PaymentMethodSpeiRecurrent" /> class
+        /// with the <see cref="PaymentMethodSpeiRecurrentResponse" /> class
         /// </summary>
-        /// <param name="actualInstance">An instance of PaymentMethodSpeiRecurrent.</param>
-        public UpdateCustomerPaymentMethodsResponse(PaymentMethodSpeiRecurrent actualInstance)
+        /// <param name="actualInstance">An instance of PaymentMethodSpeiRecurrentResponse.</param>
+        public UpdateCustomerPaymentMethodsResponse(PaymentMethodSpeiRecurrentResponse actualInstance)
         {
             this.IsNullable = false;
             this.SchemaType= "oneOf";
@@ -109,13 +109,13 @@ namespace Conekta.net.Model
                 {
                     this._actualInstance = value;
                 }
-                else if (value.GetType() == typeof(PaymentMethodSpeiRecurrent) || value is PaymentMethodSpeiRecurrent)
+                else if (value.GetType() == typeof(PaymentMethodSpeiRecurrentResponse) || value is PaymentMethodSpeiRecurrentResponse)
                 {
                     this._actualInstance = value;
                 }
                 else
                 {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: PaymentMethodCardResponse, PaymentMethodCashRecurrentResponse, PaymentMethodCashResponse, PaymentMethodSpeiRecurrent");
+                    throw new ArgumentException("Invalid instance found. Must be the following types: PaymentMethodCardResponse, PaymentMethodCashRecurrentResponse, PaymentMethodCashResponse, PaymentMethodSpeiRecurrentResponse");
                 }
             }
         }
@@ -131,13 +131,13 @@ namespace Conekta.net.Model
         }
 
         /// <summary>
-        /// Get the actual instance of `PaymentMethodCashRecurrentResponse`. If the actual instance is not `PaymentMethodCashRecurrentResponse`,
+        /// Get the actual instance of `Object`. If the actual instance is not `Object`,
         /// the InvalidClassException will be thrown
         /// </summary>
-        /// <returns>An instance of PaymentMethodCashRecurrentResponse</returns>
-        public PaymentMethodCashRecurrentResponse GetPaymentMethodCashRecurrentResponse()
+        /// <returns>An instance of Object</returns>
+        public Object GetObject()
         {
-            return (PaymentMethodCashRecurrentResponse)this.ActualInstance;
+            return (Object)this.ActualInstance;
         }
 
         /// <summary>
@@ -151,13 +151,13 @@ namespace Conekta.net.Model
         }
 
         /// <summary>
-        /// Get the actual instance of `PaymentMethodSpeiRecurrent`. If the actual instance is not `PaymentMethodSpeiRecurrent`,
+        /// Get the actual instance of `PaymentMethodSpeiRecurrentResponse`. If the actual instance is not `PaymentMethodSpeiRecurrentResponse`,
         /// the InvalidClassException will be thrown
         /// </summary>
-        /// <returns>An instance of PaymentMethodSpeiRecurrent</returns>
-        public PaymentMethodSpeiRecurrent GetPaymentMethodSpeiRecurrent()
+        /// <returns>An instance of PaymentMethodSpeiRecurrentResponse</returns>
+        public PaymentMethodSpeiRecurrentResponse GetPaymentMethodSpeiRecurrentResponse()
         {
-            return (PaymentMethodSpeiRecurrent)this.ActualInstance;
+            return (PaymentMethodSpeiRecurrentResponse)this.ActualInstance;
         }
 
         /// <summary>
@@ -212,7 +212,7 @@ namespace Conekta.net.Model
                         newUpdateCustomerPaymentMethodsResponse = new UpdateCustomerPaymentMethodsResponse(JsonConvert.DeserializeObject<PaymentMethodCashRecurrentResponse>(jsonString, UpdateCustomerPaymentMethodsResponse.AdditionalPropertiesSerializerSettings));
                         return newUpdateCustomerPaymentMethodsResponse;
                     case "spei_recurrent":
-                        newUpdateCustomerPaymentMethodsResponse = new UpdateCustomerPaymentMethodsResponse(JsonConvert.DeserializeObject<PaymentMethodSpeiRecurrent>(jsonString, UpdateCustomerPaymentMethodsResponse.AdditionalPropertiesSerializerSettings));
+                        newUpdateCustomerPaymentMethodsResponse = new UpdateCustomerPaymentMethodsResponse(JsonConvert.DeserializeObject<PaymentMethodSpeiRecurrentResponse>(jsonString, UpdateCustomerPaymentMethodsResponse.AdditionalPropertiesSerializerSettings));
                         return newUpdateCustomerPaymentMethodsResponse;
                     case "payment_method_card_response":
                         newUpdateCustomerPaymentMethodsResponse = new UpdateCustomerPaymentMethodsResponse(JsonConvert.DeserializeObject<PaymentMethodCardResponse>(jsonString, UpdateCustomerPaymentMethodsResponse.AdditionalPropertiesSerializerSettings));
@@ -223,11 +223,11 @@ namespace Conekta.net.Model
                     case "payment_method_cash_response":
                         newUpdateCustomerPaymentMethodsResponse = new UpdateCustomerPaymentMethodsResponse(JsonConvert.DeserializeObject<PaymentMethodCashResponse>(jsonString, UpdateCustomerPaymentMethodsResponse.AdditionalPropertiesSerializerSettings));
                         return newUpdateCustomerPaymentMethodsResponse;
-                    case "payment_method_spei_recurrent":
-                        newUpdateCustomerPaymentMethodsResponse = new UpdateCustomerPaymentMethodsResponse(JsonConvert.DeserializeObject<PaymentMethodSpeiRecurrent>(jsonString, UpdateCustomerPaymentMethodsResponse.AdditionalPropertiesSerializerSettings));
+                    case "payment_method_spei_recurrent_response":
+                        newUpdateCustomerPaymentMethodsResponse = new UpdateCustomerPaymentMethodsResponse(JsonConvert.DeserializeObject<PaymentMethodSpeiRecurrentResponse>(jsonString, UpdateCustomerPaymentMethodsResponse.AdditionalPropertiesSerializerSettings));
                         return newUpdateCustomerPaymentMethodsResponse;
                     default:
-                        System.Diagnostics.Debug.WriteLine(string.Format("Failed to lookup discriminator value `{0}` for UpdateCustomerPaymentMethodsResponse. Possible values: card cash cash_recurrent spei_recurrent payment_method_card_response payment_method_cash_recurrent_response payment_method_cash_response payment_method_spei_recurrent", discriminatorValue));
+                        System.Diagnostics.Debug.WriteLine(string.Format("Failed to lookup discriminator value `{0}` for UpdateCustomerPaymentMethodsResponse. Possible values: card cash cash_recurrent spei_recurrent payment_method_card_response payment_method_cash_recurrent_response payment_method_cash_response payment_method_spei_recurrent_response", discriminatorValue));
                         break;
                 }
             }
@@ -302,21 +302,21 @@ namespace Conekta.net.Model
             try
             {
                 // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
-                if (typeof(PaymentMethodSpeiRecurrent).GetProperty("AdditionalProperties") == null)
+                if (typeof(PaymentMethodSpeiRecurrentResponse).GetProperty("AdditionalProperties") == null)
                 {
-                    newUpdateCustomerPaymentMethodsResponse = new UpdateCustomerPaymentMethodsResponse(JsonConvert.DeserializeObject<PaymentMethodSpeiRecurrent>(jsonString, UpdateCustomerPaymentMethodsResponse.SerializerSettings));
+                    newUpdateCustomerPaymentMethodsResponse = new UpdateCustomerPaymentMethodsResponse(JsonConvert.DeserializeObject<PaymentMethodSpeiRecurrentResponse>(jsonString, UpdateCustomerPaymentMethodsResponse.SerializerSettings));
                 }
                 else
                 {
-                    newUpdateCustomerPaymentMethodsResponse = new UpdateCustomerPaymentMethodsResponse(JsonConvert.DeserializeObject<PaymentMethodSpeiRecurrent>(jsonString, UpdateCustomerPaymentMethodsResponse.AdditionalPropertiesSerializerSettings));
+                    newUpdateCustomerPaymentMethodsResponse = new UpdateCustomerPaymentMethodsResponse(JsonConvert.DeserializeObject<PaymentMethodSpeiRecurrentResponse>(jsonString, UpdateCustomerPaymentMethodsResponse.AdditionalPropertiesSerializerSettings));
                 }
-                matchedTypes.Add("PaymentMethodSpeiRecurrent");
+                matchedTypes.Add("PaymentMethodSpeiRecurrentResponse");
                 match++;
             }
             catch (Exception exception)
             {
                 // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into PaymentMethodSpeiRecurrent: {1}", jsonString, exception.ToString()));
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into PaymentMethodSpeiRecurrentResponse: {1}", jsonString, exception.ToString()));
             }
 
             if (match == 0)

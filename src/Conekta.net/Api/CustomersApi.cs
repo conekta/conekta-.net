@@ -62,12 +62,12 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="customerFiscalEntitiesRequest">requested field for customer fiscal entities</param>
+        /// <param name="fiscalEntityRequest">requested field for customer fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CreateCustomerFiscalEntitiesResponse</returns>
-        CreateCustomerFiscalEntitiesResponse CreateCustomerFiscalEntities(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
+        CreateCustomerFiscalEntitiesResponse CreateCustomerFiscalEntities(string id, FiscalEntityRequest fiscalEntityRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Create Fiscal Entity
@@ -77,12 +77,12 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="customerFiscalEntitiesRequest">requested field for customer fiscal entities</param>
+        /// <param name="fiscalEntityRequest">requested field for customer fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CreateCustomerFiscalEntitiesResponse</returns>
-        ApiResponse<CreateCustomerFiscalEntitiesResponse> CreateCustomerFiscalEntitiesWithHttpInfo(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
+        ApiResponse<CreateCustomerFiscalEntitiesResponse> CreateCustomerFiscalEntitiesWithHttpInfo(string id, FiscalEntityRequest fiscalEntityRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         /// <summary>
         /// Delete Customer
         /// </summary>
@@ -208,12 +208,12 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="fiscalEntitiesId">identifier</param>
-        /// <param name="customerUpdateFiscalEntitiesRequest">requested field for customer update fiscal entities</param>
+        /// <param name="updateFiscalEntityRequest">requested field for customer update fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UpdateCustomerFiscalEntitiesResponse</returns>
-        UpdateCustomerFiscalEntitiesResponse UpdateCustomerFiscalEntities(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
+        UpdateCustomerFiscalEntitiesResponse UpdateCustomerFiscalEntities(string id, string fiscalEntitiesId, UpdateFiscalEntityRequest updateFiscalEntityRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Update  Fiscal Entity
@@ -224,12 +224,12 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="fiscalEntitiesId">identifier</param>
-        /// <param name="customerUpdateFiscalEntitiesRequest">requested field for customer update fiscal entities</param>
+        /// <param name="updateFiscalEntityRequest">requested field for customer update fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UpdateCustomerFiscalEntitiesResponse</returns>
-        ApiResponse<UpdateCustomerFiscalEntitiesResponse> UpdateCustomerFiscalEntitiesWithHttpInfo(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
+        ApiResponse<UpdateCustomerFiscalEntitiesResponse> UpdateCustomerFiscalEntitiesWithHttpInfo(string id, string fiscalEntitiesId, UpdateFiscalEntityRequest updateFiscalEntityRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -276,13 +276,13 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="customerFiscalEntitiesRequest">requested field for customer fiscal entities</param>
+        /// <param name="fiscalEntityRequest">requested field for customer fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreateCustomerFiscalEntitiesResponse</returns>
-        System.Threading.Tasks.Task<CreateCustomerFiscalEntitiesResponse> CreateCustomerFiscalEntitiesAsync(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CreateCustomerFiscalEntitiesResponse> CreateCustomerFiscalEntitiesAsync(string id, FiscalEntityRequest fiscalEntityRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Fiscal Entity
@@ -292,13 +292,13 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="customerFiscalEntitiesRequest">requested field for customer fiscal entities</param>
+        /// <param name="fiscalEntityRequest">requested field for customer fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreateCustomerFiscalEntitiesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateCustomerFiscalEntitiesResponse>> CreateCustomerFiscalEntitiesWithHttpInfoAsync(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CreateCustomerFiscalEntitiesResponse>> CreateCustomerFiscalEntitiesWithHttpInfoAsync(string id, FiscalEntityRequest fiscalEntityRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete Customer
         /// </summary>
@@ -432,13 +432,13 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="fiscalEntitiesId">identifier</param>
-        /// <param name="customerUpdateFiscalEntitiesRequest">requested field for customer update fiscal entities</param>
+        /// <param name="updateFiscalEntityRequest">requested field for customer update fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateCustomerFiscalEntitiesResponse</returns>
-        System.Threading.Tasks.Task<UpdateCustomerFiscalEntitiesResponse> UpdateCustomerFiscalEntitiesAsync(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<UpdateCustomerFiscalEntitiesResponse> UpdateCustomerFiscalEntitiesAsync(string id, string fiscalEntitiesId, UpdateFiscalEntityRequest updateFiscalEntityRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update  Fiscal Entity
@@ -449,13 +449,13 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="fiscalEntitiesId">identifier</param>
-        /// <param name="customerUpdateFiscalEntitiesRequest">requested field for customer update fiscal entities</param>
+        /// <param name="updateFiscalEntityRequest">requested field for customer update fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateCustomerFiscalEntitiesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateCustomerFiscalEntitiesResponse>> UpdateCustomerFiscalEntitiesWithHttpInfoAsync(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<UpdateCustomerFiscalEntitiesResponse>> UpdateCustomerFiscalEntitiesWithHttpInfoAsync(string id, string fiscalEntitiesId, UpdateFiscalEntityRequest updateFiscalEntityRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -763,14 +763,14 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="customerFiscalEntitiesRequest">requested field for customer fiscal entities</param>
+        /// <param name="fiscalEntityRequest">requested field for customer fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CreateCustomerFiscalEntitiesResponse</returns>
-        public CreateCustomerFiscalEntitiesResponse CreateCustomerFiscalEntities(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
+        public CreateCustomerFiscalEntitiesResponse CreateCustomerFiscalEntities(string id, FiscalEntityRequest fiscalEntityRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<CreateCustomerFiscalEntitiesResponse> localVarResponse = CreateCustomerFiscalEntitiesWithHttpInfo(id, customerFiscalEntitiesRequest, acceptLanguage, xChildCompanyId);
+            Conekta.net.Client.ApiResponse<CreateCustomerFiscalEntitiesResponse> localVarResponse = CreateCustomerFiscalEntitiesWithHttpInfo(id, fiscalEntityRequest, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -779,12 +779,12 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="customerFiscalEntitiesRequest">requested field for customer fiscal entities</param>
+        /// <param name="fiscalEntityRequest">requested field for customer fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CreateCustomerFiscalEntitiesResponse</returns>
-        public Conekta.net.Client.ApiResponse<CreateCustomerFiscalEntitiesResponse> CreateCustomerFiscalEntitiesWithHttpInfo(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<CreateCustomerFiscalEntitiesResponse> CreateCustomerFiscalEntitiesWithHttpInfo(string id, FiscalEntityRequest fiscalEntityRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -792,10 +792,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling CustomersApi->CreateCustomerFiscalEntities");
             }
 
-            // verify the required parameter 'customerFiscalEntitiesRequest' is set
-            if (customerFiscalEntitiesRequest == null)
+            // verify the required parameter 'fiscalEntityRequest' is set
+            if (fiscalEntityRequest == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'customerFiscalEntitiesRequest' when calling CustomersApi->CreateCustomerFiscalEntities");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'fiscalEntityRequest' when calling CustomersApi->CreateCustomerFiscalEntities");
             }
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -830,7 +830,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
-            localVarRequestOptions.Data = customerFiscalEntitiesRequest;
+            localVarRequestOptions.Data = fiscalEntityRequest;
 
             localVarRequestOptions.Operation = "CustomersApi.CreateCustomerFiscalEntities";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -861,15 +861,15 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="customerFiscalEntitiesRequest">requested field for customer fiscal entities</param>
+        /// <param name="fiscalEntityRequest">requested field for customer fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreateCustomerFiscalEntitiesResponse</returns>
-        public async System.Threading.Tasks.Task<CreateCustomerFiscalEntitiesResponse> CreateCustomerFiscalEntitiesAsync(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CreateCustomerFiscalEntitiesResponse> CreateCustomerFiscalEntitiesAsync(string id, FiscalEntityRequest fiscalEntityRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<CreateCustomerFiscalEntitiesResponse> localVarResponse = await CreateCustomerFiscalEntitiesWithHttpInfoAsync(id, customerFiscalEntitiesRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<CreateCustomerFiscalEntitiesResponse> localVarResponse = await CreateCustomerFiscalEntitiesWithHttpInfoAsync(id, fiscalEntityRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -878,13 +878,13 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="customerFiscalEntitiesRequest">requested field for customer fiscal entities</param>
+        /// <param name="fiscalEntityRequest">requested field for customer fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreateCustomerFiscalEntitiesResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CreateCustomerFiscalEntitiesResponse>> CreateCustomerFiscalEntitiesWithHttpInfoAsync(string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CreateCustomerFiscalEntitiesResponse>> CreateCustomerFiscalEntitiesWithHttpInfoAsync(string id, FiscalEntityRequest fiscalEntityRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -892,10 +892,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling CustomersApi->CreateCustomerFiscalEntities");
             }
 
-            // verify the required parameter 'customerFiscalEntitiesRequest' is set
-            if (customerFiscalEntitiesRequest == null)
+            // verify the required parameter 'fiscalEntityRequest' is set
+            if (fiscalEntityRequest == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'customerFiscalEntitiesRequest' when calling CustomersApi->CreateCustomerFiscalEntities");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'fiscalEntityRequest' when calling CustomersApi->CreateCustomerFiscalEntities");
             }
 
 
@@ -931,7 +931,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
-            localVarRequestOptions.Data = customerFiscalEntitiesRequest;
+            localVarRequestOptions.Data = fiscalEntityRequest;
 
             localVarRequestOptions.Operation = "CustomersApi.CreateCustomerFiscalEntities";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1734,14 +1734,14 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="fiscalEntitiesId">identifier</param>
-        /// <param name="customerUpdateFiscalEntitiesRequest">requested field for customer update fiscal entities</param>
+        /// <param name="updateFiscalEntityRequest">requested field for customer update fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UpdateCustomerFiscalEntitiesResponse</returns>
-        public UpdateCustomerFiscalEntitiesResponse UpdateCustomerFiscalEntities(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
+        public UpdateCustomerFiscalEntitiesResponse UpdateCustomerFiscalEntities(string id, string fiscalEntitiesId, UpdateFiscalEntityRequest updateFiscalEntityRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<UpdateCustomerFiscalEntitiesResponse> localVarResponse = UpdateCustomerFiscalEntitiesWithHttpInfo(id, fiscalEntitiesId, customerUpdateFiscalEntitiesRequest, acceptLanguage, xChildCompanyId);
+            Conekta.net.Client.ApiResponse<UpdateCustomerFiscalEntitiesResponse> localVarResponse = UpdateCustomerFiscalEntitiesWithHttpInfo(id, fiscalEntitiesId, updateFiscalEntityRequest, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -1751,12 +1751,12 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="fiscalEntitiesId">identifier</param>
-        /// <param name="customerUpdateFiscalEntitiesRequest">requested field for customer update fiscal entities</param>
+        /// <param name="updateFiscalEntityRequest">requested field for customer update fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UpdateCustomerFiscalEntitiesResponse</returns>
-        public Conekta.net.Client.ApiResponse<UpdateCustomerFiscalEntitiesResponse> UpdateCustomerFiscalEntitiesWithHttpInfo(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<UpdateCustomerFiscalEntitiesResponse> UpdateCustomerFiscalEntitiesWithHttpInfo(string id, string fiscalEntitiesId, UpdateFiscalEntityRequest updateFiscalEntityRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1770,10 +1770,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'fiscalEntitiesId' when calling CustomersApi->UpdateCustomerFiscalEntities");
             }
 
-            // verify the required parameter 'customerUpdateFiscalEntitiesRequest' is set
-            if (customerUpdateFiscalEntitiesRequest == null)
+            // verify the required parameter 'updateFiscalEntityRequest' is set
+            if (updateFiscalEntityRequest == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'customerUpdateFiscalEntitiesRequest' when calling CustomersApi->UpdateCustomerFiscalEntities");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'updateFiscalEntityRequest' when calling CustomersApi->UpdateCustomerFiscalEntities");
             }
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -1809,7 +1809,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
-            localVarRequestOptions.Data = customerUpdateFiscalEntitiesRequest;
+            localVarRequestOptions.Data = updateFiscalEntityRequest;
 
             localVarRequestOptions.Operation = "CustomersApi.UpdateCustomerFiscalEntities";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1841,15 +1841,15 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="fiscalEntitiesId">identifier</param>
-        /// <param name="customerUpdateFiscalEntitiesRequest">requested field for customer update fiscal entities</param>
+        /// <param name="updateFiscalEntityRequest">requested field for customer update fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateCustomerFiscalEntitiesResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateCustomerFiscalEntitiesResponse> UpdateCustomerFiscalEntitiesAsync(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<UpdateCustomerFiscalEntitiesResponse> UpdateCustomerFiscalEntitiesAsync(string id, string fiscalEntitiesId, UpdateFiscalEntityRequest updateFiscalEntityRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<UpdateCustomerFiscalEntitiesResponse> localVarResponse = await UpdateCustomerFiscalEntitiesWithHttpInfoAsync(id, fiscalEntitiesId, customerUpdateFiscalEntitiesRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<UpdateCustomerFiscalEntitiesResponse> localVarResponse = await UpdateCustomerFiscalEntitiesWithHttpInfoAsync(id, fiscalEntitiesId, updateFiscalEntityRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1859,13 +1859,13 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="fiscalEntitiesId">identifier</param>
-        /// <param name="customerUpdateFiscalEntitiesRequest">requested field for customer update fiscal entities</param>
+        /// <param name="updateFiscalEntityRequest">requested field for customer update fiscal entities</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateCustomerFiscalEntitiesResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateCustomerFiscalEntitiesResponse>> UpdateCustomerFiscalEntitiesWithHttpInfoAsync(string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateCustomerFiscalEntitiesResponse>> UpdateCustomerFiscalEntitiesWithHttpInfoAsync(string id, string fiscalEntitiesId, UpdateFiscalEntityRequest updateFiscalEntityRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1879,10 +1879,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'fiscalEntitiesId' when calling CustomersApi->UpdateCustomerFiscalEntities");
             }
 
-            // verify the required parameter 'customerUpdateFiscalEntitiesRequest' is set
-            if (customerUpdateFiscalEntitiesRequest == null)
+            // verify the required parameter 'updateFiscalEntityRequest' is set
+            if (updateFiscalEntityRequest == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'customerUpdateFiscalEntitiesRequest' when calling CustomersApi->UpdateCustomerFiscalEntities");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'updateFiscalEntityRequest' when calling CustomersApi->UpdateCustomerFiscalEntities");
             }
 
 
@@ -1919,7 +1919,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
-            localVarRequestOptions.Data = customerUpdateFiscalEntitiesRequest;
+            localVarRequestOptions.Data = updateFiscalEntityRequest;
 
             localVarRequestOptions.Operation = "CustomersApi.UpdateCustomerFiscalEntities";
             localVarRequestOptions.OperationIndex = operationIndex;

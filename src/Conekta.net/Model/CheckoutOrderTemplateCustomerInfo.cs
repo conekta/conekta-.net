@@ -48,10 +48,10 @@ namespace Conekta.net.Model
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CheckoutOrderTemplateCustomerInfo" /> class
-        /// with the <see cref="CustomerInfoJustCustomerId" /> class
+        /// with the <see cref="CustomerInfoCustomerId" /> class
         /// </summary>
-        /// <param name="actualInstance">An instance of CustomerInfoJustCustomerId.</param>
-        public CheckoutOrderTemplateCustomerInfo(CustomerInfoJustCustomerId actualInstance)
+        /// <param name="actualInstance">An instance of CustomerInfoCustomerId.</param>
+        public CheckoutOrderTemplateCustomerInfo(CustomerInfoCustomerId actualInstance)
         {
             this.IsNullable = false;
             this.SchemaType= "oneOf";
@@ -76,13 +76,13 @@ namespace Conekta.net.Model
                 {
                     this._actualInstance = value;
                 }
-                else if (value.GetType() == typeof(CustomerInfoJustCustomerId) || value is CustomerInfoJustCustomerId)
+                else if (value.GetType() == typeof(CustomerInfoCustomerId) || value is CustomerInfoCustomerId)
                 {
                     this._actualInstance = value;
                 }
                 else
                 {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: CustomerInfo, CustomerInfoJustCustomerId");
+                    throw new ArgumentException("Invalid instance found. Must be the following types: CustomerInfo, CustomerInfoCustomerId");
                 }
             }
         }
@@ -98,13 +98,13 @@ namespace Conekta.net.Model
         }
 
         /// <summary>
-        /// Get the actual instance of `CustomerInfoJustCustomerId`. If the actual instance is not `CustomerInfoJustCustomerId`,
+        /// Get the actual instance of `CustomerInfoCustomerId`. If the actual instance is not `CustomerInfoCustomerId`,
         /// the InvalidClassException will be thrown
         /// </summary>
-        /// <returns>An instance of CustomerInfoJustCustomerId</returns>
-        public CustomerInfoJustCustomerId GetCustomerInfoJustCustomerId()
+        /// <returns>An instance of CustomerInfoCustomerId</returns>
+        public CustomerInfoCustomerId GetCustomerInfoCustomerId()
         {
-            return (CustomerInfoJustCustomerId)this.ActualInstance;
+            return (CustomerInfoCustomerId)this.ActualInstance;
         }
 
         /// <summary>
@@ -168,21 +168,21 @@ namespace Conekta.net.Model
             try
             {
                 // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
-                if (typeof(CustomerInfoJustCustomerId).GetProperty("AdditionalProperties") == null)
+                if (typeof(CustomerInfoCustomerId).GetProperty("AdditionalProperties") == null)
                 {
-                    newCheckoutOrderTemplateCustomerInfo = new CheckoutOrderTemplateCustomerInfo(JsonConvert.DeserializeObject<CustomerInfoJustCustomerId>(jsonString, CheckoutOrderTemplateCustomerInfo.SerializerSettings));
+                    newCheckoutOrderTemplateCustomerInfo = new CheckoutOrderTemplateCustomerInfo(JsonConvert.DeserializeObject<CustomerInfoCustomerId>(jsonString, CheckoutOrderTemplateCustomerInfo.SerializerSettings));
                 }
                 else
                 {
-                    newCheckoutOrderTemplateCustomerInfo = new CheckoutOrderTemplateCustomerInfo(JsonConvert.DeserializeObject<CustomerInfoJustCustomerId>(jsonString, CheckoutOrderTemplateCustomerInfo.AdditionalPropertiesSerializerSettings));
+                    newCheckoutOrderTemplateCustomerInfo = new CheckoutOrderTemplateCustomerInfo(JsonConvert.DeserializeObject<CustomerInfoCustomerId>(jsonString, CheckoutOrderTemplateCustomerInfo.AdditionalPropertiesSerializerSettings));
                 }
-                matchedTypes.Add("CustomerInfoJustCustomerId");
+                matchedTypes.Add("CustomerInfoCustomerId");
                 match++;
             }
             catch (Exception exception)
             {
                 // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into CustomerInfoJustCustomerId: {1}", jsonString, exception.ToString()));
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into CustomerInfoCustomerId: {1}", jsonString, exception.ToString()));
             }
 
             if (match == 0)

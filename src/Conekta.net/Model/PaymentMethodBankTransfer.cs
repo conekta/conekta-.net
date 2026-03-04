@@ -123,13 +123,13 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = true)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets ExecutedAt
         /// </summary>
-        [DataMember(Name = "executed_at", EmitDefaultValue = true)]
+        [DataMember(Name = "executed_at", EmitDefaultValue = false)]
         public string ExecutedAt { get; set; }
 
         /// <summary>
@@ -144,25 +144,25 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets IssuingAccountBank
         /// </summary>
-        [DataMember(Name = "issuing_account_bank", EmitDefaultValue = true)]
+        [DataMember(Name = "issuing_account_bank", EmitDefaultValue = false)]
         public string IssuingAccountBank { get; set; }
 
         /// <summary>
         /// Gets or Sets IssuingAccountNumber
         /// </summary>
-        [DataMember(Name = "issuing_account_number", EmitDefaultValue = true)]
+        [DataMember(Name = "issuing_account_number", EmitDefaultValue = false)]
         public string IssuingAccountNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets IssuingAccountHolderName
         /// </summary>
-        [DataMember(Name = "issuing_account_holder_name", EmitDefaultValue = true)]
+        [DataMember(Name = "issuing_account_holder_name", EmitDefaultValue = false)]
         public string IssuingAccountHolderName { get; set; }
 
         /// <summary>
         /// Gets or Sets IssuingAccountTaxId
         /// </summary>
-        [DataMember(Name = "issuing_account_tax_id", EmitDefaultValue = true)]
+        [DataMember(Name = "issuing_account_tax_id", EmitDefaultValue = false)]
         public string IssuingAccountTaxId { get; set; }
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets ReceivingAccountHolderName
         /// </summary>
-        [DataMember(Name = "receiving_account_holder_name", EmitDefaultValue = true)]
+        [DataMember(Name = "receiving_account_holder_name", EmitDefaultValue = false)]
         public string ReceivingAccountHolderName { get; set; }
 
         /// <summary>
@@ -198,19 +198,19 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets ReceivingAccountTaxId
         /// </summary>
-        [DataMember(Name = "receiving_account_tax_id", EmitDefaultValue = true)]
+        [DataMember(Name = "receiving_account_tax_id", EmitDefaultValue = false)]
         public string ReceivingAccountTaxId { get; set; }
 
         /// <summary>
         /// Gets or Sets ReferenceNumber
         /// </summary>
-        [DataMember(Name = "reference_number", EmitDefaultValue = true)]
+        [DataMember(Name = "reference_number", EmitDefaultValue = false)]
         public string ReferenceNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets TrackingCode
         /// </summary>
-        [DataMember(Name = "tracking_code", EmitDefaultValue = true)]
+        [DataMember(Name = "tracking_code", EmitDefaultValue = false)]
         public string TrackingCode { get; set; }
 
         /// <summary>

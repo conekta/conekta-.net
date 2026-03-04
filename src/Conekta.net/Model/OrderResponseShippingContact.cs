@@ -35,31 +35,58 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderResponseShippingContact" /> class.
         /// </summary>
+        /// <param name="createdAt">createdAt.</param>
+        /// <param name="id">id.</param>
+        /// <param name="varObject">varObject.</param>
         /// <param name="phone">phone.</param>
         /// <param name="receiver">receiver.</param>
         /// <param name="betweenStreets">betweenStreets.</param>
         /// <param name="address">address.</param>
         /// <param name="parentId">parentId.</param>
         /// <param name="varDefault">varDefault.</param>
-        /// <param name="id">id.</param>
-        /// <param name="createdAt">createdAt.</param>
         /// <param name="metadata">Metadata associated with the shipping contact.</param>
-        /// <param name="varObject">varObject.</param>
         /// <param name="deleted">deleted.</param>
-        public OrderResponseShippingContact(string phone = default(string), string receiver = default(string), string betweenStreets = default(string), CustomerShippingContactsResponseAddress address = default(CustomerShippingContactsResponseAddress), string parentId = default(string), bool varDefault = default(bool), string id = default(string), long createdAt = default(long), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string varObject = default(string), bool deleted = default(bool))
+        public OrderResponseShippingContact(long createdAt = default(long), string id = default(string), string varObject = default(string), string phone = default(string), string receiver = default(string), string betweenStreets = default(string), CustomerShippingContactsAddress address = default(CustomerShippingContactsAddress), string parentId = default(string), bool varDefault = default(bool), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), bool deleted = default(bool))
         {
+            this.CreatedAt = createdAt;
+            this.Id = id;
+            this.Object = varObject;
             this.Phone = phone;
             this.Receiver = receiver;
             this.BetweenStreets = betweenStreets;
             this.Address = address;
             this.ParentId = parentId;
             this.Default = varDefault;
-            this.Id = id;
-            this.CreatedAt = createdAt;
             this.Metadata = metadata;
-            this.Object = varObject;
             this.Deleted = deleted;
         }
+
+        /// <summary>
+        /// Gets or Sets CreatedAt
+        /// </summary>
+        /*
+        <example>1675715413</example>
+        */
+        [DataMember(Name = "created_at", EmitDefaultValue = false)]
+        public long CreatedAt { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Id
+        /// </summary>
+        /*
+        <example>adr_1234567890</example>
+        */
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Object
+        /// </summary>
+        /*
+        <example>shipping_contact</example>
+        */
+        [DataMember(Name = "object", EmitDefaultValue = false)]
+        public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets Phone
@@ -85,14 +112,14 @@ namespace Conekta.net.Model
         /*
         <example>Ackerman Crescent</example>
         */
-        [DataMember(Name = "between_streets", EmitDefaultValue = true)]
+        [DataMember(Name = "between_streets", EmitDefaultValue = false)]
         public string BetweenStreets { get; set; }
 
         /// <summary>
         /// Gets or Sets Address
         /// </summary>
         [DataMember(Name = "address", EmitDefaultValue = false)]
-        public CustomerShippingContactsResponseAddress Address { get; set; }
+        public CustomerShippingContactsAddress Address { get; set; }
 
         /// <summary>
         /// Gets or Sets ParentId
@@ -110,29 +137,11 @@ namespace Conekta.net.Model
         public bool Default { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
-        /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public string Id { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CreatedAt
-        /// </summary>
-        [DataMember(Name = "created_at", EmitDefaultValue = false)]
-        public long CreatedAt { get; set; }
-
-        /// <summary>
         /// Metadata associated with the shipping contact
         /// </summary>
         /// <value>Metadata associated with the shipping contact</value>
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Object
-        /// </summary>
-        [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets Deleted
@@ -151,16 +160,16 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class OrderResponseShippingContact {\n");
+            sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  Phone: ").Append(Phone).Append("\n");
             sb.Append("  Receiver: ").Append(Receiver).Append("\n");
             sb.Append("  BetweenStreets: ").Append(BetweenStreets).Append("\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("  Default: ").Append(Default).Append("\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  Deleted: ").Append(Deleted).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

@@ -92,11 +92,11 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="eventId">event identifier</param>
-        /// <param name="resendRequest">requested fields for resend an event</param>
+        /// <param name="resendEventRequest">requested fields for resend an event</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>EventsResendResponse</returns>
-        EventsResendResponse ResendEvent(string eventId, ResendRequest resendRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        EventsResendResponse ResendEvent(string eventId, ResendEventRequest resendEventRequest, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Resend Event
@@ -106,11 +106,11 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="eventId">event identifier</param>
-        /// <param name="resendRequest">requested fields for resend an event</param>
+        /// <param name="resendEventRequest">requested fields for resend an event</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of EventsResendResponse</returns>
-        ApiResponse<EventsResendResponse> ResendEventWithHttpInfo(string eventId, ResendRequest resendRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<EventsResendResponse> ResendEventWithHttpInfo(string eventId, ResendEventRequest resendEventRequest, string acceptLanguage = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -192,12 +192,12 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="eventId">event identifier</param>
-        /// <param name="resendRequest">requested fields for resend an event</param>
+        /// <param name="resendEventRequest">requested fields for resend an event</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of EventsResendResponse</returns>
-        System.Threading.Tasks.Task<EventsResendResponse> ResendEventAsync(string eventId, ResendRequest resendRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<EventsResendResponse> ResendEventAsync(string eventId, ResendEventRequest resendEventRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Resend Event
@@ -207,12 +207,12 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="eventId">event identifier</param>
-        /// <param name="resendRequest">requested fields for resend an event</param>
+        /// <param name="resendEventRequest">requested fields for resend an event</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (EventsResendResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EventsResendResponse>> ResendEventWithHttpInfoAsync(string eventId, ResendRequest resendRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<EventsResendResponse>> ResendEventWithHttpInfoAsync(string eventId, ResendEventRequest resendEventRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -728,13 +728,13 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="eventId">event identifier</param>
-        /// <param name="resendRequest">requested fields for resend an event</param>
+        /// <param name="resendEventRequest">requested fields for resend an event</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>EventsResendResponse</returns>
-        public EventsResendResponse ResendEvent(string eventId, ResendRequest resendRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        public EventsResendResponse ResendEvent(string eventId, ResendEventRequest resendEventRequest, string acceptLanguage = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<EventsResendResponse> localVarResponse = ResendEventWithHttpInfo(eventId, resendRequest, acceptLanguage);
+            Conekta.net.Client.ApiResponse<EventsResendResponse> localVarResponse = ResendEventWithHttpInfo(eventId, resendEventRequest, acceptLanguage);
             return localVarResponse.Data;
         }
 
@@ -743,11 +743,11 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="eventId">event identifier</param>
-        /// <param name="resendRequest">requested fields for resend an event</param>
+        /// <param name="resendEventRequest">requested fields for resend an event</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of EventsResendResponse</returns>
-        public Conekta.net.Client.ApiResponse<EventsResendResponse> ResendEventWithHttpInfo(string eventId, ResendRequest resendRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<EventsResendResponse> ResendEventWithHttpInfo(string eventId, ResendEventRequest resendEventRequest, string acceptLanguage = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'eventId' is set
             if (eventId == null)
@@ -755,10 +755,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'eventId' when calling EventsApi->ResendEvent");
             }
 
-            // verify the required parameter 'resendRequest' is set
-            if (resendRequest == null)
+            // verify the required parameter 'resendEventRequest' is set
+            if (resendEventRequest == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'resendRequest' when calling EventsApi->ResendEvent");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'resendEventRequest' when calling EventsApi->ResendEvent");
             }
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -789,7 +789,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
-            localVarRequestOptions.Data = resendRequest;
+            localVarRequestOptions.Data = resendEventRequest;
 
             localVarRequestOptions.Operation = "EventsApi.ResendEvent";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -820,14 +820,14 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="eventId">event identifier</param>
-        /// <param name="resendRequest">requested fields for resend an event</param>
+        /// <param name="resendEventRequest">requested fields for resend an event</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of EventsResendResponse</returns>
-        public async System.Threading.Tasks.Task<EventsResendResponse> ResendEventAsync(string eventId, ResendRequest resendRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<EventsResendResponse> ResendEventAsync(string eventId, ResendEventRequest resendEventRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<EventsResendResponse> localVarResponse = await ResendEventWithHttpInfoAsync(eventId, resendRequest, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<EventsResendResponse> localVarResponse = await ResendEventWithHttpInfoAsync(eventId, resendEventRequest, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -836,12 +836,12 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="eventId">event identifier</param>
-        /// <param name="resendRequest">requested fields for resend an event</param>
+        /// <param name="resendEventRequest">requested fields for resend an event</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (EventsResendResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<EventsResendResponse>> ResendEventWithHttpInfoAsync(string eventId, ResendRequest resendRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<EventsResendResponse>> ResendEventWithHttpInfoAsync(string eventId, ResendEventRequest resendEventRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'eventId' is set
             if (eventId == null)
@@ -849,10 +849,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'eventId' when calling EventsApi->ResendEvent");
             }
 
-            // verify the required parameter 'resendRequest' is set
-            if (resendRequest == null)
+            // verify the required parameter 'resendEventRequest' is set
+            if (resendEventRequest == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'resendRequest' when calling EventsApi->ResendEvent");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'resendEventRequest' when calling EventsApi->ResendEvent");
             }
 
 
@@ -884,7 +884,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
-            localVarRequestOptions.Data = resendRequest;
+            localVarRequestOptions.Data = resendEventRequest;
 
             localVarRequestOptions.Operation = "EventsApi.ResendEvent";
             localVarRequestOptions.OperationIndex = operationIndex;

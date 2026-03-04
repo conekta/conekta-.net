@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Phone** | **string** |  | [optional] 
 **Receiver** | **string** |  | [optional] 
 **BetweenStreets** | **string** |  | [optional] 
-**Address** | [**CustomerShippingContactsResponseAddress**](CustomerShippingContactsResponseAddress.md) |  | [optional] 
+**Address** | [**CustomerShippingContactsAddress**](CustomerShippingContactsAddress.md) |  | [optional] 
 **ParentId** | **string** |  | [optional] 
 **Default** | **bool** |  | [optional] 
 **Id** | **string** |  | [optional] 

@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **Livemode** | **bool** | Whether the charge was made in live mode or not | 
 **Object** | **string** |  | 
 **OrderId** | **string** | Order ID | 
-**PaidAt** | **long?** | Payment date | [optional] 
+**PaidAt** | **long** | charge Payment date | [optional] 
 **PaymentMethod** | [**ChargeResponsePaymentMethod**](ChargeResponsePaymentMethod.md) |  | [optional] 
 **ReferenceId** | **string** | Reference ID of the charge | [optional] 
 **Refunds** | [**ChargeResponseRefunds**](ChargeResponseRefunds.md) |  | [optional] 

@@ -51,7 +51,7 @@ namespace Conekta.net.Model
         /// <param name="createdAt">createdAt (required).</param>
         /// <param name="parentId">parentId.</param>
         /// <param name="varDefault">varDefault.</param>
-        public CustomerFiscalEntitiesDataResponse(CustomerAddress address = default(CustomerAddress), string taxId = default(string), string email = default(string), string phone = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string companyName = default(string), string id = default(string), string varObject = default(string), long createdAt = default(long), string parentId = default(string), bool varDefault = default(bool))
+        public CustomerFiscalEntitiesDataResponse(FiscalEntityRequestAddress address = default(FiscalEntityRequestAddress), string taxId = default(string), string email = default(string), string phone = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string companyName = default(string), string id = default(string), string varObject = default(string), long createdAt = default(long), string parentId = default(string), bool varDefault = default(bool))
         {
             // to ensure "address" is required (not null)
             if (address == null)
@@ -85,7 +85,7 @@ namespace Conekta.net.Model
         /// Gets or Sets Address
         /// </summary>
         [DataMember(Name = "address", IsRequired = true, EmitDefaultValue = true)]
-        public CustomerAddress Address { get; set; }
+        public FiscalEntityRequestAddress Address { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxId
@@ -108,7 +108,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Metadata
         /// </summary>
-        [DataMember(Name = "metadata", EmitDefaultValue = false)]
+        [DataMember(Name = "metadata", EmitDefaultValue = true)]
         public Dictionary<string, Object> Metadata { get; set; }
 
         /// <summary>

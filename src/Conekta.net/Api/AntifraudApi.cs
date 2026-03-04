@@ -31,11 +31,11 @@ namespace Conekta.net.Api
         /// Create blacklisted rule
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createRiskRulesData">requested field for blacklist rule</param>
+        /// <param name="createRuleWhitelistRequest">requested field for blacklist rule</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>BlacklistRuleResponse</returns>
-        BlacklistRuleResponse CreateRuleBlacklist(CreateRiskRulesData createRiskRulesData, string acceptLanguage = default(string), int operationIndex = 0);
+        BlacklistRuleResponse CreateRuleBlacklist(CreateRuleWhitelistRequest createRuleWhitelistRequest, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Create blacklisted rule
@@ -44,20 +44,20 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createRiskRulesData">requested field for blacklist rule</param>
+        /// <param name="createRuleWhitelistRequest">requested field for blacklist rule</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of BlacklistRuleResponse</returns>
-        ApiResponse<BlacklistRuleResponse> CreateRuleBlacklistWithHttpInfo(CreateRiskRulesData createRiskRulesData, string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<BlacklistRuleResponse> CreateRuleBlacklistWithHttpInfo(CreateRuleWhitelistRequest createRuleWhitelistRequest, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
         /// Create whitelisted rule
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="createRiskRulesData"> (optional)</param>
+        /// <param name="createRuleWhitelistRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WhitelistlistRuleResponse</returns>
-        WhitelistlistRuleResponse CreateRuleWhitelist(string acceptLanguage = default(string), CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0);
+        WhitelistlistRuleResponse CreateRuleWhitelist(string acceptLanguage = default(string), CreateRuleWhitelistRequest createRuleWhitelistRequest = default(CreateRuleWhitelistRequest), int operationIndex = 0);
 
         /// <summary>
         /// Create whitelisted rule
@@ -67,10 +67,10 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="createRiskRulesData"> (optional)</param>
+        /// <param name="createRuleWhitelistRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WhitelistlistRuleResponse</returns>
-        ApiResponse<WhitelistlistRuleResponse> CreateRuleWhitelistWithHttpInfo(string acceptLanguage = default(string), CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0);
+        ApiResponse<WhitelistlistRuleResponse> CreateRuleWhitelistWithHttpInfo(string acceptLanguage = default(string), CreateRuleWhitelistRequest createRuleWhitelistRequest = default(CreateRuleWhitelistRequest), int operationIndex = 0);
         /// <summary>
         /// Delete blacklisted rule
         /// </summary>
@@ -181,12 +181,12 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createRiskRulesData">requested field for blacklist rule</param>
+        /// <param name="createRuleWhitelistRequest">requested field for blacklist rule</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BlacklistRuleResponse</returns>
-        System.Threading.Tasks.Task<BlacklistRuleResponse> CreateRuleBlacklistAsync(CreateRiskRulesData createRiskRulesData, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<BlacklistRuleResponse> CreateRuleBlacklistAsync(CreateRuleWhitelistRequest createRuleWhitelistRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create blacklisted rule
@@ -195,12 +195,12 @@ namespace Conekta.net.Api
         /// 
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createRiskRulesData">requested field for blacklist rule</param>
+        /// <param name="createRuleWhitelistRequest">requested field for blacklist rule</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BlacklistRuleResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BlacklistRuleResponse>> CreateRuleBlacklistWithHttpInfoAsync(CreateRiskRulesData createRiskRulesData, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<BlacklistRuleResponse>> CreateRuleBlacklistWithHttpInfoAsync(CreateRuleWhitelistRequest createRuleWhitelistRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Create whitelisted rule
         /// </summary>
@@ -209,11 +209,11 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="createRiskRulesData"> (optional)</param>
+        /// <param name="createRuleWhitelistRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WhitelistlistRuleResponse</returns>
-        System.Threading.Tasks.Task<WhitelistlistRuleResponse> CreateRuleWhitelistAsync(string acceptLanguage = default(string), CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WhitelistlistRuleResponse> CreateRuleWhitelistAsync(string acceptLanguage = default(string), CreateRuleWhitelistRequest createRuleWhitelistRequest = default(CreateRuleWhitelistRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create whitelisted rule
@@ -223,11 +223,11 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="createRiskRulesData"> (optional)</param>
+        /// <param name="createRuleWhitelistRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WhitelistlistRuleResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WhitelistlistRuleResponse>> CreateRuleWhitelistWithHttpInfoAsync(string acceptLanguage = default(string), CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WhitelistlistRuleResponse>> CreateRuleWhitelistWithHttpInfoAsync(string acceptLanguage = default(string), CreateRuleWhitelistRequest createRuleWhitelistRequest = default(CreateRuleWhitelistRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete blacklisted rule
         /// </summary>
@@ -460,13 +460,13 @@ namespace Conekta.net.Api
         /// Create blacklisted rule 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createRiskRulesData">requested field for blacklist rule</param>
+        /// <param name="createRuleWhitelistRequest">requested field for blacklist rule</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>BlacklistRuleResponse</returns>
-        public BlacklistRuleResponse CreateRuleBlacklist(CreateRiskRulesData createRiskRulesData, string acceptLanguage = default(string), int operationIndex = 0)
+        public BlacklistRuleResponse CreateRuleBlacklist(CreateRuleWhitelistRequest createRuleWhitelistRequest, string acceptLanguage = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<BlacklistRuleResponse> localVarResponse = CreateRuleBlacklistWithHttpInfo(createRiskRulesData, acceptLanguage);
+            Conekta.net.Client.ApiResponse<BlacklistRuleResponse> localVarResponse = CreateRuleBlacklistWithHttpInfo(createRuleWhitelistRequest, acceptLanguage);
             return localVarResponse.Data;
         }
 
@@ -474,16 +474,16 @@ namespace Conekta.net.Api
         /// Create blacklisted rule 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createRiskRulesData">requested field for blacklist rule</param>
+        /// <param name="createRuleWhitelistRequest">requested field for blacklist rule</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of BlacklistRuleResponse</returns>
-        public Conekta.net.Client.ApiResponse<BlacklistRuleResponse> CreateRuleBlacklistWithHttpInfo(CreateRiskRulesData createRiskRulesData, string acceptLanguage = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<BlacklistRuleResponse> CreateRuleBlacklistWithHttpInfo(CreateRuleWhitelistRequest createRuleWhitelistRequest, string acceptLanguage = default(string), int operationIndex = 0)
         {
-            // verify the required parameter 'createRiskRulesData' is set
-            if (createRiskRulesData == null)
+            // verify the required parameter 'createRuleWhitelistRequest' is set
+            if (createRuleWhitelistRequest == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'createRiskRulesData' when calling AntifraudApi->CreateRuleBlacklist");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'createRuleWhitelistRequest' when calling AntifraudApi->CreateRuleBlacklist");
             }
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -513,7 +513,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
-            localVarRequestOptions.Data = createRiskRulesData;
+            localVarRequestOptions.Data = createRuleWhitelistRequest;
 
             localVarRequestOptions.Operation = "AntifraudApi.CreateRuleBlacklist";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -543,14 +543,14 @@ namespace Conekta.net.Api
         /// Create blacklisted rule 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createRiskRulesData">requested field for blacklist rule</param>
+        /// <param name="createRuleWhitelistRequest">requested field for blacklist rule</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BlacklistRuleResponse</returns>
-        public async System.Threading.Tasks.Task<BlacklistRuleResponse> CreateRuleBlacklistAsync(CreateRiskRulesData createRiskRulesData, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<BlacklistRuleResponse> CreateRuleBlacklistAsync(CreateRuleWhitelistRequest createRuleWhitelistRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<BlacklistRuleResponse> localVarResponse = await CreateRuleBlacklistWithHttpInfoAsync(createRiskRulesData, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<BlacklistRuleResponse> localVarResponse = await CreateRuleBlacklistWithHttpInfoAsync(createRuleWhitelistRequest, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -558,17 +558,17 @@ namespace Conekta.net.Api
         /// Create blacklisted rule 
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createRiskRulesData">requested field for blacklist rule</param>
+        /// <param name="createRuleWhitelistRequest">requested field for blacklist rule</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BlacklistRuleResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<BlacklistRuleResponse>> CreateRuleBlacklistWithHttpInfoAsync(CreateRiskRulesData createRiskRulesData, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<BlacklistRuleResponse>> CreateRuleBlacklistWithHttpInfoAsync(CreateRuleWhitelistRequest createRuleWhitelistRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            // verify the required parameter 'createRiskRulesData' is set
-            if (createRiskRulesData == null)
+            // verify the required parameter 'createRuleWhitelistRequest' is set
+            if (createRuleWhitelistRequest == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'createRiskRulesData' when calling AntifraudApi->CreateRuleBlacklist");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'createRuleWhitelistRequest' when calling AntifraudApi->CreateRuleBlacklist");
             }
 
 
@@ -599,7 +599,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
-            localVarRequestOptions.Data = createRiskRulesData;
+            localVarRequestOptions.Data = createRuleWhitelistRequest;
 
             localVarRequestOptions.Operation = "AntifraudApi.CreateRuleBlacklist";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -631,12 +631,12 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="createRiskRulesData"> (optional)</param>
+        /// <param name="createRuleWhitelistRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WhitelistlistRuleResponse</returns>
-        public WhitelistlistRuleResponse CreateRuleWhitelist(string acceptLanguage = default(string), CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0)
+        public WhitelistlistRuleResponse CreateRuleWhitelist(string acceptLanguage = default(string), CreateRuleWhitelistRequest createRuleWhitelistRequest = default(CreateRuleWhitelistRequest), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<WhitelistlistRuleResponse> localVarResponse = CreateRuleWhitelistWithHttpInfo(acceptLanguage, createRiskRulesData);
+            Conekta.net.Client.ApiResponse<WhitelistlistRuleResponse> localVarResponse = CreateRuleWhitelistWithHttpInfo(acceptLanguage, createRuleWhitelistRequest);
             return localVarResponse.Data;
         }
 
@@ -645,10 +645,10 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="createRiskRulesData"> (optional)</param>
+        /// <param name="createRuleWhitelistRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WhitelistlistRuleResponse</returns>
-        public Conekta.net.Client.ApiResponse<WhitelistlistRuleResponse> CreateRuleWhitelistWithHttpInfo(string acceptLanguage = default(string), CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<WhitelistlistRuleResponse> CreateRuleWhitelistWithHttpInfo(string acceptLanguage = default(string), CreateRuleWhitelistRequest createRuleWhitelistRequest = default(CreateRuleWhitelistRequest), int operationIndex = 0)
         {
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
 
@@ -677,7 +677,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
-            localVarRequestOptions.Data = createRiskRulesData;
+            localVarRequestOptions.Data = createRuleWhitelistRequest;
 
             localVarRequestOptions.Operation = "AntifraudApi.CreateRuleWhitelist";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -708,13 +708,13 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="createRiskRulesData"> (optional)</param>
+        /// <param name="createRuleWhitelistRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WhitelistlistRuleResponse</returns>
-        public async System.Threading.Tasks.Task<WhitelistlistRuleResponse> CreateRuleWhitelistAsync(string acceptLanguage = default(string), CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WhitelistlistRuleResponse> CreateRuleWhitelistAsync(string acceptLanguage = default(string), CreateRuleWhitelistRequest createRuleWhitelistRequest = default(CreateRuleWhitelistRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<WhitelistlistRuleResponse> localVarResponse = await CreateRuleWhitelistWithHttpInfoAsync(acceptLanguage, createRiskRulesData, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<WhitelistlistRuleResponse> localVarResponse = await CreateRuleWhitelistWithHttpInfoAsync(acceptLanguage, createRuleWhitelistRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -723,11 +723,11 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
-        /// <param name="createRiskRulesData"> (optional)</param>
+        /// <param name="createRuleWhitelistRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WhitelistlistRuleResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<WhitelistlistRuleResponse>> CreateRuleWhitelistWithHttpInfoAsync(string acceptLanguage = default(string), CreateRiskRulesData createRiskRulesData = default(CreateRiskRulesData), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<WhitelistlistRuleResponse>> CreateRuleWhitelistWithHttpInfoAsync(string acceptLanguage = default(string), CreateRuleWhitelistRequest createRuleWhitelistRequest = default(CreateRuleWhitelistRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -757,7 +757,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
-            localVarRequestOptions.Data = createRiskRulesData;
+            localVarRequestOptions.Data = createRuleWhitelistRequest;
 
             localVarRequestOptions.Operation = "AntifraudApi.CreateRuleWhitelist";
             localVarRequestOptions.OperationIndex = operationIndex;

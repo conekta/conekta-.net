@@ -54,7 +54,7 @@ namespace Conekta.net.Model
         /// <param name="referenceId">Reference ID of the charge.</param>
         /// <param name="refunds">refunds.</param>
         /// <param name="status">status.</param>
-        public ChargeOrderResponse(int amount = default(int), ChargeResponseChannel channel = default(ChargeResponseChannel), long createdAt = default(long), string currency = default(string), string customerId = default(string), string description = default(string), string deviceFingerprint = default(string), string failureCode = default(string), string failureMessage = default(string), string id = default(string), bool livemode = default(bool), int? monthlyInstallments = default(int?), string varObject = default(string), string orderId = default(string), int? paidAt = default(int?), ChargeOrderResponsePaymentMethod paymentMethod = default(ChargeOrderResponsePaymentMethod), string referenceId = default(string), List<Object> refunds = default(List<Object>), string status = default(string))
+        public ChargeOrderResponse(int amount = default(int), ChargeResponseChannel channel = default(ChargeResponseChannel), long createdAt = default(long), string currency = default(string), string customerId = default(string), string description = default(string), string deviceFingerprint = default(string), string failureCode = default(string), string failureMessage = default(string), string id = default(string), bool livemode = default(bool), int monthlyInstallments = default(int), string varObject = default(string), string orderId = default(string), int paidAt = default(int), ChargeOrderResponsePaymentMethod paymentMethod = default(ChargeOrderResponsePaymentMethod), string referenceId = default(string), List<Object> refunds = default(List<Object>), string status = default(string))
         {
             this.Amount = amount;
             this.Channel = channel;
@@ -131,7 +131,7 @@ namespace Conekta.net.Model
         /*
         <example>6FR3chaU4Y1nGAW5NAGd1rcjAKa142Ba</example>
         */
-        [DataMember(Name = "device_fingerprint", EmitDefaultValue = true)]
+        [DataMember(Name = "device_fingerprint", EmitDefaultValue = false)]
         public string DeviceFingerprint { get; set; }
 
         /// <summary>
@@ -173,8 +173,8 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets MonthlyInstallments
         /// </summary>
-        [DataMember(Name = "monthly_installments", EmitDefaultValue = true)]
-        public int? MonthlyInstallments { get; set; }
+        [DataMember(Name = "monthly_installments", EmitDefaultValue = false)]
+        public int MonthlyInstallments { get; set; }
 
         /// <summary>
         /// Gets or Sets Object
@@ -197,8 +197,8 @@ namespace Conekta.net.Model
         /*
         <example>1676390742</example>
         */
-        [DataMember(Name = "paid_at", EmitDefaultValue = true)]
-        public int? PaidAt { get; set; }
+        [DataMember(Name = "paid_at", EmitDefaultValue = false)]
+        public int PaidAt { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentMethod
@@ -213,7 +213,7 @@ namespace Conekta.net.Model
         /*
         <example>ref_2tN73UdUSNrYRPD9r</example>
         */
-        [DataMember(Name = "reference_id", EmitDefaultValue = true)]
+        [DataMember(Name = "reference_id", EmitDefaultValue = false)]
         public string ReferenceId { get; set; }
 
         /// <summary>

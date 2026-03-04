@@ -35,6 +35,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiKeyCreateResponse" /> class.
         /// </summary>
+        /// <param name="authenticationToken">It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place..</param>
         /// <param name="active">Indicates if the api key is active.</param>
         /// <param name="createdAt">Unix timestamp in seconds of when the api key was created.</param>
         /// <param name="updatedAt">Unix timestamp in seconds of when the api key was last updated.</param>
@@ -46,9 +47,9 @@ namespace Conekta.net.Model
         /// <param name="varObject">Object name, value is &#39;api_key&#39;.</param>
         /// <param name="prefix">The first few characters of the authentication_token.</param>
         /// <param name="role">Indicates if the api key is private or public.</param>
-        /// <param name="authenticationToken">It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place..</param>
-        public ApiKeyCreateResponse(bool active = default(bool), long createdAt = default(long), long updatedAt = default(long), long? deactivatedAt = default(long?), long? lastUsedAt = default(long?), string description = default(string), string id = default(string), bool livemode = default(bool), string varObject = default(string), string prefix = default(string), string role = default(string), string authenticationToken = default(string))
+        public ApiKeyCreateResponse(string authenticationToken = default(string), bool active = default(bool), long createdAt = default(long), long updatedAt = default(long), long deactivatedAt = default(long), long lastUsedAt = default(long), string description = default(string), string id = default(string), bool livemode = default(bool), string varObject = default(string), string prefix = default(string), string role = default(string))
         {
+            this.AuthenticationToken = authenticationToken;
             this.Active = active;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
@@ -60,8 +61,17 @@ namespace Conekta.net.Model
             this.Object = varObject;
             this.Prefix = prefix;
             this.Role = role;
-            this.AuthenticationToken = authenticationToken;
         }
+
+        /// <summary>
+        /// It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place.
+        /// </summary>
+        /// <value>It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place.</value>
+        /*
+        <example>key_rpHzxufNgjFCdprEEFZRTKi</example>
+        */
+        [DataMember(Name = "authentication_token", EmitDefaultValue = false)]
+        public string AuthenticationToken { get; set; }
 
         /// <summary>
         /// Indicates if the api key is active
@@ -97,15 +107,15 @@ namespace Conekta.net.Model
         /// Unix timestamp in seconds of when the api key was deleted
         /// </summary>
         /// <value>Unix timestamp in seconds of when the api key was deleted</value>
-        [DataMember(Name = "deactivated_at", EmitDefaultValue = true)]
-        public long? DeactivatedAt { get; set; }
+        [DataMember(Name = "deactivated_at", EmitDefaultValue = false)]
+        public long DeactivatedAt { get; set; }
 
         /// <summary>
         /// Unix timestamp in seconds with the api key was used
         /// </summary>
         /// <value>Unix timestamp in seconds with the api key was used</value>
-        [DataMember(Name = "last_used_at", EmitDefaultValue = true)]
-        public long? LastUsedAt { get; set; }
+        [DataMember(Name = "last_used_at", EmitDefaultValue = false)]
+        public long LastUsedAt { get; set; }
 
         /// <summary>
         /// A name or brief explanation of what this api key is used for
@@ -168,16 +178,6 @@ namespace Conekta.net.Model
         public string Role { get; set; }
 
         /// <summary>
-        /// It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place.
-        /// </summary>
-        /// <value>It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place.</value>
-        /*
-        <example>key_rpHzxufNgjFCdprEEFZRTKi</example>
-        */
-        [DataMember(Name = "authentication_token", EmitDefaultValue = false)]
-        public string AuthenticationToken { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -185,6 +185,7 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class ApiKeyCreateResponse {\n");
+            sb.Append("  AuthenticationToken: ").Append(AuthenticationToken).Append("\n");
             sb.Append("  Active: ").Append(Active).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
@@ -196,7 +197,6 @@ namespace Conekta.net.Model
             sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  Prefix: ").Append(Prefix).Append("\n");
             sb.Append("  Role: ").Append(Role).Append("\n");
-            sb.Append("  AuthenticationToken: ").Append(AuthenticationToken).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// Address of the person who will receive the order
+    /// CustomerShippingContactsAddress
     /// </summary>
     [DataContract(Name = "customer_shipping_contacts_address")]
     public partial class CustomerShippingContactsAddress : IValidatableObject
@@ -35,15 +35,17 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomerShippingContactsAddress" /> class.
         /// </summary>
+        /// <param name="varObject">varObject.</param>
         /// <param name="street1">street1.</param>
         /// <param name="street2">street2.</param>
         /// <param name="postalCode">postalCode.</param>
         /// <param name="city">city.</param>
         /// <param name="state">state.</param>
-        /// <param name="country">this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).</param>
+        /// <param name="country">country.</param>
         /// <param name="residential">residential.</param>
-        public CustomerShippingContactsAddress(string street1 = default(string), string street2 = default(string), string postalCode = default(string), string city = default(string), string state = default(string), string country = default(string), bool? residential = default(bool?))
+        public CustomerShippingContactsAddress(string varObject = default(string), string street1 = default(string), string street2 = default(string), string postalCode = default(string), string city = default(string), string state = default(string), string country = default(string), bool residential = default(bool))
         {
+            this.Object = varObject;
             this.Street1 = street1;
             this.Street2 = street2;
             this.PostalCode = postalCode;
@@ -52,6 +54,15 @@ namespace Conekta.net.Model
             this.Country = country;
             this.Residential = residential;
         }
+
+        /// <summary>
+        /// Gets or Sets Object
+        /// </summary>
+        /*
+        <example>shipping_address</example>
+        */
+        [DataMember(Name = "object", EmitDefaultValue = false)]
+        public string Object { get; set; }
 
         /// <summary>
         /// Gets or Sets Street1
@@ -99,9 +110,8 @@ namespace Conekta.net.Model
         public string State { get; set; }
 
         /// <summary>
-        /// this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+        /// Gets or Sets Country
         /// </summary>
-        /// <value>this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)</value>
         /*
         <example>MX</example>
         */
@@ -115,7 +125,7 @@ namespace Conekta.net.Model
         <example>true</example>
         */
         [DataMember(Name = "residential", EmitDefaultValue = true)]
-        public bool? Residential { get; set; }
+        public bool Residential { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -125,6 +135,7 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class CustomerShippingContactsAddress {\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  Street1: ").Append(Street1).Append("\n");
             sb.Append("  Street2: ").Append(Street2).Append("\n");
             sb.Append("  PostalCode: ").Append(PostalCode).Append("\n");

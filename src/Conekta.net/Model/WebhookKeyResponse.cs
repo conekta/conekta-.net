@@ -29,7 +29,7 @@ namespace Conekta.net.Model
     /// <summary>
     /// webhook keys model
     /// </summary>
-    [DataContract(Name = "webhook-key_response")]
+    [DataContract(Name = "webhook_key_response")]
     public partial class WebhookKeyResponse : IValidatableObject
     {
         /// <summary>
@@ -42,7 +42,7 @@ namespace Conekta.net.Model
         /// <param name="publicKey">Public key to be used in the webhook.</param>
         /// <param name="livemode">Indicates if the webhook key is in live mode.</param>
         /// <param name="varObject">Object name, value is webhook_key.</param>
-        public WebhookKeyResponse(string id = default(string), bool active = default(bool), long createdAt = default(long), long? deactivatedAt = default(long?), string publicKey = default(string), bool livemode = default(bool), string varObject = default(string))
+        public WebhookKeyResponse(string id = default(string), bool active = default(bool), long createdAt = default(long), long deactivatedAt = default(long), string publicKey = default(string), bool livemode = default(bool), string varObject = default(string))
         {
             this.Id = id;
             this.Active = active;
@@ -87,8 +87,8 @@ namespace Conekta.net.Model
         /// Unix timestamp in seconds with the deactivation date of the webhook key
         /// </summary>
         /// <value>Unix timestamp in seconds with the deactivation date of the webhook key</value>
-        [DataMember(Name = "deactivated_at", EmitDefaultValue = true)]
-        public long? DeactivatedAt { get; set; }
+        [DataMember(Name = "deactivated_at", EmitDefaultValue = false)]
+        public long DeactivatedAt { get; set; }
 
         /// <summary>
         /// Public key to be used in the webhook

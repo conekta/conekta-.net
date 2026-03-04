@@ -60,7 +60,7 @@ namespace Conekta.net.Model
         /*
         <example>strict</example>
         */
-        [DataMember(Name = "three_ds_mode", EmitDefaultValue = true)]
+        [DataMember(Name = "three_ds_mode", EmitDefaultValue = false)]
         public ThreeDsModeEnum? ThreeDsMode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CompanyResponse" /> class.
@@ -81,7 +81,7 @@ namespace Conekta.net.Model
         /// <param name="varObject">The type of object, typically \&quot;company\&quot;. (required).</param>
         /// <param name="threeDsEnabled">Indicates if 3DS authentication is enabled for the company..</param>
         /// <param name="threeDsMode">The 3DS mode for the company, either &#39;smart&#39; or &#39;strict&#39;. This property is only applicable when three_ds_enabled is true. When three_ds_enabled is false, this field will be null..</param>
-        public CompanyResponse(string id = default(string), string name = default(string), bool active = default(bool), string accountStatus = default(string), string parentCompanyId = default(string), string onboardingStatus = default(string), List<CompanyResponseDocumentsInner> documents = default(List<CompanyResponseDocumentsInner>), long createdAt = default(long), string varObject = default(string), bool threeDsEnabled = default(bool), ThreeDsModeEnum? threeDsMode = default(ThreeDsModeEnum?))
+        public CompanyResponse(string id = default(string), string name = default(string), bool active = default(bool), string accountStatus = default(string), string parentCompanyId = default(string), string onboardingStatus = default(string), List<CompanyDocumentResponse> documents = default(List<CompanyDocumentResponse>), long createdAt = default(long), string varObject = default(string), bool threeDsEnabled = default(bool), ThreeDsModeEnum? threeDsMode = default(ThreeDsModeEnum?))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -173,7 +173,7 @@ namespace Conekta.net.Model
         /*
         <example>680bf1da38716d00013543bc</example>
         */
-        [DataMember(Name = "parent_company_id", EmitDefaultValue = true)]
+        [DataMember(Name = "parent_company_id", EmitDefaultValue = false)]
         public string ParentCompanyId { get; set; }
 
         /// <summary>
@@ -191,7 +191,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>A list of documents related to the company.</value>
         [DataMember(Name = "documents", IsRequired = true, EmitDefaultValue = true)]
-        public List<CompanyResponseDocumentsInner> Documents { get; set; }
+        public List<CompanyDocumentResponse> Documents { get; set; }
 
         /// <summary>
         /// Timestamp of when the company was created.

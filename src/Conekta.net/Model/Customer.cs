@@ -56,7 +56,7 @@ namespace Conekta.net.Model
         /// <param name="planId">Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription.</param>
         /// <param name="shippingContacts">Contains the detail of the shipping addresses that the client has active or has used in Conekta.</param>
         /// <param name="subscription">subscription.</param>
-        public Customer(CustomerAntifraudInfo antifraudInfo = default(CustomerAntifraudInfo), bool corporate = false, string customReference = default(string), string dateOfBirth = default(string), string email = default(string), string defaultPaymentSourceId = default(string), string defaultShippingContactId = default(string), List<CustomerFiscalEntitiesRequest> fiscalEntities = default(List<CustomerFiscalEntitiesRequest>), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string name = default(string), string nationalId = default(string), List<CustomerPaymentMethodsRequest> paymentSources = default(List<CustomerPaymentMethodsRequest>), string phone = default(string), string planId = default(string), List<CustomerShippingContacts> shippingContacts = default(List<CustomerShippingContacts>), SubscriptionRequest subscription = default(SubscriptionRequest))
+        public Customer(CustomerAntifraudInfo antifraudInfo = default(CustomerAntifraudInfo), bool corporate = false, string customReference = default(string), string dateOfBirth = default(string), string email = default(string), string defaultPaymentSourceId = default(string), string defaultShippingContactId = default(string), List<FiscalEntityRequest> fiscalEntities = default(List<FiscalEntityRequest>), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string name = default(string), string nationalId = default(string), List<CustomerPaymentMethodsRequest> paymentSources = default(List<CustomerPaymentMethodsRequest>), string phone = default(string), string planId = default(string), List<CustomerShippingContactsRequest> shippingContacts = default(List<CustomerShippingContactsRequest>), SubscriptionRequest subscription = default(SubscriptionRequest))
         {
             // to ensure "email" is required (not null)
             if (email == null)
@@ -94,7 +94,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets AntifraudInfo
         /// </summary>
-        [DataMember(Name = "antifraud_info", EmitDefaultValue = true)]
+        [DataMember(Name = "antifraud_info", EmitDefaultValue = false)]
         public CustomerAntifraudInfo AntifraudInfo { get; set; }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace Conekta.net.Model
         /// Gets or Sets FiscalEntities
         /// </summary>
         [DataMember(Name = "fiscal_entities", EmitDefaultValue = false)]
-        public List<CustomerFiscalEntitiesRequest> FiscalEntities { get; set; }
+        public List<FiscalEntityRequest> FiscalEntities { get; set; }
 
         /// <summary>
         /// Gets or Sets Metadata
@@ -218,7 +218,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>Contains the detail of the shipping addresses that the client has active or has used in Conekta</value>
         [DataMember(Name = "shipping_contacts", EmitDefaultValue = false)]
-        public List<CustomerShippingContacts> ShippingContacts { get; set; }
+        public List<CustomerShippingContactsRequest> ShippingContacts { get; set; }
 
         /// <summary>
         /// Gets or Sets Subscription

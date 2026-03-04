@@ -328,7 +328,7 @@ catch (ApiException e)
 
 <a id="updatecustomerpaymentmethods"></a>
 # **UpdateCustomerPaymentMethods**
-> UpdateCustomerPaymentMethodsResponse UpdateCustomerPaymentMethods (string id, string paymentMethodId, UpdatePaymentMethods updatePaymentMethods, string acceptLanguage = null, string xChildCompanyId = null)
+> UpdateCustomerPaymentMethodsResponse UpdateCustomerPaymentMethods (string id, string paymentMethodId, UpdatePaymentMethodsCard updatePaymentMethodsCard, string acceptLanguage = null, string xChildCompanyId = null)
 
 Update Payment Method
 
@@ -356,14 +356,14 @@ namespace Example
             var apiInstance = new PaymentMethodsApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var paymentMethodId = src_2tQ974hSHcsdeSZHG;  // string | Identifier of the payment method
-            var updatePaymentMethods = new UpdatePaymentMethods(); // UpdatePaymentMethods | requested field for customer payment methods
+            var updatePaymentMethodsCard = new UpdatePaymentMethodsCard(); // UpdatePaymentMethodsCard | requested field for customer payment methods
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
             var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Update Payment Method
-                UpdateCustomerPaymentMethodsResponse result = apiInstance.UpdateCustomerPaymentMethods(id, paymentMethodId, updatePaymentMethods, acceptLanguage, xChildCompanyId);
+                UpdateCustomerPaymentMethodsResponse result = apiInstance.UpdateCustomerPaymentMethods(id, paymentMethodId, updatePaymentMethodsCard, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -384,7 +384,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update Payment Method
-    ApiResponse<UpdateCustomerPaymentMethodsResponse> response = apiInstance.UpdateCustomerPaymentMethodsWithHttpInfo(id, paymentMethodId, updatePaymentMethods, acceptLanguage, xChildCompanyId);
+    ApiResponse<UpdateCustomerPaymentMethodsResponse> response = apiInstance.UpdateCustomerPaymentMethodsWithHttpInfo(id, paymentMethodId, updatePaymentMethodsCard, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -403,7 +403,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
 | **paymentMethodId** | **string** | Identifier of the payment method |  |
-| **updatePaymentMethods** | [**UpdatePaymentMethods**](UpdatePaymentMethods.md) | requested field for customer payment methods |  |
+| **updatePaymentMethodsCard** | [**UpdatePaymentMethodsCard**](UpdatePaymentMethodsCard.md) | requested field for customer payment methods |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 | **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 

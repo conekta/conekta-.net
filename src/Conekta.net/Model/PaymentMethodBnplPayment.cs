@@ -33,6 +33,25 @@ namespace Conekta.net.Model
     public partial class PaymentMethodBnplPayment : IValidatableObject
     {
         /// <summary>
+        /// Defines Object
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ObjectEnum
+        {
+            /// <summary>
+            /// Enum BnplPayment for value: bnpl_payment
+            /// </summary>
+            [EnumMember(Value = "bnpl_payment")]
+            BnplPayment = 1
+        }
+
+
+        /// <summary>
+        /// Gets or Sets Object
+        /// </summary>
+        [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
+        public ObjectEnum Object { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="PaymentMethodBnplPayment" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -48,13 +67,8 @@ namespace Conekta.net.Model
         /// <param name="productType">Product type of the charge (required).</param>
         /// <param name="redirectUrl">URL to redirect the customer to complete the payment.</param>
         /// <param name="successUrl">URL to redirect the customer after a successful payment.</param>
-        public PaymentMethodBnplPayment(string type = default(string), string varObject = default(string), string cancelUrl = default(string), long expiresAt = default(long), string failureUrl = default(string), string productType = default(string), string redirectUrl = default(string), string successUrl = default(string))
+        public PaymentMethodBnplPayment(string type = default(string), ObjectEnum varObject = default(ObjectEnum), string cancelUrl = default(string), long expiresAt = default(long), string failureUrl = default(string), string productType = default(string), string redirectUrl = default(string), string successUrl = default(string))
         {
-            // to ensure "varObject" is required (not null)
-            if (varObject == null)
-            {
-                throw new ArgumentNullException("varObject is a required property for PaymentMethodBnplPayment and cannot be null");
-            }
             this.Object = varObject;
             this.ExpiresAt = expiresAt;
             // to ensure "productType" is required (not null)
@@ -75,15 +89,6 @@ namespace Conekta.net.Model
         /// </summary>
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Object
-        /// </summary>
-        /*
-        <example>payment_source</example>
-        */
-        [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
-        public string Object { get; set; }
 
         /// <summary>
         /// URL to redirect the customer after a canceled payment

@@ -43,7 +43,8 @@ namespace Conekta.net.Model
         /// <param name="createdAt">The time at which the object was created in seconds since the Unix epoch.</param>
         /// <param name="currency">The three-letter ISO 4217 currency code. The currency of the order..</param>
         /// <param name="customerInfo">customerInfo.</param>
-        /// <param name="discountLines">discountLines.</param>
+        /// <param name="discountLines">List of discounts that are applied to the order.</param>
+        /// <param name="taxLines">List of taxes that are applied to the order.</param>
         /// <param name="fiscalEntity">fiscalEntity.</param>
         /// <param name="id">id.</param>
         /// <param name="isRefundable">isRefundable.</param>
@@ -56,7 +57,7 @@ namespace Conekta.net.Model
         /// <param name="processingMode">Indicates the processing mode for the order, either ecommerce, recurrent or validation..</param>
         /// <param name="shippingContact">shippingContact.</param>
         /// <param name="updatedAt">The time at which the object was last updated in seconds since the Unix epoch.</param>
-        public OrderResponse(int amount = default(int), int amountRefunded = default(int), OrderChannelResponse channel = default(OrderChannelResponse), OrderChargesResponse charges = default(OrderChargesResponse), OrderResponseCheckout checkout = default(OrderResponseCheckout), long createdAt = default(long), string currency = default(string), OrderResponseCustomerInfo customerInfo = default(OrderResponseCustomerInfo), OrderDiscountLinesResponse discountLines = default(OrderDiscountLinesResponse), OrderFiscalEntityResponse fiscalEntity = default(OrderFiscalEntityResponse), string id = default(string), bool isRefundable = default(bool), OrderResponseProducts lineItems = default(OrderResponseProducts), bool livemode = default(bool), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), OrderNextActionResponse nextAction = default(OrderNextActionResponse), string varObject = default(string), string paymentStatus = default(string), string processingMode = default(string), OrderResponseShippingContact shippingContact = default(OrderResponseShippingContact), long updatedAt = default(long))
+        public OrderResponse(int amount = default(int), int amountRefunded = default(int), OrderChannelResponse channel = default(OrderChannelResponse), OrderChargesResponse charges = default(OrderChargesResponse), OrderResponseCheckout checkout = default(OrderResponseCheckout), long createdAt = default(long), string currency = default(string), OrderResponseCustomerInfo customerInfo = default(OrderResponseCustomerInfo), List<DiscountLinesResponse> discountLines = default(List<DiscountLinesResponse>), List<OrderTaxResponse> taxLines = default(List<OrderTaxResponse>), OrderFiscalEntityResponse fiscalEntity = default(OrderFiscalEntityResponse), string id = default(string), bool isRefundable = default(bool), OrderResponseProducts lineItems = default(OrderResponseProducts), bool livemode = default(bool), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), OrderNextActionResponse nextAction = default(OrderNextActionResponse), string varObject = default(string), string paymentStatus = default(string), string processingMode = default(string), OrderResponseShippingContact shippingContact = default(OrderResponseShippingContact), long updatedAt = default(long))
         {
             this.Amount = amount;
             this.AmountRefunded = amountRefunded;
@@ -67,6 +68,7 @@ namespace Conekta.net.Model
             this.Currency = currency;
             this.CustomerInfo = customerInfo;
             this.DiscountLines = discountLines;
+            this.TaxLines = taxLines;
             this.FiscalEntity = fiscalEntity;
             this.Id = id;
             this.IsRefundable = isRefundable;
@@ -146,15 +148,23 @@ namespace Conekta.net.Model
         public OrderResponseCustomerInfo CustomerInfo { get; set; }
 
         /// <summary>
-        /// Gets or Sets DiscountLines
+        /// List of discounts that are applied to the order
         /// </summary>
+        /// <value>List of discounts that are applied to the order</value>
         [DataMember(Name = "discount_lines", EmitDefaultValue = false)]
-        public OrderDiscountLinesResponse DiscountLines { get; set; }
+        public List<DiscountLinesResponse> DiscountLines { get; set; }
+
+        /// <summary>
+        /// List of taxes that are applied to the order
+        /// </summary>
+        /// <value>List of taxes that are applied to the order</value>
+        [DataMember(Name = "tax_lines", EmitDefaultValue = false)]
+        public List<OrderTaxResponse> TaxLines { get; set; }
 
         /// <summary>
         /// Gets or Sets FiscalEntity
         /// </summary>
-        [DataMember(Name = "fiscal_entity", EmitDefaultValue = true)]
+        [DataMember(Name = "fiscal_entity", EmitDefaultValue = false)]
         public OrderFiscalEntityResponse FiscalEntity { get; set; }
 
         /// <summary>
@@ -267,6 +277,7 @@ namespace Conekta.net.Model
             sb.Append("  Currency: ").Append(Currency).Append("\n");
             sb.Append("  CustomerInfo: ").Append(CustomerInfo).Append("\n");
             sb.Append("  DiscountLines: ").Append(DiscountLines).Append("\n");
+            sb.Append("  TaxLines: ").Append(TaxLines).Append("\n");
             sb.Append("  FiscalEntity: ").Append(FiscalEntity).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  IsRefundable: ").Append(IsRefundable).Append("\n");

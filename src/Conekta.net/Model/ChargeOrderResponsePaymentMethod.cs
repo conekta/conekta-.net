@@ -240,7 +240,7 @@ namespace Conekta.net.Model
                     case "cash_payment":
                         newChargeOrderResponsePaymentMethod = new ChargeOrderResponsePaymentMethod(JsonConvert.DeserializeObject<PaymentMethodCash>(jsonString, ChargeOrderResponsePaymentMethod.AdditionalPropertiesSerializerSettings));
                         return newChargeOrderResponsePaymentMethod;
-                    case "pbb_payment":
+                    case "pay_by_bank_payment":
                         newChargeOrderResponsePaymentMethod = new ChargeOrderResponsePaymentMethod(JsonConvert.DeserializeObject<PaymentMethodPbbPayment>(jsonString, ChargeOrderResponsePaymentMethod.AdditionalPropertiesSerializerSettings));
                         return newChargeOrderResponsePaymentMethod;
                     case "payment_method_bank_transfer":
@@ -259,7 +259,7 @@ namespace Conekta.net.Model
                         newChargeOrderResponsePaymentMethod = new ChargeOrderResponsePaymentMethod(JsonConvert.DeserializeObject<PaymentMethodPbbPayment>(jsonString, ChargeOrderResponsePaymentMethod.AdditionalPropertiesSerializerSettings));
                         return newChargeOrderResponsePaymentMethod;
                     default:
-                        System.Diagnostics.Debug.WriteLine(string.Format("Failed to lookup discriminator value `{0}` for ChargeOrderResponsePaymentMethod. Possible values: bank_transfer_payment bnpl_payment card_payment cash_payment pbb_payment payment_method_bank_transfer payment_method_bnpl_payment payment_method_card payment_method_cash payment_method_pbb_payment", discriminatorValue));
+                        System.Diagnostics.Debug.WriteLine(string.Format("Failed to lookup discriminator value `{0}` for ChargeOrderResponsePaymentMethod. Possible values: bank_transfer_payment bnpl_payment card_payment cash_payment pay_by_bank_payment payment_method_bank_transfer payment_method_bnpl_payment payment_method_card payment_method_cash payment_method_pbb_payment", discriminatorValue));
                         break;
                 }
             }

@@ -102,7 +102,7 @@ namespace Conekta.net.Model
         /*
         <example>Departamento 404</example>
         */
-        [DataMember(Name = "street2", EmitDefaultValue = true)]
+        [DataMember(Name = "street2", EmitDefaultValue = false)]
         public string Street2 { get; set; }
 
         /// <summary>

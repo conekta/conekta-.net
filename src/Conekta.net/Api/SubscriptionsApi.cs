@@ -398,12 +398,12 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">Identifier of the customer resource</param>
         /// <param name="id">Identifier of the subscription resource</param>
-        /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
+        /// <param name="updatesASubscription">requested field for update a subscription</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SubscriptionResponse</returns>
-        SubscriptionResponse SubscriptionUpdate(string customerId, string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
+        SubscriptionResponse SubscriptionUpdate(string customerId, string id, UpdatesASubscription updatesASubscription, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Update Subscription
@@ -414,12 +414,12 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">Identifier of the customer resource</param>
         /// <param name="id">Identifier of the subscription resource</param>
-        /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
+        /// <param name="updatesASubscription">requested field for update a subscription</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SubscriptionResponse</returns>
-        ApiResponse<SubscriptionResponse> SubscriptionUpdateWithHttpInfo(string customerId, string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
+        ApiResponse<SubscriptionResponse> SubscriptionUpdateWithHttpInfo(string customerId, string id, UpdatesASubscription updatesASubscription, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         /// <summary>
         /// Get Subscription
         /// </summary>
@@ -486,13 +486,13 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
+        /// <param name="updatesASubscription">requested field for update a subscription</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SubscriptionResponse</returns>
         [Obsolete]
-        SubscriptionResponse UpdateSubscription(string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
+        SubscriptionResponse UpdateSubscription(string id, UpdatesASubscription updatesASubscription, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Update Subscription [Deprecated]
@@ -502,13 +502,13 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
+        /// <param name="updatesASubscription">requested field for update a subscription</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SubscriptionResponse</returns>
         [Obsolete]
-        ApiResponse<SubscriptionResponse> UpdateSubscriptionWithHttpInfo(string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
+        ApiResponse<SubscriptionResponse> UpdateSubscriptionWithHttpInfo(string id, UpdatesASubscription updatesASubscription, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -913,13 +913,13 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">Identifier of the customer resource</param>
         /// <param name="id">Identifier of the subscription resource</param>
-        /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
+        /// <param name="updatesASubscription">requested field for update a subscription</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
-        System.Threading.Tasks.Task<SubscriptionResponse> SubscriptionUpdateAsync(string customerId, string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SubscriptionResponse> SubscriptionUpdateAsync(string customerId, string id, UpdatesASubscription updatesASubscription, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Subscription
@@ -930,13 +930,13 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">Identifier of the customer resource</param>
         /// <param name="id">Identifier of the subscription resource</param>
-        /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
+        /// <param name="updatesASubscription">requested field for update a subscription</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SubscriptionResponse>> SubscriptionUpdateWithHttpInfoAsync(string customerId, string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SubscriptionResponse>> SubscriptionUpdateWithHttpInfoAsync(string customerId, string id, UpdatesASubscription updatesASubscription, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get Subscription
         /// </summary>
@@ -1007,14 +1007,14 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
+        /// <param name="updatesASubscription">requested field for update a subscription</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<SubscriptionResponse> UpdateSubscriptionAsync(string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SubscriptionResponse> UpdateSubscriptionAsync(string id, UpdatesASubscription updatesASubscription, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Subscription [Deprecated]
@@ -1024,14 +1024,14 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
+        /// <param name="updatesASubscription">requested field for update a subscription</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<SubscriptionResponse>> UpdateSubscriptionWithHttpInfoAsync(string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SubscriptionResponse>> UpdateSubscriptionWithHttpInfoAsync(string id, UpdatesASubscription updatesASubscription, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -3538,14 +3538,14 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">Identifier of the customer resource</param>
         /// <param name="id">Identifier of the subscription resource</param>
-        /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
+        /// <param name="updatesASubscription">requested field for update a subscription</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SubscriptionResponse</returns>
-        public SubscriptionResponse SubscriptionUpdate(string customerId, string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
+        public SubscriptionResponse SubscriptionUpdate(string customerId, string id, UpdatesASubscription updatesASubscription, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<SubscriptionResponse> localVarResponse = SubscriptionUpdateWithHttpInfo(customerId, id, subscriptionUpdateRequest, acceptLanguage, xChildCompanyId);
+            Conekta.net.Client.ApiResponse<SubscriptionResponse> localVarResponse = SubscriptionUpdateWithHttpInfo(customerId, id, updatesASubscription, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -3555,12 +3555,12 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">Identifier of the customer resource</param>
         /// <param name="id">Identifier of the subscription resource</param>
-        /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
+        /// <param name="updatesASubscription">requested field for update a subscription</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SubscriptionResponse</returns>
-        public Conekta.net.Client.ApiResponse<SubscriptionResponse> SubscriptionUpdateWithHttpInfo(string customerId, string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<SubscriptionResponse> SubscriptionUpdateWithHttpInfo(string customerId, string id, UpdatesASubscription updatesASubscription, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'customerId' is set
             if (customerId == null)
@@ -3574,10 +3574,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling SubscriptionsApi->SubscriptionUpdate");
             }
 
-            // verify the required parameter 'subscriptionUpdateRequest' is set
-            if (subscriptionUpdateRequest == null)
+            // verify the required parameter 'updatesASubscription' is set
+            if (updatesASubscription == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'subscriptionUpdateRequest' when calling SubscriptionsApi->SubscriptionUpdate");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'updatesASubscription' when calling SubscriptionsApi->SubscriptionUpdate");
             }
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -3613,7 +3613,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
-            localVarRequestOptions.Data = subscriptionUpdateRequest;
+            localVarRequestOptions.Data = updatesASubscription;
 
             localVarRequestOptions.Operation = "SubscriptionsApi.SubscriptionUpdate";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -3645,15 +3645,15 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">Identifier of the customer resource</param>
         /// <param name="id">Identifier of the subscription resource</param>
-        /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
+        /// <param name="updatesASubscription">requested field for update a subscription</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
-        public async System.Threading.Tasks.Task<SubscriptionResponse> SubscriptionUpdateAsync(string customerId, string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SubscriptionResponse> SubscriptionUpdateAsync(string customerId, string id, UpdatesASubscription updatesASubscription, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<SubscriptionResponse> localVarResponse = await SubscriptionUpdateWithHttpInfoAsync(customerId, id, subscriptionUpdateRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<SubscriptionResponse> localVarResponse = await SubscriptionUpdateWithHttpInfoAsync(customerId, id, updatesASubscription, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3663,13 +3663,13 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">Identifier of the customer resource</param>
         /// <param name="id">Identifier of the subscription resource</param>
-        /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
+        /// <param name="updatesASubscription">requested field for update a subscription</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<SubscriptionResponse>> SubscriptionUpdateWithHttpInfoAsync(string customerId, string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<SubscriptionResponse>> SubscriptionUpdateWithHttpInfoAsync(string customerId, string id, UpdatesASubscription updatesASubscription, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'customerId' is set
             if (customerId == null)
@@ -3683,10 +3683,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling SubscriptionsApi->SubscriptionUpdate");
             }
 
-            // verify the required parameter 'subscriptionUpdateRequest' is set
-            if (subscriptionUpdateRequest == null)
+            // verify the required parameter 'updatesASubscription' is set
+            if (updatesASubscription == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'subscriptionUpdateRequest' when calling SubscriptionsApi->SubscriptionUpdate");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'updatesASubscription' when calling SubscriptionsApi->SubscriptionUpdate");
             }
 
 
@@ -3723,7 +3723,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
-            localVarRequestOptions.Data = subscriptionUpdateRequest;
+            localVarRequestOptions.Data = updatesASubscription;
 
             localVarRequestOptions.Operation = "SubscriptionsApi.SubscriptionUpdate";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -4151,15 +4151,15 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
+        /// <param name="updatesASubscription">requested field for update a subscription</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SubscriptionResponse</returns>
         [Obsolete]
-        public SubscriptionResponse UpdateSubscription(string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
+        public SubscriptionResponse UpdateSubscription(string id, UpdatesASubscription updatesASubscription, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<SubscriptionResponse> localVarResponse = UpdateSubscriptionWithHttpInfo(id, subscriptionUpdateRequest, acceptLanguage, xChildCompanyId);
+            Conekta.net.Client.ApiResponse<SubscriptionResponse> localVarResponse = UpdateSubscriptionWithHttpInfo(id, updatesASubscription, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -4168,13 +4168,13 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
+        /// <param name="updatesASubscription">requested field for update a subscription</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SubscriptionResponse</returns>
         [Obsolete]
-        public Conekta.net.Client.ApiResponse<SubscriptionResponse> UpdateSubscriptionWithHttpInfo(string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<SubscriptionResponse> UpdateSubscriptionWithHttpInfo(string id, UpdatesASubscription updatesASubscription, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4182,10 +4182,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling SubscriptionsApi->UpdateSubscription");
             }
 
-            // verify the required parameter 'subscriptionUpdateRequest' is set
-            if (subscriptionUpdateRequest == null)
+            // verify the required parameter 'updatesASubscription' is set
+            if (updatesASubscription == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'subscriptionUpdateRequest' when calling SubscriptionsApi->UpdateSubscription");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'updatesASubscription' when calling SubscriptionsApi->UpdateSubscription");
             }
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -4220,7 +4220,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
-            localVarRequestOptions.Data = subscriptionUpdateRequest;
+            localVarRequestOptions.Data = updatesASubscription;
 
             localVarRequestOptions.Operation = "SubscriptionsApi.UpdateSubscription";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -4251,16 +4251,16 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
+        /// <param name="updatesASubscription">requested field for update a subscription</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscriptionResponse</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<SubscriptionResponse> UpdateSubscriptionAsync(string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SubscriptionResponse> UpdateSubscriptionAsync(string id, UpdatesASubscription updatesASubscription, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<SubscriptionResponse> localVarResponse = await UpdateSubscriptionWithHttpInfoAsync(id, subscriptionUpdateRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<SubscriptionResponse> localVarResponse = await UpdateSubscriptionWithHttpInfoAsync(id, updatesASubscription, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -4269,14 +4269,14 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="subscriptionUpdateRequest">requested field for update a subscription</param>
+        /// <param name="updatesASubscription">requested field for update a subscription</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscriptionResponse)</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<SubscriptionResponse>> UpdateSubscriptionWithHttpInfoAsync(string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<SubscriptionResponse>> UpdateSubscriptionWithHttpInfoAsync(string id, UpdatesASubscription updatesASubscription, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4284,10 +4284,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling SubscriptionsApi->UpdateSubscription");
             }
 
-            // verify the required parameter 'subscriptionUpdateRequest' is set
-            if (subscriptionUpdateRequest == null)
+            // verify the required parameter 'updatesASubscription' is set
+            if (updatesASubscription == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'subscriptionUpdateRequest' when calling SubscriptionsApi->UpdateSubscription");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'updatesASubscription' when calling SubscriptionsApi->UpdateSubscription");
             }
 
 
@@ -4323,7 +4323,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
-            localVarRequestOptions.Data = subscriptionUpdateRequest;
+            localVarRequestOptions.Data = updatesASubscription;
 
             localVarRequestOptions.Operation = "SubscriptionsApi.UpdateSubscription";
             localVarRequestOptions.OperationIndex = operationIndex;

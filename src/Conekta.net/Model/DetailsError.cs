@@ -59,7 +59,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Param
         /// </summary>
-        [DataMember(Name = "param", EmitDefaultValue = true)]
+        [DataMember(Name = "param", EmitDefaultValue = false)]
         public string Param { get; set; }
 
         /// <summary>

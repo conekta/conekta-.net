@@ -53,12 +53,12 @@ namespace Conekta.net.Model
         /// <param name="livemode">Whether the charge was made in live mode or not (required).</param>
         /// <param name="varObject">varObject (required).</param>
         /// <param name="orderId">Order ID (required).</param>
-        /// <param name="paidAt">Payment date.</param>
+        /// <param name="paidAt">charge Payment date.</param>
         /// <param name="paymentMethod">paymentMethod.</param>
         /// <param name="referenceId">Reference ID of the charge.</param>
         /// <param name="refunds">refunds.</param>
         /// <param name="status">Charge status (required).</param>
-        public ChargesDataResponse(int amount = default(int), ChargeResponseChannel channel = default(ChargeResponseChannel), long createdAt = default(long), string currency = default(string), string customerId = default(string), string description = default(string), string deviceFingerprint = default(string), string failureCode = default(string), string failureMessage = default(string), string id = default(string), bool livemode = default(bool), string varObject = default(string), string orderId = default(string), long? paidAt = default(long?), ChargeResponsePaymentMethod paymentMethod = default(ChargeResponsePaymentMethod), string referenceId = default(string), ChargeResponseRefunds refunds = default(ChargeResponseRefunds), string status = default(string))
+        public ChargesDataResponse(int amount = default(int), ChargeResponseChannel channel = default(ChargeResponseChannel), long createdAt = default(long), string currency = default(string), string customerId = default(string), string description = default(string), string deviceFingerprint = default(string), string failureCode = default(string), string failureMessage = default(string), string id = default(string), bool livemode = default(bool), string varObject = default(string), string orderId = default(string), long paidAt = default(long), ChargeResponsePaymentMethod paymentMethod = default(ChargeResponsePaymentMethod), string referenceId = default(string), ChargeResponseRefunds refunds = default(ChargeResponseRefunds), string status = default(string))
         {
             this.Amount = amount;
             this.CreatedAt = createdAt;
@@ -220,14 +220,14 @@ namespace Conekta.net.Model
         public string OrderId { get; set; }
 
         /// <summary>
-        /// Payment date
+        /// charge Payment date
         /// </summary>
-        /// <value>Payment date</value>
+        /// <value>charge Payment date</value>
         /*
         <example>1676390742</example>
         */
-        [DataMember(Name = "paid_at", EmitDefaultValue = true)]
-        public long? PaidAt { get; set; }
+        [DataMember(Name = "paid_at", EmitDefaultValue = false)]
+        public long PaidAt { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentMethod
@@ -242,13 +242,13 @@ namespace Conekta.net.Model
         /*
         <example>ref_2tN73UdUSNrYRPD9r</example>
         */
-        [DataMember(Name = "reference_id", EmitDefaultValue = true)]
+        [DataMember(Name = "reference_id", EmitDefaultValue = false)]
         public string ReferenceId { get; set; }
 
         /// <summary>
         /// Gets or Sets Refunds
         /// </summary>
-        [DataMember(Name = "refunds", EmitDefaultValue = true)]
+        [DataMember(Name = "refunds", EmitDefaultValue = false)]
         public ChargeResponseRefunds Refunds { get; set; }
 
         /// <summary>

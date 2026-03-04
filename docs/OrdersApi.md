@@ -755,7 +755,7 @@ catch (ApiException e)
 
 <a id="updateorder"></a>
 # **UpdateOrder**
-> OrderResponse UpdateOrder (string id, OrderUpdateRequest orderUpdateRequest, string acceptLanguage = null)
+> OrderResponse UpdateOrder (string id, OrderUpdate orderUpdate, string acceptLanguage = null)
 
 Update Order
 
@@ -782,13 +782,13 @@ namespace Example
 
             var apiInstance = new OrdersApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
-            var orderUpdateRequest = new OrderUpdateRequest(); // OrderUpdateRequest | requested field for an order
+            var orderUpdate = new OrderUpdate(); // OrderUpdate | requested field for an order
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
                 // Update Order
-                OrderResponse result = apiInstance.UpdateOrder(id, orderUpdateRequest, acceptLanguage);
+                OrderResponse result = apiInstance.UpdateOrder(id, orderUpdate, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -809,7 +809,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update Order
-    ApiResponse<OrderResponse> response = apiInstance.UpdateOrderWithHttpInfo(id, orderUpdateRequest, acceptLanguage);
+    ApiResponse<OrderResponse> response = apiInstance.UpdateOrderWithHttpInfo(id, orderUpdate, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -827,7 +827,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
-| **orderUpdateRequest** | [**OrderUpdateRequest**](OrderUpdateRequest.md) | requested field for an order |  |
+| **orderUpdate** | [**OrderUpdate**](OrderUpdate.md) | requested field for an order |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type

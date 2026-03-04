@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Prefix** | **string** | The first few characters of the authentication_token | [optional] 
 **Id** | **string** | Unique identifier of the api key | [optional] 
 **Object** | **string** | Object name, value is &#39;api_key&#39; | [optional] 
-**LastUsedAt** | **long?** | Unix timestamp in seconds with the api key was used | [optional] 
+**LastUsedAt** | **long** | Unix timestamp in seconds with the api key was used | [optional] 
 **Role** | **string** | Indicates if the api key is private or public | [optional] 
 **Deleted** | **bool** |  | [optional] 
 

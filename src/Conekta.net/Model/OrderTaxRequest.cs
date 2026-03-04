@@ -79,7 +79,7 @@ namespace Conekta.net.Model
         /// Gets or Sets Metadata
         /// </summary>
         /*
-        <example>{&quot;key&quot;:&quot;value&quot;}</example>
+        <example>{key&#x3D;value}</example>
         */
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }

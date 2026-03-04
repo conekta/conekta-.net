@@ -44,7 +44,9 @@ namespace Conekta.net.Model
         /// <param name="customerInfo">customerInfo.</param>
         /// <param name="lineItems">They are the products to buy. Each contains the \&quot;unit price\&quot; and \&quot;quantity\&quot; parameters that are used to calculate the total amount of the order. (required).</param>
         /// <param name="metadata">It is a set of key-value pairs that you can attach to the order. It can be used to store additional information about the order in a structured format..</param>
-        public CheckoutOrderTemplate(string currency = default(string), CheckoutOrderTemplateCustomerInfo customerInfo = default(CheckoutOrderTemplateCustomerInfo), List<Product> lineItems = default(List<Product>), Dictionary<string, Object> metadata = default(Dictionary<string, Object>))
+        /// <param name="taxLines">List of [taxes](https://developers.conekta.com/v2.2.0/reference/orderscreatetaxes) that are applied to the order..</param>
+        /// <param name="discountLines">List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline) that are applied to the order..</param>
+        public CheckoutOrderTemplate(string currency = default(string), CheckoutOrderTemplateCustomerInfo customerInfo = default(CheckoutOrderTemplateCustomerInfo), List<Product> lineItems = default(List<Product>), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), List<OrderTaxRequest> taxLines = default(List<OrderTaxRequest>), List<OrderDiscountLinesRequest> discountLines = default(List<OrderDiscountLinesRequest>))
         {
             // to ensure "currency" is required (not null)
             if (currency == null)
@@ -60,6 +62,8 @@ namespace Conekta.net.Model
             this.LineItems = lineItems;
             this.CustomerInfo = customerInfo;
             this.Metadata = metadata;
+            this.TaxLines = taxLines;
+            this.DiscountLines = discountLines;
         }
 
         /// <summary>
@@ -90,10 +94,24 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>It is a set of key-value pairs that you can attach to the order. It can be used to store additional information about the order in a structured format.</value>
         /*
-        <example>{&quot;key&quot;:&quot;value&quot;}</example>
+        <example>{key&#x3D;value}</example>
         */
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }
+
+        /// <summary>
+        /// List of [taxes](https://developers.conekta.com/v2.2.0/reference/orderscreatetaxes) that are applied to the order.
+        /// </summary>
+        /// <value>List of [taxes](https://developers.conekta.com/v2.2.0/reference/orderscreatetaxes) that are applied to the order.</value>
+        [DataMember(Name = "tax_lines", EmitDefaultValue = false)]
+        public List<OrderTaxRequest> TaxLines { get; set; }
+
+        /// <summary>
+        /// List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline) that are applied to the order.
+        /// </summary>
+        /// <value>List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline) that are applied to the order.</value>
+        [DataMember(Name = "discount_lines", EmitDefaultValue = false)]
+        public List<OrderDiscountLinesRequest> DiscountLines { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -107,6 +125,8 @@ namespace Conekta.net.Model
             sb.Append("  CustomerInfo: ").Append(CustomerInfo).Append("\n");
             sb.Append("  LineItems: ").Append(LineItems).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
+            sb.Append("  TaxLines: ").Append(TaxLines).Append("\n");
+            sb.Append("  DiscountLines: ").Append(DiscountLines).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

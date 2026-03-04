@@ -416,7 +416,7 @@ catch (ApiException e)
 
 <a id="updateplan"></a>
 # **UpdatePlan**
-> PlanResponse UpdatePlan (string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = null, string xChildCompanyId = null)
+> PlanResponse UpdatePlan (string id, UpdatePlan updatePlan, string acceptLanguage = null, string xChildCompanyId = null)
 
 Update Plan
 
@@ -441,14 +441,14 @@ namespace Example
 
             var apiInstance = new PlansApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
-            var planUpdateRequest = new PlanUpdateRequest(); // PlanUpdateRequest | requested field for plan
+            var updatePlan = new UpdatePlan(); // UpdatePlan | requested field for plan
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
             var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Update Plan
-                PlanResponse result = apiInstance.UpdatePlan(id, planUpdateRequest, acceptLanguage, xChildCompanyId);
+                PlanResponse result = apiInstance.UpdatePlan(id, updatePlan, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -469,7 +469,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update Plan
-    ApiResponse<PlanResponse> response = apiInstance.UpdatePlanWithHttpInfo(id, planUpdateRequest, acceptLanguage, xChildCompanyId);
+    ApiResponse<PlanResponse> response = apiInstance.UpdatePlanWithHttpInfo(id, updatePlan, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -487,7 +487,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
-| **planUpdateRequest** | [**PlanUpdateRequest**](PlanUpdateRequest.md) | requested field for plan |  |
+| **updatePlan** | [**UpdatePlan**](UpdatePlan.md) | requested field for plan |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 | **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 

@@ -102,7 +102,7 @@ namespace Conekta.net.Model
         /// Gets or Sets ResponseData
         /// </summary>
         /*
-        <example>{&quot;amount&quot;:3000,&quot;payable&quot;:true}</example>
+        <example>{amount&#x3D;3000, payable&#x3D;true}</example>
         */
         [DataMember(Name = "response_data", EmitDefaultValue = false)]
         public Dictionary<string, Object> ResponseData { get; set; }
