@@ -214,7 +214,6 @@ docs/WebhookRequest.md
 docs/WebhookResponse.md
 docs/WebhooksApi.md
 docs/WhitelistlistRuleResponse.md
-src/Conekta.net.Test/Api/SubscriptionsCustomerPortalApiTests.cs
 src/Conekta.net.Test/Conekta.net.Test.csproj
 src/Conekta.net/Api/AntifraudApi.cs
 src/Conekta.net/Api/ApiKeysApi.cs

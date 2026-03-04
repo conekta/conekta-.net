@@ -9,10 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        dotnet-version: ['6.0.x', '8.0.x']
+        include:
+          - dotnet-version: '6.0.x'
+            test-framework: 'net6.0'
+          - dotnet-version: '8.0.x'
+            test-framework: 'net8.0'
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/setup-dotnet@v3
+      - uses: actions/setup-dotnet@v5
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
       - name: Run Mockoon CLI
@@ -21,8 +25,8 @@ jobs:
           data-file: 'https://raw.githubusercontent.com/conekta/openapi/main/mocks/conekta_api.json'
           port: 3000
       - name: Execute dotnet
-        run: dotnet build
+        run: dotnet build --framework ${{ matrix.test-framework }}
       - name: Run tests
         env:
           BASE_PATH: http://localhost:3000
-        run: dotnet test ./src/Conekta.net.Test/Conekta.net.Test.csproj --no-build
+        run: dotnet test ./src/Conekta.net.Test/Conekta.net.Test.csproj --no-build --framework ${{ matrix.test-framework }}
