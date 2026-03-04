@@ -520,7 +520,7 @@ namespace {{packageName}}.Client
             var clientOptions = new RestClientOptions(baseUrl)
             {
                 ClientCertificates = configuration.ClientCertificates,
-                Timeout = TimeSpan.FromMilliseconds(configuration.Timeout),
+                Timeout = configuration.Timeout,
                 Proxy = configuration.Proxy,
                 UserAgent = configuration.UserAgent,
                 UseDefaultCredentials = configuration.UseDefaultCredentials,
