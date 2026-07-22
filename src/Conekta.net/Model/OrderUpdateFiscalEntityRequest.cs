@@ -84,7 +84,7 @@ namespace Conekta.net.Model
         /*
         <example>Conekta Inc</example>
         */
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Conekta.net.Model
         /*
         <example>AAA010101AAA</example>
         */
-        [DataMember(Name = "tax_id", EmitDefaultValue = true)]
+        [DataMember(Name = "tax_id", EmitDefaultValue = false)]
         public string TaxId { get; set; }
 
         /// <summary>

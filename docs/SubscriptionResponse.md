@@ -5,9 +5,9 @@ subscription model
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BillingCycleStart** | **long?** |  | [optional] 
-**BillingCycleEnd** | **long?** |  | [optional] 
-**CanceledAt** | **long?** |  | [optional] 
+**BillingCycleStart** | **long** |  | [optional] 
+**BillingCycleEnd** | **long** |  | [optional] 
+**CanceledAt** | **long** |  | [optional] 
 **CanceledReason** | **string** | Reason for cancellation. This field appears when the subscription status is &#39;canceled&#39;. | [optional] 
 **CardId** | **string** |  | [optional] 
 **ChargeId** | **string** |  | [optional] 
@@ -17,12 +17,12 @@ Name | Type | Description | Notes
 **Id** | **string** |  | [optional] 
 **LastBillingCycleOrderId** | **string** |  | [optional] 
 **Object** | **string** |  | [optional] 
-**PausedAt** | **long?** |  | [optional] 
+**PausedAt** | **long** |  | [optional] 
 **PlanId** | **string** |  | [optional] 
 **Status** | **string** |  | [optional] 
 **SubscriptionStart** | **int** |  | [optional] 
-**TrialStart** | **long?** |  | [optional] 
-**TrialEnd** | **long?** |  | [optional] 
+**TrialStart** | **long** |  | [optional] 
+**TrialEnd** | **long** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

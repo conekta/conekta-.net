@@ -51,11 +51,12 @@ namespace Conekta.net.Model
         /// <param name="expMonth">expMonth.</param>
         /// <param name="expYear">expYear.</param>
         /// <param name="brand">brand.</param>
+        /// <param name="issuer">Name of the institution that issued the card.</param>
         /// <param name="name">name.</param>
         /// <param name="varDefault">varDefault.</param>
         /// <param name="visibleOnCheckout">visibleOnCheckout.</param>
         /// <param name="paymentSourceStatus">paymentSourceStatus.</param>
-        public PaymentMethodCardResponse(string type = default(string), string id = default(string), string varObject = default(string), long createdAt = default(long), string parentId = default(string), string last4 = default(string), string bin = default(string), string cardType = default(string), string expMonth = default(string), string expYear = default(string), string brand = default(string), string name = default(string), bool varDefault = default(bool), bool visibleOnCheckout = default(bool), string paymentSourceStatus = default(string))
+        public PaymentMethodCardResponse(string type = default(string), string id = default(string), string varObject = default(string), long createdAt = default(long), string parentId = default(string), string last4 = default(string), string bin = default(string), string cardType = default(string), string expMonth = default(string), string expYear = default(string), string brand = default(string), string issuer = default(string), string name = default(string), bool varDefault = default(bool), bool visibleOnCheckout = default(bool), string paymentSourceStatus = default(string))
         {
             // to ensure "type" is required (not null)
             if (type == null)
@@ -83,6 +84,7 @@ namespace Conekta.net.Model
             this.ExpMonth = expMonth;
             this.ExpYear = expYear;
             this.Brand = brand;
+            this.Issuer = issuer;
             this.Name = name;
             this.Default = varDefault;
             this.VisibleOnCheckout = visibleOnCheckout;
@@ -186,6 +188,16 @@ namespace Conekta.net.Model
         public string Brand { get; set; }
 
         /// <summary>
+        /// Name of the institution that issued the card
+        /// </summary>
+        /// <value>Name of the institution that issued the card</value>
+        /*
+        <example>santander</example>
+        */
+        [DataMember(Name = "issuer", EmitDefaultValue = false)]
+        public string Issuer { get; set; }
+
+        /// <summary>
         /// Gets or Sets Name
         /// </summary>
         /*
@@ -234,6 +246,7 @@ namespace Conekta.net.Model
             sb.Append("  ExpMonth: ").Append(ExpMonth).Append("\n");
             sb.Append("  ExpYear: ").Append(ExpYear).Append("\n");
             sb.Append("  Brand: ").Append(Brand).Append("\n");
+            sb.Append("  Issuer: ").Append(Issuer).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Default: ").Append(Default).Append("\n");
             sb.Append("  VisibleOnCheckout: ").Append(VisibleOnCheckout).Append("\n");

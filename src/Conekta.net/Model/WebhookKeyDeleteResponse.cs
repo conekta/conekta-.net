@@ -29,7 +29,7 @@ namespace Conekta.net.Model
     /// <summary>
     /// webhook keys model
     /// </summary>
-    [DataContract(Name = "webhook-key_delete_response")]
+    [DataContract(Name = "webhook_key_delete_response")]
     public partial class WebhookKeyDeleteResponse : IValidatableObject
     {
         /// <summary>

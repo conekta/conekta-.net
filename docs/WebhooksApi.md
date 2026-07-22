@@ -514,7 +514,7 @@ catch (ApiException e)
 
 <a id="updatewebhook"></a>
 # **UpdateWebhook**
-> WebhookResponse UpdateWebhook (string id, WebhookUpdateRequest webhookUpdateRequest, string acceptLanguage = null, string xChildCompanyId = null)
+> WebhookResponse UpdateWebhook (string id, UpdateWebhook updateWebhook, string acceptLanguage = null, string xChildCompanyId = null)
 
 Update Webhook
 
@@ -541,14 +541,14 @@ namespace Example
 
             var apiInstance = new WebhooksApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
-            var webhookUpdateRequest = new WebhookUpdateRequest(); // WebhookUpdateRequest | requested fields in order to update a webhook
+            var updateWebhook = new UpdateWebhook(); // UpdateWebhook | requested fields in order to update a webhook
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
             var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Update Webhook
-                WebhookResponse result = apiInstance.UpdateWebhook(id, webhookUpdateRequest, acceptLanguage, xChildCompanyId);
+                WebhookResponse result = apiInstance.UpdateWebhook(id, updateWebhook, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -569,7 +569,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update Webhook
-    ApiResponse<WebhookResponse> response = apiInstance.UpdateWebhookWithHttpInfo(id, webhookUpdateRequest, acceptLanguage, xChildCompanyId);
+    ApiResponse<WebhookResponse> response = apiInstance.UpdateWebhookWithHttpInfo(id, updateWebhook, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -587,7 +587,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
-| **webhookUpdateRequest** | [**WebhookUpdateRequest**](WebhookUpdateRequest.md) | requested fields in order to update a webhook |  |
+| **updateWebhook** | [**UpdateWebhook**](UpdateWebhook.md) | requested fields in order to update a webhook |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 | **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 

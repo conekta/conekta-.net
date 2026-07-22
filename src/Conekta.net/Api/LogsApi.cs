@@ -38,8 +38,8 @@ namespace Conekta.net.Api
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>LogResponse</returns>
-        LogResponse GetLogById(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
+        /// <returns>LogResponseForRequest</returns>
+        LogResponseForRequest GetLogById(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Get Log
@@ -52,8 +52,8 @@ namespace Conekta.net.Api
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of LogResponse</returns>
-        ApiResponse<LogResponse> GetLogByIdWithHttpInfo(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
+        /// <returns>ApiResponse of LogResponseForRequest</returns>
+        ApiResponse<LogResponseForRequest> GetLogByIdWithHttpInfo(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         /// <summary>
         /// Get List Of Logs
         /// </summary>
@@ -68,8 +68,8 @@ namespace Conekta.net.Api
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>LogsResponse</returns>
-        LogsResponse GetLogs(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
+        /// <returns>LogsResponseForRequest</returns>
+        LogsResponseForRequest GetLogs(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Get List Of Logs
@@ -85,8 +85,8 @@ namespace Conekta.net.Api
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of LogsResponse</returns>
-        ApiResponse<LogsResponse> GetLogsWithHttpInfo(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
+        /// <returns>ApiResponse of LogsResponseForRequest</returns>
+        ApiResponse<LogsResponseForRequest> GetLogsWithHttpInfo(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -108,8 +108,8 @@ namespace Conekta.net.Api
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of LogResponse</returns>
-        System.Threading.Tasks.Task<LogResponse> GetLogByIdAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of LogResponseForRequest</returns>
+        System.Threading.Tasks.Task<LogResponseForRequest> GetLogByIdAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Log
@@ -123,8 +123,8 @@ namespace Conekta.net.Api
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (LogResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LogResponse>> GetLogByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (LogResponseForRequest)</returns>
+        System.Threading.Tasks.Task<ApiResponse<LogResponseForRequest>> GetLogByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get List Of Logs
         /// </summary>
@@ -140,8 +140,8 @@ namespace Conekta.net.Api
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of LogsResponse</returns>
-        System.Threading.Tasks.Task<LogsResponse> GetLogsAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of LogsResponseForRequest</returns>
+        System.Threading.Tasks.Task<LogsResponseForRequest> GetLogsAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get List Of Logs
@@ -158,8 +158,8 @@ namespace Conekta.net.Api
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (LogsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LogsResponse>> GetLogsWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (LogsResponseForRequest)</returns>
+        System.Threading.Tasks.Task<ApiResponse<LogsResponseForRequest>> GetLogsWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -288,10 +288,10 @@ namespace Conekta.net.Api
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>LogResponse</returns>
-        public LogResponse GetLogById(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
+        /// <returns>LogResponseForRequest</returns>
+        public LogResponseForRequest GetLogById(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<LogResponse> localVarResponse = GetLogByIdWithHttpInfo(id, acceptLanguage, xChildCompanyId);
+            Conekta.net.Client.ApiResponse<LogResponseForRequest> localVarResponse = GetLogByIdWithHttpInfo(id, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -303,8 +303,8 @@ namespace Conekta.net.Api
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of LogResponse</returns>
-        public Conekta.net.Client.ApiResponse<LogResponse> GetLogByIdWithHttpInfo(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
+        /// <returns>ApiResponse of LogResponseForRequest</returns>
+        public Conekta.net.Client.ApiResponse<LogResponseForRequest> GetLogByIdWithHttpInfo(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -355,7 +355,7 @@ namespace Conekta.net.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<LogResponse>("/logs/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<LogResponseForRequest>("/logs/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetLogById", localVarResponse);
@@ -377,10 +377,10 @@ namespace Conekta.net.Api
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of LogResponse</returns>
-        public async System.Threading.Tasks.Task<LogResponse> GetLogByIdAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of LogResponseForRequest</returns>
+        public async System.Threading.Tasks.Task<LogResponseForRequest> GetLogByIdAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<LogResponse> localVarResponse = await GetLogByIdWithHttpInfoAsync(id, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<LogResponseForRequest> localVarResponse = await GetLogByIdWithHttpInfoAsync(id, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -393,8 +393,8 @@ namespace Conekta.net.Api
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (LogResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<LogResponse>> GetLogByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (LogResponseForRequest)</returns>
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<LogResponseForRequest>> GetLogByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -446,7 +446,7 @@ namespace Conekta.net.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<LogResponse>("/logs/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<LogResponseForRequest>("/logs/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -471,10 +471,10 @@ namespace Conekta.net.Api
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>LogsResponse</returns>
-        public LogsResponse GetLogs(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0)
+        /// <returns>LogsResponseForRequest</returns>
+        public LogsResponseForRequest GetLogs(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<LogsResponse> localVarResponse = GetLogsWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+            Conekta.net.Client.ApiResponse<LogsResponseForRequest> localVarResponse = GetLogsWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous);
             return localVarResponse.Data;
         }
 
@@ -489,8 +489,8 @@ namespace Conekta.net.Api
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of LogsResponse</returns>
-        public Conekta.net.Client.ApiResponse<LogsResponse> GetLogsWithHttpInfo(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0)
+        /// <returns>ApiResponse of LogsResponseForRequest</returns>
+        public Conekta.net.Client.ApiResponse<LogsResponseForRequest> GetLogsWithHttpInfo(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0)
         {
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
 
@@ -550,7 +550,7 @@ namespace Conekta.net.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<LogsResponse>("/logs", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<LogsResponseForRequest>("/logs", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetLogs", localVarResponse);
@@ -575,10 +575,10 @@ namespace Conekta.net.Api
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of LogsResponse</returns>
-        public async System.Threading.Tasks.Task<LogsResponse> GetLogsAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of LogsResponseForRequest</returns>
+        public async System.Threading.Tasks.Task<LogsResponseForRequest> GetLogsAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<LogsResponse> localVarResponse = await GetLogsWithHttpInfoAsync(acceptLanguage, xChildCompanyId, limit, search, next, previous, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<LogsResponseForRequest> localVarResponse = await GetLogsWithHttpInfoAsync(acceptLanguage, xChildCompanyId, limit, search, next, previous, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -594,8 +594,8 @@ namespace Conekta.net.Api
         /// <param name="previous">previous page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (LogsResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<LogsResponse>> GetLogsWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (LogsResponseForRequest)</returns>
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<LogsResponseForRequest>> GetLogsWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -656,7 +656,7 @@ namespace Conekta.net.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<LogsResponse>("/logs", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<LogsResponseForRequest>("/logs", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

@@ -33,6 +33,31 @@ namespace Conekta.net.Model
     public partial class CheckoutResponse : IValidatableObject
     {
         /// <summary>
+        /// Defines ExcludeCardNetworks
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ExcludeCardNetworksEnum
+        {
+            /// <summary>
+            /// Enum Visa for value: visa
+            /// </summary>
+            [EnumMember(Value = "visa")]
+            Visa = 1,
+
+            /// <summary>
+            /// Enum Mastercard for value: mastercard
+            /// </summary>
+            [EnumMember(Value = "mastercard")]
+            Mastercard = 2,
+
+            /// <summary>
+            /// Enum Amex for value: amex
+            /// </summary>
+            [EnumMember(Value = "amex")]
+            Amex = 3
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="CheckoutResponse" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -63,10 +88,10 @@ namespace Conekta.net.Model
         /// <param name="smsSent">smsSent.</param>
         /// <param name="startsAt">startsAt.</param>
         /// <param name="status">status.</param>
-        /// <param name="successUrl">successUrl.</param>
+        /// <param name="successUrl">The URL to redirect to after a successful payment..</param>
         /// <param name="type">type.</param>
         /// <param name="url">url.</param>
-        public CheckoutResponse(List<string> allowedPaymentMethods = default(List<string>), List<string> planIds = default(List<string>), bool canNotExpire = default(bool), int emailsSent = default(int), List<Object> excludeCardNetworks = default(List<Object>), long expiresAt = default(long), string failureUrl = default(string), bool force3dsFlow = default(bool), string id = default(string), bool livemode = default(bool), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string name = default(string), bool needsShippingContact = default(bool), string varObject = default(string), int paidPaymentsCount = default(int), int? paymentsLimitCount = default(int?), bool recurrent = default(bool), string slug = default(string), int smsSent = default(int), int startsAt = default(int), string status = default(string), string successUrl = default(string), string type = default(string), string url = default(string))
+        public CheckoutResponse(List<string> allowedPaymentMethods = default(List<string>), List<string> planIds = default(List<string>), bool canNotExpire = default(bool), int emailsSent = default(int), List<ExcludeCardNetworksEnum> excludeCardNetworks = default(List<ExcludeCardNetworksEnum>), long expiresAt = default(long), string failureUrl = default(string), bool force3dsFlow = default(bool), string id = default(string), bool livemode = default(bool), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string name = default(string), bool needsShippingContact = default(bool), string varObject = default(string), int paidPaymentsCount = default(int), int paymentsLimitCount = default(int), bool recurrent = default(bool), string slug = default(string), int smsSent = default(int), int startsAt = default(int), string status = default(string), string successUrl = default(string), string type = default(string), string url = default(string))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -116,7 +141,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>Are the payment methods available for this link</value>
         /*
-        <example>[&quot;cash&quot;,&quot;card&quot;,&quot;bank_transfer&quot;,&quot;bnpl&quot;,&quot;pay_by_bank&quot;]</example>
+        <example>[cash, card, bank_transfer, bnpl, pay_by_bank]</example>
         */
         [DataMember(Name = "allowed_payment_methods", EmitDefaultValue = false)]
         public List<string> AllowedPaymentMethods { get; set; }
@@ -126,7 +151,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>List of plan IDs that are available for subscription</value>
         /*
-        <example>[&quot;plan_123&quot;,&quot;plan_456&quot;]</example>
+        <example>[plan_123, plan_456]</example>
         */
         [DataMember(Name = "plan_ids", EmitDefaultValue = false)]
         public List<string> PlanIds { get; set; }
@@ -152,8 +177,11 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets ExcludeCardNetworks
         /// </summary>
+        /*
+        <example>[visa, amex]</example>
+        */
         [DataMember(Name = "exclude_card_networks", EmitDefaultValue = false)]
-        public List<Object> ExcludeCardNetworks { get; set; }
+        public List<CheckoutResponse.ExcludeCardNetworksEnum> ExcludeCardNetworks { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpiresAt
@@ -204,7 +232,7 @@ namespace Conekta.net.Model
         /// Gets or Sets Metadata
         /// </summary>
         /*
-        <example>{&quot;key&quot;:&quot;value&quot;}</example>
+        <example>{key&#x3D;value}</example>
         */
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }
@@ -222,7 +250,7 @@ namespace Conekta.net.Model
         /// Gets or Sets MonthlyInstallmentsOptions
         /// </summary>
         /*
-        <example>[3,6,12]</example>
+        <example>[3, 6, 12]</example>
         */
         [DataMember(Name = "monthly_installments_options", EmitDefaultValue = false)]
         public List<int> MonthlyInstallmentsOptions { get; set; }
@@ -270,8 +298,8 @@ namespace Conekta.net.Model
         /*
         <example>5</example>
         */
-        [DataMember(Name = "payments_limit_count", EmitDefaultValue = true)]
-        public int? PaymentsLimitCount { get; set; }
+        [DataMember(Name = "payments_limit_count", EmitDefaultValue = false)]
+        public int PaymentsLimitCount { get; set; }
 
         /// <summary>
         /// Gets or Sets Recurrent
@@ -319,8 +347,9 @@ namespace Conekta.net.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// Gets or Sets SuccessUrl
+        /// The URL to redirect to after a successful payment.
         /// </summary>
+        /// <value>The URL to redirect to after a successful payment.</value>
         /*
         <example>https://pay.conekta.com/success</example>
         */

@@ -46,10 +46,22 @@ namespace Conekta.net.Model
             AplazoBnpl = 1,
 
             /// <summary>
+            /// Enum AztecaBnpl for value: azteca_bnpl
+            /// </summary>
+            [EnumMember(Value = "azteca_bnpl")]
+            AztecaBnpl = 2,
+
+            /// <summary>
+            /// Enum CoppelBnpl for value: coppel_bnpl
+            /// </summary>
+            [EnumMember(Value = "coppel_bnpl")]
+            CoppelBnpl = 3,
+
+            /// <summary>
             /// Enum CrediteaBnpl for value: creditea_bnpl
             /// </summary>
             [EnumMember(Value = "creditea_bnpl")]
-            CrediteaBnpl = 2
+            CrediteaBnpl = 4
         }
 
 

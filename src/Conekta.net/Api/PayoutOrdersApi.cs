@@ -59,11 +59,11 @@ namespace Conekta.net.Api
         /// Create a new payout order.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="payoutOrder">requested field for payout order</param>
+        /// <param name="payoutOrderRequest">requested field for payout order</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PayoutOrderResponse</returns>
-        PayoutOrderResponse CreatePayoutOrder(PayoutOrder payoutOrder, string acceptLanguage = default(string), int operationIndex = 0);
+        PayoutOrderResponse CreatePayoutOrder(PayoutOrderRequest payoutOrderRequest, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Create payout order
@@ -72,11 +72,11 @@ namespace Conekta.net.Api
         /// Create a new payout order.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="payoutOrder">requested field for payout order</param>
+        /// <param name="payoutOrderRequest">requested field for payout order</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PayoutOrderResponse</returns>
-        ApiResponse<PayoutOrderResponse> CreatePayoutOrderWithHttpInfo(PayoutOrder payoutOrder, string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<PayoutOrderResponse> CreatePayoutOrderWithHttpInfo(PayoutOrderRequest payoutOrderRequest, string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
         /// Get Payout Order
         /// </summary>
@@ -176,12 +176,12 @@ namespace Conekta.net.Api
         /// Create a new payout order.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="payoutOrder">requested field for payout order</param>
+        /// <param name="payoutOrderRequest">requested field for payout order</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PayoutOrderResponse</returns>
-        System.Threading.Tasks.Task<PayoutOrderResponse> CreatePayoutOrderAsync(PayoutOrder payoutOrder, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PayoutOrderResponse> CreatePayoutOrderAsync(PayoutOrderRequest payoutOrderRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create payout order
@@ -190,12 +190,12 @@ namespace Conekta.net.Api
         /// Create a new payout order.
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="payoutOrder">requested field for payout order</param>
+        /// <param name="payoutOrderRequest">requested field for payout order</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PayoutOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PayoutOrderResponse>> CreatePayoutOrderWithHttpInfoAsync(PayoutOrder payoutOrder, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PayoutOrderResponse>> CreatePayoutOrderWithHttpInfoAsync(PayoutOrderRequest payoutOrderRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get Payout Order
         /// </summary>
@@ -548,13 +548,13 @@ namespace Conekta.net.Api
         /// Create payout order Create a new payout order.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="payoutOrder">requested field for payout order</param>
+        /// <param name="payoutOrderRequest">requested field for payout order</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PayoutOrderResponse</returns>
-        public PayoutOrderResponse CreatePayoutOrder(PayoutOrder payoutOrder, string acceptLanguage = default(string), int operationIndex = 0)
+        public PayoutOrderResponse CreatePayoutOrder(PayoutOrderRequest payoutOrderRequest, string acceptLanguage = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<PayoutOrderResponse> localVarResponse = CreatePayoutOrderWithHttpInfo(payoutOrder, acceptLanguage);
+            Conekta.net.Client.ApiResponse<PayoutOrderResponse> localVarResponse = CreatePayoutOrderWithHttpInfo(payoutOrderRequest, acceptLanguage);
             return localVarResponse.Data;
         }
 
@@ -562,16 +562,16 @@ namespace Conekta.net.Api
         /// Create payout order Create a new payout order.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="payoutOrder">requested field for payout order</param>
+        /// <param name="payoutOrderRequest">requested field for payout order</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PayoutOrderResponse</returns>
-        public Conekta.net.Client.ApiResponse<PayoutOrderResponse> CreatePayoutOrderWithHttpInfo(PayoutOrder payoutOrder, string acceptLanguage = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<PayoutOrderResponse> CreatePayoutOrderWithHttpInfo(PayoutOrderRequest payoutOrderRequest, string acceptLanguage = default(string), int operationIndex = 0)
         {
-            // verify the required parameter 'payoutOrder' is set
-            if (payoutOrder == null)
+            // verify the required parameter 'payoutOrderRequest' is set
+            if (payoutOrderRequest == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'payoutOrder' when calling PayoutOrdersApi->CreatePayoutOrder");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'payoutOrderRequest' when calling PayoutOrdersApi->CreatePayoutOrder");
             }
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -601,7 +601,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
-            localVarRequestOptions.Data = payoutOrder;
+            localVarRequestOptions.Data = payoutOrderRequest;
 
             localVarRequestOptions.Operation = "PayoutOrdersApi.CreatePayoutOrder";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -631,14 +631,14 @@ namespace Conekta.net.Api
         /// Create payout order Create a new payout order.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="payoutOrder">requested field for payout order</param>
+        /// <param name="payoutOrderRequest">requested field for payout order</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PayoutOrderResponse</returns>
-        public async System.Threading.Tasks.Task<PayoutOrderResponse> CreatePayoutOrderAsync(PayoutOrder payoutOrder, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PayoutOrderResponse> CreatePayoutOrderAsync(PayoutOrderRequest payoutOrderRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<PayoutOrderResponse> localVarResponse = await CreatePayoutOrderWithHttpInfoAsync(payoutOrder, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<PayoutOrderResponse> localVarResponse = await CreatePayoutOrderWithHttpInfoAsync(payoutOrderRequest, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -646,17 +646,17 @@ namespace Conekta.net.Api
         /// Create payout order Create a new payout order.
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="payoutOrder">requested field for payout order</param>
+        /// <param name="payoutOrderRequest">requested field for payout order</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PayoutOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<PayoutOrderResponse>> CreatePayoutOrderWithHttpInfoAsync(PayoutOrder payoutOrder, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<PayoutOrderResponse>> CreatePayoutOrderWithHttpInfoAsync(PayoutOrderRequest payoutOrderRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            // verify the required parameter 'payoutOrder' is set
-            if (payoutOrder == null)
+            // verify the required parameter 'payoutOrderRequest' is set
+            if (payoutOrderRequest == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'payoutOrder' when calling PayoutOrdersApi->CreatePayoutOrder");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'payoutOrderRequest' when calling PayoutOrdersApi->CreatePayoutOrder");
             }
 
 
@@ -687,7 +687,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
-            localVarRequestOptions.Data = payoutOrder;
+            localVarRequestOptions.Data = payoutOrderRequest;
 
             localVarRequestOptions.Operation = "PayoutOrdersApi.CreatePayoutOrder";
             localVarRequestOptions.OperationIndex = operationIndex;

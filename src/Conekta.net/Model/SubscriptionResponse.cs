@@ -53,7 +53,7 @@ namespace Conekta.net.Model
         /// <param name="subscriptionStart">subscriptionStart.</param>
         /// <param name="trialStart">trialStart.</param>
         /// <param name="trialEnd">trialEnd.</param>
-        public SubscriptionResponse(long? billingCycleStart = default(long?), long? billingCycleEnd = default(long?), long? canceledAt = default(long?), string canceledReason = default(string), string cardId = default(string), string chargeId = default(string), long createdAt = default(long), string customerCustomReference = default(string), string customerId = default(string), string id = default(string), string lastBillingCycleOrderId = default(string), string varObject = default(string), long? pausedAt = default(long?), string planId = default(string), string status = default(string), int subscriptionStart = default(int), long? trialStart = default(long?), long? trialEnd = default(long?))
+        public SubscriptionResponse(long billingCycleStart = default(long), long billingCycleEnd = default(long), long canceledAt = default(long), string canceledReason = default(string), string cardId = default(string), string chargeId = default(string), long createdAt = default(long), string customerCustomReference = default(string), string customerId = default(string), string id = default(string), string lastBillingCycleOrderId = default(string), string varObject = default(string), long pausedAt = default(long), string planId = default(string), string status = default(string), int subscriptionStart = default(int), long trialStart = default(long), long trialEnd = default(long))
         {
             this.BillingCycleStart = billingCycleStart;
             this.BillingCycleEnd = billingCycleEnd;
@@ -81,8 +81,8 @@ namespace Conekta.net.Model
         /*
         <example>1677626827</example>
         */
-        [DataMember(Name = "billing_cycle_start", EmitDefaultValue = true)]
-        public long? BillingCycleStart { get; set; }
+        [DataMember(Name = "billing_cycle_start", EmitDefaultValue = false)]
+        public long BillingCycleStart { get; set; }
 
         /// <summary>
         /// Gets or Sets BillingCycleEnd
@@ -90,8 +90,8 @@ namespace Conekta.net.Model
         /*
         <example>1677626827</example>
         */
-        [DataMember(Name = "billing_cycle_end", EmitDefaultValue = true)]
-        public long? BillingCycleEnd { get; set; }
+        [DataMember(Name = "billing_cycle_end", EmitDefaultValue = false)]
+        public long BillingCycleEnd { get; set; }
 
         /// <summary>
         /// Gets or Sets CanceledAt
@@ -99,8 +99,8 @@ namespace Conekta.net.Model
         /*
         <example>1678258162</example>
         */
-        [DataMember(Name = "canceled_at", EmitDefaultValue = true)]
-        public long? CanceledAt { get; set; }
+        [DataMember(Name = "canceled_at", EmitDefaultValue = false)]
+        public long CanceledAt { get; set; }
 
         /// <summary>
         /// Reason for cancellation. This field appears when the subscription status is &#39;canceled&#39;.
@@ -127,7 +127,7 @@ namespace Conekta.net.Model
         /*
         <example>2tKcHxhTz7xU5SymL</example>
         */
-        [DataMember(Name = "charge_id", EmitDefaultValue = true)]
+        [DataMember(Name = "charge_id", EmitDefaultValue = false)]
         public string ChargeId { get; set; }
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace Conekta.net.Model
         /*
         <example>1678258162</example>
         */
-        [DataMember(Name = "paused_at", EmitDefaultValue = true)]
-        public long? PausedAt { get; set; }
+        [DataMember(Name = "paused_at", EmitDefaultValue = false)]
+        public long PausedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets PlanId
@@ -226,8 +226,8 @@ namespace Conekta.net.Model
         /*
         <example>1677626837</example>
         */
-        [DataMember(Name = "trial_start", EmitDefaultValue = true)]
-        public long? TrialStart { get; set; }
+        [DataMember(Name = "trial_start", EmitDefaultValue = false)]
+        public long TrialStart { get; set; }
 
         /// <summary>
         /// Gets or Sets TrialEnd
@@ -235,8 +235,8 @@ namespace Conekta.net.Model
         /*
         <example>1677626837</example>
         */
-        [DataMember(Name = "trial_end", EmitDefaultValue = true)]
-        public long? TrialEnd { get; set; }
+        [DataMember(Name = "trial_end", EmitDefaultValue = false)]
+        public long TrialEnd { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

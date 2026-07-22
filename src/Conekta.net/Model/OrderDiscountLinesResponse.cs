@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Conekta.net.Client.OpenAPIDateConverter;
 namespace Conekta.net.Model
 {
     /// <summary>
-    /// OrderDiscountLinesResponse
+    /// List of discounts that are applied to the order
     /// </summary>
     [DataContract(Name = "order_discount_lines_response")]
     public partial class OrderDiscountLinesResponse : IValidatableObject
@@ -42,8 +42,10 @@ namespace Conekta.net.Model
         /// </summary>
         /// <param name="hasMore">Indicates if there are more pages to be requested (required).</param>
         /// <param name="varObject">Object type, in this case is list (required).</param>
+        /// <param name="nextPageUrl">URL of the next page..</param>
+        /// <param name="previousPageUrl">Url of the previous page..</param>
         /// <param name="data">data.</param>
-        public OrderDiscountLinesResponse(bool hasMore = default(bool), string varObject = default(string), List<DiscountLinesDataResponse> data = default(List<DiscountLinesDataResponse>))
+        public OrderDiscountLinesResponse(bool hasMore = default(bool), string varObject = default(string), string nextPageUrl = default(string), string previousPageUrl = default(string), List<DiscountLinesDataResponse> data = default(List<DiscountLinesDataResponse>))
         {
             this.HasMore = hasMore;
             // to ensure "varObject" is required (not null)
@@ -52,6 +54,8 @@ namespace Conekta.net.Model
                 throw new ArgumentNullException("varObject is a required property for OrderDiscountLinesResponse and cannot be null");
             }
             this.Object = varObject;
+            this.NextPageUrl = nextPageUrl;
+            this.PreviousPageUrl = previousPageUrl;
             this.Data = data;
         }
 
@@ -76,6 +80,26 @@ namespace Conekta.net.Model
         public string Object { get; set; }
 
         /// <summary>
+        /// URL of the next page.
+        /// </summary>
+        /// <value>URL of the next page.</value>
+        /*
+        <example>https://api.conekta.io/resources?limit&#x3D;10&amp;next&#x3D;chrg_1</example>
+        */
+        [DataMember(Name = "next_page_url", EmitDefaultValue = false)]
+        public string NextPageUrl { get; set; }
+
+        /// <summary>
+        /// Url of the previous page.
+        /// </summary>
+        /// <value>Url of the previous page.</value>
+        /*
+        <example>https://api.conekta.io/resources?limit&#x3D;10&amp;previous&#x3D;chrg_1</example>
+        */
+        [DataMember(Name = "previous_page_url", EmitDefaultValue = false)]
+        public string PreviousPageUrl { get; set; }
+
+        /// <summary>
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name = "data", EmitDefaultValue = false)]
@@ -91,6 +115,8 @@ namespace Conekta.net.Model
             sb.Append("class OrderDiscountLinesResponse {\n");
             sb.Append("  HasMore: ").Append(HasMore).Append("\n");
             sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  NextPageUrl: ").Append(NextPageUrl).Append("\n");
+            sb.Append("  PreviousPageUrl: ").Append(PreviousPageUrl).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

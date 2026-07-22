@@ -91,9 +91,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
+        /// <param name="varClient">client of the object to be retrieved (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OrderResponse</returns>
-        OrderResponse GetOrderById(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
+        OrderResponse GetOrderById(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), string varClient = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Get Order
@@ -105,9 +106,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
+        /// <param name="varClient">client of the object to be retrieved (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OrderResponse</returns>
-        ApiResponse<OrderResponse> GetOrderByIdWithHttpInfo(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
+        ApiResponse<OrderResponse> GetOrderByIdWithHttpInfo(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), string varClient = default(string), int operationIndex = 0);
         /// <summary>
         /// Get a list of Orders
         /// </summary>
@@ -250,11 +252,11 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="orderUpdateRequest">requested field for an order</param>
+        /// <param name="orderUpdate">requested field for an order</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OrderResponse</returns>
-        OrderResponse UpdateOrder(string id, OrderUpdateRequest orderUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        OrderResponse UpdateOrder(string id, OrderUpdate orderUpdate, string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Update Order
@@ -264,11 +266,11 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="orderUpdateRequest">requested field for an order</param>
+        /// <param name="orderUpdate">requested field for an order</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OrderResponse</returns>
-        ApiResponse<OrderResponse> UpdateOrderWithHttpInfo(string id, OrderUpdateRequest orderUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<OrderResponse> UpdateOrderWithHttpInfo(string id, OrderUpdate orderUpdate, string acceptLanguage = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -346,10 +348,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
+        /// <param name="varClient">client of the object to be retrieved (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OrderResponse</returns>
-        System.Threading.Tasks.Task<OrderResponse> GetOrderByIdAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<OrderResponse> GetOrderByIdAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), string varClient = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Order
@@ -361,10 +364,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
+        /// <param name="varClient">client of the object to be retrieved (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrderResponse>> GetOrderByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<OrderResponse>> GetOrderByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), string varClient = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get a list of Orders
         /// </summary>
@@ -515,12 +519,12 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="orderUpdateRequest">requested field for an order</param>
+        /// <param name="orderUpdate">requested field for an order</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OrderResponse</returns>
-        System.Threading.Tasks.Task<OrderResponse> UpdateOrderAsync(string id, OrderUpdateRequest orderUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<OrderResponse> UpdateOrderAsync(string id, OrderUpdate orderUpdate, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Order
@@ -530,12 +534,12 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="orderUpdateRequest">requested field for an order</param>
+        /// <param name="orderUpdate">requested field for an order</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrderResponse>> UpdateOrderWithHttpInfoAsync(string id, OrderUpdateRequest orderUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<OrderResponse>> UpdateOrderWithHttpInfoAsync(string id, OrderUpdate orderUpdate, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1025,11 +1029,12 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
+        /// <param name="varClient">client of the object to be retrieved (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OrderResponse</returns>
-        public OrderResponse GetOrderById(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
+        public OrderResponse GetOrderById(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), string varClient = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<OrderResponse> localVarResponse = GetOrderByIdWithHttpInfo(id, acceptLanguage, xChildCompanyId);
+            Conekta.net.Client.ApiResponse<OrderResponse> localVarResponse = GetOrderByIdWithHttpInfo(id, acceptLanguage, xChildCompanyId, varClient);
             return localVarResponse.Data;
         }
 
@@ -1040,9 +1045,10 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
+        /// <param name="varClient">client of the object to be retrieved (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OrderResponse</returns>
-        public Conekta.net.Client.ApiResponse<OrderResponse> GetOrderByIdWithHttpInfo(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<OrderResponse> GetOrderByIdWithHttpInfo(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), string varClient = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1073,6 +1079,10 @@ namespace Conekta.net.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (varClient != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "client", varClient));
+            }
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
@@ -1113,12 +1123,13 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
+        /// <param name="varClient">client of the object to be retrieved (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OrderResponse</returns>
-        public async System.Threading.Tasks.Task<OrderResponse> GetOrderByIdAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OrderResponse> GetOrderByIdAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), string varClient = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<OrderResponse> localVarResponse = await GetOrderByIdWithHttpInfoAsync(id, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<OrderResponse> localVarResponse = await GetOrderByIdWithHttpInfoAsync(id, acceptLanguage, xChildCompanyId, varClient, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1129,10 +1140,11 @@ namespace Conekta.net.Api
         /// <param name="id">Identifier of the resource</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
+        /// <param name="varClient">client of the object to be retrieved (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OrderResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<OrderResponse>> GetOrderByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<OrderResponse>> GetOrderByIdWithHttpInfoAsync(string id, string acceptLanguage = default(string), string xChildCompanyId = default(string), string varClient = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1164,6 +1176,10 @@ namespace Conekta.net.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Conekta.net.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (varClient != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "client", varClient));
+            }
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
@@ -2083,13 +2099,13 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="orderUpdateRequest">requested field for an order</param>
+        /// <param name="orderUpdate">requested field for an order</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OrderResponse</returns>
-        public OrderResponse UpdateOrder(string id, OrderUpdateRequest orderUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        public OrderResponse UpdateOrder(string id, OrderUpdate orderUpdate, string acceptLanguage = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<OrderResponse> localVarResponse = UpdateOrderWithHttpInfo(id, orderUpdateRequest, acceptLanguage);
+            Conekta.net.Client.ApiResponse<OrderResponse> localVarResponse = UpdateOrderWithHttpInfo(id, orderUpdate, acceptLanguage);
             return localVarResponse.Data;
         }
 
@@ -2098,11 +2114,11 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="orderUpdateRequest">requested field for an order</param>
+        /// <param name="orderUpdate">requested field for an order</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OrderResponse</returns>
-        public Conekta.net.Client.ApiResponse<OrderResponse> UpdateOrderWithHttpInfo(string id, OrderUpdateRequest orderUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<OrderResponse> UpdateOrderWithHttpInfo(string id, OrderUpdate orderUpdate, string acceptLanguage = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -2110,10 +2126,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling OrdersApi->UpdateOrder");
             }
 
-            // verify the required parameter 'orderUpdateRequest' is set
-            if (orderUpdateRequest == null)
+            // verify the required parameter 'orderUpdate' is set
+            if (orderUpdate == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'orderUpdateRequest' when calling OrdersApi->UpdateOrder");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'orderUpdate' when calling OrdersApi->UpdateOrder");
             }
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -2144,7 +2160,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
-            localVarRequestOptions.Data = orderUpdateRequest;
+            localVarRequestOptions.Data = orderUpdate;
 
             localVarRequestOptions.Operation = "OrdersApi.UpdateOrder";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -2175,14 +2191,14 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="orderUpdateRequest">requested field for an order</param>
+        /// <param name="orderUpdate">requested field for an order</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OrderResponse</returns>
-        public async System.Threading.Tasks.Task<OrderResponse> UpdateOrderAsync(string id, OrderUpdateRequest orderUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OrderResponse> UpdateOrderAsync(string id, OrderUpdate orderUpdate, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<OrderResponse> localVarResponse = await UpdateOrderWithHttpInfoAsync(id, orderUpdateRequest, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<OrderResponse> localVarResponse = await UpdateOrderWithHttpInfoAsync(id, orderUpdate, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2191,12 +2207,12 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="orderUpdateRequest">requested field for an order</param>
+        /// <param name="orderUpdate">requested field for an order</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OrderResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<OrderResponse>> UpdateOrderWithHttpInfoAsync(string id, OrderUpdateRequest orderUpdateRequest, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<OrderResponse>> UpdateOrderWithHttpInfoAsync(string id, OrderUpdate orderUpdate, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -2204,10 +2220,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling OrdersApi->UpdateOrder");
             }
 
-            // verify the required parameter 'orderUpdateRequest' is set
-            if (orderUpdateRequest == null)
+            // verify the required parameter 'orderUpdate' is set
+            if (orderUpdate == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'orderUpdateRequest' when calling OrdersApi->UpdateOrder");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'orderUpdate' when calling OrdersApi->UpdateOrder");
             }
 
 
@@ -2239,7 +2255,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
-            localVarRequestOptions.Data = orderUpdateRequest;
+            localVarRequestOptions.Data = orderUpdate;
 
             localVarRequestOptions.Operation = "OrdersApi.UpdateOrder";
             localVarRequestOptions.OperationIndex = operationIndex;

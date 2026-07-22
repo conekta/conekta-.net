@@ -33,55 +33,113 @@ namespace Conekta.net.Model
     public partial class OrderResponseCheckout : IValidatableObject
     {
         /// <summary>
+        /// Defines ExcludeCardNetworks
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ExcludeCardNetworksEnum
+        {
+            /// <summary>
+            /// Enum Visa for value: visa
+            /// </summary>
+            [EnumMember(Value = "visa")]
+            Visa = 1,
+
+            /// <summary>
+            /// Enum Mastercard for value: mastercard
+            /// </summary>
+            [EnumMember(Value = "mastercard")]
+            Mastercard = 2,
+
+            /// <summary>
+            /// Enum Amex for value: amex
+            /// </summary>
+            [EnumMember(Value = "amex")]
+            Amex = 3
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="OrderResponseCheckout" /> class.
         /// </summary>
-        /// <param name="allowedPaymentMethods">Are the payment methods available for this link.</param>
+        [JsonConstructorAttribute]
+        protected OrderResponseCheckout() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrderResponseCheckout" /> class.
+        /// </summary>
+        /// <param name="allowedPaymentMethods">Are the payment methods available for this link (required).</param>
         /// <param name="canNotExpire">canNotExpire.</param>
         /// <param name="emailsSent">emailsSent.</param>
         /// <param name="excludeCardNetworks">excludeCardNetworks.</param>
         /// <param name="expiresAt">expiresAt.</param>
         /// <param name="failureUrl">failureUrl.</param>
         /// <param name="force3dsFlow">force3dsFlow.</param>
-        /// <param name="id">id.</param>
+        /// <param name="forceSaveCard">Indicates whether the card used for the payment should be saved for future purchases. This field is only applicable for card payments..</param>
+        /// <param name="id">id (required).</param>
         /// <param name="isRedirectOnFailure">isRedirectOnFailure.</param>
         /// <param name="livemode">livemode.</param>
         /// <param name="maxFailedRetries">Number of retries allowed before the checkout is marked as failed.</param>
         /// <param name="metadata">metadata.</param>
         /// <param name="monthlyInstallmentsEnabled">monthlyInstallmentsEnabled.</param>
         /// <param name="monthlyInstallmentsOptions">monthlyInstallmentsOptions.</param>
-        /// <param name="name">name.</param>
+        /// <param name="name">name (required).</param>
         /// <param name="needsShippingContact">needsShippingContact.</param>
-        /// <param name="varObject">varObject.</param>
+        /// <param name="varObject">varObject (required).</param>
         /// <param name="onDemandEnabled">onDemandEnabled.</param>
         /// <param name="paidPaymentsCount">paidPaymentsCount.</param>
         /// <param name="recurrent">recurrent.</param>
         /// <param name="redirectionTime">number of seconds to wait before redirecting to the success_url.</param>
         /// <param name="slug">slug.</param>
         /// <param name="smsSent">smsSent.</param>
-        /// <param name="successUrl">successUrl.</param>
+        /// <param name="successUrl">Redirection url back to the site in case of successful payment, applies only to HostedPayment.</param>
         /// <param name="startsAt">startsAt.</param>
         /// <param name="status">status.</param>
-        /// <param name="type">type.</param>
-        /// <param name="url">url.</param>
-        public OrderResponseCheckout(List<string> allowedPaymentMethods = default(List<string>), bool canNotExpire = default(bool), int emailsSent = default(int), List<Object> excludeCardNetworks = default(List<Object>), long expiresAt = default(long), string failureUrl = default(string), bool force3dsFlow = default(bool), string id = default(string), bool isRedirectOnFailure = default(bool), bool livemode = default(bool), int? maxFailedRetries = default(int?), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string name = default(string), bool needsShippingContact = default(bool), string varObject = default(string), bool? onDemandEnabled = default(bool?), int paidPaymentsCount = default(int), bool recurrent = default(bool), int? redirectionTime = default(int?), string slug = default(string), int smsSent = default(int), string successUrl = default(string), int startsAt = default(int), string status = default(string), string type = default(string), string url = default(string))
+        /// <param name="type">This field represents the type of checkout, which determines the user experience during the payment process. &#39;HostedPayment&#39; will redirect the customer to a Conekta-hosted page to complete the payment, while &#39;Integration&#39; allows the payment process to be handled entirely on your site using Conekta&#39;s APIs and SDKs. (required).</param>
+        /// <param name="url">Indicate the url of the Conekta component to complete the payment. For HostedPayment, this will be a Conekta-hosted page.</param>
+        public OrderResponseCheckout(List<string> allowedPaymentMethods = default(List<string>), bool canNotExpire = default(bool), int emailsSent = default(int), List<ExcludeCardNetworksEnum> excludeCardNetworks = default(List<ExcludeCardNetworksEnum>), long expiresAt = default(long), string failureUrl = default(string), bool force3dsFlow = default(bool), bool forceSaveCard = default(bool), string id = default(string), bool isRedirectOnFailure = default(bool), bool livemode = default(bool), int maxFailedRetries = default(int), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string name = default(string), bool needsShippingContact = default(bool), string varObject = default(string), bool onDemandEnabled = default(bool), int paidPaymentsCount = default(int), bool recurrent = default(bool), int redirectionTime = default(int), string slug = default(string), int smsSent = default(int), string successUrl = default(string), int startsAt = default(int), string status = default(string), string type = default(string), string url = default(string))
         {
+            // to ensure "allowedPaymentMethods" is required (not null)
+            if (allowedPaymentMethods == null)
+            {
+                throw new ArgumentNullException("allowedPaymentMethods is a required property for OrderResponseCheckout and cannot be null");
+            }
             this.AllowedPaymentMethods = allowedPaymentMethods;
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for OrderResponseCheckout and cannot be null");
+            }
+            this.Id = id;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for OrderResponseCheckout and cannot be null");
+            }
+            this.Name = name;
+            // to ensure "varObject" is required (not null)
+            if (varObject == null)
+            {
+                throw new ArgumentNullException("varObject is a required property for OrderResponseCheckout and cannot be null");
+            }
+            this.Object = varObject;
+            // to ensure "type" is required (not null)
+            if (type == null)
+            {
+                throw new ArgumentNullException("type is a required property for OrderResponseCheckout and cannot be null");
+            }
+            this.Type = type;
             this.CanNotExpire = canNotExpire;
             this.EmailsSent = emailsSent;
             this.ExcludeCardNetworks = excludeCardNetworks;
             this.ExpiresAt = expiresAt;
             this.FailureUrl = failureUrl;
             this.Force3dsFlow = force3dsFlow;
-            this.Id = id;
+            this.ForceSaveCard = forceSaveCard;
             this.IsRedirectOnFailure = isRedirectOnFailure;
             this.Livemode = livemode;
             this.MaxFailedRetries = maxFailedRetries;
             this.Metadata = metadata;
             this.MonthlyInstallmentsEnabled = monthlyInstallmentsEnabled;
             this.MonthlyInstallmentsOptions = monthlyInstallmentsOptions;
-            this.Name = name;
             this.NeedsShippingContact = needsShippingContact;
-            this.Object = varObject;
             this.OnDemandEnabled = onDemandEnabled;
             this.PaidPaymentsCount = paidPaymentsCount;
             this.Recurrent = recurrent;
@@ -91,7 +149,6 @@ namespace Conekta.net.Model
             this.SuccessUrl = successUrl;
             this.StartsAt = startsAt;
             this.Status = status;
-            this.Type = type;
             this.Url = url;
         }
 
@@ -100,9 +157,9 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>Are the payment methods available for this link</value>
         /*
-        <example>[&quot;cash&quot;,&quot;card&quot;,&quot;bank_transfer&quot;,&quot;bnpl&quot;,&quot;pay_by_bank&quot;]</example>
+        <example>[cash, card, bank_transfer, bnpl, pay_by_bank, apple, google]</example>
         */
-        [DataMember(Name = "allowed_payment_methods", EmitDefaultValue = false)]
+        [DataMember(Name = "allowed_payment_methods", IsRequired = true, EmitDefaultValue = true)]
         public List<string> AllowedPaymentMethods { get; set; }
 
         /// <summary>
@@ -126,8 +183,11 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets ExcludeCardNetworks
         /// </summary>
+        /*
+        <example>[visa, amex]</example>
+        */
         [DataMember(Name = "exclude_card_networks", EmitDefaultValue = false)]
-        public List<Object> ExcludeCardNetworks { get; set; }
+        public List<OrderResponseCheckout.ExcludeCardNetworksEnum> ExcludeCardNetworks { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpiresAt
@@ -157,12 +217,22 @@ namespace Conekta.net.Model
         public bool Force3dsFlow { get; set; }
 
         /// <summary>
+        /// Indicates whether the card used for the payment should be saved for future purchases. This field is only applicable for card payments.
+        /// </summary>
+        /// <value>Indicates whether the card used for the payment should be saved for future purchases. This field is only applicable for card payments.</value>
+        /*
+        <example>false</example>
+        */
+        [DataMember(Name = "force_save_card", EmitDefaultValue = true)]
+        public bool ForceSaveCard { get; set; }
+
+        /// <summary>
         /// Gets or Sets Id
         /// </summary>
         /*
         <example>6fca054a-8519-4c43-971e-cea35cc519bb</example>
         */
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
@@ -190,8 +260,8 @@ namespace Conekta.net.Model
         /*
         <example>3</example>
         */
-        [DataMember(Name = "max_failed_retries", EmitDefaultValue = true)]
-        public int? MaxFailedRetries { get; set; }
+        [DataMember(Name = "max_failed_retries", EmitDefaultValue = false)]
+        public int MaxFailedRetries { get; set; }
 
         /// <summary>
         /// Gets or Sets Metadata
@@ -220,7 +290,7 @@ namespace Conekta.net.Model
         /*
         <example>ord-2tNDzhA4Akmzj11AS</example>
         */
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -238,7 +308,7 @@ namespace Conekta.net.Model
         /*
         <example>checkout</example>
         */
-        [DataMember(Name = "object", EmitDefaultValue = false)]
+        [DataMember(Name = "object", IsRequired = true, EmitDefaultValue = true)]
         public string Object { get; set; }
 
         /// <summary>
@@ -248,7 +318,7 @@ namespace Conekta.net.Model
         <example>true</example>
         */
         [DataMember(Name = "on_demand_enabled", EmitDefaultValue = true)]
-        public bool? OnDemandEnabled { get; set; }
+        public bool OnDemandEnabled { get; set; }
 
         /// <summary>
         /// Gets or Sets PaidPaymentsCount
@@ -275,8 +345,8 @@ namespace Conekta.net.Model
         /*
         <example>2</example>
         */
-        [DataMember(Name = "redirection_time", EmitDefaultValue = true)]
-        public int? RedirectionTime { get; set; }
+        [DataMember(Name = "redirection_time", EmitDefaultValue = false)]
+        public int RedirectionTime { get; set; }
 
         /// <summary>
         /// Gets or Sets Slug
@@ -297,8 +367,9 @@ namespace Conekta.net.Model
         public int SmsSent { get; set; }
 
         /// <summary>
-        /// Gets or Sets SuccessUrl
+        /// Redirection url back to the site in case of successful payment, applies only to HostedPayment
         /// </summary>
+        /// <value>Redirection url back to the site in case of successful payment, applies only to HostedPayment</value>
         /*
         <example>http://187.216.228.66:2222/SysVentasPagos/Acceso.aspx</example>
         */
@@ -324,17 +395,19 @@ namespace Conekta.net.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// Gets or Sets Type
+        /// This field represents the type of checkout, which determines the user experience during the payment process. &#39;HostedPayment&#39; will redirect the customer to a Conekta-hosted page to complete the payment, while &#39;Integration&#39; allows the payment process to be handled entirely on your site using Conekta&#39;s APIs and SDKs.
         /// </summary>
+        /// <value>This field represents the type of checkout, which determines the user experience during the payment process. &#39;HostedPayment&#39; will redirect the customer to a Conekta-hosted page to complete the payment, while &#39;Integration&#39; allows the payment process to be handled entirely on your site using Conekta&#39;s APIs and SDKs.</value>
         /*
         <example>HostedPayment</example>
         */
-        [DataMember(Name = "type", EmitDefaultValue = false)]
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
-        /// Gets or Sets Url
+        /// Indicate the url of the Conekta component to complete the payment. For HostedPayment, this will be a Conekta-hosted page
         /// </summary>
+        /// <value>Indicate the url of the Conekta component to complete the payment. For HostedPayment, this will be a Conekta-hosted page</value>
         /*
         <example>https://pay.conekta.io/checkout/6fca054a85194c43971ecea35cc519bb</example>
         */
@@ -356,6 +429,7 @@ namespace Conekta.net.Model
             sb.Append("  ExpiresAt: ").Append(ExpiresAt).Append("\n");
             sb.Append("  FailureUrl: ").Append(FailureUrl).Append("\n");
             sb.Append("  Force3dsFlow: ").Append(Force3dsFlow).Append("\n");
+            sb.Append("  ForceSaveCard: ").Append(ForceSaveCard).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  IsRedirectOnFailure: ").Append(IsRedirectOnFailure).Append("\n");
             sb.Append("  Livemode: ").Append(Livemode).Append("\n");

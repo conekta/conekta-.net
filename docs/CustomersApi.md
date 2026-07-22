@@ -116,7 +116,7 @@ catch (ApiException e)
 
 <a id="createcustomerfiscalentities"></a>
 # **CreateCustomerFiscalEntities**
-> CreateCustomerFiscalEntitiesResponse CreateCustomerFiscalEntities (string id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, string acceptLanguage = null, string xChildCompanyId = null)
+> CreateCustomerFiscalEntitiesResponse CreateCustomerFiscalEntities (string id, FiscalEntityRequest fiscalEntityRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
 Create Fiscal Entity
 
@@ -143,14 +143,14 @@ namespace Example
 
             var apiInstance = new CustomersApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
-            var customerFiscalEntitiesRequest = new CustomerFiscalEntitiesRequest(); // CustomerFiscalEntitiesRequest | requested field for customer fiscal entities
+            var fiscalEntityRequest = new FiscalEntityRequest(); // FiscalEntityRequest | requested field for customer fiscal entities
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
             var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Create Fiscal Entity
-                CreateCustomerFiscalEntitiesResponse result = apiInstance.CreateCustomerFiscalEntities(id, customerFiscalEntitiesRequest, acceptLanguage, xChildCompanyId);
+                CreateCustomerFiscalEntitiesResponse result = apiInstance.CreateCustomerFiscalEntities(id, fiscalEntityRequest, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -171,7 +171,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create Fiscal Entity
-    ApiResponse<CreateCustomerFiscalEntitiesResponse> response = apiInstance.CreateCustomerFiscalEntitiesWithHttpInfo(id, customerFiscalEntitiesRequest, acceptLanguage, xChildCompanyId);
+    ApiResponse<CreateCustomerFiscalEntitiesResponse> response = apiInstance.CreateCustomerFiscalEntitiesWithHttpInfo(id, fiscalEntityRequest, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -189,7 +189,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
-| **customerFiscalEntitiesRequest** | [**CustomerFiscalEntitiesRequest**](CustomerFiscalEntitiesRequest.md) | requested field for customer fiscal entities |  |
+| **fiscalEntityRequest** | [**FiscalEntityRequest**](FiscalEntityRequest.md) | requested field for customer fiscal entities |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 | **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
@@ -633,7 +633,7 @@ catch (ApiException e)
 
 <a id="updatecustomerfiscalentities"></a>
 # **UpdateCustomerFiscalEntities**
-> UpdateCustomerFiscalEntitiesResponse UpdateCustomerFiscalEntities (string id, string fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, string acceptLanguage = null, string xChildCompanyId = null)
+> UpdateCustomerFiscalEntitiesResponse UpdateCustomerFiscalEntities (string id, string fiscalEntitiesId, UpdateFiscalEntityRequest updateFiscalEntityRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
 Update  Fiscal Entity
 
@@ -661,14 +661,14 @@ namespace Example
             var apiInstance = new CustomersApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var fiscalEntitiesId = fis_ent_2tQ8HkkfbauaKP9Ho;  // string | identifier
-            var customerUpdateFiscalEntitiesRequest = new CustomerUpdateFiscalEntitiesRequest(); // CustomerUpdateFiscalEntitiesRequest | requested field for customer update fiscal entities
+            var updateFiscalEntityRequest = new UpdateFiscalEntityRequest(); // UpdateFiscalEntityRequest | requested field for customer update fiscal entities
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
             var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Update  Fiscal Entity
-                UpdateCustomerFiscalEntitiesResponse result = apiInstance.UpdateCustomerFiscalEntities(id, fiscalEntitiesId, customerUpdateFiscalEntitiesRequest, acceptLanguage, xChildCompanyId);
+                UpdateCustomerFiscalEntitiesResponse result = apiInstance.UpdateCustomerFiscalEntities(id, fiscalEntitiesId, updateFiscalEntityRequest, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -689,7 +689,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update  Fiscal Entity
-    ApiResponse<UpdateCustomerFiscalEntitiesResponse> response = apiInstance.UpdateCustomerFiscalEntitiesWithHttpInfo(id, fiscalEntitiesId, customerUpdateFiscalEntitiesRequest, acceptLanguage, xChildCompanyId);
+    ApiResponse<UpdateCustomerFiscalEntitiesResponse> response = apiInstance.UpdateCustomerFiscalEntitiesWithHttpInfo(id, fiscalEntitiesId, updateFiscalEntityRequest, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -708,7 +708,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
 | **fiscalEntitiesId** | **string** | identifier |  |
-| **customerUpdateFiscalEntitiesRequest** | [**CustomerUpdateFiscalEntitiesRequest**](CustomerUpdateFiscalEntitiesRequest.md) | requested field for customer update fiscal entities |  |
+| **updateFiscalEntityRequest** | [**UpdateFiscalEntityRequest**](UpdateFiscalEntityRequest.md) | requested field for customer update fiscal entities |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 | **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 

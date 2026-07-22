@@ -35,23 +35,32 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderResponseCustomerInfo" /> class.
         /// </summary>
+        /// <param name="varObject">varObject.</param>
         /// <param name="customerCustomReference">Custom reference.</param>
         /// <param name="name">name.</param>
         /// <param name="email">email.</param>
         /// <param name="phone">phone.</param>
         /// <param name="corporate">corporate (default to false).</param>
-        /// <param name="varObject">varObject.</param>
         /// <param name="customerId">customerId.</param>
-        public OrderResponseCustomerInfo(string customerCustomReference = default(string), string name = default(string), string email = default(string), string phone = default(string), bool corporate = false, string varObject = default(string), string customerId = default(string))
+        public OrderResponseCustomerInfo(string varObject = default(string), string customerCustomReference = default(string), string name = default(string), string email = default(string), string phone = default(string), bool corporate = false, string customerId = default(string))
         {
+            this.Object = varObject;
             this.CustomerCustomReference = customerCustomReference;
             this.Name = name;
             this.Email = email;
             this.Phone = phone;
             this.Corporate = corporate;
-            this.Object = varObject;
             this.CustomerId = customerId;
         }
+
+        /// <summary>
+        /// Gets or Sets Object
+        /// </summary>
+        /*
+        <example>customer_info</example>
+        */
+        [DataMember(Name = "object", EmitDefaultValue = false)]
+        public string Object { get; set; }
 
         /// <summary>
         /// Custom reference
@@ -60,7 +69,7 @@ namespace Conekta.net.Model
         /*
         <example>custom_reference</example>
         */
-        [DataMember(Name = "customer_custom_reference", EmitDefaultValue = true)]
+        [DataMember(Name = "customer_custom_reference", EmitDefaultValue = false)]
         public string CustomerCustomReference { get; set; }
 
         /// <summary>
@@ -97,15 +106,6 @@ namespace Conekta.net.Model
         public bool Corporate { get; set; }
 
         /// <summary>
-        /// Gets or Sets Object
-        /// </summary>
-        /*
-        <example>customer_info</example>
-        */
-        [DataMember(Name = "object", EmitDefaultValue = false)]
-        public string Object { get; set; }
-
-        /// <summary>
         /// Gets or Sets CustomerId
         /// </summary>
         /*
@@ -122,12 +122,12 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class OrderResponseCustomerInfo {\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  CustomerCustomReference: ").Append(CustomerCustomReference).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  Phone: ").Append(Phone).Append("\n");
             sb.Append("  Corporate: ").Append(Corporate).Append("\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  CustomerId: ").Append(CustomerId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

@@ -10,7 +10,7 @@ All URIs are relative to *https://api.conekta.io*
 
 <a id="createcustomershippingcontacts"></a>
 # **CreateCustomerShippingContacts**
-> CustomerShippingContactsResponse CreateCustomerShippingContacts (string id, CustomerShippingContacts customerShippingContacts, string acceptLanguage = null, string xChildCompanyId = null)
+> CustomerShippingContactsResponse CreateCustomerShippingContacts (string id, CustomerShippingContactsRequest customerShippingContactsRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
 Create a shipping contacts
 
@@ -37,14 +37,14 @@ namespace Example
 
             var apiInstance = new ShippingContactsApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
-            var customerShippingContacts = new CustomerShippingContacts(); // CustomerShippingContacts | requested field for customer shippings contacts
+            var customerShippingContactsRequest = new CustomerShippingContactsRequest(); // CustomerShippingContactsRequest | requested field for customer shippings contacts
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
             var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Create a shipping contacts
-                CustomerShippingContactsResponse result = apiInstance.CreateCustomerShippingContacts(id, customerShippingContacts, acceptLanguage, xChildCompanyId);
+                CustomerShippingContactsResponse result = apiInstance.CreateCustomerShippingContacts(id, customerShippingContactsRequest, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -65,7 +65,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create a shipping contacts
-    ApiResponse<CustomerShippingContactsResponse> response = apiInstance.CreateCustomerShippingContactsWithHttpInfo(id, customerShippingContacts, acceptLanguage, xChildCompanyId);
+    ApiResponse<CustomerShippingContactsResponse> response = apiInstance.CreateCustomerShippingContactsWithHttpInfo(id, customerShippingContactsRequest, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -83,7 +83,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
-| **customerShippingContacts** | [**CustomerShippingContacts**](CustomerShippingContacts.md) | requested field for customer shippings contacts |  |
+| **customerShippingContactsRequest** | [**CustomerShippingContactsRequest**](CustomerShippingContactsRequest.md) | requested field for customer shippings contacts |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 | **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
@@ -218,7 +218,7 @@ catch (ApiException e)
 
 <a id="updatecustomershippingcontacts"></a>
 # **UpdateCustomerShippingContacts**
-> CustomerShippingContactsResponse UpdateCustomerShippingContacts (string id, string shippingContactsId, CustomerUpdateShippingContacts customerUpdateShippingContacts, string acceptLanguage = null, string xChildCompanyId = null)
+> CustomerShippingContactsResponse UpdateCustomerShippingContacts (string id, string shippingContactsId, CustomerUpdateShippingContactsRequest customerUpdateShippingContactsRequest, string acceptLanguage = null, string xChildCompanyId = null)
 
 Update shipping contacts
 
@@ -246,14 +246,14 @@ namespace Example
             var apiInstance = new ShippingContactsApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
             var shippingContactsId = 6307a60c41de27127515a575;  // string | identifier
-            var customerUpdateShippingContacts = new CustomerUpdateShippingContacts(); // CustomerUpdateShippingContacts | requested field for customer update shippings contacts
+            var customerUpdateShippingContactsRequest = new CustomerUpdateShippingContactsRequest(); // CustomerUpdateShippingContactsRequest | requested field for customer update shippings contacts
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
             var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Update shipping contacts
-                CustomerShippingContactsResponse result = apiInstance.UpdateCustomerShippingContacts(id, shippingContactsId, customerUpdateShippingContacts, acceptLanguage, xChildCompanyId);
+                CustomerShippingContactsResponse result = apiInstance.UpdateCustomerShippingContacts(id, shippingContactsId, customerUpdateShippingContactsRequest, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -274,7 +274,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update shipping contacts
-    ApiResponse<CustomerShippingContactsResponse> response = apiInstance.UpdateCustomerShippingContactsWithHttpInfo(id, shippingContactsId, customerUpdateShippingContacts, acceptLanguage, xChildCompanyId);
+    ApiResponse<CustomerShippingContactsResponse> response = apiInstance.UpdateCustomerShippingContactsWithHttpInfo(id, shippingContactsId, customerUpdateShippingContactsRequest, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -293,7 +293,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
 | **shippingContactsId** | **string** | identifier |  |
-| **customerUpdateShippingContacts** | [**CustomerUpdateShippingContacts**](CustomerUpdateShippingContacts.md) | requested field for customer update shippings contacts |  |
+| **customerUpdateShippingContactsRequest** | [**CustomerUpdateShippingContactsRequest**](CustomerUpdateShippingContactsRequest.md) | requested field for customer update shippings contacts |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 | **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 

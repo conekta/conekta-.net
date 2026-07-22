@@ -33,6 +33,31 @@ namespace Conekta.net.Model
     public partial class Checkout : IValidatableObject
     {
         /// <summary>
+        /// Defines ExcludeCardNetworks
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ExcludeCardNetworksEnum
+        {
+            /// <summary>
+            /// Enum Visa for value: visa
+            /// </summary>
+            [EnumMember(Value = "visa")]
+            Visa = 1,
+
+            /// <summary>
+            /// Enum Mastercard for value: mastercard
+            /// </summary>
+            [EnumMember(Value = "mastercard")]
+            Mastercard = 2,
+
+            /// <summary>
+            /// Enum Amex for value: amex
+            /// </summary>
+            [EnumMember(Value = "amex")]
+            Amex = 3
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="Checkout" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -41,7 +66,8 @@ namespace Conekta.net.Model
         /// Initializes a new instance of the <see cref="Checkout" /> class.
         /// </summary>
         /// <param name="allowedPaymentMethods">Those are the payment methods that will be available for the link (required).</param>
-        /// <param name="expiresAt">It is the time when the link will expire. It is expressed in seconds since the Unix epoch. The valid range is from 2 to 365 days (the valid range will be taken from the next day of the creation date at 00:01 hrs)  (required).</param>
+        /// <param name="excludeCardNetworks">List of card networks to exclude from the checkout. This field is only applicable for card payments..</param>
+        /// <param name="expiresAt">It is the time when the link will expire.  It is expressed in seconds since the Unix epoch. The valid range is from 5 minutes to 365 days from the creation date.  (required).</param>
         /// <param name="monthlyInstallmentsEnabled">This flag allows you to specify if months without interest will be active..</param>
         /// <param name="monthlyInstallmentsOptions">This field allows you to specify the number of months without interest..</param>
         /// <param name="threeDsMode">Indicates the 3DS2 mode for the order, either smart or strict. This property is only applicable when 3DS is enabled. When 3DS is disabled, this field should be null..</param>
@@ -51,9 +77,10 @@ namespace Conekta.net.Model
         /// <param name="planIds">It is a list of plan IDs that will be associated with the order..</param>
         /// <param name="orderTemplate">orderTemplate (required).</param>
         /// <param name="paymentsLimitCount">It is the number of payments that can be made through the link..</param>
+        /// <param name="successUrl">The URL to redirect to after a successful payment..</param>
         /// <param name="recurrent">false: single use. true: multiple payments (required).</param>
         /// <param name="type">It is the type of link that will be created. It must be a valid type. (required).</param>
-        public Checkout(List<string> allowedPaymentMethods = default(List<string>), long expiresAt = default(long), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string threeDsMode = default(string), string name = default(string), bool needsShippingContact = default(bool), bool? onDemandEnabled = default(bool?), List<string> planIds = default(List<string>), CheckoutOrderTemplate orderTemplate = default(CheckoutOrderTemplate), int paymentsLimitCount = default(int), bool recurrent = default(bool), string type = default(string))
+        public Checkout(List<string> allowedPaymentMethods = default(List<string>), List<ExcludeCardNetworksEnum> excludeCardNetworks = default(List<ExcludeCardNetworksEnum>), long expiresAt = default(long), bool monthlyInstallmentsEnabled = default(bool), List<int> monthlyInstallmentsOptions = default(List<int>), string threeDsMode = default(string), string name = default(string), bool needsShippingContact = default(bool), bool onDemandEnabled = default(bool), List<string> planIds = default(List<string>), CheckoutOrderTemplate orderTemplate = default(CheckoutOrderTemplate), int paymentsLimitCount = default(int), string successUrl = default(string), bool recurrent = default(bool), string type = default(string))
         {
             // to ensure "allowedPaymentMethods" is required (not null)
             if (allowedPaymentMethods == null)
@@ -81,6 +108,7 @@ namespace Conekta.net.Model
                 throw new ArgumentNullException("type is a required property for Checkout and cannot be null");
             }
             this.Type = type;
+            this.ExcludeCardNetworks = excludeCardNetworks;
             this.MonthlyInstallmentsEnabled = monthlyInstallmentsEnabled;
             this.MonthlyInstallmentsOptions = monthlyInstallmentsOptions;
             this.ThreeDsMode = threeDsMode;
@@ -88,6 +116,7 @@ namespace Conekta.net.Model
             this.OnDemandEnabled = onDemandEnabled;
             this.PlanIds = planIds;
             this.PaymentsLimitCount = paymentsLimitCount;
+            this.SuccessUrl = successUrl;
         }
 
         /// <summary>
@@ -95,15 +124,25 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>Those are the payment methods that will be available for the link</value>
         /*
-        <example>[&quot;cash&quot;,&quot;card&quot;,&quot;bank_transfer&quot;,&quot;bnpl&quot;,&quot;pay_by_bank&quot;]</example>
+        <example>[cash, card, bank_transfer, bnpl, pay_by_bank]</example>
         */
         [DataMember(Name = "allowed_payment_methods", IsRequired = true, EmitDefaultValue = true)]
         public List<string> AllowedPaymentMethods { get; set; }
 
         /// <summary>
-        /// It is the time when the link will expire. It is expressed in seconds since the Unix epoch. The valid range is from 2 to 365 days (the valid range will be taken from the next day of the creation date at 00:01 hrs) 
+        /// List of card networks to exclude from the checkout. This field is only applicable for card payments.
         /// </summary>
-        /// <value>It is the time when the link will expire. It is expressed in seconds since the Unix epoch. The valid range is from 2 to 365 days (the valid range will be taken from the next day of the creation date at 00:01 hrs) </value>
+        /// <value>List of card networks to exclude from the checkout. This field is only applicable for card payments.</value>
+        /*
+        <example>[visa, amex]</example>
+        */
+        [DataMember(Name = "exclude_card_networks", EmitDefaultValue = false)]
+        public List<Checkout.ExcludeCardNetworksEnum> ExcludeCardNetworks { get; set; }
+
+        /// <summary>
+        /// It is the time when the link will expire.  It is expressed in seconds since the Unix epoch. The valid range is from 5 minutes to 365 days from the creation date. 
+        /// </summary>
+        /// <value>It is the time when the link will expire.  It is expressed in seconds since the Unix epoch. The valid range is from 5 minutes to 365 days from the creation date. </value>
         /*
         <example>1680397724</example>
         */
@@ -125,7 +164,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>This field allows you to specify the number of months without interest.</value>
         /*
-        <example>[3,6,12]</example>
+        <example>[3, 6, 12]</example>
         */
         [DataMember(Name = "monthly_installments_options", EmitDefaultValue = false)]
         public List<int> MonthlyInstallmentsOptions { get; set; }
@@ -134,7 +173,7 @@ namespace Conekta.net.Model
         /// Indicates the 3DS2 mode for the order, either smart or strict. This property is only applicable when 3DS is enabled. When 3DS is disabled, this field should be null.
         /// </summary>
         /// <value>Indicates the 3DS2 mode for the order, either smart or strict. This property is only applicable when 3DS is enabled. When 3DS is disabled, this field should be null.</value>
-        [DataMember(Name = "three_ds_mode", EmitDefaultValue = true)]
+        [DataMember(Name = "three_ds_mode", EmitDefaultValue = false)]
         public string ThreeDsMode { get; set; }
 
         /// <summary>
@@ -165,14 +204,14 @@ namespace Conekta.net.Model
         <example>true</example>
         */
         [DataMember(Name = "on_demand_enabled", EmitDefaultValue = true)]
-        public bool? OnDemandEnabled { get; set; }
+        public bool OnDemandEnabled { get; set; }
 
         /// <summary>
         /// It is a list of plan IDs that will be associated with the order.
         /// </summary>
         /// <value>It is a list of plan IDs that will be associated with the order.</value>
         /*
-        <example>[&quot;plan_123&quot;,&quot;plan_456&quot;]</example>
+        <example>[plan_123, plan_456]</example>
         */
         [DataMember(Name = "plan_ids", EmitDefaultValue = false)]
         public List<string> PlanIds { get; set; }
@@ -192,6 +231,16 @@ namespace Conekta.net.Model
         */
         [DataMember(Name = "payments_limit_count", EmitDefaultValue = false)]
         public int PaymentsLimitCount { get; set; }
+
+        /// <summary>
+        /// The URL to redirect to after a successful payment.
+        /// </summary>
+        /// <value>The URL to redirect to after a successful payment.</value>
+        /*
+        <example>https://www.conekta.com/success</example>
+        */
+        [DataMember(Name = "success_url", EmitDefaultValue = false)]
+        public string SuccessUrl { get; set; }
 
         /// <summary>
         /// false: single use. true: multiple payments
@@ -222,6 +271,7 @@ namespace Conekta.net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class Checkout {\n");
             sb.Append("  AllowedPaymentMethods: ").Append(AllowedPaymentMethods).Append("\n");
+            sb.Append("  ExcludeCardNetworks: ").Append(ExcludeCardNetworks).Append("\n");
             sb.Append("  ExpiresAt: ").Append(ExpiresAt).Append("\n");
             sb.Append("  MonthlyInstallmentsEnabled: ").Append(MonthlyInstallmentsEnabled).Append("\n");
             sb.Append("  MonthlyInstallmentsOptions: ").Append(MonthlyInstallmentsOptions).Append("\n");
@@ -232,6 +282,7 @@ namespace Conekta.net.Model
             sb.Append("  PlanIds: ").Append(PlanIds).Append("\n");
             sb.Append("  OrderTemplate: ").Append(OrderTemplate).Append("\n");
             sb.Append("  PaymentsLimitCount: ").Append(PaymentsLimitCount).Append("\n");
+            sb.Append("  SuccessUrl: ").Append(SuccessUrl).Append("\n");
             sb.Append("  Recurrent: ").Append(Recurrent).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
@@ -254,6 +305,18 @@ namespace Conekta.net.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // ExpiresAt (long) minimum
+            if (this.ExpiresAt < (long)1)
+            {
+                yield return new ValidationResult("Invalid value for ExpiresAt, must be a value greater than or equal to 1.", new [] { "ExpiresAt" });
+            }
+
+            // PaymentsLimitCount (int) minimum
+            if (this.PaymentsLimitCount < (int)1)
+            {
+                yield return new ValidationResult("Invalid value for PaymentsLimitCount, must be a value greater than or equal to 1.", new [] { "PaymentsLimitCount" });
+            }
+
             yield break;
         }
     }

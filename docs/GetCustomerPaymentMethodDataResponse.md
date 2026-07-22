@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Object** | **string** |  | 
 **CreatedAt** | **long** |  | 
 **ParentId** | **string** |  | [optional] 
-**Agreements** | [**List&lt;PaymentMethodCashResponseAllOfAgreements&gt;**](PaymentMethodCashResponseAllOfAgreements.md) |  | [optional] 
+**Agreements** | [**List&lt;CashAgreementsResponse&gt;**](CashAgreementsResponse.md) |  | [optional] 
 **Reference** | **string** |  | [optional] 
 **Barcode** | **string** |  | [optional] 
 **BarcodeUrl** | **string** | URL to the barcode image, reference is the same as barcode | [optional] 
@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **ExpMonth** | **string** |  | [optional] 
 **ExpYear** | **string** |  | [optional] 
 **Brand** | **string** |  | [optional] 
+**Issuer** | **string** | Name of the institution that issued the card | [optional] 
 **Name** | **string** |  | [optional] 
 **Default** | **bool** |  | [optional] 
 **VisibleOnCheckout** | **bool** |  | [optional] 

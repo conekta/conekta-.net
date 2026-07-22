@@ -45,7 +45,7 @@ namespace Conekta.net.Model
         /// <param name="lastUsedAt">Unix timestamp in seconds with the api key was used.</param>
         /// <param name="role">Indicates if the api key is private or public.</param>
         /// <param name="deleted">deleted.</param>
-        public DeleteApiKeysResponse(bool active = default(bool), long createdAt = default(long), string description = default(string), bool livemode = default(bool), string prefix = default(string), string id = default(string), string varObject = default(string), long? lastUsedAt = default(long?), string role = default(string), bool deleted = default(bool))
+        public DeleteApiKeysResponse(bool active = default(bool), long createdAt = default(long), string description = default(string), bool livemode = default(bool), string prefix = default(string), string id = default(string), string varObject = default(string), long lastUsedAt = default(long), string role = default(string), bool deleted = default(bool))
         {
             this.Active = active;
             this.CreatedAt = createdAt;
@@ -133,8 +133,8 @@ namespace Conekta.net.Model
         /// Unix timestamp in seconds with the api key was used
         /// </summary>
         /// <value>Unix timestamp in seconds with the api key was used</value>
-        [DataMember(Name = "last_used_at", EmitDefaultValue = true)]
-        public long? LastUsedAt { get; set; }
+        [DataMember(Name = "last_used_at", EmitDefaultValue = false)]
+        public long LastUsedAt { get; set; }
 
         /// <summary>
         /// Indicates if the api key is private or public

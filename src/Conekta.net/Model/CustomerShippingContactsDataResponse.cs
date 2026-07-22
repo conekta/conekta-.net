@@ -51,7 +51,7 @@ namespace Conekta.net.Model
         /// <param name="id">id (required).</param>
         /// <param name="varObject">varObject (required).</param>
         /// <param name="createdAt">createdAt (required).</param>
-        public CustomerShippingContactsDataResponse(string phone = default(string), string receiver = default(string), string betweenStreets = default(string), CustomerShippingContactsAddress address = default(CustomerShippingContactsAddress), string parentId = default(string), bool? varDefault = default(bool?), bool? deleted = default(bool?), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string id = default(string), string varObject = default(string), long createdAt = default(long))
+        public CustomerShippingContactsDataResponse(string phone = default(string), string receiver = default(string), string betweenStreets = default(string), CustomerShippingContactsRequestAddress address = default(CustomerShippingContactsRequestAddress), string parentId = default(string), bool varDefault = default(bool), bool deleted = default(bool), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string id = default(string), string varObject = default(string), long createdAt = default(long))
         {
             // to ensure "address" is required (not null)
             if (address == null)
@@ -115,7 +115,7 @@ namespace Conekta.net.Model
         /// Gets or Sets Address
         /// </summary>
         [DataMember(Name = "address", IsRequired = true, EmitDefaultValue = true)]
-        public CustomerShippingContactsAddress Address { get; set; }
+        public CustomerShippingContactsRequestAddress Address { get; set; }
 
         /// <summary>
         /// Gets or Sets ParentId
@@ -127,13 +127,13 @@ namespace Conekta.net.Model
         /// Gets or Sets Default
         /// </summary>
         [DataMember(Name = "default", EmitDefaultValue = true)]
-        public bool? Default { get; set; }
+        public bool Default { get; set; }
 
         /// <summary>
         /// Gets or Sets Deleted
         /// </summary>
         [DataMember(Name = "deleted", EmitDefaultValue = true)]
-        public bool? Deleted { get; set; }
+        public bool Deleted { get; set; }
 
         /// <summary>
         /// Metadata associated with the shipping contact

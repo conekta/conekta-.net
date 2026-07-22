@@ -97,7 +97,7 @@ namespace Conekta.net.Model
         /*
         <example>https://api.conekta.io/resources?limit&#x3D;10&amp;next&#x3D;chrg_1</example>
         */
-        [DataMember(Name = "next_page_url", EmitDefaultValue = true)]
+        [DataMember(Name = "next_page_url", EmitDefaultValue = false)]
         public string NextPageUrl { get; set; }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Conekta.net.Model
         /*
         <example>https://api.conekta.io/resources?limit&#x3D;10&amp;previous&#x3D;chrg_1</example>
         */
-        [DataMember(Name = "previous_page_url", EmitDefaultValue = true)]
+        [DataMember(Name = "previous_page_url", EmitDefaultValue = false)]
         public string PreviousPageUrl { get; set; }
 
         /// <summary>

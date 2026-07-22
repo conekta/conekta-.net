@@ -45,16 +45,16 @@ namespace Conekta.net.Model
         /// <param name="createdAt">The creation date of the payout order. (required).</param>
         /// <param name="currency">The currency in which the payout order is made. (required) (default to &quot;MXN&quot;).</param>
         /// <param name="customerInfo">customerInfo (required).</param>
-        /// <param name="expiresAt">The expiration date of the payout order..</param>
+        /// <param name="expiresAt">The expiration date of the payout order. (required).</param>
         /// <param name="id">The id of the payout order. (required).</param>
         /// <param name="livemode">The live mode of the payout order. (required).</param>
         /// <param name="varObject">The object of the payout order. (required).</param>
         /// <param name="metadata">The metadata of the payout order..</param>
         /// <param name="payouts">The payout information of the payout order. (required).</param>
         /// <param name="reason">The reason for the payout order. (required).</param>
-        /// <param name="status">The status of the payout order..</param>
+        /// <param name="status">The status of the payout order. (required).</param>
         /// <param name="updatedAt">The update date of the payout order. (required).</param>
-        public PayoutOrderResponse(List<string> allowedPayoutMethods = default(List<string>), int amount = default(int), long createdAt = default(long), string currency = @"MXN", PayoutOrderResponseCustomerInfo customerInfo = default(PayoutOrderResponseCustomerInfo), long expiresAt = default(long), string id = default(string), bool livemode = default(bool), string varObject = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), List<PayoutOrderPayoutsItem> payouts = default(List<PayoutOrderPayoutsItem>), string reason = default(string), string status = default(string), long updatedAt = default(long))
+        public PayoutOrderResponse(List<string> allowedPayoutMethods = default(List<string>), long amount = default(long), long createdAt = default(long), string currency = @"MXN", PayoutOrderResponseCustomerInfo customerInfo = default(PayoutOrderResponseCustomerInfo), long expiresAt = default(long), string id = default(string), bool livemode = default(bool), string varObject = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), List<PayoutOrderPayoutsItem> payouts = default(List<PayoutOrderPayoutsItem>), string reason = default(string), string status = default(string), long updatedAt = default(long))
         {
             // to ensure "allowedPayoutMethods" is required (not null)
             if (allowedPayoutMethods == null)
@@ -76,6 +76,7 @@ namespace Conekta.net.Model
                 throw new ArgumentNullException("customerInfo is a required property for PayoutOrderResponse and cannot be null");
             }
             this.CustomerInfo = customerInfo;
+            this.ExpiresAt = expiresAt;
             // to ensure "id" is required (not null)
             if (id == null)
             {
@@ -101,10 +102,14 @@ namespace Conekta.net.Model
                 throw new ArgumentNullException("reason is a required property for PayoutOrderResponse and cannot be null");
             }
             this.Reason = reason;
-            this.UpdatedAt = updatedAt;
-            this.ExpiresAt = expiresAt;
-            this.Metadata = metadata;
+            // to ensure "status" is required (not null)
+            if (status == null)
+            {
+                throw new ArgumentNullException("status is a required property for PayoutOrderResponse and cannot be null");
+            }
             this.Status = status;
+            this.UpdatedAt = updatedAt;
+            this.Metadata = metadata;
         }
 
         /// <summary>
@@ -112,7 +117,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>The payout methods that are allowed for the payout order.</value>
         /*
-        <example>[&quot;cashout&quot;]</example>
+        <example>[cashout]</example>
         */
         [DataMember(Name = "allowed_payout_methods", IsRequired = true, EmitDefaultValue = true)]
         public List<string> AllowedPayoutMethods { get; set; }
@@ -125,7 +130,7 @@ namespace Conekta.net.Model
         <example>100</example>
         */
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
-        public int Amount { get; set; }
+        public long Amount { get; set; }
 
         /// <summary>
         /// The creation date of the payout order.
@@ -160,7 +165,7 @@ namespace Conekta.net.Model
         /*
         <example>1677626837</example>
         */
-        [DataMember(Name = "expires_at", EmitDefaultValue = false)]
+        [DataMember(Name = "expires_at", IsRequired = true, EmitDefaultValue = true)]
         public long ExpiresAt { get; set; }
 
         /// <summary>
@@ -198,7 +203,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>The metadata of the payout order.</value>
         /*
-        <example>{&quot;custom_client_id&quot;:&quot;12345&quot;}</example>
+        <example>{custom_client_id&#x3D;12345}</example>
         */
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }
@@ -227,7 +232,7 @@ namespace Conekta.net.Model
         /*
         <example>open</example>
         */
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
         public string Status { get; set; }
 
         /// <summary>

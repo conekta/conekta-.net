@@ -90,7 +90,7 @@ namespace Conekta.net.Model
         /*
         <example>test@gmail.com</example>
         */
-        [DataMember(Name = "email", EmitDefaultValue = true)]
+        [DataMember(Name = "email", EmitDefaultValue = false)]
         public string Email { get; set; }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Conekta.net.Model
         /*
         <example>Conekta Inc</example>
         */
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Conekta.net.Model
         /*
         <example>324234234</example>
         */
-        [DataMember(Name = "tax_id", EmitDefaultValue = true)]
+        [DataMember(Name = "tax_id", EmitDefaultValue = false)]
         public string TaxId { get; set; }
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace Conekta.net.Model
         /*
         <example>+525511223344</example>
         */
-        [DataMember(Name = "phone", EmitDefaultValue = true)]
+        [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
         /// <summary>

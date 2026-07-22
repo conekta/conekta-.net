@@ -120,7 +120,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>lists the events that will be sent to the webhook</value>
         /*
-        <example>[&quot;charge.created&quot;,&quot;charge.paid&quot;,&quot;charge.under_fraud_review&quot;,&quot;charge.fraudulent&quot;,&quot;charge.refunded&quot;,&quot;charge.preauthorized&quot;,&quot;charge.declined&quot;,&quot;charge.canceled&quot;,&quot;charge.reversed&quot;,&quot;charge.pending_confirmation&quot;]</example>
+        <example>[charge.created, charge.paid, charge.under_fraud_review, charge.fraudulent, charge.refunded, charge.preauthorized, charge.declined, charge.canceled, charge.reversed, charge.pending_confirmation]</example>
         */
         [DataMember(Name = "subscribed_events", EmitDefaultValue = false)]
         public List<string> SubscribedEvents { get; set; }

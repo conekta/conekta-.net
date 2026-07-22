@@ -9,7 +9,7 @@ All URIs are relative to *https://api.conekta.io*
 
 <a id="getlogbyid"></a>
 # **GetLogById**
-> LogResponse GetLogById (string id, string acceptLanguage = null, string xChildCompanyId = null)
+> LogResponseForRequest GetLogById (string id, string acceptLanguage = null, string xChildCompanyId = null)
 
 Get Log
 
@@ -42,7 +42,7 @@ namespace Example
             try
             {
                 // Get Log
-                LogResponse result = apiInstance.GetLogById(id, acceptLanguage, xChildCompanyId);
+                LogResponseForRequest result = apiInstance.GetLogById(id, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -63,7 +63,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get Log
-    ApiResponse<LogResponse> response = apiInstance.GetLogByIdWithHttpInfo(id, acceptLanguage, xChildCompanyId);
+    ApiResponse<LogResponseForRequest> response = apiInstance.GetLogByIdWithHttpInfo(id, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -86,7 +86,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**LogResponse**](LogResponse.md)
+[**LogResponseForRequest**](LogResponseForRequest.md)
 
 ### Authorization
 
@@ -110,7 +110,7 @@ catch (ApiException e)
 
 <a id="getlogs"></a>
 # **GetLogs**
-> LogsResponse GetLogs (string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string search = null, string next = null, string previous = null)
+> LogsResponseForRequest GetLogs (string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string search = null, string next = null, string previous = null)
 
 Get List Of Logs
 
@@ -146,7 +146,7 @@ namespace Example
             try
             {
                 // Get List Of Logs
-                LogsResponse result = apiInstance.GetLogs(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+                LogsResponseForRequest result = apiInstance.GetLogs(acceptLanguage, xChildCompanyId, limit, search, next, previous);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -167,7 +167,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get List Of Logs
-    ApiResponse<LogsResponse> response = apiInstance.GetLogsWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+    ApiResponse<LogsResponseForRequest> response = apiInstance.GetLogsWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -193,7 +193,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**LogsResponse**](LogsResponse.md)
+[**LogsResponseForRequest**](LogsResponseForRequest.md)
 
 ### Authorization
 

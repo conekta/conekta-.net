@@ -129,12 +129,12 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="paymentMethodId">Identifier of the payment method</param>
-        /// <param name="updatePaymentMethods">requested field for customer payment methods</param>
+        /// <param name="updatePaymentMethodsCard">requested field for customer payment methods</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UpdateCustomerPaymentMethodsResponse</returns>
-        UpdateCustomerPaymentMethodsResponse UpdateCustomerPaymentMethods(string id, string paymentMethodId, UpdatePaymentMethods updatePaymentMethods, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
+        UpdateCustomerPaymentMethodsResponse UpdateCustomerPaymentMethods(string id, string paymentMethodId, UpdatePaymentMethodsCard updatePaymentMethodsCard, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Update Payment Method
@@ -145,12 +145,12 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="paymentMethodId">Identifier of the payment method</param>
-        /// <param name="updatePaymentMethods">requested field for customer payment methods</param>
+        /// <param name="updatePaymentMethodsCard">requested field for customer payment methods</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UpdateCustomerPaymentMethodsResponse</returns>
-        ApiResponse<UpdateCustomerPaymentMethodsResponse> UpdateCustomerPaymentMethodsWithHttpInfo(string id, string paymentMethodId, UpdatePaymentMethods updatePaymentMethods, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
+        ApiResponse<UpdateCustomerPaymentMethodsResponse> UpdateCustomerPaymentMethodsWithHttpInfo(string id, string paymentMethodId, UpdatePaymentMethodsCard updatePaymentMethodsCard, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -268,13 +268,13 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="paymentMethodId">Identifier of the payment method</param>
-        /// <param name="updatePaymentMethods">requested field for customer payment methods</param>
+        /// <param name="updatePaymentMethodsCard">requested field for customer payment methods</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateCustomerPaymentMethodsResponse</returns>
-        System.Threading.Tasks.Task<UpdateCustomerPaymentMethodsResponse> UpdateCustomerPaymentMethodsAsync(string id, string paymentMethodId, UpdatePaymentMethods updatePaymentMethods, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<UpdateCustomerPaymentMethodsResponse> UpdateCustomerPaymentMethodsAsync(string id, string paymentMethodId, UpdatePaymentMethodsCard updatePaymentMethodsCard, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Payment Method
@@ -285,13 +285,13 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="paymentMethodId">Identifier of the payment method</param>
-        /// <param name="updatePaymentMethods">requested field for customer payment methods</param>
+        /// <param name="updatePaymentMethodsCard">requested field for customer payment methods</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateCustomerPaymentMethodsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateCustomerPaymentMethodsResponse>> UpdateCustomerPaymentMethodsWithHttpInfoAsync(string id, string paymentMethodId, UpdatePaymentMethods updatePaymentMethods, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<UpdateCustomerPaymentMethodsResponse>> UpdateCustomerPaymentMethodsWithHttpInfoAsync(string id, string paymentMethodId, UpdatePaymentMethodsCard updatePaymentMethodsCard, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1044,14 +1044,14 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="paymentMethodId">Identifier of the payment method</param>
-        /// <param name="updatePaymentMethods">requested field for customer payment methods</param>
+        /// <param name="updatePaymentMethodsCard">requested field for customer payment methods</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UpdateCustomerPaymentMethodsResponse</returns>
-        public UpdateCustomerPaymentMethodsResponse UpdateCustomerPaymentMethods(string id, string paymentMethodId, UpdatePaymentMethods updatePaymentMethods, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
+        public UpdateCustomerPaymentMethodsResponse UpdateCustomerPaymentMethods(string id, string paymentMethodId, UpdatePaymentMethodsCard updatePaymentMethodsCard, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<UpdateCustomerPaymentMethodsResponse> localVarResponse = UpdateCustomerPaymentMethodsWithHttpInfo(id, paymentMethodId, updatePaymentMethods, acceptLanguage, xChildCompanyId);
+            Conekta.net.Client.ApiResponse<UpdateCustomerPaymentMethodsResponse> localVarResponse = UpdateCustomerPaymentMethodsWithHttpInfo(id, paymentMethodId, updatePaymentMethodsCard, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -1061,12 +1061,12 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="paymentMethodId">Identifier of the payment method</param>
-        /// <param name="updatePaymentMethods">requested field for customer payment methods</param>
+        /// <param name="updatePaymentMethodsCard">requested field for customer payment methods</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UpdateCustomerPaymentMethodsResponse</returns>
-        public Conekta.net.Client.ApiResponse<UpdateCustomerPaymentMethodsResponse> UpdateCustomerPaymentMethodsWithHttpInfo(string id, string paymentMethodId, UpdatePaymentMethods updatePaymentMethods, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<UpdateCustomerPaymentMethodsResponse> UpdateCustomerPaymentMethodsWithHttpInfo(string id, string paymentMethodId, UpdatePaymentMethodsCard updatePaymentMethodsCard, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1080,10 +1080,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'paymentMethodId' when calling PaymentMethodsApi->UpdateCustomerPaymentMethods");
             }
 
-            // verify the required parameter 'updatePaymentMethods' is set
-            if (updatePaymentMethods == null)
+            // verify the required parameter 'updatePaymentMethodsCard' is set
+            if (updatePaymentMethodsCard == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'updatePaymentMethods' when calling PaymentMethodsApi->UpdateCustomerPaymentMethods");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'updatePaymentMethodsCard' when calling PaymentMethodsApi->UpdateCustomerPaymentMethods");
             }
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -1119,7 +1119,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
-            localVarRequestOptions.Data = updatePaymentMethods;
+            localVarRequestOptions.Data = updatePaymentMethodsCard;
 
             localVarRequestOptions.Operation = "PaymentMethodsApi.UpdateCustomerPaymentMethods";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1151,15 +1151,15 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="paymentMethodId">Identifier of the payment method</param>
-        /// <param name="updatePaymentMethods">requested field for customer payment methods</param>
+        /// <param name="updatePaymentMethodsCard">requested field for customer payment methods</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateCustomerPaymentMethodsResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateCustomerPaymentMethodsResponse> UpdateCustomerPaymentMethodsAsync(string id, string paymentMethodId, UpdatePaymentMethods updatePaymentMethods, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<UpdateCustomerPaymentMethodsResponse> UpdateCustomerPaymentMethodsAsync(string id, string paymentMethodId, UpdatePaymentMethodsCard updatePaymentMethodsCard, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<UpdateCustomerPaymentMethodsResponse> localVarResponse = await UpdateCustomerPaymentMethodsWithHttpInfoAsync(id, paymentMethodId, updatePaymentMethods, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<UpdateCustomerPaymentMethodsResponse> localVarResponse = await UpdateCustomerPaymentMethodsWithHttpInfoAsync(id, paymentMethodId, updatePaymentMethodsCard, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1169,13 +1169,13 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="paymentMethodId">Identifier of the payment method</param>
-        /// <param name="updatePaymentMethods">requested field for customer payment methods</param>
+        /// <param name="updatePaymentMethodsCard">requested field for customer payment methods</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateCustomerPaymentMethodsResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateCustomerPaymentMethodsResponse>> UpdateCustomerPaymentMethodsWithHttpInfoAsync(string id, string paymentMethodId, UpdatePaymentMethods updatePaymentMethods, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<UpdateCustomerPaymentMethodsResponse>> UpdateCustomerPaymentMethodsWithHttpInfoAsync(string id, string paymentMethodId, UpdatePaymentMethodsCard updatePaymentMethodsCard, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1189,10 +1189,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'paymentMethodId' when calling PaymentMethodsApi->UpdateCustomerPaymentMethods");
             }
 
-            // verify the required parameter 'updatePaymentMethods' is set
-            if (updatePaymentMethods == null)
+            // verify the required parameter 'updatePaymentMethodsCard' is set
+            if (updatePaymentMethodsCard == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'updatePaymentMethods' when calling PaymentMethodsApi->UpdateCustomerPaymentMethods");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'updatePaymentMethodsCard' when calling PaymentMethodsApi->UpdateCustomerPaymentMethods");
             }
 
 
@@ -1229,7 +1229,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
-            localVarRequestOptions.Data = updatePaymentMethods;
+            localVarRequestOptions.Data = updatePaymentMethodsCard;
 
             localVarRequestOptions.Operation = "PaymentMethodsApi.UpdateCustomerPaymentMethods";
             localVarRequestOptions.OperationIndex = operationIndex;

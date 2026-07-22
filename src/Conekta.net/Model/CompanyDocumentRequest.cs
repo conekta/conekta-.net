@@ -29,7 +29,7 @@ namespace Conekta.net.Model
     /// <summary>
     /// Request body for uploading a company document.
     /// </summary>
-    [DataContract(Name = "company_document_request")]
+    [DataContract(Name = "CompanyDocumentRequest")]
     public partial class CompanyDocumentRequest : IValidatableObject
     {
         /// <summary>
@@ -182,7 +182,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>Base64 encoded content of the file.</value>
         /*
-        <example>[B@35db3ea2</example>
+        <example>VGhpcyBpcyBhIHRlc3QgZmlsZSBkYXRhIGluIGJhc2UgNjQu</example>
         */
         [DataMember(Name = "file_data", IsRequired = true, EmitDefaultValue = true)]
         public byte[] FileData { get; set; }

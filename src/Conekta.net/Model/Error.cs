@@ -60,7 +60,7 @@ namespace Conekta.net.Model
         /*
         <example>507f1f77bcf86cd799439011</example>
         */
-        [DataMember(Name = "log_id", EmitDefaultValue = true)]
+        [DataMember(Name = "log_id", EmitDefaultValue = false)]
         public string LogId { get; set; }
 
         /// <summary>

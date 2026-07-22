@@ -110,7 +110,7 @@ catch (ApiException e)
 
 <a id="createpayoutorder"></a>
 # **CreatePayoutOrder**
-> PayoutOrderResponse CreatePayoutOrder (PayoutOrder payoutOrder, string acceptLanguage = null)
+> PayoutOrderResponse CreatePayoutOrder (PayoutOrderRequest payoutOrderRequest, string acceptLanguage = null)
 
 Create payout order
 
@@ -136,13 +136,13 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new PayoutOrdersApi(config);
-            var payoutOrder = new PayoutOrder(); // PayoutOrder | requested field for payout order
+            var payoutOrderRequest = new PayoutOrderRequest(); // PayoutOrderRequest | requested field for payout order
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
                 // Create payout order
-                PayoutOrderResponse result = apiInstance.CreatePayoutOrder(payoutOrder, acceptLanguage);
+                PayoutOrderResponse result = apiInstance.CreatePayoutOrder(payoutOrderRequest, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -163,7 +163,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create payout order
-    ApiResponse<PayoutOrderResponse> response = apiInstance.CreatePayoutOrderWithHttpInfo(payoutOrder, acceptLanguage);
+    ApiResponse<PayoutOrderResponse> response = apiInstance.CreatePayoutOrderWithHttpInfo(payoutOrderRequest, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -180,7 +180,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **payoutOrder** | [**PayoutOrder**](PayoutOrder.md) | requested field for payout order |  |
+| **payoutOrderRequest** | [**PayoutOrderRequest**](PayoutOrderRequest.md) | requested field for payout order |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type

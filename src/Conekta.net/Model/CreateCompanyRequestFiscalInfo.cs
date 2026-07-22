@@ -29,7 +29,7 @@ namespace Conekta.net.Model
     /// <summary>
     /// Fiscal information for the company.
     /// </summary>
-    [DataContract(Name = "create_company_request_fiscal_info")]
+    [DataContract(Name = "Create_Company_Request_fiscal_info")]
     public partial class CreateCompanyRequestFiscalInfo : IValidatableObject
     {
         /// <summary>

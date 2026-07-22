@@ -8,11 +8,11 @@ All URIs are relative to *https://api.conekta.io*
 
 <a id="createtoken"></a>
 # **CreateToken**
-> TokenResponse CreateToken (Token token, string acceptLanguage = null)
+> TokenResponse CreateToken (TokenRequest tokenRequest, string acceptLanguage = null)
 
 Create Token
 
-Generate a payment token, to associate it with a card 
+Generate a payment token, to associate it with a card, Endpoint could be use directly only for PCI compliance account 
 
 ### Example
 ```csharp
@@ -34,13 +34,13 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new TokensApi(config);
-            var token = new Token(); // Token | requested field for token
+            var tokenRequest = new TokenRequest(); // TokenRequest | requested field for token
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
                 // Create Token
-                TokenResponse result = apiInstance.CreateToken(token, acceptLanguage);
+                TokenResponse result = apiInstance.CreateToken(tokenRequest, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -61,7 +61,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create Token
-    ApiResponse<TokenResponse> response = apiInstance.CreateTokenWithHttpInfo(token, acceptLanguage);
+    ApiResponse<TokenResponse> response = apiInstance.CreateTokenWithHttpInfo(tokenRequest, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -78,7 +78,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **token** | [**Token**](Token.md) | requested field for token |  |
+| **tokenRequest** | [**TokenRequest**](TokenRequest.md) | requested field for token |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type

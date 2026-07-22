@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | **string** |  | [optional] 
 **Object** | **string** |  | 
 **Agreement** | **string** | Agreement ID | [optional] 
-**AuthCode** | **int?** |  | [optional] 
+**AuthCode** | **int** |  | [optional] 
 **CashierId** | **string** |  | [optional] 
 **Reference** | **string** |  | [optional] 
 **BarcodeUrl** | **string** |  | [optional] 

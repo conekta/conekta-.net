@@ -1268,7 +1268,7 @@ catch (ApiException e)
 
 <a id="subscriptionupdate"></a>
 # **SubscriptionUpdate**
-> SubscriptionResponse SubscriptionUpdate (string customerId, string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = null, string xChildCompanyId = null)
+> SubscriptionResponse SubscriptionUpdate (string customerId, string id, UpdatesASubscription updatesASubscription, string acceptLanguage = null, string xChildCompanyId = null)
 
 Update Subscription
 
@@ -1296,14 +1296,14 @@ namespace Example
             var apiInstance = new SubscriptionsApi(config);
             var customerId = cus_2tGzG1GxtDAZHEGPH;  // string | Identifier of the customer resource
             var id = sub_2tGzG1GxtDAZHEGPH;  // string | Identifier of the subscription resource
-            var subscriptionUpdateRequest = new SubscriptionUpdateRequest(); // SubscriptionUpdateRequest | requested field for update a subscription
+            var updatesASubscription = new UpdatesASubscription(); // UpdatesASubscription | requested field for update a subscription
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
             var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Update Subscription
-                SubscriptionResponse result = apiInstance.SubscriptionUpdate(customerId, id, subscriptionUpdateRequest, acceptLanguage, xChildCompanyId);
+                SubscriptionResponse result = apiInstance.SubscriptionUpdate(customerId, id, updatesASubscription, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1324,7 +1324,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update Subscription
-    ApiResponse<SubscriptionResponse> response = apiInstance.SubscriptionUpdateWithHttpInfo(customerId, id, subscriptionUpdateRequest, acceptLanguage, xChildCompanyId);
+    ApiResponse<SubscriptionResponse> response = apiInstance.SubscriptionUpdateWithHttpInfo(customerId, id, updatesASubscription, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1343,7 +1343,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **customerId** | **string** | Identifier of the customer resource |  |
 | **id** | **string** | Identifier of the subscription resource |  |
-| **subscriptionUpdateRequest** | [**SubscriptionUpdateRequest**](SubscriptionUpdateRequest.md) | requested field for update a subscription |  |
+| **updatesASubscription** | [**UpdatesASubscription**](UpdatesASubscription.md) | requested field for update a subscription |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 | **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 
@@ -1572,16 +1572,16 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | successful |  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  |
+| **422** | parameter validation error |  -  |
 | **401** | authentication error |  -  |
 | **404** | not found entity |  -  |
-| **422** | parameter validation error |  -  |
 | **500** | internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="updatesubscription"></a>
 # **UpdateSubscription**
-> SubscriptionResponse UpdateSubscription (string id, SubscriptionUpdateRequest subscriptionUpdateRequest, string acceptLanguage = null, string xChildCompanyId = null)
+> SubscriptionResponse UpdateSubscription (string id, UpdatesASubscription updatesASubscription, string acceptLanguage = null, string xChildCompanyId = null)
 
 Update Subscription [Deprecated]
 
@@ -1608,14 +1608,14 @@ namespace Example
 
             var apiInstance = new SubscriptionsApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
-            var subscriptionUpdateRequest = new SubscriptionUpdateRequest(); // SubscriptionUpdateRequest | requested field for update a subscription
+            var updatesASubscription = new UpdatesASubscription(); // UpdatesASubscription | requested field for update a subscription
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
             var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Update Subscription [Deprecated]
-                SubscriptionResponse result = apiInstance.UpdateSubscription(id, subscriptionUpdateRequest, acceptLanguage, xChildCompanyId);
+                SubscriptionResponse result = apiInstance.UpdateSubscription(id, updatesASubscription, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1636,7 +1636,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update Subscription [Deprecated]
-    ApiResponse<SubscriptionResponse> response = apiInstance.UpdateSubscriptionWithHttpInfo(id, subscriptionUpdateRequest, acceptLanguage, xChildCompanyId);
+    ApiResponse<SubscriptionResponse> response = apiInstance.UpdateSubscriptionWithHttpInfo(id, updatesASubscription, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1654,7 +1654,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
-| **subscriptionUpdateRequest** | [**SubscriptionUpdateRequest**](SubscriptionUpdateRequest.md) | requested field for update a subscription |  |
+| **updatesASubscription** | [**UpdatesASubscription**](UpdatesASubscription.md) | requested field for update a subscription |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 | **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 

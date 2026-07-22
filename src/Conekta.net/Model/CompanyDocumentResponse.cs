@@ -29,7 +29,7 @@ namespace Conekta.net.Model
     /// <summary>
     /// Response body after uploading a company document.
     /// </summary>
-    [DataContract(Name = "company_document_response")]
+    [DataContract(Name = "CompanyDocumentResponse")]
     public partial class CompanyDocumentResponse : IValidatableObject
     {
         /// <summary>

@@ -45,7 +45,7 @@ namespace Conekta.net.Model
         /// <param name="targetCollateralAmount">The balance&#39;s target collateral amount.</param>
         /// <param name="targetRetentionAmount">The balance&#39;s target retention amount.</param>
         /// <param name="temporarilyRetained">The balance&#39;s temporarily retained.</param>
-        public BalanceResponse(List<BalanceCommonField> available = default(List<BalanceCommonField>), List<BalanceCommonField> cashoutRetentionAmount = default(List<BalanceCommonField>), List<BalanceCommonField> conektaRetention = default(List<BalanceCommonField>), List<BalanceCommonField> gateway = default(List<BalanceCommonField>), List<BalanceCommonField> pending = default(List<BalanceCommonField>), List<BalanceCommonField> retained = default(List<BalanceCommonField>), List<BalanceCommonField> retentionAmount = default(List<BalanceCommonField>), Object targetCollateralAmount = default(Object), List<BalanceCommonField> targetRetentionAmount = default(List<BalanceCommonField>), List<BalanceCommonField> temporarilyRetained = default(List<BalanceCommonField>))
+        public BalanceResponse(List<BalanceCommonFielsResponse> available = default(List<BalanceCommonFielsResponse>), List<BalanceCommonFielsResponse> cashoutRetentionAmount = default(List<BalanceCommonFielsResponse>), List<BalanceCommonFielsResponse> conektaRetention = default(List<BalanceCommonFielsResponse>), List<BalanceCommonFielsResponse> gateway = default(List<BalanceCommonFielsResponse>), List<BalanceCommonFielsResponse> pending = default(List<BalanceCommonFielsResponse>), List<BalanceCommonFielsResponse> retained = default(List<BalanceCommonFielsResponse>), List<BalanceCommonFielsResponse> retentionAmount = default(List<BalanceCommonFielsResponse>), Object targetCollateralAmount = default(Object), List<BalanceCommonFielsResponse> targetRetentionAmount = default(List<BalanceCommonFielsResponse>), List<BalanceCommonFielsResponse> temporarilyRetained = default(List<BalanceCommonFielsResponse>))
         {
             this.Available = available;
             this.CashoutRetentionAmount = cashoutRetentionAmount;
@@ -64,49 +64,49 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>The balance&#39;s available</value>
         [DataMember(Name = "available", EmitDefaultValue = false)]
-        public List<BalanceCommonField> Available { get; set; }
+        public List<BalanceCommonFielsResponse> Available { get; set; }
 
         /// <summary>
         /// The balance&#39;s cashout retention amount
         /// </summary>
         /// <value>The balance&#39;s cashout retention amount</value>
         [DataMember(Name = "cashout_retention_amount", EmitDefaultValue = false)]
-        public List<BalanceCommonField> CashoutRetentionAmount { get; set; }
+        public List<BalanceCommonFielsResponse> CashoutRetentionAmount { get; set; }
 
         /// <summary>
         /// The balance&#39;s conekta retention
         /// </summary>
         /// <value>The balance&#39;s conekta retention</value>
         [DataMember(Name = "conekta_retention", EmitDefaultValue = false)]
-        public List<BalanceCommonField> ConektaRetention { get; set; }
+        public List<BalanceCommonFielsResponse> ConektaRetention { get; set; }
 
         /// <summary>
         /// The balance&#39;s gateway
         /// </summary>
         /// <value>The balance&#39;s gateway</value>
         [DataMember(Name = "gateway", EmitDefaultValue = false)]
-        public List<BalanceCommonField> Gateway { get; set; }
+        public List<BalanceCommonFielsResponse> Gateway { get; set; }
 
         /// <summary>
         /// The balance&#39;s pending
         /// </summary>
         /// <value>The balance&#39;s pending</value>
         [DataMember(Name = "pending", EmitDefaultValue = false)]
-        public List<BalanceCommonField> Pending { get; set; }
+        public List<BalanceCommonFielsResponse> Pending { get; set; }
 
         /// <summary>
         /// The balance&#39;s retained
         /// </summary>
         /// <value>The balance&#39;s retained</value>
         [DataMember(Name = "retained", EmitDefaultValue = false)]
-        public List<BalanceCommonField> Retained { get; set; }
+        public List<BalanceCommonFielsResponse> Retained { get; set; }
 
         /// <summary>
         /// The balance&#39;s retention amount
         /// </summary>
         /// <value>The balance&#39;s retention amount</value>
         [DataMember(Name = "retention_amount", EmitDefaultValue = false)]
-        public List<BalanceCommonField> RetentionAmount { get; set; }
+        public List<BalanceCommonFielsResponse> RetentionAmount { get; set; }
 
         /// <summary>
         /// The balance&#39;s target collateral amount
@@ -120,14 +120,14 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>The balance&#39;s target retention amount</value>
         [DataMember(Name = "target_retention_amount", EmitDefaultValue = false)]
-        public List<BalanceCommonField> TargetRetentionAmount { get; set; }
+        public List<BalanceCommonFielsResponse> TargetRetentionAmount { get; set; }
 
         /// <summary>
         /// The balance&#39;s temporarily retained
         /// </summary>
         /// <value>The balance&#39;s temporarily retained</value>
         [DataMember(Name = "temporarily_retained", EmitDefaultValue = false)]
-        public List<BalanceCommonField> TemporarilyRetained { get; set; }
+        public List<BalanceCommonFielsResponse> TemporarilyRetained { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

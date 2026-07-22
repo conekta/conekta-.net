@@ -29,7 +29,7 @@ namespace Conekta.net.Model
     /// <summary>
     /// CreateCompanyRequest
     /// </summary>
-    [DataContract(Name = "create_company_request")]
+    [DataContract(Name = "Create_Company_Request")]
     public partial class CreateCompanyRequest : IValidatableObject
     {
         /// <summary>
