@@ -166,12 +166,12 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="webhookUpdateRequest">requested fields in order to update a webhook</param>
+        /// <param name="updateWebhook">requested fields in order to update a webhook</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WebhookResponse</returns>
-        WebhookResponse UpdateWebhook(string id, WebhookUpdateRequest webhookUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
+        WebhookResponse UpdateWebhook(string id, UpdateWebhook updateWebhook, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Update Webhook
@@ -181,12 +181,12 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="webhookUpdateRequest">requested fields in order to update a webhook</param>
+        /// <param name="updateWebhook">requested fields in order to update a webhook</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WebhookResponse</returns>
-        ApiResponse<WebhookResponse> UpdateWebhookWithHttpInfo(string id, WebhookUpdateRequest webhookUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
+        ApiResponse<WebhookResponse> UpdateWebhookWithHttpInfo(string id, UpdateWebhook updateWebhook, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -351,13 +351,13 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="webhookUpdateRequest">requested fields in order to update a webhook</param>
+        /// <param name="updateWebhook">requested fields in order to update a webhook</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebhookResponse</returns>
-        System.Threading.Tasks.Task<WebhookResponse> UpdateWebhookAsync(string id, WebhookUpdateRequest webhookUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WebhookResponse> UpdateWebhookAsync(string id, UpdateWebhook updateWebhook, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Webhook
@@ -367,13 +367,13 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="webhookUpdateRequest">requested fields in order to update a webhook</param>
+        /// <param name="updateWebhook">requested fields in order to update a webhook</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebhookResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WebhookResponse>> UpdateWebhookWithHttpInfoAsync(string id, WebhookUpdateRequest webhookUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WebhookResponse>> UpdateWebhookWithHttpInfoAsync(string id, UpdateWebhook updateWebhook, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1407,14 +1407,14 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="webhookUpdateRequest">requested fields in order to update a webhook</param>
+        /// <param name="updateWebhook">requested fields in order to update a webhook</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WebhookResponse</returns>
-        public WebhookResponse UpdateWebhook(string id, WebhookUpdateRequest webhookUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
+        public WebhookResponse UpdateWebhook(string id, UpdateWebhook updateWebhook, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<WebhookResponse> localVarResponse = UpdateWebhookWithHttpInfo(id, webhookUpdateRequest, acceptLanguage, xChildCompanyId);
+            Conekta.net.Client.ApiResponse<WebhookResponse> localVarResponse = UpdateWebhookWithHttpInfo(id, updateWebhook, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -1423,12 +1423,12 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="webhookUpdateRequest">requested fields in order to update a webhook</param>
+        /// <param name="updateWebhook">requested fields in order to update a webhook</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WebhookResponse</returns>
-        public Conekta.net.Client.ApiResponse<WebhookResponse> UpdateWebhookWithHttpInfo(string id, WebhookUpdateRequest webhookUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<WebhookResponse> UpdateWebhookWithHttpInfo(string id, UpdateWebhook updateWebhook, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1436,10 +1436,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling WebhooksApi->UpdateWebhook");
             }
 
-            // verify the required parameter 'webhookUpdateRequest' is set
-            if (webhookUpdateRequest == null)
+            // verify the required parameter 'updateWebhook' is set
+            if (updateWebhook == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'webhookUpdateRequest' when calling WebhooksApi->UpdateWebhook");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'updateWebhook' when calling WebhooksApi->UpdateWebhook");
             }
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -1474,7 +1474,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
-            localVarRequestOptions.Data = webhookUpdateRequest;
+            localVarRequestOptions.Data = updateWebhook;
 
             localVarRequestOptions.Operation = "WebhooksApi.UpdateWebhook";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1505,15 +1505,15 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="webhookUpdateRequest">requested fields in order to update a webhook</param>
+        /// <param name="updateWebhook">requested fields in order to update a webhook</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebhookResponse</returns>
-        public async System.Threading.Tasks.Task<WebhookResponse> UpdateWebhookAsync(string id, WebhookUpdateRequest webhookUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WebhookResponse> UpdateWebhookAsync(string id, UpdateWebhook updateWebhook, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<WebhookResponse> localVarResponse = await UpdateWebhookWithHttpInfoAsync(id, webhookUpdateRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<WebhookResponse> localVarResponse = await UpdateWebhookWithHttpInfoAsync(id, updateWebhook, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1522,13 +1522,13 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="webhookUpdateRequest">requested fields in order to update a webhook</param>
+        /// <param name="updateWebhook">requested fields in order to update a webhook</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebhookResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<WebhookResponse>> UpdateWebhookWithHttpInfoAsync(string id, WebhookUpdateRequest webhookUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<WebhookResponse>> UpdateWebhookWithHttpInfoAsync(string id, UpdateWebhook updateWebhook, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1536,10 +1536,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling WebhooksApi->UpdateWebhook");
             }
 
-            // verify the required parameter 'webhookUpdateRequest' is set
-            if (webhookUpdateRequest == null)
+            // verify the required parameter 'updateWebhook' is set
+            if (updateWebhook == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'webhookUpdateRequest' when calling WebhooksApi->UpdateWebhook");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'updateWebhook' when calling WebhooksApi->UpdateWebhook");
             }
 
 
@@ -1575,7 +1575,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
-            localVarRequestOptions.Data = webhookUpdateRequest;
+            localVarRequestOptions.Data = updateWebhook;
 
             localVarRequestOptions.Operation = "WebhooksApi.UpdateWebhook";
             localVarRequestOptions.OperationIndex = operationIndex;

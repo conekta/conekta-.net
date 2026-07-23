@@ -29,7 +29,7 @@ namespace Conekta.net.Model
     /// <summary>
     /// Commercial information for the company.
     /// </summary>
-    [DataContract(Name = "create_company_request_comercial_info")]
+    [DataContract(Name = "Create_Company_Request_comercial_info")]
     public partial class CreateCompanyRequestComercialInfo : IValidatableObject
     {
         /// <summary>

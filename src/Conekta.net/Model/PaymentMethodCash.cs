@@ -53,7 +53,7 @@ namespace Conekta.net.Model
         /// <param name="store">store.</param>
         /// <param name="storeName">storeName.</param>
         /// <param name="customerIpAddress">customerIpAddress.</param>
-        public PaymentMethodCash(string type = default(string), string varObject = default(string), string agreement = default(string), int? authCode = default(int?), string cashierId = default(string), string reference = default(string), string barcodeUrl = default(string), long expiresAt = default(long), string productType = default(string), string serviceName = default(string), string store = default(string), string storeName = default(string), string customerIpAddress = default(string))
+        public PaymentMethodCash(string type = default(string), string varObject = default(string), string agreement = default(string), int authCode = default(int), string cashierId = default(string), string reference = default(string), string barcodeUrl = default(string), long expiresAt = default(long), string productType = default(string), string serviceName = default(string), string store = default(string), string storeName = default(string), string customerIpAddress = default(string))
         {
             // to ensure "varObject" is required (not null)
             if (varObject == null)
@@ -106,8 +106,8 @@ namespace Conekta.net.Model
         /*
         <example>542563</example>
         */
-        [DataMember(Name = "auth_code", EmitDefaultValue = true)]
-        public int? AuthCode { get; set; }
+        [DataMember(Name = "auth_code", EmitDefaultValue = false)]
+        public int AuthCode { get; set; }
 
         /// <summary>
         /// Gets or Sets CashierId
@@ -115,7 +115,7 @@ namespace Conekta.net.Model
         /*
         <example>OINM01010</example>
         */
-        [DataMember(Name = "cashier_id", EmitDefaultValue = true)]
+        [DataMember(Name = "cashier_id", EmitDefaultValue = false)]
         public string CashierId { get; set; }
 
         /// <summary>
@@ -170,7 +170,7 @@ namespace Conekta.net.Model
         /*
         <example>10MON50EDI</example>
         */
-        [DataMember(Name = "store", EmitDefaultValue = true)]
+        [DataMember(Name = "store", EmitDefaultValue = false)]
         public string Store { get; set; }
 
         /// <summary>

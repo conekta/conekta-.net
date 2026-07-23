@@ -17,10 +17,11 @@ Name | Type | Description | Notes
 **Livemode** | **bool** | Whether the charge was made in live mode or not | 
 **Object** | **string** |  | 
 **OrderId** | **string** | Order ID | 
-**PaidAt** | **long?** | Payment date | [optional] 
+**PaidAt** | **long** | charge Payment date | [optional] 
 **PaymentMethod** | [**ChargeResponsePaymentMethod**](ChargeResponsePaymentMethod.md) |  | [optional] 
 **ReferenceId** | **string** | Reference ID of the charge | [optional] 
 **Refunds** | [**ChargeResponseRefunds**](ChargeResponseRefunds.md) |  | [optional] 
+**Chargeback** | [**ChargebackResponse**](ChargebackResponse.md) |  | [optional] 
 **Status** | **string** | Charge status | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

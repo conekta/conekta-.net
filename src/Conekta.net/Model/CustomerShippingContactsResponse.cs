@@ -46,7 +46,7 @@ namespace Conekta.net.Model
         /// <param name="metadata">Metadata associated with the shipping contact.</param>
         /// <param name="varObject">varObject.</param>
         /// <param name="deleted">deleted.</param>
-        public CustomerShippingContactsResponse(string phone = default(string), string receiver = default(string), string betweenStreets = default(string), CustomerShippingContactsResponseAddress address = default(CustomerShippingContactsResponseAddress), string parentId = default(string), bool varDefault = default(bool), string id = default(string), long createdAt = default(long), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string varObject = default(string), bool deleted = default(bool))
+        public CustomerShippingContactsResponse(string phone = default(string), string receiver = default(string), string betweenStreets = default(string), CustomerShippingContactsAddress address = default(CustomerShippingContactsAddress), string parentId = default(string), bool varDefault = default(bool), string id = default(string), long createdAt = default(long), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string varObject = default(string), bool deleted = default(bool))
         {
             this.Phone = phone;
             this.Receiver = receiver;
@@ -85,14 +85,14 @@ namespace Conekta.net.Model
         /*
         <example>Ackerman Crescent</example>
         */
-        [DataMember(Name = "between_streets", EmitDefaultValue = true)]
+        [DataMember(Name = "between_streets", EmitDefaultValue = false)]
         public string BetweenStreets { get; set; }
 
         /// <summary>
         /// Gets or Sets Address
         /// </summary>
         [DataMember(Name = "address", EmitDefaultValue = false)]
-        public CustomerShippingContactsResponseAddress Address { get; set; }
+        public CustomerShippingContactsAddress Address { get; set; }
 
         /// <summary>
         /// Gets or Sets ParentId

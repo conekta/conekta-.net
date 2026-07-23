@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **Phone** | **string** | Phone contact | [optional] 
 **Receiver** | **string** | Name of the person who will receive the order | [optional] 
 **BetweenStreets** | **string** | The street names between which the order will be delivered. | [optional] 
-**Address** | [**CustomerShippingContactsAddress**](CustomerShippingContactsAddress.md) |  | 
+**Address** | [**CustomerShippingContactsRequestAddress**](CustomerShippingContactsRequestAddress.md) |  | 
 **ParentId** | **string** |  | [optional] 
-**Default** | **bool?** |  | [optional] 
-**Deleted** | **bool?** |  | [optional] 
+**Default** | **bool** |  | [optional] 
+**Deleted** | **bool** |  | [optional] 
 **Metadata** | **Dictionary&lt;string, Object&gt;** | Metadata associated with the shipping contact | [optional] 
 **Id** | **string** |  | 
 **Object** | **string** |  | 

@@ -48,7 +48,7 @@ namespace Conekta.net.Model
         /// <param name="trialPeriodDays">trialPeriodDays.</param>
         /// <param name="maxRetries">maxRetries.</param>
         /// <param name="retryDelayHours">retryDelayHours.</param>
-        public PlanResponse(int amount = default(int), long createdAt = default(long), string currency = default(string), int? expiryCount = default(int?), int frequency = default(int), string id = default(string), string interval = default(string), bool livemode = default(bool), string name = default(string), string varObject = default(string), int? trialPeriodDays = default(int?), int maxRetries = default(int), int retryDelayHours = default(int))
+        public PlanResponse(int amount = default(int), long createdAt = default(long), string currency = default(string), int expiryCount = default(int), int frequency = default(int), string id = default(string), string interval = default(string), bool livemode = default(bool), string name = default(string), string varObject = default(string), int trialPeriodDays = default(int), int maxRetries = default(int), int retryDelayHours = default(int))
         {
             this.Amount = amount;
             this.CreatedAt = createdAt;
@@ -98,8 +98,8 @@ namespace Conekta.net.Model
         /*
         <example>12</example>
         */
-        [DataMember(Name = "expiry_count", EmitDefaultValue = true)]
-        public int? ExpiryCount { get; set; }
+        [DataMember(Name = "expiry_count", EmitDefaultValue = false)]
+        public int ExpiryCount { get; set; }
 
         /// <summary>
         /// Gets or Sets Frequency
@@ -161,8 +161,8 @@ namespace Conekta.net.Model
         /*
         <example>0</example>
         */
-        [DataMember(Name = "trial_period_days", EmitDefaultValue = true)]
-        public int? TrialPeriodDays { get; set; }
+        [DataMember(Name = "trial_period_days", EmitDefaultValue = false)]
+        public int TrialPeriodDays { get; set; }
 
         /// <summary>
         /// Gets or Sets MaxRetries

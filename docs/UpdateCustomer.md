@@ -15,11 +15,11 @@ Name | Type | Description | Notes
 **DefaultShippingContactId** | **string** | It is a parameter that allows to identify in the response, the Conekta ID of the shipping address (shipping_contact) | [optional] 
 **Corporate** | **bool** | It is a value that allows identifying if the email is corporate or not. | [optional] [default to false]
 **CustomReference** | **string** | It is an undefined value. | [optional] 
-**FiscalEntities** | [**List&lt;CustomerFiscalEntitiesRequest&gt;**](CustomerFiscalEntitiesRequest.md) |  | [optional] 
+**FiscalEntities** | [**List&lt;FiscalEntityRequest&gt;**](FiscalEntityRequest.md) |  | [optional] 
 **Metadata** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **NationalId** | **string** | It is a parameter that allows to identify the national identification number of the client. | [optional] 
 **PaymentSources** | [**List&lt;CustomerPaymentMethodsRequest&gt;**](CustomerPaymentMethodsRequest.md) | Contains details of the payment methods that the customer has active or has used in Conekta | [optional] 
-**ShippingContacts** | [**List&lt;CustomerShippingContacts&gt;**](CustomerShippingContacts.md) | Contains the detail of the shipping addresses that the client has active or has used in Conekta | [optional] 
+**ShippingContacts** | [**List&lt;CustomerShippingContactsRequest&gt;**](CustomerShippingContactsRequest.md) | Contains the detail of the shipping addresses that the client has active or has used in Conekta | [optional] 
 **Subscription** | [**SubscriptionRequest**](SubscriptionRequest.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

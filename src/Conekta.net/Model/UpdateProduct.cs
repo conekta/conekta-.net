@@ -60,7 +60,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets AntifraudInfo
         /// </summary>
-        [DataMember(Name = "antifraud_info", EmitDefaultValue = false)]
+        [DataMember(Name = "antifraud_info", EmitDefaultValue = true)]
         public Dictionary<string, Object> AntifraudInfo { get; set; }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets Metadata
         /// </summary>
-        [DataMember(Name = "metadata", EmitDefaultValue = false)]
+        [DataMember(Name = "metadata", EmitDefaultValue = true)]
         public Dictionary<string, string> Metadata { get; set; }
 
         /// <summary>

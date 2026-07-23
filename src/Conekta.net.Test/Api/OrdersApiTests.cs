@@ -95,7 +95,7 @@ namespace Conekta.net.Test.Api
                 paymentMethod: new ChargeRequestPaymentMethod(request)
             )
         };
-        OrderRequestCustomerInfo customerInfo = new(new CustomerInfoJustCustomerId("cus_2tKcHxhTz7xU5SymF"));
+        OrderRequestCustomerInfo customerInfo = new(new CustomerInfoCustomerId("cus_2tKcHxhTz7xU5SymF"));
         OrderRequest orderRequest = new(
             currency: "MXN",
             customerInfo: customerInfo,
@@ -144,8 +144,8 @@ namespace Conekta.net.Test.Api
                 charges: charges,
                 preAuthorize: false,
                 shippingLines:  new List<ShippingRequest> { new (amount: 0, carrier: "estafeta", method: "tienda a tienda") },
-                shippingContact: new CustomerShippingContacts("3143159054", receiver:"emili gonza",
-                                    address: new CustomerShippingContactsAddress(state: "CDMX", country: "MX", city: "Benito Juarez", street1: "Av. Insurgentes Sur 1602", postalCode: "03100"))
+                shippingContact: new CustomerShippingContactsRequest("3143159054", receiver:"emili gonza",
+                                    address: new CustomerShippingContactsRequestAddress(state: "CDMX", country: "MX", city: "Benito Juarez", street1: "Av. Insurgentes Sur 1602", postalCode: "03100"))
             );
             instance = new OrdersApi(configuration);
             OrderResponse response = instance.CreateOrder(orderRequest, "es");

@@ -68,7 +68,7 @@ namespace Conekta.net.Model
         /// Gets or Sets Data
         /// </summary>
         /*
-        <example>{&quot;action&quot;:&quot;ping&quot;,&quot;livemode&quot;:true}</example>
+        <example>{action&#x3D;ping, livemode&#x3D;true}</example>
         */
         [DataMember(Name = "data", EmitDefaultValue = false)]
         public Dictionary<string, Object> Data { get; set; }

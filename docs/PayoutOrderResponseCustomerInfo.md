@@ -5,13 +5,13 @@ The customer information of the payout order.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Id** | **string** | The id of the customer. | 
 **CustomerCustomReference** | **string** | Custom reference | [optional] 
 **Name** | **string** |  | [optional] 
 **Email** | **string** |  | [optional] 
 **Phone** | **string** |  | [optional] 
 **Corporate** | **bool** |  | [optional] [default to false]
 **Object** | **string** |  | [optional] 
-**Id** | **string** | The id of the customer. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

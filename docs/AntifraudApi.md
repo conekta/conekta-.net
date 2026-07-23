@@ -13,7 +13,7 @@ All URIs are relative to *https://api.conekta.io*
 
 <a id="createruleblacklist"></a>
 # **CreateRuleBlacklist**
-> BlacklistRuleResponse CreateRuleBlacklist (CreateRiskRulesData createRiskRulesData, string acceptLanguage = null)
+> BlacklistRuleResponse CreateRuleBlacklist (CreateRuleWhitelistRequest createRuleWhitelistRequest, string acceptLanguage = null)
 
 Create blacklisted rule
 
@@ -37,13 +37,13 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new AntifraudApi(config);
-            var createRiskRulesData = new CreateRiskRulesData(); // CreateRiskRulesData | requested field for blacklist rule
+            var createRuleWhitelistRequest = new CreateRuleWhitelistRequest(); // CreateRuleWhitelistRequest | requested field for blacklist rule
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
                 // Create blacklisted rule
-                BlacklistRuleResponse result = apiInstance.CreateRuleBlacklist(createRiskRulesData, acceptLanguage);
+                BlacklistRuleResponse result = apiInstance.CreateRuleBlacklist(createRuleWhitelistRequest, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -64,7 +64,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create blacklisted rule
-    ApiResponse<BlacklistRuleResponse> response = apiInstance.CreateRuleBlacklistWithHttpInfo(createRiskRulesData, acceptLanguage);
+    ApiResponse<BlacklistRuleResponse> response = apiInstance.CreateRuleBlacklistWithHttpInfo(createRuleWhitelistRequest, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -81,7 +81,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **createRiskRulesData** | [**CreateRiskRulesData**](CreateRiskRulesData.md) | requested field for blacklist rule |  |
+| **createRuleWhitelistRequest** | [**CreateRuleWhitelistRequest**](CreateRuleWhitelistRequest.md) | requested field for blacklist rule |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type
@@ -109,7 +109,7 @@ catch (ApiException e)
 
 <a id="createrulewhitelist"></a>
 # **CreateRuleWhitelist**
-> WhitelistlistRuleResponse CreateRuleWhitelist (string acceptLanguage = null, CreateRiskRulesData createRiskRulesData = null)
+> WhitelistlistRuleResponse CreateRuleWhitelist (string acceptLanguage = null, CreateRuleWhitelistRequest createRuleWhitelistRequest = null)
 
 Create whitelisted rule
 
@@ -134,12 +134,12 @@ namespace Example
 
             var apiInstance = new AntifraudApi(config);
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
-            var createRiskRulesData = new CreateRiskRulesData(); // CreateRiskRulesData |  (optional) 
+            var createRuleWhitelistRequest = new CreateRuleWhitelistRequest(); // CreateRuleWhitelistRequest |  (optional) 
 
             try
             {
                 // Create whitelisted rule
-                WhitelistlistRuleResponse result = apiInstance.CreateRuleWhitelist(acceptLanguage, createRiskRulesData);
+                WhitelistlistRuleResponse result = apiInstance.CreateRuleWhitelist(acceptLanguage, createRuleWhitelistRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -160,7 +160,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create whitelisted rule
-    ApiResponse<WhitelistlistRuleResponse> response = apiInstance.CreateRuleWhitelistWithHttpInfo(acceptLanguage, createRiskRulesData);
+    ApiResponse<WhitelistlistRuleResponse> response = apiInstance.CreateRuleWhitelistWithHttpInfo(acceptLanguage, createRuleWhitelistRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -178,7 +178,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
-| **createRiskRulesData** | [**CreateRiskRulesData**](CreateRiskRulesData.md) |  | [optional]  |
+| **createRuleWhitelistRequest** | [**CreateRuleWhitelistRequest**](CreateRuleWhitelistRequest.md) |  | [optional]  |
 
 ### Return type
 

@@ -40,12 +40,12 @@ namespace Conekta.net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PayoutOrdersResponse" /> class.
         /// </summary>
+        /// <param name="data">data.</param>
         /// <param name="hasMore">Indicates if there are more pages to be requested (required).</param>
         /// <param name="varObject">Object type, in this case is list (required).</param>
         /// <param name="nextPageUrl">URL of the next page..</param>
         /// <param name="previousPageUrl">Url of the previous page..</param>
-        /// <param name="data">data.</param>
-        public PayoutOrdersResponse(bool hasMore = default(bool), string varObject = default(string), string nextPageUrl = default(string), string previousPageUrl = default(string), List<PayoutOrderResponse> data = default(List<PayoutOrderResponse>))
+        public PayoutOrdersResponse(List<PayoutOrderResponse> data = default(List<PayoutOrderResponse>), bool hasMore = default(bool), string varObject = default(string), string nextPageUrl = default(string), string previousPageUrl = default(string))
         {
             this.HasMore = hasMore;
             // to ensure "varObject" is required (not null)
@@ -54,10 +54,16 @@ namespace Conekta.net.Model
                 throw new ArgumentNullException("varObject is a required property for PayoutOrdersResponse and cannot be null");
             }
             this.Object = varObject;
+            this.Data = data;
             this.NextPageUrl = nextPageUrl;
             this.PreviousPageUrl = previousPageUrl;
-            this.Data = data;
         }
+
+        /// <summary>
+        /// Gets or Sets Data
+        /// </summary>
+        [DataMember(Name = "data", EmitDefaultValue = false)]
+        public List<PayoutOrderResponse> Data { get; set; }
 
         /// <summary>
         /// Indicates if there are more pages to be requested
@@ -86,7 +92,7 @@ namespace Conekta.net.Model
         /*
         <example>https://api.conekta.io/resources?limit&#x3D;10&amp;next&#x3D;chrg_1</example>
         */
-        [DataMember(Name = "next_page_url", EmitDefaultValue = true)]
+        [DataMember(Name = "next_page_url", EmitDefaultValue = false)]
         public string NextPageUrl { get; set; }
 
         /// <summary>
@@ -96,14 +102,8 @@ namespace Conekta.net.Model
         /*
         <example>https://api.conekta.io/resources?limit&#x3D;10&amp;previous&#x3D;chrg_1</example>
         */
-        [DataMember(Name = "previous_page_url", EmitDefaultValue = true)]
+        [DataMember(Name = "previous_page_url", EmitDefaultValue = false)]
         public string PreviousPageUrl { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Data
-        /// </summary>
-        [DataMember(Name = "data", EmitDefaultValue = false)]
-        public List<PayoutOrderResponse> Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -113,11 +113,11 @@ namespace Conekta.net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class PayoutOrdersResponse {\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("  HasMore: ").Append(HasMore).Append("\n");
             sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  NextPageUrl: ").Append(NextPageUrl).Append("\n");
             sb.Append("  PreviousPageUrl: ").Append(PreviousPageUrl).Append("\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

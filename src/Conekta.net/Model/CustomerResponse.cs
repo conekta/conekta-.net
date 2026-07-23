@@ -60,7 +60,7 @@ namespace Conekta.net.Model
         /// <param name="phone">Customer&#39;s phone number.</param>
         /// <param name="shippingContacts">shippingContacts.</param>
         /// <param name="subscription">subscription.</param>
-        public CustomerResponse(CustomerAntifraudInfoResponse antifraudInfo = default(CustomerAntifraudInfoResponse), bool corporate = default(bool), long createdAt = default(long), string customReference = default(string), string dateOfBirth = default(string), string defaultFiscalEntityId = default(string), string defaultShippingContactId = default(string), string defaultPaymentSourceId = default(string), string email = default(string), CustomerFiscalEntitiesResponse fiscalEntities = default(CustomerFiscalEntitiesResponse), string id = default(string), bool livemode = default(bool), string name = default(string), string nationalId = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string varObject = default(string), CustomerPaymentMethodsResponse paymentSources = default(CustomerPaymentMethodsResponse), string phone = default(string), CustomerResponseShippingContacts shippingContacts = default(CustomerResponseShippingContacts), SubscriptionResponse subscription = default(SubscriptionResponse))
+        public CustomerResponse(CustomerAntifraudInfoResponse antifraudInfo = default(CustomerAntifraudInfoResponse), bool corporate = default(bool), long createdAt = default(long), string customReference = default(string), string dateOfBirth = default(string), string defaultFiscalEntityId = default(string), string defaultShippingContactId = default(string), string defaultPaymentSourceId = default(string), string email = default(string), CustomerFiscalEntitiesResponse fiscalEntities = default(CustomerFiscalEntitiesResponse), string id = default(string), bool livemode = default(bool), string name = default(string), string nationalId = default(string), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string varObject = default(string), CustomerPaymentMethodsResponse paymentSources = default(CustomerPaymentMethodsResponse), string phone = default(string), CustomerResponseShippingContacts shippingContacts = default(CustomerResponseShippingContacts), CustomerSubscriptionResponse subscription = default(CustomerSubscriptionResponse))
         {
             this.CreatedAt = createdAt;
             // to ensure "id" is required (not null)
@@ -102,7 +102,7 @@ namespace Conekta.net.Model
         /// <summary>
         /// Gets or Sets AntifraudInfo
         /// </summary>
-        [DataMember(Name = "antifraud_info", EmitDefaultValue = true)]
+        [DataMember(Name = "antifraud_info", EmitDefaultValue = false)]
         public CustomerAntifraudInfoResponse AntifraudInfo { get; set; }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Conekta.net.Model
         /*
         <example>fis_ent_2tKqqAfqPi21oCmEJ</example>
         */
-        [DataMember(Name = "default_fiscal_entity_id", EmitDefaultValue = true)]
+        [DataMember(Name = "default_fiscal_entity_id", EmitDefaultValue = false)]
         public string DefaultFiscalEntityId { get; set; }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace Conekta.net.Model
         /*
         <example>src_2tHJfJ79KyUwpxTio</example>
         */
-        [DataMember(Name = "default_payment_source_id", EmitDefaultValue = true)]
+        [DataMember(Name = "default_payment_source_id", EmitDefaultValue = false)]
         public string DefaultPaymentSourceId { get; set; }
 
         /// <summary>
@@ -265,7 +265,7 @@ namespace Conekta.net.Model
         /// Gets or Sets Subscription
         /// </summary>
         [DataMember(Name = "subscription", EmitDefaultValue = false)]
-        public SubscriptionResponse Subscription { get; set; }
+        public CustomerSubscriptionResponse Subscription { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

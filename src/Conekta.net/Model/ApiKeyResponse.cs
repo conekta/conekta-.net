@@ -46,7 +46,7 @@ namespace Conekta.net.Model
         /// <param name="varObject">Object name, value is &#39;api_key&#39;.</param>
         /// <param name="prefix">The first few characters of the authentication_token.</param>
         /// <param name="role">Indicates if the api key is private or public.</param>
-        public ApiKeyResponse(bool active = default(bool), long createdAt = default(long), long updatedAt = default(long), long? deactivatedAt = default(long?), long? lastUsedAt = default(long?), string description = default(string), string id = default(string), bool livemode = default(bool), string varObject = default(string), string prefix = default(string), string role = default(string))
+        public ApiKeyResponse(bool active = default(bool), long createdAt = default(long), long updatedAt = default(long), long deactivatedAt = default(long), long lastUsedAt = default(long), string description = default(string), string id = default(string), bool livemode = default(bool), string varObject = default(string), string prefix = default(string), string role = default(string))
         {
             this.Active = active;
             this.CreatedAt = createdAt;
@@ -95,15 +95,15 @@ namespace Conekta.net.Model
         /// Unix timestamp in seconds of when the api key was deleted
         /// </summary>
         /// <value>Unix timestamp in seconds of when the api key was deleted</value>
-        [DataMember(Name = "deactivated_at", EmitDefaultValue = true)]
-        public long? DeactivatedAt { get; set; }
+        [DataMember(Name = "deactivated_at", EmitDefaultValue = false)]
+        public long DeactivatedAt { get; set; }
 
         /// <summary>
         /// Unix timestamp in seconds with the api key was used
         /// </summary>
         /// <value>Unix timestamp in seconds with the api key was used</value>
-        [DataMember(Name = "last_used_at", EmitDefaultValue = true)]
-        public long? LastUsedAt { get; set; }
+        [DataMember(Name = "last_used_at", EmitDefaultValue = false)]
+        public long LastUsedAt { get; set; }
 
         /// <summary>
         /// A name or brief explanation of what this api key is used for

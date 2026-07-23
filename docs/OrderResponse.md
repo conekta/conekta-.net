@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **Currency** | **string** | The three-letter ISO 4217 currency code. The currency of the order. | [optional] 
 **CustomerInfo** | [**OrderResponseCustomerInfo**](OrderResponseCustomerInfo.md) |  | [optional] 
 **DiscountLines** | [**OrderDiscountLinesResponse**](OrderDiscountLinesResponse.md) |  | [optional] 
+**TaxLines** | [**OrderTaxLinesResponse**](OrderTaxLinesResponse.md) |  | [optional] 
+**ShippingLines** | [**OrderShippingLinesResponse**](OrderShippingLinesResponse.md) |  | [optional] 
 **FiscalEntity** | [**OrderFiscalEntityResponse**](OrderFiscalEntityResponse.md) |  | [optional] 
 **Id** | **string** |  | [optional] 
 **IsRefundable** | **bool** |  | [optional] 

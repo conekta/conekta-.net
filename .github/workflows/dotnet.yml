@@ -13,24 +13,17 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-dotnet@v3
+      - uses: actions/checkout@v7
+      - uses: actions/setup-dotnet@v6
         with:
           dotnet-version: '6.0.x'
       - name: Run Mockoon CLI
-        uses: mockoon/cli-action@v1
+        uses: mockoon/cli-action@v3
         with:
-          version: '6.0.1'
           data-file: 'https://raw.githubusercontent.com/conekta/openapi/main/mocks/conekta_api.json'
           port: 3000
       - name: Execute dotnet
         run: dotnet build
-      - name: Test and publish code coverage
-        uses: paambaati/codeclimate-action@v9.0.0
-        env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-          BASE_PATH: http://localhost:3000
-        with:
-          coverageCommand: dotnet test ./src/Conekta.net.Test/Conekta.net.Test.csproj --no-build -p:CollectCoverage=true -p:CoverletOutputFormat=lcov -p:CoverletOutput=coverage/
-          coverageLocations: |
-            ${{github.workspace}}/src/Conekta.net.Test/coverage/coverage.net6.0.info:lcov
+
+      - name: Execute test
+        run: dotnet test ./src/Conekta.net.Test/Conekta.net.Test.csproj --no-build -p:CollectCoverage=true -p:CoverletOutputFormat=lcov -p:CoverletOutput=coverage/

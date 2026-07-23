@@ -215,7 +215,7 @@ catch (ApiException e)
 
 <a id="resendevent"></a>
 # **ResendEvent**
-> EventsResendResponse ResendEvent (string eventId, ResendRequest resendRequest, string acceptLanguage = null)
+> EventsResendResponse ResendEvent (string eventId, ResendEventRequest resendEventRequest, string acceptLanguage = null)
 
 Resend Event
 
@@ -242,13 +242,13 @@ namespace Example
 
             var apiInstance = new EventsApi(config);
             var eventId = 6463d6e35a4c3e001819e760;  // string | event identifier
-            var resendRequest = new ResendRequest(); // ResendRequest | requested fields for resend an event
+            var resendEventRequest = new ResendEventRequest(); // ResendEventRequest | requested fields for resend an event
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
 
             try
             {
                 // Resend Event
-                EventsResendResponse result = apiInstance.ResendEvent(eventId, resendRequest, acceptLanguage);
+                EventsResendResponse result = apiInstance.ResendEvent(eventId, resendEventRequest, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -269,7 +269,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Resend Event
-    ApiResponse<EventsResendResponse> response = apiInstance.ResendEventWithHttpInfo(eventId, resendRequest, acceptLanguage);
+    ApiResponse<EventsResendResponse> response = apiInstance.ResendEventWithHttpInfo(eventId, resendEventRequest, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -287,7 +287,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **eventId** | **string** | event identifier |  |
-| **resendRequest** | [**ResendRequest**](ResendRequest.md) | requested fields for resend an event |  |
+| **resendEventRequest** | [**ResendEventRequest**](ResendEventRequest.md) | requested fields for resend an event |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 
 ### Return type

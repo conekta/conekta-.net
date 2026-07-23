@@ -71,7 +71,7 @@ namespace Conekta.net.Model
         /// Gets or Sets AntifraudInfo
         /// </summary>
         /*
-        <example>{&quot;key&quot;:&quot;value&quot;}</example>
+        <example>{key&#x3D;value}</example>
         */
         [DataMember(Name = "antifraud_info", EmitDefaultValue = false)]
         public Dictionary<string, Object> AntifraudInfo { get; set; }
@@ -101,7 +101,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.</value>
         /*
-        <example>{&quot;key&quot;:&quot;value&quot;}</example>
+        <example>{key&#x3D;value}</example>
         */
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }
@@ -141,7 +141,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>List of tags for the item. It is used to identify the item in the order.</value>
         /*
-        <example>[&quot;food&quot;,&quot;mexican food&quot;]</example>
+        <example>[food, mexican food]</example>
         */
         [DataMember(Name = "tags", EmitDefaultValue = false)]
         public List<string> Tags { get; set; }

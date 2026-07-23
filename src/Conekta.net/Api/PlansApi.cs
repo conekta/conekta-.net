@@ -110,9 +110,11 @@ namespace Conekta.net.Api
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
+        /// <param name="currency">currency of the object to be retrieved (optional)</param>
+        /// <param name="frequency">frequency of the object to be retrieved (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetPlansResponse</returns>
-        GetPlansResponse GetPlans(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
+        GetPlansResponse GetPlans(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), string currency = default(string), int? frequency = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// Get A List of Plans
@@ -127,20 +129,22 @@ namespace Conekta.net.Api
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
+        /// <param name="currency">currency of the object to be retrieved (optional)</param>
+        /// <param name="frequency">frequency of the object to be retrieved (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetPlansResponse</returns>
-        ApiResponse<GetPlansResponse> GetPlansWithHttpInfo(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0);
+        ApiResponse<GetPlansResponse> GetPlansWithHttpInfo(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), string currency = default(string), int? frequency = default(int?), int operationIndex = 0);
         /// <summary>
         /// Update Plan
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="planUpdateRequest">requested field for plan</param>
+        /// <param name="updatePlan">requested field for plan</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlanResponse</returns>
-        PlanResponse UpdatePlan(string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
+        PlanResponse UpdatePlan(string id, UpdatePlan updatePlan, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Update Plan
@@ -150,12 +154,12 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="planUpdateRequest">requested field for plan</param>
+        /// <param name="updatePlan">requested field for plan</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlanResponse</returns>
-        ApiResponse<PlanResponse> UpdatePlanWithHttpInfo(string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
+        ApiResponse<PlanResponse> UpdatePlanWithHttpInfo(string id, UpdatePlan updatePlan, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -263,10 +267,12 @@ namespace Conekta.net.Api
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
+        /// <param name="currency">currency of the object to be retrieved (optional)</param>
+        /// <param name="frequency">frequency of the object to be retrieved (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetPlansResponse</returns>
-        System.Threading.Tasks.Task<GetPlansResponse> GetPlansAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetPlansResponse> GetPlansAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), string currency = default(string), int? frequency = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get A List of Plans
@@ -281,10 +287,12 @@ namespace Conekta.net.Api
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
+        /// <param name="currency">currency of the object to be retrieved (optional)</param>
+        /// <param name="frequency">frequency of the object to be retrieved (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetPlansResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetPlansResponse>> GetPlansWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetPlansResponse>> GetPlansWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), string currency = default(string), int? frequency = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Update Plan
         /// </summary>
@@ -293,13 +301,13 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="planUpdateRequest">requested field for plan</param>
+        /// <param name="updatePlan">requested field for plan</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanResponse</returns>
-        System.Threading.Tasks.Task<PlanResponse> UpdatePlanAsync(string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PlanResponse> UpdatePlanAsync(string id, UpdatePlan updatePlan, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Plan
@@ -309,13 +317,13 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="planUpdateRequest">requested field for plan</param>
+        /// <param name="updatePlan">requested field for plan</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PlanResponse>> UpdatePlanWithHttpInfoAsync(string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PlanResponse>> UpdatePlanWithHttpInfoAsync(string id, UpdatePlan updatePlan, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -976,11 +984,13 @@ namespace Conekta.net.Api
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
+        /// <param name="currency">currency of the object to be retrieved (optional)</param>
+        /// <param name="frequency">frequency of the object to be retrieved (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetPlansResponse</returns>
-        public GetPlansResponse GetPlans(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0)
+        public GetPlansResponse GetPlans(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), string currency = default(string), int? frequency = default(int?), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<GetPlansResponse> localVarResponse = GetPlansWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+            Conekta.net.Client.ApiResponse<GetPlansResponse> localVarResponse = GetPlansWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous, currency, frequency);
             return localVarResponse.Data;
         }
 
@@ -994,9 +1004,11 @@ namespace Conekta.net.Api
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
+        /// <param name="currency">currency of the object to be retrieved (optional)</param>
+        /// <param name="frequency">frequency of the object to be retrieved (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetPlansResponse</returns>
-        public Conekta.net.Client.ApiResponse<GetPlansResponse> GetPlansWithHttpInfo(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<GetPlansResponse> GetPlansWithHttpInfo(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), string currency = default(string), int? frequency = default(int?), int operationIndex = 0)
         {
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
 
@@ -1035,6 +1047,14 @@ namespace Conekta.net.Api
             if (previous != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "previous", previous));
+            }
+            if (currency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "currency", currency));
+            }
+            if (frequency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "frequency", frequency));
             }
             if (acceptLanguage != null)
             {
@@ -1079,12 +1099,14 @@ namespace Conekta.net.Api
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
+        /// <param name="currency">currency of the object to be retrieved (optional)</param>
+        /// <param name="frequency">frequency of the object to be retrieved (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetPlansResponse</returns>
-        public async System.Threading.Tasks.Task<GetPlansResponse> GetPlansAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetPlansResponse> GetPlansAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), string currency = default(string), int? frequency = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<GetPlansResponse> localVarResponse = await GetPlansWithHttpInfoAsync(acceptLanguage, xChildCompanyId, limit, search, next, previous, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<GetPlansResponse> localVarResponse = await GetPlansWithHttpInfoAsync(acceptLanguage, xChildCompanyId, limit, search, next, previous, currency, frequency, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1098,10 +1120,12 @@ namespace Conekta.net.Api
         /// <param name="search">General order search, e.g. by mail, reference etc. (optional)</param>
         /// <param name="next">next page (optional)</param>
         /// <param name="previous">previous page (optional)</param>
+        /// <param name="currency">currency of the object to be retrieved (optional)</param>
+        /// <param name="frequency">frequency of the object to be retrieved (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetPlansResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<GetPlansResponse>> GetPlansWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<GetPlansResponse>> GetPlansWithHttpInfoAsync(string acceptLanguage = default(string), string xChildCompanyId = default(string), int? limit = default(int?), string search = default(string), string next = default(string), string previous = default(string), string currency = default(string), int? frequency = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -1142,6 +1166,14 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "previous", previous));
             }
+            if (currency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "currency", currency));
+            }
+            if (frequency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Conekta.net.Client.ClientUtils.ParameterToMultiMap("", "frequency", frequency));
+            }
             if (acceptLanguage != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Conekta.net.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
@@ -1181,14 +1213,14 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="planUpdateRequest">requested field for plan</param>
+        /// <param name="updatePlan">requested field for plan</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlanResponse</returns>
-        public PlanResponse UpdatePlan(string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
+        public PlanResponse UpdatePlan(string id, UpdatePlan updatePlan, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<PlanResponse> localVarResponse = UpdatePlanWithHttpInfo(id, planUpdateRequest, acceptLanguage, xChildCompanyId);
+            Conekta.net.Client.ApiResponse<PlanResponse> localVarResponse = UpdatePlanWithHttpInfo(id, updatePlan, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -1197,12 +1229,12 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="planUpdateRequest">requested field for plan</param>
+        /// <param name="updatePlan">requested field for plan</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlanResponse</returns>
-        public Conekta.net.Client.ApiResponse<PlanResponse> UpdatePlanWithHttpInfo(string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<PlanResponse> UpdatePlanWithHttpInfo(string id, UpdatePlan updatePlan, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1210,10 +1242,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling PlansApi->UpdatePlan");
             }
 
-            // verify the required parameter 'planUpdateRequest' is set
-            if (planUpdateRequest == null)
+            // verify the required parameter 'updatePlan' is set
+            if (updatePlan == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'planUpdateRequest' when calling PlansApi->UpdatePlan");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'updatePlan' when calling PlansApi->UpdatePlan");
             }
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -1248,7 +1280,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
-            localVarRequestOptions.Data = planUpdateRequest;
+            localVarRequestOptions.Data = updatePlan;
 
             localVarRequestOptions.Operation = "PlansApi.UpdatePlan";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1279,15 +1311,15 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="planUpdateRequest">requested field for plan</param>
+        /// <param name="updatePlan">requested field for plan</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanResponse</returns>
-        public async System.Threading.Tasks.Task<PlanResponse> UpdatePlanAsync(string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PlanResponse> UpdatePlanAsync(string id, UpdatePlan updatePlan, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<PlanResponse> localVarResponse = await UpdatePlanWithHttpInfoAsync(id, planUpdateRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<PlanResponse> localVarResponse = await UpdatePlanWithHttpInfoAsync(id, updatePlan, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1296,13 +1328,13 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="planUpdateRequest">requested field for plan</param>
+        /// <param name="updatePlan">requested field for plan</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<PlanResponse>> UpdatePlanWithHttpInfoAsync(string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<PlanResponse>> UpdatePlanWithHttpInfoAsync(string id, UpdatePlan updatePlan, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1310,10 +1342,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling PlansApi->UpdatePlan");
             }
 
-            // verify the required parameter 'planUpdateRequest' is set
-            if (planUpdateRequest == null)
+            // verify the required parameter 'updatePlan' is set
+            if (updatePlan == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'planUpdateRequest' when calling PlansApi->UpdatePlan");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'updatePlan' when calling PlansApi->UpdatePlan");
             }
 
 
@@ -1349,7 +1381,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
-            localVarRequestOptions.Data = planUpdateRequest;
+            localVarRequestOptions.Data = updatePlan;
 
             localVarRequestOptions.Operation = "PlansApi.UpdatePlan";
             localVarRequestOptions.OperationIndex = operationIndex;

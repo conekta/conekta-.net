@@ -35,12 +35,12 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="customerShippingContacts">requested field for customer shippings contacts</param>
+        /// <param name="customerShippingContactsRequest">requested field for customer shippings contacts</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomerShippingContactsResponse</returns>
-        CustomerShippingContactsResponse CreateCustomerShippingContacts(string id, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
+        CustomerShippingContactsResponse CreateCustomerShippingContacts(string id, CustomerShippingContactsRequest customerShippingContactsRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Create a shipping contacts
@@ -50,12 +50,12 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="customerShippingContacts">requested field for customer shippings contacts</param>
+        /// <param name="customerShippingContactsRequest">requested field for customer shippings contacts</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomerShippingContactsResponse</returns>
-        ApiResponse<CustomerShippingContactsResponse> CreateCustomerShippingContactsWithHttpInfo(string id, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
+        ApiResponse<CustomerShippingContactsResponse> CreateCustomerShippingContactsWithHttpInfo(string id, CustomerShippingContactsRequest customerShippingContactsRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         /// <summary>
         /// Delete shipping contacts
         /// </summary>
@@ -94,12 +94,12 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="shippingContactsId">identifier</param>
-        /// <param name="customerUpdateShippingContacts">requested field for customer update shippings contacts</param>
+        /// <param name="customerUpdateShippingContactsRequest">requested field for customer update shippings contacts</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomerShippingContactsResponse</returns>
-        CustomerShippingContactsResponse UpdateCustomerShippingContacts(string id, string shippingContactsId, CustomerUpdateShippingContacts customerUpdateShippingContacts, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
+        CustomerShippingContactsResponse UpdateCustomerShippingContacts(string id, string shippingContactsId, CustomerUpdateShippingContactsRequest customerUpdateShippingContactsRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Update shipping contacts
@@ -110,12 +110,12 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="shippingContactsId">identifier</param>
-        /// <param name="customerUpdateShippingContacts">requested field for customer update shippings contacts</param>
+        /// <param name="customerUpdateShippingContactsRequest">requested field for customer update shippings contacts</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomerShippingContactsResponse</returns>
-        ApiResponse<CustomerShippingContactsResponse> UpdateCustomerShippingContactsWithHttpInfo(string id, string shippingContactsId, CustomerUpdateShippingContacts customerUpdateShippingContacts, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
+        ApiResponse<CustomerShippingContactsResponse> UpdateCustomerShippingContactsWithHttpInfo(string id, string shippingContactsId, CustomerUpdateShippingContactsRequest customerUpdateShippingContactsRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -133,13 +133,13 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="customerShippingContacts">requested field for customer shippings contacts</param>
+        /// <param name="customerShippingContactsRequest">requested field for customer shippings contacts</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerShippingContactsResponse</returns>
-        System.Threading.Tasks.Task<CustomerShippingContactsResponse> CreateCustomerShippingContactsAsync(string id, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CustomerShippingContactsResponse> CreateCustomerShippingContactsAsync(string id, CustomerShippingContactsRequest customerShippingContactsRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create a shipping contacts
@@ -149,13 +149,13 @@ namespace Conekta.net.Api
         /// </remarks>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="customerShippingContacts">requested field for customer shippings contacts</param>
+        /// <param name="customerShippingContactsRequest">requested field for customer shippings contacts</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerShippingContactsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomerShippingContactsResponse>> CreateCustomerShippingContactsWithHttpInfoAsync(string id, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CustomerShippingContactsResponse>> CreateCustomerShippingContactsWithHttpInfoAsync(string id, CustomerShippingContactsRequest customerShippingContactsRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete shipping contacts
         /// </summary>
@@ -196,13 +196,13 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="shippingContactsId">identifier</param>
-        /// <param name="customerUpdateShippingContacts">requested field for customer update shippings contacts</param>
+        /// <param name="customerUpdateShippingContactsRequest">requested field for customer update shippings contacts</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerShippingContactsResponse</returns>
-        System.Threading.Tasks.Task<CustomerShippingContactsResponse> UpdateCustomerShippingContactsAsync(string id, string shippingContactsId, CustomerUpdateShippingContacts customerUpdateShippingContacts, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CustomerShippingContactsResponse> UpdateCustomerShippingContactsAsync(string id, string shippingContactsId, CustomerUpdateShippingContactsRequest customerUpdateShippingContactsRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update shipping contacts
@@ -213,13 +213,13 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="shippingContactsId">identifier</param>
-        /// <param name="customerUpdateShippingContacts">requested field for customer update shippings contacts</param>
+        /// <param name="customerUpdateShippingContactsRequest">requested field for customer update shippings contacts</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerShippingContactsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomerShippingContactsResponse>> UpdateCustomerShippingContactsWithHttpInfoAsync(string id, string shippingContactsId, CustomerUpdateShippingContacts customerUpdateShippingContacts, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CustomerShippingContactsResponse>> UpdateCustomerShippingContactsWithHttpInfoAsync(string id, string shippingContactsId, CustomerUpdateShippingContactsRequest customerUpdateShippingContactsRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -345,14 +345,14 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="customerShippingContacts">requested field for customer shippings contacts</param>
+        /// <param name="customerShippingContactsRequest">requested field for customer shippings contacts</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomerShippingContactsResponse</returns>
-        public CustomerShippingContactsResponse CreateCustomerShippingContacts(string id, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
+        public CustomerShippingContactsResponse CreateCustomerShippingContacts(string id, CustomerShippingContactsRequest customerShippingContactsRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<CustomerShippingContactsResponse> localVarResponse = CreateCustomerShippingContactsWithHttpInfo(id, customerShippingContacts, acceptLanguage, xChildCompanyId);
+            Conekta.net.Client.ApiResponse<CustomerShippingContactsResponse> localVarResponse = CreateCustomerShippingContactsWithHttpInfo(id, customerShippingContactsRequest, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -361,12 +361,12 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="customerShippingContacts">requested field for customer shippings contacts</param>
+        /// <param name="customerShippingContactsRequest">requested field for customer shippings contacts</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomerShippingContactsResponse</returns>
-        public Conekta.net.Client.ApiResponse<CustomerShippingContactsResponse> CreateCustomerShippingContactsWithHttpInfo(string id, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<CustomerShippingContactsResponse> CreateCustomerShippingContactsWithHttpInfo(string id, CustomerShippingContactsRequest customerShippingContactsRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -374,10 +374,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling ShippingContactsApi->CreateCustomerShippingContacts");
             }
 
-            // verify the required parameter 'customerShippingContacts' is set
-            if (customerShippingContacts == null)
+            // verify the required parameter 'customerShippingContactsRequest' is set
+            if (customerShippingContactsRequest == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'customerShippingContacts' when calling ShippingContactsApi->CreateCustomerShippingContacts");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'customerShippingContactsRequest' when calling ShippingContactsApi->CreateCustomerShippingContacts");
             }
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -412,7 +412,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
-            localVarRequestOptions.Data = customerShippingContacts;
+            localVarRequestOptions.Data = customerShippingContactsRequest;
 
             localVarRequestOptions.Operation = "ShippingContactsApi.CreateCustomerShippingContacts";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -443,15 +443,15 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="customerShippingContacts">requested field for customer shippings contacts</param>
+        /// <param name="customerShippingContactsRequest">requested field for customer shippings contacts</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerShippingContactsResponse</returns>
-        public async System.Threading.Tasks.Task<CustomerShippingContactsResponse> CreateCustomerShippingContactsAsync(string id, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CustomerShippingContactsResponse> CreateCustomerShippingContactsAsync(string id, CustomerShippingContactsRequest customerShippingContactsRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<CustomerShippingContactsResponse> localVarResponse = await CreateCustomerShippingContactsWithHttpInfoAsync(id, customerShippingContacts, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<CustomerShippingContactsResponse> localVarResponse = await CreateCustomerShippingContactsWithHttpInfoAsync(id, customerShippingContactsRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -460,13 +460,13 @@ namespace Conekta.net.Api
         /// </summary>
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
-        /// <param name="customerShippingContacts">requested field for customer shippings contacts</param>
+        /// <param name="customerShippingContactsRequest">requested field for customer shippings contacts</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerShippingContactsResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomerShippingContactsResponse>> CreateCustomerShippingContactsWithHttpInfoAsync(string id, CustomerShippingContacts customerShippingContacts, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomerShippingContactsResponse>> CreateCustomerShippingContactsWithHttpInfoAsync(string id, CustomerShippingContactsRequest customerShippingContactsRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -474,10 +474,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'id' when calling ShippingContactsApi->CreateCustomerShippingContacts");
             }
 
-            // verify the required parameter 'customerShippingContacts' is set
-            if (customerShippingContacts == null)
+            // verify the required parameter 'customerShippingContactsRequest' is set
+            if (customerShippingContactsRequest == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'customerShippingContacts' when calling ShippingContactsApi->CreateCustomerShippingContacts");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'customerShippingContactsRequest' when calling ShippingContactsApi->CreateCustomerShippingContacts");
             }
 
 
@@ -513,7 +513,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
-            localVarRequestOptions.Data = customerShippingContacts;
+            localVarRequestOptions.Data = customerShippingContactsRequest;
 
             localVarRequestOptions.Operation = "ShippingContactsApi.CreateCustomerShippingContacts";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -744,14 +744,14 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="shippingContactsId">identifier</param>
-        /// <param name="customerUpdateShippingContacts">requested field for customer update shippings contacts</param>
+        /// <param name="customerUpdateShippingContactsRequest">requested field for customer update shippings contacts</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CustomerShippingContactsResponse</returns>
-        public CustomerShippingContactsResponse UpdateCustomerShippingContacts(string id, string shippingContactsId, CustomerUpdateShippingContacts customerUpdateShippingContacts, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
+        public CustomerShippingContactsResponse UpdateCustomerShippingContacts(string id, string shippingContactsId, CustomerUpdateShippingContactsRequest customerUpdateShippingContactsRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
-            Conekta.net.Client.ApiResponse<CustomerShippingContactsResponse> localVarResponse = UpdateCustomerShippingContactsWithHttpInfo(id, shippingContactsId, customerUpdateShippingContacts, acceptLanguage, xChildCompanyId);
+            Conekta.net.Client.ApiResponse<CustomerShippingContactsResponse> localVarResponse = UpdateCustomerShippingContactsWithHttpInfo(id, shippingContactsId, customerUpdateShippingContactsRequest, acceptLanguage, xChildCompanyId);
             return localVarResponse.Data;
         }
 
@@ -761,12 +761,12 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="shippingContactsId">identifier</param>
-        /// <param name="customerUpdateShippingContacts">requested field for customer update shippings contacts</param>
+        /// <param name="customerUpdateShippingContactsRequest">requested field for customer update shippings contacts</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CustomerShippingContactsResponse</returns>
-        public Conekta.net.Client.ApiResponse<CustomerShippingContactsResponse> UpdateCustomerShippingContactsWithHttpInfo(string id, string shippingContactsId, CustomerUpdateShippingContacts customerUpdateShippingContacts, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
+        public Conekta.net.Client.ApiResponse<CustomerShippingContactsResponse> UpdateCustomerShippingContactsWithHttpInfo(string id, string shippingContactsId, CustomerUpdateShippingContactsRequest customerUpdateShippingContactsRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -780,10 +780,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'shippingContactsId' when calling ShippingContactsApi->UpdateCustomerShippingContacts");
             }
 
-            // verify the required parameter 'customerUpdateShippingContacts' is set
-            if (customerUpdateShippingContacts == null)
+            // verify the required parameter 'customerUpdateShippingContactsRequest' is set
+            if (customerUpdateShippingContactsRequest == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'customerUpdateShippingContacts' when calling ShippingContactsApi->UpdateCustomerShippingContacts");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'customerUpdateShippingContactsRequest' when calling ShippingContactsApi->UpdateCustomerShippingContacts");
             }
 
             Conekta.net.Client.RequestOptions localVarRequestOptions = new Conekta.net.Client.RequestOptions();
@@ -819,7 +819,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
-            localVarRequestOptions.Data = customerUpdateShippingContacts;
+            localVarRequestOptions.Data = customerUpdateShippingContactsRequest;
 
             localVarRequestOptions.Operation = "ShippingContactsApi.UpdateCustomerShippingContacts";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -851,15 +851,15 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="shippingContactsId">identifier</param>
-        /// <param name="customerUpdateShippingContacts">requested field for customer update shippings contacts</param>
+        /// <param name="customerUpdateShippingContactsRequest">requested field for customer update shippings contacts</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomerShippingContactsResponse</returns>
-        public async System.Threading.Tasks.Task<CustomerShippingContactsResponse> UpdateCustomerShippingContactsAsync(string id, string shippingContactsId, CustomerUpdateShippingContacts customerUpdateShippingContacts, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CustomerShippingContactsResponse> UpdateCustomerShippingContactsAsync(string id, string shippingContactsId, CustomerUpdateShippingContactsRequest customerUpdateShippingContactsRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Conekta.net.Client.ApiResponse<CustomerShippingContactsResponse> localVarResponse = await UpdateCustomerShippingContactsWithHttpInfoAsync(id, shippingContactsId, customerUpdateShippingContacts, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Conekta.net.Client.ApiResponse<CustomerShippingContactsResponse> localVarResponse = await UpdateCustomerShippingContactsWithHttpInfoAsync(id, shippingContactsId, customerUpdateShippingContactsRequest, acceptLanguage, xChildCompanyId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -869,13 +869,13 @@ namespace Conekta.net.Api
         /// <exception cref="Conekta.net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the resource</param>
         /// <param name="shippingContactsId">identifier</param>
-        /// <param name="customerUpdateShippingContacts">requested field for customer update shippings contacts</param>
+        /// <param name="customerUpdateShippingContactsRequest">requested field for customer update shippings contacts</param>
         /// <param name="acceptLanguage">Use for knowing which language to use (optional, default to es)</param>
         /// <param name="xChildCompanyId">In the case of a holding company, the company id of the child company to which will process the request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomerShippingContactsResponse)</returns>
-        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomerShippingContactsResponse>> UpdateCustomerShippingContactsWithHttpInfoAsync(string id, string shippingContactsId, CustomerUpdateShippingContacts customerUpdateShippingContacts, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conekta.net.Client.ApiResponse<CustomerShippingContactsResponse>> UpdateCustomerShippingContactsWithHttpInfoAsync(string id, string shippingContactsId, CustomerUpdateShippingContactsRequest customerUpdateShippingContactsRequest, string acceptLanguage = default(string), string xChildCompanyId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -889,10 +889,10 @@ namespace Conekta.net.Api
                 throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'shippingContactsId' when calling ShippingContactsApi->UpdateCustomerShippingContacts");
             }
 
-            // verify the required parameter 'customerUpdateShippingContacts' is set
-            if (customerUpdateShippingContacts == null)
+            // verify the required parameter 'customerUpdateShippingContactsRequest' is set
+            if (customerUpdateShippingContactsRequest == null)
             {
-                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'customerUpdateShippingContacts' when calling ShippingContactsApi->UpdateCustomerShippingContacts");
+                throw new Conekta.net.Client.ApiException(400, "Missing required parameter 'customerUpdateShippingContactsRequest' when calling ShippingContactsApi->UpdateCustomerShippingContacts");
             }
 
 
@@ -929,7 +929,7 @@ namespace Conekta.net.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("X-Child-Company-Id", Conekta.net.Client.ClientUtils.ParameterToString(xChildCompanyId)); // header parameter
             }
-            localVarRequestOptions.Data = customerUpdateShippingContacts;
+            localVarRequestOptions.Data = customerUpdateShippingContactsRequest;
 
             localVarRequestOptions.Operation = "ShippingContactsApi.UpdateCustomerShippingContacts";
             localVarRequestOptions.OperationIndex = operationIndex;

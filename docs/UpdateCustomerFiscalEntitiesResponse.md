@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Address** | [**CustomerAddress**](CustomerAddress.md) |  | 
+**Address** | [**FiscalEntityRequestAddress**](FiscalEntityRequestAddress.md) |  | 
 **TaxId** | **string** |  | [optional] 
 **Email** | **string** |  | [optional] 
 **Phone** | **string** |  | [optional] 

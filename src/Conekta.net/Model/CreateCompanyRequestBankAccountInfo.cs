@@ -29,7 +29,7 @@ namespace Conekta.net.Model
     /// <summary>
     /// Bank account information for the company.
     /// </summary>
-    [DataContract(Name = "create_company_request_bank_account_info")]
+    [DataContract(Name = "Create_Company_Request_bank_account_info")]
     public partial class CreateCompanyRequestBankAccountInfo : IValidatableObject
     {
         /// <summary>

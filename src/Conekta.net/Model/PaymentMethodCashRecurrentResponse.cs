@@ -51,7 +51,7 @@ namespace Conekta.net.Model
         /// <param name="barcodeUrl">URL to the barcode image, reference is the same as barcode.</param>
         /// <param name="expiresAt">expiresAt.</param>
         /// <param name="provider">provider.</param>
-        public PaymentMethodCashRecurrentResponse(string type = default(string), string id = default(string), string varObject = default(string), long createdAt = default(long), string parentId = default(string), List<PaymentMethodCashResponseAllOfAgreements> agreements = default(List<PaymentMethodCashResponseAllOfAgreements>), string reference = default(string), string barcode = default(string), string barcodeUrl = default(string), long expiresAt = default(long), string provider = default(string))
+        public PaymentMethodCashRecurrentResponse(string type = default(string), string id = default(string), string varObject = default(string), long createdAt = default(long), string parentId = default(string), List<CashAgreementsResponse> agreements = default(List<CashAgreementsResponse>), string reference = default(string), string barcode = default(string), string barcodeUrl = default(string), long expiresAt = default(long), string provider = default(string))
         {
             // to ensure "type" is required (not null)
             if (type == null)
@@ -127,7 +127,7 @@ namespace Conekta.net.Model
         /// Gets or Sets Agreements
         /// </summary>
         [DataMember(Name = "agreements", EmitDefaultValue = false)]
-        public List<PaymentMethodCashResponseAllOfAgreements> Agreements { get; set; }
+        public List<CashAgreementsResponse> Agreements { get; set; }
 
         /// <summary>
         /// Gets or Sets Reference

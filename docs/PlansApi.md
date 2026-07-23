@@ -311,7 +311,7 @@ catch (ApiException e)
 
 <a id="getplans"></a>
 # **GetPlans**
-> GetPlansResponse GetPlans (string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string search = null, string next = null, string previous = null)
+> GetPlansResponse GetPlans (string acceptLanguage = null, string xChildCompanyId = null, int? limit = null, string search = null, string next = null, string previous = null, string currency = null, int? frequency = null)
 
 Get A List of Plans
 
@@ -341,11 +341,13 @@ namespace Example
             var search = "search_example";  // string | General order search, e.g. by mail, reference etc. (optional) 
             var next = "next_example";  // string | next page (optional) 
             var previous = "previous_example";  // string | previous page (optional) 
+            var currency = MXN;  // string | currency of the object to be retrieved (optional) 
+            var frequency = 1;  // int? | frequency of the object to be retrieved (optional) 
 
             try
             {
                 // Get A List of Plans
-                GetPlansResponse result = apiInstance.GetPlans(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+                GetPlansResponse result = apiInstance.GetPlans(acceptLanguage, xChildCompanyId, limit, search, next, previous, currency, frequency);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -366,7 +368,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get A List of Plans
-    ApiResponse<GetPlansResponse> response = apiInstance.GetPlansWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+    ApiResponse<GetPlansResponse> response = apiInstance.GetPlansWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous, currency, frequency);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -389,6 +391,8 @@ catch (ApiException e)
 | **search** | **string** | General order search, e.g. by mail, reference etc. | [optional]  |
 | **next** | **string** | next page | [optional]  |
 | **previous** | **string** | previous page | [optional]  |
+| **currency** | **string** | currency of the object to be retrieved | [optional]  |
+| **frequency** | **int?** | frequency of the object to be retrieved | [optional]  |
 
 ### Return type
 
@@ -416,7 +420,7 @@ catch (ApiException e)
 
 <a id="updateplan"></a>
 # **UpdatePlan**
-> PlanResponse UpdatePlan (string id, PlanUpdateRequest planUpdateRequest, string acceptLanguage = null, string xChildCompanyId = null)
+> PlanResponse UpdatePlan (string id, UpdatePlan updatePlan, string acceptLanguage = null, string xChildCompanyId = null)
 
 Update Plan
 
@@ -441,14 +445,14 @@ namespace Example
 
             var apiInstance = new PlansApi(config);
             var id = 6307a60c41de27127515a575;  // string | Identifier of the resource
-            var planUpdateRequest = new PlanUpdateRequest(); // PlanUpdateRequest | requested field for plan
+            var updatePlan = new UpdatePlan(); // UpdatePlan | requested field for plan
             var acceptLanguage = es;  // string | Use for knowing which language to use (optional)  (default to es)
             var xChildCompanyId = 6441b6376b60c3a638da80af;  // string | In the case of a holding company, the company id of the child company to which will process the request. (optional) 
 
             try
             {
                 // Update Plan
-                PlanResponse result = apiInstance.UpdatePlan(id, planUpdateRequest, acceptLanguage, xChildCompanyId);
+                PlanResponse result = apiInstance.UpdatePlan(id, updatePlan, acceptLanguage, xChildCompanyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -469,7 +473,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update Plan
-    ApiResponse<PlanResponse> response = apiInstance.UpdatePlanWithHttpInfo(id, planUpdateRequest, acceptLanguage, xChildCompanyId);
+    ApiResponse<PlanResponse> response = apiInstance.UpdatePlanWithHttpInfo(id, updatePlan, acceptLanguage, xChildCompanyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -487,7 +491,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | Identifier of the resource |  |
-| **planUpdateRequest** | [**PlanUpdateRequest**](PlanUpdateRequest.md) | requested field for plan |  |
+| **updatePlan** | [**UpdatePlan**](UpdatePlan.md) | requested field for plan |  |
 | **acceptLanguage** | **string** | Use for knowing which language to use | [optional] [default to es] |
 | **xChildCompanyId** | **string** | In the case of a holding company, the company id of the child company to which will process the request. | [optional]  |
 

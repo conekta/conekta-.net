@@ -99,7 +99,7 @@ namespace Conekta.net.Model
         /// </summary>
         /// <value>Hash where the user can send additional information for each &#39;shipping&#39;.</value>
         /*
-        <example>{&quot;key&quot;:&quot;value&quot;}</example>
+        <example>{key&#x3D;value}</example>
         */
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }
