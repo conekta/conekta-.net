@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **PaymentSources** | [**CustomerPaymentMethodsResponse**](CustomerPaymentMethodsResponse.md) |  | [optional] 
 **Phone** | **string** | Customer&#39;s phone number | [optional] 
 **ShippingContacts** | [**CustomerResponseShippingContacts**](CustomerResponseShippingContacts.md) |  | [optional] 
-**Subscription** | [**CustomerSubscriptionResponse**](CustomerSubscriptionResponse.md) |  | [optional] 
+**Subscription** | [**SubscriptionResponse**](SubscriptionResponse.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

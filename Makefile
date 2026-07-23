@@ -9,10 +9,11 @@ clean:
 csharp:
 	rm -rf /docs && \
 	rm -rf src/Conekta.net/Model && \
+	rm -rf src/Conekta.net/Client && \
 	rm -rf src/Conekta.net/Api && \
 	docker run --rm \
 	-v ${PWD}:/local openapitools/openapi-generator-cli:v7.9.0 generate \
-    -i https://raw.githubusercontent.com/conekta/openapi/main/_build/api.yaml \
+    -i https://raw.githubusercontent.com/conekta/openapi/refs/heads/release/v2.3.0/_build/api.yaml \
     -g csharp \
     -o /local \
     -c /local/config-netcore.json \
