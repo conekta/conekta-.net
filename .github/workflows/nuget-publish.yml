@@ -4,11 +4,13 @@ on:
     types: [created]
 jobs:
   build-and-publish:
+    permissions:
+      id-token: write
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: '6.0.x'
       - name: Check if release creator is a code owner
@@ -34,8 +36,13 @@ jobs:
         run: dotnet restore
       - name: pack
         run: dotnet pack --configuration Release --output nuget
+       # Get a short-lived NuGet API key
+      - name: NuGet login (OIDC → temp API key)
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: ConektaOficial
       # Publish Package
       - name: Publish Nuget
-        run: dotnet nuget push nuget/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source "nuget.org"
-        env:
-          NUGET_KEY: ${{ secrets.NUGET_API_KEY }}
+        run: dotnet nuget push nuget/*.nupkg --api-key ${{steps.login.outputs.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
+       
