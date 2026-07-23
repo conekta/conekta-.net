@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AllowedPaymentMethods** | **List&lt;string&gt;** | Are the payment methods available for this link | 
+**AllowedPaymentMethods** | **List&lt;string&gt;** | Are the payment methods available for this link | [optional] 
+**ExcludedPaymentMethods** | **List&lt;OrderResponseCheckout.ExcludedPaymentMethodsEnum&gt;** | Payment methods excluded from the checkout. This field is only returned when excluded_payment_methods is provided in the request. | [optional] 
 **CanNotExpire** | **bool** |  | [optional] 
 **EmailsSent** | **int** |  | [optional] 
 **ExcludeCardNetworks** | **List&lt;OrderResponseCheckout.ExcludeCardNetworksEnum&gt;** |  | [optional] 
@@ -14,7 +15,7 @@ Name | Type | Description | Notes
 **ForceSaveCard** | **bool** | Indicates whether the card used for the payment should be saved for future purchases. This field is only applicable for card payments. | [optional] 
 **Id** | **string** |  | 
 **IsRedirectOnFailure** | **bool** |  | [optional] 
-**Livemode** | **bool** |  | [optional] 
+**Livemode** | **bool** |  | 
 **MaxFailedRetries** | **int** | Number of retries allowed before the checkout is marked as failed | [optional] 
 **Metadata** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **MonthlyInstallmentsEnabled** | **bool** |  | [optional] 

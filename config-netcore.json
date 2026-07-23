@@ -17,6 +17,9 @@
       "destinationFilename": "VERSION"
     }
   },
+  "modelNameMappings": {
+    "subscription_response_1": "SubscriptionResponse"
+  },
   "apiName" : "conekta",
   "packageName" : "Conekta.net",
   "netCoreProjectFile" : true,
@@ -33,5 +36,5 @@
   "packageCopyright" : "Conekta",
   "PackageReleaseNotes" : "add support for payout orders",
   "releaseNote" : "update entity webhook, nuget config",
-  "packageVersion" : "7.1.0"
+  "packageVersion" : "9.0.0"
 }
